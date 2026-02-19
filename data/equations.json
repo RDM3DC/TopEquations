@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-02-19",
+  "entries": [
+    {
+      "id": "eq-arp-redshift",
+      "name": "ARP Redshift Law (candidate)",
+      "source": "discovery-matrix #1",
+      "score": 78,
+      "scores": {
+        "novelty": 24,
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 14,
+        "visual": 10
+      },
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "rank": 8,
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "rank": 6,
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Conductance-decay framing for cosmological redshift with explicit damping terms.",
+      "date": "2026-02-19"
+    },
+    {
+      "id": "eq-arp-lyapunov-stability",
+      "name": "ARP Lyapunov Stability Form",
+      "source": "discovery-matrix #2",
+      "score": 75,
+      "scores": {
+        "novelty": 22,
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 14,
+        "visual": 7
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "rank": 7,
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "rank": 6,
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Candidate stability proof template for adaptive conductance dynamics.",
+      "date": "2026-02-19"
+    }
+  ]
+}
