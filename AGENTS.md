@@ -9,5 +9,7 @@ This repository is the canonical storage for equation rankings and submissions.
 4. Write daily entry to `submissions/YYYY-MM-DD.md`.
 5. Update `leaderboard.md`:
    - Current Top Equations (All-Time)
-   - Newest Top-Ranked Equations
-6. Include animation/image ranking fields and paths when available.
+   - Newest Top-Ranked Equations (This Month)
+   - All Equations Since 2025 (Registry)
+6. Include animation/image links or `planned` status with each ranked equation.
+7. Do not use separate animation/image ranking columns.

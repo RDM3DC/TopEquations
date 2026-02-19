@@ -5,6 +5,7 @@
     {
       "id": "eq-arp-redshift",
       "name": "ARP Redshift Law (candidate)",
+      "firstSeen": "2025-04",
       "source": "discovery-matrix #1",
       "score": 78,
       "scores": {
@@ -12,17 +13,15 @@
         "tractability": 15,
         "plausibility": 15,
         "validation": 14,
-        "visual": 10
+        "artifactCompleteness": 0
       },
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "rank": 8,
         "status": "planned",
         "path": ""
       },
       "image": {
-        "rank": 6,
         "status": "planned",
         "path": ""
       },
@@ -32,6 +31,7 @@
     {
       "id": "eq-arp-lyapunov-stability",
       "name": "ARP Lyapunov Stability Form",
+      "firstSeen": "2025-06",
       "source": "discovery-matrix #2",
       "score": 75,
       "scores": {
@@ -39,21 +39,45 @@
         "tractability": 16,
         "plausibility": 16,
         "validation": 14,
-        "visual": 7
+        "artifactCompleteness": 0
       },
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "rank": 7,
         "status": "planned",
         "path": ""
       },
       "image": {
-        "rank": 6,
         "status": "planned",
         "path": ""
       },
       "description": "Candidate stability proof template for adaptive conductance dynamics.",
+      "date": "2026-02-19"
+    },
+    {
+      "id": "eq-arp-temp-conductance",
+      "name": "Temperature-dependent conductance law",
+      "firstSeen": "2026-02",
+      "source": "daily run 2026-02-19",
+      "score": 68,
+      "scores": {
+        "novelty": 20,
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 16,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Extends ARP equilibrium with an exponential temperature factor for material sensitivity.",
       "date": "2026-02-19"
     }
   ]
