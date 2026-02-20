@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602201353' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602201357' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602201353'></script>
+  <script defer src='./assets/app.js?v=202602201357'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -352,13 +352,73 @@
   </div>
 </section>
 
+
+<section class='card' data-rank='10' data-score='54' data-haslatex='1'>
+  <div class='card__rank'>#10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive Branch Impedance (AIN)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 54</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$Z_{ij}(t,\\omega) = \\frac{1}{G_{ij}(t)} + j\\omega L_{ij}(t) - \\frac{j}{\\omega C_{ij}(t)}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>harvest: canonical-core/papers/01-arp-ain.md</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Time-varying RLC impedance expressed via adaptive conductance G_{ij}(t) and adaptive inductance/capacitance, extending ARP/AIN to frequency-domain response.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G, L, C are functions of time (slowly varying relative to the carrier ω).</li><li>Standard linear RLC phasor conventions apply.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='11' data-score='48' data-haslatex='1'>
+  <div class='card__rank'>#11</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Phase Energy Functional</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 48</span>
+        <span class='pill pill--warn' title='units'>WARN</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$E_{\\text{phase}}(\\varphi)= \\tfrac12\\sum_{(i,j)} w_{ij}\\,\\lVert\\Delta\\varphi_{ij}\\rVert^2$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>harvest: AdaptiveCAD/PHASE_RESOLVED_MODELING.md</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Quadratic phase-smoothing energy over edges: penalizes phase differences with weights w_{ij}; useful as a regularizer or Lyapunov-like candidate in phase-coupled dynamics.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>w_{ij} carry the energy units and encode coupling/penalty strength.</li><li>Δφ_{ij} is a phase difference (dimensionless or radians).</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </section>
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 13:53</strong></div>
+      <div>Last built: <strong>2026-02-20 13:57</strong></div>
     </footer>
   </main>
 </body>

@@ -14,81 +14,6 @@ Scoring model (0-100):
   - animation linked (+5)
   - image/diagram linked (+5)
 
-## Tier Lists (Side-by-Side)
-
-<table>
-  <tr>
-    <th align="left">Top Equations (All-Time)</th>
-    <th align="left">Top This Month</th>
-    <th align="left">Famous Equations (Adjusted)</th>
-  </tr>
-  <tr>
-    <td valign="top">
-      <ol>
-        <li><b>ARP Redshift Law</b> (88)</li>
-        <li><b>Phase-Coupled Stability Threshold</b> (82)</li>
-        <li><b>Phase-Lifted Complex Conductance Update</b> (76)</li>
-        <li><b>ARP Lyapunov Stability Form</b> (75)</li>
-        <li><b>Unified Dynamic Constants Law</b> (73)</li>
-        <li><b>Curve Memory Fine-Structure Emergence</b> (72)</li>
-        <li><b>Shielding Mechanism Law (ARP)</b> (71)</li>
-        <li><b>Redshift-ARP Superconductivity Law</b> (70)</li>
-        <li><b>Temperature-Dependent Conductance Law</b> (68)</li>
-      </ol>
-    </td>
-    <td valign="top">
-      <ol>
-        <li><b>ARP Redshift Law</b> (88)</li>
-        <li><b>Phase-Coupled Stability Threshold</b> (82)</li>
-        <li><b>Phase-Lifted Complex Conductance Update</b> (76)</li>
-        <li><b>ARP Lyapunov Stability Form</b> (75)</li>
-        <li><b>Unified Dynamic Constants Law</b> (73)</li>
-        <li><b>Curve Memory Fine-Structure Emergence</b> (72)</li>
-        <li><b>Shielding Mechanism Law (ARP)</b> (71)</li>
-        <li><b>Redshift-ARP Superconductivity Law</b> (70)</li>
-        <li><b>Temperature-Dependent Conductance Law</b> (68)</li>
-      </ol>
-    </td>
-    <td valign="top">
-      <ol>
-        <li>
-          <b>Schrödinger ("without i" via Madelung + Phase-Lift)</b><br/>
-          Substitute \(\phi := \frac{\pi}{\pi_a}\,\theta_R\) and \(\psi^{PL}=\sqrt{\rho}\,e^{i\phi}=\sqrt{\rho}\,\exp\!\big(i\frac{\pi}{\pi_a}\theta_R\big)\). Then the complex PDE becomes two real PDEs:<br/>
-          \(\partial_t\rho+\nabla\!\cdot(\rho\,\mathbf v)=0\),<br/>
-          \(\hbar\,\partial_t\phi+\frac{m}{2}\mathbf v^2+V+Q[\rho]=0\), where \(\mathbf v=\frac{\hbar}{m}\nabla\phi\), \(Q[\rho]= -\frac{\hbar^2}{2m}\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}\).<br/>
-          Sector bookkeeping (optional): \(\theta_R(T)-\theta_R(0)=2\pi_a w\), \(b=(-1)^w\).
-        </li>
-        <li>
-          <b>Aharonov–Bohm phase (Phase-Lifted)</b><br/>
-          \(\theta_R[\gamma]=\mathrm{unwrap}\!\big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\theta_{\rm ref},\pi_a\big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w\).
-        </li>
-        <li>
-          <b>Berry phase / overlap product (no multi-valued Arg)</b><br/>
-          Discrete: \(\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!(\Arg\langle\psi_{k+1}|\psi_k\rangle;\theta_{\rm ref},\pi_a)\).<br/>
-          Continuum: \(\theta_R[\gamma]=\mathrm{unwrap}\!(\oint_\gamma A;\theta_{\rm ref},\pi_a)=\int_S F + 2\pi_a w\), with \(b=(-1)^w\) optional.
-        </li>
-        <li>
-          <b>Josephson relations (Phase-Lift + adaptive-\(\pi\))</b><br/>
-          \(I=I_c\sin\!\big(\frac{\pi}{\pi_a}\theta_R\big)\),
-          \(\frac{d}{dt}\big(\frac{\pi}{\pi_a}\theta_R\big)=\frac{2e}{\hbar}V\). Optional: \(I=b\,I_c\sin(\frac{\pi}{\pi_a}\theta_R)\).
-        </li>
-        <li>
-          <b>Path integral with Phase-Lift sectors</b><br/>
-          \(Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta(\theta_R(T)-\theta_R(0)-2\pi_a w)\), \(b=(-1)^w\) optional.
-        </li>
-        <li>
-          <b>U(N) holonomy split (Phase-Lift det-phase)</b><br/>
-          If \(U(\gamma)\in U(N)\), write \(U(\gamma)=e^{i\varphi}V\), \(V\in SU(N)\), \(\varphi=\Arg\det U(\gamma)\). Phase-Lift: \(\theta_R:=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a)\), \(w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}\in\mathbb Z\), \(b(\gamma)=(-1)^{w_{\det}}\).
-        </li>
-        <li>
-          <b>Klein–Gordon (polar split + Phase-Lift)</b><br/>
-          Start from \((\Box+\frac{m^2c^2}{\hbar^2})\psi=0\) with \(\psi^{PL}=\sqrt\rho\,e^{i\phi}\) and \(\phi=\frac{\pi}{\pi_a}\theta_R\). This yields two real equations (continuity-like + Hamilton–Jacobi-like) with the same sector tracking \((w,b)\) on closed evolution.
-        </li>
-      </ol>
-    </td>
-  </tr>
-</table>
-
 ## Current Top Equations (All-Time)
 
 | Rank | Equation Name | Equation | Source | Score | Units | Theory | Animation | Image/Diagram | Description |
@@ -102,6 +27,8 @@ Scoring model (0-100):
 | 7 | Shielding Mechanism Law (ARP) | E_{eff}=(1-\lambda)E_{ext},\ \ J_{adapt}=\sigma E_{ext},\ \ 0<\lambda<1 | discovery-matrix #5 | 71 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-shield-mechanic-arp.mp4 | planned | Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 < λ < 1. |
 | 8 | Redshift-ARP Superconductivity Law | R_s(z) = R_{s,0} (1 + z)^\alpha | discovery-matrix #1 (supercond.) | 70 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-redshift-arp-superc.mp4 | planned | Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant. |
 | 9 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | 68 | OK | PASS | ./assets/animations/eq-arp-temp-conductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
+| 10 | Adaptive Branch Impedance (AIN) | Z_{ij}(t,\\omega) = \\frac{1}{G_{ij}(t)} + j\\omega L_{ij}(t) - \\frac{j}{\\omega C_{ij}(t)} | harvest: canonical-core/papers/01-arp-ain.md | 54 | OK | PASS | planned | planned | Time-varying RLC impedance expressed via adaptive conductance G_{ij}(t) and adaptive inductance/capacitance, extending ARP/AIN to frequency-domain response. |
+| 11 | Phase Energy Functional | E_{\\text{phase}}(\\varphi)= \\tfrac12\\sum_{(i,j)} w_{ij}\\,\\lVert\\Delta\\varphi_{ij}\\rVert^2 | harvest: AdaptiveCAD/PHASE_RESOLVED_MODELING.md | 48 | WARN | PASS-WITH-ASSUMPTIONS | planned | planned | Quadratic phase-smoothing energy over edges: penalizes phase differences with weights w_{ij}; useful as a regularizer or Lyapunov-like candidate in phase-coupled dynamics. |
 
 ## Newest Top-Ranked Equations (This Month)
 
@@ -116,6 +43,8 @@ Scoring model (0-100):
 | 2026-02-20 | Shielding Mechanism Law (ARP) | 71 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-shield-mechanic-arp.mp4 | planned | Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 < λ < 1. |
 | 2026-02-20 | Redshift-ARP Superconductivity Law | 70 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-redshift-arp-superc.mp4 | planned | Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant. |
 | 2026-02-19 | Temperature-Dependent Conductance Law | 68 | OK | PASS | ./assets/animations/eq-arp-temp-conductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
+| 2026-02-20 | Adaptive Branch Impedance (AIN) | 54 | OK | PASS | planned | planned | Time-varying RLC impedance expressed via adaptive conductance G_{ij}(t) and adaptive inductance/capacitance, extending ARP/AIN to frequency-domain response. |
+| 2026-02-20 | Phase Energy Functional | 48 | WARN | PASS-WITH-ASSUMPTIONS | planned | planned | Quadratic phase-smoothing energy over edges: penalizes phase differences with weights w_{ij}; useful as a regularizer or Lyapunov-like candidate in phase-coupled dynamics. |
 
 ## All Equations Since 2025 (Registry)
 
@@ -130,6 +59,8 @@ Scoring model (0-100):
 | 2026-02 | Redshift-ARP Superconductivity Law | R_s(z) = R_{s,0} (1 + z)^\alpha | discovery-matrix #1 (supercond.) | PASS-WITH-ASSUMPTIONS | 70 | ./assets/animations/eq-redshift-arp-superc.mp4 | planned |
 | 2026-02 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | PASS | 68 | ./assets/animations/eq-arp-temp-conductance.mp4 | planned |
 | 2026-02-20 | Unified Dynamic Constants Law | \dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T | discovery-matrix #3 | PASS-WITH-ASSUMPTIONS | 73 | ./assets/animations/eq-dyn-constants-union.mp4 | planned |
+| 2026-02-20 | Adaptive Branch Impedance (AIN) | Z_{ij}(t,\\omega) = \\frac{1}{G_{ij}(t)} + j\\omega L_{ij}(t) - \\frac{j}{\\omega C_{ij}(t)} | harvest: canonical-core/papers/01-arp-ain.md | PASS | 54 | planned | planned |
+| 2026-02-20 | Phase Energy Functional | E_{\\text{phase}}(\\varphi)= \\tfrac12\\sum_{(i,j)} w_{ij}\\,\\lVert\\Delta\\varphi_{ij}\\rVert^2 | harvest: AdaptiveCAD/PHASE_RESOLVED_MODELING.md | PASS-WITH-ASSUMPTIONS | 48 | planned | planned |
 
 ## Update Rules
 
