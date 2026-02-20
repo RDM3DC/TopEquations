@@ -164,6 +164,8 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
 .kv{padding:10px 12px; border:1px solid rgba(255,255,255,.08); border-radius:16px; background: rgba(255,255,255,.03)}
 .k{color:var(--muted); font-size:12px}
 .v{margin-top:4px; font-size:13px}
+.ul{margin:6px 0 0 18px; padding:0}
+.ul li{margin:3px 0}
 
 .footer{margin:22px 0 10px 0; color:var(--muted); font-size:12px; text-align:center}
 

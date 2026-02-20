@@ -215,8 +215,38 @@
 <h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards'>
 
-<section class='card' data-rank='1' data-score='82' data-haslatex='1'>
+<section class='card' data-rank='1' data-score='88' data-haslatex='1'>
   <div class='card__rank'>#1</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP Redshift Law (derived mapping)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 88</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$z(t)=z_0\,(1-e^{-\gamma t})$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #1</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='2' data-score='82' data-haslatex='1'>
+  <div class='card__rank'>#2</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -236,37 +266,9 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2πₐ. Predicts a sharp stability/transition-like behavior when θ_R approaches half-integer multiples of πₐ (maximal sin²). Assumptions: θ_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; πₐ sets the relevant phase period; λ has units 1/time.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='2' data-score='78' data-haslatex='1'>
-  <div class='card__rank'>#2</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>ARP Redshift Law (candidate)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 78</span>
-        <span class='pill pill--warn' title='units'>WARN</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$z(t)=z_0\,(1-e^{-\gamma t})$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #1</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Conductance-decay framing for cosmological redshift with explicit damping terms.</div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -294,6 +296,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iθ_R,ij} to model sign flips under branch crossings.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -323,6 +326,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Candidate stability proof template for adaptive conductance dynamics.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-lyapunov-stability.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -352,6 +356,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>First-order linear coupling for adaptive updates of πₐ, e, ϕ, and c, expressing networked rates of change—models the unification of ARP, AIN, and πₐ system parameters.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-dyn-constants-union.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -381,6 +386,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Formalizes the emergence of the inverse fine-structure constant (α⁻¹ ≈ 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -410,6 +416,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 &lt; λ &lt; 1.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -425,20 +432,21 @@
       <h2 class='card__title'>Redshift-ARP Superconductivity Law</h2>
       <div class='card__meta'>
         <span class='badge badge--score'>Score 70</span>
-        <span class='pill pill--warn' title='units'>WARN</span>
+        <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
     </div>
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$z_{eff}\approx f(\sigma_{ARP},T)\,e^{-\kappa L_{super}}$$</div>
+      <div class='equation__tex'>$$R_s(z) = R_{s,0} (1 + z)^\alpha$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #1 (supercond.)</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Connects cosmological redshift with superconducting phase drops, positing ARP-parameterized carrier phase damping. z_eff ≈ f(σ_ARP, T)·exp(-κ·L_super), with κ an ARP-phase damping rate.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -468,6 +476,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Extends ARP equilibrium with an exponential temperature factor for material sensitivity.</div></div>
+      
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-temp-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -478,7 +487,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 06:04</strong></div>
+      <div>Last built: <strong>2026-02-20 06:20</strong></div>
     </footer>
   </main>
 </body>

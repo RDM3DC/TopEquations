@@ -177,6 +177,27 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         date = e.get("date", "")
 
         has_latex = "1" if (e.get("equationLatex") or "").strip() else "0"
+        # Optional educational metadata
+        differential = (e.get("differentialLatex") or "").strip()
+        derivation = (e.get("derivation") or "").strip()
+        assumptions = e.get("assumptions") or []
+        if not isinstance(assumptions, list):
+            assumptions = [str(assumptions)]
+
+        def _ul(items: list[str]) -> str:
+            if not items:
+                return ""
+            lis = "".join(f"<li>{_esc(x)}</li>" for x in items if str(x).strip())
+            return f"<ul class='ul'>{lis}</ul>" if lis else ""
+
+        extra = ""
+        if differential:
+            extra += f"<div class='kv'><div class='k'>Differential form</div><div class='v'>$$${_esc(differential)}$$</div></div>"
+        if derivation:
+            extra += f"<div class='kv'><div class='k'>Derivation bridge</div><div class='v'>{_esc(derivation)}</div></div>"
+        if assumptions:
+            extra += f"<div class='kv'><div class='k'>Assumptions</div><div class='v'>{_ul([str(x) for x in assumptions])}</div></div>"
+
         cards.append(
             f"""
 <section class='card' data-rank='{i}' data-score='{_esc(score)}' data-haslatex='{has_latex}'>
@@ -200,6 +221,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
+      {extra}
       <div class='kv'><div class='k'>Date</div><div class='v'>{_esc(date)}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
