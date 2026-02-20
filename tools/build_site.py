@@ -296,7 +296,9 @@ def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
             n = lo
         return max(lo, min(hi, n))
 
-    novelty = _clamp(e.get("novelty", 0), 0, 30)
+    # Normalized novelty for famous equations: these are reinterpretations of
+    # known formulas, so keep novelty on a fixed baseline for fair comparison.
+    novelty = 16
     tractability = _clamp(e.get("tractability", 0), 0, 20)
     plausibility = _clamp(e.get("plausibility", 0), 0, 20)
 
@@ -400,7 +402,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 <div class='panel'>
   <h2>Scoring Rubric (0-100)</h2>
   <ul>
-    <li>Novelty (0-30)</li>
+    <li>Novelty (0-30): fixed to <strong>16</strong> for all Famous entries (normalization)</li>
     <li>Tractability (0-20)</li>
     <li>Physical plausibility (0-20)</li>
     <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>

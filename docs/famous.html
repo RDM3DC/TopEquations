@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Famous Equations</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602201455' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602201500' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602201455'></script>
+  <script defer src='./assets/app.js?v=202602201500'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -63,7 +63,7 @@
 <div class='panel'>
   <h2>Scoring Rubric (0-100)</h2>
   <ul>
-    <li>Novelty (0-30)</li>
+    <li>Novelty (0-30): fixed to <strong>16</strong> for all Famous entries (normalization)</li>
     <li>Tractability (0-20)</li>
     <li>Physical plausibility (0-20)</li>
     <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>
@@ -79,7 +79,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Schrodinger (without i via Madelung + Phase-Lift)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 67</span>
+        <span class='badge badge--score'>Score 57</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -96,7 +96,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 26/30, T 15/20, P 16/20, U +10, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 15/20, P 16/20, U +10, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>Q[rho] is the quantum potential term; phi is the lifted phase field.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>rho is positive and smooth enough for Q[rho] to be well-defined.</li><li>Phase-Lift variable theta_R maps consistently to phi over the domain.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Equivalent only under the stated smoothness and phase mapping assumptions.</div></div>
@@ -113,7 +113,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Aharonov-Bohm phase (Phase-Lifted)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 66</span>
+        <span class='badge badge--score'>Score 57</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -130,7 +130,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Phase-Lifted AB phase relation with explicit winding sector.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 25/30, T 15/20, P 16/20, U +10, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 15/20, P 16/20, U +10, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>theta_R is unwrapped phase; w is integer winding sector.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Gauge region excludes singular crossings during unwrapping.</li><li>Chosen reference phase remains consistent along gamma.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Branch handling is convention-dependent without a fixed unwrapping policy.</div></div>
@@ -147,7 +147,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Berry phase / overlap product (no multivalued Arg)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 64</span>
+        <span class='badge badge--score'>Score 56</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -164,7 +164,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Discrete Berry-phase accumulation with unwrapped phase tracking.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 24/30, T 15/20, P 15/20, U +10, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 15/20, P 15/20, U +10, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>Arg denotes principal argument before unwrapping.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Adjacent state overlaps are non-zero along the path.</li><li>Sampling is fine enough to avoid unwrap jumps.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Numerical stability depends on path discretization and overlap conditioning.</div></div>
@@ -181,7 +181,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Josephson relations (Phase-Lift + adaptive-pi)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 61</span>
+        <span class='badge badge--score'>Score 55</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -198,7 +198,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Adaptive-pi phase dynamics inserted into Josephson current/voltage relations.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 22/30, T 15/20, P 14/20, U +10, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 15/20, P 14/20, U +10, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>pi_a is an adaptive period parameter replacing fixed pi in phase scaling.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>pi_a varies slowly relative to junction dynamics.</li><li>Calibration restores the classical limit when pi_a approaches pi.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Non-standard phase scaling requires experimental calibration before physical claims.</div></div>
@@ -215,7 +215,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Path integral with Phase-Lift sectors</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Score 42</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--warn'>WARN</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -232,7 +232,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Sector-aware path integral with explicit winding constraint.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 23/30, T 13/20, P 13/20, U +0, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 13/20, P 13/20, U +0, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>S_PL is the proposed Phase-Lift action functional.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measure and action are well-defined under the Phase-Lift parameterization.</li><li>Sector sum converges or is regularized consistently.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>S_PL must be specified explicitly for reproducible calculations.</div></div>
@@ -249,7 +249,7 @@
     <div class='card__head'>
       <h2 class='card__title'>U(N) holonomy split (Phase-Lift det-phase)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 47</span>
+        <span class='badge badge--score'>Score 42</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--warn'>WARN</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -266,7 +266,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Separates determinant phase and tracks lifted winding in U(N) holonomy.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 21/30, T 13/20, P 13/20, U +0, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 13/20, P 13/20, U +0, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>V is the SU(N) component after factoring determinant phase.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Holonomy path admits stable determinant phase unwrapping.</li><li>Global phase convention is fixed over the loop.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Winding assignment can shift under different gauge conventions.</div></div>
@@ -283,7 +283,7 @@
     <div class='card__head'>
       <h2 class='card__title'>Klein-Gordon (polar split + Phase-Lift)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 44</span>
+        <span class='badge badge--score'>Score 40</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--warn'>WARN</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -300,7 +300,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 20/30, T 12/20, P 12/20, U +0, Th +0, A +0, I +0</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N 16/30, T 12/20, P 12/20, U +0, Th +0, A +0, I +0</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>Box is the d&#x27;Alembertian operator; psi is relativistic scalar field.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Polar decomposition remains valid where psi is non-zero.</li><li>Relativistic and non-relativistic terms are not mixed in derived reductions.</li></ul></div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>Use caution: some downstream interpretations can mix relativistic and non-relativistic forms.</div></div>
@@ -316,7 +316,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 14:55</strong></div>
+      <div>Last built: <strong>2026-02-20 15:00</strong></div>
     </footer>
   </main>
 </body>
