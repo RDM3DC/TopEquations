@@ -160,8 +160,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-shield-mechanic-arp.mp4"
       },
       "image": {
         "status": "planned",
