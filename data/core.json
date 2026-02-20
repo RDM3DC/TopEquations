@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "core-arp-ode",
+      "name": "ARP Core Law (canonical ODE)",
+      "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|-\\mu_G\\,G_{ij}(t)",
+      "description": "Canonical Adaptive Resistance Principle update rule for edge conductance.",
+      "source": "canonical-core paper 01",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
+    },
+    {
+      "id": "core-phase-lift",
+      "name": "Phase-Lift operator definition (⧉)",
+      "equationLatex": "(\\,\\,\\,\\,\\,\\u29c9 f\\,\\,\\,)(z;\\theta_{ref}) := f(z)\\ \"computed using\"\\ \"\\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})\"",
+      "description": "Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.",
+      "source": "canonical-core paper 04",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+    },
+    {
+      "id": "core-pr-root",
+      "name": "PR-Root as a special case of Phase-Lift (⧉√)",
+      "equationLatex": "\\u29c9\\sqrt{z;\\theta_{ref}}:=\\sqrt{r}\\,e^{i\\theta_R/2}\\ \"where\"\\ z=re^{i\\theta}\\ \"and\"\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})",
+      "description": "Phase-resolved square root: deterministic branch choice encoded by the resolved phase.",
+      "source": "canonical-core paper 04",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\\u29c9"
+    },
+    {
+      "id": "core-pi-a",
+      "name": "Adaptive-π field definition + limit (πₐ → π)",
+      "equationLatex": "\\theta=\\theta_R+2\\pi_a(x,t)\\,w,\\ \"with\"\\ w\\in\\mathbb{Z}\\ \"and\"\\ \\pi_a\\to\\pi",
+      "description": "Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.",
+      "source": "canonical-core paper 02 + paper 04",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+    },
+    {
+      "id": "core-winding-parity",
+      "name": "Winding / parity invariants",
+      "equationLatex": "w\\in\\mathbb{Z},\\ \"parity\"\\ p=w\\bmod 2\\in\\{0,1\\}",
+      "description": "Track winding number and its Z2 parity as invariants under continuous deformation (unless passing through singularities).",
+      "source": "canonical-core papers 02/04",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/"
+    }
+  ]
+}

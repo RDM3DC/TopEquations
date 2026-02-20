@@ -120,6 +120,44 @@ def _page(title: str, body: str, updated: str) -> str:
 
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
+    # Tier 1: Canonical Core (pinned, non-ranked)
+    core_path = repo_root / "data" / "core.json"
+    core = json.loads(core_path.read_text(encoding="utf-8"))
+    core_entries = list(core.get("entries", []))
+
+    core_cards = []
+    for e in core_entries:
+        name = e.get("name", "")
+        eq = e.get("equationLatex", "") or "(pending)"
+        desc = e.get("description", "")
+        src = e.get("source", "")
+        url = e.get("sourceUrl", "")
+        core_cards.append(
+            f"""
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>{_esc(name)}</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>{_esc(src)}</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$${_esc(eq)}$$</div>
+    </div>
+    <p class='card__desc'>{_esc(desc)}</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
+    </div>
+  </div>
+</section>
+"""
+        )
+
+    # Tier 2: Ranked derived equations
     data_path = repo_root / "data" / "equations.json"
     data = json.loads(data_path.read_text(encoding="utf-8"))
     entries = list(data.get("entries", []))
@@ -154,7 +192,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
 
@@ -174,8 +212,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     body = """
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Leaderboard</h1>
-    <p>Curated list of the current top equations. Sort by score, and optionally show only entries that have LaTeX.</p>
+    <h1>Two-tier structure</h1>
+    <p><strong>Canonical Core</strong> is pinned (non-ranked). <strong>Derived Equations</strong> are ranked by score.</p>
   </div>
   <div class='hero__right'>
     <div class='controls'>
@@ -200,6 +238,12 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
   </div>
 </div>
 
+<h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
+<div id='coreCards'>
+""" + "\n".join(core_cards) + """
+</div>
+
+<h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards'>
 """ + "\n".join(cards) + """
 </div>
@@ -214,6 +258,9 @@ def build_index(repo_root: Path, docs: Path) -> None:
     data = json.loads((repo_root / "data" / "equations.json").read_text(encoding="utf-8"))
     n = len(data.get("entries", []))
 
+    core = json.loads((repo_root / "data" / "core.json").read_text(encoding="utf-8"))
+    core_n = len(core.get("entries", []))
+
     harvest = json.loads((repo_root / "data" / "harvest" / "equation_harvest.json").read_text(encoding="utf-8"))
     uniq = harvest.get("stats", {}).get("unique", "?")
 
@@ -221,32 +268,32 @@ def build_index(repo_root: Path, docs: Path) -> None:
 <div class='hero hero--home'>
   <div class='hero__left'>
     <h1>TopEquations</h1>
-    <p>A polished GitHub Pages view of the curated leaderboard, plus a raw harvested registry for discovery.</p>
+    <p><strong>Tier 1:</strong> Canonical Core (pinned, non-ranked). <strong>Tier 2:</strong> Top Ranked Derived Equations.</p>
     <div class='cta'>
-      <a class='btn' href='./leaderboard.html'>View Leaderboard</a>
+      <a class='btn' href='./leaderboard.html'>Two‑Tier Board</a>
       <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
     </div>
   </div>
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>{_esc(n)}</div>
-        <div class='stat__label'>Curated equations</div>
+        <div class='stat__num'>{_esc(core_n)}</div>
+        <div class='stat__label'>Canonical core anchors</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>{_esc(uniq)}</div>
-        <div class='stat__label'>Harvested unique candidates</div>
+        <div class='stat__num'>{_esc(n)}</div>
+        <div class='stat__label'>Ranked derived equations</div>
       </div>
     </div>
   </div>
 </div>
 
 <div class='panel'>
-  <h2>How it works</h2>
+  <h2>Structure</h2>
   <ul>
-    <li><strong>Curated leaderboard</strong> lives in <code>data/equations.json</code> (human-reviewed).</li>
-    <li><strong>Raw harvest</strong> lives in <code>data/harvest/equation_harvest.json</code> (machine-extracted, deduped).</li>
-    <li>Pages is served from <code>/docs</code>.</li>
+    <li><strong>Canonical Core</strong> lives in <code>data/core.json</code> and links out to Canonical Core docs.</li>
+    <li><strong>Ranked derived equations</strong> live in <code>data/equations.json</code>.</li>
+    <li><strong>Raw harvest</strong> lives in <code>data/harvest/equation_harvest.json</code> (deduped).</li>
   </ul>
 </div>
 """

@@ -130,6 +130,9 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
   box-shadow: 0 10px 34px rgba(0,0,0,.35);
   overflow:hidden;
 }
+.card--core .card__rank{
+  background: linear-gradient(180deg, rgba(53,208,127,.22), rgba(142,230,255,.08));
+}
 .card__rank{
   width:74px;
   display:flex; align-items:center; justify-content:center;

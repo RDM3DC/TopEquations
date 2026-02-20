@@ -50,8 +50,8 @@
     
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Leaderboard</h1>
-    <p>Curated list of the current top equations. Sort by score, and optionally show only entries that have LaTeX.</p>
+    <h1>Two-tier structure</h1>
+    <p><strong>Canonical Core</strong> is pinned (non-ranked). <strong>Derived Equations</strong> are ranked by score.</p>
   </div>
   <div class='hero__right'>
     <div class='controls'>
@@ -76,6 +76,121 @@
   </div>
 </div>
 
+<h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
+<div id='coreCards'>
+
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP Core Law (canonical ODE)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>canonical-core paper 01</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|-\mu_G\,G_{ij}(t)$$</div>
+    </div>
+    <p class='card__desc'>Canonical Adaptive Resistance Principle update rule for edge conductance.</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Phase-Lift operator definition (⧉)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>canonical-core paper 04</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$$(\,\,\,\,\,\u29c9 f\,\,\,)(z;\theta_{ref}) := f(z)\ &quot;computed using&quot;\ &quot;\theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})&quot;$$</div>
+    </div>
+    <p class='card__desc'>Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>PR-Root as a special case of Phase-Lift (⧉√)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>canonical-core paper 04</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$$\u29c9\sqrt{z;\theta_{ref}}:=\sqrt{r}\,e^{i\theta_R/2}\ &quot;where&quot;\ z=re^{i\theta}\ &quot;and&quot;\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})$$</div>
+    </div>
+    <p class='card__desc'>Phase-resolved square root: deterministic branch choice encoded by the resolved phase.</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\u29c9' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\u29c9</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive-π field definition + limit (πₐ → π)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>canonical-core paper 02 + paper 04</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$$\theta=\theta_R+2\pi_a(x,t)\,w,\ &quot;with&quot;\ w\in\mathbb{Z}\ &quot;and&quot;\ \pi_a\to\pi$$</div>
+    </div>
+    <p class='card__desc'>Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card card--core'>
+  <div class='card__rank'>CORE</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Winding / parity invariants</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>Pinned</span>
+        <span class='badge badge--score'>canonical-core papers 02/04</span>
+      </div>
+    </div>
+    <div class='equation'>
+      <div class='equation__label'>Canonical equation</div>
+      <div class='equation__tex'>$$w\in\mathbb{Z},\ &quot;parity&quot;\ p=w\bmod 2\in\{0,1\}$$</div>
+    </div>
+    <p class='card__desc'>Track winding number and its Z2 parity as invariants under continuous deformation (unless passing through singularities).</p>
+    <div class='grid'>
+      <div class='kv'><div class='k'>Source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/docs/notation/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/docs/notation/</a></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards'>
 
 <section class='card' data-rank='1' data-score='78' data-haslatex='1'>
@@ -91,7 +206,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$z(t)=z_0\,(1-e^{-\gamma t})$$</div>
     </div>
 
@@ -120,7 +235,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$V(x)\ge 0,\ V(0)=0;\ \dot V(x)=\nabla V\cdot \dot x\le -\alpha V(x)$$</div>
     </div>
 
@@ -149,7 +264,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$\dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T$$</div>
     </div>
 
@@ -178,7 +293,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$\alpha^{-1}\approx 137\ \ \text{(emergent resonance condition in curve memory)}$$</div>
     </div>
 
@@ -207,7 +322,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$E_{eff}=(1-\lambda)E_{ext},\ \ J_{adapt}=\sigma E_{ext},\ \ 0&lt;\lambda&lt;1$$</div>
     </div>
 
@@ -236,7 +351,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$z_{eff}\approx f(\sigma_{ARP},T)\,e^{-\kappa L_{super}}$$</div>
     </div>
 
@@ -265,7 +380,7 @@
     </div>
 
     <div class='equation'>
-      <div class='equation__label'>Equation</div>
+      <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$$G(T)=G_{eq}\,e^{\beta\,(T-T_0)}$$</div>
     </div>
 
@@ -283,7 +398,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 03:50</strong></div>
+      <div>Last built: <strong>2026-02-20 04:02</strong></div>
     </footer>
   </main>
 </body>
