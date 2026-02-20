@@ -14,6 +14,59 @@ Scoring model (0-100):
   - animation linked (+5)
   - image/diagram linked (+5)
 
+## Tier Lists (Side-by-Side)
+
+<table>
+  <tr>
+    <th align="left">Top Equations (All-Time)</th>
+    <th align="left">Top This Month</th>
+    <th align="left">Famous Equations (Adjusted)</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ol>
+        <li><b>ARP Redshift Law</b> (88)</li>
+        <li><b>Phase-Coupled Stability Threshold</b> (82)</li>
+        <li><b>Phase-Lifted Complex Conductance Update</b> (76)</li>
+        <li><b>ARP Lyapunov Stability Form</b> (75)</li>
+        <li><b>Unified Dynamic Constants Law</b> (73)</li>
+        <li><b>Curve Memory Fine-Structure Emergence</b> (72)</li>
+        <li><b>Shielding Mechanism Law (ARP)</b> (71)</li>
+        <li><b>Redshift-ARP Superconductivity Law</b> (70)</li>
+        <li><b>Temperature-Dependent Conductance Law</b> (68)</li>
+      </ol>
+    </td>
+    <td valign="top">
+      <ol>
+        <li><b>ARP Redshift Law</b> (88)</li>
+        <li><b>Phase-Coupled Stability Threshold</b> (82)</li>
+        <li><b>Phase-Lifted Complex Conductance Update</b> (76)</li>
+        <li><b>ARP Lyapunov Stability Form</b> (75)</li>
+        <li><b>Unified Dynamic Constants Law</b> (73)</li>
+        <li><b>Curve Memory Fine-Structure Emergence</b> (72)</li>
+        <li><b>Shielding Mechanism Law (ARP)</b> (71)</li>
+        <li><b>Redshift-ARP Superconductivity Law</b> (70)</li>
+        <li><b>Temperature-Dependent Conductance Law</b> (68)</li>
+      </ol>
+    </td>
+    <td valign="top">
+      <ol>
+        <li><b>Newton (2nd law)</b> — adjusted: allow <i>m(t)</i> or <i>c(t)</i> coupling (TBD)</li>
+        <li><b>Maxwell’s equations</b> — adjusted: <i>\epsilon,\mu</i> as adaptive fields (TBD)</li>
+        <li><b>Schrödinger equation</b> — adjusted: phase-lift / \(\pi_a\) period (TBD)</li>
+        <li><b>Einstein field equations</b> — adjusted: adaptive constants / \(c(t)\) (TBD)</li>
+        <li><b>Navier–Stokes</b> — adjusted: ARP conductance/viscosity relaxation (TBD)</li>
+        <li><b>Wave equation</b> — adjusted: propagation speed \(c\to c(t,\mathbf{x})\) (TBD)</li>
+        <li><b>Planck relation</b> — adjusted: \(\hbar\to \hbar(t)\) via dynamic-constants vector (TBD)</li>
+        <li><b>Ideal gas law</b> — adjusted: \(R\to R(t)\) or hidden state variable (TBD)</li>
+        <li><b>Poisson equation</b> — adjusted: adaptive permittivity / screening \(\lambda\) (TBD)</li>
+        <li><b>Boltzmann distribution</b> — adjusted: effective temperature under ARP (TBD)</li>
+      </ol>
+      <p><i>Note:</i> Tell me what you mean by “adjustments” (ARP-style damping terms? dynamic constants \(\mathbf{c}(t)\)? \(\pi_a\)-phase substitutions?), and I’ll rewrite these as explicit adjusted equations instead of placeholders.</p>
+    </td>
+  </tr>
+</table>
+
 ## Current Top Equations (All-Time)
 
 | Rank | Equation Name | Equation | Source | Score | Units | Theory | Animation | Image/Diagram | Description |
