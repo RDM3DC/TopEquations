@@ -217,6 +217,33 @@
       "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iθ_R,ij} to model sign flips under branch crossings.",
       "date": "2026-02-20",
       "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)"
+    },
+    {
+      "id": "eq-arp-phase-critical-collapse",
+      "name": "Phase-Coupled Stability Threshold Law",
+      "firstSeen": "2026-02",
+      "source": "derived: ARP + Phase-Lift + Adaptive-π",
+      "score": 82,
+      "scores": {
+        "novelty": 28,
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2πₐ. Predicts a sharp stability/transition-like behavior when θ_R approaches half-integer multiples of πₐ (maximal sin²). Assumptions: θ_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; πₐ sets the relevant phase period; λ has units 1/time.",
+      "date": "2026-02-20",
+      "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)"
     }
   ]
 }
