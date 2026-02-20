@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/2606973887_3111318134_223132457.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_3035512580_1719288904.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_2270382734_4228155206.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_3056504286_9889211.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_1917517889_2486753817.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_4047782312_3287035548.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-lyapunov-stability_20260220_050315/1080p60/partial_movie_files/AutoEquation/3976224540_1754310298_2308975333.mp4'
