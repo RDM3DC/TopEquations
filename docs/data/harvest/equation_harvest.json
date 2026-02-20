@@ -1,9 +1,9 @@
 {
   "stats": {
-    "unique": 463,
+    "unique": 403,
     "raw": 22205,
     "by_kind": {
-      "latex": 463
+      "latex": 403
     },
     "by_source_type": {
       "file": 15088
@@ -341,16 +341,6 @@
       "sha1": "05615915fd24a99e188a24d2c8408c36e2421fde"
     },
     {
-      "equation": "q(t),, \\text{flux}(t)",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\action.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "47d068d629dc6ed0c618bd72aa603a7b5aaf3b6d"
-    },
-    {
       "equation": "N = 100{,}000",
       "kind": "latex",
       "source_type": "file",
@@ -391,96 +381,6 @@
       "sha1": "f1bfe7deec90e9f8d608a78d1b95264826e279c8"
     },
     {
-      "equation": "), one finds",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "b7e79700287305bac28dcdc90f138695ef13fa9f"
-    },
-    {
-      "equation": "); on a hyperbolic plane with",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "9d61386bfc2b3e11b889d65ac8bd1bd35d041f13"
-    },
-    {
-      "equation": "sequential steps, the *angular residue*",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "dc6b539c8d3770150eecff4cc963439ce6f6d05a"
-    },
-    {
-      "equation": "as this gap (more formally,",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "04e7634aaa633d4734f215fd5518a9bd4cd6464c"
-    },
-    {
-      "equation": "rotation in the curved space). Equivalently,",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "b2995c464ad05fb08e370df8be891168131882e8"
-    },
-    {
-      "equation": "). In our prime detection framework,",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "dea6b88069fa14cd8396517bb2c89caa0f153fac"
-    },
-    {
-      "equation": "grows (larger",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "462562de6691ffef65bdf898a39cebcbc684946b"
-    },
-    {
-      "equation": "(no better than random guessing, since sensitivity ≈ (1–specificity)) up to",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "c3addc503a408a11d5a45cb6cbb5c35eae49d2d3"
-    },
-    {
-      "equation": "(perfect discrimination)6. A",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "6418c2853b600037ae7f161dc146475ab61621ec"
-    },
-    {
       "equation": "\\Delta\\phi_i \\;=\\; \\frac{2\\,\\pi_a(r_i)}{N},",
       "kind": "latex",
       "source_type": "file",
@@ -499,96 +399,6 @@
       "line_end": null,
       "context": null,
       "sha1": "d541bcbf1129cbe11938a16a6ca389d7792c8062"
-    },
-    {
-      "equation": "). For example, a term with period",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "08de645b2efd5c5df0419e45175f4082889c1dfa"
-    },
-    {
-      "equation": "up to the desired range (here",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "38068755f5dc299027eeb1a9498898aae686e95b"
-    },
-    {
-      "equation": ") with small",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "7f6c95c4db9eadb05f635842d8b650a5859060b5"
-    },
-    {
-      "equation": "(on the order of",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "8daa63289527d0bd5c8e44193809bb820abedee6"
-    },
-    {
-      "equation": "-step process but *without* adaptive",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "a492c3353c5fabe5d8bb91fa00b30ecdebaed957"
-    },
-    {
-      "equation": "(i.e. using a constant turning angle",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "c51e3ac181a60fc0dd346b9288dfb5b9bc177b78"
-    },
-    {
-      "equation": "(we use a fixed irrational multiple of",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3c0785d60f5d8e3c86eac83879fb21d0bdbd33ee"
-    },
-    {
-      "equation": "(this breaks any actual correlation between",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "75493d4a395ade68ab77a3da656233819f2d2e1f"
-    },
-    {
-      "equation": "(tuned manually). A log-scaled closure threshold",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "64a5ea8e4efe146882194e4c9749f58b689b3882"
     },
     {
       "equation": "\\le 100{,}000",
@@ -1091,16 +901,6 @@
       "sha1": "3d8d375f9536d1b5ec1c14f5d0d3ed321b6d7171"
     },
     {
-      "equation": "(u\\star v)\\star w",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\Curve Alphabet Encoder42.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "09ea61cb93ed7faeacb6b24eb70f0bb4d1354bc2"
-    },
-    {
       "equation": "X=\\{e_1,\\dots,e_n\\}",
       "kind": "latex",
       "source_type": "file",
@@ -1511,26 +1311,6 @@
       "sha1": "8345f9c1c35b19ee77748609a9024ab7c7f946f2"
     },
     {
-      "equation": ") dependent explicitly on the adaptive curvature",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\quantum state encoding framework.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "611222ad8397bf7eb02cfddafd631ad9df5c7621"
-    },
-    {
-      "equation": "* This relationship ties quantum scales (",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\quantum state encoding framework.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "200b557ea4de2a1986080b610929c082e45f5960"
-    },
-    {
       "equation": "\\dot G(t) = \\alpha\\,|I(t)| - \\mu\\,G(t)",
       "kind": "latex",
       "source_type": "file",
@@ -1741,16 +1521,6 @@
       "sha1": "f2eea075bd7aa117cc90f7db44db9921c559b32c"
     },
     {
-      "equation": "K(N)\\propto\\sqrt N",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\README.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "5b3e33527a610bc98f559dfaeb463845526b719c"
-    },
-    {
       "equation": "\\tilde G/\\tilde P\\approx 1.55",
       "kind": "latex",
       "source_type": "file",
@@ -1789,16 +1559,6 @@
       "line_end": null,
       "context": null,
       "sha1": "c2ed315f81b0660922690365cdf49e35fb793a2f"
-    },
-    {
-      "equation": "\\mathcal{C}(x, y, z, t)",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\soundedgood2.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "478239579932cc655ad08572f00e7e8d977fb226"
     },
     {
       "equation": "\\displaystyle \\frac{dG_{ij}}{dt}= \\alpha\\,|I_{ij}|-\\mu\\,G_{ij}",
@@ -2101,16 +1861,6 @@
       "sha1": "f016a9efa032e94748dacdc1bfce5f2234104be8"
     },
     {
-      "equation": "\\displaystyle \\frac{\\alpha}{\\mu}\\approx1.9184",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\top50.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3829e50fbbb3526e85a0d4df7c65e75dddf67b8f"
-    },
-    {
       "equation": "\\displaystyle \\text{SEQ\\_LEN}(t)=\\min\\!\\bigl(\\text{MAX},\\text{BASE}+s\\ln(1+G_{\\text{mean}}t)\\bigr)",
       "kind": "latex",
       "source_type": "file",
@@ -2381,36 +2131,6 @@
       "sha1": "6b417d1ad9a1315fba1f95bccddef9aa267d8d4d"
     },
     {
-      "equation": "depth --output \"batch_",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\APOLLONIAN_WORKFLOW_GUIDE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "a9012c02c6f22a99695217721643c11552790ece"
-    },
-    {
-      "equation": "{mode}_points.json\" --output \"batch_",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\APOLLONIAN_WORKFLOW_GUIDE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "f4f845d36ed8a16f43de303b3817eb0600b105d9"
-    },
-    {
-      "equation": "{mode}.obj\" --extrusion",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\APOLLONIAN_WORKFLOW_GUIDE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "bd26f52337f4519d9c8a16c3ff020fc7d3f33011"
-    },
-    {
       "equation": "P_h = (x, y, z, 1)^T, P' = M \\cdot P_h, M = \\begin{bmatrix} R & t \\\\ 0 & 1 \\end{bmatrix}",
       "kind": "latex",
       "source_type": "file",
@@ -2429,16 +2149,6 @@
       "line_end": null,
       "context": null,
       "sha1": "7887655371042dd6005ac7f4af7a3442155c6d09"
-    },
-    {
-      "equation": "S = M^T M, R = MS^{-1}",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\MATH_REFERENCE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "b85918fba0a80c9985c9d0a8059f3a279a10ea9d"
     },
     {
       "equation": "C(u) = \\sum_{i=0}^n B_{i,n}(u) \\cdot P_i, B_{i,n}(u) = \\binom{n}{i} u^i (1-u)^{n-i}",
@@ -2631,16 +2341,6 @@
       "sha1": "a2c27e6ffe6de1f1fb7a5e66dff0b5e5c6dc353a"
     },
     {
-      "equation": "ds^2 = g_{ij} dx^i dx^j",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\MATH_REFERENCE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "067e5cefdb2a42f490d721b37e53da15d8c1d9e1"
-    },
-    {
       "equation": "d(p, q) = \\int_0^1 \\sqrt{ \\dot{x}^i g_{ij} \\dot{x}^j } \\, dt",
       "kind": "latex",
       "source_type": "file",
@@ -2751,16 +2451,6 @@
       "sha1": "de92463afe644ba6833f00da90350974bb854ec8"
     },
     {
-      "equation": "P_i^{(r)} = (1-u)P_i^{(r-1)} + uP_{i+1}^{(r-1)}",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\MATH_REFERENCE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "ac07e37a4ba74ff7d4ad031fd02ad68b16c54890"
-    },
-    {
       "equation": "ds^2 = \\sum_{i,j=1}^{n} g_{ij}(x) dx^i dx^j",
       "kind": "latex",
       "source_type": "file",
@@ -2789,26 +2479,6 @@
       "line_end": null,
       "context": null,
       "sha1": "1637a4611a86a4aa9f466317d653f1507fbcc2cf"
-    },
-    {
-      "equation": "### Quaternions (rotation)",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\MATH_REFERENCE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "c59a3f045053d59972656fa4adbc6834840516a8"
-    },
-    {
-      "equation": "#### Norm (length)",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\MATH_REFERENCE.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3035011b09b32afad7999a3bb56483a973aeb083"
     },
     {
       "equation": "\\text{PRPoint} = (x, \\varphi, \\text{state})",
@@ -2909,16 +2579,6 @@
       "line_end": null,
       "context": null,
       "sha1": "f27f74dfb03849156bb597769a9b47fdccb7f520"
-    },
-    {
-      "equation": "as fixed input (so",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\AdaptiveCAD\\PHASE_RESOLVED_MODELING.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "80600ba6b34522ec8e2009b958f1530697bbb69f"
     },
     {
       "equation": "\\sigma_{\\pi}",
@@ -3271,46 +2931,6 @@
       "sha1": "cf9bdd503eeaf120a53465e53620b927abcd2953"
     },
     {
-      "equation": "has units of Siemens (S),",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\01-arp-ain.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "81fb6e955cb81c9ad1d251b4eb47dfba86f195fd"
-    },
-    {
-      "equation": "has units of Ohms (Ω), and",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\01-arp-ain.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "799a748dbf34f27a5aeb241f8feb8a9ffa3f7116"
-    },
-    {
-      "equation": "(and possibly",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\01-arp-ain.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "f72ecfb9a4bce9cb263d10e092d9506485809818"
-    },
-    {
-      "equation": "), while repeated voltage excursions increase",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\01-arp-ain.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "2be5813de043edea2d2d8f0def1e08b3ab7e15e2"
-    },
-    {
       "equation": "g_{ij}(x,t) = \\Omega(x,t)^2\\,\\delta_{ij},\\quad \\Omega(x,t) := \\frac{\\pi_a(x,t)}{\\pi}.",
       "kind": "latex",
       "source_type": "file",
@@ -3621,26 +3241,6 @@
       "sha1": "9b14db8554cf4ff3d2034d1fc5eb4e57f052012f"
     },
     {
-      "equation": "πₐ generalizes this to:",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\02-adaptive-pi-geometry.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3c39ad66e58cffad69cd570731ee1f75116ea482"
-    },
-    {
-      "equation": "be a unit director field (",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\02-adaptive-pi-geometry.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "c02847b6493cf2a23ee60c8ff3541d43512c98d7"
-    },
-    {
       "equation": "\\boxed{\\ M_k(s) := \\big(\\gamma(s),\\gamma'(s),\\gamma''(s),\\ldots,\\gamma^{(k)}(s)\\big).\\ }",
       "kind": "latex",
       "source_type": "file",
@@ -3751,16 +3351,6 @@
       "sha1": "abad0d151a2281ed88b7417b4e911d9bd1f54c93"
     },
     {
-      "equation": "P_t = P^{(0)}(a_t) + A\\,u(c_t)",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3e66833eb8fd0a9f319698bc7ced89a081dc7ed8"
-    },
-    {
       "equation": "d(\\hat\\Gamma,\\Gamma) = \\int_0^1 \\|\\kappa_{\\hat\\Gamma}(s)-\\kappa_{\\Gamma}(s)\\|^2\\,ds.",
       "kind": "latex",
       "source_type": "file",
@@ -3799,76 +3389,6 @@
       "line_end": null,
       "context": null,
       "sha1": "beb4832062ba67a940acca8887f52f336eb22463"
-    },
-    {
-      "equation": "In 3D, torsion can be defined (when",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "02cd11ca15cc0923eca95ca0e97002bf8c66dbfe"
-    },
-    {
-      "equation": "are well-behaved) by",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "1022bed304d386eb31cb64ddddac01200b04d376"
-    },
-    {
-      "equation": "). Define a deformation operator",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "c07f91f15cfe8695ac83271717f2854ffc5d8955"
-    },
-    {
-      "equation": ") or reinforce/decay (",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "6a0d3263f9939c565137f3797829670c18201d7e"
-    },
-    {
-      "equation": "- Curvature (arc-length):",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "ef8eefbb395588e5b2e9b7f8cbe624e17b799f1b"
-    },
-    {
-      "equation": "- Reinforce/decay:",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "279edb690da685adaa46be21c5ae522c6018d781"
-    },
-    {
-      "equation": "- Delta transform (bytes):",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\03-curve-memory-cma.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "b6bf1797aec6ed94bc4251bee6cd00312a05647e"
     },
     {
       "equation": "\\sqrt{z} = \\pm \\sqrt{r}\\,e^{i\\theta/2}",
@@ -4071,46 +3591,6 @@
       "sha1": "20609a3433ee095e1843a923721c69178af1cef7"
     },
     {
-      "equation": "(using a declared rule), then use that",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\04-phase-lift-pros.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "9ced98a1839adca947e88574457d9a8f52af74f2"
-    },
-    {
-      "equation": ") because the branch selection is encoded by",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\04-phase-lift-pros.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "4d5fb3ee89db279c71c620e1c2ee7b9940b2ea16"
-    },
-    {
-      "equation": "(or shifted by",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\04-phase-lift-pros.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "1f754bf3176fb3053b2a38b33eea98eb34f76c1f"
-    },
-    {
-      "equation": "3) Fourier kernel sign convention:",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\04-phase-lift-pros.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "1d18a32639e4f8c95fd0b0bae59456478a1e1fd9"
-    },
-    {
       "equation": "\\boxed{\\ \\frac{d\\tau}{dt} \\approx 1 + \\frac{1}{2}h(t).\\ }",
       "kind": "latex",
       "source_type": "file",
@@ -4271,16 +3751,6 @@
       "sha1": "7f56ae0dcb7c039adfb910d231bca99c08f69f19"
     },
     {
-      "equation": "\\Delta\\tau \\propto \\int h\\,dt",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\05-qps-gr-refresh-mapping.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "3b61b2455ee7fc4458b932d53d2ea7c8824b616b"
-    },
-    {
       "equation": "\\tau_{\\mathrm{coh}}",
       "kind": "latex",
       "source_type": "file",
@@ -4299,36 +3769,6 @@
       "line_end": null,
       "context": null,
       "sha1": "bc54ed6d01b43946bc34a3e961319656e1b7eefd"
-    },
-    {
-      "equation": "Higher frequency (",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\05-qps-gr-refresh-mapping.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "fc65a36f3a444368134b4949459af9c4adf62cba"
-    },
-    {
-      "equation": "(dimensionless), then",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\05-qps-gr-refresh-mapping.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "756326394155ed54dacf3825a0ea7ac27ec87521"
-    },
-    {
-      "equation": "(toy), giving",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\canonical-core\\papers\\05-qps-gr-refresh-mapping.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "bacddb75edd27718e900beb38685b183da2217b6"
     },
     {
       "equation": "d_\\pi = \\sum 1/\\pi",
@@ -4591,16 +4031,6 @@
       "sha1": "d45e3c2edcb2169156219ae796f94f1b0b42c235"
     },
     {
-      "equation": "(the steady-state gain factor):",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\graviton-PI_a\\docs\\steady_state_arp_dynamic.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "afcc18e19364b9a51e0528fcc077fc3bcbf9ae00"
-    },
-    {
       "equation": "### 2. Explaining the Discrepancy (",
       "kind": "latex",
       "source_type": "file",
@@ -4609,36 +4039,6 @@
       "line_end": null,
       "context": null,
       "sha1": "89161a53990536555e0254092eb25c5c338ef825"
-    },
-    {
-      "equation": ") because the cost term (",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\graviton-PI_a\\docs\\steady_state_arp_dynamic.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "4df1b7f6d88701604f8a5c11a18ae99126e1fc1b"
-    },
-    {
-      "equation": "(or slightly larger, depending on the required",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\graviton-PI_a\\docs\\steady_state_arp_dynamic.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "6269584eeddf12206e2295142fc256c8e310f045"
-    },
-    {
-      "equation": ") for a given",
-      "kind": "latex",
-      "source_type": "file",
-      "source": "C:\\Users\\RDM3D\\clawdad42\\graviton-PI_a\\docs\\steady_state_arp_dynamic.md",
-      "line_start": null,
-      "line_end": null,
-      "context": null,
-      "sha1": "e8a29d7a72b007adfc8b7a8e295f924b149bc840"
     }
   ]
 }
