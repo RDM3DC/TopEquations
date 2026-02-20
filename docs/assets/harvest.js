@@ -31,25 +31,35 @@
 
     for(let i=cursor;i<end;i++){
       const e = filtered[i];
+      const kind = (e.kind || 'equation');
+      const isLatex = kind.toLowerCase().includes('latex');
+      const src = e.source || '';
+      const ref = src ? `${src}${e.line_start ? `#L${e.line_start}` : ''}` : 'harvest-entry';
+      const eqLabel = isLatex ? 'Derived equation' : 'Expression';
+      const eqBody = isLatex ? `$$${esc(e.equation || '')}$$` : esc(e.equation || '');
+
       const card = document.createElement('section');
       card.className = 'card';
       card.innerHTML = `
         <div class='card__rank'>#${i+1}</div>
         <div class='card__body'>
           <div class='card__head'>
-            <h2 class='card__title'>${esc(e.kind || 'equation')}</h2>
+            <h2 class='card__title'>Harvested Equation</h2>
             <div class='card__meta'>
-              <span class='badge badge--score'>sha1 ${esc((e.sha1||'').slice(0,8))}</span>
+              <span class='badge badge--score'>${esc(kind)}</span>
               <span class='pill pill--neutral'>${esc(e.source_type || '')}</span>
             </div>
           </div>
           <div class='equation'>
-            <div class='equation__label'>Equation</div>
-            <div class='equation__tex'>$$${esc(e.equation)}$$</div>
+            <div class='equation__label'>${eqLabel}</div>
+            <div class='equation__tex'>${eqBody}</div>
           </div>
+          <div class='card__sub'>Reference: <span class='muted'>${esc(ref)}</span></div>
           <div class='grid'>
-            <div class='kv'><div class='k'>Source</div><div class='v'>${esc(e.source || '')}</div></div>
+            <div class='kv'><div class='k'>Source</div><div class='v'>${esc(src || 'unknown')}</div></div>
             <div class='kv'><div class='k'>Line</div><div class='v'>${esc(e.line_start || '')}</div></div>
+            <div class='kv'><div class='k'>SHA1</div><div class='v'>${esc((e.sha1||'').slice(0,12) || 'n/a')}</div></div>
+            <div class='kv'><div class='k'>Source type</div><div class='v'>${esc(e.source_type || 'file')}</div></div>
           </div>
         </div>
       `;

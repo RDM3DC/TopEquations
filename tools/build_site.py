@@ -514,7 +514,7 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
   <div id='harvestMeta' class='muted' style='margin-top:8px'>Loading…</div>
 </div>
 
-<div id='harvestList'></div>
+<div id='harvestList' class='cardrow'></div>
 
 <script defer src='./assets/harvest.js'></script>
 """
