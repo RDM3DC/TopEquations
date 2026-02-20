@@ -214,8 +214,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4"
       },
       "image": {
         "status": "planned",

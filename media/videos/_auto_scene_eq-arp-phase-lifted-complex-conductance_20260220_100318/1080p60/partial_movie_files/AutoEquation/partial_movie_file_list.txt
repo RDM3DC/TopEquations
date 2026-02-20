@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2257293077_300691411_223132457.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_2048989233_1911387114.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_3191006557_1770186074.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_1453860251_919094285.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_183267262_2412884659.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_804442464_2844581463.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_542122724_51984612.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_2067074014_1532925181.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_218012730_2056156699.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_1394298586_2664282153.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_3523043831_4039452867.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-phase-lifted-complex-conductance_20260220_100318/1080p60/partial_movie_files/AutoEquation/2135761390_1218579536_1481158033.mp4'
