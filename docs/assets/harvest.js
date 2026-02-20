@@ -7,6 +7,7 @@
   if(!listEl || !metaEl || !searchEl) return;
 
   const SRC = './data/harvest/equation_harvest.json';
+  const SCORED = './data/harvest/scored_candidates.json';
 
   let entries = [];
   let filtered = [];
@@ -163,9 +164,63 @@
     kindMode = latexOnlyEl.checked ? 'latex' : 'all';
   }
 
-  fetch(SRC)
-    .then(r => r.json())
-    .then(d => {
+  function renderScoredBox(scored){
+    if(!scored || !Array.isArray(scored.entries) || scored.entries.length===0) return;
+    const items = scored.entries.slice().sort((a,b)=> (b.score||0)-(a.score||0)).slice(0,60);
+
+    const box = document.createElement('section');
+    box.className = 'panel';
+    box.innerHTML = `
+      <h2>Scored harvest candidates (not promoted)</h2>
+      <div class='muted'>Showing top ${items.length} by score. Threshold promotions go to the ranked leaderboard.</div>
+      <div class='cardrow' style='margin-top:12px'>
+        ${items.map((e,idx)=>{
+          const eq = String(e.equation||'');
+          const src = String(e.source||'');
+          const title = inferTitle(eq, idx+1);
+          return `
+          <section class='card'>
+            <div class='card__rank'>S</div>
+            <div class='card__body'>
+              <div class='card__head'>
+                <h2 class='card__title'>${esc(title)}</h2>
+                <div class='card__meta'>
+                  <span class='badge badge--score'>Score ${esc(e.score||0)}</span>
+                  <span class='pill pill--neutral'>harvest</span>
+                </div>
+              </div>
+              <div class='equation'>
+                <div class='equation__label'>Equation</div>
+                <div class='equation__tex'>$$${esc(eq)}$$</div>
+              </div>
+              <div class='card__sub'>Source: <span class='muted'>${esc(compactPath(src))}</span></div>
+            </div>
+          </section>`;
+        }).join('')}
+      </div>
+    `;
+
+    // Insert above the search UI
+    metaEl.parentElement?.parentElement?.insertBefore(box, metaEl.parentElement);
+
+    if(window.renderMathInElement){
+      window.renderMathInElement(box, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\[', right: '\\]', display: true},
+          {left: '\\(', right: '\\)', display: false},
+        ],
+        throwOnError: false,
+      });
+    }
+  }
+
+  Promise.all([
+    fetch(SRC).then(r=>r.json()),
+    fetch(SCORED).then(r=> r.ok ? r.json() : null).catch(()=>null),
+  ])
+    .then(([d, scored]) => {
       entries = d.entries || [];
       // normalize expected fields
       entries = entries.map(x => ({
@@ -180,6 +235,8 @@
       const st = d.stats || {};
       const u = st.unique || entries.length;
       metaEl.textContent = `${u.toLocaleString()} unique harvested equations`;
+
+      renderScoredBox(scored);
       resetFilter();
     })
     .catch(err => {

@@ -479,13 +479,13 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
 
 def build_index(repo_root: Path, docs: Path) -> None:
-  data = _load_json_safe(repo_root / "data" / "equations.json", {"entries": []})
+    data = _load_json_safe(repo_root / "data" / "equations.json", {"entries": []})
     n = len(data.get("entries", []))
 
-  core = _load_json_safe(repo_root / "data" / "core.json", {"entries": []})
+    core = _load_json_safe(repo_root / "data" / "core.json", {"entries": []})
     core_n = len(core.get("entries", []))
 
-  harvest = _load_json_safe(repo_root / "data" / "harvest" / "equation_harvest.json", {"stats": {}, "entries": []})
+    harvest = _load_json_safe(repo_root / "data" / "harvest" / "equation_harvest.json", {"stats": {}, "entries": []})
     uniq = harvest.get("stats", {}).get("unique", "?")
 
     body = f"""
