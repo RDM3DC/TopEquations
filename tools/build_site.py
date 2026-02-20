@@ -265,6 +265,78 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         )
 
     body = """
+<div class='layout'>
+  <aside class='sidebar'>
+    <h2 class='sidebar__title'>Quick reference</h2>
+"""
+
+    if tier_lists["all_time"] or tier_lists["month"] or tier_lists["famous"]:
+        def _mini_list(items: list[str], collapsible: bool) -> str:
+            if not items:
+                return "<div class='muted'>(none)</div>"
+            out = []
+            for it in items:
+                if collapsible:
+                    # Collapse long entries by default; summary is the bold title if present.
+                    m = re.search(r"<b>(.*?)</b>", it, flags=re.I | re.S)
+                    title = m.group(1).strip() if m else "Details"
+                    out.append(
+                        "<details class='tieritem'>"
+                        f"<summary class='tieritem__summary'>{title}</summary>"
+                        f"<div class='tieritem__body'>{it}</div>"
+                        "</details>"
+                    )
+                else:
+                    out.append(f"<div class='tieritem tieritem--flat'>{it}</div>")
+            return "\n".join(out)
+
+        body += """
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Top This Month</h2>
+      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
+    </div>
+    <div class='tierstack tierstack--compact'>
+""" + _mini_list(tier_lists["month"], collapsible=False) + """
+    </div>
+  </div>
+</section>
+
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Famous Equations (Adjusted)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Expandable</span></div>
+    </div>
+    <div class='tierstack tierstack--compact'>
+""" + _mini_list(tier_lists["famous"], collapsible=True) + """
+    </div>
+  </div>
+</section>
+
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Top Equations (All-Time)</h2>
+      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
+    </div>
+    <div class='tierstack tierstack--compact'>
+""" + _mini_list(tier_lists["all_time"], collapsible=False) + """
+    </div>
+  </div>
+</section>
+"""
+
+    body += """
+
+  </aside>
+
+  <section class='maincol'>
+
 <div class='hero'>
   <div class='hero__left'>
     <h1>Two-tier structure</h1>
@@ -292,75 +364,6 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     </div>
   </div>
 </div>
-"""
-
-    if tier_lists["all_time"] or tier_lists["month"] or tier_lists["famous"]:
-        def _mini_list(items: list[str], collapsible: bool) -> str:
-            if not items:
-                return "<div class='muted'>(none)</div>"
-            out = []
-            for it in items:
-                if collapsible:
-                    # Collapse long entries by default; summary is the bold title if present.
-                    m = re.search(r"<b>(.*?)</b>", it, flags=re.I | re.S)
-                    title = m.group(1).strip() if m else "Details"
-                    out.append(
-                        "<details class='tieritem'>"
-                        f"<summary class='tieritem__summary'>{title}</summary>"
-                        f"<div class='tieritem__body'>{it}</div>"
-                        "</details>"
-                    )
-                else:
-                    out.append(f"<div class='tieritem tieritem--flat'>{it}</div>")
-            return "\n".join(out)
-
-        body += """
-<h2 style='margin-top:18px'>Tier Lists</h2>
-<div class='cardrow'>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top Equations (All-Time)</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack'>
-""" + _mini_list(tier_lists["all_time"], collapsible=False) + """
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top This Month</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack'>
-""" + _mini_list(tier_lists["month"], collapsible=False) + """
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Famous Equations (Adjusted)</h2>
-      <div class='card__meta'><span class='pill pill--warn'>Expandable</span></div>
-    </div>
-    <div class='tierstack'>
-""" + _mini_list(tier_lists["famous"], collapsible=True) + """
-    </div>
-  </div>
-</section>
-
-</div>
-"""
-
-    body += """
 
 <h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
 <div id='coreCards' class='cardrow'>
@@ -370,6 +373,9 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 <h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
+</div>
+
+  </section>
 </div>
 """
 
