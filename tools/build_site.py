@@ -211,24 +211,24 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
         body_html = body_html.lstrip("<br/>").strip()
 
-      # Extract one primary math expression to keep card equation format consistent.
-      equation_expr = ""
-      for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
-        mm = re.search(pat, body_html, flags=re.S)
-        if mm:
-          equation_expr = mm.group(1).strip()
-          break
-      if not equation_expr:
-        equation_expr = "(pending)"
+        # Extract one primary math expression to keep card equation format consistent.
+        equation_expr = ""
+        for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
+            mm = re.search(pat, body_html, flags=re.S)
+            if mm:
+                equation_expr = mm.group(1).strip()
+                break
+        if not equation_expr:
+            equation_expr = "(pending)"
 
-      # Description should be plain text to avoid KaTeX error styling.
-      desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
-      desc_text = re.sub(r"<[^>]+>", " ", desc_text)
-      desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
-      desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
-      desc_text = re.sub(r"\s+", " ", desc_text).strip()
-      if not desc_text:
-        desc_text = "Classic equation reformulated in your adjusted framework."
+        # Description should be plain text to avoid KaTeX error styling.
+        desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
+        desc_text = re.sub(r"<[^>]+>", " ", desc_text)
+        desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
+        desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
+        desc_text = re.sub(r"\s+", " ", desc_text).strip()
+        if not desc_text:
+            desc_text = "Classic equation reformulated in your adjusted framework."
 
         famous_cards.append(
             f"""
