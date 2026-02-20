@@ -28,6 +28,22 @@ def _esc(s: object) -> str:
     return html.escape(str(s) if s is not None else "")
 
 
+def _load_json_safe(path: Path, default: dict | list | None = None):
+  """Load JSON defensively; recover first valid object if trailing/corrupt text exists."""
+  if default is None:
+    default = {}
+  try:
+    return json.loads(path.read_text(encoding="utf-8"))
+  except Exception:
+    try:
+      raw = path.read_text(encoding="utf-8")
+      dec = json.JSONDecoder()
+      obj, _ = dec.raw_decode(raw)
+      return obj
+    except Exception:
+      return default
+
+
 def _badge(text: str, kind: str) -> str:
     return f"<span class='badge badge--{kind}'>{_esc(text)}</span>"
 
@@ -132,7 +148,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
 
     # Tier 1: Canonical Core (pinned, non-ranked)
     core_path = repo_root / "data" / "core.json"
-    core = json.loads(core_path.read_text(encoding="utf-8"))
+    core = _load_json_safe(core_path, {"entries": []})
     core_entries = list(core.get("entries", []))
 
     core_cards: list[str] = []
@@ -204,7 +220,7 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
     famous_path = repo_root / "data" / "famous_equations.json"
     if famous_path.exists():
         try:
-            data = json.loads(famous_path.read_text(encoding="utf-8"))
+            data = _load_json_safe(famous_path, {"entries": []})
             out = []
             for e in data.get("entries", []):
                 out.append(
@@ -463,13 +479,13 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
 
 def build_index(repo_root: Path, docs: Path) -> None:
-    data = json.loads((repo_root / "data" / "equations.json").read_text(encoding="utf-8"))
+  data = _load_json_safe(repo_root / "data" / "equations.json", {"entries": []})
     n = len(data.get("entries", []))
 
-    core = json.loads((repo_root / "data" / "core.json").read_text(encoding="utf-8"))
+  core = _load_json_safe(repo_root / "data" / "core.json", {"entries": []})
     core_n = len(core.get("entries", []))
 
-    harvest = json.loads((repo_root / "data" / "harvest" / "equation_harvest.json").read_text(encoding="utf-8"))
+  harvest = _load_json_safe(repo_root / "data" / "harvest" / "equation_harvest.json", {"stats": {}, "entries": []})
     uniq = harvest.get("stats", {}).get("unique", "?")
 
     body = f"""
@@ -518,6 +534,12 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
     dst_json = docs / "data" / "harvest" / "equation_harvest.json"
     dst_json.parent.mkdir(parents=True, exist_ok=True)
     dst_json.write_text(src_json.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy scored candidates (not promoted) if present.
+    src_scored = repo_root / "data" / "harvest" / "scored_candidates.json"
+    dst_scored = docs / "data" / "harvest" / "scored_candidates.json"
+    if src_scored.exists():
+        dst_scored.write_text(src_scored.read_text(encoding="utf-8"), encoding="utf-8")
 
     body = """
 <div class='hero'>
