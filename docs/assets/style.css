@@ -140,25 +140,26 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
   overflow:hidden;
 }
 
-/* Horizontal card rows: show ~3 cards across, scroll for more */
+/* Card rows: true grid layout (3 columns desktop) */
 .cardrow{
   margin-top:14px;
-  display:flex;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:14px;
-  overflow-x:auto;
-  padding-bottom:10px;
-  scroll-snap-type:x mandatory;
 }
-.cardrow::-webkit-scrollbar{height:10px}
-.cardrow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:999px}
-.cardrow::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:999px}
-.cardrow > .card{flex:0 0 auto; min-width: min(360px, 88vw); scroll-snap-align:start}
-@media (min-width: 980px){
-  .cardrow > .card{min-width: calc((1100px - 28px)/3)}
+.cardrow > .card{min-width:0}
+
+/* Keep metadata legible inside dense card grids */
+.cardrow .grid{grid-template-columns:1fr 1fr}
+.cardrow .grid .kv:first-child{grid-column:1 / -1}
+
+@media (max-width: 1200px){
+  .cardrow{grid-template-columns: repeat(2, minmax(0, 1fr));}
 }
-.card--core .card__rank{
-  background: linear-gradient(180deg, rgba(53,208,127,.22), rgba(142,230,255,.08));
+@media (max-width: 860px){
+  .cardrow{grid-template-columns: 1fr;}
 }
+/* Core cards now use the same visual card style as ranked cards */
 .card__rank{
   width:74px;
   display:flex; align-items:center; justify-content:center;

@@ -167,7 +167,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         url = e.get("sourceUrl", "")
         core_cards.append(
             f"""
-<section class='card card--core'>
+<section class='card'>
   <div class='card__rank'>CORE</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -181,9 +181,10 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
       <div class='equation__label'>Canonical equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
-    <p class='card__desc'>{_esc(desc)}</p>
+    <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
     <div class='grid'>
-      <div class='kv'><div class='k'>Source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
+      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
     </div>
   </div>
 </section>
