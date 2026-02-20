@@ -196,14 +196,14 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
 
+    <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
+
     <div class='grid'>
-      <div class='kv'><div class='k'>Source</div><div class='v'>{_esc(src)}</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>{_esc(date)}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
     </div>
-
-    <p class='card__desc'>{_esc(desc)}</p>
   </div>
 </section>
 """
