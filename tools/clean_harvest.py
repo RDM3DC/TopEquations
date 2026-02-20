@@ -35,6 +35,20 @@ MATH_SIGNAL = re.compile(
 )
 
 MOSTLY_WORDS = re.compile(r"^[A-Za-z\s,;:\-']+$")
+WORD_TOKEN = re.compile(r"[A-Za-z]+")
+
+# Strong math markers: equations/relations and explicit symbolic structure.
+STRONG_MATH = re.compile(
+    r"(\\[a-zA-Z]+)|"  # LaTeX commands
+    r"[=<>±≈∝→←↔]|"     # explicit relations
+    r"\b(d/d|dx|dt)\b|"  # derivative-style markers
+    r"[\+\-\*/\^_]"  # operators/subscripts/superscripts
+)
+
+PROSE_PREFIX = re.compile(
+    r"^(for\s+|and\s+|to\s+|can\s+|is\s+|example\s*:|implementation\s+note)",
+    re.IGNORECASE,
+)
 
 
 def is_bad(eq: object) -> bool:
@@ -53,6 +67,21 @@ def is_bad(eq: object) -> bool:
 
     # Require at least some math signal.
     if not MATH_SIGNAL.search(s):
+        return True
+
+    # Drop sentence-like prose false positives that contain weak math hints
+    # but no strong equation structure.
+    words = len(WORD_TOKEN.findall(s))
+    has_strong = bool(STRONG_MATH.search(s))
+    if words >= 8 and not has_strong:
+        return True
+
+    # Common prose lead-ins from extracted narrative text.
+    if PROSE_PREFIX.search(s) and not has_strong:
+        return True
+
+    # Full-sentence style text with weak/no symbolic relation is usually junk.
+    if s.endswith((".", ";")) and words >= 8 and not has_strong:
         return True
 
     # Super-short fragments are usually junk.
