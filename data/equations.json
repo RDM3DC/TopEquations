@@ -72,8 +72,8 @@
       "units": "OK",
       "theory": "PASS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-temp-conductance.mp4"
       },
       "image": {
         "status": "planned",
