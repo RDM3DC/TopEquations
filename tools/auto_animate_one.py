@@ -60,11 +60,27 @@ class AutoEquation(Scene):
 
 
 def pick_entry(data: dict) -> dict | None:
-    for e in data.get("entries", []):
+    # Priority bump: animate this one first if it hasn't been animated yet.
+    priority_ids = [
+        "eq-arp-phase-critical-collapse",  # Phase-Coupled Stability Threshold Law
+    ]
+
+    entries = list(data.get("entries", []))
+
+    for pid in priority_ids:
+        for e in entries:
+            if e.get("id") == pid:
+                anim = e.get("animation") or {}
+                path = (anim.get("path") or "").strip()
+                if not path:
+                    return e
+
+    for e in entries:
         anim = e.get("animation") or {}
         path = (anim.get("path") or "").strip()
         if not path:
             return e
+
     return None
 
 
