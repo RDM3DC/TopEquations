@@ -40,6 +40,14 @@
       "description": "Track winding number and its Z2 parity as invariants under continuous deformation (unless passing through singularities).",
       "source": "canonical-core papers 02/04",
       "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/"
+    },
+    {
+      "id": "core-phase-lifted-stokes",
+      "name": "Phase-Lifted Stokes Quantization (Adaptive-π)",
+      "equationLatex": "\\theta_R[\\gamma]:=\\mathrm{unwrap}\\!\\left(\\oint_{\\gamma} A\\,;\\theta_{\\rm ref}\\right)=\\int_{S:\\,\\partial S=\\gamma}F+2\\pi_a\\,w,\\quad w\\in\\mathbb{Z},\\quad b(\\gamma)=(-1)^w",
+      "description": "Turns the usual Stokes/holonomy statement ‘mod 2π’ into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-π generalizes the period to 2πₐ.",
+      "source": "canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
     }
   ]
 }
