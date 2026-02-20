@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>TopEquations</title>
+  <link rel='stylesheet' href='./assets/style.css' />
+  <script defer src='./assets/app.js'></script>
+</head>
+<body>
+  <header class='topbar'>
+    <div class='wrap topbar__inner'>
+      <div class='brand'>
+        <div class='brand__mark'>∑</div>
+        <div class='brand__text'>
+          <div class='brand__title'>TopEquations</div>
+          <div class='brand__sub'>Curated leaderboard + harvested registry</div>
+        </div>
+      </div>
+      <nav class='nav'>
+        <a href='./index.html'>Home</a>
+        <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./harvest_preview.html'>Harvest preview</a>
+        <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class='wrap'>
+    
+<div class='hero hero--home'>
+  <div class='hero__left'>
+    <h1>TopEquations</h1>
+    <p>A polished GitHub Pages view of the curated leaderboard, plus a raw harvested registry for discovery.</p>
+    <div class='cta'>
+      <a class='btn' href='./leaderboard.html'>View Leaderboard</a>
+      <a class='btn btn--ghost' href='./harvest_preview.html'>Harvest Preview</a>
+    </div>
+  </div>
+  <div class='hero__right'>
+    <div class='statbox'>
+      <div class='stat'>
+        <div class='stat__num'>7</div>
+        <div class='stat__label'>Curated equations</div>
+      </div>
+      <div class='stat'>
+        <div class='stat__num'>15088</div>
+        <div class='stat__label'>Harvested unique candidates</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='panel'>
+  <h2>How it works</h2>
+  <ul>
+    <li><strong>Curated leaderboard</strong> lives in <code>data/equations.json</code> (human-reviewed).</li>
+    <li><strong>Raw harvest</strong> lives in <code>data/harvest/equation_harvest.json</code> (machine-extracted, deduped).</li>
+    <li>Pages is served from <code>/docs</code>.</li>
+  </ul>
+</div>
+
+    <footer class='footer'>
+      <div>Last built: <strong>2026-02-20 03:31</strong></div>
+    </footer>
+  </main>
+</body>
+</html>

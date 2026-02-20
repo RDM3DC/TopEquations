@@ -1,0 +1,155 @@
+:root{
+  --bg0:#070A12;
+  --bg1:#0B1020;
+  --card:#0F1733;
+  --text:#EAF0FF;
+  --muted:#A9B3D6;
+  --line:rgba(255,255,255,.10);
+  --a:#8EE6FF;
+  --good:#35D07F;
+  --warn:#FFB020;
+  --bad:#FF4D6D;
+  --accent:#7C5CFF;
+  --accent2:#FF4DCA;
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background:
+    radial-gradient(1100px 900px at 10% 0%, rgba(124,92,255,.25), transparent 60%),
+    radial-gradient(900px 700px at 90% 10%, rgba(255,77,202,.18), transparent 55%),
+    radial-gradient(900px 700px at 40% 90%, rgba(142,230,255,.12), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+a{color:var(--a); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1100px; margin:0 auto; padding:24px}
+
+.topbar{
+  position:sticky; top:0; z-index:5;
+  background: rgba(7,10,18,.55);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar__inner{display:flex; align-items:center; justify-content:space-between; gap:18px}
+.brand{display:flex; align-items:center; gap:12px}
+.brand__mark{
+  width:38px; height:38px; border-radius:12px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(142,230,255,.85));
+  color:#081026; font-weight:900;
+  box-shadow: var(--shadow);
+}
+.brand__title{font-weight:800; letter-spacing:.2px}
+.brand__sub{font-size:12px; color:var(--muted)}
+.nav{display:flex; gap:14px; align-items:center}
+.nav a{padding:8px 10px; border-radius:10px; border:1px solid transparent; color:var(--text)}
+.nav a:hover{border-color:var(--line); background:rgba(255,255,255,.04); text-decoration:none}
+.nav__ghost{border-color:rgba(142,230,255,.25) !important}
+
+.hero{
+  margin-top:14px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
+  display:flex; justify-content:space-between; gap:20px; align-items:center;
+}
+.hero--home{min-height:220px}
+.hero h1{margin:0 0 6px 0; font-size:36px; letter-spacing:.2px}
+.hero p{margin:0; color:var(--muted); line-height:1.4}
+
+.cta{display:flex; gap:12px; margin-top:14px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px; border-radius:12px;
+  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(255,77,202,.85));
+  color:#0b0f22; font-weight:800;
+  border:1px solid rgba(255,255,255,.12);
+}
+.btn:hover{text-decoration:none; filter:brightness(1.03)}
+.btn--ghost{background: rgba(255,255,255,.04); color:var(--text)}
+
+.panel{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: rgba(15,23,51,.45);
+}
+.panel h2{margin:4px 0 10px 0}
+.panel ul{margin:8px 0 0 18px; color:var(--muted)}
+code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; border:1px solid rgba(255,255,255,.10)}
+
+.statbox{display:grid; grid-template-columns:1fr 1fr; gap:12px; min-width:320px}
+.stat{padding:14px; border-radius:16px; border:1px solid var(--line); background: rgba(255,255,255,.03)}
+.stat__num{font-size:30px; font-weight:900}
+.stat__label{color:var(--muted); font-size:12px}
+
+.search input{
+  width:min(420px, 80vw);
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.25);
+  color:var(--text);
+  outline:none;
+}
+.search input:focus{border-color:rgba(142,230,255,.45)}
+
+.card{
+  margin-top:14px;
+  display:flex; gap:14px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background: rgba(15,23,51,.55);
+  box-shadow: 0 10px 34px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.card__rank{
+  width:74px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:18px;
+  background: linear-gradient(180deg, rgba(124,92,255,.35), rgba(142,230,255,.10));
+  border-right:1px solid var(--line);
+}
+.card__body{flex:1; padding:16px 16px 14px 16px}
+.card__head{display:flex; justify-content:space-between; gap:14px; align-items:flex-start}
+.card__title{margin:0; font-size:20px; letter-spacing:.2px}
+.card__meta{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+.card__desc{margin:10px 0 0 0; color:var(--muted)}
+
+.badge{font-size:12px; font-weight:800; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.14)}
+.badge--score{background: rgba(142,230,255,.08)}
+
+.pill{font-size:12px; font-weight:900; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.14)}
+.pill--good{background: rgba(53,208,127,.12); border-color: rgba(53,208,127,.35)}
+.pill--warn{background: rgba(255,176,32,.12); border-color: rgba(255,176,32,.35)}
+.pill--bad{background: rgba(255,77,109,.12); border-color: rgba(255,77,109,.35)}
+.pill--neutral{background: rgba(255,255,255,.06)}
+
+.equation{margin-top:10px; border:1px solid rgba(255,255,255,.10); border-radius:16px; background: rgba(0,0,0,.22)}
+.equation__label{padding:10px 12px; color:var(--muted); font-size:12px; border-bottom:1px solid rgba(255,255,255,.08)}
+.equation__tex{margin:0; padding:12px; overflow:auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:13px; line-height:1.35}
+
+.grid{display:grid; grid-template-columns:1.4fr 0.7fr 0.6fr 0.7fr; gap:10px; margin-top:12px}
+.kv{padding:10px 12px; border:1px solid rgba(255,255,255,.08); border-radius:16px; background: rgba(255,255,255,.03)}
+.k{color:var(--muted); font-size:12px}
+.v{margin-top:4px; font-size:13px}
+
+.footer{margin:22px 0 10px 0; color:var(--muted); font-size:12px; text-align:center}
+
+@media (max-width: 860px){
+  .hero{flex-direction:column; align-items:stretch}
+  .statbox{min-width:unset}
+  .grid{grid-template-columns:1fr 1fr}
+  .card__head{flex-direction:column}
+  .card__meta{justify-content:flex-start}
+  .card__rank{width:62px}
+}
