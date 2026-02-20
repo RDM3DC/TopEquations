@@ -2,6 +2,7 @@
   "entries": [
     {
       "name": "Schrodinger (without i via Madelung + Phase-Lift)",
+      "score": 84,
       "equationLatex": "\\partial_t\\rho+\\nabla\\cdot(\\rho\\,\\mathbf v)=0,\\quad \\hbar\\,\\partial_t\\phi+\\frac{m}{2}\\mathbf v^2+V+Q[\\rho]=0",
       "description": "Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -14,6 +15,7 @@
     },
     {
       "name": "Aharonov-Bohm phase (Phase-Lifted)",
+      "score": 81,
       "equationLatex": "\\theta_R[\\gamma]=\\mathrm{unwrap}\\!\\big(\\frac{q}{\\hbar}\\oint_\\gamma \\mathbf A\\cdot d\\mathbf\\ell;\\theta_{\\rm ref},\\pi_a\\big)=\\frac{q}{\\hbar}\\int_S \\mathbf B\\cdot d\\mathbf S + 2\\pi_a w",
       "description": "Phase-Lifted AB phase relation with explicit winding sector.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -26,6 +28,7 @@
     },
     {
       "name": "Berry phase / overlap product (no multivalued Arg)",
+      "score": 79,
       "equationLatex": "\\theta_R[\\gamma]=\\sum_k \\mathrm{unwrap}\\!(\\Arg\\langle\\psi_{k+1}|\\psi_k\\rangle;\\theta_{\\rm ref},\\pi_a)",
       "description": "Discrete Berry-phase accumulation with unwrapped phase tracking.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -38,6 +41,7 @@
     },
     {
       "name": "Josephson relations (Phase-Lift + adaptive-pi)",
+      "score": 76,
       "equationLatex": "I=I_c\\sin\\!\\big(\\frac{\\pi}{\\pi_a}\\theta_R\\big),\\quad \\frac{d}{dt}\\big(\\frac{\\pi}{\\pi_a}\\theta_R\\big)=\\frac{2e}{\\hbar}V",
       "description": "Adaptive-pi phase dynamics inserted into Josephson current/voltage relations.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -50,6 +54,7 @@
     },
     {
       "name": "Path integral with Phase-Lift sectors",
+      "score": 74,
       "equationLatex": "Z=\\sum_{w\\in\\mathbb Z}\\int \\mathcal D\\rho\\,\\mathcal D\\theta_R\\,\\mathcal D\\pi_a\\; e^{\\frac{i}{\\hbar}S_{PL}[\\rho,\\theta_R,\\pi_a]}\\;\\delta(\\theta_R(T)-\\theta_R(0)-2\\pi_a w)",
       "description": "Sector-aware path integral with explicit winding constraint.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -62,6 +67,7 @@
     },
     {
       "name": "U(N) holonomy split (Phase-Lift det-phase)",
+      "score": 72,
       "equationLatex": "U(\\gamma)=e^{i\\varphi}V, V\\in SU(N), \\theta_R:=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a), w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
       "description": "Separates determinant phase and tracks lifted winding in U(N) holonomy.",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -74,6 +80,7 @@
     },
     {
       "name": "Klein-Gordon (polar split + Phase-Lift)",
+      "score": 68,
       "equationLatex": "(\\Box+\\frac{m^2c^2}{\\hbar^2})\\psi=0,\\quad \\psi^{PL}=\\sqrt\\rho\\,e^{i\\phi}, \\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
       "description": "Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping.",
       "theory": "PASS-WITH-ASSUMPTIONS",

@@ -231,6 +231,7 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                       "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
                       "definitions": str(e.get("definitions", "")).strip(),
                       "caveat": str(e.get("caveat", "")).strip(),
+                      "score": e.get("score", ""),
                       "assumptions": e.get("assumptions", []),
                     }
                 )
@@ -270,6 +271,7 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                 "theory": "PASS-WITH-ASSUMPTIONS",
                 "definitions": "",
                 "caveat": "",
+                "score": "",
                 "assumptions": [],
             }
         )
@@ -278,6 +280,7 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
 
 def build_famous(repo_root: Path, docs: Path) -> None:
     famous_entries = _load_famous_entries(repo_root)
+    famous_entries.sort(key=lambda x: float(x.get("score", 0) or 0), reverse=True)
 
     famous_cards: list[str] = []
     for idx, e in enumerate(famous_entries, start=1):
@@ -286,6 +289,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
         definitions = e.get("definitions", "") or ""
         caveat = e.get("caveat", "") or ""
+        score = e.get("score", "")
         theory = (e.get("theory", "PASS-WITH-ASSUMPTIONS") or "PASS-WITH-ASSUMPTIONS").upper()
         assumptions = e.get("assumptions", []) or []
         if not isinstance(assumptions, list):
@@ -305,6 +309,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
     <div class='card__head'>
       <h2 class='card__title'>{_esc(title)}</h2>
       <div class='card__meta'>
+        <span class='badge badge--score'>{_esc(f'Score {score}' if str(score).strip() else 'Score n/a')}</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--{theory_css}'>{_esc(theory)}</span>
         <span class='pill pill--warn'>Adjusted</span>
