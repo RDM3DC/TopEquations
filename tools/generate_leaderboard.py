@@ -135,6 +135,17 @@ def main() -> None:
     output_path = repo_root / "leaderboard.md"
     generate(input_path, output_path)
 
+    # Keep GitHub Pages (/docs) in sync if present.
+    docs_dir = repo_root / "docs"
+    if docs_dir.exists():
+        try:
+            from tools.sync_docs import main as _sync_docs  # type: ignore
+
+            _sync_docs()
+        except Exception:
+            # Best-effort sync; leaderboard generation should still succeed.
+            pass
+
 
 if __name__ == "__main__":
     main()
