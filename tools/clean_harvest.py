@@ -24,25 +24,28 @@ REPO = Path(__file__).resolve().parents[1]
 HARVEST = REPO / "data" / "harvest" / "equation_harvest.json"
 
 # Heuristics: keep items that look like actual math.
-MATH_SIGNAL = re.compile(
-    r"(\\[a-zA-Z]+)|"  # LaTeX commands
-    r"[=<>±≈∝→←↔]|"     # relations
-    r"[\d]|"           # numbers
-    r"[\+\-\*/\^_]|" # operators / latex subscripts
-    r"[()\[\]{}]|"     # grouping
-    r"[αβγδλμνπϕφθκΩΔΣΓ]|"  # common greek glyphs
-    r"(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)"
+# "Strong" signal excludes bare digits/list markers.
+STRONG_SIGNAL = re.compile(
+    r"[=<>±≈∝→←↔]|"          # relations
+    r"[\+\*/\^_]|"          # operators / latex subscripts (exclude '-' because it appears in prose)
+    r"[()\[\]{}]|"          # grouping
+    r"[αβγδλμνπϕφθκΩΔΣΓ]|"   # common greek glyphs
+    r"(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)"  # math commands
 )
+
+WEAK_PROSE = re.compile(r"^[A-Za-z\s:;,'\-]+$")
+
+# Markdown-ish junk captured from $...$ or bracket blocks
+MD_JUNK = re.compile(r"^\s*(\d+\.|[-*])\s+\*\*.*\*\*\s*$")
 
 MOSTLY_WORDS = re.compile(r"^[A-Za-z\s,;:\-']+$")
 WORD_TOKEN = re.compile(r"[A-Za-z]+")
 
-# Strong math markers: equations/relations and explicit symbolic structure.
-STRONG_MATH = re.compile(
-    r"(\\[a-zA-Z]+)|"  # LaTeX commands
-    r"[=<>±≈∝→←↔]|"     # explicit relations
-    r"\b(d/d|dx|dt)\b|"  # derivative-style markers
-    r"[\+\-\*/\^_]"  # operators/subscripts/superscripts
+# Extra structural math markers (beyond STRONG_SIGNAL)
+STRUCTURE = re.compile(
+    r"(\\frac|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt)|"
+    r"\b(d/d|dx|dt)\b|"
+    r"[=<>±≈∝→←↔]"
 )
 
 PROSE_PREFIX = re.compile(
@@ -61,27 +64,30 @@ def is_bad(eq: object) -> bool:
     if low in {"none", "null"}:
         return True
 
-    # If it's basically plain English with no math markers, drop it.
-    if MOSTLY_WORDS.match(s) and not MATH_SIGNAL.search(s):
+    # Markdown-ish junk
+    if MD_JUNK.match(s) or "**" in s:
         return True
 
-    # Require at least some math signal.
-    if not MATH_SIGNAL.search(s):
+    # Drop weak prose strings (letters/punct only) unless they have real structure.
+    if WEAK_PROSE.match(s) and not STRUCTURE.search(s):
         return True
 
-    # Drop sentence-like prose false positives that contain weak math hints
-    # but no strong equation structure.
+    # Require at least some strong math signal.
+    if not STRONG_SIGNAL.search(s):
+        return True
+
+    # Drop sentence-like prose false positives.
     words = len(WORD_TOKEN.findall(s))
-    has_strong = bool(STRONG_MATH.search(s))
-    if words >= 8 and not has_strong:
+    has_structure = bool(STRUCTURE.search(s))
+    if words >= 8 and not has_structure:
         return True
 
     # Common prose lead-ins from extracted narrative text.
-    if PROSE_PREFIX.search(s) and not has_strong:
+    if PROSE_PREFIX.search(s) and not has_structure:
         return True
 
     # Full-sentence style text with weak/no symbolic relation is usually junk.
-    if s.endswith((".", ";")) and words >= 8 and not has_strong:
+    if s.endswith((".", ";")) and words >= 8 and not has_structure:
         return True
 
     # Super-short fragments are usually junk.
