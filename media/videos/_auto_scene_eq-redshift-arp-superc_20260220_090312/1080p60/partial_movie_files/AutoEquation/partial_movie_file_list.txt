@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2257293077_410092959_223132457.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_4218272166_3608591253.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_554105038_3067579685.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_1453860251_4139805071.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_3399386413_1400555791.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_804442464_998932620.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_47289703_1113604505.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_2067074014_1149569312.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_218012730_3191424395.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_232097274_1908189452.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_3523043831_2848996044.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-redshift-arp-superc_20260220_090312/1080p60/partial_movie_files/AutoEquation/2135761390_1218579536_3265934535.mp4'

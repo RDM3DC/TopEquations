@@ -187,8 +187,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-redshift-arp-superc.mp4"
       },
       "image": {
         "status": "planned",
