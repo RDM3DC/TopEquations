@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2257293077_2725495512_223132457.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_3644171238_716920928.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_3650955139_3122828488.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_1453860251_983814687.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_639585382_3318265383.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_804442464_294928923.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_3998243884_1271742214.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_2067074014_2330451362.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_218012730_3789476661.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_232097274_3649372292.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_3523043831_3338909510.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-curve-memory-137_20260220_070311/1080p60/partial_movie_files/AutoEquation/2135761390_1218579536_3539520600.mp4'
