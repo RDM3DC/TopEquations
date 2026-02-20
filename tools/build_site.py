@@ -228,11 +228,16 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                         "name": str(e.get("name", "")).strip(),
                         "equationLatex": str(e.get("equationLatex", "")).strip(),
                         "description": str(e.get("description", "")).strip(),
-                      "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
-                      "definitions": str(e.get("definitions", "")).strip(),
-                      "caveat": str(e.get("caveat", "")).strip(),
-                      "score": e.get("score", ""),
-                      "assumptions": e.get("assumptions", []),
+                        "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
+                        "definitions": str(e.get("definitions", "")).strip(),
+                        "caveat": str(e.get("caveat", "")).strip(),
+                        "novelty": e.get("novelty", 0),
+                        "tractability": e.get("tractability", 0),
+                        "plausibility": e.get("plausibility", 0),
+                        "units": str(e.get("units", "WARN")).strip(),
+                        "animation": e.get("animation", "planned"),
+                        "image": e.get("image", "planned"),
+                        "assumptions": e.get("assumptions", []),
                     }
                 )
             if out:
@@ -271,25 +276,68 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                 "theory": "PASS-WITH-ASSUMPTIONS",
                 "definitions": "",
                 "caveat": "",
-                "score": "",
+                "novelty": 20,
+                "tractability": 12,
+                "plausibility": 12,
+                "units": "WARN",
+                "animation": "planned",
+                "image": "planned",
                 "assumptions": [],
             }
         )
     return out
 
 
+def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
+    def _clamp(v: object, lo: int, hi: int) -> int:
+        try:
+            n = int(float(v))
+        except Exception:
+            n = lo
+        return max(lo, min(hi, n))
+
+    novelty = _clamp(e.get("novelty", 0), 0, 30)
+    tractability = _clamp(e.get("tractability", 0), 0, 20)
+    plausibility = _clamp(e.get("plausibility", 0), 0, 20)
+
+    units = str(e.get("units", "")).upper()
+    theory = str(e.get("theory", "")).upper()
+    animation = str(e.get("animation", "planned")).strip().lower()
+    image = str(e.get("image", "planned")).strip().lower()
+
+    units_bonus = 10 if units == "OK" else 0
+    theory_bonus = 10 if theory == "PASS" else 0
+    anim_bonus = 0 if animation in {"", "planned", "none", "n/a"} else 5
+    image_bonus = 0 if image in {"", "planned", "none", "n/a"} else 5
+
+    total = novelty + tractability + plausibility + units_bonus + theory_bonus + anim_bonus + image_bonus
+    return total, {
+        "novelty": novelty,
+        "tractability": tractability,
+        "plausibility": plausibility,
+        "units_bonus": units_bonus,
+        "theory_bonus": theory_bonus,
+        "anim_bonus": anim_bonus,
+        "image_bonus": image_bonus,
+    }
+
+
 def build_famous(repo_root: Path, docs: Path) -> None:
     famous_entries = _load_famous_entries(repo_root)
-    famous_entries.sort(key=lambda x: float(x.get("score", 0) or 0), reverse=True)
+    scored_entries: list[tuple[dict, int, dict[str, int]]] = []
+    for e in famous_entries:
+        total, breakdown = _famous_score(e)
+        scored_entries.append((e, total, breakdown))
+    scored_entries.sort(key=lambda x: x[1], reverse=True)
 
     famous_cards: list[str] = []
-    for idx, e in enumerate(famous_entries, start=1):
+    for idx, (e, total_score, rb) in enumerate(scored_entries, start=1):
         title = e.get("name", "") or f"Famous Equation {idx}"
         equation_expr = e.get("equationLatex", "") or "(pending)"
         desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
         definitions = e.get("definitions", "") or ""
         caveat = e.get("caveat", "") or ""
-        score = e.get("score", "")
+        units = (e.get("units", "WARN") or "WARN").upper()
         theory = (e.get("theory", "PASS-WITH-ASSUMPTIONS") or "PASS-WITH-ASSUMPTIONS").upper()
         assumptions = e.get("assumptions", []) or []
         if not isinstance(assumptions, list):
@@ -309,8 +357,9 @@ def build_famous(repo_root: Path, docs: Path) -> None:
     <div class='card__head'>
       <h2 class='card__title'>{_esc(title)}</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>{_esc(f'Score {score}' if str(score).strip() else 'Score n/a')}</span>
+        <span class='badge badge--score'>{_esc(f'Score {total_score}')}</span>
         <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--{'good' if units == 'OK' else 'warn'}'>{_esc(units)}</span>
         <span class='pill pill--{theory_css}'>{_esc(theory)}</span>
         <span class='pill pill--warn'>Adjusted</span>
       </div>
@@ -325,6 +374,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc_text)}</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N {rb['novelty']}/30, T {rb['tractability']}/20, P {rb['plausibility']}/20, U +{rb['units_bonus']}, Th +{rb['theory_bonus']}, A +{rb['anim_bonus']}, I +{rb['image_bonus']}</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'>{('<ul class=\'ul\'>' + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
@@ -343,8 +393,19 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 <div class='hero'>
   <div class='hero__left'>
     <h1>Famous Equations (Adjusted)</h1>
-    <p>Curated classical forms rewritten in your Phase-Lift / Adaptive-π style.</p>
+    <p>Curated classical forms rewritten in your Phase-Lift / Adaptive-π style, scored with the same leaderboard rubric.</p>
   </div>
+</div>
+
+<div class='panel'>
+  <h2>Scoring Rubric (0-100)</h2>
+  <ul>
+    <li>Novelty (0-30)</li>
+    <li>Tractability (0-20)</li>
+    <li>Physical plausibility (0-20)</li>
+    <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>
+    <li>Artifact completeness (0-10): animation linked (+5), image linked (+5)</li>
+  </ul>
 </div>
 
 <div id='famousCards' class='cardrow'>
