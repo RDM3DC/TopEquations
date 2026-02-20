@@ -28,11 +28,12 @@ body{
 
 a{color:var(--a); text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:1100px; margin:0 auto; padding:24px}
+.wrap{max-width:min(1720px, 96vw); margin:0 auto; padding:24px}
 
 /* Layout: left quick-reference + main content */
 .layout{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:start}
 .layout--single{grid-template-columns:1fr}
+.layout--single .maincol{width:100%;min-width:0}
 .sidebar{position:sticky;top:78px;align-self:start}
 .sidebar__title{margin:0 0 12px 0;font-size:14px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
 .maincol{min-width:0}
@@ -147,6 +148,7 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:14px;
+  align-items:stretch;
 }
 .cardrow > .card{min-width:0}
 
