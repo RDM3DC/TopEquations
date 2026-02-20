@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/2606973887_2227587397_223132457.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_1004706325_4119236188.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_596759947_1258179842.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_813529074_4207837214.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_1917517889_3962814929.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_1998044036_2873012916.mp4'
+file 'file:C:/Users/RDM3D/clawdad42/TopEquations/media/videos/_auto_scene_eq-arp-redshift_20260220_042458/1080p60/partial_movie_files/AutoEquation/3976224540_1754310298_3467350305.mp4'

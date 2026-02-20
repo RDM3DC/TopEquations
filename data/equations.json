@@ -18,8 +18,8 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-redshift.mp4"
       },
       "image": {
         "status": "planned",
