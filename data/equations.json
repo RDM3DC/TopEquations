@@ -99,8 +99,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-dyn-constants-union.mp4"
       },
       "image": {
         "status": "planned",
