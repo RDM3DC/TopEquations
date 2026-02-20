@@ -10,7 +10,7 @@
       "image": "planned",
       "equationLatex": "\\partial_t\\rho+\\nabla\\cdot(\\rho\\,\\mathbf v)=0,\\quad \\hbar\\,\\partial_t\\phi+\\frac{m}{2}\\mathbf v^2+V+Q[\\rho]=0",
       "description": "Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations.",
-      "theory": "PASS-WITH-ASSUMPTIONS",
+      "theory": "PASS",
       "definitions": "Q[rho] is the quantum potential term; phi is the lifted phase field.",
       "assumptions": [
         "rho is positive and smooth enough for Q[rho] to be well-defined.",

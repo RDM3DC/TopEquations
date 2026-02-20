@@ -158,6 +158,9 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         desc = e.get("description", "")
         src = e.get("source", "")
         url = e.get("sourceUrl", "")
+        total_score, rb = _rubric_score(e)
+        units = str(e.get("units", "WARN")).upper()
+        theory = str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).upper()
         core_cards.append(
             f"""
 <section class='card'>
@@ -166,7 +169,10 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     <div class='card__head'>
       <h2 class='card__title'>{_esc(name)}</h2>
       <div class='card__meta'>
+        <span class='badge badge--score'>{_esc(f'Score {total_score}')}</span>
         <span class='pill pill--neutral'>Pinned</span>
+        <span class='pill pill--{'good' if units == 'OK' else 'warn'}'>{_esc(units)}</span>
+        <span class='pill pill--{'good' if theory == 'PASS' else ('bad' if theory == 'FAIL' else 'warn')}'>{_esc(theory)}</span>
         <span class='badge badge--score'>{_esc(src)}</span>
       </div>
     </div>
@@ -177,6 +183,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>N {rb['novelty']}/30, T {rb['tractability']}/20, P {rb['plausibility']}/20, U +{rb['units_bonus']}, Th +{rb['theory_bonus']}, A +{rb['anim_bonus']}, I +{rb['image_bonus']}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
     </div>
   </div>
@@ -289,6 +296,14 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
 
 
 def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
+    total, rb = _rubric_score(e)
+    rb["novelty"] = 16
+    # Recompute total with normalized novelty.
+    total = rb["novelty"] + rb["tractability"] + rb["plausibility"] + rb["units_bonus"] + rb["theory_bonus"] + rb["anim_bonus"] + rb["image_bonus"]
+    return total, rb
+
+
+def _rubric_score(e: dict) -> tuple[int, dict[str, int]]:
     def _clamp(v: object, lo: int, hi: int) -> int:
         try:
             n = int(float(v))
@@ -296,9 +311,7 @@ def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
             n = lo
         return max(lo, min(hi, n))
 
-    # Normalized novelty for famous equations: these are reinterpretations of
-    # known formulas, so keep novelty on a fixed baseline for fair comparison.
-    novelty = 16
+    novelty = _clamp(e.get("novelty", 0), 0, 30)
     tractability = _clamp(e.get("tractability", 0), 0, 20)
     plausibility = _clamp(e.get("plausibility", 0), 0, 20)
 
@@ -433,8 +446,19 @@ def build_core(repo_root: Path, docs: Path) -> None:
 <div class='hero'>
   <div class='hero__left'>
     <h1>Canonical Core</h1>
-    <p>Pinned, non-ranked anchor equations.</p>
+    <p>Pinned, non-ranked anchor equations with rubric scores.</p>
   </div>
+</div>
+
+<div class='panel'>
+  <h2>Scoring Rubric (0-100)</h2>
+  <ul>
+    <li>Novelty (0-30)</li>
+    <li>Tractability (0-20)</li>
+    <li>Physical plausibility (0-20)</li>
+    <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>
+    <li>Artifact completeness (0-10): animation linked (+5), image linked (+5)</li>
+  </ul>
 </div>
 
 <div id='coreCards' class='cardrow'>
