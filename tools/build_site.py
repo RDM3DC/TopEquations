@@ -200,66 +200,66 @@ def _extract_tier_lists(repo_root: Path) -> dict[str, list[str]]:
     return tier_lists
 
 
-  def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
+def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
     famous_path = repo_root / "data" / "famous_equations.json"
     if famous_path.exists():
-      try:
-        data = json.loads(famous_path.read_text(encoding="utf-8"))
-        out = []
-        for e in data.get("entries", []):
-          out.append(
-            {
-              "name": str(e.get("name", "")).strip(),
-              "equationLatex": str(e.get("equationLatex", "")).strip(),
-              "description": str(e.get("description", "")).strip(),
-            }
-          )
-        if out:
-          return out
-      except Exception:
-        pass
+        try:
+            data = json.loads(famous_path.read_text(encoding="utf-8"))
+            out = []
+            for e in data.get("entries", []):
+                out.append(
+                    {
+                        "name": str(e.get("name", "")).strip(),
+                        "equationLatex": str(e.get("equationLatex", "")).strip(),
+                        "description": str(e.get("description", "")).strip(),
+                    }
+                )
+            if out:
+                return out
+        except Exception:
+            pass
 
     # Fallback: try legacy markdown tier-list extraction.
     tier_lists = _extract_tier_lists(repo_root)
     famous_items = tier_lists.get("famous", [])
     out: list[dict[str, str]] = []
     for idx, item in enumerate(famous_items, start=1):
-      m = re.search(r"<b>(.*?)</b>", item, flags=re.I | re.S)
-      title = m.group(1).strip() if m else f"Famous Equation {idx}"
-      body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
-      body_html = body_html.lstrip("<br/>").strip()
+        m = re.search(r"<b>(.*?)</b>", item, flags=re.I | re.S)
+        title = m.group(1).strip() if m else f"Famous Equation {idx}"
+        body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
+        body_html = body_html.lstrip("<br/>").strip()
 
-      equation_expr = ""
-      for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
-        mm = re.search(pat, body_html, flags=re.S)
-        if mm:
-          equation_expr = mm.group(1).strip()
-          break
+        equation_expr = ""
+        for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
+            mm = re.search(pat, body_html, flags=re.S)
+            if mm:
+                equation_expr = mm.group(1).strip()
+                break
 
-      desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
-      desc_text = re.sub(r"<[^>]+>", " ", desc_text)
-      desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
-      desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
-      desc_text = re.sub(r"\s+", " ", desc_text).strip()
+        desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
+        desc_text = re.sub(r"<[^>]+>", " ", desc_text)
+        desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
+        desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
+        desc_text = re.sub(r"\s+", " ", desc_text).strip()
 
-      out.append(
-        {
-          "name": title,
-          "equationLatex": equation_expr or "(pending)",
-          "description": desc_text or "Classic equation reformulated in your adjusted framework.",
-        }
-      )
+        out.append(
+            {
+                "name": title,
+                "equationLatex": equation_expr or "(pending)",
+                "description": desc_text or "Classic equation reformulated in your adjusted framework.",
+            }
+        )
     return out
 
 
 def build_famous(repo_root: Path, docs: Path) -> None:
-  famous_entries = _load_famous_entries(repo_root)
+    famous_entries = _load_famous_entries(repo_root)
 
     famous_cards: list[str] = []
-  for idx, e in enumerate(famous_entries, start=1):
-    title = e.get("name", "") or f"Famous Equation {idx}"
-    equation_expr = e.get("equationLatex", "") or "(pending)"
-    desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
+    for idx, e in enumerate(famous_entries, start=1):
+        title = e.get("name", "") or f"Famous Equation {idx}"
+        equation_expr = e.get("equationLatex", "") or "(pending)"
+        desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
 
         famous_cards.append(
             f"""
