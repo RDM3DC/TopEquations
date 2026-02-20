@@ -1,0 +1,12 @@
+# OpenClaw / local agent artifacts
+.openclaw/
+SOUL.md
+IDENTITY.md
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
