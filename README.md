@@ -6,11 +6,17 @@ Canonical repository for tracking equation discoveries, derivations, rankings, a
 - `leaderboard.md` — primary ranked board (all-time + newest)
 - `data/equations.json` — structured equation records
 - `submissions/` — daily run logs and candidate notes
+- `tools/generate_leaderboard.py` — rebuilds `leaderboard.md` from `data/equations.json`
 
 ## Ranking dimensions
 - Equation quality: novelty, tractability, plausibility, validation verdicts
-- Visual impact: animation quality and image/diagram quality
+- Artifact completeness: animation/image link attached or planned
 - Composite score for leaderboard ordering
+
+## Generate Leaderboard
+```powershell
+python tools\generate_leaderboard.py
+```
 
 ## Source workflows
 This repo is updated by the OpenClaw daily equation pipeline.
