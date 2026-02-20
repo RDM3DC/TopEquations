@@ -341,12 +341,12 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     body += """
 
 <h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
-<div id='coreCards'>
+<div id='coreCards' class='cardrow'>
 """ + "\n".join(core_cards) + """
 </div>
 
 <h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
-<div id='cards'>
+<div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
 </div>
 """
