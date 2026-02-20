@@ -4,7 +4,8 @@
 
 Generates:
   - docs/index.html
-  - docs/leaderboard.html   (curated list = data/equations.json)
+  - docs/core.html          (canonical core only)
+  - docs/leaderboard.html   (ranked derived only)
   - docs/harvest_preview.html
 
 Usage:
@@ -106,6 +107,7 @@ def _page(title: str, body: str, updated: str) -> str:
       </div>
       <nav class='nav'>
         <a href='./index.html'>Home</a>
+        <a href='./core.html'>Core</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
@@ -124,7 +126,7 @@ def _page(title: str, body: str, updated: str) -> str:
 """
 
 
-def build_leaderboard(repo_root: Path, docs: Path) -> None:
+def _build_core_cards(repo_root: Path) -> list[str]:
     # Optional: render the markdown-maintained tier lists (from leaderboard.md)
     # into a native "mini-card" layout so it matches the site.
     tier_lists: dict[str, list[str]] = {"all_time": [], "month": [], "famous": []}
@@ -160,7 +162,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     core = json.loads(core_path.read_text(encoding="utf-8"))
     core_entries = list(core.get("entries", []))
 
-    core_cards = []
+    core_cards: list[str] = []
     for e in core_entries:
         name = e.get("name", "")
         eq = e.get("equationLatex", "") or "(pending)"
@@ -193,7 +195,38 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 """
         )
 
-    # Tier 2: Ranked derived equations
+    return core_cards
+
+
+def build_core(repo_root: Path, docs: Path) -> None:
+    core_cards = _build_core_cards(repo_root)
+
+    body = """
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Canonical Core</h1>
+    <p>Pinned, non-ranked anchor equations.</p>
+  </div>
+</div>
+
+<div id='coreCards' class='cardrow'>
+""" + "\n".join(core_cards) + """
+</div>
+
+  </section>
+</div>
+"""
+
+    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    out = docs / "core.html"
+    out.write_text(_page("TopEquations — Canonical Core", body, updated), encoding="utf-8")
+
+
+def build_leaderboard(repo_root: Path, docs: Path) -> None:
+    # Ranked derived equations only.
     data_path = repo_root / "data" / "equations.json"
     data = json.loads(data_path.read_text(encoding="utf-8"))
     entries = list(data.get("entries", []))
@@ -273,8 +306,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Two-tier structure</h1>
-    <p><strong>Canonical Core</strong> is pinned (non-ranked). <strong>Derived Equations</strong> are ranked by score.</p>
+    <h1>Top Ranked Derived Equations</h1>
+    <p>Single-row ranked cards. Canonical anchors live on the separate <a href='./core.html'>Core page</a>.</p>
   </div>
   <div class='hero__right'>
     <div class='controls'>
@@ -299,12 +332,6 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
   </div>
 </div>
 
-<h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
-<div id='coreCards' class='cardrow'>
-""" + "\n".join(core_cards) + """
-</div>
-
-<h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
 </div>
@@ -332,9 +359,10 @@ def build_index(repo_root: Path, docs: Path) -> None:
 <div class='hero hero--home'>
   <div class='hero__left'>
     <h1>TopEquations</h1>
-    <p><strong>Tier 1:</strong> Canonical Core (pinned, non-ranked). <strong>Tier 2:</strong> Top Ranked Derived Equations.</p>
+    <p><strong>Canonical Core</strong> and <strong>Ranked Derived</strong> are split into dedicated pages.</p>
     <div class='cta'>
-      <a class='btn' href='./leaderboard.html'>Two‑Tier Board</a>
+      <a class='btn' href='./core.html'>Canonical Core</a>
+      <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
       <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
     </div>
   </div>
@@ -414,6 +442,7 @@ def main() -> None:
     (docs / "assets").mkdir(parents=True, exist_ok=True)
 
     build_index(repo_root, docs)
+    build_core(repo_root, docs)
     build_leaderboard(repo_root, docs)
     build_harvest(repo_root, docs)
 

@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602201230' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602201237' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602201230'></script>
+  <script defer src='./assets/app.js?v=202602201237'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -39,6 +39,7 @@
       </div>
       <nav class='nav'>
         <a href='./index.html'>Home</a>
+        <a href='./core.html'>Core</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
@@ -53,8 +54,8 @@
 
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Two-tier structure</h1>
-    <p><strong>Canonical Core</strong> is pinned (non-ranked). <strong>Derived Equations</strong> are ranked by score.</p>
+    <h1>Top Ranked Derived Equations</h1>
+    <p>Single-row ranked cards. Canonical anchors live on the separate <a href='./core.html'>Core page</a>.</p>
   </div>
   <div class='hero__right'>
     <div class='controls'>
@@ -79,149 +80,6 @@
   </div>
 </div>
 
-<h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
-<div id='coreCards' class='cardrow'>
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>ARP Core Law (canonical ODE)</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core paper 01</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|-\mu_G\,G_{ij}(t)$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 01</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Canonical Adaptive Resistance Principle update rule for edge conductance.</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Phase-Lift operator definition (⧉)</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core paper 04</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$(\,\,\,\,\,\u29c9 f\,\,\,)(z;\theta_{ref}) := f(z)\ &quot;computed using&quot;\ &quot;\theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})&quot;$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 04</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>PR-Root as a special case of Phase-Lift (⧉√)</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core paper 04</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\u29c9\sqrt{z;\theta_{ref}}:=\sqrt{r}\,e^{i\theta_R/2}\ &quot;where&quot;\ z=re^{i\theta}\ &quot;and&quot;\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 04</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Phase-resolved square root: deterministic branch choice encoded by the resolved phase.</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\u29c9' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\u29c9</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Adaptive-π field definition + limit (πₐ → π)</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core paper 02 + paper 04</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\theta=\theta_R+2\pi_a(x,t)\,w,\ &quot;with&quot;\ w\in\mathbb{Z}\ &quot;and&quot;\ \pi_a\to\pi$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 02 + paper 04</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Winding / parity invariants</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core papers 02/04</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$w\in\mathbb{Z},\ &quot;parity&quot;\ p=w\bmod 2\in\{0,1\}$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core papers 02/04</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Track winding number and its Z2 parity as invariants under continuous deformation (unless passing through singularities).</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/docs/notation/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/docs/notation/</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>CORE</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Phase-Lifted Stokes Quantization (Adaptive-π)</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>Pinned</span>
-        <span class='badge badge--score'>canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)</span>
-      </div>
-    </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\theta_R[\gamma]:=\mathrm{unwrap}\!\left(\oint_{\gamma} A\,;\theta_{\rm ref}\right)=\int_{S:\,\partial S=\gamma}F+2\pi_a\,w,\quad w\in\mathbb{Z},\quad b(\gamma)=(-1)^w$$</div>
-    </div>
-    <div class='card__sub'>Reference: <span class='muted'>canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)</span></div>
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Turns the usual Stokes/holonomy statement ‘mod 2π’ into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-π generalizes the period to 2πₐ.</div></div>
-      <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/' target='_blank' rel='noopener'>https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/</a></div></div>
-    </div>
-  </div>
-</section>
-
-</div>
-
-<h2 style='margin-top:22px'>Top Ranked Derived Equations</h2>
 <div id='cards' class='cardrow'>
 
 <section class='card' data-rank='1' data-score='88' data-haslatex='1'>
@@ -499,7 +357,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 12:30</strong></div>
+      <div>Last built: <strong>2026-02-20 12:37</strong></div>
     </footer>
   </main>
 </body>
