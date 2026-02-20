@@ -210,6 +210,26 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         title = m.group(1).strip() if m else f"Famous Equation {idx}"
         body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
         body_html = body_html.lstrip("<br/>").strip()
+
+      # Extract one primary math expression to keep card equation format consistent.
+      equation_expr = ""
+      for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
+        mm = re.search(pat, body_html, flags=re.S)
+        if mm:
+          equation_expr = mm.group(1).strip()
+          break
+      if not equation_expr:
+        equation_expr = "(pending)"
+
+      # Description should be plain text to avoid KaTeX error styling.
+      desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
+      desc_text = re.sub(r"<[^>]+>", " ", desc_text)
+      desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
+      desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
+      desc_text = re.sub(r"\s+", " ", desc_text).strip()
+      if not desc_text:
+        desc_text = "Classic equation reformulated in your adjusted framework."
+
         famous_cards.append(
             f"""
 <section class='card'>
@@ -225,13 +245,13 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 
     <div class='equation'>
       <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>{body_html}</div>
+      <div class='equation__tex'>$${_esc(equation_expr)}$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Classic equation reformulated in your adjusted framework.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc_text)}</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
     </div>
