@@ -316,25 +316,47 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
         body += """
 <h2 style='margin-top:18px'>Tier Lists</h2>
-<div class='tiergrid'>
-  <section class='tiercol'>
-    <h3>Top Equations (All-Time)</h3>
+<div class='cardrow'>
+
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Top Equations (All-Time)</h2>
+      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
+    </div>
     <div class='tierstack'>
 """ + _mini_list(tier_lists["all_time"], collapsible=False) + """
     </div>
-  </section>
-  <section class='tiercol'>
-    <h3>Top This Month</h3>
+  </div>
+</section>
+
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Top This Month</h2>
+      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
+    </div>
     <div class='tierstack'>
 """ + _mini_list(tier_lists["month"], collapsible=False) + """
     </div>
-  </section>
-  <section class='tiercol'>
-    <h3>Famous Equations (Adjusted)</h3>
+  </div>
+</section>
+
+<section class='card card--tier'>
+  <div class='card__rank'>TIER</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Famous Equations (Adjusted)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Expandable</span></div>
+    </div>
     <div class='tierstack'>
 """ + _mini_list(tier_lists["famous"], collapsible=True) + """
     </div>
-  </section>
+  </div>
+</section>
+
 </div>
 """
 
