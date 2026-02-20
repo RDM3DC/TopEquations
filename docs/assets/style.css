@@ -142,28 +142,19 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
   overflow:hidden;
 }
 
-/* Card rows: single horizontal row with scroll */
+/* Card rows: vertical stack (page scroll) */
 .cardrow{
   margin-top:14px;
   display:flex;
+  flex-direction:column;
   gap:14px;
-  overflow-x:auto;
-  padding-bottom:10px;
-  scroll-snap-type:x mandatory;
 }
-.cardrow > .card{flex:0 0 auto; min-width:min(520px, 92vw); scroll-snap-align:start}
-
-.cardrow::-webkit-scrollbar{height:10px}
-.cardrow::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:999px}
-.cardrow::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:999px}
+.cardrow > .card{width:100%; min-width:0}
 
 /* Keep metadata legible inside dense card grids */
 .cardrow .grid{grid-template-columns:1fr 1fr}
 .cardrow .grid .kv:first-child{grid-column:1 / -1}
 
-@media (min-width: 1500px){
-  .cardrow > .card{min-width:560px}
-}
 /* Core cards now use the same visual card style as ranked cards */
 .card__rank{
   width:74px;
