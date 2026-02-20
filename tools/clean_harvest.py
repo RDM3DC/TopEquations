@@ -102,7 +102,9 @@ def main() -> None:
     entries = list(data.get("entries", []))
 
     before = len(entries)
-    kept = [e for e in entries if not is_bad(e.get("equation"))]
+    # Remove code captures (Python/JS lines) — harvest UI should be equation-first.
+    # If we ever want code back, we can add a CLI flag; for now keep LaTeX/math-only.
+    kept = [e for e in entries if str(e.get("kind", "")).lower() != "code" and not is_bad(e.get("equation"))]
     removed = before - len(kept)
 
     data["entries"] = kept
@@ -110,6 +112,13 @@ def main() -> None:
     # Recompute simple stats
     stats = data.get("stats", {}) or {}
     stats["unique"] = len(kept)
+
+    by_kind: dict[str, int] = {}
+    for e in kept:
+        k = str(e.get("kind", "unknown"))
+        by_kind[k] = by_kind.get(k, 0) + 1
+    stats["by_kind"] = by_kind
+
     data["stats"] = stats
 
     HARVEST.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
