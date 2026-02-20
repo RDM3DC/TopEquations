@@ -55,14 +55,39 @@ def _artifact(val: dict | None) -> str:
 
 
 def _page(title: str, body: str, updated: str) -> str:
+    # KaTeX for fast, crisp equation rendering.
+    katex_css = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    katex_js = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    autorender_js = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+
     return f"""<!doctype html>
 <html lang='en'>
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>{_esc(title)}</title>
+
   <link rel='stylesheet' href='./assets/style.css' />
+  <link rel='stylesheet' href='{katex_css}' />
+
   <script defer src='./assets/app.js'></script>
+  <script defer src='{katex_js}'></script>
+  <script defer src='{autorender_js}'></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {{
+      if (window.renderMathInElement) {{
+        window.renderMathInElement(document.body, {{
+          delimiters: [
+            {{left: '$$', right: '$$', display: true}},
+            {{left: '\\[', right: '\\]', display: true}},
+            {{left: '$', right: '$', display: false}},
+            {{left: '\\(', right: '\\)', display: false}},
+          ],
+          throwOnError: false,
+        }});
+      }}
+    }});
+  </script>
 </head>
 <body>
   <header class='topbar'>
@@ -77,7 +102,7 @@ def _page(title: str, body: str, updated: str) -> str:
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./leaderboard.html'>Leaderboard</a>
-        <a href='./harvest_preview.html'>Harvest preview</a>
+        <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
       </nav>
     </div>
@@ -129,7 +154,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>{_esc(eq)}</pre>
+      <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
 
     <div class='grid'>
@@ -182,7 +207,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
     <p>A polished GitHub Pages view of the curated leaderboard, plus a raw harvested registry for discovery.</p>
     <div class='cta'>
       <a class='btn' href='./leaderboard.html'>View Leaderboard</a>
-      <a class='btn btn--ghost' href='./harvest_preview.html'>Harvest Preview</a>
+      <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
     </div>
   </div>
   <div class='hero__right'>
@@ -213,42 +238,38 @@ def build_index(repo_root: Path, docs: Path) -> None:
     (docs / "index.html").write_text(_page("TopEquations", body, updated), encoding="utf-8")
 
 
-def build_harvest_preview(repo_root: Path, docs: Path) -> None:
-    preview_md = (repo_root / "data" / "harvest" / "equation_harvest_preview.md").read_text(encoding="utf-8", errors="ignore")
-
-    # super-light markdown-to-html for our preview (headers + bullets + inline code)
-    lines = preview_md.splitlines()
-    html_lines = []
-    for ln in lines:
-        if ln.startswith("# "):
-            html_lines.append(f"<h1>{_esc(ln[2:])}</h1>")
-        elif ln.startswith("## "):
-            html_lines.append(f"<h2>{_esc(ln[3:])}</h2>")
-        elif ln.startswith("- "):
-            # group list items
-            html_lines.append(f"<li>{_esc(ln[2:])}</li>")
-        elif ln.strip().startswith("`"):
-            html_lines.append(f"<pre class='equation__tex'>{_esc(ln.strip().strip('`'))}</pre>")
-        elif ln.strip() == "":
-            html_lines.append("")
-        else:
-            html_lines.append(f"<p>{_esc(ln)}</p>")
+def build_harvest(repo_root: Path, docs: Path) -> None:
+    # Copy harvest json into docs so the client can fetch it.
+    src_json = repo_root / "data" / "harvest" / "equation_harvest.json"
+    dst_json = docs / "data" / "harvest" / "equation_harvest.json"
+    dst_json.parent.mkdir(parents=True, exist_ok=True)
+    dst_json.write_text(src_json.read_text(encoding="utf-8"), encoding="utf-8")
 
     body = """
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Harvest preview</h1>
-    <p>A small peek at the raw harvested registry (deduped). This is intentionally lightweight.</p>
+    <h1>All harvested equations</h1>
+    <p>~15k deduped candidates harvested from local RDM3DC repos. Search and scroll. (Client-side, lazy-rendered.)</p>
+  </div>
+  <div class='hero__right'>
+    <div class='search'>
+      <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
+    </div>
   </div>
 </div>
 
 <div class='panel'>
-""" + "\n".join(html_lines) + """
+  <div class='muted'>Source file: <code>data/harvest/equation_harvest.json</code></div>
+  <div id='harvestMeta' class='muted' style='margin-top:8px'>Loading…</div>
 </div>
+
+<div id='harvestList'></div>
+
+<script defer src='./assets/harvest.js'></script>
 """
 
     updated = datetime.now().strftime("%Y-%m-%d %H:%M")
-    (docs / "harvest_preview.html").write_text(_page("TopEquations — Harvest preview", body, updated), encoding="utf-8")
+    (docs / "harvest.html").write_text(_page("TopEquations — Harvest", body, updated), encoding="utf-8")
 
 
 def main() -> None:
@@ -258,7 +279,7 @@ def main() -> None:
 
     build_index(repo_root, docs)
     build_leaderboard(repo_root, docs)
-    build_harvest_preview(repo_root, docs)
+    build_harvest(repo_root, docs)
 
     print("Built docs/*.html")
 

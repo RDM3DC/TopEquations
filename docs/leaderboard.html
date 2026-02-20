@@ -4,8 +4,28 @@
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
+
   <link rel='stylesheet' href='./assets/style.css' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
+
   <script defer src='./assets/app.js'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.renderMathInElement) {
+        window.renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\[', right: '\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\(', right: '\)', display: false},
+          ],
+          throwOnError: false,
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <header class='topbar'>
@@ -20,7 +40,7 @@
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./leaderboard.html'>Leaderboard</a>
-        <a href='./harvest_preview.html'>Harvest preview</a>
+        <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
       </nav>
     </div>
@@ -56,7 +76,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>z(t)=z_0\,(1-e^{-\gamma t})</pre>
+      <div class='equation__tex'>$$z(t)=z_0\,(1-e^{-\gamma t})$$</div>
     </div>
 
     <div class='grid'>
@@ -85,7 +105,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>V(x)\ge 0,\ V(0)=0;\ \dot V(x)=\nabla V\cdot \dot x\le -\alpha V(x)</pre>
+      <div class='equation__tex'>$$V(x)\ge 0,\ V(0)=0;\ \dot V(x)=\nabla V\cdot \dot x\le -\alpha V(x)$$</div>
     </div>
 
     <div class='grid'>
@@ -114,7 +134,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>\dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T</pre>
+      <div class='equation__tex'>$$\dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T$$</div>
     </div>
 
     <div class='grid'>
@@ -143,7 +163,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>\alpha^{-1}\approx 137\ \ \text{(emergent resonance condition in curve memory)}</pre>
+      <div class='equation__tex'>$$\alpha^{-1}\approx 137\ \ \text{(emergent resonance condition in curve memory)}$$</div>
     </div>
 
     <div class='grid'>
@@ -172,7 +192,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>E_{eff}=E_{ext}-\lambda J_{adapt},\ \ J_{adapt}=\sigma E_{ext},\ \ 0&lt;\lambda&lt;1</pre>
+      <div class='equation__tex'>$$E_{eff}=E_{ext}-\lambda J_{adapt},\ \ J_{adapt}=\sigma E_{ext},\ \ 0&lt;\lambda&lt;1$$</div>
     </div>
 
     <div class='grid'>
@@ -201,7 +221,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>z_{eff}\approx f(\sigma_{ARP},T)\,e^{-\kappa L_{super}}</pre>
+      <div class='equation__tex'>$$z_{eff}\approx f(\sigma_{ARP},T)\,e^{-\kappa L_{super}}$$</div>
     </div>
 
     <div class='grid'>
@@ -230,7 +250,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Equation</div>
-      <pre class='equation__tex'>G(T)=G_{eq}\,e^{\beta\,(T-T_0)}</pre>
+      <div class='equation__tex'>$$G(T)=G_{eq}\,e^{\beta\,(T-T_0)}$$</div>
     </div>
 
     <div class='grid'>
@@ -247,7 +267,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 03:31</strong></div>
+      <div>Last built: <strong>2026-02-20 03:38</strong></div>
     </footer>
   </main>
 </body>

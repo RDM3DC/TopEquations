@@ -83,6 +83,11 @@ a:hover{text-decoration:underline}
   border-radius:18px;
   background: rgba(15,23,51,.45);
 }
+.muted{color:var(--muted)}
+
+/* KaTeX tweak for dark bg */
+.katex{font-size:1.05em}
+.katex-display{overflow-x:auto; overflow-y:hidden; padding:10px 12px}
 .panel h2{margin:4px 0 10px 0}
 .panel ul{margin:8px 0 0 18px; color:var(--muted)}
 code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; border:1px solid rgba(255,255,255,.10)}
