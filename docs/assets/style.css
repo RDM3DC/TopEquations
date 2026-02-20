@@ -151,6 +151,14 @@ code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; borde
 }
 .cardrow > .card{width:100%; min-width:0}
 
+/* Explicit page section overrides */
+#coreCards,
+#cards{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
 /* Keep metadata legible inside dense card grids */
 .cardrow .grid{grid-template-columns:1fr 1fr}
 .cardrow .grid .kv:first-child{grid-column:1 / -1}
