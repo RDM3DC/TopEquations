@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602201220' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js'></script>
+  <script defer src='./assets/app.js?v=202602201220'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -48,86 +48,7 @@
 
   <main class='wrap'>
     
-<div class='layout'>
-  <aside class='sidebar'>
-    <h2 class='sidebar__title'>Quick reference</h2>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top This Month</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-<div class='tieritem tieritem--flat'><b>ARP Redshift Law</b> (88)</div>
-<div class='tieritem tieritem--flat'><b>Phase-Coupled Stability Threshold</b> (82)</div>
-<div class='tieritem tieritem--flat'><b>Phase-Lifted Complex Conductance Update</b> (76)</div>
-<div class='tieritem tieritem--flat'><b>ARP Lyapunov Stability Form</b> (75)</div>
-<div class='tieritem tieritem--flat'><b>Unified Dynamic Constants Law</b> (73)</div>
-<div class='tieritem tieritem--flat'><b>Curve Memory Fine-Structure Emergence</b> (72)</div>
-<div class='tieritem tieritem--flat'><b>Shielding Mechanism Law (ARP)</b> (71)</div>
-<div class='tieritem tieritem--flat'><b>Redshift-ARP Superconductivity Law</b> (70)</div>
-<div class='tieritem tieritem--flat'><b>Temperature-Dependent Conductance Law</b> (68)</div>
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Famous Equations (Adjusted)</h2>
-      <div class='card__meta'><span class='pill pill--warn'>Expandable</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-<details class='tieritem'><summary class='tieritem__summary'>Schrödinger ("without i" via Madelung + Phase-Lift)</summary><div class='tieritem__body'><b>Schrödinger ("without i" via Madelung + Phase-Lift)</b><br/>
-          Substitute \(\phi := \frac{\pi}{\pi_a}\,\theta_R\) and \(\psi^{PL}=\sqrt{\rho}\,e^{i\phi}=\sqrt{\rho}\,\exp\!\big(i\frac{\pi}{\pi_a}\theta_R\big)\). Then the complex PDE becomes two real PDEs:<br/>
-          \(\partial_t\rho+\nabla\!\cdot(\rho\,\mathbf v)=0\),<br/>
-          \(\hbar\,\partial_t\phi+\frac{m}{2}\mathbf v^2+V+Q[\rho]=0\), where \(\mathbf v=\frac{\hbar}{m}\nabla\phi\), \(Q[\rho]= -\frac{\hbar^2}{2m}\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}\).<br/>
-          Sector bookkeeping (optional): \(\theta_R(T)-\theta_R(0)=2\pi_a w\), \(b=(-1)^w\).</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>Aharonov–Bohm phase (Phase-Lifted)</summary><div class='tieritem__body'><b>Aharonov–Bohm phase (Phase-Lifted)</b><br/>
-          \(\theta_R[\gamma]=\mathrm{unwrap}\!\big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\theta_{\rm ref},\pi_a\big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w\).</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>Berry phase / overlap product (no multi-valued Arg)</summary><div class='tieritem__body'><b>Berry phase / overlap product (no multi-valued Arg)</b><br/>
-          Discrete: \(\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!(\Arg\langle\psi_{k+1}|\psi_k\rangle;\theta_{\rm ref},\pi_a)\).<br/>
-          Continuum: \(\theta_R[\gamma]=\mathrm{unwrap}\!(\oint_\gamma A;\theta_{\rm ref},\pi_a)=\int_S F + 2\pi_a w\), with \(b=(-1)^w\) optional.</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>Josephson relations (Phase-Lift + adaptive-\(\pi\))</summary><div class='tieritem__body'><b>Josephson relations (Phase-Lift + adaptive-\(\pi\))</b><br/>
-          \(I=I_c\sin\!\big(\frac{\pi}{\pi_a}\theta_R\big)\),
-          \(\frac{d}{dt}\big(\frac{\pi}{\pi_a}\theta_R\big)=\frac{2e}{\hbar}V\). Optional: \(I=b\,I_c\sin(\frac{\pi}{\pi_a}\theta_R)\).</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>Path integral with Phase-Lift sectors</summary><div class='tieritem__body'><b>Path integral with Phase-Lift sectors</b><br/>
-          \(Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta(\theta_R(T)-\theta_R(0)-2\pi_a w)\), \(b=(-1)^w\) optional.</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>U(N) holonomy split (Phase-Lift det-phase)</summary><div class='tieritem__body'><b>U(N) holonomy split (Phase-Lift det-phase)</b><br/>
-          If \(U(\gamma)\in U(N)\), write \(U(\gamma)=e^{i\varphi}V\), \(V\in SU(N)\), \(\varphi=\Arg\det U(\gamma)\). Phase-Lift: \(\theta_R:=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a)\), \(w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}\in\mathbb Z\), \(b(\gamma)=(-1)^{w_{\det}}\).</div></details>
-<details class='tieritem'><summary class='tieritem__summary'>Klein–Gordon (polar split + Phase-Lift)</summary><div class='tieritem__body'><b>Klein–Gordon (polar split + Phase-Lift)</b><br/>
-          Start from \((\Box+\frac{m^2c^2}{\hbar^2})\psi=0\) with \(\psi^{PL}=\sqrt\rho\,e^{i\phi}\) and \(\phi=\frac{\pi}{\pi_a}\theta_R\). This yields two real equations (continuity-like + Hamilton–Jacobi-like) with the same sector tracking \((w,b)\) on closed evolution.</div></details>
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top Equations (All-Time)</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-<div class='tieritem tieritem--flat'><b>ARP Redshift Law</b> (88)</div>
-<div class='tieritem tieritem--flat'><b>Phase-Coupled Stability Threshold</b> (82)</div>
-<div class='tieritem tieritem--flat'><b>Phase-Lifted Complex Conductance Update</b> (76)</div>
-<div class='tieritem tieritem--flat'><b>ARP Lyapunov Stability Form</b> (75)</div>
-<div class='tieritem tieritem--flat'><b>Unified Dynamic Constants Law</b> (73)</div>
-<div class='tieritem tieritem--flat'><b>Curve Memory Fine-Structure Emergence</b> (72)</div>
-<div class='tieritem tieritem--flat'><b>Shielding Mechanism Law (ARP)</b> (71)</div>
-<div class='tieritem tieritem--flat'><b>Redshift-ARP Superconductivity Law</b> (70)</div>
-<div class='tieritem tieritem--flat'><b>Temperature-Dependent Conductance Law</b> (68)</div>
-    </div>
-  </div>
-</section>
-
-
-  </aside>
-
+<div class='layout layout--single'>
   <section class='maincol'>
 
 <div class='hero'>
@@ -578,7 +499,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 12:14</strong></div>
+      <div>Last built: <strong>2026-02-20 12:20</strong></div>
     </footer>
   </main>
 </body>

@@ -32,6 +32,7 @@ a:hover{text-decoration:underline}
 
 /* Layout: left quick-reference + main content */
 .layout{display:grid;grid-template-columns:360px 1fr;gap:18px;align-items:start}
+.layout--single{grid-template-columns:1fr}
 .sidebar{position:sticky;top:78px;align-self:start}
 .sidebar__title{margin:0 0 12px 0;font-size:14px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}
 .maincol{min-width:0}

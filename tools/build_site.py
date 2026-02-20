@@ -63,6 +63,8 @@ def _page(title: str, body: str, updated: str) -> str:
     katex_js = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
     autorender_js = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
 
+    cachebust = re.sub(r"[^0-9]", "", updated) or "1"
+
     return f"""<!doctype html>
 <html lang='en'>
 <head>
@@ -70,10 +72,10 @@ def _page(title: str, body: str, updated: str) -> str:
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>{_esc(title)}</title>
 
-  <link rel='stylesheet' href='./assets/style.css' />
+  <link rel='stylesheet' href='./assets/style.css?v={cachebust}' />
   <link rel='stylesheet' href='{katex_css}' />
 
-  <script defer src='./assets/app.js'></script>
+  <script defer src='./assets/app.js?v={cachebust}'></script>
   <script defer src='{katex_js}'></script>
   <script defer src='{autorender_js}'></script>
   <script defer>
@@ -266,76 +268,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         )
 
     body = """
-<div class='layout'>
-  <aside class='sidebar'>
-    <h2 class='sidebar__title'>Quick reference</h2>
-"""
-
-    if tier_lists["all_time"] or tier_lists["month"] or tier_lists["famous"]:
-        def _mini_list(items: list[str], collapsible: bool) -> str:
-            if not items:
-                return "<div class='muted'>(none)</div>"
-            out = []
-            for it in items:
-                if collapsible:
-                    # Collapse long entries by default; summary is the bold title if present.
-                    m = re.search(r"<b>(.*?)</b>", it, flags=re.I | re.S)
-                    title = m.group(1).strip() if m else "Details"
-                    out.append(
-                        "<details class='tieritem'>"
-                        f"<summary class='tieritem__summary'>{title}</summary>"
-                        f"<div class='tieritem__body'>{it}</div>"
-                        "</details>"
-                    )
-                else:
-                    out.append(f"<div class='tieritem tieritem--flat'>{it}</div>")
-            return "\n".join(out)
-
-        body += """
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top This Month</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-""" + _mini_list(tier_lists["month"], collapsible=False) + """
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Famous Equations (Adjusted)</h2>
-      <div class='card__meta'><span class='pill pill--warn'>Expandable</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-""" + _mini_list(tier_lists["famous"], collapsible=True) + """
-    </div>
-  </div>
-</section>
-
-<section class='card card--tier'>
-  <div class='card__rank'>TIER</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Top Equations (All-Time)</h2>
-      <div class='card__meta'><span class='pill pill--neutral'>List</span></div>
-    </div>
-    <div class='tierstack tierstack--compact'>
-""" + _mini_list(tier_lists["all_time"], collapsible=False) + """
-    </div>
-  </div>
-</section>
-"""
-
-    body += """
-
-  </aside>
-
+<div class='layout layout--single'>
   <section class='maincol'>
 
 <div class='hero'>
