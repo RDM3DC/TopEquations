@@ -3,37 +3,86 @@
     {
       "name": "Schrodinger (without i via Madelung + Phase-Lift)",
       "equationLatex": "\\partial_t\\rho+\\nabla\\cdot(\\rho\\,\\mathbf v)=0,\\quad \\hbar\\,\\partial_t\\phi+\\frac{m}{2}\\mathbf v^2+V+Q[\\rho]=0",
-      "description": "Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations."
+      "description": "Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "Q[rho] is the quantum potential term; phi is the lifted phase field.",
+      "assumptions": [
+        "rho is positive and smooth enough for Q[rho] to be well-defined.",
+        "Phase-Lift variable theta_R maps consistently to phi over the domain."
+      ],
+      "caveat": "Equivalent only under the stated smoothness and phase mapping assumptions."
     },
     {
       "name": "Aharonov-Bohm phase (Phase-Lifted)",
       "equationLatex": "\\theta_R[\\gamma]=\\mathrm{unwrap}\\!\\big(\\frac{q}{\\hbar}\\oint_\\gamma \\mathbf A\\cdot d\\mathbf\\ell;\\theta_{\\rm ref},\\pi_a\\big)=\\frac{q}{\\hbar}\\int_S \\mathbf B\\cdot d\\mathbf S + 2\\pi_a w",
-      "description": "Phase-Lifted AB phase relation with explicit winding sector."
+      "description": "Phase-Lifted AB phase relation with explicit winding sector.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "theta_R is unwrapped phase; w is integer winding sector.",
+      "assumptions": [
+        "Gauge region excludes singular crossings during unwrapping.",
+        "Chosen reference phase remains consistent along gamma."
+      ],
+      "caveat": "Branch handling is convention-dependent without a fixed unwrapping policy."
     },
     {
       "name": "Berry phase / overlap product (no multivalued Arg)",
       "equationLatex": "\\theta_R[\\gamma]=\\sum_k \\mathrm{unwrap}\\!(\\Arg\\langle\\psi_{k+1}|\\psi_k\\rangle;\\theta_{\\rm ref},\\pi_a)",
-      "description": "Discrete Berry-phase accumulation with unwrapped phase tracking."
+      "description": "Discrete Berry-phase accumulation with unwrapped phase tracking.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "Arg denotes principal argument before unwrapping.",
+      "assumptions": [
+        "Adjacent state overlaps are non-zero along the path.",
+        "Sampling is fine enough to avoid unwrap jumps."
+      ],
+      "caveat": "Numerical stability depends on path discretization and overlap conditioning."
     },
     {
       "name": "Josephson relations (Phase-Lift + adaptive-pi)",
       "equationLatex": "I=I_c\\sin\\!\\big(\\frac{\\pi}{\\pi_a}\\theta_R\\big),\\quad \\frac{d}{dt}\\big(\\frac{\\pi}{\\pi_a}\\theta_R\\big)=\\frac{2e}{\\hbar}V",
-      "description": "Adaptive-pi phase dynamics inserted into Josephson current/voltage relations."
+      "description": "Adaptive-pi phase dynamics inserted into Josephson current/voltage relations.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "pi_a is an adaptive period parameter replacing fixed pi in phase scaling.",
+      "assumptions": [
+        "pi_a varies slowly relative to junction dynamics.",
+        "Calibration restores the classical limit when pi_a approaches pi."
+      ],
+      "caveat": "Non-standard phase scaling requires experimental calibration before physical claims."
     },
     {
       "name": "Path integral with Phase-Lift sectors",
       "equationLatex": "Z=\\sum_{w\\in\\mathbb Z}\\int \\mathcal D\\rho\\,\\mathcal D\\theta_R\\,\\mathcal D\\pi_a\\; e^{\\frac{i}{\\hbar}S_{PL}[\\rho,\\theta_R,\\pi_a]}\\;\\delta(\\theta_R(T)-\\theta_R(0)-2\\pi_a w)",
-      "description": "Sector-aware path integral with explicit winding constraint."
+      "description": "Sector-aware path integral with explicit winding constraint.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "S_PL is the proposed Phase-Lift action functional.",
+      "assumptions": [
+        "Measure and action are well-defined under the Phase-Lift parameterization.",
+        "Sector sum converges or is regularized consistently."
+      ],
+      "caveat": "S_PL must be specified explicitly for reproducible calculations."
     },
     {
       "name": "U(N) holonomy split (Phase-Lift det-phase)",
       "equationLatex": "U(\\gamma)=e^{i\\varphi}V, V\\in SU(N), \\theta_R:=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a), w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
-      "description": "Separates determinant phase and tracks lifted winding in U(N) holonomy."
+      "description": "Separates determinant phase and tracks lifted winding in U(N) holonomy.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "V is the SU(N) component after factoring determinant phase.",
+      "assumptions": [
+        "Holonomy path admits stable determinant phase unwrapping.",
+        "Global phase convention is fixed over the loop."
+      ],
+      "caveat": "Winding assignment can shift under different gauge conventions."
     },
     {
       "name": "Klein-Gordon (polar split + Phase-Lift)",
       "equationLatex": "(\\Box+\\frac{m^2c^2}{\\hbar^2})\\psi=0,\\quad \\psi^{PL}=\\sqrt\\rho\\,e^{i\\phi}, \\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
-      "description": "Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping."
+      "description": "Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping.",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "definitions": "Box is the d'Alembertian operator; psi is relativistic scalar field.",
+      "assumptions": [
+        "Polar decomposition remains valid where psi is non-zero.",
+        "Relativistic and non-relativistic terms are not mixed in derived reductions."
+      ],
+      "caveat": "Use caution: some downstream interpretations can mix relativistic and non-relativistic forms."
     }
   ]
 }

@@ -228,6 +228,10 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                         "name": str(e.get("name", "")).strip(),
                         "equationLatex": str(e.get("equationLatex", "")).strip(),
                         "description": str(e.get("description", "")).strip(),
+                      "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
+                      "definitions": str(e.get("definitions", "")).strip(),
+                      "caveat": str(e.get("caveat", "")).strip(),
+                      "assumptions": e.get("assumptions", []),
                     }
                 )
             if out:
@@ -263,6 +267,10 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                 "name": title,
                 "equationLatex": equation_expr or "(pending)",
                 "description": desc_text or "Classic equation reformulated in your adjusted framework.",
+                "theory": "PASS-WITH-ASSUMPTIONS",
+                "definitions": "",
+                "caveat": "",
+                "assumptions": [],
             }
         )
     return out
@@ -276,6 +284,18 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         title = e.get("name", "") or f"Famous Equation {idx}"
         equation_expr = e.get("equationLatex", "") or "(pending)"
         desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
+        definitions = e.get("definitions", "") or ""
+        caveat = e.get("caveat", "") or ""
+        theory = (e.get("theory", "PASS-WITH-ASSUMPTIONS") or "PASS-WITH-ASSUMPTIONS").upper()
+        assumptions = e.get("assumptions", []) or []
+        if not isinstance(assumptions, list):
+            assumptions = [str(assumptions)]
+        assumptions_html = "".join(f"<li>{_esc(a)}</li>" for a in assumptions if str(a).strip())
+        theory_css = "warn"
+        if theory == "PASS":
+            theory_css = "good"
+        elif theory == "FAIL":
+            theory_css = "bad"
 
         famous_cards.append(
             f"""
@@ -286,6 +306,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
       <h2 class='card__title'>{_esc(title)}</h2>
       <div class='card__meta'>
         <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--{theory_css}'>{_esc(theory)}</span>
         <span class='pill pill--warn'>Adjusted</span>
       </div>
     </div>
@@ -299,6 +320,9 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc_text)}</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{('<ul class=\'ul\'>' + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
     </div>
