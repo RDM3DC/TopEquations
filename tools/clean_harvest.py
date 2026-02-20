@@ -1,8 +1,10 @@
-"""Clean harvested equation registry by removing empty/None-like entries.
+"""Clean harvested equation registry by removing junk / non-equation entries.
 
-Removes entries where:
+This harvest contains true equations plus some false positives (especially from inline $...$).
+We remove entries where:
 - equation is missing/blank
 - equation is literally 'None' / 'null'
+- equation looks like plain English / non-math text (low math signal)
 
 Writes back to: data/harvest/equation_harvest.json
 
@@ -15,10 +17,24 @@ Exit code 0 always; prints summary.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 HARVEST = REPO / "data" / "harvest" / "equation_harvest.json"
+
+# Heuristics: keep items that look like actual math.
+MATH_SIGNAL = re.compile(
+    r"(\\[a-zA-Z]+)|"  # LaTeX commands
+    r"[=<>±≈∝→←↔]|"     # relations
+    r"[\d]|"           # numbers
+    r"[\+\-\*/\^_]|" # operators / latex subscripts
+    r"[()\[\]{}]|"     # grouping
+    r"[αβγδλμνπϕφθκΩΔΣΓ]|"  # common greek glyphs
+    r"(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)"
+)
+
+MOSTLY_WORDS = re.compile(r"^[A-Za-z\s,;:\-']+$")
 
 
 def is_bad(eq: object) -> bool:
@@ -27,8 +43,22 @@ def is_bad(eq: object) -> bool:
     s = str(eq).strip()
     if not s:
         return True
-    if s.lower() in {"none", "null"}:
+    low = s.lower()
+    if low in {"none", "null"}:
         return True
+
+    # If it's basically plain English with no math markers, drop it.
+    if MOSTLY_WORDS.match(s) and not MATH_SIGNAL.search(s):
+        return True
+
+    # Require at least some math signal.
+    if not MATH_SIGNAL.search(s):
+        return True
+
+    # Super-short fragments are usually junk.
+    if len(s) < 4:
+        return True
+
     return False
 
 
