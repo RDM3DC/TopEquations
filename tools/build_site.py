@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """Build the GitHub Pages site (docs/) from data files.
 
 Generates:
@@ -120,6 +122,22 @@ def _page(title: str, body: str, updated: str) -> str:
 
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
+    # Optional: embed the markdown-maintained tier-list table (HTML) into the site.
+    # This lets `leaderboard.md` drive the side-by-side tier list section, while
+    # the ranked cards still come from `data/equations.json`.
+    tier_table_html = ""
+    try:
+        md = (repo_root / "leaderboard.md").read_text(encoding="utf-8")
+        # Grab the first <table>...</table> after the Tier Lists header.
+        if "## Tier Lists" in md and "<table" in md:
+            start = md.find("## Tier Lists")
+            t0 = md.find("<table", start)
+            t1 = md.find("</table>", t0)
+            if t0 != -1 and t1 != -1:
+                tier_table_html = md[t0 : t1 + len("</table>")].strip()
+    except Exception:
+        tier_table_html = ""
+
     # Tier 1: Canonical Core (pinned, non-ranked)
     core_path = repo_root / "data" / "core.json"
     core = json.loads(core_path.read_text(encoding="utf-8"))
@@ -259,6 +277,12 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     </div>
   </div>
 </div>
+"""
+
+    if tier_table_html:
+        body += "\n<h2 style='margin-top:18px'>Tier Lists (Side-by-Side)</h2>\n" + tier_table_html + "\n"
+
+    body += """
 
 <h2 style='margin-top:18px'>Canonical Core (Pinned / Non‑Ranked)</h2>
 <div id='coreCards'>
