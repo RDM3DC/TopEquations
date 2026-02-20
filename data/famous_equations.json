@@ -27,12 +27,12 @@
     },
     {
       "name": "U(N) holonomy split (Phase-Lift det-phase)",
-      "equationLatex": "U(\\gamma)=e^{i\\varphi}V,\\ V\\in SU(N),\\ \theta_R:=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a),\\ w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
+      "equationLatex": "U(\\gamma)=e^{i\\varphi}V, V\\in SU(N), \\theta_R:=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a), w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
       "description": "Separates determinant phase and tracks lifted winding in U(N) holonomy."
     },
     {
       "name": "Klein-Gordon (polar split + Phase-Lift)",
-      "equationLatex": "(\\Box+\\frac{m^2c^2}{\\hbar^2})\\psi=0,\\quad \\psi^{PL}=\\sqrt\\rho\\,e^{i\\phi},\\ \phi=\\frac{\\pi}{\\pi_a}\\theta_R",
+      "equationLatex": "(\\Box+\\frac{m^2c^2}{\\hbar^2})\\psi=0,\\quad \\psi^{PL}=\\sqrt\\rho\\,e^{i\\phi}, \\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
       "description": "Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping."
     }
   ]
