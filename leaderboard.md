@@ -55,8 +55,6 @@ Scoring model (0-100):
 | 2026-02 | Redshift-ARP Superconductivity Law | R_s(z) = R_{s,0} (1 + z)^\alpha | discovery-matrix #1 (supercond.) | PASS-WITH-ASSUMPTIONS | 70 | ./assets/animations/eq-redshift-arp-superc.mp4 | planned |
 | 2026-02 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | PASS | 68 | ./assets/animations/eq-arp-temp-conductance.mp4 | planned |
 | 2026-02-20 | Unified Dynamic Constants Law | \dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T | discovery-matrix #3 | PASS-WITH-ASSUMPTIONS | 73 | ./assets/animations/eq-dyn-constants-union.mp4 | planned |
-| 2026-02-20 | Adaptive Branch Impedance (AIN) | Z_{ij}(t,\\omega) = \\frac{1}{G_{ij}(t)} + j\\omega L_{ij}(t) - \\frac{j}{\\omega C_{ij}(t)} | harvest: canonical-core/papers/01-arp-ain.md | PASS | 54 | planned | planned |
-| 2026-02-20 | Phase Energy Functional | E_{\\text{phase}}(\\varphi)= \\tfrac12\\sum_{(i,j)} w_{ij}\\,\\lVert\\Delta\\varphi_{ij}\\rVert^2 | harvest: AdaptiveCAD/PHASE_RESOLVED_MODELING.md | PASS-WITH-ASSUMPTIONS | 48 | planned | planned |
 
 ## Update Rules
 
