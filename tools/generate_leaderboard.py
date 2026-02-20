@@ -52,14 +52,15 @@ def generate(input_path: Path, output_path: Path) -> None:
 
     lines.append("## Current Top Equations (All-Time)")
     lines.append("")
-    lines.append(_row(["Rank", "Equation Name", "Source", "Score", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
-    lines.append(_row(["------", "---------------", "--------", "-------", "-------", "--------", "-----------", "---------------", "-------------"]))
+    lines.append(_row(["Rank", "Equation Name", "Equation", "Source", "Score", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
+    lines.append(_row(["------", "---------------", "--------", "--------", "-------", "-------", "--------", "-----------", "---------------", "-------------"]))
     for i, e in enumerate(entries, start=1):
         lines.append(
             _row(
                 [
                     str(i),
                     str(e.get("name", "")),
+                    str(e.get("equationLatex", "")) or "(pending)",
                     str(e.get("source", "")),
                     str(e.get("score", "")),
                     str(e.get("units", "")),
@@ -97,14 +98,15 @@ def generate(input_path: Path, output_path: Path) -> None:
 
     lines.append("## All Equations Since 2025 (Registry)")
     lines.append("")
-    lines.append(_row(["First Seen", "Equation Name", "Source", "Latest Status", "Latest Score", "Animation", "Image/Diagram"]))
-    lines.append(_row(["------------", "---------------", "--------", "---------------", "--------------", "-----------", "---------------"]))
+    lines.append(_row(["First Seen", "Equation Name", "Equation", "Source", "Latest Status", "Latest Score", "Animation", "Image/Diagram"]))
+    lines.append(_row(["------------", "---------------", "--------", "--------", "---------------", "--------------", "-----------", "---------------"]))
     for e in registry:
         lines.append(
             _row(
                 [
                     str(e.get("firstSeen", "")),
                     str(e.get("name", "")),
+                    str(e.get("equationLatex", "")) or "(pending)",
                     str(e.get("source", "")),
                     str(e.get("theory", "")),
                     str(e.get("score", "")),
