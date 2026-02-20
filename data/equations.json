@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-02-23",
+  "lastUpdated": "2026-02-20",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -58,7 +58,7 @@
     },
     {
       "id": "eq-arp-temp-conductance",
-      "name": "Temperature-dependent conductance law",
+      "name": "Temperature-Dependent Conductance Law",
       "firstSeen": "2026-02",
       "source": "daily run 2026-02-19",
       "score": 68,
@@ -113,7 +113,7 @@
     {
       "id": "eq-curve-memory-137",
       "name": "Curve Memory Fine-Structure Emergence",
-      "firstSeen": "2026-02-21",
+      "firstSeen": "2026-02",
       "source": "discovery-matrix #4",
       "score": 72,
       "scores": {
@@ -133,14 +133,14 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Formalizes the emergence of the fine-structure constant (≈1/137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
-      "date": "2026-02-21",
+      "description": "Formalizes the emergence of the inverse fine-structure constant (α⁻¹ ≈ 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+      "date": "2026-02-20",
       "equationLatex": "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}"
     },
     {
       "id": "eq-shield-mechanic-arp",
-      "name": "Shield Mechanic Law (ARP)",
-      "firstSeen": "2026-02-22",
+      "name": "Shielding Mechanism Law (ARP)",
+      "firstSeen": "2026-02",
       "source": "discovery-matrix #5",
       "score": 71,
       "scores": {
@@ -160,14 +160,14 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Proposes a shielding effect in ARP systems, modeled as a partial cancellation of external field perturbations by induced adaptive current. E_eff = E_ext - λ·J_adapt, with J_adapt = σ·E_ext; λ is a shielding coefficient (0 < λ < 1)",
-      "date": "2026-02-22",
-      "equationLatex": "E_{eff}=E_{ext}-\\lambda J_{adapt},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0<\\lambda<1"
+      "description": "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 < λ < 1.",
+      "date": "2026-02-20",
+      "equationLatex": "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0<\\lambda<1"
     },
     {
       "id": "eq-redshift-arp-superc",
       "name": "Redshift-ARP Superconductivity Law",
-      "firstSeen": "2026-02-23",
+      "firstSeen": "2026-02",
       "source": "discovery-matrix #1 (supercond.)",
       "score": 70,
       "scores": {
@@ -188,7 +188,7 @@
         "path": ""
       },
       "description": "Connects cosmological redshift with superconducting phase drops, positing ARP-parameterized carrier phase damping. z_eff ≈ f(σ_ARP, T)·exp(-κ·L_super), with κ an ARP-phase damping rate.",
-      "date": "2026-02-23",
+      "date": "2026-02-20",
       "equationLatex": "z_{eff}\\approx f(\\sigma_{ARP},T)\\,e^{-\\kappa L_{super}}"
     }
   ]
