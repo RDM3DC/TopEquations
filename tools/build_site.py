@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -122,21 +123,35 @@ def _page(title: str, body: str, updated: str) -> str:
 
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
-    # Optional: embed the markdown-maintained tier-list table (HTML) into the site.
-    # This lets `leaderboard.md` drive the side-by-side tier list section, while
-    # the ranked cards still come from `data/equations.json`.
-    tier_table_html = ""
+    # Optional: render the markdown-maintained tier lists (from leaderboard.md)
+    # into a native "mini-card" layout so it matches the site.
+    tier_lists: dict[str, list[str]] = {"all_time": [], "month": [], "famous": []}
+
+    def _extract_li(ol_html: str) -> list[str]:
+        # Keep inner HTML of each <li>..</li> to preserve <b>, <br/>, and LaTeX delimiters.
+        return [m.group(1).strip() for m in re.finditer(r"<li>(.*?)</li>", ol_html, flags=re.I | re.S)]
+
     try:
         md = (repo_root / "leaderboard.md").read_text(encoding="utf-8")
-        # Grab the first <table>...</table> after the Tier Lists header.
         if "## Tier Lists" in md and "<table" in md:
             start = md.find("## Tier Lists")
             t0 = md.find("<table", start)
             t1 = md.find("</table>", t0)
             if t0 != -1 and t1 != -1:
-                tier_table_html = md[t0 : t1 + len("</table>")].strip()
+                table = md[t0 : t1 + len("</table>")]
+                # Extract the three <td> blocks
+                tds = re.findall(r"<td[^>]*>(.*?)</td>", table, flags=re.I | re.S)
+                if len(tds) >= 3:
+                    ols = []
+                    for td in tds[:3]:
+                        m = re.search(r"<ol>(.*?)</ol>", td, flags=re.I | re.S)
+                        ols.append(m.group(0) if m else "")
+                    tier_lists["all_time"] = _extract_li(ols[0])
+                    tier_lists["month"] = _extract_li(ols[1])
+                    tier_lists["famous"] = _extract_li(ols[2])
     except Exception:
-        tier_table_html = ""
+        # Best effort only; if parsing fails we simply omit tier lists.
+        tier_lists = {"all_time": [], "month": [], "famous": []}
 
     # Tier 1: Canonical Core (pinned, non-ranked)
     core_path = repo_root / "data" / "core.json"
@@ -279,8 +294,49 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 </div>
 """
 
-    if tier_table_html:
-        body += "\n<h2 style='margin-top:18px'>Tier Lists (Side-by-Side)</h2>\n" + tier_table_html + "\n"
+    if tier_lists["all_time"] or tier_lists["month"] or tier_lists["famous"]:
+        def _mini_list(items: list[str], collapsible: bool) -> str:
+            if not items:
+                return "<div class='muted'>(none)</div>"
+            out = []
+            for it in items:
+                if collapsible:
+                    # Collapse long entries by default; summary is the bold title if present.
+                    m = re.search(r"<b>(.*?)</b>", it, flags=re.I | re.S)
+                    title = m.group(1).strip() if m else "Details"
+                    out.append(
+                        "<details class='tieritem'>"
+                        f"<summary class='tieritem__summary'>{title}</summary>"
+                        f"<div class='tieritem__body'>{it}</div>"
+                        "</details>"
+                    )
+                else:
+                    out.append(f"<div class='tieritem tieritem--flat'>{it}</div>")
+            return "\n".join(out)
+
+        body += """
+<h2 style='margin-top:18px'>Tier Lists</h2>
+<div class='tiergrid'>
+  <section class='tiercol'>
+    <h3>Top Equations (All-Time)</h3>
+    <div class='tierstack'>
+""" + _mini_list(tier_lists["all_time"], collapsible=False) + """
+    </div>
+  </section>
+  <section class='tiercol'>
+    <h3>Top This Month</h3>
+    <div class='tierstack'>
+""" + _mini_list(tier_lists["month"], collapsible=False) + """
+    </div>
+  </section>
+  <section class='tiercol'>
+    <h3>Famous Equations (Adjusted)</h3>
+    <div class='tierstack'>
+""" + _mini_list(tier_lists["famous"], collapsible=True) + """
+    </div>
+  </section>
+</div>
+"""
 
     body += """
 
