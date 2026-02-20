@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>TopEquations — Famous Equations</title>
+
+  <link rel='stylesheet' href='./assets/style.css?v=202602201300' />
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
+
+  <script defer src='./assets/app.js?v=202602201300'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.renderMathInElement) {
+        window.renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\[', right: '\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\(', right: '\)', display: false},
+          ],
+          throwOnError: false,
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class='topbar'>
+    <div class='wrap topbar__inner'>
+      <div class='brand'>
+        <div class='brand__mark'>∑</div>
+        <div class='brand__text'>
+          <div class='brand__title'>TopEquations</div>
+          <div class='brand__sub'>Curated leaderboard + harvested registry</div>
+        </div>
+      </div>
+      <nav class='nav'>
+        <a href='./index.html'>Home</a>
+        <a href='./core.html'>Core</a>
+        <a href='./famous.html'>Famous</a>
+        <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./harvest.html'>All harvested</a>
+        <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class='wrap'>
+    
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Famous Equations (Adjusted)</h1>
+    <p>Curated classical forms rewritten in your Phase-Lift / Adaptive-π style.</p>
+  </div>
+</div>
+
+<div id='famousCards' class='cardrow'>
+
+<section class='card'>
+  <div class='card__rank'>F1</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Schrödinger (&quot;without i&quot; via Madelung + Phase-Lift)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>Substitute \(\phi := \frac{\pi}{\pi_a}\,\theta_R\) and \(\psi^{PL}=\sqrt{\rho}\,e^{i\phi}=\sqrt{\rho}\,\exp\!\big(i\frac{\pi}{\pi_a}\theta_R\big)\). Then the complex PDE becomes two real PDEs:<br/>
+          \(\partial_t\rho+\nabla\!\cdot(\rho\,\mathbf v)=0\),<br/>
+          \(\hbar\,\partial_t\phi+\frac{m}{2}\mathbf v^2+V+Q[\rho]=0\), where \(\mathbf v=\frac{\hbar}{m}\nabla\phi\), \(Q[\rho]= -\frac{\hbar^2}{2m}\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}\).<br/>
+          Sector bookkeeping (optional): \(\theta_R(T)-\theta_R(0)=2\pi_a w\), \(b=(-1)^w\).</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Aharonov–Bohm phase (Phase-Lifted)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>\(\theta_R[\gamma]=\mathrm{unwrap}\!\big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\theta_{\rm ref},\pi_a\big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w\).</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F3</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Berry phase / overlap product (no multi-valued Arg)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>Discrete: \(\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!(\Arg\langle\psi_{k+1}|\psi_k\rangle;\theta_{\rm ref},\pi_a)\).<br/>
+          Continuum: \(\theta_R[\gamma]=\mathrm{unwrap}\!(\oint_\gamma A;\theta_{\rm ref},\pi_a)=\int_S F + 2\pi_a w\), with \(b=(-1)^w\) optional.</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Josephson relations (Phase-Lift + adaptive-\(\pi\))</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>\(I=I_c\sin\!\big(\frac{\pi}{\pi_a}\theta_R\big)\),
+          \(\frac{d}{dt}\big(\frac{\pi}{\pi_a}\theta_R\big)=\frac{2e}{\hbar}V\). Optional: \(I=b\,I_c\sin(\frac{\pi}{\pi_a}\theta_R)\).</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F5</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Path integral with Phase-Lift sectors</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>\(Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta(\theta_R(T)-\theta_R(0)-2\pi_a w)\), \(b=(-1)^w\) optional.</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>U(N) holonomy split (Phase-Lift det-phase)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>If \(U(\gamma)\in U(N)\), write \(U(\gamma)=e^{i\varphi}V\), \(V\in SU(N)\), \(\varphi=\Arg\det U(\gamma)\). Phase-Lift: \(\theta_R:=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a)\), \(w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}\in\mathbb Z\), \(b(\gamma)=(-1)^{w_{\det}}\).</div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Klein–Gordon (polar split + Phase-Lift)</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>Start from \((\Box+\frac{m^2c^2}{\hbar^2})\psi=0\) with \(\psi^{PL}=\sqrt\rho\,e^{i\phi}\) and \(\phi=\frac{\pi}{\pi_a}\theta_R\). This yields two real equations (continuity-like + Hamilton–Jacobi-like) with the same sector tracking \((w,b)\) on closed evolution.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+  </section>
+</div>
+
+    <footer class='footer'>
+      <div>Last built: <strong>2026-02-20 13:00</strong></div>
+    </footer>
+  </main>
+</body>
+</html>

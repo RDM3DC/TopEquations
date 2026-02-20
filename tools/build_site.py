@@ -5,6 +5,7 @@
 Generates:
   - docs/index.html
   - docs/core.html          (canonical core only)
+  - docs/famous.html        (famous equations adjusted)
   - docs/leaderboard.html   (ranked derived only)
   - docs/harvest_preview.html
 
@@ -108,6 +109,7 @@ def _page(title: str, body: str, updated: str) -> str:
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./core.html'>Core</a>
+        <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
@@ -127,35 +129,6 @@ def _page(title: str, body: str, updated: str) -> str:
 
 
 def _build_core_cards(repo_root: Path) -> list[str]:
-    # Optional: render the markdown-maintained tier lists (from leaderboard.md)
-    # into a native "mini-card" layout so it matches the site.
-    tier_lists: dict[str, list[str]] = {"all_time": [], "month": [], "famous": []}
-
-    def _extract_li(ol_html: str) -> list[str]:
-        # Keep inner HTML of each <li>..</li> to preserve <b>, <br/>, and LaTeX delimiters.
-        return [m.group(1).strip() for m in re.finditer(r"<li>(.*?)</li>", ol_html, flags=re.I | re.S)]
-
-    try:
-        md = (repo_root / "leaderboard.md").read_text(encoding="utf-8")
-        if "## Tier Lists" in md and "<table" in md:
-            start = md.find("## Tier Lists")
-            t0 = md.find("<table", start)
-            t1 = md.find("</table>", t0)
-            if t0 != -1 and t1 != -1:
-                table = md[t0 : t1 + len("</table>")]
-                # Extract the three <td> blocks
-                tds = re.findall(r"<td[^>]*>(.*?)</td>", table, flags=re.I | re.S)
-                if len(tds) >= 3:
-                    ols = []
-                    for td in tds[:3]:
-                        m = re.search(r"<ol>(.*?)</ol>", td, flags=re.I | re.S)
-                        ols.append(m.group(0) if m else "")
-                    tier_lists["all_time"] = _extract_li(ols[0])
-                    tier_lists["month"] = _extract_li(ols[1])
-                    tier_lists["famous"] = _extract_li(ols[2])
-    except Exception:
-        # Best effort only; if parsing fails we simply omit tier lists.
-        tier_lists = {"all_time": [], "month": [], "famous": []}
 
     # Tier 1: Canonical Core (pinned, non-ranked)
     core_path = repo_root / "data" / "core.json"
@@ -196,6 +169,87 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         )
 
     return core_cards
+
+
+def _extract_tier_lists(repo_root: Path) -> dict[str, list[str]]:
+    tier_lists: dict[str, list[str]] = {"all_time": [], "month": [], "famous": []}
+
+    def _extract_li(ol_html: str) -> list[str]:
+        return [m.group(1).strip() for m in re.finditer(r"<li>(.*?)</li>", ol_html, flags=re.I | re.S)]
+
+    try:
+        md = (repo_root / "leaderboard.md").read_text(encoding="utf-8")
+        if "## Tier Lists" in md and "<table" in md:
+            start = md.find("## Tier Lists")
+            t0 = md.find("<table", start)
+            t1 = md.find("</table>", t0)
+            if t0 != -1 and t1 != -1:
+                table = md[t0 : t1 + len("</table>")]
+                tds = re.findall(r"<td[^>]*>(.*?)</td>", table, flags=re.I | re.S)
+                if len(tds) >= 3:
+                    ols = []
+                    for td in tds[:3]:
+                        m = re.search(r"<ol>(.*?)</ol>", td, flags=re.I | re.S)
+                        ols.append(m.group(0) if m else "")
+                    tier_lists["all_time"] = _extract_li(ols[0])
+                    tier_lists["month"] = _extract_li(ols[1])
+                    tier_lists["famous"] = _extract_li(ols[2])
+    except Exception:
+        pass
+
+    return tier_lists
+
+
+def build_famous(repo_root: Path, docs: Path) -> None:
+    tier_lists = _extract_tier_lists(repo_root)
+    famous_items = tier_lists.get("famous", [])
+
+    famous_cards: list[str] = []
+    for idx, item in enumerate(famous_items, start=1):
+        m = re.search(r"<b>(.*?)</b>", item, flags=re.I | re.S)
+        title = m.group(1).strip() if m else f"Famous Equation {idx}"
+        body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
+        body_html = body_html.lstrip("<br/>").strip()
+        famous_cards.append(
+            f"""
+<section class='card'>
+  <div class='card__rank'>F{idx}</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>{_esc(title)}</h2>
+      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+    </div>
+    <div class='kv' style='margin-top:10px'>
+      <div class='k'>Form</div>
+      <div class='v'>{body_html}</div>
+    </div>
+  </div>
+</section>
+"""
+        )
+
+    body = """
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Famous Equations (Adjusted)</h1>
+    <p>Curated classical forms rewritten in your Phase-Lift / Adaptive-π style.</p>
+  </div>
+</div>
+
+<div id='famousCards' class='cardrow'>
+""" + "\n".join(famous_cards) + """
+</div>
+
+  </section>
+</div>
+"""
+
+    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    out = docs / "famous.html"
+    out.write_text(_page("TopEquations — Famous Equations", body, updated), encoding="utf-8")
 
 
 def build_core(repo_root: Path, docs: Path) -> None:
@@ -362,6 +416,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
     <p><strong>Canonical Core</strong> and <strong>Ranked Derived</strong> are split into dedicated pages.</p>
     <div class='cta'>
       <a class='btn' href='./core.html'>Canonical Core</a>
+      <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
       <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
       <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
     </div>
@@ -443,6 +498,7 @@ def main() -> None:
 
     build_index(repo_root, docs)
     build_core(repo_root, docs)
+    build_famous(repo_root, docs)
     build_leaderboard(repo_root, docs)
     build_harvest(repo_root, docs)
 
