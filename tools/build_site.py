@@ -138,9 +138,10 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         img = _artifact(e.get("image"))
         date = e.get("date", "")
 
+        has_latex = "1" if (e.get("equationLatex") or "").strip() else "0"
         cards.append(
             f"""
-<section class='card'>
+<section class='card' data-rank='{i}' data-score='{_esc(score)}' data-haslatex='{has_latex}'>
   <div class='card__rank'>#{i}</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -174,11 +175,27 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 <div class='hero'>
   <div class='hero__left'>
     <h1>Leaderboard</h1>
-    <p>Curated list of the current top equations. Badges show score + units/theory sanity.</p>
+    <p>Curated list of the current top equations. Sort by score, and optionally show only entries that have LaTeX.</p>
   </div>
   <div class='hero__right'>
-    <div class='search'>
-      <input id='searchBox' type='search' placeholder='Search name / source / equation…' />
+    <div class='controls'>
+      <div class='search'>
+        <input id='searchBox' type='search' placeholder='Search name / source / equation…' />
+      </div>
+      <div class='row'>
+        <label class='check'>
+          <input id='latexOnly' type='checkbox' />
+          <span>LaTeX only</span>
+        </label>
+        <label class='select'>
+          <span>Sort</span>
+          <select id='sortBy'>
+            <option value='score-desc' selected>Score ↓</option>
+            <option value='score-asc'>Score ↑</option>
+            <option value='rank'>Rank</option>
+          </select>
+        </label>
+      </div>
     </div>
   </div>
 </div>
@@ -249,11 +266,19 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
 <div class='hero'>
   <div class='hero__left'>
     <h1>All harvested equations</h1>
-    <p>~15k deduped candidates harvested from local RDM3DC repos. Search and scroll. (Client-side, lazy-rendered.)</p>
+    <p>~15k deduped candidates harvested from local RDM3DC repos. Default view is <strong>LaTeX-only</strong> (best looking).</p>
   </div>
   <div class='hero__right'>
-    <div class='search'>
-      <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
+    <div class='controls'>
+      <div class='search'>
+        <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
+      </div>
+      <div class='row'>
+        <label class='check'>
+          <input id='harvestLatexOnly' type='checkbox' checked />
+          <span>LaTeX only</span>
+        </label>
+      </div>
     </div>
   </div>
 </div>

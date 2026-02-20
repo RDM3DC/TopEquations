@@ -3,6 +3,7 @@
   const listEl = document.getElementById('harvestList');
   const metaEl = document.getElementById('harvestMeta');
   const searchEl = document.getElementById('harvestSearch');
+  const latexOnlyEl = document.getElementById('harvestLatexOnly');
   if(!listEl || !metaEl || !searchEl) return;
 
   const SRC = './data/harvest/equation_harvest.json';
@@ -11,6 +12,9 @@
   let filtered = [];
   let cursor = 0;
   const PAGE = 120;
+
+  // Default to LaTeX-only view (best-looking equations)
+  let kindMode = 'latex';
 
   function esc(s){
     return (''+s)
@@ -41,7 +45,7 @@
           </div>
           <div class='equation'>
             <div class='equation__label'>Equation</div>
-            <div class='equation__tex'>$${esc(e.equation)}$</div>
+            <div class='equation__tex'>$$${esc(e.equation)}$$</div>
           </div>
           <div class='grid'>
             <div class='kv'><div class='k'>Source</div><div class='v'>${esc(e.source || '')}</div></div>
@@ -74,16 +78,20 @@
     cursor = 0;
     listEl.innerHTML = '';
 
+    const base = (kindMode === 'latex')
+      ? entries.filter(e => (e.kind||'').toLowerCase().includes('latex'))
+      : entries;
+
     if(!q){
-      filtered = entries;
+      filtered = base;
     }else{
-      filtered = entries.filter(e => {
+      filtered = base.filter(e => {
         const s = ((e.equation||'') + ' ' + (e.source||'')).toLowerCase();
         return s.includes(q);
       });
     }
 
-    metaEl.textContent = `${filtered.length.toLocaleString()} matches`;
+    metaEl.textContent = `${filtered.length.toLocaleString()} matches` + (kindMode==='latex' ? ' (LaTeX)' : '');
     renderChunk();
   }
 
@@ -106,11 +114,19 @@
     searchEl._t = setTimeout(resetFilter, 120);
   });
 
+  if(latexOnlyEl){
+    latexOnlyEl.addEventListener('change', () => {
+      kindMode = latexOnlyEl.checked ? 'latex' : 'all';
+      resetFilter();
+    });
+    kindMode = latexOnlyEl.checked ? 'latex' : 'all';
+  }
+
   fetch(SRC)
     .then(r => r.json())
     .then(d => {
       entries = d.entries || [];
-      // normalize expected fields (older artifact might include source_type)
+      // normalize expected fields
       entries = entries.map(x => ({
         equation: x.equation,
         kind: x.kind,
@@ -123,8 +139,7 @@
       const st = d.stats || {};
       const u = st.unique || entries.length;
       metaEl.textContent = `${u.toLocaleString()} unique harvested equations`;
-      filtered = entries;
-      renderChunk();
+      resetFilter();
     })
     .catch(err => {
       metaEl.textContent = 'Failed to load harvest JSON.';

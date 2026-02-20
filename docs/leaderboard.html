@@ -51,18 +51,34 @@
 <div class='hero'>
   <div class='hero__left'>
     <h1>Leaderboard</h1>
-    <p>Curated list of the current top equations. Badges show score + units/theory sanity.</p>
+    <p>Curated list of the current top equations. Sort by score, and optionally show only entries that have LaTeX.</p>
   </div>
   <div class='hero__right'>
-    <div class='search'>
-      <input id='searchBox' type='search' placeholder='Search name / source / equation…' />
+    <div class='controls'>
+      <div class='search'>
+        <input id='searchBox' type='search' placeholder='Search name / source / equation…' />
+      </div>
+      <div class='row'>
+        <label class='check'>
+          <input id='latexOnly' type='checkbox' />
+          <span>LaTeX only</span>
+        </label>
+        <label class='select'>
+          <span>Sort</span>
+          <select id='sortBy'>
+            <option value='score-desc' selected>Score ↓</option>
+            <option value='score-asc'>Score ↑</option>
+            <option value='rank'>Rank</option>
+          </select>
+        </label>
+      </div>
     </div>
   </div>
 </div>
 
 <div id='cards'>
 
-<section class='card'>
+<section class='card' data-rank='1' data-score='78' data-haslatex='1'>
   <div class='card__rank'>#1</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -91,7 +107,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='2' data-score='75' data-haslatex='1'>
   <div class='card__rank'>#2</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -120,7 +136,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='3' data-score='73' data-haslatex='1'>
   <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -149,7 +165,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='4' data-score='72' data-haslatex='1'>
   <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -178,7 +194,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='5' data-score='71' data-haslatex='1'>
   <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -207,7 +223,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='6' data-score='70' data-haslatex='1'>
   <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -236,7 +252,7 @@
 </section>
 
 
-<section class='card'>
+<section class='card' data-rank='7' data-score='68' data-haslatex='1'>
   <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -267,7 +283,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 03:38</strong></div>
+      <div>Last built: <strong>2026-02-20 03:47</strong></div>
     </footer>
   </main>
 </body>

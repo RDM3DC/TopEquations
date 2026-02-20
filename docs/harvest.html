@@ -51,11 +51,19 @@
 <div class='hero'>
   <div class='hero__left'>
     <h1>All harvested equations</h1>
-    <p>~15k deduped candidates harvested from local RDM3DC repos. Search and scroll. (Client-side, lazy-rendered.)</p>
+    <p>~15k deduped candidates harvested from local RDM3DC repos. Default view is <strong>LaTeX-only</strong> (best looking).</p>
   </div>
   <div class='hero__right'>
-    <div class='search'>
-      <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
+    <div class='controls'>
+      <div class='search'>
+        <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
+      </div>
+      <div class='row'>
+        <label class='check'>
+          <input id='harvestLatexOnly' type='checkbox' checked />
+          <span>LaTeX only</span>
+        </label>
+      </div>
     </div>
   </div>
 </div>
@@ -70,7 +78,7 @@
 <script defer src='./assets/harvest.js'></script>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 03:38</strong></div>
+      <div>Last built: <strong>2026-02-20 03:47</strong></div>
     </footer>
   </main>
 </body>
