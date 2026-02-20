@@ -217,11 +217,23 @@ def build_famous(repo_root: Path, docs: Path) -> None:
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>{_esc(title)}</h2>
-      <div class='card__meta'><span class='pill pill--warn'>Adjusted</span></div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
     </div>
-    <div class='kv' style='margin-top:10px'>
-      <div class='k'>Form</div>
-      <div class='v'>{body_html}</div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>{body_html}</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Classic equation reformulated in your adjusted framework.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
     </div>
   </div>
 </section>
