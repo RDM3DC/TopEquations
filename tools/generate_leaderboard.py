@@ -22,14 +22,22 @@ def _row(cols: list[str]) -> str:
 
 def generate(input_path: Path, output_path: Path) -> None:
     data = json.loads(input_path.read_text(encoding="utf-8"))
-    entries = list(data.get("entries", []))
-    entries.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
+    entries_all = list(data.get("entries", []))
+    entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
+
+    # Display cap: only show "leaderboard" entries with score >= 68.
+    # Lower-scoring entries may still exist in the registry, but they won't appear
+    # in the top tables.
+    DISPLAY_THRESHOLD = 68
+    entries = [e for e in entries_all if float(e.get("score", 0)) >= DISPLAY_THRESHOLD]
 
     today = datetime.now().strftime("%Y-%m-%d")
     this_month = datetime.now().strftime("%Y-%m")
 
     monthly = [e for e in entries if str(e.get("date", "")).startswith(this_month)]
-    registry = [e for e in entries if str(e.get("firstSeen", "")).startswith(("2025", "2026", "2027", "2028", "2029"))]
+
+    # Registry keeps everything, regardless of score (historical record).
+    registry = [e for e in entries_all if str(e.get("firstSeen", "")).startswith(("2025", "2026", "2027", "2028", "2029"))]
     registry.sort(key=lambda e: str(e.get("firstSeen", "9999-99")))
 
     lines: list[str] = []

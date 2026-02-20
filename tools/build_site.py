@@ -359,11 +359,15 @@ def build_core(repo_root: Path, docs: Path) -> None:
 
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
-    # Ranked derived equations only.
+    # Ranked derived equations only (display capped to score >= 68).
+    DISPLAY_THRESHOLD = 68
+
     data_path = repo_root / "data" / "equations.json"
     data = json.loads(data_path.read_text(encoding="utf-8"))
-    entries = list(data.get("entries", []))
-    entries.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
+    entries_all = list(data.get("entries", []))
+    entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
+
+    entries = [e for e in entries_all if float(e.get("score", 0)) >= DISPLAY_THRESHOLD]
 
     cards = []
     for i, e in enumerate(entries, start=1):

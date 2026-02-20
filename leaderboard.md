@@ -27,8 +27,6 @@ Scoring model (0-100):
 | 7 | Shielding Mechanism Law (ARP) | E_{eff}=(1-\lambda)E_{ext},\ \ J_{adapt}=\sigma E_{ext},\ \ 0<\lambda<1 | discovery-matrix #5 | 71 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-shield-mechanic-arp.mp4 | planned | Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 < λ < 1. |
 | 8 | Redshift-ARP Superconductivity Law | R_s(z) = R_{s,0} (1 + z)^\alpha | discovery-matrix #1 (supercond.) | 70 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-redshift-arp-superc.mp4 | planned | Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant. |
 | 9 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | 68 | OK | PASS | ./assets/animations/eq-arp-temp-conductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
-| 10 | Adaptive Branch Impedance (AIN) | Z_{ij}(t,\\omega) = \\frac{1}{G_{ij}(t)} + j\\omega L_{ij}(t) - \\frac{j}{\\omega C_{ij}(t)} | harvest: canonical-core/papers/01-arp-ain.md | 54 | OK | PASS | planned | planned | Time-varying RLC impedance expressed via adaptive conductance G_{ij}(t) and adaptive inductance/capacitance, extending ARP/AIN to frequency-domain response. |
-| 11 | Phase Energy Functional | E_{\\text{phase}}(\\varphi)= \\tfrac12\\sum_{(i,j)} w_{ij}\\,\\lVert\\Delta\\varphi_{ij}\\rVert^2 | harvest: AdaptiveCAD/PHASE_RESOLVED_MODELING.md | 48 | WARN | PASS-WITH-ASSUMPTIONS | planned | planned | Quadratic phase-smoothing energy over edges: penalizes phase differences with weights w_{ij}; useful as a regularizer or Lyapunov-like candidate in phase-coupled dynamics. |
 
 ## Newest Top-Ranked Equations (This Month)
 
@@ -43,8 +41,6 @@ Scoring model (0-100):
 | 2026-02-20 | Shielding Mechanism Law (ARP) | 71 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-shield-mechanic-arp.mp4 | planned | Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 < λ < 1. |
 | 2026-02-20 | Redshift-ARP Superconductivity Law | 70 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/eq-redshift-arp-superc.mp4 | planned | Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant. |
 | 2026-02-19 | Temperature-Dependent Conductance Law | 68 | OK | PASS | ./assets/animations/eq-arp-temp-conductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
-| 2026-02-20 | Adaptive Branch Impedance (AIN) | 54 | OK | PASS | planned | planned | Time-varying RLC impedance expressed via adaptive conductance G_{ij}(t) and adaptive inductance/capacitance, extending ARP/AIN to frequency-domain response. |
-| 2026-02-20 | Phase Energy Functional | 48 | WARN | PASS-WITH-ASSUMPTIONS | planned | planned | Quadratic phase-smoothing energy over edges: penalizes phase differences with weights w_{ij}; useful as a regularizer or Lyapunov-like candidate in phase-coupled dynamics. |
 
 ## All Equations Since 2025 (Registry)
 
