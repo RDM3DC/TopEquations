@@ -3,7 +3,6 @@
   "lastUpdated": "2026-02-20",
   "cursor": 50,
   "entries": [
-    ...
     {"equation": "\\Delta\\phi = 2\\pi/N", "kind": "latex", "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md", "sha1": "3b5e0db48af1e58037837b1a859e3c798700667a", "scoredAt": "2026-02-20", "score": 52, "scores": {"novelty": 8, "tractability": 18, "plausibility": 16, "validation": 10, "artifactCompleteness": 0}, "description": "Standard equation for dividing a full circle into N uniform increments; basic geometry."},
     {"equation": "\\delta\\phi(N)=0", "kind": "latex", "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md", "sha1": "e4a9de869d3ed6dd8d3782a2527340552dba97d2", "scoredAt": "2026-02-20", "score": 58, "scores": {"novelty": 6, "tractability": 20, "plausibility": 13, "validation": 10, "artifactCompleteness": 0}, "description": "States that the deviation or correction is zero for some N; needs context for value."},
     {"equation": "\\Delta\\phi \\approx 2\\pi/\\varphi", "kind": "latex", "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\allot.md", "sha1": "581d87bfc956bb8c085e4cae030df52f87791287", "scoredAt": "2026-02-20", "score": 61, "scores": {"novelty": 11, "tractability": 17, "plausibility": 13, "validation": 10, "artifactCompleteness": 0}, "description": "Approximate partitioning of a circle by a non-integer factor, pi/phi; possibly for aperiodic geometry."},
