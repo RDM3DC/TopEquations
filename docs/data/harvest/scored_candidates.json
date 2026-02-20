@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "lastUpdated": "2026-02-20",
-  "cursor": 10,
+  "cursor": 20,
   "entries": [
     {
       "equation": "\\kappa(s) = \\left\\| \\frac{d\\mathbf{T}}{ds} \\right\\|",
@@ -162,9 +162,169 @@
         "validation": 6,
         "artifactCompleteness": 0
       }
+    },
+    {
+      "equation": "\\pi_a \\leftarrow \\pi_a - \\alpha \\, e \\, \\frac{\\partial P}{\\partial \\pi_a} - \\mu(\\pi_a - \\pi)",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Curvature-Memory-ACM-\\docs\\whitepaper.md",
+      "line_start": null,
+      "sha1": "5ed60c9eac4634400c087442acf6142ed5d5ae19",
+      "scoredAt": "2026-02-20",
+      "score": 48,
+      "scores": {
+        "novelty": 15,
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 4,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\frac{dG_i}{dt} = \\alpha |I_i| - \\mu G_i",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Curvature-Memory-ACM-\\docs\\whitepaper.md",
+      "line_start": null,
+      "sha1": "102cc066d1e69434c062eef5984a461909dcc9d9",
+      "scoredAt": "2026-02-20",
+      "score": 44,
+      "scores": {
+        "novelty": 8,
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 6,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\alpha_\\mathrm{fs} \\approx \\frac{1}{137.035999}",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Curvature-Memory-ACM-\\docs\\whitepaper.md",
+      "line_start": null,
+      "sha1": "cd061f66ede6f7dbf7f4dac09d5a31d58bc9d460",
+      "scoredAt": "2026-02-20",
+      "score": 41,
+      "scores": {
+        "novelty": 8,
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 4,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\begin{aligned} \\frac{d\\mathbf{T}}{ds} &= \\kappa(s)\\,\\mathbf{N}(s) \\\\\\\\ \\frac{d\\mathbf{N}}{ds} &= -\\kappa(s)\\,\\mathbf{T}(s) + \\tau(s)\\,\\mathbf{B}(s) \\\\\\\\ \\frac{d\\mathbf{B}}{ds} &= -\\tau(s)\\,\\mathbf{N}(s) \\end{aligned}",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\3dCMA.md",
+      "line_start": null,
+      "sha1": "b2d58bc5f24ff157cc54c348fc2344a9d6db598c",
+      "scoredAt": "2026-02-20",
+      "score": 41,
+      "scores": {
+        "novelty": 8,
+        "tractability": 12,
+        "plausibility": 15,
+        "validation": 6,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\tau_i \\approx \\frac{\\operatorname{sign}\\!\\big((\\mathbf{b}_{i-1}\\!\\times\\!\\mathbf{b}_i)\\cdot\\mathbf{t}_i\\big)\\; \\angle(\\mathbf{b}_{i-1},\\mathbf{b}_i)}{\\tfrac{1}{2}(\\ell_{i-1}+\\ell_i)}",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\3dCMA.md",
+      "line_start": null,
+      "sha1": "6935cc1c27283617326ad3ec5d5c0dbb272539bc",
+      "scoredAt": "2026-02-20",
+      "score": 38,
+      "scores": {
+        "novelty": 8,
+        "tractability": 11,
+        "plausibility": 15,
+        "validation": 4,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "dG/dt = \\alpha|I| - \\mu G",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\4loop.md",
+      "line_start": null,
+      "sha1": "5fdbd2abac10f7c8aec3a7c7adcd549377eb5352",
+      "scoredAt": "2026-02-20",
+      "score": 43,
+      "scores": {
+        "novelty": 8,
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "G_n = G_{eq} + (G_0 - G_{eq})(1-\\mu)^n",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\4loop.md",
+      "line_start": null,
+      "sha1": "c4fe2195dee39ed9540c6c11e9a201c6ad8d1fb5",
+      "scoredAt": "2026-02-20",
+      "score": 43,
+      "scores": {
+        "novelty": 8,
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\alpha, \\mu, n_{bias}",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\4loop.md",
+      "line_start": null,
+      "sha1": "e27641a400573a8679d963952d6cae8c1223afae",
+      "scoredAt": "2026-02-20",
+      "score": 40,
+      "scores": {
+        "novelty": 8,
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 4,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\Phi(\\dot q)",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\action.md",
+      "line_start": null,
+      "sha1": "5e6a47ecd570b831c446148cbfc474625c9d8064",
+      "scoredAt": "2026-02-20",
+      "score": 40,
+      "scores": {
+        "novelty": 8,
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 4,
+        "artifactCompleteness": 0
+      }
+    },
+    {
+      "equation": "\\dot q = \\kappa,\\text{flux}",
+      "kind": "latex",
+      "source": "C:\\Users\\RDM3D\\clawdad42\\Adaptive-Resistance-Principle-ARP-\\action.md",
+      "line_start": null,
+      "sha1": "7c1d8b060446d19b44bee9e777347fe79b80e29c",
+      "scoredAt": "2026-02-20",
+      "score": 43,
+      "scores": {
+        "novelty": 8,
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      }
     }
   ],
   "stats": {
-    "count": 10
+    "count": 20
   }
 }
