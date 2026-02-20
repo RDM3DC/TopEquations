@@ -190,6 +190,33 @@
       "description": "Connects cosmological redshift with superconducting phase drops, positing ARP-parameterized carrier phase damping. z_eff ≈ f(σ_ARP, T)·exp(-κ·L_super), with κ an ARP-phase damping rate.",
       "date": "2026-02-20",
       "equationLatex": "z_{eff}\\approx f(\\sigma_{ARP},T)\\,e^{-\\kappa L_{super}}"
+    },
+    {
+      "id": "eq-arp-phase-lifted-complex-conductance",
+      "name": "Phase-Lifted Complex Conductance Update",
+      "firstSeen": "2026-02",
+      "source": "derived: ARP core + Phase-Lift + Adaptive-π",
+      "score": 76,
+      "scores": {
+        "novelty": 26,
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iθ_R,ij} to model sign flips under branch crossings.",
+      "date": "2026-02-20",
+      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)"
     }
   ]
 }

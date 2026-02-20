@@ -244,8 +244,37 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='75' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='76' data-haslatex='1'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 76</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde G_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)}-\mu_G\,\tilde G_{ij}(t),\qquad \theta_{R,ij}(t)=\mathrm{unwrap}\!\big(\arg I_{ij}(t);\theta_{\rm ref},\pi_a\big)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-π</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iθ_R,ij} to model sign flips under branch crossings.</div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='3' data-score='75' data-haslatex='1'>
+  <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Lyapunov Stability Form</h2>
@@ -273,8 +302,8 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#3</div>
+<section class='card' data-rank='4' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Unified Dynamic Constants Law</h2>
@@ -302,8 +331,8 @@
 </section>
 
 
-<section class='card' data-rank='4' data-score='72' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='5' data-score='72' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Curve Memory Fine-Structure Emergence</h2>
@@ -331,8 +360,8 @@
 </section>
 
 
-<section class='card' data-rank='5' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
+<section class='card' data-rank='6' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Shielding Mechanism Law (ARP)</h2>
@@ -360,8 +389,8 @@
 </section>
 
 
-<section class='card' data-rank='6' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
+<section class='card' data-rank='7' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Redshift-ARP Superconductivity Law</h2>
@@ -389,8 +418,8 @@
 </section>
 
 
-<section class='card' data-rank='7' data-score='68' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+<section class='card' data-rank='8' data-score='68' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -420,7 +449,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 04:47</strong></div>
+      <div>Last built: <strong>2026-02-20 04:52</strong></div>
     </footer>
   </main>
 </body>
