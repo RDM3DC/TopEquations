@@ -51,18 +51,40 @@ Scoring model (0-100):
     </td>
     <td valign="top">
       <ol>
-        <li><b>Newton (2nd law)</b> — adjusted: allow <i>m(t)</i> or <i>c(t)</i> coupling (TBD)</li>
-        <li><b>Maxwell’s equations</b> — adjusted: <i>\epsilon,\mu</i> as adaptive fields (TBD)</li>
-        <li><b>Schrödinger equation</b> — adjusted: phase-lift / \(\pi_a\) period (TBD)</li>
-        <li><b>Einstein field equations</b> — adjusted: adaptive constants / \(c(t)\) (TBD)</li>
-        <li><b>Navier–Stokes</b> — adjusted: ARP conductance/viscosity relaxation (TBD)</li>
-        <li><b>Wave equation</b> — adjusted: propagation speed \(c\to c(t,\mathbf{x})\) (TBD)</li>
-        <li><b>Planck relation</b> — adjusted: \(\hbar\to \hbar(t)\) via dynamic-constants vector (TBD)</li>
-        <li><b>Ideal gas law</b> — adjusted: \(R\to R(t)\) or hidden state variable (TBD)</li>
-        <li><b>Poisson equation</b> — adjusted: adaptive permittivity / screening \(\lambda\) (TBD)</li>
-        <li><b>Boltzmann distribution</b> — adjusted: effective temperature under ARP (TBD)</li>
+        <li>
+          <b>Schrödinger ("without i" via Madelung + Phase-Lift)</b><br/>
+          Substitute \(\phi := \frac{\pi}{\pi_a}\,\theta_R\) and \(\psi^{PL}=\sqrt{\rho}\,e^{i\phi}=\sqrt{\rho}\,\exp\!\big(i\frac{\pi}{\pi_a}\theta_R\big)\). Then the complex PDE becomes two real PDEs:<br/>
+          \(\partial_t\rho+\nabla\!\cdot(\rho\,\mathbf v)=0\),<br/>
+          \(\hbar\,\partial_t\phi+\frac{m}{2}\mathbf v^2+V+Q[\rho]=0\), where \(\mathbf v=\frac{\hbar}{m}\nabla\phi\), \(Q[\rho]= -\frac{\hbar^2}{2m}\frac{\nabla^2\sqrt{\rho}}{\sqrt{\rho}}\).<br/>
+          Sector bookkeeping (optional): \(\theta_R(T)-\theta_R(0)=2\pi_a w\), \(b=(-1)^w\).
+        </li>
+        <li>
+          <b>Aharonov–Bohm phase (Phase-Lifted)</b><br/>
+          \(\theta_R[\gamma]=\mathrm{unwrap}\!\big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\theta_{\rm ref},\pi_a\big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w\).
+        </li>
+        <li>
+          <b>Berry phase / overlap product (no multi-valued Arg)</b><br/>
+          Discrete: \(\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!(\Arg\langle\psi_{k+1}|\psi_k\rangle;\theta_{\rm ref},\pi_a)\).<br/>
+          Continuum: \(\theta_R[\gamma]=\mathrm{unwrap}\!(\oint_\gamma A;\theta_{\rm ref},\pi_a)=\int_S F + 2\pi_a w\), with \(b=(-1)^w\) optional.
+        </li>
+        <li>
+          <b>Josephson relations (Phase-Lift + adaptive-\(\pi\))</b><br/>
+          \(I=I_c\sin\!\big(\frac{\pi}{\pi_a}\theta_R\big)\),
+          \(\frac{d}{dt}\big(\frac{\pi}{\pi_a}\theta_R\big)=\frac{2e}{\hbar}V\). Optional: \(I=b\,I_c\sin(\frac{\pi}{\pi_a}\theta_R)\).
+        </li>
+        <li>
+          <b>Path integral with Phase-Lift sectors</b><br/>
+          \(Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta(\theta_R(T)-\theta_R(0)-2\pi_a w)\), \(b=(-1)^w\) optional.
+        </li>
+        <li>
+          <b>U(N) holonomy split (Phase-Lift det-phase)</b><br/>
+          If \(U(\gamma)\in U(N)\), write \(U(\gamma)=e^{i\varphi}V\), \(V\in SU(N)\), \(\varphi=\Arg\det U(\gamma)\). Phase-Lift: \(\theta_R:=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a)\), \(w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}\in\mathbb Z\), \(b(\gamma)=(-1)^{w_{\det}}\).
+        </li>
+        <li>
+          <b>Klein–Gordon (polar split + Phase-Lift)</b><br/>
+          Start from \((\Box+\frac{m^2c^2}{\hbar^2})\psi=0\) with \(\psi^{PL}=\sqrt\rho\,e^{i\phi}\) and \(\phi=\frac{\pi}{\pi_a}\theta_R\). This yields two real equations (continuity-like + Hamilton–Jacobi-like) with the same sector tracking \((w,b)\) on closed evolution.
+        </li>
       </ol>
-      <p><i>Note:</i> Tell me what you mean by “adjustments” (ARP-style damping terms? dynamic constants \(\mathbf{c}(t)\)? \(\pi_a\)-phase substitutions?), and I’ll rewrite these as explicit adjusted equations instead of placeholders.</p>
     </td>
   </tr>
 </table>
