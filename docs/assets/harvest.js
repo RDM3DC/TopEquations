@@ -23,6 +23,33 @@
       .replaceAll('>','&gt;');
   }
 
+  function compactPath(p){
+    if(!p) return 'unknown';
+    const parts = String(p).split('\\');
+    if(parts.length <= 3) return p;
+    return `${parts[parts.length-3]}\\${parts[parts.length-2]}\\${parts[parts.length-1]}`;
+  }
+
+  function inferTitle(eq, idx){
+    const s = String(eq || '').trim();
+    const m = s.match(/^\s*([^=]{1,70})=/);
+    if(m){
+      return m[1].replace(/\\[a-zA-Z]+/g, '').replace(/[{}]/g, '').trim() || `Harvested Equation #${idx}`;
+    }
+    return `Harvested Equation #${idx}`;
+  }
+
+  function inferDescription(eq, src){
+    const s = String(eq || '');
+    const srcHint = compactPath(src);
+    let kind = 'symbolic relation';
+    if(/d\/?dt|\\dot|\\ddot/.test(s)) kind = 'time-evolution relation';
+    else if(/\\partial|\\nabla|grad|div|curl/i.test(s)) kind = 'field/gradient relation';
+    else if(/\\int|\\sum|\\prod/.test(s)) kind = 'integral or aggregate relation';
+    else if(/=/.test(s)) kind = 'algebraic identity/equation';
+    return `Auto-described ${kind} harvested from ${srcHint}.`;
+  }
+
   function renderChunk(){
     const end = Math.min(cursor + PAGE, filtered.length);
     if(cursor >= end) return;
@@ -31,20 +58,23 @@
 
     for(let i=cursor;i<end;i++){
       const e = filtered[i];
+      const rank = i + 1;
       const kind = (e.kind || 'equation');
       const isLatex = kind.toLowerCase().includes('latex');
       const src = e.source || '';
       const ref = src ? `${src}${e.line_start ? `#L${e.line_start}` : ''}` : 'harvest-entry';
       const eqLabel = isLatex ? 'Derived equation' : 'Expression';
       const eqBody = isLatex ? `$$${esc(e.equation || '')}$$` : esc(e.equation || '');
+      const title = inferTitle(e.equation, rank);
+      const desc = inferDescription(e.equation, src);
 
       const card = document.createElement('section');
       card.className = 'card';
       card.innerHTML = `
-        <div class='card__rank'>#${i+1}</div>
+        <div class='card__rank'>#${rank}</div>
         <div class='card__body'>
           <div class='card__head'>
-            <h2 class='card__title'>Harvested Equation</h2>
+            <h2 class='card__title'>${esc(title)}</h2>
             <div class='card__meta'>
               <span class='badge badge--score'>${esc(kind)}</span>
               <span class='pill pill--neutral'>${esc(e.source_type || '')}</span>
@@ -56,6 +86,7 @@
           </div>
           <div class='card__sub'>Reference: <span class='muted'>${esc(ref)}</span></div>
           <div class='grid'>
+            <div class='kv'><div class='k'>Description</div><div class='v'>${esc(desc)}</div></div>
             <div class='kv'><div class='k'>Source</div><div class='v'>${esc(src || 'unknown')}</div></div>
             <div class='kv'><div class='k'>Line</div><div class='v'>${esc(e.line_start || '')}</div></div>
             <div class='kv'><div class='k'>SHA1</div><div class='v'>${esc((e.sha1||'').slice(0,12) || 'n/a')}</div></div>
