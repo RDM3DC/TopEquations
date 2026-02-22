@@ -470,6 +470,45 @@
       }
     },
     {
+      "id": "eq-arp-gradient-flow-bridge",
+      "name": "ARP as Gradient Flow in Adaptive-π Geometry",
+      "firstSeen": "2026-02-22",
+      "source": "4-pillar fusion §3",
+      "score": 66,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 8,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Bridge theorem: ARP reinforcement is proportional to edge energy contributions in a πₐ-weighted Dirichlet landscape. ARP is a 'lazy' gradient flow where Ω = π_a/π changes what counts as a short/cheap path. Prediction: increasing πₐ in a region re-routes the ARP backbone away, even under the same boundary forcing. 'πₐ sculpts geodesics; ARP discovers them.'",
+      "differentialLatex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac{1}{2}\\sum_{(i,j)} \\Omega_{ij}\\,G_{ij}\\,(\\phi_i-\\phi_j)^2",
+      "derivation": "On a graph with adaptive-π weight Ω_{ij} and ARP conductance G_{ij}, the Dirichlet energy is E = (1/2) Σ Ω_{ij} G_{ij} (φ_i - φ_j)². Kirchhoff potentials give |I_{ij}| = G_{ij}|φ_i - φ_j|. ARP reinforce ∝ |I_{ij}| = edge contribution to √E geometry. Hence ARP is gradient descent on the weighted energy landscape.",
+      "assumptions": [
+        "Network is connected; Kirchhoff potentials are well-defined per step.",
+        "Ω_{ij} is sampled from the continuous π_a field at edge midpoints.",
+        "Budget/normalization constraint forces edge competition (not all edges grow)."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\dot G_{ij}=\\alpha_G\\,|I_{ij}|-\\mu_G\\,G_{ij},\\quad |I_{ij}|\\propto \\frac{\\partial\\sqrt{\\mathcal{E}}}{\\partial(\\sqrt{\\Omega_{ij}G_{ij}})}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 29
+        }
+      }
+    },
+    {
       "id": "eq-curve-memory-137",
       "name": "Curve Memory Fine-Structure Emergence",
       "firstSeen": "2026-02",
@@ -534,6 +573,45 @@
       }
     },
     {
+      "id": "eq-parity-pump",
+      "name": "Parity Pump (πₐ-gradient ℤ₂ flip mechanism)",
+      "firstSeen": "2026-02-22",
+      "source": "4-pillar fusion §2",
+      "score": 63,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Novel mechanism: parity can flip due to geometry-field motion, not only due to circling a branch point. A Z₂ pump controlled by ln(πₐ) dynamics. Conjecture: if Δθ=0 but ∫ d(ln πₐ) ≠ 0 over a closed loop, admissible lifts exist where b_a flips — the adaptive-π analog of geometric phase without dynamical phase.",
+      "differentialLatex": "\\dot\\varphi = \\frac{\\dot\\theta_R}{2\\pi_a} - \\varphi\\,\\frac{d}{dt}\\big(\\ln\\pi_a\\big)",
+      "derivation": "Define dimensionless lifted phase φ(t) := θ_R(t)/(2π_a(t)). Differentiate: dφ/dt = dθ_R/dt / (2π_a) - θ_R/(2π_a) · dπ_a/dt / π_a = dθ_R/dt / (2π_a) - φ · d(ln π_a)/dt. Half-integer crossings of φ flip b_a.",
+      "assumptions": [
+        "Smooth limit applies (continuous π_a and θ_R).",
+        "π_a > 0 everywhere (no degenerate period).",
+        "Parity pump conjecture assumes closed-loop topology with nontrivial ln(π_a) circulation."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\varphi(t) := \\frac{\\theta_R(t)}{2\\pi_a(t)},\\qquad \\int_\\gamma d(\\ln\\pi_a)\\neq 0 \\;\\Rightarrow\\; b_a[\\gamma]\\text{ can flip}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 30
+        }
+      }
+    },
+    {
       "id": "eq-dyn-constants-union",
       "name": "Unified Dynamic Constants Law",
       "firstSeen": "2026-02-20",
@@ -562,6 +640,45 @@
         "novelty": {
           "date": "2026-02-20",
           "score": 25
+        }
+      }
+    },
+    {
+      "id": "eq-pi-a-gauged-phase-lift",
+      "name": "πₐ-Gauged Phase-Lift (adaptive unwrap + invariants)",
+      "firstSeen": "2026-02-22",
+      "source": "4-pillar fusion §1",
+      "score": 61,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Generalizes Phase-Lift unwrapping from fixed 2π to adaptive 2πₐ: sheet jumps happen in units of the local identification length. Derives πₐ-gauged winding w_a and ℤ₂ shadow parity b_a. Novel: the unit of winding is no longer constant, coupling topology to a geometry field.",
+      "differentialLatex": "m_k = \\arg\\min_{m\\in\\mathbb{Z}} |\\theta(t_k)+2\\pi_a(t_k)\\,m - \\theta_R(t_{k-1})|",
+      "derivation": "Apply the nearest-sheet Phase-Lift rule but replace the fixed period 2π with the local adaptive period 2πₐ(t_k). The resolved phase is θ_R(t_k) = θ(t_k) + 2π_a(t_k) m_k. Winding w_a[γ] counts net integer sheet transitions; b_a = (-1)^{w_a} gives holonomy parity.",
+      "assumptions": [
+        "z(t) ≠ 0 along the path (no singularity crossings).",
+        "π_a(t) > 0 everywhere (positive phase-period field).",
+        "Nearest-sheet rule is unambiguous (no exact midpoints between sheets)."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\theta_R(t_k) = \\theta(t_k) + 2\\pi_a(t_k)\\,m_k,\\quad w_a[\\gamma]:=\\sum_k m_k,\\quad b_a[\\gamma]=(-1)^{w_a}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 28
         }
       }
     },
@@ -635,6 +752,44 @@
       }
     },
     {
+      "id": "eq-cm-integration-state",
+      "name": "Curve-Memory Integration State (unified closed loop)",
+      "firstSeen": "2026-02-22",
+      "source": "4-pillar fusion §4",
+      "score": 57,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Defines a unified integration state s(t) = (θ_R, w_a, b_a, π_a, M_k) bundling Phase-Lift, winding/parity, adaptive-π, and curve-memory features. Curve-memory curvature drives π_a, π_a changes phase unwrapping sensitivity, parity flips become detectable stable motifs. Turns topological sheet changes into an event grammar.",
+      "derivation": "Bundle lifted phase θ_R, gauged winding w_a, parity b_a, adaptive period π_a, and curve-memory jets M_k into a single state vector. Drive π_a via dπ_a/dt = α_π κ_mem - μ_π(π_a - π) where κ_mem is trajectory curvature from curve-memory. This closes the loop: CM → events → π_a → unwrap sensitivity → parity → CM motifs.",
+      "assumptions": [
+        "Curve-memory features M_k are well-defined (sufficient trajectory history).",
+        "κ_mem is a smooth or piecewise-smooth curvature proxy.",
+        "Feedback loop is stable under the chosen (α_π, μ_π) parameters."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "s(t)=\\big(\\theta_R,\\,w_a,\\,b_a,\\,\\pi_a,\\,M_k\\big),\\quad \\dot\\pi_a=\\alpha_\\pi\\,\\kappa_{\\text{mem}}-\\mu_\\pi(\\pi_a-\\pi)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 27
+        }
+      }
+    },
+    {
       "id": "eq-un-wilson-holonomy",
       "name": "U(N) Wilson / Holonomy",
       "firstSeen": "2026-02-22",
@@ -668,6 +823,43 @@
         "novelty": {
           "date": "2026-02-22",
           "score": 20
+        }
+      }
+    },
+    {
+      "id": "eq-adaptive-monodromy-spectrum",
+      "name": "Adaptive Monodromy Spectrum (bifurcation framework)",
+      "firstSeen": "2026-02-22",
+      "source": "4-pillar fusion §5",
+      "score": 54,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "For loop families γ_λ under πₐ evolution, the Adaptive Monodromy Pair M_a(γ) = (w_a, b_a) ∈ ℤ × {±1} traces out a reachable set that can bifurcate: parity flips occur without classical winding as (α_π, μ_π) or CM thresholds vary. Defines a research program: map bifurcation diagrams of M_a vs parameters.",
+      "assumptions": [
+        "Loop family γ_λ is smoothly parameterized.",
+        "π_a evolves by reinforce/decay dynamics during deformation.",
+        "Bifurcation analysis assumes sufficient parameter separation."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\mathcal{M}_a(\\gamma)=\\big(w_a(\\gamma),\\,b_a(\\gamma)\\big)\\in\\mathbb{Z}\\times\\{\\pm1\\}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 26
         }
       }
     }
