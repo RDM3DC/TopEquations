@@ -9,6 +9,14 @@ Heuristic scoring (no external dependencies):
 - Not meant to be perfect; it's a lightweight auto-triage.
 - Can be replaced later with LLM-assisted scoring.
 
+Rubric (v2):
+- Tractability (0-20)
+- Physical plausibility (0-20)
+- Validation bonus (0-20)
+- Artifact completeness (0-10)
+- Total normalized to 0-100 from the 70-point base.
+- Novelty is not part of total score; stored as a dated tag.
+
 Usage:
   python tools/score_harvest_batch.py --batch 10 --threshold 68
 
@@ -92,10 +100,11 @@ def _heuristic_scores(eq: str, source: str) -> dict:
     # Artifact completeness (0-10)
     artifact = 0
 
-    total = novelty + tract + plaus + validation + artifact
+    base_total = tract + plaus + validation + artifact
+    total = int(round((base_total / 70.0) * 100.0))
     return {
         "total": int(total),
-        "novelty": int(novelty),
+        "noveltyTag": int(novelty),
         "tractability": int(tract),
         "plausibility": int(plaus),
         "validation": int(validation),
@@ -162,11 +171,16 @@ def main() -> None:
             "scoredAt": _now_date(),
             "score": sc["total"],
             "scores": {
-                "novelty": sc["novelty"],
                 "tractability": sc["tractability"],
                 "plausibility": sc["plausibility"],
                 "validation": sc["validation"],
                 "artifactCompleteness": sc["artifactCompleteness"],
+            },
+            "tags": {
+                "novelty": {
+                    "score": sc["noveltyTag"],
+                    "date": _now_date()
+                }
             },
         }
 
@@ -186,11 +200,16 @@ def main() -> None:
                     "source": f"harvest: {src}",
                     "score": sc["total"],
                     "scores": {
-                        "novelty": sc["novelty"],
                         "tractability": sc["tractability"],
                         "plausibility": sc["plausibility"],
                         "validation": sc["validation"],
                         "artifactCompleteness": sc["artifactCompleteness"],
+                    },
+                    "tags": {
+                        "novelty": {
+                            "score": sc["noveltyTag"],
+                            "date": _now_date()
+                        }
                     },
                     "units": "TBD",
                     "theory": "TBD",

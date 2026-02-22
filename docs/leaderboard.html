@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602201510' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602212352' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602201510'></script>
+  <script defer src='./assets/app.js?v=202602212352'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -83,13 +83,13 @@
 
 <div id='cards' class='cardrow'>
 
-<section class='card' data-rank='1' data-score='88' data-haslatex='1'>
+<section class='card' data-rank='1' data-score='91' data-haslatex='1'>
   <div class='card__rank'>#1</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (derived mapping)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 88</span>
+        <span class='badge badge--score'>Score 91</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
@@ -113,13 +113,13 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='82' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='77' data-haslatex='1'>
   <div class='card__rank'>#2</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 82</span>
+        <span class='badge badge--score'>Score 77</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
@@ -130,10 +130,10 @@
       <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha\,|I_{ij}|-\mu\,G_{ij}-\lambda\,G_{ij}\,\sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-π</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-Ï€</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2πₐ. Predicts a sharp stability/transition-like behavior when θ_R approaches half-integer multiples of πₐ (maximal sin²). Assumptions: θ_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; πₐ sets the relevant phase period; λ has units 1/time.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2Ï€â‚. Predicts a sharp stability/transition-like behavior when Î¸_R approaches half-integer multiples of Ï€â‚ (maximal sinÂ²). Assumptions: Î¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; Ï€â‚ sets the relevant phase period; Î» has units 1/time.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
@@ -143,13 +143,13 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='76' data-haslatex='1'>
+<section class='card' data-rank='3' data-score='71' data-haslatex='1'>
   <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 76</span>
+        <span class='badge badge--score'>Score 71</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
@@ -160,10 +160,10 @@
       <div class='equation__tex'>$$\frac{d\tilde G_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)}-\mu_G\,\tilde G_{ij}(t),\qquad \theta_{R,ij}(t)=\mathrm{unwrap}\!\big(\arg I_{ij}(t);\theta_{\rm ref},\pi_a\big)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-π</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-Ï€</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iθ_R,ij} to model sign flips under branch crossings.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÎ¸_R,ij} to model sign flips under branch crossings.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
@@ -173,163 +173,13 @@
 </section>
 
 
-<section class='card' data-rank='4' data-score='75' data-haslatex='1'>
+<section class='card' data-rank='4' data-score='69' data-haslatex='1'>
   <div class='card__rank'>#4</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>ARP Lyapunov Stability Form</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 75</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$V(x)\ge 0,\ V(0)=0;\ \dot V(x)=\nabla V\cdot \dot x\le -\alpha V(x)$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #2</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Candidate stability proof template for adaptive conductance dynamics.</div></div>
-      
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-lyapunov-stability.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='5' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Unified Dynamic Constants Law</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 73</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\dot{\mathbf{c}}=A\,\mathbf{c}\ \ \text{with}\ \mathbf{c}=[\pi_a, e, \varphi, c]^T$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #3</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>First-order linear coupling for adaptive updates of πₐ, e, ϕ, and c, expressing networked rates of change—models the unification of ARP, AIN, and πₐ system parameters.</div></div>
-      
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-dyn-constants-union.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='6' data-score='72' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Curve Memory Fine-Structure Emergence</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 72</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\alpha^{-1}\approx 137\ \ \text{(emergent resonance condition in curve memory)}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #4</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Formalizes the emergence of the inverse fine-structure constant (α⁻¹ ≈ 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.</div></div>
-      
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-curve-memory-137.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='7' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Shielding Mechanism Law (ARP)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 71</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$E_{eff}=(1-\lambda)E_{ext},\ \ J_{adapt}=\sigma E_{ext},\ \ 0&lt;\lambda&lt;1$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #5</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 − λ)E_ext, while the induced adaptive current follows J_adapt = σE_ext, with 0 &lt; λ &lt; 1.</div></div>
-      
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-shield-mechanic-arp.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='8' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#8</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Redshift-ARP Superconductivity Law</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 70</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$R_s(z) = R_{s,0} (1 + z)^\alpha$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #1 (supercond.)</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant.</div></div>
-      
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-redshift-arp-superc.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='9' data-score='68' data-haslatex='1'>
-  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 68</span>
+        <span class='badge badge--score'>Score 69</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--good' title='theory'>PASS</span>
       </div>
@@ -358,7 +208,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-20 15:10</strong></div>
+      <div>Last built: <strong>2026-02-21 23:52</strong></div>
     </footer>
   </main>
 </body>

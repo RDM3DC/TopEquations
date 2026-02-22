@@ -20,32 +20,9 @@ def _row(cols: list[str]) -> str:
     return "| " + " | ".join(_safe(c) for c in cols) + " |"
 
 
-def _dedupe_entries(entries: list[dict]) -> list[dict]:
-    seen: set[tuple[str, str]] = set()
-    unique: list[dict] = []
-    for entry in entries:
-        entry_id = (entry.get("id") or "").strip()
-        equation = (entry.get("equationLatex") or "").strip()
-        name = (entry.get("name") or "").strip()
-        if entry_id:
-            key = ("id", entry_id)
-        elif equation:
-            key = ("equationLatex", equation)
-        elif name:
-            key = ("name", name)
-        else:
-            unique.append(entry)
-            continue
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(entry)
-    return unique
-
-
 def generate(input_path: Path, output_path: Path) -> None:
     data = json.loads(input_path.read_text(encoding="utf-8"))
-    entries_all = _dedupe_entries(list(data.get("entries", [])))
+    entries_all = list(data.get("entries", []))
     entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
 
     # Display cap: only show "leaderboard" entries with score >= 68.
@@ -70,22 +47,23 @@ def generate(input_path: Path, output_path: Path) -> None:
     lines.append("This is the canonical ranking board for existing and newly derived equations.")
     lines.append("")
     lines.append("Scoring model (0-100):")
-    lines.append("- Novelty (0-30)")
     lines.append("- Tractability (0-20)")
     lines.append("- Physical plausibility (0-20)")
-    lines.append("- Validation bonus (0-20):")
-    lines.append("  - units `OK` (+10)")
-    lines.append("  - theory `PASS` (+10)")
-    lines.append("- Artifact completeness bonus (0-10):")
-    lines.append("  - animation linked (+5)")
-    lines.append("  - image/diagram linked (+5)")
+    lines.append("- Validation bonus (0-20)")
+    lines.append("- Artifact completeness bonus (0-10)")
+    lines.append("- Total normalized from 70-point base to 100")
+    lines.append("- Novelty is tracked as a tag (`tags.novelty`) with score + date")
     lines.append("")
 
     lines.append("## Current Top Equations (All-Time)")
     lines.append("")
-    lines.append(_row(["Rank", "Equation Name", "Equation", "Source", "Score", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
-    lines.append(_row(["------", "---------------", "--------", "--------", "-------", "-------", "--------", "-----------", "---------------", "-------------"]))
+    lines.append(_row(["Rank", "Equation Name", "Equation", "Source", "Score", "Novelty tag", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
+    lines.append(_row(["------", "---------------", "--------", "--------", "-------", "-----------", "-------", "--------", "-----------", "---------------", "-------------"]))
     for i, e in enumerate(entries, start=1):
+        novelty = ((e.get("tags", {}) or {}).get("novelty", {}) or {})
+        novelty_label = "-"
+        if novelty:
+            novelty_label = f"{novelty.get('score', '-') } @ {novelty.get('date', '-') }"
         lines.append(
             _row(
                 [
@@ -94,6 +72,7 @@ def generate(input_path: Path, output_path: Path) -> None:
                     str(e.get("equationLatex", "")) or "(pending)",
                     str(e.get("source", "")),
                     str(e.get("score", "")),
+                    novelty_label,
                     str(e.get("units", "")),
                     str(e.get("theory", "")),
                     _display_artifact(e, "animation"),

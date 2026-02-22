@@ -183,7 +183,8 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N {rb['novelty']}/30, T {rb['tractability']}/20, P {rb['plausibility']}/20, U +{rb['units_bonus']}, Th +{rb['theory_bonus']}, A +{rb['anim_bonus']}, I +{rb['image_bonus']}</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
     </div>
   </div>
@@ -238,9 +239,11 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                         "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
                         "definitions": str(e.get("definitions", "")).strip(),
                         "caveat": str(e.get("caveat", "")).strip(),
-                        "novelty": e.get("novelty", 0),
+                        "tags": e.get("tags", {"novelty": {"score": e.get("novelty", 0), "date": "legacy"}}),
                         "tractability": e.get("tractability", 0),
                         "plausibility": e.get("plausibility", 0),
+                        "validation": e.get("validation", 0),
+                        "artifactCompleteness": e.get("artifactCompleteness", 0),
                         "units": str(e.get("units", "WARN")).strip(),
                         "animation": e.get("animation", "planned"),
                         "image": e.get("image", "planned"),
@@ -283,9 +286,11 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                 "theory": "PASS-WITH-ASSUMPTIONS",
                 "definitions": "",
                 "caveat": "",
-                "novelty": 20,
+                "tags": {"novelty": {"score": 20, "date": "legacy"}},
                 "tractability": 12,
                 "plausibility": 12,
+                "validation": 0,
+                "artifactCompleteness": 0,
                 "units": "WARN",
                 "animation": "planned",
                 "image": "planned",
@@ -297,9 +302,6 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
 
 def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
     total, rb = _rubric_score(e)
-    rb["novelty"] = 16
-    # Recompute total with normalized novelty.
-    total = rb["novelty"] + rb["tractability"] + rb["plausibility"] + rb["units_bonus"] + rb["theory_bonus"] + rb["anim_bonus"] + rb["image_bonus"]
     return total, rb
 
 
@@ -311,29 +313,30 @@ def _rubric_score(e: dict) -> tuple[int, dict[str, int]]:
             n = lo
         return max(lo, min(hi, n))
 
-    novelty = _clamp(e.get("novelty", 0), 0, 30)
     tractability = _clamp(e.get("tractability", 0), 0, 20)
     plausibility = _clamp(e.get("plausibility", 0), 0, 20)
+    validation = _clamp(e.get("validation", 0), 0, 20)
+    artifact = _clamp(e.get("artifactCompleteness", 0), 0, 10)
+
+    novelty_info = ((e.get("tags", {}) or {}).get("novelty", {}) or {})
+    novelty_tag = "-"
+    if novelty_info:
+      novelty_tag = f"{novelty_info.get('score', '-')} @ {novelty_info.get('date', '-')}"
 
     units = str(e.get("units", "")).upper()
     theory = str(e.get("theory", "")).upper()
     animation = str(e.get("animation", "planned")).strip().lower()
     image = str(e.get("image", "planned")).strip().lower()
 
-    units_bonus = 10 if units == "OK" else 0
-    theory_bonus = 10 if theory == "PASS" else 0
-    anim_bonus = 0 if animation in {"", "planned", "none", "n/a"} else 5
-    image_bonus = 0 if image in {"", "planned", "none", "n/a"} else 5
-
-    total = novelty + tractability + plausibility + units_bonus + theory_bonus + anim_bonus + image_bonus
+    # Rubric v2: novelty is metadata tag only; not part of ranking total.
+    total_raw = tractability + plausibility + validation + artifact
+    total = int(round((total_raw / 70.0) * 100.0))
     return total, {
-        "novelty": novelty,
+      "novelty_tag": novelty_tag,
         "tractability": tractability,
         "plausibility": plausibility,
-        "units_bonus": units_bonus,
-        "theory_bonus": theory_bonus,
-        "anim_bonus": anim_bonus,
-        "image_bonus": image_bonus,
+      "validation": validation,
+      "artifact": artifact,
     }
 
 
@@ -389,7 +392,8 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc_text)}</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>N {rb['novelty']}/30, T {rb['tractability']}/20, P {rb['plausibility']}/20, U +{rb['units_bonus']}, Th +{rb['theory_bonus']}, A +{rb['anim_bonus']}, I +{rb['image_bonus']}</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'>{('<ul class=\'ul\'>' + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
@@ -415,11 +419,12 @@ def build_famous(repo_root: Path, docs: Path) -> None:
 <div class='panel'>
   <h2>Scoring Rubric (0-100)</h2>
   <ul>
-    <li>Novelty (0-30): fixed to <strong>16</strong> for all Famous entries (normalization)</li>
     <li>Tractability (0-20)</li>
     <li>Physical plausibility (0-20)</li>
-    <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>
-    <li>Artifact completeness (0-10): animation linked (+5), image linked (+5)</li>
+    <li>Validation (0-20)</li>
+    <li>Artifact completeness (0-10)</li>
+    <li>Total normalized from a 70-point base</li>
+    <li>Novelty is shown as a dated tag only</li>
   </ul>
 </div>
 
@@ -453,11 +458,12 @@ def build_core(repo_root: Path, docs: Path) -> None:
 <div class='panel'>
   <h2>Scoring Rubric (0-100)</h2>
   <ul>
-    <li>Novelty (0-30)</li>
     <li>Tractability (0-20)</li>
     <li>Physical plausibility (0-20)</li>
-    <li>Validation bonus (0-20): units `OK` (+10), theory `PASS` (+10)</li>
-    <li>Artifact completeness (0-10): animation linked (+5), image linked (+5)</li>
+    <li>Validation (0-20)</li>
+    <li>Artifact completeness (0-10)</li>
+    <li>Total normalized from a 70-point base</li>
+    <li>Novelty is shown as a dated tag only</li>
   </ul>
 </div>
 
