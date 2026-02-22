@@ -65,9 +65,11 @@ def _status_badge(val: str, kind: str) -> str:
     return f"<span class='pill pill--{css}' title='{_esc(kind)}'>{_esc(val)}</span>"
 
 
-def _artifact(val: dict | None) -> str:
+def _artifact(val: dict | str | None) -> str:
     if not val:
         return "planned"
+    if isinstance(val, str):
+        return _esc(val) if val.strip() else "planned"
     path = (val.get("path") or "").strip()
     status = (val.get("status") or "planned").strip() or "planned"
     if path:
@@ -129,6 +131,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
+        <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
     </div>
   </header>
@@ -161,6 +164,8 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         total_score, rb = _rubric_score(e)
         units = str(e.get("units", "WARN")).upper()
         theory = str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).upper()
+        anim = _artifact(e.get("animation"))
+        img = _artifact(e.get("image"))
         core_cards.append(
             f"""
 <section class='card'>
@@ -186,6 +191,8 @@ def _build_core_cards(repo_root: Path) -> list[str]:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
     </div>
   </div>
 </section>
