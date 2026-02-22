@@ -20,9 +20,32 @@ def _row(cols: list[str]) -> str:
     return "| " + " | ".join(_safe(c) for c in cols) + " |"
 
 
+def _dedupe_entries(entries: list[dict]) -> list[dict]:
+    seen: set[tuple[str, str]] = set()
+    unique: list[dict] = []
+    for entry in entries:
+        entry_id = (entry.get("id") or "").strip()
+        equation = (entry.get("equationLatex") or "").strip()
+        name = (entry.get("name") or "").strip()
+        if entry_id:
+            key = ("id", entry_id)
+        elif equation:
+            key = ("equationLatex", equation)
+        elif name:
+            key = ("name", name)
+        else:
+            unique.append(entry)
+            continue
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(entry)
+    return unique
+
+
 def generate(input_path: Path, output_path: Path) -> None:
     data = json.loads(input_path.read_text(encoding="utf-8"))
-    entries_all = list(data.get("entries", []))
+    entries_all = _dedupe_entries(list(data.get("entries", [])))
     entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
 
     # Display cap: only show "leaderboard" entries with score >= 68.
