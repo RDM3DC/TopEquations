@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='980' height='420' viewBox='0 0 980 420'>
+<rect x='0' y='0' width='100%' height='100%' fill='#0b1020' />
+<text x='24' y='28' fill='#e5e7eb' font-size='18' font-family='Segoe UI'>PL-AIN parity-lock deformation artifact</text>
+<rect x='50' y='50' width='415' height='320' fill='none' stroke='#334155'/>
+<rect x='515' y='50' width='415' height='320' fill='none' stroke='#334155'/>
+<text x='58' y='70' fill='#cbd5e1' font-size='13' font-family='Segoe UI'>Slip-rate per cycle</text>
+<text x='523' y='70' fill='#cbd5e1' font-size='13' font-family='Segoe UI'>Visibility V</text>
+<polyline fill='none' stroke='#f97316' stroke-width='3' points='50.00,50.00 133.00,50.00 216.00,50.00 299.00,50.00 382.00,50.00 465.00,50.00' />
+<polyline fill='none' stroke='#22c55e' stroke-width='3' points='50.00,370.00 133.00,370.00 216.00,370.00 299.00,370.00 382.00,370.00 465.00,370.00' />
+<polyline fill='none' stroke='#f97316' stroke-width='3' points='515.00,370.00 598.00,370.00 681.00,370.00 764.00,370.00 847.00,370.00 930.00,370.00' />
+<polyline fill='none' stroke='#22c55e' stroke-width='3' points='515.00,50.00 598.00,50.00 681.00,50.00 764.00,50.00 847.00,50.00 930.00,50.00' />
+<text x='70' y='390' fill='#f97316' font-size='12' font-family='Segoe UI'>standard</text>
+<text x='150' y='390' fill='#22c55e' font-size='12' font-family='Segoe UI'>lifted</text>
+<text x='560' y='390' fill='#f97316' font-size='12' font-family='Segoe UI'>standard</text>
+<text x='640' y='390' fill='#22c55e' font-size='12' font-family='Segoe UI'>lifted</text>
+</svg>

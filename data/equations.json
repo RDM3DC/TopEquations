@@ -127,7 +127,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "First-order linear coupling for adaptive updates of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â, e, ÃƒÂÃ¢â‚¬Â¢, and c, expressing networked rates of changeÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âmodels the unification of ARP, AIN, and ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â system parameters.",
+                        "description":  "First-order linear coupling for adaptive updates of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â, e, ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢, and c, expressing networked rates of changeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Âmodels the unification of ARP, AIN, and ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â system parameters.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
                         "tags":  {
@@ -159,7 +159,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃƒÅ½Ã‚Â±ÃƒÂ¢Ã‚ÂÃ‚Â»Ãƒâ€šÃ‚Â¹ ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¹ ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
                         "tags":  {
@@ -191,7 +191,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ ÃƒÅ½Ã‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÂÃ†â€™E_ext, with 0 \u003c ÃƒÅ½Ã‚Â» \u003c 1.",
+                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢E_ext, with 0 \u003c ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» \u003c 1.",
                         "date":  "2026-02-20",
                         "equationLatex":  "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0\u003c\\lambda\u003c1",
                         "tags":  {
@@ -237,7 +237,7 @@
                         "id":  "eq-arp-phase-lifted-complex-conductance",
                         "name":  "Phase-Lifted Complex Conductance Update",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+                        "source":  "derived: ARP core + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬",
                         "score":  71,
                         "scores":  {
                                        "tractability":  18,
@@ -255,7 +255,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.",
+                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij} to model sign flips under branch crossings.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
                         "tags":  {
@@ -269,7 +269,7 @@
                         "id":  "eq-arp-phase-critical-collapse",
                         "name":  "Phase-Coupled Stability Threshold Law",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+                        "source":  "derived: ARP + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬",
                         "score":  77,
                         "scores":  {
                                        "tractability":  18,
@@ -287,7 +287,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.",
+                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R approaches half-integer multiples of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â (maximal sinÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²). Assumptions: ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â sets the relevant phase period; ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» has units 1/time.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
                         "tags":  {
@@ -420,10 +420,10 @@
                         "name":  "PL-AIN Network Parity Holonomy Invariant",
                         "firstSeen":  "2026-02-22",
                         "source":  "PL-AIN synthesis (cycle topological label)",
-                        "score":  71,
+                        "score":  81,
                         "scores":  {
-                                       "artifactCompleteness":  2,
-                                       "validation":  15,
+                                       "artifactCompleteness":  6,
+                                       "validation":  18,
                                        "tractability":  16,
                                        "plausibility":  17
                                    },
@@ -434,15 +434,16 @@
                                           "path":  ""
                                       },
                         "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
+                                      "status":  "linked",
+                                      "path":  "./assets/figures/parity_lock_comparison.svg"
                                   },
                         "description":  "Defines a Z2 cycle label from edge windings; parity holonomy changes only at branch-crossing singularities (Y_ij=0) under the conjectured robustness condition.",
                         "derivation":  "Given w_ij=Delta theta^R_ij/(2 pi_a) and b_ij=(-1)^{w_ij}, define global holonomy B(omega)=Product_{(i,j) in E} b_ij(omega)=(-1)^{Sum w_ij(omega)}.",
                         "assumptions":  [
                                             "Drive protocol is cyclic with repeat boundary conditions.",
                                             "Edge admittance trajectories are continuous in time.",
-                                            "Parity flips require branch-crossing events in complex admittance plane."
+                                            "Parity flips require branch-crossing events in complex admittance plane.",
+                                            "Formal boundary: singularity crossing manifold is Y_{ij}=0 in complex admittance plane; parity flips require crossing this manifold."
                                         ],
                         "date":  "2026-02-22",
                         "equationLatex":  "\\\\mathcal{B}(\\\\omega)=\\\\prod_{(i,j)\\\\in E} b_{ij}(\\\\omega)=(-1)^{\\\\sum_{(i,j)} w_{ij}(\\\\omega)},\\\\quad w_{ij}=\\\\frac{\\\\Delta\\\\theta^R_{ij}}{2\\\\pi_a},\\\\ b_{ij}=(-1)^{w_{ij}}",
@@ -451,7 +452,18 @@
                                                      "score":  29,
                                                      "date":  "2026-02-22"
                                                  }
-                                 }
+                                 },
+                        "validation":  {
+                                           "summary":  "Across epsilon in [0,0.20], winding/parity stay locked (w=1,b=-1), lifted mode removes branch-cut slips (0 vs 1 per cycle), and visibility improves at equal noise model.",
+                                           "method":  "deformation sweep simulation",
+                                           "status":  "supportive",
+                                           "artifacts":  [
+                                                             "./data/artifacts/parity_lock_deformation.csv",
+                                                             "./data/artifacts/parity_lock_deformation_table.md",
+                                                             "./assets/figures/parity_lock_comparison.svg"
+                                                         ]
+                                       },
+                        "formalFailureCriterionLatex":  "\\\\text{Parity change is possible iff }\\\\exists\\\\,(i,j),t:\\\\ |Y_{ij}(t,\\\\omega)|=0.\\\\ \\\\text{If }\\\\min_t|Y_{ij}(t,\\\\omega)|\u003e0\\\\ \\\\forall(i,j),\\\\text{ parity is topologically locked under small deformations.}"
                     },
                     {
                         "id":  "eq-pl-ain-weighted-budget-law",

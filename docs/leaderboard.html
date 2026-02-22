@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220112' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602220127' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220112'></script>
+  <script defer src='./assets/app.js?v=202602220127'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -113,8 +113,38 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='77' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='81' data-haslatex='1'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>PL-AIN Network Parity Holonomy Invariant</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 81</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\\mathcal{B}(\\omega)=\\prod_{(i,j)\\in E} b_{ij}(\\omega)=(-1)^{\\sum_{(i,j)} w_{ij}(\\omega)},\\quad w_{ij}=\\frac{\\Delta\\theta^R_{ij}}{2\\pi_a},\\ b_{ij}=(-1)^{w_{ij}}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>PL-AIN synthesis (cycle topological label)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Defines a Z2 cycle label from edge windings; parity holonomy changes only at branch-crossing singularities (Y_ij=0) under the conjectured robustness condition.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Given w_ij=Delta theta^R_ij/(2 pi_a) and b_ij=(-1)^{w_ij}, define global holonomy B(omega)=Product_{(i,j) in E} b_ij(omega)=(-1)^{Sum w_ij(omega)}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Drive protocol is cyclic with repeat boundary conditions.</li><li>Edge admittance trajectories are continuous in time.</li><li>Parity flips require branch-crossing events in complex admittance plane.</li><li>Formal boundary: singularity crossing manifold is Y_{ij}=0 in complex admittance plane; parity flips require crossing this manifold.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='./assets/figures/parity_lock_comparison.svg' target='_blank' rel='noopener'>link</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='3' data-score='77' data-haslatex='1'>
+  <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -130,10 +160,10 @@
       <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha\,|I_{ij}|-\mu\,G_{ij}-\lambda\,G_{ij}\,\sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R approaches half-integer multiples of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â (maximal sinÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²). Assumptions: ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â sets the relevant phase period; ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» has units 1/time.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
@@ -143,8 +173,8 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='74' data-haslatex='1'>
-  <div class='card__rank'>#3</div>
+<section class='card' data-rank='4' data-score='74' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>PL-AIN Geometry-Weighted Magnitude Update</h2>
@@ -173,8 +203,8 @@
 </section>
 
 
-<section class='card' data-rank='4' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='5' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (two-timescale extension)</h2>
@@ -203,8 +233,8 @@
 </section>
 
 
-<section class='card' data-rank='5' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
+<section class='card' data-rank='6' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -220,43 +250,13 @@
       <div class='equation__tex'>$$\frac{d\tilde G_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)}-\mu_G\,\tilde G_{ij}(t),\qquad \theta_{R,ij}(t)=\mathrm{unwrap}\!\big(\arg I_{ij}(t);\theta_{\rm ref},\pi_a\big)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='6' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>PL-AIN Network Parity Holonomy Invariant</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 71</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\\mathcal{B}(\\omega)=\\prod_{(i,j)\\in E} b_{ij}(\\omega)=(-1)^{\\sum_{(i,j)} w_{ij}(\\omega)},\\quad w_{ij}=\\frac{\\Delta\\theta^R_{ij}}{2\\pi_a},\\ b_{ij}=(-1)^{w_{ij}}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>PL-AIN synthesis (cycle topological label)</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Defines a Z2 cycle label from edge windings; parity holonomy changes only at branch-crossing singularities (Y_ij=0) under the conjectured robustness condition.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Given w_ij=Delta theta^R_ij/(2 pi_a) and b_ij=(-1)^{w_ij}, define global holonomy B(omega)=Product_{(i,j) in E} b_ij(omega)=(-1)^{Sum w_ij(omega)}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Drive protocol is cyclic with repeat boundary conditions.</li><li>Edge admittance trajectories are continuous in time.</li><li>Parity flips require branch-crossing events in complex admittance plane.</li></ul></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -298,7 +298,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 01:12</strong></div>
+      <div>Last built: <strong>2026-02-22 01:27</strong></div>
     </footer>
   </main>
 </body>
