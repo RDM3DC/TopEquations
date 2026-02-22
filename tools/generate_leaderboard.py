@@ -24,7 +24,18 @@ def _dedupe_entries(entries: list[dict]) -> list[dict]:
     seen: set[tuple[str, str]] = set()
     unique: list[dict] = []
     for entry in entries:
-        key = ((entry.get("id") or "").strip(), (entry.get("equationLatex") or entry.get("name") or "").strip())
+        entry_id = (entry.get("id") or "").strip()
+        equation = (entry.get("equationLatex") or "").strip()
+        name = (entry.get("name") or "").strip()
+        if entry_id:
+            key = ("id", entry_id)
+        elif equation:
+            key = ("equationLatex", equation)
+        elif name:
+            key = ("name", name)
+        else:
+            unique.append(entry)
+            continue
         if key in seen:
             continue
         seen.add(key)
