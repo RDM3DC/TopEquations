@@ -22,8 +22,8 @@
         "path": "./assets/animations/eq-arp-redshift.mp4"
       },
       "image": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g.git"
       },
       "description": "A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.",
       "differentialLatex": "\\dot z = \\gamma\\,(z_0 - z)",
