@@ -51,6 +51,12 @@
     return `Auto-described ${kind} harvested from ${srcHint}.`;
   }
 
+  function isEquationLike(eq){
+    const s = String(eq || '').trim();
+    if(!s) return false;
+    return /[=<>±≈∝→←↔+\/*^_(){}\[\]\\]|(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)/.test(s);
+  }
+
   function renderChunk(){
     const end = Math.min(cursor + PAGE, filtered.length);
     if(cursor >= end) return;
@@ -77,6 +83,7 @@
           <div class='card__head'>
             <h2 class='card__title'>${esc(title)}</h2>
             <div class='card__meta'>
+              <span class='badge badge--score'>Score ${esc(e.score ?? 0)}</span>
               <span class='badge badge--score'>${esc(kind)}</span>
               <span class='pill pill--neutral'>${esc(e.source_type || '')}</span>
             </div>
@@ -166,13 +173,13 @@
 
   function renderScoredBox(scored){
     if(!scored || !Array.isArray(scored.entries) || scored.entries.length===0) return;
-    const items = scored.entries.slice().sort((a,b)=> (b.score||0)-(a.score||0)).slice(0,60);
+    const items = scored.entries.filter(e => isEquationLike(e.equation)).slice().sort((a,b)=> (b.score||0)-(a.score||0));
 
     const box = document.createElement('section');
     box.className = 'panel';
     box.innerHTML = `
       <h2>Scored harvest candidates (not promoted)</h2>
-      <div class='muted'>Showing top ${items.length} by score. Threshold promotions go to the ranked leaderboard.</div>
+      <div class='muted'>Showing all ${items.length} by score. Threshold promotions go to the ranked leaderboard.</div>
       <div class='cardrow' style='margin-top:12px'>
         ${items.map((e,idx)=>{
           const eq = String(e.equation||'');
@@ -221,15 +228,23 @@
     fetch(SCORED).then(r=> r.ok ? r.json() : null).catch(()=>null),
   ])
     .then(([d, scored]) => {
+      const scoredByKey = new Map();
+      if(scored && Array.isArray(scored.entries)){
+        for(const s of scored.entries){
+          const key = s.sha1 || `${s.source || ''}::${s.equation || ''}`;
+          scoredByKey.set(key, s.score || 0);
+        }
+      }
       entries = d.entries || [];
       // normalize expected fields
-      entries = entries.map(x => ({
+      entries = entries.filter(x => isEquationLike(x.equation)).map(x => ({
         equation: x.equation,
         kind: x.kind,
         source: x.source,
         line_start: x.line_start,
         source_type: x.source_type || x.sourceType || 'file',
         sha1: x.sha1,
+        score: scoredByKey.get(x.sha1 || `${x.source || ''}::${x.equation || ''}`) || 0,
       }));
 
       const st = d.stats || {};
