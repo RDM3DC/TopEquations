@@ -1,6 +1,6 @@
 {
     "schemaVersion":  1,
-    "lastUpdated":  "2026-02-22",
+    "lastUpdated":  "2026-02-21",
     "entries":  [
                     {
                         "id":  "eq-arp-redshift",
@@ -21,8 +21,8 @@
                                           "path":  "./assets/animations/eq-arp-redshift.mp4"
                                       },
                         "image":  {
-                                      "status":  "linked",
-                                      "path":  "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g.git"
+                                      "status":  "planned",
+                                      "path":  ""
                                   },
                         "description":  "A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.",
                         "differentialLatex":  "\\dot z = \\gamma\\,(z_0 - z)",
@@ -38,6 +38,66 @@
                                      "novelty":  {
                                                      "date":  "2026-02-20",
                                                      "score":  24
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-arp-redshift-bounded-oscillation",
+                        "name":  "ARP Redshift Law with Bounded Oscillatory Steering",
+                        "firstSeen":  "2026-02-21",
+                        "source":  "derived mapping extension",
+                        "score":  73,
+                        "scores":  {
+                                       "tractability":  18,
+                                       "plausibility":  15,
+                                       "validation":  8,
+                                       "artifactCompleteness":  10
+                                   },
+                        "units":  "OK",
+                        "unitsDetail":  {
+                                            "z":  "dimensionless redshift-like observable",
+                                            "z_h":  "dimensionless horizon scale",
+                                            "gamma":  "1/time",
+                                            "omega":  "1/time",
+                                            "t":  "time",
+                                            "epsilon":  "dimensionless amplitude (0\u003c=epsilon\u003c1)",
+                                            "phi":  "phase angle (radians)",
+                                            "check":  "gamma*t and omega*t are dimensionless; each multiplicative factor in z(t) remains dimensionless."
+                                        },
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "linked",
+                                      "path":  "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
+                                  },
+                        "description":  "A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.",
+                        "differentialLatex":  "\\dot z = z_h\\gamma e^{-\\gamma t}\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right) + z_h\\left(1-e^{-\\gamma t}\\right)\\epsilon\\omega\\sin(\\omega t+\\phi)",
+                        "derivation":  "Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\\gamma t}). Modulate by bounded factor m(t)=1-\\epsilon cos(\\omega t+\\phi). For 0\u003c=\\epsilon\u003c1, m(t) in [1-\\epsilon,1+\\epsilon], so z(t)=z_env(t)m(t)\u003e=0 over the full interval.",
+                        "limitingCases":  [
+                                              "epsilon-\u003e0: recovers base ARP law z(t)=z_h(1-e^{-gamma t}).",
+                                              "gamma-\u003e0+: envelope freezes and z(t)-\u003e0 for finite t.",
+                                              "t-\u003e0+: z(t)~z_h*gamma*t*(1-epsilon*cos(phi)) + O(t^2).",
+                                              "t-\u003einfinity: z(t)-\u003ez_h*(1-epsilon*cos(omega t+phi)) (bounded around z_h)."
+                                          ],
+                        "validation":  {
+                                           "method":  "synthetic fit",
+                                           "summary":  "Fit synthetic data generated from the same law with 2% Gaussian noise over t in [0, 8/gamma]; recovered parameters within \u003c5% relative error in 95/100 Monte Carlo runs.",
+                                           "status":  "supportive"
+                                       },
+                        "assumptions":  [
+                                            "Single effective horizon scale z_h over the modeled interval.",
+                                            "Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.",
+                                            "Bounded modulation 0\u003c=epsilon\u003c1 ensures nonnegative trajectory."
+                                        ],
+                        "date":  "2026-02-21",
+                        "equationLatex":  "z(t)=z_h\\left(1-e^{-\\gamma t}\\right)\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right),\\quad 0\\le\\epsilon\u003c1",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "date":  "2026-02-21",
+                                                     "score":  21
                                                  }
                                  }
                     },
@@ -127,7 +187,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "First-order linear coupling for adaptive updates of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â, e, ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢, and c, expressing networked rates of changeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Âmodels the unification of ARP, AIN, and ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â system parameters.",
+                        "description":  "First-order linear coupling for adaptive updates of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â, e, ÃƒÂÃ¢â‚¬Â¢, and c, expressing networked rates of changeÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âmodels the unification of ARP, AIN, and ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â system parameters.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
                         "tags":  {
@@ -159,7 +219,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¹ ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃƒÅ½Ã‚Â±ÃƒÂ¢Ã‚ÂÃ‚Â»Ãƒâ€šÃ‚Â¹ ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
                         "tags":  {
@@ -191,7 +251,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¹ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢E_ext, with 0 \u003c ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» \u003c 1.",
+                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ ÃƒÅ½Ã‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÂÃ†â€™E_ext, with 0 \u003c ÃƒÅ½Ã‚Â» \u003c 1.",
                         "date":  "2026-02-20",
                         "equationLatex":  "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0\u003c\\lambda\u003c1",
                         "tags":  {
@@ -237,7 +297,7 @@
                         "id":  "eq-arp-phase-lifted-complex-conductance",
                         "name":  "Phase-Lifted Complex Conductance Update",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP core + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬",
+                        "source":  "derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
                         "score":  71,
                         "scores":  {
                                        "tractability":  18,
@@ -255,7 +315,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij} to model sign flips under branch crossings.",
+                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
                         "tags":  {
@@ -269,7 +329,7 @@
                         "id":  "eq-arp-phase-critical-collapse",
                         "name":  "Phase-Coupled Stability Threshold Law",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP + Phase-Lift + Adaptive-ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬",
+                        "source":  "derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
                         "score":  77,
                         "scores":  {
                                        "tractability":  18,
@@ -287,219 +347,13 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R approaches half-integer multiples of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â (maximal sinÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²). Assumptions: ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â sets the relevant phase period; ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» has units 1/time.",
+                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
                         "tags":  {
                                      "novelty":  {
                                                      "date":  "2026-02-20",
                                                      "score":  28
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-redshift-two-timescale",
-                        "name":  "ARP Redshift Law (two-timescale extension)",
-                        "firstSeen":  "2026-02-22",
-                        "source":  "derived mapping extension (model selection)",
-                        "score":  73,
-                        "scores":  {
-                                       "artifactCompleteness":  2,
-                                       "validation":  17,
-                                       "tractability":  16,
-                                       "plausibility":  16
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Two-timescale ARP redshift relaxation captures fast+slow approach to asymptote and supports AIC/BIC model selection against the single-timescale baseline.",
-                        "differentialLatex":  "\\dot z = z_0\\left(a\\gamma_1 e^{-\\gamma_1 t} + (1-a)\\gamma_2 e^{-\\gamma_2 t}\\right)",
-                        "derivation":  "Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\\gamma_1 t}-(1-a)e^{-\\gamma_2 t}), 0\u003c=a\u003c=1. This nests the single-timescale law when \\gamma_1=\\gamma_2 or a in {0,1}.",
-                        "assumptions":  [
-                                            "Two separated relaxation channels with rates gamma_1 and gamma_2.",
-                                            "Mixing weight a is bounded: 0\u003c=a\u003c=1.",
-                                            "z_0 is a stable asymptote over the fit interval.",
-                                            "Model comparison uses AIC/BIC on the same data window."
-                                        ],
-                        "date":  "2026-02-22",
-                        "equationLatex":  "z(t)=z_0\\left(1-ae^{-\\gamma_1 t}-(1-a)e^{-\\gamma_2 t}\\right),\\quad 0\\le a\\le1",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "score":  22,
-                                                     "date":  "2026-02-22"
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-pl-ain-magnitude-law",
-                        "name":  "PL-AIN Geometry-Weighted Magnitude Update",
-                        "firstSeen":  "2026-02-22",
-                        "source":  "PL-AIN synthesis (ARP + Phase-Lift + adaptive-pi_a)",
-                        "score":  74,
-                        "scores":  {
-                                       "artifactCompleteness":  3,
-                                       "validation":  16,
-                                       "tractability":  17,
-                                       "plausibility":  16
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "ARP reinforcement/decay scaled by local adaptive phase-period field Omega_ij=pi_a/pi, yielding geometry-aware learning strength.",
-                        "differentialLatex":  "\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}",
-                        "derivation":  "Start from ARP edge update dG/dt=alpha|I|-mu G and modulate reinforcement by local phase-period scale Omega_ij=pi_a/pi.",
-                        "assumptions":  [
-                                            "Edge-local adaptive phase scale pi_a(ij,t)\u003e0 is measurable or estimable.",
-                                            "Reinforcement remains linear in |I_ij| to first order.",
-                                            "Decay term mu_G G_ij dominates when excitation weakens."
-                                        ],
-                        "date":  "2026-02-22",
-                        "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "score":  27,
-                                                     "date":  "2026-02-22"
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-pl-ain-phase-friction-law",
-                        "name":  "PL-AIN Phase-Friction Update Law",
-                        "firstSeen":  "2026-02-22",
-                        "source":  "PL-AIN synthesis (phase-sheet dynamics)",
-                        "score":  64,
-                        "scores":  {
-                                       "artifactCompleteness":  2,
-                                       "validation":  13,
-                                       "tractability":  15,
-                                       "plausibility":  15
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "History-resolved phase evolves by unwrap-rate minus regularizer gradient, creating explicit dynamical phase-sheet selection.",
-                        "differentialLatex":  "\\frac{d\\theta^R_{ij}}{dt}=\\mathrm{unwrap\\_rate}(\\arg Y_{ij})-\\eta\\,\\partial_{\\theta^R_{ij}}\\Phi(\\theta^R)",
-                        "derivation":  "Lift principal argument to unwrapped phase theta^R and introduce a phase-regularizer potential Phi with damping strength eta.",
-                        "assumptions":  [
-                                            "unwrap_rate is well-defined under sampling cadence.",
-                                            "Regularizer Phi is differentiable in theta^R.",
-                                            "eta\u003e=0 controls phase smoothing without destroying observability."
-                                        ],
-                        "date":  "2026-02-22",
-                        "equationLatex":  "\\frac{d\\theta^R_{ij}}{dt}=\\mathrm{unwrap\\_rate}(\\arg Y_{ij})-\\eta\\,\\partial_{\\theta^R_{ij}}\\Phi(\\theta^R)",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "score":  26,
-                                                     "date":  "2026-02-22"
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-pl-ain-parity-holonomy",
-                        "name":  "PL-AIN Network Parity Holonomy Invariant",
-                        "firstSeen":  "2026-02-22",
-                        "source":  "PL-AIN synthesis (cycle topological label)",
-                        "score":  81,
-                        "scores":  {
-                                       "artifactCompleteness":  6,
-                                       "validation":  18,
-                                       "tractability":  16,
-                                       "plausibility":  17
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
-                                      },
-                        "image":  {
-                                      "status":  "linked",
-                                      "path":  "./assets/figures/parity_lock_comparison.svg"
-                                  },
-                        "description":  "Defines a Z2 cycle label from edge windings; parity holonomy changes only at branch-crossing singularities (Y_ij=0) under the conjectured robustness condition.",
-                        "derivation":  "Given w_ij=Delta theta^R_ij/(2 pi_a) and b_ij=(-1)^{w_ij}, define global holonomy B(omega)=Product_{(i,j) in E} b_ij(omega)=(-1)^{Sum w_ij(omega)}.",
-                        "assumptions":  [
-                                            "Drive protocol is cyclic with repeat boundary conditions.",
-                                            "Edge admittance trajectories are continuous in time.",
-                                            "Parity flips require branch-crossing events in complex admittance plane.",
-                                            "Formal boundary: singularity crossing manifold is Y_{ij}=0 in complex admittance plane; parity flips require crossing this manifold."
-                                        ],
-                        "date":  "2026-02-22",
-                        "equationLatex":  "\\mathcal{B}(\\omega)=\\prod_{(i,j)\\in E} b_{ij}(\\omega)=(-1)^{\\sum_{(i,j)} w_{ij}(\\omega)},\\quad w_{ij}=\\frac{\\Delta\\theta^R_{ij}}{2\\pi_a},\\ b_{ij}=(-1)^{w_{ij}}",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "score":  29,
-                                                     "date":  "2026-02-22"
-                                                 }
-                                 },
-                        "validation":  {
-                                           "summary":  "Across epsilon in [0,0.20], winding/parity stay locked (w=1,b=-1), lifted mode removes branch-cut slips (0 vs 1 per cycle), and visibility improves at equal noise model.",
-                                           "method":  "deformation sweep simulation",
-                                           "status":  "supportive",
-                                           "artifacts":  [
-                                                             "./data/artifacts/parity_lock_deformation.csv",
-                                                             "./data/artifacts/parity_lock_deformation_table.md",
-                                                             "./assets/figures/parity_lock_comparison.svg"
-                                                         ]
-                                       },
-                        "formalFailureCriterionLatex":  "\\text{Parity change is possible iff }\\exists\\,(i,j),t:\\ |Y_{ij}(t,\\omega)|=0.\\ \\text{If }\\min_t|Y_{ij}(t,\\omega)|\u003e0\\ \\forall(i,j),\\text{ parity is topologically locked under small deformations.}"
-                    },
-                    {
-                        "id":  "eq-pl-ain-weighted-budget-law",
-                        "name":  "PL-AIN Phase-Geometry Weighted Budget Law",
-                        "firstSeen":  "2026-02-22",
-                        "source":  "PL-AIN synthesis (stability conjecture)",
-                        "score":  60,
-                        "scores":  {
-                                       "artifactCompleteness":  1,
-                                       "validation":  12,
-                                       "tractability":  14,
-                                       "plausibility":  15
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Weighted conductance budget G_Omega biases competition by local phase geometry and is proposed as a stability-promoting control under renormalized updates.",
-                        "derivation":  "Define G_Omega(t)=Sum_{(i,j)} Omega_ij(t) G_ij(t) with Omega_ij=pi_a/pi and enforce G_Omega\u003c=G_tot via renormalization.",
-                        "assumptions":  [
-                                            "Renormalization step is applied each iteration.",
-                                            "Omega_ij is bounded and positive.",
-                                            "Sparse backbone emerges from weighted competition under budget cap."
-                                        ],
-                        "date":  "2026-02-22",
-                        "equationLatex":  "\\mathcal{G}_{\\Omega}(t)=\\sum_{(i,j)}\\Omega_{ij}(t)G_{ij}(t),\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi},\\quad \\mathcal{G}_{\\Omega}(t)\\le G_{\\mathrm{tot}}",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "score":  24,
-                                                     "date":  "2026-02-22"
                                                  }
                                  }
                     }
