@@ -1,361 +1,675 @@
 {
-    "schemaVersion":  1,
-    "lastUpdated":  "2026-02-21",
-    "entries":  [
-                    {
-                        "id":  "eq-arp-redshift",
-                        "name":  "ARP Redshift Law (derived mapping)",
-                        "firstSeen":  "2025-04",
-                        "source":  "discovery-matrix #1",
-                        "score":  91,
-                        "scores":  {
-                                       "tractability":  15,
-                                       "plausibility":  15,
-                                       "validation":  24,
-                                       "artifactCompleteness":  10
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-redshift.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.",
-                        "differentialLatex":  "\\dot z = \\gamma\\,(z_0 - z)",
-                        "derivation":  "Assume post-event ARP relaxation: G(t)=G_{\\infty}+(G(0)-G_{\\infty})e^{-\\mu t}. Define z(t):=z_0\\left(1-\\frac{G(t)-G_{\\infty}}{G(0)-G_{\\infty}}\\right) \\Rightarrow z(t)=z_0(1-e^{-\\mu t}), so \\gamma\\equiv\\mu.",
-                        "assumptions":  [
-                                            "Single-timescale exponential relaxation dominates over the interval (constant \\mu).",
-                                            "z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.",
-                                            "A stable asymptote G_{\\infty} (equivalently z_0) exists over the measurement window."
-                                        ],
-                        "date":  "2026-02-20",
-                        "equationLatex":  "z(t)=z_0\\,(1-e^{-\\gamma t})",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  24
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-redshift-bounded-oscillation",
-                        "name":  "ARP Redshift Law with Bounded Oscillatory Steering",
-                        "firstSeen":  "2026-02-21",
-                        "source":  "derived mapping extension",
-                        "score":  73,
-                        "scores":  {
-                                       "tractability":  18,
-                                       "plausibility":  15,
-                                       "validation":  8,
-                                       "artifactCompleteness":  10
-                                   },
-                        "units":  "OK",
-                        "unitsDetail":  {
-                                            "z":  "dimensionless redshift-like observable",
-                                            "z_h":  "dimensionless horizon scale",
-                                            "gamma":  "1/time",
-                                            "omega":  "1/time",
-                                            "t":  "time",
-                                            "epsilon":  "dimensionless amplitude (0\u003c=epsilon\u003c1)",
-                                            "phi":  "phase angle (radians)",
-                                            "check":  "gamma*t and omega*t are dimensionless; each multiplicative factor in z(t) remains dimensionless."
-                                        },
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "linked",
-                                      "path":  "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
-                                  },
-                        "description":  "A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.",
-                        "differentialLatex":  "\\dot z = z_h\\gamma e^{-\\gamma t}\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right) + z_h\\left(1-e^{-\\gamma t}\\right)\\epsilon\\omega\\sin(\\omega t+\\phi)",
-                        "derivation":  "Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\\gamma t}). Modulate by bounded factor m(t)=1-\\epsilon cos(\\omega t+\\phi). For 0\u003c=\\epsilon\u003c1, m(t) in [1-\\epsilon,1+\\epsilon], so z(t)=z_env(t)m(t)\u003e=0 over the full interval.",
-                        "limitingCases":  [
-                                              "epsilon-\u003e0: recovers base ARP law z(t)=z_h(1-e^{-gamma t}).",
-                                              "gamma-\u003e0+: envelope freezes and z(t)-\u003e0 for finite t.",
-                                              "t-\u003e0+: z(t)~z_h*gamma*t*(1-epsilon*cos(phi)) + O(t^2).",
-                                              "t-\u003einfinity: z(t)-\u003ez_h*(1-epsilon*cos(omega t+phi)) (bounded around z_h)."
-                                          ],
-                        "validation":  {
-                                           "method":  "synthetic fit",
-                                           "summary":  "Fit synthetic data generated from the same law with 2% Gaussian noise over t in [0, 8/gamma]; recovered parameters within \u003c5% relative error in 95/100 Monte Carlo runs.",
-                                           "status":  "supportive"
-                                       },
-                        "assumptions":  [
-                                            "Single effective horizon scale z_h over the modeled interval.",
-                                            "Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.",
-                                            "Bounded modulation 0\u003c=epsilon\u003c1 ensures nonnegative trajectory."
-                                        ],
-                        "date":  "2026-02-21",
-                        "equationLatex":  "z(t)=z_h\\left(1-e^{-\\gamma t}\\right)\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right),\\quad 0\\le\\epsilon\u003c1",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-21",
-                                                     "score":  21
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-lyapunov-stability",
-                        "name":  "ARP Lyapunov Stability Form",
-                        "firstSeen":  "2025-06",
-                        "source":  "discovery-matrix #2",
-                        "score":  66,
-                        "scores":  {
-                                       "tractability":  16,
-                                       "plausibility":  16,
-                                       "validation":  14,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-lyapunov-stability.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Candidate stability proof template for adaptive conductance dynamics.",
-                        "date":  "2026-02-19",
-                        "equationLatex":  "V(x)\\ge 0,\\ V(0)=0;\\ \\dot V(x)=\\nabla V\\cdot \\dot x\\le -\\alpha V(x)",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-19",
-                                                     "score":  22
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-temp-conductance",
-                        "name":  "Temperature-Dependent Conductance Law",
-                        "firstSeen":  "2026-02",
-                        "source":  "daily run 2026-02-19",
-                        "score":  69,
-                        "scores":  {
-                                       "tractability":  16,
-                                       "plausibility":  16,
-                                       "validation":  16,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-temp-conductance.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Extends ARP equilibrium with an exponential temperature factor for material sensitivity.",
-                        "date":  "2026-02-19",
-                        "equationLatex":  "G(T)=G_{eq}\\,e^{\\beta\\,(T-T_0)}",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-19",
-                                                     "score":  20
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-dyn-constants-union",
-                        "name":  "Unified Dynamic Constants Law",
-                        "firstSeen":  "2026-02-20",
-                        "source":  "discovery-matrix #3",
-                        "score":  61,
-                        "scores":  {
-                                       "tractability":  14,
-                                       "plausibility":  16,
-                                       "validation":  13,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-dyn-constants-union.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "First-order linear coupling for adaptive updates of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â, e, ÃƒÂÃ¢â‚¬Â¢, and c, expressing networked rates of changeÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âmodels the unification of ARP, AIN, and ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â system parameters.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  25
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-curve-memory-137",
-                        "name":  "Curve Memory Fine-Structure Emergence",
-                        "firstSeen":  "2026-02",
-                        "source":  "discovery-matrix #4",
-                        "score":  63,
-                        "scores":  {
-                                       "tractability":  15,
-                                       "plausibility":  16,
-                                       "validation":  13,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-curve-memory-137.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃƒÅ½Ã‚Â±ÃƒÂ¢Ã‚ÂÃ‚Â»Ãƒâ€šÃ‚Â¹ ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  23
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-shield-mechanic-arp",
-                        "name":  "Shielding Mechanism Law (ARP)",
-                        "firstSeen":  "2026-02",
-                        "source":  "discovery-matrix #5",
-                        "score":  63,
-                        "scores":  {
-                                       "tractability":  16,
-                                       "plausibility":  15,
-                                       "validation":  13,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-shield-mechanic-arp.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ ÃƒÅ½Ã‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÂÃ†â€™E_ext, with 0 \u003c ÃƒÅ½Ã‚Â» \u003c 1.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0\u003c\\lambda\u003c1",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  22
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-redshift-arp-superc",
-                        "name":  "Redshift-ARP Superconductivity Law",
-                        "firstSeen":  "2026-02",
-                        "source":  "discovery-matrix #1 (supercond.)",
-                        "score":  60,
-                        "scores":  {
-                                       "tractability":  15,
-                                       "plausibility":  14,
-                                       "validation":  13,
-                                       "artifactCompleteness":  0
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-redshift-arp-superc.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "R_s(z) = R_{s,0} (1 + z)^\\alpha",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  21
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-phase-lifted-complex-conductance",
-                        "name":  "Phase-Lifted Complex Conductance Update",
-                        "firstSeen":  "2026-02",
-                        "source":  "derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
-                        "score":  71,
-                        "scores":  {
-                                       "tractability":  18,
-                                       "plausibility":  16,
-                                       "validation":  14,
-                                       "artifactCompleteness":  2
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  26
-                                                 }
-                                 }
-                    },
-                    {
-                        "id":  "eq-arp-phase-critical-collapse",
-                        "name":  "Phase-Coupled Stability Threshold Law",
-                        "firstSeen":  "2026-02",
-                        "source":  "derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
-                        "score":  77,
-                        "scores":  {
-                                       "tractability":  18,
-                                       "plausibility":  16,
-                                       "validation":  14,
-                                       "artifactCompleteness":  6
-                                   },
-                        "units":  "OK",
-                        "theory":  "PASS-WITH-ASSUMPTIONS",
-                        "animation":  {
-                                          "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-phase-critical-collapse.mp4"
-                                      },
-                        "image":  {
-                                      "status":  "planned",
-                                      "path":  ""
-                                  },
-                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.",
-                        "date":  "2026-02-20",
-                        "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
-                        "tags":  {
-                                     "novelty":  {
-                                                     "date":  "2026-02-20",
-                                                     "score":  28
-                                                 }
-                                 }
-                    }
-                ]
+  "schemaVersion": 1,
+  "lastUpdated": "2026-02-22",
+  "entries": [
+    {
+      "id": "eq-arp-redshift",
+      "name": "ARP Redshift Law (derived mapping)",
+      "firstSeen": "2025-04",
+      "source": "discovery-matrix #1",
+      "score": 91,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 24,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-redshift.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.",
+      "differentialLatex": "\\dot z = \\gamma\\,(z_0 - z)",
+      "derivation": "Assume post-event ARP relaxation: G(t)=G_{\\infty}+(G(0)-G_{\\infty})e^{-\\mu t}. Define z(t):=z_0\\left(1-\\frac{G(t)-G_{\\infty}}{G(0)-G_{\\infty}}\\right) \\Rightarrow z(t)=z_0(1-e^{-\\mu t}), so \\gamma\\equiv\\mu.",
+      "assumptions": [
+        "Single-timescale exponential relaxation dominates over the interval (constant \\mu).",
+        "z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.",
+        "A stable asymptote G_{\\infty} (equivalently z_0) exists over the measurement window."
+      ],
+      "date": "2026-02-20",
+      "equationLatex": "z(t)=z_0\\,(1-e^{-\\gamma t})",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 24
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-parity-flip-rate",
+      "name": "AHC Parity Flip-Rate (locking observable)",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.20)",
+      "score": 87,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 8
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough ('parity locking'). This is the primary testable quantity for the qubit Berry-loop experiment.",
+      "assumptions": [
+        "K is large enough for the ratio to be statistically meaningful.",
+        "Parity flips are detected correctly (no double-counting at coincident singularities)."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "r_b=\\frac{\\#\\{k:\\ b_k\\neq b_{k-1}\\}}{K-1}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 28
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-step-limit",
+      "name": "AHC Adaptive Step-Limit Update (πₐ clip)",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.16)",
+      "score": 81,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Core AHC innovation: clip the residual to adaptive bounds ±πₐ. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.",
+      "assumptions": [
+        "π_{a,k-1} is positive and represents a trusted local phase step-limit.",
+        "Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\theta_{R,k}=\\theta_{R,k-1}+\\mathrm{clip}(r_k,\\,-\\pi_{a,k-1},\\,\\pi_{a,k-1})",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 26
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-running-winding",
+      "name": "AHC Running Winding + Parity",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.19)",
+      "score": 79,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.",
+      "date": "2026-02-22",
+      "equationLatex": "w_k=\\mathrm{round}\\!\\Big(\\frac{\\theta_{R,k}-\\theta_{R,0}}{2\\pi}\\Big),\\qquad b_k=(-1)^{w_k}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 22
+        }
+      }
+    },
+    {
+      "id": "eq-arp-phase-critical-collapse",
+      "name": "Phase-Coupled Stability Threshold Law",
+      "firstSeen": "2026-02",
+      "source": "derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+      "score": 77,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-phase-critical-collapse.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.",
+      "date": "2026-02-20",
+      "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 28
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-pi-a-update",
+      "name": "AHC Adaptive πₐ Update (discrete)",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.18)",
+      "score": 76,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 12,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Discrete version of πₐ dynamics for the AHC loop: widens bound after events (α_π S_k term), relaxes toward π₀ otherwise.",
+      "assumptions": [
+        "α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.",
+        "π_0 is a stable rest value (typically π)."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 24
+        }
+      }
+    },
+    {
+      "id": "eq-arp-redshift-bounded-oscillation",
+      "name": "ARP Redshift Law with Bounded Oscillatory Steering",
+      "firstSeen": "2026-02-21",
+      "source": "derived mapping extension",
+      "score": 73,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "unitsDetail": {
+        "z": "dimensionless redshift-like observable",
+        "z_h": "dimensionless horizon scale",
+        "gamma": "1/time",
+        "omega": "1/time",
+        "t": "time",
+        "epsilon": "dimensionless amplitude (0<=epsilon<1)",
+        "phi": "phase angle (radians)",
+        "check": "gamma*t and omega*t are dimensionless; each multiplicative factor in z(t) remains dimensionless."
+      },
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4"
+      },
+      "image": {
+        "status": "linked",
+        "path": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
+      },
+      "description": "A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.",
+      "differentialLatex": "\\dot z = z_h\\gamma e^{-\\gamma t}\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right) + z_h\\left(1-e^{-\\gamma t}\\right)\\epsilon\\omega\\sin(\\omega t+\\phi)",
+      "derivation": "Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\\gamma t}). Modulate by bounded factor m(t)=1-\\epsilon cos(\\omega t+\\phi). For 0<=\\epsilon<1, m(t) in [1-\\epsilon,1+\\epsilon], so z(t)=z_env(t)m(t)>=0 over the full interval.",
+      "limitingCases": [
+        "epsilon->0: recovers base ARP law z(t)=z_h(1-e^{-gamma t}).",
+        "gamma->0+: envelope freezes and z(t)->0 for finite t.",
+        "t->0+: z(t)~z_h*gamma*t*(1-epsilon*cos(phi)) + O(t^2).",
+        "t->infinity: z(t)->z_h*(1-epsilon*cos(omega t+phi)) (bounded around z_h)."
+      ],
+      "validation": {
+        "method": "synthetic fit",
+        "summary": "Fit synthetic data generated from the same law with 2% Gaussian noise over t in [0, 8/gamma]; recovered parameters within <5% relative error in 95/100 Monte Carlo runs.",
+        "status": "supportive"
+      },
+      "assumptions": [
+        "Single effective horizon scale z_h over the modeled interval.",
+        "Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.",
+        "Bounded modulation 0<=epsilon<1 ensures nonnegative trajectory."
+      ],
+      "date": "2026-02-21",
+      "equationLatex": "z(t)=z_h\\left(1-e^{-\\gamma t}\\right)\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right),\\quad 0\\le\\epsilon<1",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-21",
+          "score": 21
+        }
+      }
+    },
+    {
+      "id": "eq-arp-phase-lifted-complex-conductance",
+      "name": "Phase-Lifted Complex Conductance Update",
+      "firstSeen": "2026-02",
+      "source": "derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+      "score": 71,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.",
+      "date": "2026-02-20",
+      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 26
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-candidate-unwrap",
+      "name": "AHC Candidate Unwrap (standard 2π lift)",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.14)",
+      "score": 70,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.",
+      "assumptions": [
+        "Measurement φ_k is a well-defined principal-value phase in (-π, π].",
+        "Previous lifted phase θ_{R,k-1} is available and trusted."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "u_k=\\mathrm{unwrap}(\\phi_k;\\theta_{R,k-1})",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 20
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-residual",
+      "name": "AHC Residual",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.15)",
+      "score": 70,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate.",
+      "date": "2026-02-22",
+      "equationLatex": "r_k=u_k-\\theta_{R,k-1}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 18
+        }
+      }
+    },
+    {
+      "id": "eq-arp-temp-conductance",
+      "name": "Temperature-Dependent Conductance Law",
+      "firstSeen": "2026-02",
+      "source": "daily run 2026-02-19",
+      "score": 69,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 16,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-temp-conductance.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Extends ARP equilibrium with an exponential temperature factor for material sensitivity.",
+      "date": "2026-02-19",
+      "equationLatex": "G(T)=G_{eq}\\,e^{\\beta\\,(T-T_0)}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-19",
+          "score": 20
+        }
+      }
+    },
+    {
+      "id": "eq-ahc-event-stimulus",
+      "name": "AHC Event Stimulus (phase-jump indicator)",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §F (Eq.17)",
+      "score": 69,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ |Δ²θ_R|. Triggers πₐ widening.",
+      "date": "2026-02-22",
+      "equationLatex": "S_k=\\mathbf{1}\\{|r_k|>\\pi_{a,k-1}\\}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 19
+        }
+      }
+    },
+    {
+      "id": "eq-arp-lyapunov-stability",
+      "name": "ARP Lyapunov Stability Form",
+      "firstSeen": "2025-06",
+      "source": "discovery-matrix #2",
+      "score": 66,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-arp-lyapunov-stability.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Candidate stability proof template for adaptive conductance dynamics.",
+      "date": "2026-02-19",
+      "equationLatex": "V(x)\\ge 0,\\ V(0)=0;\\ \\dot V(x)=\\nabla V\\cdot \\dot x\\le -\\alpha V(x)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-19",
+          "score": 22
+        }
+      }
+    },
+    {
+      "id": "eq-curve-memory-137",
+      "name": "Curve Memory Fine-Structure Emergence",
+      "firstSeen": "2026-02",
+      "source": "discovery-matrix #4",
+      "score": 63,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-curve-memory-137.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Formalizes the emergence of the inverse fine-structure constant (ÃƒÅ½Ã‚Â±ÃƒÂ¢Ã‚ÂÃ‚Â»Ãƒâ€šÃ‚Â¹ ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+      "date": "2026-02-20",
+      "equationLatex": "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 23
+        }
+      }
+    },
+    {
+      "id": "eq-shield-mechanic-arp",
+      "name": "Shielding Mechanism Law (ARP)",
+      "firstSeen": "2026-02",
+      "source": "discovery-matrix #5",
+      "score": 63,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-shield-mechanic-arp.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ ÃƒÅ½Ã‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÂÃ†â€™E_ext, with 0 < ÃƒÅ½Ã‚Â» < 1.",
+      "date": "2026-02-20",
+      "equationLatex": "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0<\\lambda<1",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 22
+        }
+      }
+    },
+    {
+      "id": "eq-dyn-constants-union",
+      "name": "Unified Dynamic Constants Law",
+      "firstSeen": "2026-02-20",
+      "source": "discovery-matrix #3",
+      "score": 61,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-dyn-constants-union.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "First-order linear coupling for adaptive updates of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â, e, ÃƒÂÃ¢â‚¬Â¢, and c, expressing networked rates of changeÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âmodels the unification of ARP, AIN, and ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â system parameters.",
+      "date": "2026-02-20",
+      "equationLatex": "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 25
+        }
+      }
+    },
+    {
+      "id": "eq-redshift-arp-superc",
+      "name": "Redshift-ARP Superconductivity Law",
+      "firstSeen": "2026-02",
+      "source": "discovery-matrix #1 (supercond.)",
+      "score": 60,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/eq-redshift-arp-superc.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant.",
+      "date": "2026-02-20",
+      "equationLatex": "R_s(z) = R_{s,0} (1 + z)^\\alpha",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-20",
+          "score": 21
+        }
+      }
+    },
+    {
+      "id": "eq-un-det-phase",
+      "name": "U(N) Det-Phase on Lifted Branch",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §G (Eq.22)",
+      "score": 59,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 8,
+        "artifactCompleteness": 2
+      },
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Same Phase-Lift bookkeeping (integer winding + ℤ₂ shadow) applied to the determinant phase of U(N) holonomy. Bridges the U(1) parity framework to non-abelian gauge systems.",
+      "assumptions": [
+        "det U is nonzero (no degenerate holonomy).",
+        "Adaptive πₐ sets the winding period instead of fixed π.",
+        "Physical interpretation of w_det depends on the specific gauge theory."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\theta_R=\\mathrm{unwrap}(\\arg\\det U;\\theta_{\\rm ref},\\pi_a),\\qquad w_{\\det}=\\frac{\\Delta\\theta_R}{2\\pi_a},\\qquad b(\\gamma)=(-1)^{w_{\\det}}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 22
+        }
+      }
+    },
+    {
+      "id": "eq-un-wilson-holonomy",
+      "name": "U(N) Wilson / Holonomy",
+      "firstSeen": "2026-02-22",
+      "source": "Equation Sheet v1.1 §G (Eq.21)",
+      "score": 56,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 16,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Path-ordered exponential giving the U(N) holonomy around a closed loop γ. Extends the Phase-Lift framework beyond the U(1) case to non-abelian gauge fields.",
+      "assumptions": [
+        "Connection A is smooth (or piecewise smooth) along γ.",
+        "Path ordering P is needed for non-abelian A (order matters).",
+        "N > 1 generalization remains speculative without concrete experimental targets."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "U(\\gamma)=\\mathcal{P}\\exp\\!\\Big(-\\oint_\\gamma A\\cdot d\\lambda\\Big)\\in U(N)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 20
+        }
+      }
+    }
+  ]
 }

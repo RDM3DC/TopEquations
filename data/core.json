@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "entries": [
     {
-      "id": "core-arp-ode",
-      "name": "ARP Core Law (canonical ODE)",
-      "novelty": 20,
-      "tractability": 19,
-      "plausibility": 19,
+      "id": "core-phase-ambiguity",
+      "name": "Phase Ambiguity (multi-valuedness axiom)",
+      "novelty": 15,
+      "tractability": 20,
+      "plausibility": 20,
       "units": "OK",
       "theory": "PASS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-arp-ode.mp4"},
+      "animation": "planned",
       "image": "planned",
-      "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|-\\mu_G\\,G_{ij}(t)",
-      "description": "Canonical Adaptive Resistance Principle update rule for edge conductance.",
-      "source": "canonical-core paper 01",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
+      "equationLatex": "z=re^{i\\theta},\\quad \\theta\\equiv\\theta+2\\pi k,\\ k\\in\\mathbb{Z}",
+      "description": "Multi-valuedness comes from the (2π)-quotient on phase. Starting axiom motivating the Phase-Lift framework.",
+      "source": "Equation Sheet v1.1 §A (Eq.1)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
     },
     {
       "id": "core-phase-lift",
@@ -24,11 +24,44 @@
       "plausibility": 16,
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-phase-lift.mp4"},
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-phase-lift.mp4"
+      },
       "image": "planned",
-      "equationLatex": "(\\,\\,\\,\\,\\,\\u29c9 f\\,\\,\\,)(z;\\theta_{ref}) := f(z)\\ \"computed using\"\\ \"\\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})\"",
+      "equationLatex": "(\\,\\,\\,\\,\\,\\u29c9 f\\,\\,\\,)(z;\\theta_{\\rm ref}) := f(z)\\ \\text{computed using}\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{\\rm ref})",
       "description": "Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.",
-      "source": "canonical-core paper 04",
+      "source": "canonical-core paper 04 / Eq.Sheet §A (Eq.2)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+    },
+    {
+      "id": "core-unwrap-rule",
+      "name": "Deterministic Unwrapping Rule",
+      "novelty": 20,
+      "tractability": 19,
+      "plausibility": 19,
+      "units": "OK",
+      "theory": "PASS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "\\mathrm{unwrap}(\\theta;\\theta_{\\rm ref})=\\theta+2\\pi\\,\\mathrm{round}\\!\\Big(\\frac{\\theta_{\\rm ref}-\\theta}{2\\pi}\\Big)",
+      "description": "Pick the representative closest to the reference. The concrete algorithm behind Phase-Lift: a single deterministic formula for branch selection.",
+      "source": "Equation Sheet v1.1 §A (Eq.3)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+    },
+    {
+      "id": "core-path-continuity",
+      "name": "Path Continuity (Stateful Phase-Lift)",
+      "novelty": 20,
+      "tractability": 18,
+      "plausibility": 18,
+      "units": "OK",
+      "theory": "PASS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "\\theta_{R,k}=\\mathrm{unwrap}(\\arg z_k;\\,\\theta_{R,k-1})",
+      "description": "Turns phase into a continuous real trajectory by chaining the unwrap rule sample-to-sample (except at true singularities like z=0).",
+      "source": "Equation Sheet v1.1 §A (Eq.4)",
       "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
     },
     {
@@ -39,12 +72,63 @@
       "plausibility": 16,
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-pr-root.mp4"},
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-pr-root.mp4"
+      },
       "image": "planned",
       "equationLatex": "\\u29c9\\sqrt{z;\\theta_{ref}}:=\\sqrt{r}\\,e^{i\\theta_R/2}\\ \"where\"\\ z=re^{i\\theta}\\ \"and\"\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})",
       "description": "Phase-resolved square root: deterministic branch choice encoded by the resolved phase.",
-      "source": "canonical-core paper 04",
+      "source": "canonical-core paper 04 / Eq.Sheet §A (Eq.5)",
       "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\\u29c9"
+    },
+    {
+      "id": "core-winding-parity",
+      "name": "Winding Number + ℤ₂ Parity Invariants",
+      "novelty": 18,
+      "tractability": 18,
+      "plausibility": 17,
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-winding-parity.mp4"
+      },
+      "image": "planned",
+      "equationLatex": "w=\\frac{\\Delta\\theta_R}{2\\pi}\\in\\mathbb{Z},\\qquad \\nu:=w\\bmod 2\\in\\{0,1\\},\\quad b=(-1)^w\\in\\{\\pm1\\}",
+      "description": "Counts how many times the lifted phase winds (w); ℤ₂ parity b predicts whether PR-Root returns to the same or opposite sheet.",
+      "source": "canonical-core papers 02/04 / Eq.Sheet §B (Eq.6–7)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/"
+    },
+    {
+      "id": "core-conformal-metric",
+      "name": "Adaptive-π Conformal Scale Factor and Metric",
+      "novelty": 22,
+      "tractability": 16,
+      "plausibility": 16,
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "\\Omega(x,t):=\\frac{\\pi_a(x,t)}{\\pi},\\qquad g_{ij}(x,t)=\\Omega(x,t)^2\\,\\delta_{ij}",
+      "description": "πₐ/π acts like a local ruler scaling. Defines the conformal metric induced by the adaptive-π field on the underlying flat geometry.",
+      "source": "Equation Sheet v1.1 §C (Eq.8)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+    },
+    {
+      "id": "core-adaptive-arc-length",
+      "name": "Adaptive Arc Length",
+      "novelty": 20,
+      "tractability": 16,
+      "plausibility": 15,
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "L_g(\\gamma)=\\int_0^1 \\Omega(\\gamma(t),t)\\,|\\dot\\gamma(t)|\\,dt",
+      "description": "Distances and penalties are measured in the adaptive geometry: path lengths scale with the local πₐ field.",
+      "source": "Equation Sheet v1.1 §C (Eq.9)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
     },
     {
       "id": "core-pi-a",
@@ -54,7 +138,10 @@
       "plausibility": 15,
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-pi-a.mp4"},
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-pi-a.mp4"
+      },
       "image": "planned",
       "equationLatex": "\\theta=\\theta_R+2\\pi_a(x,t)\\,w,\\ \"with\"\\ w\\in\\mathbb{Z}\\ \"and\"\\ \\pi_a\\to\\pi",
       "description": "Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.",
@@ -62,19 +149,67 @@
       "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
     },
     {
-      "id": "core-winding-parity",
-      "name": "Winding / parity invariants",
+      "id": "core-pi-a-dynamics",
+      "name": "Reinforce/Decay Dynamics for πₐ",
+      "novelty": 22,
+      "tractability": 17,
+      "plausibility": 16,
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "\\frac{d\\pi_a}{dt}=\\alpha_\\pi\\,s(x,t)-\\mu_\\pi(\\pi_a-\\pi_0)",
+      "description": "πₐ increases under stimulus (events/errors/curvature) and relaxes toward π₀ (often π). The core adaptive mechanism of the geometry layer.",
+      "source": "Equation Sheet v1.1 §C (Eq.10)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+    },
+    {
+      "id": "core-arp-ode",
+      "name": "ARP Core Law (canonical ODE)",
+      "novelty": 20,
+      "tractability": 19,
+      "plausibility": 19,
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-arp-ode.mp4"
+      },
+      "image": "planned",
+      "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|-\\mu_G\\,G_{ij}(t)",
+      "description": "Canonical Adaptive Resistance Principle update rule for edge conductance. Edges that carry activity reinforce; unused edges decay (self-organizing backbones).",
+      "source": "canonical-core paper 01 / Eq.Sheet §D (Eq.11)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
+    },
+    {
+      "id": "core-curvature-salience",
+      "name": "Curvature as Salience (Curve-Memory Primitive)",
+      "novelty": 15,
+      "tractability": 20,
+      "plausibility": 20,
+      "units": "OK",
+      "theory": "PASS",
+      "animation": "planned",
+      "image": "planned",
+      "equationLatex": "\\kappa(s)=|\\gamma''(s)|",
+      "description": "Salience equals curvature: sharp bends in a trajectory mark events and transitions. Defines the geometric primitive used by curve-memory.",
+      "source": "Equation Sheet v1.1 §E (Eq.12)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+    },
+    {
+      "id": "core-reinforce-decay-memory",
+      "name": "Reinforce/Decay Memory Law (generic)",
       "novelty": 18,
       "tractability": 18,
       "plausibility": 17,
       "units": "OK",
-      "theory": "PASS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-winding-parity.mp4"},
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": "planned",
       "image": "planned",
-      "equationLatex": "w\\in\\mathbb{Z},\\ \"parity\"\\ p=w\\bmod 2\\in\\{0,1\\}",
-      "description": "Track winding number and its Z2 parity as invariants under continuous deformation (unless passing through singularities).",
-      "source": "canonical-core papers 02/04",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/"
+      "equationLatex": "\\frac{dM}{dt}=\\alpha\\,S(t)-\\mu\\,M(t)",
+      "description": "A generic time-constant memory law: M grows under stimulus S and decays at rate μ. Can drive s(x,t) for πₐ or any curve-memory trace.",
+      "source": "Equation Sheet v1.1 §E (Eq.13)",
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
     },
     {
       "id": "core-phase-lifted-stokes",
@@ -84,7 +219,10 @@
       "plausibility": 15,
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
-      "animation": {"status": "linked", "path": "./assets/animations/core-phase-lifted-stokes.mp4"},
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/core-phase-lifted-stokes.mp4"
+      },
       "image": "planned",
       "equationLatex": "\\theta_R[\\gamma]:=\\mathrm{unwrap}\\!\\left(\\oint_{\\gamma} A\\,;\\theta_{\\rm ref}\\right)=\\int_{S:\\,\\partial S=\\gamma}F+2\\pi_a\\,w,\\quad w\\in\\mathbb{Z},\\quad b(\\gamma)=(-1)^w",
       "description": "Turns the usual Stokes/holonomy statement ‘mod 2π’ into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-π generalizes the period to 2πₐ.",
