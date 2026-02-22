@@ -54,7 +54,11 @@
   function isEquationLike(eq){
     const s = String(eq || '').trim();
     if(!s) return false;
-    return /[=<>±≈∝→←↔+\/*^_(){}\[\]\\]|(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)/.test(s);
+    return /[=<>±≈∝→←↔+/*^_(){}\[\]\\]|(\\frac|\\dot|\\ddot|\\int|\\sum|\\prod|\\nabla|\\partial|\\sqrt|\\log|\\exp)/.test(s);
+  }
+
+  function getEntryKey(e){
+    return e.sha1 || `${e.source || ''}::${e.line_start || ''}::${e.kind || ''}::${e.equation || ''}`;
   }
 
   function renderChunk(){
@@ -173,7 +177,7 @@
 
   function renderScoredBox(scored){
     if(!scored || !Array.isArray(scored.entries) || scored.entries.length===0) return;
-    const items = scored.entries.filter(e => isEquationLike(e.equation)).slice().sort((a,b)=> (b.score||0)-(a.score||0));
+    const items = scored.entries.filter(e => isEquationLike(e.equation)).sort((a,b)=> (b.score||0)-(a.score||0));
 
     const box = document.createElement('section');
     box.className = 'panel';
@@ -231,8 +235,7 @@
       const scoredByKey = new Map();
       if(scored && Array.isArray(scored.entries)){
         for(const s of scored.entries){
-          const key = s.sha1 || `${s.source || ''}::${s.equation || ''}`;
-          scoredByKey.set(key, s.score || 0);
+          scoredByKey.set(getEntryKey(s), s.score ?? 0);
         }
       }
       entries = d.entries || [];
@@ -244,7 +247,7 @@
         line_start: x.line_start,
         source_type: x.source_type || x.sourceType || 'file',
         sha1: x.sha1,
-        score: scoredByKey.get(x.sha1 || `${x.source || ''}::${x.equation || ''}`) || 0,
+        score: scoredByKey.get(getEntryKey(x)) ?? 0,
       }));
 
       const st = d.stats || {};
