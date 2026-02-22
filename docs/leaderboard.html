@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220127' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602220139' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220127'></script>
+  <script defer src='./assets/app.js?v=202602220139'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -104,7 +104,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g.git' target='_blank' rel='noopener'>link</a></div></div>
@@ -127,7 +127,7 @@
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\\mathcal{B}(\\omega)=\\prod_{(i,j)\\in E} b_{ij}(\\omega)=(-1)^{\\sum_{(i,j)} w_{ij}(\\omega)},\\quad w_{ij}=\\frac{\\Delta\\theta^R_{ij}}{2\\pi_a},\\ b_{ij}=(-1)^{w_{ij}}$$</div>
+      <div class='equation__tex'>$$\mathcal{B}(\omega)=\prod_{(i,j)\in E} b_{ij}(\omega)=(-1)^{\sum_{(i,j)} w_{ij}(\omega)},\quad w_{ij}=\frac{\Delta\theta^R_{ij}}{2\pi_a},\ b_{ij}=(-1)^{w_{ij}}$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>PL-AIN synthesis (cycle topological label)</span></div>
@@ -187,14 +187,14 @@
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}$$</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha_G\,\Omega_{ij}(t)\,|I_{ij}(t)|-\mu_G\,G_{ij},\quad \Omega_{ij}(t)=\frac{\pi_a(ij,t)}{\pi}$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>PL-AIN synthesis (ARP + Phase-Lift + adaptive-pi_a)</span></div>
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>ARP reinforcement/decay scaled by local adaptive phase-period field Omega_ij=pi_a/pi, yielding geometry-aware learning strength.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from ARP edge update dG/dt=alpha|I|-mu G and modulate reinforcement by local phase-period scale Omega_ij=pi_a/pi.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-local adaptive phase scale pi_a(ij,t)&gt;0 is measurable or estimable.</li><li>Reinforcement remains linear in |I_ij| to first order.</li><li>Decay term mu_G G_ij dominates when excitation weakens.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dG_{ij}}{dt}=\alpha_G\,\Omega_{ij}(t)\,|I_{ij}(t)|-\mu_G\,G_{ij},\quad \Omega_{ij}(t)=\frac{\pi_a(ij,t)}{\pi}$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from ARP edge update dG/dt=alpha|I|-mu G and modulate reinforcement by local phase-period scale Omega_ij=pi_a/pi.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-local adaptive phase scale pi_a(ij,t)&gt;0 is measurable or estimable.</li><li>Reinforcement remains linear in |I_ij| to first order.</li><li>Decay term mu_G G_ij dominates when excitation weakens.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -224,7 +224,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Two-timescale ARP redshift relaxation captures fast+slow approach to asymptote and supports AIC/BIC model selection against the single-timescale baseline.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = z_0\left(a\gamma_1 e^{-\gamma_1 t} + (1-a)\gamma_2 e^{-\gamma_2 t}\right)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\gamma_1 t}-(1-a)e^{-\gamma_2 t}), 0&lt;=a&lt;=1. This nests the single-timescale law when \gamma_1=\gamma_2 or a in {0,1}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two separated relaxation channels with rates gamma_1 and gamma_2.</li><li>Mixing weight a is bounded: 0&lt;=a&lt;=1.</li><li>z_0 is a stable asymptote over the fit interval.</li><li>Model comparison uses AIC/BIC on the same data window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = z_0\left(a\gamma_1 e^{-\gamma_1 t} + (1-a)\gamma_2 e^{-\gamma_2 t}\right)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\gamma_1 t}-(1-a)e^{-\gamma_2 t}), 0&lt;=a&lt;=1. This nests the single-timescale law when \gamma_1=\gamma_2 or a in {0,1}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two separated relaxation channels with rates gamma_1 and gamma_2.</li><li>Mixing weight a is bounded: 0&lt;=a&lt;=1.</li><li>z_0 is a stable asymptote over the fit interval.</li><li>Model comparison uses AIC/BIC on the same data window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -298,7 +298,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 01:27</strong></div>
+      <div>Last built: <strong>2026-02-22 01:39</strong></div>
     </footer>
   </main>
 </body>

@@ -360,7 +360,7 @@
                                       "path":  ""
                                   },
                         "description":  "ARP reinforcement/decay scaled by local adaptive phase-period field Omega_ij=pi_a/pi, yielding geometry-aware learning strength.",
-                        "differentialLatex":  "\\\\frac{dG_{ij}}{dt}=\\\\alpha_G\\\\,\\\\Omega_{ij}(t)\\\\,|I_{ij}(t)|-\\\\mu_G\\\\,G_{ij},\\\\quad \\\\Omega_{ij}(t)=\\\\frac{\\\\pi_a(ij,t)}{\\\\pi}",
+                        "differentialLatex":  "\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}",
                         "derivation":  "Start from ARP edge update dG/dt=alpha|I|-mu G and modulate reinforcement by local phase-period scale Omega_ij=pi_a/pi.",
                         "assumptions":  [
                                             "Edge-local adaptive phase scale pi_a(ij,t)\u003e0 is measurable or estimable.",
@@ -368,7 +368,7 @@
                                             "Decay term mu_G G_ij dominates when excitation weakens."
                                         ],
                         "date":  "2026-02-22",
-                        "equationLatex":  "\\\\frac{dG_{ij}}{dt}=\\\\alpha_G\\\\,\\\\Omega_{ij}(t)\\\\,|I_{ij}(t)|-\\\\mu_G\\\\,G_{ij},\\\\quad \\\\Omega_{ij}(t)=\\\\frac{\\\\pi_a(ij,t)}{\\\\pi}",
+                        "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha_G\\,\\Omega_{ij}(t)\\,|I_{ij}(t)|-\\mu_G\\,G_{ij},\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi}",
                         "tags":  {
                                      "novelty":  {
                                                      "score":  27,
@@ -399,7 +399,7 @@
                                       "path":  ""
                                   },
                         "description":  "History-resolved phase evolves by unwrap-rate minus regularizer gradient, creating explicit dynamical phase-sheet selection.",
-                        "differentialLatex":  "\\\\frac{d\\\\theta^R_{ij}}{dt}=\\\\mathrm{unwrap\\\\_rate}(\\\\arg Y_{ij})-\\\\eta\\\\,\\\\partial_{\\\\theta^R_{ij}}\\\\Phi(\\\\theta^R)",
+                        "differentialLatex":  "\\frac{d\\theta^R_{ij}}{dt}=\\mathrm{unwrap\\_rate}(\\arg Y_{ij})-\\eta\\,\\partial_{\\theta^R_{ij}}\\Phi(\\theta^R)",
                         "derivation":  "Lift principal argument to unwrapped phase theta^R and introduce a phase-regularizer potential Phi with damping strength eta.",
                         "assumptions":  [
                                             "unwrap_rate is well-defined under sampling cadence.",
@@ -407,7 +407,7 @@
                                             "eta\u003e=0 controls phase smoothing without destroying observability."
                                         ],
                         "date":  "2026-02-22",
-                        "equationLatex":  "\\\\frac{d\\\\theta^R_{ij}}{dt}=\\\\mathrm{unwrap\\\\_rate}(\\\\arg Y_{ij})-\\\\eta\\\\,\\\\partial_{\\\\theta^R_{ij}}\\\\Phi(\\\\theta^R)",
+                        "equationLatex":  "\\frac{d\\theta^R_{ij}}{dt}=\\mathrm{unwrap\\_rate}(\\arg Y_{ij})-\\eta\\,\\partial_{\\theta^R_{ij}}\\Phi(\\theta^R)",
                         "tags":  {
                                      "novelty":  {
                                                      "score":  26,
@@ -446,7 +446,7 @@
                                             "Formal boundary: singularity crossing manifold is Y_{ij}=0 in complex admittance plane; parity flips require crossing this manifold."
                                         ],
                         "date":  "2026-02-22",
-                        "equationLatex":  "\\\\mathcal{B}(\\\\omega)=\\\\prod_{(i,j)\\\\in E} b_{ij}(\\\\omega)=(-1)^{\\\\sum_{(i,j)} w_{ij}(\\\\omega)},\\\\quad w_{ij}=\\\\frac{\\\\Delta\\\\theta^R_{ij}}{2\\\\pi_a},\\\\ b_{ij}=(-1)^{w_{ij}}",
+                        "equationLatex":  "\\mathcal{B}(\\omega)=\\prod_{(i,j)\\in E} b_{ij}(\\omega)=(-1)^{\\sum_{(i,j)} w_{ij}(\\omega)},\\quad w_{ij}=\\frac{\\Delta\\theta^R_{ij}}{2\\pi_a},\\ b_{ij}=(-1)^{w_{ij}}",
                         "tags":  {
                                      "novelty":  {
                                                      "score":  29,
@@ -463,7 +463,7 @@
                                                              "./assets/figures/parity_lock_comparison.svg"
                                                          ]
                                        },
-                        "formalFailureCriterionLatex":  "\\\\text{Parity change is possible iff }\\\\exists\\\\,(i,j),t:\\\\ |Y_{ij}(t,\\\\omega)|=0.\\\\ \\\\text{If }\\\\min_t|Y_{ij}(t,\\\\omega)|\u003e0\\\\ \\\\forall(i,j),\\\\text{ parity is topologically locked under small deformations.}"
+                        "formalFailureCriterionLatex":  "\\text{Parity change is possible iff }\\exists\\,(i,j),t:\\ |Y_{ij}(t,\\omega)|=0.\\ \\text{If }\\min_t|Y_{ij}(t,\\omega)|\u003e0\\ \\forall(i,j),\\text{ parity is topologically locked under small deformations.}"
                     },
                     {
                         "id":  "eq-pl-ain-weighted-budget-law",
@@ -495,7 +495,7 @@
                                             "Sparse backbone emerges from weighted competition under budget cap."
                                         ],
                         "date":  "2026-02-22",
-                        "equationLatex":  "\\\\mathcal{G}_{\\\\Omega}(t)=\\\\sum_{(i,j)}\\\\Omega_{ij}(t)G_{ij}(t),\\\\quad \\\\Omega_{ij}(t)=\\\\frac{\\\\pi_a(ij,t)}{\\\\pi},\\\\quad \\\\mathcal{G}_{\\\\Omega}(t)\\\\le G_{\\\\mathrm{tot}}",
+                        "equationLatex":  "\\mathcal{G}_{\\Omega}(t)=\\sum_{(i,j)}\\Omega_{ij}(t)G_{ij}(t),\\quad \\Omega_{ij}(t)=\\frac{\\pi_a(ij,t)}{\\pi},\\quad \\mathcal{G}_{\\Omega}(t)\\le G_{\\mathrm{tot}}",
                         "tags":  {
                                      "novelty":  {
                                                      "score":  24,

@@ -520,7 +520,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
         extra = ""
         if differential:
-            extra += f"<div class='kv'><div class='k'>Differential form</div><div class='v'>$$${_esc(differential)}$$</div></div>"
+          extra += f"<div class='kv'><div class='k'>Differential form</div><div class='v'>$${_esc(differential)}$$</div></div>"
         if derivation:
             extra += f"<div class='kv'><div class='k'>Derivation bridge</div><div class='v'>{_esc(derivation)}</div></div>"
         if assumptions:
