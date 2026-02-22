@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220003' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602220104' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220003'></script>
+  <script defer src='./assets/app.js?v=202602220104'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -130,10 +130,10 @@
       <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha\,|I_{ij}|-\mu\,G_{ij}-\lambda\,G_{ij}\,\sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-Ï€</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP + Phase-Lift + Adaptive-Ãâ‚¬</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2Ï€â‚. Predicts a sharp stability/transition-like behavior when Î¸_R approaches half-integer multiples of Ï€â‚ (maximal sinÂ²). Assumptions: Î¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; Ï€â‚ sets the relevant phase period; Î» has units 1/time.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2Ãâ‚¬Ã¢â€šÂ. Predicts a sharp stability/transition-like behavior when ÃŽÂ¸_R approaches half-integer multiples of Ãâ‚¬Ã¢â€šÂ (maximal sinÃ‚Â²). Assumptions: ÃŽÂ¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; Ãâ‚¬Ã¢â€šÂ sets the relevant phase period; ÃŽÂ» has units 1/time.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
@@ -143,8 +143,38 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='71' data-haslatex='1'>
+<section class='card' data-rank='3' data-score='73' data-haslatex='1'>
   <div class='card__rank'>#3</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP Redshift Law (two-timescale extension)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 73</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$z(t)=z_0\left(1-ae^{-\gamma_1 t}-(1-a)e^{-\gamma_2 t}\right),\quad 0\le a\le1$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>derived mapping extension (model selection)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Two-timescale ARP redshift relaxation captures fast+slow approach to asymptote and supports AIC/BIC model selection against the single-timescale baseline.</div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = z_0\left(a\gamma_1 e^{-\gamma_1 t} + (1-a)\gamma_2 e^{-\gamma_2 t}\right)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\gamma_1 t}-(1-a)e^{-\gamma_2 t}), 0&lt;=a&lt;=1. This nests the single-timescale law when \gamma_1=\gamma_2 or a in {0,1}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two separated relaxation channels with rates gamma_1 and gamma_2.</li><li>Mixing weight a is bounded: 0&lt;=a&lt;=1.</li><li>z_0 is a stable asymptote over the fit interval.</li><li>Model comparison uses AIC/BIC on the same data window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='4' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -160,10 +190,10 @@
       <div class='equation__tex'>$$\frac{d\tilde G_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)}-\mu_G\,\tilde G_{ij}(t),\qquad \theta_{R,ij}(t)=\mathrm{unwrap}\!\big(\arg I_{ij}(t);\theta_{\rm ref},\pi_a\big)$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-Ï€</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>derived: ARP core + Phase-Lift + Adaptive-Ãâ‚¬</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÎ¸_R,ij} to model sign flips under branch crossings.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃŽÂ¸_R,ij} to model sign flips under branch crossings.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
@@ -173,8 +203,8 @@
 </section>
 
 
-<section class='card' data-rank='4' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='5' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -208,7 +238,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 00:03</strong></div>
+      <div>Last built: <strong>2026-02-22 01:04</strong></div>
     </footer>
   </main>
 </body>

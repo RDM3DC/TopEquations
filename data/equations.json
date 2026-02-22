@@ -1,6 +1,6 @@
 {
     "schemaVersion":  1,
-    "lastUpdated":  "2026-02-21",
+    "lastUpdated":  "2026-02-22",
     "entries":  [
                     {
                         "id":  "eq-arp-redshift",
@@ -127,7 +127,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "First-order linear coupling for adaptive updates of Ï€â‚, e, Ï•, and c, expressing networked rates of changeâ€”models the unification of ARP, AIN, and Ï€â‚ system parameters.",
+                        "description":  "First-order linear coupling for adaptive updates of Ãâ‚¬Ã¢â€šÂ, e, Ãâ€¢, and c, expressing networked rates of changeÃ¢â‚¬â€models the unification of ARP, AIN, and Ãâ‚¬Ã¢â€šÂ system parameters.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
                         "tags":  {
@@ -159,7 +159,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Formalizes the emergence of the inverse fine-structure constant (Î±â»Â¹ â‰ˆ 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+                        "description":  "Formalizes the emergence of the inverse fine-structure constant (ÃŽÂ±Ã¢ÂÂ»Ã‚Â¹ Ã¢â€°Ë† 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
                         "tags":  {
@@ -191,7 +191,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 âˆ’ Î»)E_ext, while the induced adaptive current follows J_adapt = ÏƒE_ext, with 0 \u003c Î» \u003c 1.",
+                        "description":  "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 Ã¢Ë†â€™ ÃŽÂ»)E_ext, while the induced adaptive current follows J_adapt = ÃÆ’E_ext, with 0 \u003c ÃŽÂ» \u003c 1.",
                         "date":  "2026-02-20",
                         "equationLatex":  "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0\u003c\\lambda\u003c1",
                         "tags":  {
@@ -237,7 +237,7 @@
                         "id":  "eq-arp-phase-lifted-complex-conductance",
                         "name":  "Phase-Lifted Complex Conductance Update",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP core + Phase-Lift + Adaptive-Ï€",
+                        "source":  "derived: ARP core + Phase-Lift + Adaptive-Ãâ‚¬",
                         "score":  71,
                         "scores":  {
                                        "tractability":  18,
@@ -255,7 +255,7 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÎ¸_R,ij} to model sign flips under branch crossings.",
+                        "description":  "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃŽÂ¸_R,ij} to model sign flips under branch crossings.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
                         "tags":  {
@@ -269,7 +269,7 @@
                         "id":  "eq-arp-phase-critical-collapse",
                         "name":  "Phase-Coupled Stability Threshold Law",
                         "firstSeen":  "2026-02",
-                        "source":  "derived: ARP + Phase-Lift + Adaptive-Ï€",
+                        "source":  "derived: ARP + Phase-Lift + Adaptive-Ãâ‚¬",
                         "score":  77,
                         "scores":  {
                                        "tractability":  18,
@@ -287,13 +287,53 @@
                                       "status":  "planned",
                                       "path":  ""
                                   },
-                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2Ï€â‚. Predicts a sharp stability/transition-like behavior when Î¸_R approaches half-integer multiples of Ï€â‚ (maximal sinÂ²). Assumptions: Î¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; Ï€â‚ sets the relevant phase period; Î» has units 1/time.",
+                        "description":  "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2Ãâ‚¬Ã¢â€šÂ. Predicts a sharp stability/transition-like behavior when ÃŽÂ¸_R approaches half-integer multiples of Ãâ‚¬Ã¢â€šÂ (maximal sinÃ‚Â²). Assumptions: ÃŽÂ¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; Ãâ‚¬Ã¢â€šÂ sets the relevant phase period; ÃŽÂ» has units 1/time.",
                         "date":  "2026-02-20",
                         "equationLatex":  "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
                         "tags":  {
                                      "novelty":  {
                                                      "date":  "2026-02-20",
                                                      "score":  28
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-arp-redshift-two-timescale",
+                        "name":  "ARP Redshift Law (two-timescale extension)",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "derived mapping extension (model selection)",
+                        "score":  73,
+                        "scores":  {
+                                       "artifactCompleteness":  2,
+                                       "validation":  17,
+                                       "tractability":  16,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "planned",
+                                          "path":  ""
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Two-timescale ARP redshift relaxation captures fast+slow approach to asymptote and supports AIC/BIC model selection against the single-timescale baseline.",
+                        "differentialLatex":  "\\dot z = z_0\\left(a\\gamma_1 e^{-\\gamma_1 t} + (1-a)\\gamma_2 e^{-\\gamma_2 t}\\right)",
+                        "derivation":  "Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\\gamma_1 t}-(1-a)e^{-\\gamma_2 t}), 0\u003c=a\u003c=1. This nests the single-timescale law when \\gamma_1=\\gamma_2 or a in {0,1}.",
+                        "assumptions":  [
+                                            "Two separated relaxation channels with rates gamma_1 and gamma_2.",
+                                            "Mixing weight a is bounded: 0\u003c=a\u003c=1.",
+                                            "z_0 is a stable asymptote over the fit interval.",
+                                            "Model comparison uses AIC/BIC on the same data window."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "z(t)=z_0\\left(1-ae^{-\\gamma_1 t}-(1-a)e^{-\\gamma_2 t}\\right),\\quad 0\\le a\\le1",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  22,
+                                                     "date":  "2026-02-22"
                                                  }
                                  }
                     }
