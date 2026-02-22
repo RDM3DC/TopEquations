@@ -56,8 +56,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-parity-flip-rate.mp4"
       },
       "image": {
         "status": "planned",
@@ -92,8 +92,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-step-limit.mp4"
       },
       "image": {
         "status": "planned",
@@ -128,8 +128,8 @@
       "units": "OK",
       "theory": "PASS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-running-winding.mp4"
       },
       "image": {
         "status": "planned",
@@ -192,8 +192,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-pi-a-update.mp4"
       },
       "image": {
         "status": "planned",
@@ -320,8 +320,8 @@
       "units": "OK",
       "theory": "PASS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-candidate-unwrap.mp4"
       },
       "image": {
         "status": "planned",
@@ -356,8 +356,8 @@
       "units": "OK",
       "theory": "PASS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-residual.mp4"
       },
       "image": {
         "status": "planned",
@@ -420,8 +420,8 @@
       "units": "OK",
       "theory": "PASS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-ahc-event-stimulus.mp4"
       },
       "image": {
         "status": "planned",
@@ -612,8 +612,8 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-un-det-phase.mp4"
       },
       "image": {
         "status": "planned",
@@ -649,8 +649,8 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-un-wilson-holonomy.mp4"
       },
       "image": {
         "status": "planned",

@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220350' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602221325' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220350'></script>
+  <script defer src='./assets/app.js?v=202602221325'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -137,7 +137,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough (&#x27;parity locking&#x27;). This is the primary testable quantity for the qubit Berry-loop experiment.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>K is large enough for the ratio to be statistically meaningful.</li><li>Parity flips are detected correctly (no double-counting at coincident singularities).</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-parity-flip-rate.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -167,7 +167,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Core AHC innovation: clip the residual to adaptive bounds ±πₐ. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>π_{a,k-1} is positive and represents a trusted local phase step-limit.</li><li>Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-step-limit.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -197,7 +197,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-running-winding.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -257,7 +257,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Discrete version of πₐ dynamics for the AHC loop: widens bound after events (α_π S_k term), relaxes toward π₀ otherwise.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.</li><li>π_0 is a stable rest value (typically π).</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-pi-a-update.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -347,7 +347,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measurement φ_k is a well-defined principal-value phase in (-π, π].</li><li>Previous lifted phase θ_{R,k-1} is available and trusted.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-candidate-unwrap.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -377,7 +377,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-residual.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -437,7 +437,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ |Δ²θ_R|. Triggers πₐ widening.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-event-stimulus.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -449,7 +449,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 03:50</strong></div>
+      <div>Last built: <strong>2026-02-22 13:25</strong></div>
     </footer>
   </main>
 </body>
