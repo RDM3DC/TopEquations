@@ -65,14 +65,21 @@ def _status_badge(val: str, kind: str) -> str:
     return f"<span class='pill pill--{css}' title='{_esc(kind)}'>{_esc(val)}</span>"
 
 
-def _artifact(val: dict | None) -> str:
+def _artifact(val: object | None) -> str:
     if not val:
         return "planned"
-    path = (val.get("path") or "").strip()
-    status = (val.get("status") or "planned").strip() or "planned"
-    if path:
-        return f"<a href='{_esc(path)}' target='_blank' rel='noopener'>link</a>"
-    return _esc(status)
+    if isinstance(val, str):
+        txt = val.strip()
+        if not txt:
+            return "planned"
+        return _esc(txt)
+    if isinstance(val, dict):
+        path = (val.get("path") or "").strip()
+        status = (val.get("status") or "planned").strip() or "planned"
+        if path:
+            return f"<a href='{_esc(path)}' target='_blank' rel='noopener'>link</a>"
+        return _esc(status)
+    return "planned"
 
 
 def _page(title: str, body: str, updated: str) -> str:
@@ -158,6 +165,8 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         desc = e.get("description", "")
         src = e.get("source", "")
         url = e.get("sourceUrl", "")
+        anim = _artifact(e.get("animation"))
+        img = _artifact(e.get("image"))
         total_score, rb = _rubric_score(e)
         units = str(e.get("units", "WARN")).upper()
         theory = str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).upper()
@@ -186,6 +195,8 @@ def _build_core_cards(repo_root: Path) -> list[str]:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
     </div>
   </div>
 </section>
@@ -395,7 +406,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{('<ul class=\'ul\'>' + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{("<ul class='ul'>" + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>

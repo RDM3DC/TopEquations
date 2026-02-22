@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220139' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602220255' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220139'></script>
+  <script defer src='./assets/app.js?v=202602220255'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -106,7 +106,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq2ARPRedshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g.git' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
@@ -143,8 +143,68 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='77' data-haslatex='1'>
+<section class='card' data-rank='3' data-score='81' data-haslatex='1'>
   <div class='card__rank'>#3</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>AHC Step-Limited Unwrapper</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 81</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\theta_{R,k}=\theta_{R,k-1}+\mathrm{clip}(r_k,-\pi_{a,k-1},\pi_{a,k-1}),\quad r_k=u_k-\theta_{R,k-1}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>AHC updates lifted phase with a clip limit controlled by pi_a, suppressing one-shot branch jumps from noisy residuals.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Compute candidate unwrap u_k and residual r_k=u_k-theta_{R,k-1}; update by adding clipped residual in [-pi_{a,k-1}, pi_{a,k-1}].</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Residuals are approximately local between adjacent runs.</li><li>pi_a is positive and updated online.</li><li>Sampling interval resolves Ramsey phase dynamics.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='4' data-score='79' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>U(N) Lifted Det-Phase Winding and Parity</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 79</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\theta_R=\mathrm{unwrap}(\arg\det U;\theta_{\rm ref},\pi_a),\quad w_{\det}=\frac{\Delta\theta_R}{2\pi_a},\quad b(\gamma)=(-1)^{w_{\det}}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Uses lifted determinant phase of U(N) holonomy to compute winding and Z2 parity in the same AHC branch-tracking framework.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Lift arg det U with unwrap and adaptive period pi_a, then compute integer winding and parity sign from lifted phase advance.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>det U is nonzero along analyzed cycles.</li><li>Unwrap reference is propagated continuously cycle-to-cycle.</li><li>Adaptive phase period pi_a remains positive.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='5' data-score='77' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -166,15 +226,75 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R approaches half-integer multiples of ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â (maximal sinÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²). Assumptions: ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â sets the relevant phase period; ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» has units 1/time.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq3PhaseCoupledThreshold.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='4' data-score='74' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='6' data-score='76' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Winding-Parity Z2 Shadow</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 76</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$w=\frac{\Delta\theta_R}{2\pi}\in\mathbb{Z},\quad \nu:=w\bmod 2,\quad b=(-1)^w$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Encodes sheet return behavior with integer winding and its Z2 parity shadow for robust branch bookkeeping.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Compute winding from lifted phase advance w=Delta theta_R/(2pi), then define parity/branch sign via w mod 2 and (-1)^w.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Loop is closed or near-closed over each measurement cycle.</li><li>Lifted phase increment is computed on a consistent branch convention.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/WindingParityExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='7' data-score='75' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>U(N) Holonomy Wilson Loop</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 75</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$U(\gamma)=\mathcal{P}\exp\!\left(-\oint_\gamma A\cdot d\lambda\right)\in U(N)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Extends Phase-Lift bookkeeping to matrix-valued transport with path-ordered U(N) holonomy.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Define loop transport operator as path-ordered exponential of gauge connection integrated around cycle gamma.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Connection A is regular along the closed path.</li><li>Control loop is sufficiently sampled for stable holonomy estimation.</li><li>Gauge/frame convention is fixed across comparisons.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='8' data-score='74' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>PL-AIN Geometry-Weighted Magnitude Update</h2>
@@ -196,15 +316,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>ARP reinforcement/decay scaled by local adaptive phase-period field Omega_ij=pi_a/pi, yielding geometry-aware learning strength.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dG_{ij}}{dt}=\alpha_G\,\Omega_{ij}(t)\,|I_{ij}(t)|-\mu_G\,G_{ij},\quad \Omega_{ij}(t)=\frac{\pi_a(ij,t)}{\pi}$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from ARP edge update dG/dt=alpha|I|-mu G and modulate reinforcement by local phase-period scale Omega_ij=pi_a/pi.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-local adaptive phase scale pi_a(ij,t)&gt;0 is measurable or estimable.</li><li>Reinforcement remains linear in |I_ij| to first order.</li><li>Decay term mu_G G_ij dominates when excitation weakens.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='5' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
+<section class='card' data-rank='9' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (two-timescale extension)</h2>
@@ -226,15 +346,75 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Two-timescale ARP redshift relaxation captures fast+slow approach to asymptote and supports AIC/BIC model selection against the single-timescale baseline.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = z_0\left(a\gamma_1 e^{-\gamma_1 t} + (1-a)\gamma_2 e^{-\gamma_2 t}\right)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start from a convex combination of two exponential relaxations toward z_0: z(t)=z_0(1-ae^{-\gamma_1 t}-(1-a)e^{-\gamma_2 t}), 0&lt;=a&lt;=1. This nests the single-timescale law when \gamma_1=\gamma_2 or a in {0,1}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two separated relaxation channels with rates gamma_1 and gamma_2.</li><li>Mixing weight a is bounded: 0&lt;=a&lt;=1.</li><li>z_0 is a stable asymptote over the fit interval.</li><li>Model comparison uses AIC/BIC on the same data window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='6' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
+<section class='card' data-rank='10' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Phase-Lift Operator (AHC explicit branch)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 73</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$(\,\u29c9 f\,)(z;\theta_{\rm ref}) := f(z)\ \text{computed using}\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{\rm ref})$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Makes branch choice explicit by evaluating f(z) on a history-resolved unwrapped phase trajectory.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Define theta_R via unwrap(arg z; theta_ref), then evaluate f(z) on that lifted branch so branch choice is explicit rather than implicit.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Reference phase is available at each update.</li><li>Sampling cadence is high enough to unwrap phase without aliasing.</li><li>No persistent z=0 singular crossings in the measured interval.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='11' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#11</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>AHC Adaptive pi_a Update</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 73</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\pi_{a,k}=\pi_{a,k-1}+\alpha_\pi S_k-\mu_\pi(\pi_{a,k-1}-\pi_0)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Adaptive pi_a increases on event stimulus and relaxes toward baseline pi_0, setting local phase tolerance for AHC.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Use event indicator S_k for out-of-budget residuals and apply reinforce/decay recursion around baseline pi_0.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Stimulus S_k is bounded (e.g., binary trigger).</li><li>alpha_pi and mu_pi are chosen to avoid unstable overshoot.</li><li>Baseline pi_0 is fixed over the test interval.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='12' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -256,15 +436,75 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq4PhaseLiftedComplexConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='7' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+<section class='card' data-rank='13' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#13</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>PR-Root Deterministic Branch Form</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 70</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\u29c9\sqrt{z;\theta_{\rm ref}}:=\sqrt{r}\,e^{i\theta_R/2}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>PR-Root writes the square root on an explicit resolved phase, eliminating silent plus/minus branch ambiguity.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Write z=r e^{i theta}; replace theta by unwrapped theta_R and define root as sqrt(r)e^{i theta_R/2}.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Magnitude r is nonnegative and measured robustly.</li><li>theta_R continuity is maintained by unwrap updates.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PRRootExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='14' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#14</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>AHC Parity Flip-Rate Observable</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 70</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$r_b=\frac{\#\{k:\ b_k\neq b_{k-1}\}}{K-1},\quad b_k=(-1)^{w_k}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>AHC addendum equation sheet</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Defines a measurable parity switching rate used to detect AHC locking as alpha_pi/mu_pi increases.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Track b_k=(-1)^{w_k} per cycle and compute empirical transition frequency across K samples.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Cycles are comparable across runs.</li><li>Parity state b_k is estimated consistently from lifted winding.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='15' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -298,7 +538,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 01:39</strong></div>
+      <div>Last built: <strong>2026-02-22 02:55</strong></div>
     </footer>
   </main>
 </body>

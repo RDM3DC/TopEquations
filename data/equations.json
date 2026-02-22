@@ -18,7 +18,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-redshift.mp4"
+                                          "path":  "./assets/animations/Eq2ARPRedshift.mp4"
                                       },
                         "image":  {
                                       "status":  "linked",
@@ -57,7 +57,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-lyapunov-stability.mp4"
+                                          "path":  "./assets/animations/Eq5ARPLyapunov.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -121,7 +121,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-dyn-constants-union.mp4"
+                                          "path":  "./assets/animations/Eq6UnifiedDynamicConstants.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -153,7 +153,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-curve-memory-137.mp4"
+                                          "path":  "./assets/animations/Eq7CurveMemory137.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -249,7 +249,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4"
+                                          "path":  "./assets/animations/Eq4PhaseLiftedComplexConductance.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -281,7 +281,7 @@
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
                                           "status":  "linked",
-                                          "path":  "./assets/animations/eq-arp-phase-critical-collapse.mp4"
+                                          "path":  "./assets/animations/Eq3PhaseCoupledThreshold.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -312,8 +312,8 @@
                         "units":  "OK",
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AdaptivePiGeometry.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -352,8 +352,8 @@
                         "units":  "OK",
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AdaptivePiGeometry.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -391,8 +391,8 @@
                         "units":  "OK",
                         "theory":  "PASS-WITH-ASSUMPTIONS",
                         "animation":  {
-                                          "status":  "planned",
-                                          "path":  ""
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AHCParityLocking.mp4"
                                       },
                         "image":  {
                                       "status":  "planned",
@@ -499,6 +499,307 @@
                         "tags":  {
                                      "novelty":  {
                                                      "score":  24,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-phase-lift-operator-ahc",
+                        "name":  "Phase-Lift Operator (AHC explicit branch)",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  73,
+                        "scores":  {
+                                       "artifactCompleteness":  4,
+                                       "validation":  15,
+                                       "tractability":  16,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/PhaseLiftExplained.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Makes branch choice explicit by evaluating f(z) on a history-resolved unwrapped phase trajectory.",
+                        "derivation":  "Define theta_R via unwrap(arg z; theta_ref), then evaluate f(z) on that lifted branch so branch choice is explicit rather than implicit.",
+                        "assumptions":  [
+                                            "Reference phase is available at each update.",
+                                            "Sampling cadence is high enough to unwrap phase without aliasing.",
+                                            "No persistent z=0 singular crossings in the measured interval."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "(\\,\\u29c9 f\\,)(z;\\theta_{\\rm ref}) := f(z)\\ \\text{computed using}\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{\\rm ref})",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  26,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-pr-root-deterministic-branch",
+                        "name":  "PR-Root Deterministic Branch Form",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  70,
+                        "scores":  {
+                                       "artifactCompleteness":  3,
+                                       "validation":  14,
+                                       "tractability":  16,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/PRRootExplained.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "PR-Root writes the square root on an explicit resolved phase, eliminating silent plus/minus branch ambiguity.",
+                        "derivation":  "Write z=r e^{i theta}; replace theta by unwrapped theta_R and define root as sqrt(r)e^{i theta_R/2}.",
+                        "assumptions":  [
+                                            "Magnitude r is nonnegative and measured robustly.",
+                                            "theta_R continuity is maintained by unwrap updates."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "\\u29c9\\sqrt{z;\\theta_{\\rm ref}}:=\\sqrt{r}\\,e^{i\\theta_R/2}",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  25,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-winding-parity-z2-shadow",
+                        "name":  "Winding-Parity Z2 Shadow",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  76,
+                        "scores":  {
+                                       "artifactCompleteness":  4,
+                                       "validation":  17,
+                                       "tractability":  16,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/WindingParityExplained.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Encodes sheet return behavior with integer winding and its Z2 parity shadow for robust branch bookkeeping.",
+                        "derivation":  "Compute winding from lifted phase advance w=Delta theta_R/(2pi), then define parity/branch sign via w mod 2 and (-1)^w.",
+                        "assumptions":  [
+                                            "Loop is closed or near-closed over each measurement cycle.",
+                                            "Lifted phase increment is computed on a consistent branch convention."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "w=\\frac{\\Delta\\theta_R}{2\\pi}\\in\\mathbb{Z},\\quad \\nu:=w\\bmod 2,\\quad b=(-1)^w",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  27,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-ahc-step-limited-unwrapper",
+                        "name":  "AHC Step-Limited Unwrapper",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  81,
+                        "scores":  {
+                                       "artifactCompleteness":  6,
+                                       "validation":  18,
+                                       "tractability":  16,
+                                       "plausibility":  17
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AHCParityLocking.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "AHC updates lifted phase with a clip limit controlled by pi_a, suppressing one-shot branch jumps from noisy residuals.",
+                        "derivation":  "Compute candidate unwrap u_k and residual r_k=u_k-theta_{R,k-1}; update by adding clipped residual in [-pi_{a,k-1}, pi_{a,k-1}].",
+                        "assumptions":  [
+                                            "Residuals are approximately local between adjacent runs.",
+                                            "pi_a is positive and updated online.",
+                                            "Sampling interval resolves Ramsey phase dynamics."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "\\theta_{R,k}=\\theta_{R,k-1}+\\mathrm{clip}(r_k,-\\pi_{a,k-1},\\pi_{a,k-1}),\\quad r_k=u_k-\\theta_{R,k-1}",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  29,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-ahc-adaptive-pia-update",
+                        "name":  "AHC Adaptive pi_a Update",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  73,
+                        "scores":  {
+                                       "artifactCompleteness":  3,
+                                       "validation":  16,
+                                       "tractability":  16,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AdaptivePiGeometry.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Adaptive pi_a increases on event stimulus and relaxes toward baseline pi_0, setting local phase tolerance for AHC.",
+                        "derivation":  "Use event indicator S_k for out-of-budget residuals and apply reinforce/decay recursion around baseline pi_0.",
+                        "assumptions":  [
+                                            "Stimulus S_k is bounded (e.g., binary trigger).",
+                                            "alpha_pi and mu_pi are chosen to avoid unstable overshoot.",
+                                            "Baseline pi_0 is fixed over the test interval."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "\\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0)",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  27,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-ahc-parity-flip-rate",
+                        "name":  "AHC Parity Flip-Rate Observable",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  70,
+                        "scores":  {
+                                       "artifactCompleteness":  3,
+                                       "validation":  15,
+                                       "tractability":  16,
+                                       "plausibility":  15
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "linked",
+                                          "path":  "./assets/animations/AHCParityLocking.mp4"
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Defines a measurable parity switching rate used to detect AHC locking as alpha_pi/mu_pi increases.",
+                        "derivation":  "Track b_k=(-1)^{w_k} per cycle and compute empirical transition frequency across K samples.",
+                        "assumptions":  [
+                                            "Cycles are comparable across runs.",
+                                            "Parity state b_k is estimated consistently from lifted winding."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "r_b=\\frac{\\#\\{k:\\ b_k\\neq b_{k-1}\\}}{K-1},\\quad b_k=(-1)^{w_k}",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  26,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-un-holonomy-wilson-loop",
+                        "name":  "U(N) Holonomy Wilson Loop",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  75,
+                        "scores":  {
+                                       "artifactCompleteness":  4,
+                                       "validation":  17,
+                                       "tractability":  15,
+                                       "plausibility":  17
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "planned",
+                                          "path":  ""
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Extends Phase-Lift bookkeeping to matrix-valued transport with path-ordered U(N) holonomy.",
+                        "derivation":  "Define loop transport operator as path-ordered exponential of gauge connection integrated around cycle gamma.",
+                        "assumptions":  [
+                                            "Connection A is regular along the closed path.",
+                                            "Control loop is sufficiently sampled for stable holonomy estimation.",
+                                            "Gauge/frame convention is fixed across comparisons."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "U(\\gamma)=\\mathcal{P}\\exp\\!\\left(-\\oint_\\gamma A\\cdot d\\lambda\\right)\\in U(N)",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  28,
+                                                     "date":  "2026-02-22"
+                                                 }
+                                 }
+                    },
+                    {
+                        "id":  "eq-un-det-phase-lifted-parity",
+                        "name":  "U(N) Lifted Det-Phase Winding and Parity",
+                        "firstSeen":  "2026-02-22",
+                        "source":  "AHC addendum equation sheet",
+                        "score":  79,
+                        "scores":  {
+                                       "artifactCompleteness":  6,
+                                       "validation":  18,
+                                       "tractability":  15,
+                                       "plausibility":  16
+                                   },
+                        "units":  "OK",
+                        "theory":  "PASS-WITH-ASSUMPTIONS",
+                        "animation":  {
+                                          "status":  "planned",
+                                          "path":  ""
+                                      },
+                        "image":  {
+                                      "status":  "planned",
+                                      "path":  ""
+                                  },
+                        "description":  "Uses lifted determinant phase of U(N) holonomy to compute winding and Z2 parity in the same AHC branch-tracking framework.",
+                        "derivation":  "Lift arg det U with unwrap and adaptive period pi_a, then compute integer winding and parity sign from lifted phase advance.",
+                        "assumptions":  [
+                                            "det U is nonzero along analyzed cycles.",
+                                            "Unwrap reference is propagated continuously cycle-to-cycle.",
+                                            "Adaptive phase period pi_a remains positive."
+                                        ],
+                        "date":  "2026-02-22",
+                        "equationLatex":  "\\theta_R=\\mathrm{unwrap}(\\arg\\det U;\\theta_{\\rm ref},\\pi_a),\\quad w_{\\det}=\\frac{\\Delta\\theta_R}{2\\pi_a},\\quad b(\\gamma)=(-1)^{w_{\\det}}",
+                        "tags":  {
+                                     "novelty":  {
+                                                     "score":  29,
                                                      "date":  "2026-02-22"
                                                  }
                                  }
