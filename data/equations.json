@@ -93,8 +93,8 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-qwz-bz-avg-ruler-mass.mp4"
       },
       "image": {
         "status": "planned",
@@ -156,8 +156,8 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "linked",
+        "path": "./assets/animations/eq-qwz-pia-modulated-mass.mp4"
       },
       "image": {
         "status": "planned",
