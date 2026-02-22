@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602220338' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602220341' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602220338'></script>
+  <script defer src='./assets/app.js?v=202602220341'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -105,7 +105,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -165,7 +165,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$$\dot z = z_h\gamma e^{-\gamma t}\left(1-\epsilon\cos(\omega t+\phi)\right) + z_h\left(1-e^{-\gamma t}\right)\epsilon\omega\sin(\omega t+\phi)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\gamma t}). Modulate by bounded factor m(t)=1-\epsilon cos(\omega t+\phi). For 0&lt;=\epsilon&lt;1, m(t) in [1-\epsilon,1+\epsilon], so z(t)=z_env(t)m(t)&gt;=0 over the full interval.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single effective horizon scale z_h over the modeled interval.</li><li>Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.</li><li>Bounded modulation 0&lt;=epsilon&lt;1 ensures nonnegative trajectory.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = z_h\gamma e^{-\gamma t}\left(1-\epsilon\cos(\omega t+\phi)\right) + z_h\left(1-e^{-\gamma t}\right)\epsilon\omega\sin(\omega t+\phi)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\gamma t}). Modulate by bounded factor m(t)=1-\epsilon cos(\omega t+\phi). For 0&lt;=\epsilon&lt;1, m(t) in [1-\epsilon,1+\epsilon], so z(t)=z_env(t)m(t)&gt;=0 over the full interval.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single effective horizon scale z_h over the modeled interval.</li><li>Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.</li><li>Bounded modulation 0&lt;=epsilon&lt;1 ensures nonnegative trajectory.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-21</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png' target='_blank' rel='noopener'>link</a></div></div>
@@ -239,7 +239,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 03:38</strong></div>
+      <div>Last built: <strong>2026-02-22 03:41</strong></div>
     </footer>
   </main>
 </body>
