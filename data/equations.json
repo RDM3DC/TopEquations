@@ -46,12 +46,12 @@
       "name": "BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)",
       "firstSeen": "2026-02-22",
       "source": "derived: Core Eqs 2–4, 6–7, 10–11 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)",
-      "score": 89,
+      "score": 91,
       "scores": {
-        "tractability": 19,
+        "tractability": 20,
         "plausibility": 19,
         "validation": 16,
-        "artifactCompleteness": 8
+        "artifactCompleteness": 9
       },
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
