@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602221625' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602221633' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602221625'></script>
+  <script defer src='./assets/app.js?v=202602221633'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -128,14 +128,14 @@
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt}=\alpha_G(S)\,\mathcal{C}_{ij}(t)\,J^{\mathrm{PL}}_{ij}(t)-\mu_G(S)\,\tilde{G}_{ij}(t)$$</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\;|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\;\tilde{G}_{ij}(t)$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>derived: Core Eqs 2–4, 6–7, 10–11 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>BZ-average the Phase-Lifted complex ARP drive, gate reinforcement by BZ phase coherence, and couple nonnegative entropy production to slip events + rate modulation.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt}=\sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right)+\kappa\sum_{ij}\Xi_{ij}(t)-\gamma\,(S-S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Definitions: (1) Phase-Lift per mode: \theta_{R,ij}(k,t)=\mathrm{unwrap}(\theta_{ij}(k,t);\theta_{R,ij}(k,t-\Delta t),\pi_a(k,t)) with stored integer sheet index w_{ij}(k,t)\in\mathbb{Z}, parity b_{ij}(k,t)=(-1)^{w_{ij}(k,t)}. (2) BZ Phase-Lifted drive: J^{\mathrm{PL}}_{ij}(t)=\frac{\int_{\mathrm{BZ}} w(k,t)|I_{ij}(k,t)|e^{i\theta_{R,ij}(k,t)}\,d^dk}{\int_{\mathrm{BZ}} w(k,t)\,d^dk}. (3) Coherence gate: \mathcal{C}_{ij}(t)=\frac{|\int_{\mathrm{BZ}} w(k,t)e^{i\theta_{R,ij}(k,t)}\,d^dk|}{\int_{\mathrm{BZ}} w(k,t)\,d^dk}\in[0,1]. (4) Slip entropy: \Xi_{ij}(t)=\sum_{k} w(k,t)|\Delta w_{ij}(k,t)| (nonzero only on integer sheet jumps). (5) Self-consistent ruler coupling: \langle 1/\pi_a\rangle_{\mathrm{BZ}}=\frac{1}{\pi\sqrt{1-\varepsilon_{\mathrm{eff}}^2}}\Rightarrow \varepsilon_{\mathrm{eff}}(t)=\sqrt{1-\left(\frac{1}{\pi\langle 1/\pi_a\rangle_{\mathrm{BZ}}}\right)^2},\ \ m_{\mathrm{eff}}(\varepsilon_{\mathrm{eff}})=\frac{m_0}{\sqrt{1-\varepsilon_{\mathrm{eff}}^2}} (uniform feed into QWZ Hamiltonian).</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Weights w(k,t) are user-chosen (occupation f(k,t), purity Tr \rho(k,t)^2, or exp(-\eta s(k,t))).</li><li>\pi_a(k,t)=\pi(1+\varepsilon(k)\cos\lambda) or a general positive field; \varepsilon_{\mathrm{eff}} inversion assumes the cosine form and |\varepsilon_{\mathrm{eff}}|&lt;1.</li><li>Entropy production term uses Re(1/\tilde G) to ensure nonnegative dissipated power for passive response.</li><li>Chern/topology computed with the gauge-invariant Fukui–Hatsugai–Suzuki lattice method; Phase-Lift provides continuous plaquette-arg history and slip detection only.</li></ul></div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Canonical entropy-gated Phase-Lifted ARP conductance update. Single traceable boxed equation with 4 supporting definitions (all from Core + #3/#10). Entropy dynamics are 2nd-law safe; BZ ruler self-consistency feeds a uniform m_eff into QWZ preserving the single Chern jump.</div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt} = \sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right) + \kappa\sum_{ij}|\Delta w_{ij}(t)| - \gamma\,(S - S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2–4): \theta_{R,ij}(k,t) = \mathrm{unwrap}(\arg I_{ij}(k,t);\;\theta_{R,ij}(k,t-\Delta t),\;\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\in\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \alpha_G(S) = \alpha_0/[1+\exp((S-S_c)/\Delta S)],\quad \mu_G(S) = \mu_0\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \varepsilon_{\rm eff}(t) = \sqrt{1-(1/(\pi\langle 1/\pi_a\rangle_{\rm BZ}))^2},\quad m_{\rm eff} = m_0/\sqrt{1-\varepsilon_{\rm eff}^2}. Feed m_0\mapsto m_{\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \varepsilon_c=\sqrt{3}/2). (4) Slip entropy: |\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\pi_a(k,t) from Core Eq. 10; weights in BZ average are uniform or occupation (user choice).</li><li>Chern number via FHS lattice method; Phase-Lift supplies continuous \theta_R history and slip detection only.</li><li>Entropy production uses Re(1/\tilde G) ≥ 0 for passive response (2nd-law safe).</li><li>\varepsilon_{\mathrm{eff}} inversion assumes the cosine form \pi_a=\pi(1+\varepsilon\cos\lambda) and |\varepsilon_{\mathrm{eff}}|&lt;1.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZPhaseLiftConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -539,7 +539,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 16:25</strong></div>
+      <div>Last built: <strong>2026-02-22 16:33</strong></div>
     </footer>
   </main>
 </body>
