@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602221651' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602222008' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602221651'></script>
+  <script defer src='./assets/app.js?v=202602222008'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -114,8 +114,98 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='91' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='96' data-haslatex='1'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Phase (Adler/RSJ) Dynamics</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 96</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot{\phi}=\Delta-\lambda\,G\,\sin\phi$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §2 (Eq.1)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Unwrapped phase difference φ(t) tries to run at detuning Δ, but adaptive coupling λG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single junction / single mode approximation.</li><li>λG is the effective adaptive coupling strength (positive, ARP-governed).</li><li>Detuning Δ is constant or slowly varying compared to phase dynamics.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/APGP0CoreModel.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='3' data-score='94' data-haslatex='1'>
+  <div class='card__rank'>#3</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>QWZ Chern-Insulator Hamiltonian (Reference Form)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 94</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$H(\mathbf{k})=\sin k_x\,\sigma_x+\sin k_y\,\sigma_y+\big(u+\cos k_x+\cos k_y\big)\sigma_z$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I / Step-2 Simulator (Eq.9)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The canonical 2D Chern insulator (Qi–Wu–Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two-band model on square lattice with nearest-neighbor hopping.</li><li>Topological phases at C=±1 for −2&lt;u&lt;0 and 0&lt;u&lt;2; trivial otherwise.</li><li>Real-space version uses tight-binding Hamiltonian with same band structure.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptiveQWZReEntrance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='4' data-score='93' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Generic ARP Reinforce/Decay Law</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 93</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot{G}=\alpha\,\mathcal{A}(\phi,G)-\mu\,(G-G_0)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §2 (Eq.2)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Conductance/coupling G increases with activity A(φ,G) at gain α, and relaxes toward baseline G₀ at rate μ. The workhorse ARP law in its most general continuous-time form.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).</li><li>Single relaxation timescale μ⁻¹ dominates.</li><li>G₀ &gt; 0 is a stable equilibrium baseline.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq1ARPCoreLaw.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='5' data-score='91' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (derived mapping)</h2>
@@ -137,15 +227,75 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-redshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq2ARPRedshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='3' data-score='87' data-haslatex='1'>
-  <div class='card__rank'>#3</div>
+<section class='card' data-rank='6' data-score='91' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Activity Closure A = G|sinφ| (Parity Lock Mechanism)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 91</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\mathcal{A}(\phi,G)=G\,|\sin\phi|\quad\Rightarrow\quad\dot{G}=\alpha\,G|\sin\phi|-\mu(G-G_0)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §2 (Eq.3)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The same phase mismatch that produces restoring torque (sinφ) also teaches the coupling. This tight self-referential closure is what makes parity locking possible — the key novel ingredient of Paper I.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity proportional to both G and |sinφ| (multiplicative coupling).</li><li>No external activity source — entirely self-referential.</li><li>Valid for single-mode / single-junction systems.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='7' data-score='90' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Slip-Regime Asymptote (1/π Signature)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 90</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$r_b=\frac{|\Delta|}{\pi}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §3 (Eq.6)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>When coupling can&#x27;t lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='8' data-score='87' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Parity Flip-Rate (locking observable)</h2>
@@ -167,15 +317,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough (&#x27;parity locking&#x27;). This is the primary testable quantity for the qubit Berry-loop experiment.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>K is large enough for the ratio to be statistically meaningful.</li><li>Parity flips are detected correctly (no double-counting at coincident singularities).</li></ul></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-parity-flip-rate.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/ParityLockingBifurcation.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='4' data-score='86' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='9' data-score='86' data-haslatex='1'>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>BZ-Averaged Ruler Coupling for Single-Jump QWZ Transition</h2>
@@ -204,8 +354,68 @@
 </section>
 
 
-<section class='card' data-rank='5' data-score='81' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
+<section class='card' data-rank='10' data-score='86' data-haslatex='1'>
+  <div class='card__rank'>#10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive Geometry → Effective Mass Channel (Step-2 Coupling)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 86</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\pi_a(t)=\pi+\beta\big(\langle G\rangle_{\text{edge}}-G_{eq}\big),\qquad u_{\mathrm{eff}}(t)=u_0+\gamma\Big(\frac{\pi_a(t)}{\pi}-1\Big)+\delta\,S_{\text{edge}}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I / Step-2 Simulator (Eq.10)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The adaptive-π conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or ±2, the Chern phase can switch — without external tuning, purely via ARP reinforcement + memory. This is Paper I&#x27;s central claim: geometry drives topology autonomously.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.</li><li>β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).</li><li>Entropy S_edge is the local entropy proxy from Eq. 8.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PRRootExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='11' data-score='84' data-haslatex='1'>
+  <div class='card__rank'>#11</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Noise-Robust Langevin Extension (Rounded Transition)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 84</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot{\phi}=\Delta-\lambda G\sin\phi + \sqrt{2D}\,\eta(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §4 (Eq.7)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes &#x27;almost locked&#x27; with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>White noise approximation valid (correlation time ≪ phase dynamics timescale).</li><li>D &gt; 0 but small enough that lock survives (D ≪ λG).</li><li>Stratonovich vs Itô distinction negligible for additive noise.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/HysteresisMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='./assets/langevin_parity_lock.png' target='_blank' rel='noopener'>link</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='12' data-score='81' data-haslatex='1'>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive Step-Limit Update (πₐ clip)</h2>
@@ -234,8 +444,8 @@
 </section>
 
 
-<section class='card' data-rank='6' data-score='80' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
+<section class='card' data-rank='13' data-score='80' data-haslatex='1'>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_a-Modulated QWZ Mass (momentum-dependent; re-entrant transitions)</h2>
@@ -264,8 +474,8 @@
 </section>
 
 
-<section class='card' data-rank='7' data-score='79' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+<section class='card' data-rank='14' data-score='79' data-haslatex='1'>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Running Winding + Parity</h2>
@@ -287,15 +497,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-running-winding.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/WindingParityExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='8' data-score='77' data-haslatex='1'>
-  <div class='card__rank'>#8</div>
+<section class='card' data-rank='15' data-score='77' data-haslatex='1'>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -317,15 +527,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-critical-collapse.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq3PhaseCoupledThreshold.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='9' data-score='76' data-haslatex='1'>
-  <div class='card__rank'>#9</div>
+<section class='card' data-rank='16' data-score='76' data-haslatex='1'>
+  <div class='card__rank'>#16</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive πₐ Update (discrete)</h2>
@@ -354,8 +564,38 @@
 </section>
 
 
-<section class='card' data-rank='10' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#10</div>
+<section class='card' data-rank='17' data-score='76' data-haslatex='1'>
+  <div class='card__rank'>#17</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Real-Space Chern Marker (Bianco–Resta, Open Boundaries)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 76</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$C(\mathbf{r})=-2\pi i\,\langle \mathbf{r}\,|\,[PXP,\;PYP]\,|\,\mathbf{r}\rangle,\quad P=\sum_{E_n&lt;E_F}|n\rangle\langle n|$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Paper I / Step-2 Simulator (Bonus)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='18' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#18</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -384,8 +624,8 @@
 </section>
 
 
-<section class='card' data-rank='11' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#11</div>
+<section class='card' data-rank='19' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#19</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -407,15 +647,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq4PhaseLiftedComplexConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='12' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#12</div>
+<section class='card' data-rank='20' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#20</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Candidate Unwrap (standard 2π lift)</h2>
@@ -444,8 +684,8 @@
 </section>
 
 
-<section class='card' data-rank='13' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#13</div>
+<section class='card' data-rank='21' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#21</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Residual</h2>
@@ -474,8 +714,8 @@
 </section>
 
 
-<section class='card' data-rank='14' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#14</div>
+<section class='card' data-rank='22' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#22</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -497,15 +737,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Extends ARP equilibrium with an exponential temperature factor for material sensitivity.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-arp-temp-conductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq10TempConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='15' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#15</div>
+<section class='card' data-rank='23' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Event Stimulus (phase-jump indicator)</h2>
@@ -539,7 +779,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 16:51</strong></div>
+      <div>Last built: <strong>2026-02-22 20:08</strong></div>
     </footer>
   </main>
 </body>

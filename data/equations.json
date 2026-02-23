@@ -18,7 +18,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-arp-redshift.mp4"
+        "path": "./assets/animations/Eq2ARPRedshift.mp4"
       },
       "image": {
         "status": "planned",
@@ -97,7 +97,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-ahc-parity-flip-rate.mp4"
+        "path": "./assets/animations/ParityLockingBifurcation.mp4"
       },
       "image": {
         "status": "planned",
@@ -223,7 +223,7 @@
       "theory": "PASS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-ahc-running-winding.mp4"
+        "path": "./assets/animations/WindingParityExplained.mp4"
       },
       "image": {
         "status": "planned",
@@ -255,7 +255,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-arp-phase-critical-collapse.mp4"
+        "path": "./assets/animations/Eq3PhaseCoupledThreshold.mp4"
       },
       "image": {
         "status": "planned",
@@ -383,7 +383,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-arp-phase-lifted-complex-conductance.mp4"
+        "path": "./assets/animations/Eq4PhaseLiftedComplexConductance.mp4"
       },
       "image": {
         "status": "planned",
@@ -483,7 +483,7 @@
       "theory": "PASS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-arp-temp-conductance.mp4"
+        "path": "./assets/animations/Eq10TempConductance.mp4"
       },
       "image": {
         "status": "planned",
@@ -547,7 +547,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-arp-lyapunov-stability.mp4"
+        "path": "./assets/animations/Eq5ARPLyapunov.mp4"
       },
       "image": {
         "status": "planned",
@@ -618,7 +618,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-curve-memory-137.mp4"
+        "path": "./assets/animations/Eq7CurveMemory137.mp4"
       },
       "image": {
         "status": "planned",
@@ -650,7 +650,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-shield-mechanic-arp.mp4"
+        "path": "./assets/animations/Eq8ShieldingMechanism.mp4"
       },
       "image": {
         "status": "planned",
@@ -721,7 +721,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-dyn-constants-union.mp4"
+        "path": "./assets/animations/Eq6UnifiedDynamicConstants.mp4"
       },
       "image": {
         "status": "planned",
@@ -792,7 +792,7 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
         "status": "linked",
-        "path": "./assets/animations/eq-redshift-arp-superc.mp4"
+        "path": "./assets/animations/Eq9RedshiftARPSuperconductivity.mp4"
       },
       "image": {
         "status": "planned",
@@ -1145,6 +1145,306 @@
       "description": "Monotone coupling that forces one Chern jump near ε→1^- (useful as a controllable toy model; clamp to trivial mass after the discriminant).",
       "date": "2026-02-22",
       "equationLatex": "m_{\\mathrm{eff}}(\\epsilon)=m_0-\\beta\\frac{\\epsilon^p}{1-\\epsilon}\\ (\\epsilon<1),\\quad m_{\\mathrm{eff}}(\\epsilon)=m_{\\mathrm{triv}}\\ (\\epsilon\\ge 1)"
+    },
+    {
+      "id": "eq-paper1-adler-rsj-phase",
+      "name": "Phase (Adler/RSJ) Dynamics",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I draft §2 (Eq.1)",
+      "score": 96,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/APGP0CoreModel.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Unwrapped phase difference φ(t) tries to run at detuning Δ, but adaptive coupling λG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.",
+      "assumptions": [
+        "Single junction / single mode approximation.",
+        "λG is the effective adaptive coupling strength (positive, ARP-governed).",
+        "Detuning Δ is constant or slowly varying compared to phase dynamics."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\dot{\\phi}=\\Delta-\\lambda\\,G\\,\\sin\\phi",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 14
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-arp-reinforce-decay",
+      "name": "Generic ARP Reinforce/Decay Law",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I draft §2 (Eq.2)",
+      "score": 93,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 17,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/Eq1ARPCoreLaw.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Conductance/coupling G increases with activity A(φ,G) at gain α, and relaxes toward baseline G₀ at rate μ. The workhorse ARP law in its most general continuous-time form.",
+      "assumptions": [
+        "Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).",
+        "Single relaxation timescale μ⁻¹ dominates.",
+        "G₀ > 0 is a stable equilibrium baseline."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\dot{G}=\\alpha\\,\\mathcal{A}(\\phi,G)-\\mu\\,(G-G_0)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 22
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-activity-closure",
+      "name": "Activity Closure A = G|sinφ| (Parity Lock Mechanism)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I draft §2 (Eq.3)",
+      "score": 91,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 17,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/AHCParityLocking.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "The same phase mismatch that produces restoring torque (sinφ) also teaches the coupling. This tight self-referential closure is what makes parity locking possible — the key novel ingredient of Paper I.",
+      "derivation": "Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.",
+      "assumptions": [
+        "Activity proportional to both G and |sinφ| (multiplicative coupling).",
+        "No external activity source — entirely self-referential.",
+        "Valid for single-mode / single-junction systems."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\mathcal{A}(\\phi,G)=G\\,|\\sin\\phi|\\quad\\Rightarrow\\quad\\dot{G}=\\alpha\\,G|\\sin\\phi|-\\mu(G-G_0)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 26
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-slip-asymptote",
+      "name": "Slip-Regime Asymptote (1/π Signature)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I draft §3 (Eq.6)",
+      "score": 90,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 8
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/PhaseLiftExplained.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "When coupling can't lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.",
+      "derivation": "In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.",
+      "assumptions": [
+        "Coupling λG is below the locking threshold.",
+        "Detuning Δ is constant.",
+        "Phase advances monotonically (no transient capture/release)."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "r_b=\\frac{|\\Delta|}{\\pi}",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 27
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-langevin-noise",
+      "name": "Noise-Robust Langevin Extension (Rounded Transition)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I draft §4 (Eq.7)",
+      "score": 84,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/HysteresisMemory.mp4"
+      },
+      "image": {
+        "status": "linked",
+        "path": "./assets/langevin_parity_lock.png"
+      },
+      "description": "Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes 'almost locked' with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.",
+      "derivation": "Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.",
+      "assumptions": [
+        "White noise approximation valid (correlation time ≪ phase dynamics timescale).",
+        "D > 0 but small enough that lock survives (D ≪ λG).",
+        "Stratonovich vs Itô distinction negligible for additive noise."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\dot{\\phi}=\\Delta-\\lambda G\\sin\\phi + \\sqrt{2D}\\,\\eta(t)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 18
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-qwz-hamiltonian",
+      "name": "QWZ Chern-Insulator Hamiltonian (Reference Form)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I / Step-2 Simulator (Eq.9)",
+      "score": 94,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/AdaptiveQWZReEntrance.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "The canonical 2D Chern insulator (Qi–Wu–Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.",
+      "assumptions": [
+        "Two-band model on square lattice with nearest-neighbor hopping.",
+        "Topological phases at C=±1 for −2<u<0 and 0<u<2; trivial otherwise.",
+        "Real-space version uses tight-binding Hamiltonian with same band structure."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "H(\\mathbf{k})=\\sin k_x\\,\\sigma_x+\\sin k_y\\,\\sigma_y+\\big(u+\\cos k_x+\\cos k_y\\big)\\sigma_z",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 8
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-adaptive-geometry-mass",
+      "name": "Adaptive Geometry → Effective Mass Channel (Step-2 Coupling)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I / Step-2 Simulator (Eq.10)",
+      "score": 86,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 8
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/PRRootExplained.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "The adaptive-π conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or ±2, the Chern phase can switch — without external tuning, purely via ARP reinforcement + memory. This is Paper I's central claim: geometry drives topology autonomously.",
+      "derivation": "π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.",
+      "assumptions": [
+        "Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.",
+        "β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).",
+        "Entropy S_edge is the local entropy proxy from Eq. 8."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "\\pi_a(t)=\\pi+\\beta\\big(\\langle G\\rangle_{\\text{edge}}-G_{eq}\\big),\\qquad u_{\\mathrm{eff}}(t)=u_0+\\gamma\\Big(\\frac{\\pi_a(t)}{\\pi}-1\\Big)+\\delta\\,S_{\\text{edge}}(t)",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 29
+        }
+      }
+    },
+    {
+      "id": "eq-paper1-chern-marker-bianco-resta",
+      "name": "Real-Space Chern Marker (Bianco–Resta, Open Boundaries)",
+      "firstSeen": "2026-02-22",
+      "source": "Paper I / Step-2 Simulator (Bonus)",
+      "score": 76,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 19,
+        "validation": 12,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/AdaptivePiGeometry.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.",
+      "assumptions": [
+        "P is the ground-state projector below Fermi energy E_F.",
+        "Position operators X,Y are well-defined (open or periodic boundaries).",
+        "Bulk average excludes boundary sites where the marker is not quantized."
+      ],
+      "date": "2026-02-22",
+      "equationLatex": "C(\\mathbf{r})=-2\\pi i\\,\\langle \\mathbf{r}\\,|\\,[PXP,\\;PYP]\\,|\\,\\mathbf{r}\\rangle,\\quad P=\\sum_{E_n<E_F}|n\\rangle\\langle n|",
+      "tags": {
+        "novelty": {
+          "date": "2026-02-22",
+          "score": 10
+        }
+      }
     }
   ]
 }
