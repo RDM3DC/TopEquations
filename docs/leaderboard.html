@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602221500' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602221625' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602221500'></script>
+  <script defer src='./assets/app.js?v=202602221625'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -114,8 +114,38 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='87' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='89' data-haslatex='1'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 89</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt}=\alpha_G(S)\,\mathcal{C}_{ij}(t)\,J^{\mathrm{PL}}_{ij}(t)-\mu_G(S)\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>derived: Core Eqs 2–4, 6–7, 10–11 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>BZ-average the Phase-Lifted complex ARP drive, gate reinforcement by BZ phase coherence, and couple nonnegative entropy production to slip events + rate modulation.</div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt}=\sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right)+\kappa\sum_{ij}\Xi_{ij}(t)-\gamma\,(S-S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Definitions: (1) Phase-Lift per mode: \theta_{R,ij}(k,t)=\mathrm{unwrap}(\theta_{ij}(k,t);\theta_{R,ij}(k,t-\Delta t),\pi_a(k,t)) with stored integer sheet index w_{ij}(k,t)\in\mathbb{Z}, parity b_{ij}(k,t)=(-1)^{w_{ij}(k,t)}. (2) BZ Phase-Lifted drive: J^{\mathrm{PL}}_{ij}(t)=\frac{\int_{\mathrm{BZ}} w(k,t)|I_{ij}(k,t)|e^{i\theta_{R,ij}(k,t)}\,d^dk}{\int_{\mathrm{BZ}} w(k,t)\,d^dk}. (3) Coherence gate: \mathcal{C}_{ij}(t)=\frac{|\int_{\mathrm{BZ}} w(k,t)e^{i\theta_{R,ij}(k,t)}\,d^dk|}{\int_{\mathrm{BZ}} w(k,t)\,d^dk}\in[0,1]. (4) Slip entropy: \Xi_{ij}(t)=\sum_{k} w(k,t)|\Delta w_{ij}(k,t)| (nonzero only on integer sheet jumps). (5) Self-consistent ruler coupling: \langle 1/\pi_a\rangle_{\mathrm{BZ}}=\frac{1}{\pi\sqrt{1-\varepsilon_{\mathrm{eff}}^2}}\Rightarrow \varepsilon_{\mathrm{eff}}(t)=\sqrt{1-\left(\frac{1}{\pi\langle 1/\pi_a\rangle_{\mathrm{BZ}}}\right)^2},\ \ m_{\mathrm{eff}}(\varepsilon_{\mathrm{eff}})=\frac{m_0}{\sqrt{1-\varepsilon_{\mathrm{eff}}^2}} (uniform feed into QWZ Hamiltonian).</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Weights w(k,t) are user-chosen (occupation f(k,t), purity Tr \rho(k,t)^2, or exp(-\eta s(k,t))).</li><li>\pi_a(k,t)=\pi(1+\varepsilon(k)\cos\lambda) or a general positive field; \varepsilon_{\mathrm{eff}} inversion assumes the cosine form and |\varepsilon_{\mathrm{eff}}|&lt;1.</li><li>Entropy production term uses Re(1/\tilde G) to ensure nonnegative dissipated power for passive response.</li><li>Chern/topology computed with the gauge-invariant Fukui–Hatsugai–Suzuki lattice method; Phase-Lift provides continuous plaquette-arg history and slip detection only.</li></ul></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZPhaseLiftConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='3' data-score='87' data-haslatex='1'>
+  <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Parity Flip-Rate (locking observable)</h2>
@@ -144,8 +174,8 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='86' data-haslatex='1'>
-  <div class='card__rank'>#3</div>
+<section class='card' data-rank='4' data-score='86' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>BZ-Averaged Ruler Coupling for Single-Jump QWZ Transition</h2>
@@ -167,15 +197,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>BZ-average removes k-oscillation: &lt;(1+ε cosλ)^{-1}&gt; = (1-ε^2)^{-1/2}, giving a uniform m_eff(ε) and a single Chern jump at ε_c (for m0=-1: ε_c=√3/2).</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-qwz-bz-avg-ruler-mass.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZAveragedRulerQWZ.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='4' data-score='81' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='5' data-score='81' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive Step-Limit Update (πₐ clip)</h2>
@@ -204,8 +234,8 @@
 </section>
 
 
-<section class='card' data-rank='5' data-score='80' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
+<section class='card' data-rank='6' data-score='80' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_a-Modulated QWZ Mass (momentum-dependent; re-entrant transitions)</h2>
@@ -227,15 +257,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.</div></div>
       
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-qwz-pia-modulated-mass.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PiAModulatedQWZMass.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-<section class='card' data-rank='6' data-score='79' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
+<section class='card' data-rank='7' data-score='79' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Running Winding + Parity</h2>
@@ -264,8 +294,8 @@
 </section>
 
 
-<section class='card' data-rank='7' data-score='77' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+<section class='card' data-rank='8' data-score='77' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -294,8 +324,8 @@
 </section>
 
 
-<section class='card' data-rank='8' data-score='76' data-haslatex='1'>
-  <div class='card__rank'>#8</div>
+<section class='card' data-rank='9' data-score='76' data-haslatex='1'>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive πₐ Update (discrete)</h2>
@@ -324,8 +354,8 @@
 </section>
 
 
-<section class='card' data-rank='9' data-score='73' data-haslatex='1'>
-  <div class='card__rank'>#9</div>
+<section class='card' data-rank='10' data-score='73' data-haslatex='1'>
+  <div class='card__rank'>#10</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -354,8 +384,8 @@
 </section>
 
 
-<section class='card' data-rank='10' data-score='71' data-haslatex='1'>
-  <div class='card__rank'>#10</div>
+<section class='card' data-rank='11' data-score='71' data-haslatex='1'>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -384,8 +414,8 @@
 </section>
 
 
-<section class='card' data-rank='11' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#11</div>
+<section class='card' data-rank='12' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Candidate Unwrap (standard 2π lift)</h2>
@@ -414,8 +444,8 @@
 </section>
 
 
-<section class='card' data-rank='12' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#12</div>
+<section class='card' data-rank='13' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Residual</h2>
@@ -444,8 +474,8 @@
 </section>
 
 
-<section class='card' data-rank='13' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#13</div>
+<section class='card' data-rank='14' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -474,8 +504,8 @@
 </section>
 
 
-<section class='card' data-rank='14' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#14</div>
+<section class='card' data-rank='15' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Event Stimulus (phase-jump indicator)</h2>
@@ -509,7 +539,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 15:00</strong></div>
+      <div>Last built: <strong>2026-02-22 16:25</strong></div>
     </footer>
   </main>
 </body>
