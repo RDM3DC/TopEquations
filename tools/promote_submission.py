@@ -1,0 +1,122 @@
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from datetime import datetime
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[1]
+SUBMISSIONS_JSON = REPO / "data" / "submissions.json"
+EQUATIONS_JSON = REPO / "data" / "equations.json"
+
+
+def _today() -> str:
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def _slug(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s[:56] or "submission"
+
+
+def _load(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _save(path: Path, payload: dict) -> None:
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _clamp(v: int, lo: int, hi: int) -> int:
+    return max(lo, min(hi, int(v)))
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Promote a pending submission into ranked equations")
+    ap.add_argument("--submission-id", required=True)
+    ap.add_argument("--tractability", type=int, required=True)
+    ap.add_argument("--plausibility", type=int, required=True)
+    ap.add_argument("--validation", type=int, required=True)
+    ap.add_argument("--artifact", type=int, required=True, help="Artifact completeness 0-10")
+    ap.add_argument("--novelty", type=int, required=True, help="Novelty tag score")
+    ap.add_argument("--equation-id", default="", help="Optional override for final equation id")
+    args = ap.parse_args()
+
+    submissions = _load(SUBMISSIONS_JSON)
+    equations = _load(EQUATIONS_JSON)
+
+    entry = None
+    for e in submissions.get("entries", []):
+        if str(e.get("submissionId")) == args.submission_id:
+            entry = e
+            break
+
+    if not entry:
+        raise SystemExit(f"submission not found: {args.submission_id}")
+    if str(entry.get("status", "")).lower() == "promoted":
+        raise SystemExit(f"submission already promoted: {args.submission_id}")
+
+    tract = _clamp(args.tractability, 0, 20)
+    plaus = _clamp(args.plausibility, 0, 20)
+    validation = _clamp(args.validation, 0, 20)
+    artifact = _clamp(args.artifact, 0, 10)
+    novelty = _clamp(args.novelty, 0, 30)
+
+    total = int(round(((tract + plaus + validation + artifact) / 70.0) * 100.0))
+
+    eid = args.equation_id.strip() or f"eq-{_slug(entry.get('name', 'submission'))}"
+    existing_ids = {str(x.get("id")) for x in equations.get("entries", [])}
+    if eid in existing_ids:
+        eid = f"{eid}-{_slug(args.submission_id)[-8:]}"
+
+    promoted = {
+        "id": eid,
+        "name": entry.get("name", ""),
+        "firstSeen": _today(),
+        "source": entry.get("source", "manual submission"),
+        "score": total,
+        "scores": {
+            "tractability": tract,
+            "plausibility": plaus,
+            "validation": validation,
+            "artifactCompleteness": artifact,
+        },
+        "units": entry.get("units", "TBD"),
+        "theory": entry.get("theory", "PASS-WITH-ASSUMPTIONS"),
+        "animation": entry.get("animation", {"status": "planned", "path": ""}),
+        "image": entry.get("image", {"status": "planned", "path": ""}),
+        "description": entry.get("description", ""),
+        "assumptions": entry.get("assumptions", []),
+        "date": _today(),
+        "equationLatex": entry.get("equationLatex", ""),
+        "tags": {
+            "novelty": {
+                "score": novelty,
+                "date": _today(),
+            }
+        },
+    }
+
+    equations.setdefault("entries", []).append(promoted)
+    equations["lastUpdated"] = _today()
+
+    entry["status"] = "promoted"
+    entry["review"] = {
+        "date": _today(),
+        "equationId": eid,
+        "score": total,
+        "scores": promoted["scores"],
+        "novelty": novelty,
+    }
+    submissions["lastUpdated"] = _today()
+
+    _save(EQUATIONS_JSON, equations)
+    _save(SUBMISSIONS_JSON, submissions)
+
+    print(f"promoted: {args.submission_id} -> {eid} (score {total})")
+
+
+if __name__ == "__main__":
+    main()

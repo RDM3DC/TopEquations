@@ -130,6 +130,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./certificates.html'>Certificates</a>
+        <a href='./submissions.html'>Submissions</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
@@ -713,6 +714,81 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
     (docs / "harvest.html").write_text(_page("TopEquations — Harvest", body, updated), encoding="utf-8")
 
 
+def build_submissions(repo_root: Path, docs: Path) -> None:
+    src = repo_root / "data" / "submissions.json"
+    data = _load_json_safe(src, {"entries": []})
+
+    dst = docs / "data" / "submissions.json"
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    if src.exists():
+        dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+
+    entries = list(data.get("entries", []))
+    entries.sort(key=lambda x: str(x.get("submittedAt", "")), reverse=True)
+
+    rows: list[str] = []
+    for e in entries:
+        sid = str(e.get("submissionId", ""))
+        status = str(e.get("status", "pending"))
+        eqid = str((e.get("review", {}) or {}).get("equationId", ""))
+        eqid_cell = f"<a href='./leaderboard.html'>{_esc(eqid)}</a>" if eqid else "-"
+        rows.append(
+            f"""
+<tr>
+  <td><code>{_esc(sid)}</code></td>
+  <td>{_esc(e.get('submittedAt', ''))}</td>
+  <td>{_esc(e.get('name', ''))}</td>
+  <td>{_esc(status)}</td>
+  <td>{eqid_cell}</td>
+</tr>
+"""
+        )
+
+    body = f"""
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Equation Submissions</h1>
+    <p>Submit candidates into the review queue, then promote scored entries into the ranked board.</p>
+  </div>
+</div>
+
+<div class='panel'>
+  <h2>CLI Workflow</h2>
+  <pre><code>python tools/submit_equation.py --name "My Equation" --equation "\\frac{{dG}}{{dt}}=..." --description "..." --source "manual" --assumption "A1"</code></pre>
+  <pre><code>python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-my-equation --tractability 16 --plausibility 16 --validation 14 --artifact 4 --novelty 22</code></pre>
+</div>
+
+<div class='panel'>
+  <h2>Queue</h2>
+  <div style='overflow:auto'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Submission ID</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Promoted Equation ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {''.join(rows) if rows else '<tr><td colspan="5">No submissions yet.</td></tr>'}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+  </section>
+</div>
+"""
+
+    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    (docs / "submissions.html").write_text(_page("TopEquations — Submissions", body, updated), encoding="utf-8")
+
+
 def build_certificates(repo_root: Path, docs: Path) -> None:
     src_cert = repo_root / "data" / "certificates" / "equation_certificates.json"
     src_receipt = repo_root / "data" / "certificates" / "chain_publish_receipt.json"
@@ -803,6 +879,7 @@ def main() -> None:
     build_famous(repo_root, docs)
     build_leaderboard(repo_root, docs)
     build_certificates(repo_root, docs)
+    build_submissions(repo_root, docs)
     build_harvest(repo_root, docs)
 
     print("Built docs/*.html")

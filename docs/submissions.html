@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>TopEquations</title>
+  <title>TopEquations — Submissions</title>
 
   <link rel='stylesheet' href='./assets/style.css?v=202602240240' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
@@ -53,38 +53,51 @@
 
   <main class='wrap'>
     
-<div class='hero hero--home'>
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
   <div class='hero__left'>
-    <h1>TopEquations</h1>
-    <p><strong>Canonical Core</strong> and <strong>Ranked Derived</strong> are split into dedicated pages.</p>
-    <div class='cta'>
-      <a class='btn' href='./core.html'>Canonical Core</a>
-      <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
-      <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
-      <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
-    </div>
-  </div>
-  <div class='hero__right'>
-    <div class='statbox'>
-      <div class='stat'>
-        <div class='stat__num'>14</div>
-        <div class='stat__label'>Canonical core anchors</div>
-      </div>
-      <div class='stat'>
-        <div class='stat__num'>42</div>
-        <div class='stat__label'>Ranked derived equations</div>
-      </div>
-    </div>
+    <h1>Equation Submissions</h1>
+    <p>Submit candidates into the review queue, then promote scored entries into the ranked board.</p>
   </div>
 </div>
 
 <div class='panel'>
-  <h2>Structure</h2>
-  <ul>
-    <li><strong>Canonical Core</strong> lives in <code>data/core.json</code> and links out to Canonical Core docs.</li>
-    <li><strong>Ranked derived equations</strong> live in <code>data/equations.json</code>.</li>
-    <li><strong>Raw harvest</strong> lives in <code>data/harvest/equation_harvest.json</code> (deduped).</li>
-  </ul>
+  <h2>CLI Workflow</h2>
+  <pre><code>python tools/submit_equation.py --name "My Equation" --equation "\frac{dG}{dt}=..." --description "..." --source "manual" --assumption "A1"</code></pre>
+  <pre><code>python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-my-equation --tractability 16 --plausibility 16 --validation 14 --artifact 4 --novelty 22</code></pre>
+</div>
+
+<div class='panel'>
+  <h2>Queue</h2>
+  <div style='overflow:auto'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Submission ID</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Promoted Equation ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+<tr>
+  <td><code>sub-2026-02-24-mesh-synced-certificate-consistency</code></td>
+  <td>2026-02-24</td>
+  <td>Mesh-Synced Certificate Consistency</td>
+  <td>pending</td>
+  <td>-</td>
+</tr>
+
+    </tbody>
+  </table>
+  </div>
+</div>
+
+  </section>
 </div>
 
     <footer class='footer'>

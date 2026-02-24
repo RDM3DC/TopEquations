@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-02-24",
+  "entries": [
+    {
+      "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
+      "submittedAt": "2026-02-24",
+      "submitter": "local",
+      "status": "pending",
+      "name": "Mesh-Synced Certificate Consistency",
+      "equationLatex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
+      "description": "Chain-level consistency metric for equation certificates across synchronized nodes.",
+      "source": "manual setup",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Nodes share deterministic genesis",
+        "Consensus endpoint converges under bounded delays"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {}
+    }
+  ]
+}
