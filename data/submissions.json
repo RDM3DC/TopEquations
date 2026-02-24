@@ -263,6 +263,161 @@
         },
         "novelty": 16
       }
+    },
+    {
+      "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-7",
+      "submittedAt": "2026-02-24",
+      "submitter": "Ryan Mckenna",
+      "status": "promoted",
+      "name": "HLATN Three-Force Conductance Lock",
+      "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.",
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Edge currents I_e bounded by I_max",
+        "Conductances G_e >= 0 with bounded initial conditions",
+        "Adaptive angular bound pi_a > 0 regulated by entropy proxy",
+        "Phase suppression sin^2 gate is smooth and bounded [0,1]"
+      ],
+      "evidence": [
+        {
+          "type": "whitepaper",
+          "label": "HLATN White Paper v0.1 (2026-02-24)",
+          "path": "docs/HLATN_White_Paper_2026-02-24.pdf"
+        },
+        {
+          "type": "boundedness-proof",
+          "label": "Conductance bound: 0 <= G_e(t) <= max(G_e(0), alpha_G*I_max/mu_G)",
+          "path": ""
+        }
+      ],
+      "animation": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "image": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-hlatn-three-force-conductance-lock",
+        "score": 71,
+        "scores": {
+          "tractability": 15,
+          "plausibility": 16,
+          "validation": 13,
+          "artifactCompleteness": 6
+        },
+        "novelty": 16
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-10",
+      "submittedAt": "2026-02-24",
+      "submitter": "Ryan Mckenna",
+      "status": "promoted",
+      "name": "HLATN Phase-Lift Branch-Safe Update",
+      "equationLatex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\!\\Big(\\mathrm{wrapTo}_{\\pi}(\\phi_e - \\theta_{R,e}),\\; -\\pi_a,\\; +\\pi_a\\Big)",
+      "description": "Resolved-phase update rule with wrap-to-pi and adaptive clipping. Prevents uncontrolled branch jumps by bounding per-step angular movement to the entropy-regulated ruler pi_a.",
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Raw phase phi_e = arg(V_i - V_j) is well-defined",
+        "Adaptive angular bound pi_a > 0 limits per-step rotation",
+        "wrapTo_pi maps angular differences to (-pi, pi]",
+        "Clipping preserves continuity of resolved phase trajectory"
+      ],
+      "evidence": [
+        {
+          "type": "whitepaper",
+          "label": "HLATN White Paper v0.1 (2026-02-24)",
+          "path": "docs/HLATN_White_Paper_2026-02-24.pdf"
+        },
+        {
+          "type": "dimensional-analysis",
+          "label": "All terms have units of radians; clipping bounds verified",
+          "path": ""
+        },
+        {
+          "type": "simulation",
+          "label": "6x6 grid numerical demonstration confirms branch-safe convergence",
+          "path": ""
+        }
+      ],
+      "animation": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "image": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-hlatn-phase-lift-branch-safe-update",
+        "score": 70,
+        "scores": {
+          "tractability": 15,
+          "plausibility": 13,
+          "validation": 15,
+          "artifactCompleteness": 6
+        },
+        "novelty": 16
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-11",
+      "submittedAt": "2026-02-24",
+      "submitter": "Ryan Mckenna",
+      "status": "promoted",
+      "name": "HLATN Plaquette Holonomy",
+      "equationLatex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
+      "description": "Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.",
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Edge orientations sigma_{p,e} are consistent with plaquette boundary convention",
+        "Resolved phases theta_{R,e} follow branch-safe update rule",
+        "Winding number is well-defined via rounding of holonomy difference",
+        "Z2 parity b_p = (-1)^{w_p} is the locking order parameter"
+      ],
+      "evidence": [
+        {
+          "type": "whitepaper",
+          "label": "HLATN White Paper v0.1 (2026-02-24)",
+          "path": "docs/HLATN_White_Paper_2026-02-24.pdf"
+        },
+        {
+          "type": "simulation",
+          "label": "6x6 grid simulation shows parity stabilization in locked regime",
+          "path": ""
+        }
+      ],
+      "animation": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "image": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-hlatn-plaquette-holonomy",
+        "score": 69,
+        "scores": {
+          "tractability": 14,
+          "plausibility": 15,
+          "validation": 13,
+          "artifactCompleteness": 6
+        },
+        "novelty": 16
+      }
     }
   ]
 }

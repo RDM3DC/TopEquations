@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602241359' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602241517' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602241359'></script>
+  <script defer src='./assets/app.js?v=202602241517'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -655,8 +655,38 @@
 </section>
 
 
-<section class='card' data-rank='20' data-score='70' data-haslatex='1'>
+<section class='card' data-rank='20' data-score='71' data-haslatex='1'>
   <div class='card__rank'>#20</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 71</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot{G}_e = \alpha_G |I_e| - \mu_G G_e - \lambda G_e \sin^2\!\left(\frac{\theta_{R,e}}{2\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge currents I_e bounded by I_max</li><li>Conductances G_e &gt;= 0 with bounded initial conditions</li><li>Adaptive angular bound pi_a &gt; 0 regulated by entropy proxy</li><li>Phase suppression sin^2 gate is smooth and bounded [0,1]</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-hlatn-three-force-conductance-lock'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='21' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#21</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Candidate Unwrap (standard 2π lift)</h2>
@@ -685,8 +715,8 @@
 </section>
 
 
-<section class='card' data-rank='21' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#21</div>
+<section class='card' data-rank='22' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#22</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Residual</h2>
@@ -715,8 +745,8 @@
 </section>
 
 
-<section class='card' data-rank='22' data-score='70' data-haslatex='1'>
-  <div class='card__rank'>#22</div>
+<section class='card' data-rank='23' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -745,8 +775,38 @@
 </section>
 
 
-<section class='card' data-rank='23' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#23</div>
+<section class='card' data-rank='24' data-score='70' data-haslatex='1'>
+  <div class='card__rank'>#24</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 70</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\theta_{R,e}^{(k)} = \theta_{R,e}^{(k-1)} + \mathrm{clip}\!\Big(\mathrm{wrapTo}_{\pi}(\phi_e - \theta_{R,e}),\; -\pi_a,\; +\pi_a\Big)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Resolved-phase update rule with wrap-to-pi and adaptive clipping. Prevents uncontrolled branch jumps by bounding per-step angular movement to the entropy-regulated ruler pi_a.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Raw phase phi_e = arg(V_i - V_j) is well-defined</li><li>Adaptive angular bound pi_a &gt; 0 limits per-step rotation</li><li>wrapTo_pi maps angular differences to (-pi, pi]</li><li>Clipping preserves continuity of resolved phase trajectory</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-hlatn-phase-lift-branch-safe-update'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='25' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#25</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -775,8 +835,8 @@
 </section>
 
 
-<section class='card' data-rank='24' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#24</div>
+<section class='card' data-rank='26' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#26</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Event Stimulus (phase-jump indicator)</h2>
@@ -804,13 +864,43 @@
   </div>
 </section>
 
+
+<section class='card' data-rank='27' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#27</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 69</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e}\, \theta_{R,e}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge orientations sigma_{p,e} are consistent with plaquette boundary convention</li><li>Resolved phases theta_{R,e} follow branch-safe update rule</li><li>Winding number is well-defined via rounding of holonomy difference</li><li>Z2 parity b_p = (-1)^{w_p} is the locking order parameter</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-hlatn-plaquette-holonomy'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </section>
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 13:59</strong></div>
+      <div>Last built: <strong>2026-02-24 15:17</strong></div>
     </footer>
   </main>
 </body>

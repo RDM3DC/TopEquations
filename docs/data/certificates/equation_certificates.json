@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-24T21:58:49.058989+00:00",
+  "generated_at": "2026-02-24T23:17:27.359003+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "0479c03066a34f9074da4ec1698720432a279979dc692bc08fc7c4324bcc7ad2",
-  "count": 45,
+  "source_sha256": "d7d7619c404da4d945a97ae97e71e0bfc03abfa6b48cce78040623d4aac3ef54",
+  "count": 51,
   "entries": [
     {
       "token_id": "eq-arp-redshift",
@@ -1246,6 +1246,174 @@
       },
       "version": 1,
       "metadata_hash": "9feac3dce0552d5baf099eff87127cf01896dd02c405918f640957b3b6a9bd7d"
+    },
+    {
+      "token_id": "eq-hlatn-white-paper-eqn-7",
+      "name": "HLATN_White_Paper \u2014 eqn 7",
+      "equation_latex": "\\\\dot G_e = \\\\alpha_G |I_e| - \\\\mu_G G_e - \\\\lambda G_e \\\\sin^2\\!\\\\left(\\\\frac{\\\\theta_{R,e}}{2\\\\pi_a}\\\\right)",
+      "equation_hash": "2ba796cbf46df647aba5aa4613cead528cd39d0f9be6d629cd01e47b1d6e6e87",
+      "score": 54,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 5,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Conductance ODE with drive, leak, and phase-suppression gate.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "e4c70745d427c2feec0b2bd3b1a4dbf62d66f4cb2d959a8e070b3e1845fd0656"
+    },
+    {
+      "token_id": "eq-hlatn-white-paper-eqn-10",
+      "name": "HLATN_White_Paper \u2014 eqn 10",
+      "equation_latex": "\\\\theta_{R,e}^{(k)} = \\\\theta_{R,e}^{(k-1)} + \\\\mathrm{clip}(\\\\mathrm{wrapTo}_\\\\pi(\\\\phi_e - \\\\theta_{R,e}), -\\\\pi_a, +\\\\pi_a)",
+      "equation_hash": "1b9033403cf400cf8d0e8688e81344c2d6b9db2d153aea71d00797ed5c07b152",
+      "score": 50,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 5,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Resolved-phase update with wrap-to-\\pi and clipping by adaptive bound.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "e6e3c3819cd98da1477df7314b214e6f1a3e8301f6a791c009382ea5fcfb8959"
+    },
+    {
+      "token_id": "eq-hlatn-white-paper-eqn-11",
+      "name": "HLATN_White_Paper \u2014 eqn 11",
+      "equation_latex": "\\\\Theta_p = \\\\sum_{e \\\\in \\\\partial p} \\\\sigma_{p,e} \\\\theta_{R,e}",
+      "equation_hash": "ad8f63edfc00de231ec4a024180b8e465c2751cca7ca7382e4a32ae1930e717e",
+      "score": 51,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 5,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Plaquette holonomy as signed sum of resolved edge phases.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "ff09492e106f988a1f23e5f94a1299b6f974c8750ef81fcb50c171a5dc7e24ee"
+    },
+    {
+      "token_id": "eq-hlatn-three-force-conductance-lock",
+      "name": "HLATN Three-Force Conductance Lock",
+      "equation_latex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "equation_hash": "f944e4196b40c905b14dcfe319f9058e9c9dc0c832ec0b888c89a158cd9061d6",
+      "score": 71,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework \u2014 drives self-organized topological stabilization.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "05170f972e75d9358bb118d746af2adf17a68742e076dfd607e6fc363bd540da"
+    },
+    {
+      "token_id": "eq-hlatn-phase-lift-branch-safe-update",
+      "name": "HLATN Phase-Lift Branch-Safe Update",
+      "equation_latex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\!\\Big(\\mathrm{wrapTo}_{\\pi}(\\phi_e - \\theta_{R,e}),\\; -\\pi_a,\\; +\\pi_a\\Big)",
+      "equation_hash": "727ea4aa8c9ace0b1ca1ad97b5c575dd5c7e1c6ab528f643a9fdd9973c6759f6",
+      "score": 70,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 15,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Resolved-phase update rule with wrap-to-pi and adaptive clipping. Prevents uncontrolled branch jumps by bounding per-step angular movement to the entropy-regulated ruler pi_a.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "5464acc50df7e81e846635881699af101b7997ae33580d1b6a005e2c4bee7292"
+    },
+    {
+      "token_id": "eq-hlatn-plaquette-holonomy",
+      "name": "HLATN Plaquette Holonomy",
+      "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
+      "equation_hash": "55e25b3f97eb4e330db7871b725a2e6437d43557934ab18c5fa6de6e5b2fe086",
+      "score": 69,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 13,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "HLATN_White_Paper_2026-02-24.pdf",
+      "date": "2026-02-24",
+      "description": "Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "28dc121084b66ea6833f84d965578e87fab3cea62453cc426931b700f90c3a78"
     }
   ]
 }
