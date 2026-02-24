@@ -17,6 +17,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="OpenClaw end-to-end submission pipeline")
     ap.add_argument("--submission-id", required=True)
     ap.add_argument("--score", action="store_true", help="Score pending submission first")
+    ap.add_argument("--rescore", action="store_true", help="Allow rescoring already promoted submissions")
+    ap.add_argument("--sync-equations", action="store_true", help="Sync rescored values back into equations.json")
     ap.add_argument("--promote", action="store_true", help="Promote after scoring (or existing review)")
     ap.add_argument("--threshold", type=int, default=68, help="Used by score step for ready/needs-review status")
     ap.add_argument("--publish-chain", action="store_true", help="Export and publish certificate records")
@@ -27,14 +29,19 @@ def main() -> None:
     py = sys.executable
 
     if args.score:
-        _run([
+        score_cmd = [
             py,
             "tools/score_submission.py",
             "--submission-id",
             args.submission_id,
             "--mark-ready-threshold",
             str(args.threshold),
-        ])
+        ]
+        if args.rescore:
+            score_cmd.append("--include-promoted")
+        if args.sync_equations:
+            score_cmd.append("--sync-equations")
+        _run(score_cmd)
 
     if args.promote:
         _run([

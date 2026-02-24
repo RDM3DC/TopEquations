@@ -1451,11 +1451,11 @@
       "name": "Mesh-Synced Certificate Consistency",
       "firstSeen": "2026-02-24",
       "source": "manual setup",
-      "score": 53,
+      "score": 57,
       "scores": {
         "tractability": 15,
-        "plausibility": 13,
-        "validation": 7,
+        "plausibility": 14,
+        "validation": 9,
         "artifactCompleteness": 2
       },
       "units": "TBD",

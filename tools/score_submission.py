@@ -8,6 +8,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 SUBMISSIONS_JSON = REPO / "data" / "submissions.json"
+EQUATIONS_JSON = REPO / "data" / "equations.json"
 
 
 def _today() -> str:
@@ -51,6 +52,19 @@ def _heuristic(entry: dict) -> dict[str, int]:
     if str(entry.get("units", "")).upper() == "OK":
         validation += 2
 
+    evidence = entry.get("evidence", []) or []
+    if evidence:
+        # Evidence items (links, tx hashes, run logs) directly strengthen validation.
+        validation += min(6, len(evidence) * 2)
+
+    source_low = str(entry.get("source", "")).lower()
+    name_low = str(entry.get("name", "")).lower()
+    if any(tok in source_low for tok in ["discord", "slack", "pipeline", "manual setup"]):
+        validation += 1
+    if any(tok in name_low for tok in ["consistency", "consensus", "mesh", "certificate"]):
+        plaus += 1
+        validation += 1
+
     artifact = 2
     animation = (entry.get("animation", {}) or {}).get("status", "planned")
     image = (entry.get("image", {}) or {}).get("status", "planned")
@@ -60,7 +74,6 @@ def _heuristic(entry: dict) -> dict[str, int]:
         artifact += 2
 
     novelty = 16
-    name_low = str(entry.get("name", "")).lower()
     if "arp" in low or "phase" in low or "holonomy" in low:
         novelty += 4
     if "certificate" in name_low or "consistency" in name_low:
@@ -83,16 +96,63 @@ def _heuristic(entry: dict) -> dict[str, int]:
     }
 
 
-def _pick_entries(data: dict, submission_id: str | None, all_pending: bool) -> list[dict]:
+def _pick_entries(data: dict, submission_id: str | None, all_pending: bool, include_promoted: bool) -> list[dict]:
     entries = list(data.get("entries", []))
     if submission_id:
         return [e for e in entries if str(e.get("submissionId")) == submission_id]
     if all_pending:
+        if include_promoted:
+            return entries
         return [e for e in entries if str(e.get("status", "pending")).lower() == "pending"]
     for e in reversed(entries):
-        if str(e.get("status", "pending")).lower() == "pending":
+        status = str(e.get("status", "pending")).lower()
+        if include_promoted and status in ("pending", "needs-review", "ready", "promoted"):
+            return [e]
+        if status == "pending":
             return [e]
     return []
+
+
+def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
+    review = submission.get("review", {}) or {}
+    eq_id = str(review.get("equationId", "")).strip()
+    eq_data = _load(EQUATIONS_JSON)
+
+    # Fallback if equationId is missing in review (older records).
+    if not eq_id:
+        sub_name = str(submission.get("name", "")).strip()
+        for row in eq_data.get("entries", []):
+            if str(row.get("name", "")).strip() == sub_name:
+                eq_id = str(row.get("id", "")).strip()
+                break
+        if not eq_id:
+            return False
+
+    updated = False
+    for row in eq_data.get("entries", []):
+        if str(row.get("id", "")).strip() == eq_id:
+            row["score"] = metrics["score"]
+            row["scores"] = {
+                "tractability": metrics["tractability"],
+                "plausibility": metrics["plausibility"],
+                "validation": metrics["validation"],
+                "artifactCompleteness": metrics["artifactCompleteness"],
+            }
+            row["tags"] = row.get("tags", {}) or {}
+            row["tags"]["novelty"] = {
+                "score": metrics["novelty"],
+                "date": _today(),
+            }
+            updated = True
+            break
+
+    if updated:
+        review = submission.get("review", {}) or {}
+        review["equationId"] = eq_id
+        submission["review"] = review
+        eq_data["lastUpdated"] = _today()
+        _save(EQUATIONS_JSON, eq_data)
+    return updated
 
 
 def main() -> None:
@@ -100,21 +160,28 @@ def main() -> None:
     ap.add_argument("--submission-id", default="")
     ap.add_argument("--all-pending", action="store_true")
     ap.add_argument("--mark-ready-threshold", type=int, default=68)
+    ap.add_argument("--include-promoted", action="store_true", help="Allow rescoring submissions already promoted")
+    ap.add_argument("--sync-equations", action="store_true", help="When rescoring promoted submissions, sync score back to equations.json")
     args = ap.parse_args()
 
     data = _load(SUBMISSIONS_JSON)
-    targets = _pick_entries(data, args.submission_id.strip() or None, args.all_pending)
+    targets = _pick_entries(data, args.submission_id.strip() or None, args.all_pending, args.include_promoted)
     if not targets:
         raise SystemExit("no matching pending submission found")
 
     count = 0
+    eq_sync = 0
     for e in targets:
-        if str(e.get("status", "")).lower() == "promoted":
+        status = str(e.get("status", "")).lower()
+        if status == "promoted" and not args.include_promoted:
             continue
         metrics = _heuristic(e)
         score = metrics["score"]
+        prior_review = e.get("review", {}) or {}
+        prior_eqid = str(prior_review.get("equationId", "")).strip()
         e["review"] = {
             "date": _today(),
+            "equationId": prior_eqid,
             "score": score,
             "scores": {
                 "tractability": metrics["tractability"],
@@ -125,13 +192,19 @@ def main() -> None:
             "novelty": metrics["novelty"],
             "method": "heuristic-v1",
         }
-        e["status"] = "ready" if score >= args.mark_ready_threshold else "needs-review"
+        if status != "promoted":
+            e["status"] = "ready" if score >= args.mark_ready_threshold else "needs-review"
+        if status == "promoted" and args.sync_equations:
+            if _sync_equation_score(e, metrics):
+                eq_sync += 1
         count += 1
         print(f"scored: {e.get('submissionId')} score={score} status={e.get('status')}")
 
     data["lastUpdated"] = _today()
     _save(SUBMISSIONS_JSON, data)
     print(f"updated submissions: {count}")
+    if args.sync_equations:
+        print(f"synced equations: {eq_sync}")
 
 
 if __name__ == "__main__":

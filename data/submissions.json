@@ -28,14 +28,15 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-mesh-synced-certificate-consistency",
-        "score": 53,
+        "score": 57,
         "scores": {
           "tractability": 15,
-          "plausibility": 13,
-          "validation": 7,
+          "plausibility": 14,
+          "validation": 9,
           "artifactCompleteness": 2
         },
-        "novelty": 18
+        "novelty": 18,
+        "method": "heuristic-v1"
       }
     }
   ]

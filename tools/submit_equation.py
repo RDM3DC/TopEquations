@@ -42,6 +42,8 @@ def _append_daily_markdown(entry: dict) -> None:
 
     assumptions = entry.get("assumptions", [])
     assumptions_text = "; ".join(assumptions) if assumptions else "(none listed)"
+    evidence = entry.get("evidence", [])
+    evidence_text = "; ".join(evidence) if evidence else "(none listed)"
 
     block = (
         f"### {entry['name']}\n"
@@ -53,6 +55,7 @@ def _append_daily_markdown(entry: dict) -> None:
         f"- Description: {entry['description']}\n"
         f"- Equation: {entry['equationLatex']}\n"
         f"- Assumptions: {assumptions_text}\n"
+        f"- Evidence: {evidence_text}\n"
         f"- Animation: {entry['animation']['status']}\n"
         f"- Image: {entry['image']['status']}\n"
         f"- Status: {entry['status']}\n\n"
@@ -71,6 +74,7 @@ def main() -> None:
     ap.add_argument("--theory", default="PASS-WITH-ASSUMPTIONS")
     ap.add_argument("--submitter", default="local")
     ap.add_argument("--assumption", action="append", default=[])
+    ap.add_argument("--evidence", action="append", default=[], help="Validation evidence item (URL, tx hash, run log, screenshot path)")
     args = ap.parse_args()
 
     submitted_at = _today()
@@ -104,6 +108,7 @@ def main() -> None:
         "units": args.units.strip(),
         "theory": args.theory.strip(),
         "assumptions": [a.strip() for a in args.assumption if a.strip()],
+        "evidence": [x.strip() for x in args.evidence if x.strip()],
         "animation": {"status": "planned", "path": ""},
         "image": {"status": "planned", "path": ""},
         "review": {},

@@ -113,7 +113,7 @@ Scoring model (0-100):
 | 2026-02-22 | Adaptive Monodromy Spectrum (bifurcation framework) | \mathcal{M}_a(\gamma)=\big(w_a(\gamma),\,b_a(\gamma)\big)\in\mathbb{Z}\times\{\pm1\} | 4-pillar fusion §5 | PASS-WITH-ASSUMPTIONS | 54 | planned | planned |
 | 2026-02-22 | Adaptive Discriminant Set for Parity/Winding Stability | \mathcal{D}=\{z=0\}\cup\{\pi_a=0\} | chat: PR Root Guide convo 2026-02-22 | PASS-WITH-ASSUMPTIONS | 53 | planned | planned |
 | 2026-02-22 | Engineered Pinch-to-Transition Mass Drive (single-jump toy) | m_{\mathrm{eff}}(\epsilon)=m_0-\beta\frac{\epsilon^p}{1-\epsilon}\ (\epsilon<1),\quad m_{\mathrm{eff}}(\epsilon)=m_{\mathrm{triv}}\ (\epsilon\ge 1) | chat: PR Root Guide convo 2026-02-22 | PASS-WITH-ASSUMPTIONS | 51 | planned | planned |
-| 2026-02-24 | Mesh-Synced Certificate Consistency | \\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\to 0 | manual setup | PASS-WITH-ASSUMPTIONS | 53 | planned | planned |
+| 2026-02-24 | Mesh-Synced Certificate Consistency | \\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\to 0 | manual setup | PASS-WITH-ASSUMPTIONS | 57 | planned | planned |
 
 ## Update Rules
 
