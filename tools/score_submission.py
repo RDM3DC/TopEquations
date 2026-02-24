@@ -159,7 +159,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Heuristically score pending submissions")
     ap.add_argument("--submission-id", default="")
     ap.add_argument("--all-pending", action="store_true")
-    ap.add_argument("--mark-ready-threshold", type=int, default=68)
+    ap.add_argument("--mark-ready-threshold", type=int, default=65)
     ap.add_argument("--include-promoted", action="store_true", help="Allow rescoring submissions already promoted")
     ap.add_argument("--sync-equations", action="store_true", help="When rescoring promoted submissions, sync score back to equations.json")
     args = ap.parse_args()

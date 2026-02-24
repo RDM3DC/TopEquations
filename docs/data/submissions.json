@@ -84,7 +84,7 @@
       "submissionId": "sub-2026-02-24-egatl-phase-coupled-conductance-update",
       "submittedAt": "2026-02-24",
       "submitter": "Ryan",
-      "status": "ready",
+      "status": "promoted",
       "name": "EGATL Phase-Coupled Conductance Update",
       "equationLatex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
       "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
@@ -114,7 +114,7 @@
       },
       "review": {
         "date": "2026-02-24",
-        "equationId": "",
+        "equationId": "eq-egatl-phase-coupled-conductance-update",
         "score": 69,
         "scores": {
           "tractability": 15,
@@ -122,15 +122,14 @@
           "validation": 13,
           "artifactCompleteness": 4
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 16
       }
     },
     {
       "submissionId": "sub-2026-02-24-entropy-modulated-phase-lift-conductance-equatio",
       "submittedAt": "2026-02-24",
       "submitter": "Ryan",
-      "status": "needs-review",
+      "status": "promoted",
       "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
       "equationLatex": "\\frac{dG_{ij}}{dt} = \\alpha_G\\,S(t)\\,|I_{ij}| \\cos\\!\\Big(\\frac{\\theta_{R,ij}}{2\\pi_a}\\Big) - \\mu_G G_{ij} - \\lambda_G\\,G_{ij}\\,\\frac{\\Delta\\theta_{R,ij}^2}{(2\\pi_a)^2}",
       "description": "Winding-aware, entropy-gated, suppression-coupled adaptive conductance law. Three structural couplings: (1) entropy-weighted reinforcement proportional to S(t), (2) phase-position selectivity via cos(theta_R/2pi_a) embedding branch geometry into conductance evolution, (3) quadratic winding-penalty stabilization suppressing runaway multi-sheet excursions. Coupled with adaptive bound dynamics d(pi_a)/dt = alpha_pi*S(t) - mu_pi*(pi_a - pi_0) + eta_pi*r_b and parity-mass coupling m_eff = m_0 + beta*<Delta_theta_R^2>/(2*pi_a)^2 - gamma*r_b.",
@@ -162,7 +161,7 @@
       },
       "review": {
         "date": "2026-02-24",
-        "equationId": "",
+        "equationId": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
         "score": 66,
         "scores": {
           "tractability": 15,
@@ -170,8 +169,7 @@
           "validation": 13,
           "artifactCompleteness": 2
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 16
       }
     },
     {
@@ -261,7 +259,8 @@
           "validation": 14,
           "artifactCompleteness": 6
         },
-        "novelty": 16
+        "novelty": 16,
+        "method": "heuristic-v1"
       }
     },
     {
@@ -311,7 +310,8 @@
           "validation": 13,
           "artifactCompleteness": 6
         },
-        "novelty": 16
+        "novelty": 16,
+        "method": "heuristic-v1"
       }
     },
     {
@@ -366,7 +366,8 @@
           "validation": 15,
           "artifactCompleteness": 6
         },
-        "novelty": 16
+        "novelty": 16,
+        "method": "heuristic-v1"
       }
     },
     {
@@ -416,7 +417,8 @@
           "validation": 13,
           "artifactCompleteness": 6
         },
-        "novelty": 16
+        "novelty": 16,
+        "method": "heuristic-v1"
       }
     }
   ]

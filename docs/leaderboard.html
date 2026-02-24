@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602241527' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602241537' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602241527'></script>
+  <script defer src='./assets/app.js?v=202602241537'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -894,13 +894,133 @@
   </div>
 </section>
 
+
+<section class='card' data-rank='28' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#28</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 69</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G(S)\, |I_{ij}| - \mu_G(S)\, G_{ij} - \lambda\, G_{ij}\, \sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>EGATL original claim (ARP framework)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift resolution for theta_{R,ij} to avoid spurious branch flips</li><li>Global entropy S gates adaptation</li><li>Companion ruler equation d(pi_a)/dt couples to this update</li><li>Stable fixed points correspond to integer Chern sectors</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-egatl-phase-coupled-conductance-update'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='29' data-score='66' data-haslatex='1'>
+  <div class='card__rank'>#29</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP Lyapunov Stability Form</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 66</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$V(x)\ge 0,\ V(0)=0;\ \dot V(x)=\nabla V\cdot \dot x\le -\alpha V(x)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #2</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Candidate stability proof template for adaptive conductance dynamics.</div></div>
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-lyapunov-stability'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq5ARPLyapunov.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='30' data-score='66' data-haslatex='1'>
+  <div class='card__rank'>#30</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP as Gradient Flow in Adaptive-π Geometry</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 66</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot G_{ij}=\alpha_G\,|I_{ij}|-\mu_G\,G_{ij},\quad |I_{ij}|\propto \frac{\partial\sqrt{\mathcal{E}}}{\partial(\sqrt{\Omega_{ij}G_{ij}})}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>4-pillar fusion §3</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Bridge theorem: ARP reinforcement is proportional to edge energy contributions in a πₐ-weighted Dirichlet landscape. ARP is a &#x27;lazy&#x27; gradient flow where Ω = π_a/π changes what counts as a short/cheap path. Prediction: increasing πₐ in a region re-routes the ARP backbone away, even under the same boundary forcing. &#x27;πₐ sculpts geodesics; ARP discovers them.&#x27;</div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\mathcal{E}(\phi;G,\Omega)=\frac{1}{2}\sum_{(i,j)} \Omega_{ij}\,G_{ij}\,(\phi_i-\phi_j)^2$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>On a graph with adaptive-π weight Ω_{ij} and ARP conductance G_{ij}, the Dirichlet energy is E = (1/2) Σ Ω_{ij} G_{ij} (φ_i - φ_j)². Kirchhoff potentials give |I_{ij}| = G_{ij}|φ_i - φ_j|. ARP reinforce ∝ |I_{ij}| = edge contribution to √E geometry. Hence ARP is gradient descent on the weighted energy landscape.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Network is connected; Kirchhoff potentials are well-defined per step.</li><li>Ω_{ij} is sampled from the continuous π_a field at edge midpoints.</li><li>Budget/normalization constraint forces edge competition (not all edges grow).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-gradient-flow-bridge'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='31' data-score='66' data-haslatex='1'>
+  <div class='card__rank'>#31</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 66</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G\,S(t)\,|I_{ij}| \cos\!\Big(\frac{\theta_{R,ij}}{2\pi_a}\Big) - \mu_G G_{ij} - \lambda_G\,G_{ij}\,\frac{\Delta\theta_{R,ij}^2}{(2\pi_a)^2}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Winding-aware, entropy-gated, suppression-coupled adaptive conductance law. Three structural couplings: (1) entropy-weighted reinforcement proportional to S(t), (2) phase-position selectivity via cos(theta_R/2pi_a) embedding branch geometry into conductance evolution, (3) quadratic winding-penalty stabilization suppressing runaway multi-sheet excursions. Coupled with adaptive bound dynamics d(pi_a)/dt = alpha_pi*S(t) - mu_pi*(pi_a - pi_0) + eta_pi*r_b and parity-mass coupling m_eff = m_0 + beta*&lt;Delta_theta_R^2&gt;/(2*pi_a)^2 - gamma*r_b.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift unwrapping for theta_{R,ij}</li><li>Global entropy S(t) gates adaptation</li><li>Companion adaptive bound equation d(pi_a)/dt couples via entropy and parity</li><li>Parity-mass coupling m_eff connects winding variance to topological gap</li><li>Stable fixed points at integer Chern sectors</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-entropy-modulated-phase-lift-conductance-equation-em-plc'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </section>
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 15:27</strong></div>
+      <div>Last built: <strong>2026-02-24 15:37</strong></div>
     </footer>
   </main>
 </body>

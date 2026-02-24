@@ -490,7 +490,7 @@ def build_core(repo_root: Path, docs: Path) -> None:
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
     # Ranked derived equations only (display capped to score >= 68).
-    DISPLAY_THRESHOLD = 68
+    DISPLAY_THRESHOLD = 65
 
     data_path = repo_root / "data" / "equations.json"
     data = json.loads(data_path.read_text(encoding="utf-8"))

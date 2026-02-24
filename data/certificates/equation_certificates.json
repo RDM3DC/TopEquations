@@ -1,10 +1,416 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-24T23:17:27.359003+00:00",
+  "generated_at": "2026-02-24T23:37:10.122780+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "d7d7619c404da4d945a97ae97e71e0bfc03abfa6b48cce78040623d4aac3ef54",
-  "count": 51,
+  "source_sha256": "09d2099a5401f983bb459a3d4403ef6247c9256e8556f1deb39efed0e63b1808",
+  "count": 67,
   "entries": [
+    {
+      "token_id": "core-phase-ambiguity",
+      "name": "Phase Ambiguity (multi-valuedness axiom)",
+      "equation_latex": "z=re^{i\\theta},\\quad \\theta\\equiv\\theta+2\\pi k,\\ k\\in\\mathbb{Z}",
+      "equation_hash": "af833b2e82c397d91d0a1419c0db6062559ca6ee05fcb3f3a9d6945f35bdbd34",
+      "score": 83,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 15,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7A (Eq.1)",
+      "date": "core",
+      "description": "Multi-valuedness comes from the (2\u03c0)-quotient on phase. Starting axiom motivating the Phase-Lift framework.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "6e82ceb3e7603efb59f505b6a968564f5c5746a6bddd8f525d932bc2f18d32bb"
+    },
+    {
+      "token_id": "core-phase-lift",
+      "name": "Phase-Lift operator definition (\u29c9)",
+      "equation_latex": "(\\,\\,\\,\\,\\,\\u29c9 f\\,\\,\\,)(z;\\theta_{\\rm ref}) := f(z)\\ \\text{computed using}\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{\\rm ref})",
+      "equation_hash": "161f7417186f299054d7feaf4fbd74f85b39adf188c4e4df01de3f2aa6b7aa08",
+      "score": 69,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 22,
+        "date": "core"
+      },
+      "source": "canonical-core paper 04 / Eq.Sheet \u00a7A (Eq.2)",
+      "date": "core",
+      "description": "Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-phase-lift.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "c23e28e68a7b181904c20ca3124c1b905e406c1e496909bfe83d76e8a149a368"
+    },
+    {
+      "token_id": "core-unwrap-rule",
+      "name": "Deterministic Unwrapping Rule",
+      "equation_latex": "\\mathrm{unwrap}(\\theta;\\theta_{\\rm ref})=\\theta+2\\pi\\,\\mathrm{round}\\!\\Big(\\frac{\\theta_{\\rm ref}-\\theta}{2\\pi}\\Big)",
+      "equation_hash": "123dbe79dde820d81c561f330a9a2efb0f6c6e1b919528d4e6a0b923bb2286fc",
+      "score": 80,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 20,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7A (Eq.3)",
+      "date": "core",
+      "description": "Pick the representative closest to the reference. The concrete algorithm behind Phase-Lift: a single deterministic formula for branch selection.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "8a1c6cd12ee80740733595dd25ce4dc62f22cc60f2e0e0a94aee1e073559f106"
+    },
+    {
+      "token_id": "core-path-continuity",
+      "name": "Path Continuity (Stateful Phase-Lift)",
+      "equation_latex": "\\theta_{R,k}=\\mathrm{unwrap}(\\arg z_k;\\,\\theta_{R,k-1})",
+      "equation_hash": "e7d074a9b0a9f23018bc78deaf0e0f60d48713e74c3b7c5278f59d04655303d6",
+      "score": 66,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 10,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 20,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7A (Eq.4)",
+      "date": "core",
+      "description": "Turns phase into a continuous real trajectory by chaining the unwrap rule sample-to-sample (except at true singularities like z=0).",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "1ddd8f13baa752e9c6cc3341dd6515419b54881837be5bf9818ca5da7ec22097"
+    },
+    {
+      "token_id": "core-pr-root",
+      "name": "PR-Root as a special case of Phase-Lift (\u29c9\u221a)",
+      "equation_latex": "\\u29c9\\sqrt{z;\\theta_{ref}}:=\\sqrt{r}\\,e^{i\\theta_R/2}\\ \"where\"\\ z=re^{i\\theta}\\ \"and\"\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})",
+      "equation_hash": "aba97471f7efab0a52d44bf691498a41a542383ad313589b3fff9d082e7c785a",
+      "score": 60,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 8,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 21,
+        "date": "core"
+      },
+      "source": "canonical-core paper 04 / Eq.Sheet \u00a7A (Eq.5)",
+      "date": "core",
+      "description": "Phase-resolved square root: deterministic branch choice encoded by the resolved phase.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-pr-root.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "88c367df4406a8d9af6a4e2d19a7f11e10d01c7340c0632d0210dfe9cf5b9c0a"
+    },
+    {
+      "token_id": "core-winding-parity",
+      "name": "Winding Number + \u2124\u2082 Parity Invariants",
+      "equation_latex": "w=\\frac{\\Delta\\theta_R}{2\\pi}\\in\\mathbb{Z},\\qquad \\nu:=w\\bmod 2\\in\\{0,1\\},\\quad b=(-1)^w\\in\\{\\pm1\\}",
+      "equation_hash": "1e09996967e842256319e5eb6debd5775b4be727a771a83bf2373f40e3554603",
+      "score": 79,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 18,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 18,
+        "date": "core"
+      },
+      "source": "canonical-core papers 02/04 / Eq.Sheet \u00a7B (Eq.6\u20137)",
+      "date": "core",
+      "description": "Counts how many times the lifted phase winds (w); \u2124\u2082 parity b predicts whether PR-Root returns to the same or opposite sheet.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-winding-parity.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "86593a67fc1ee640eed552300902942a09a8c252dfc1fe9bcce57fd6afbdcab5"
+    },
+    {
+      "token_id": "core-conformal-metric",
+      "name": "Adaptive-\u03c0 Conformal Scale Factor and Metric",
+      "equation_latex": "\\Omega(x,t):=\\frac{\\pi_a(x,t)}{\\pi},\\qquad g_{ij}(x,t)=\\Omega(x,t)^2\\,\\delta_{ij}",
+      "equation_hash": "bd8e7fd48f7d6a3859804aef46942676f21b00e53f268b98f95f0eba32435c16",
+      "score": 66,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 22,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7C (Eq.8)",
+      "date": "core",
+      "description": "\u03c0\u2090/\u03c0 acts like a local ruler scaling. Defines the conformal metric induced by the adaptive-\u03c0 field on the underlying flat geometry.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "a1a5dabd46411bcbffda0a0ceb3f93597e4a1794f1091fa41776cc943c71e700"
+    },
+    {
+      "token_id": "core-adaptive-arc-length",
+      "name": "Adaptive Arc Length",
+      "equation_latex": "L_g(\\gamma)=\\int_0^1 \\Omega(\\gamma(t),t)\\,|\\dot\\gamma(t)|\\,dt",
+      "equation_hash": "6e409912e5e5491c0685a970cdeb8dbccd6e43d3b3403bb3b3abe990b04f7abf",
+      "score": 50,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 4,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 20,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7C (Eq.9)",
+      "date": "core",
+      "description": "Distances and penalties are measured in the adaptive geometry: path lengths scale with the local \u03c0\u2090 field.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "85f7e3953fd4e63216d75c720b2cc5ffe54821582f73aaa18a26bd11b4d2a7af"
+    },
+    {
+      "token_id": "core-pi-a",
+      "name": "Adaptive-\u03c0 field definition + limit (\u03c0\u2090 \u2192 \u03c0)",
+      "equation_latex": "\\theta=\\theta_R+2\\pi_a(x,t)\\,w,\\ \"with\"\\ w\\in\\mathbb{Z}\\ \"and\"\\ \\pi_a\\to\\pi",
+      "equation_hash": "da74a65a71d40c18ca6fadea409867718775caac6689f7dc03a14bcc60ae7e6e",
+      "score": 67,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 20,
+        "date": "core"
+      },
+      "source": "canonical-core paper 02 + paper 04",
+      "date": "core",
+      "description": "Generalizes the phase wrap unit; reduces to standard 2\u03c0 wrapping when \u03c0\u2090 becomes constant \u03c0.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-pi-a.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "4cc01213706da8221b55bca1e9203cd84f11e30d62fe3873ad00be7da27d3fa8"
+    },
+    {
+      "token_id": "core-pi-a-dynamics",
+      "name": "Reinforce/Decay Dynamics for \u03c0\u2090",
+      "equation_latex": "\\frac{d\\pi_a}{dt}=\\alpha_\\pi\\,s(x,t)-\\mu_\\pi(\\pi_a-\\pi_0)",
+      "equation_hash": "133b09d7f1d0d7fb4293aa31ae61dac9b75daa5d556544b51e6a01b9256b5ccc",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 16,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 22,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7C (Eq.10)",
+      "date": "core",
+      "description": "\u03c0\u2090 increases under stimulus (events/errors/curvature) and relaxes toward \u03c0\u2080 (often \u03c0). The core adaptive mechanism of the geometry layer.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "1984db1d56988f72ebade2b7ae518c3672775c8b78a370e0c37fe879c6368f6a"
+    },
+    {
+      "token_id": "core-arp-ode",
+      "name": "ARP Core Law (canonical ODE)",
+      "equation_latex": "\\frac{dG_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|-\\mu_G\\,G_{ij}(t)",
+      "equation_hash": "bc49bf0ceb5207e9abc3dbf54343405b6eceea4dde08784ec34c1d31c05830a5",
+      "score": 83,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 20,
+        "date": "core"
+      },
+      "source": "canonical-core paper 01 / Eq.Sheet \u00a7D (Eq.11)",
+      "date": "core",
+      "description": "Canonical Adaptive Resistance Principle update rule for edge conductance. Edges that carry activity reinforce; unused edges decay (self-organizing backbones).",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-arp-ode.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "ccbdf47e289f2a2388a092e3a843b4e34d878db8277f005f7ae941fb2dcb1693"
+    },
+    {
+      "token_id": "core-curvature-salience",
+      "name": "Curvature as Salience (Curve-Memory Primitive)",
+      "equation_latex": "\\kappa(s)=|\\gamma''(s)|",
+      "equation_hash": "fbc0df0e932778f2be3f43739a47a633c8200ad66c174422ea03347ea8cd9d57",
+      "score": 83,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 15,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7E (Eq.12)",
+      "date": "core",
+      "description": "Salience equals curvature: sharp bends in a trajectory mark events and transitions. Defines the geometric primitive used by curve-memory.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "739fef45d028796cb7cc18676080e53734697d76abca49cccfa58b6c8b0194e7"
+    },
+    {
+      "token_id": "core-reinforce-decay-memory",
+      "name": "Reinforce/Decay Memory Law (generic)",
+      "equation_latex": "\\frac{dM}{dt}=\\alpha\\,S(t)-\\mu\\,M(t)",
+      "equation_hash": "46009270e4870b2b8203fbce9b5f4760b4b09bf839705ba62a930d30a19af309",
+      "score": 73,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 18,
+        "date": "core"
+      },
+      "source": "Equation Sheet v1.1 \u00a7E (Eq.13)",
+      "date": "core",
+      "description": "A generic time-constant memory law: M grows under stimulus S and decays at rate \u03bc. Can drive s(x,t) for \u03c0\u2090 or any curve-memory trace.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "34d81a2571b83e4db09176949da99034482c814e7208b3639aa5bf86a6931043"
+    },
+    {
+      "token_id": "core-phase-lifted-stokes",
+      "name": "Phase-Lifted Stokes Quantization (Adaptive-\u03c0)",
+      "equation_latex": "\\theta_R[\\gamma]:=\\mathrm{unwrap}\\!\\left(\\oint_{\\gamma} A\\,;\\theta_{\\rm ref}\\right)=\\int_{S:\\,\\partial S=\\gamma}F+2\\pi_a\\,w,\\quad w\\in\\mathbb{Z},\\quad b(\\gamma)=(-1)^w",
+      "equation_hash": "6fde1b2e0d1285679304196ea0da64296d12dc98591ba55b7c528f1777f99f7a",
+      "score": 64,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 23,
+        "date": "core"
+      },
+      "source": "canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-\u03c0)",
+      "date": "core",
+      "description": "Turns the usual Stokes/holonomy statement \u2018mod 2\u03c0\u2019 into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-\u03c0 generalizes the period to 2\u03c0\u2090.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "core",
+      "artifact_refs": {
+        "animation": "./assets/animations/core-phase-lifted-stokes.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "a7d5f60ce6b59c9548a052d3c0f1e1832e91d1e003d6f9fe168c7c29e6f56b84"
+    },
     {
       "token_id": "eq-arp-redshift",
       "name": "ARP Redshift Law (derived mapping)",
@@ -30,8 +436,9 @@
         "animation": "./assets/animations/Eq2ARPRedshift.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "e25bbc615f2b527ef8ce44cf882c3532583219a02182f3dc66270eee336b9360"
+      "metadata_hash": "8a42776bbd1addef71d203ce79d668a6d6f5583a28c9bc0652ea43bd9107a7a3"
     },
     {
       "token_id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
@@ -58,8 +465,9 @@
         "animation": "./assets/animations/BZPhaseLiftConductance.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "f786eabcc28843c7ead8d314f53925f6b4c234c8b5004ffa3bdd070705af596f"
+      "metadata_hash": "e2f261c3af8856c6373f4ac9e9151ffe04c4eaa3480eb58bd302d9caf95e372d"
     },
     {
       "token_id": "eq-ahc-parity-flip-rate",
@@ -86,8 +494,9 @@
         "animation": "./assets/animations/ParityLockingBifurcation.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "60feb72de6f5cd6bc2fd0433ae070e5e019761cbadbe16163108ed6e86585f68"
+      "metadata_hash": "4d6520fca42b5040d0dcaa264200db2b87df496c2f6e73410ffb9a98616ce983"
     },
     {
       "token_id": "eq-qwz-bz-avg-ruler-mass",
@@ -112,8 +521,9 @@
         "animation": "./assets/animations/BZAveragedRulerQWZ.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "302405798ec9ad94b7faa2b0816648ce345186fd67f403f2e652024e0b33fdf4"
+      "metadata_hash": "af5011877bbcc8b6748ae471b90f1f4cdb0977013d8619a963bd850aff78e384"
     },
     {
       "token_id": "eq-ahc-step-limit",
@@ -140,8 +550,9 @@
         "animation": "./assets/animations/eq-ahc-step-limit.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "59927d7a3af36bc5305642347c712dbc79326e38902acb266e702fb6f028a5b8"
+      "metadata_hash": "94130ce7d461e4d8e70df553961b45861a5d0e4ddcf94d776fc2e950a03480a3"
     },
     {
       "token_id": "eq-qwz-pia-modulated-mass",
@@ -166,8 +577,9 @@
         "animation": "./assets/animations/PiAModulatedQWZMass.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "4893f00805d4416d4c852fc024fa45a94662a9dadf943a0ecebab730ee2f954e"
+      "metadata_hash": "3ada83de0545da27bc6868682149d5ade8c602a1845bcfee30cdd4a27f1510b1"
     },
     {
       "token_id": "eq-ahc-running-winding",
@@ -194,8 +606,9 @@
         "animation": "./assets/animations/WindingParityExplained.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "9cefdd676f1cb2085766dd1b84628df70f1a22d8d24a7e5651d42a58971dfd82"
+      "metadata_hash": "2117d9e523bb25db6fedb4d1289665d15e73ce40966c616e2e477ef431d1d252"
     },
     {
       "token_id": "eq-arp-phase-critical-collapse",
@@ -222,8 +635,9 @@
         "animation": "./assets/animations/Eq3PhaseCoupledThreshold.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "390e6d6544898e0fa5b057a138135b820bc53f2b1fc066cbf44c986b8ff87488"
+      "metadata_hash": "6a2e93f9376712fcf84400715b27989c4ef14e2b3e6c2d9ee414936beedde932"
     },
     {
       "token_id": "eq-ahc-pi-a-update",
@@ -250,8 +664,9 @@
         "animation": "./assets/animations/eq-ahc-pi-a-update.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "fe36091541ddf4930626bc515f52ff3476f3bc8204a0867fdd546cc9ea8adaff"
+      "metadata_hash": "00069b29e651cbddf7038768616b894ca2a47a9f2ae63187cdde2706f2d752f8"
     },
     {
       "token_id": "eq-arp-redshift-bounded-oscillation",
@@ -278,8 +693,9 @@
         "animation": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4",
         "image": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "bbc5fef2a615c0800594552fbd90302a74083d0146ab6ddee66091fde192cfd7"
+      "metadata_hash": "72618efa4937ec881670442cb9f1a3d2a92b85f87103d9bd111ff2f7744425fa"
     },
     {
       "token_id": "eq-arp-phase-lifted-complex-conductance",
@@ -306,8 +722,9 @@
         "animation": "./assets/animations/Eq4PhaseLiftedComplexConductance.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "815a6544c0ecaabcaaaa4ef569e1425dbf44f796cead88e0e14b47422894a250"
+      "metadata_hash": "38d02a1ac99af3060616a518d9eb635ad59582e143dd2354ab99525a8aec7f33"
     },
     {
       "token_id": "eq-ahc-candidate-unwrap",
@@ -334,8 +751,9 @@
         "animation": "./assets/animations/eq-ahc-candidate-unwrap.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "94b4701a1945a95dd200c39c437cdb7269affef415c722e04c328ef389a2f108"
+      "metadata_hash": "d455c243d5b99b2027f51030c43bc2c5be673edcd7d0045a74f2a0153b0026a7"
     },
     {
       "token_id": "eq-ahc-residual",
@@ -362,8 +780,9 @@
         "animation": "./assets/animations/eq-ahc-residual.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "d5f7dd34f62b3666b565fda8e5aa0b749031ae27dea6b85fe7b4671f27854f39"
+      "metadata_hash": "ff31402115160804b70147a0c9c1338a38febee4d57f81ea017c54dec8906da3"
     },
     {
       "token_id": "eq-arp-temp-conductance",
@@ -390,8 +809,9 @@
         "animation": "./assets/animations/Eq10TempConductance.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "f89f83e4ae4ae1a8e0819cccf9319cf820b493097d2b184bbd45ce877d0b4e94"
+      "metadata_hash": "7863e03064b9fafe74a256687b559aed21f91ee6a4471a2e0ff6c6d9ef07983a"
     },
     {
       "token_id": "eq-ahc-event-stimulus",
@@ -418,8 +838,9 @@
         "animation": "./assets/animations/eq-ahc-event-stimulus.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "ac51a7d9117a590c24b3315a754ad62577f023fcf2b46ecadeaadc69ce105231"
+      "metadata_hash": "9fabb82817fb28e8cd660f97982fe4ca395f41e49a44fe4b29dabafa1a3ad781"
     },
     {
       "token_id": "eq-arp-lyapunov-stability",
@@ -446,8 +867,9 @@
         "animation": "./assets/animations/Eq5ARPLyapunov.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "521490431bcd792262f82c9968a1a218c465c171255fc04d2699e9c0781bbc28"
+      "metadata_hash": "47a363e9ee867e29d9a1f62d749f49f6c2d174c2a64e5937701d5a53ff12b35b"
     },
     {
       "token_id": "eq-arp-gradient-flow-bridge",
@@ -474,8 +896,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "c1199b58ce96b6685ce2e7d256f67fe9db5207c947de44f20f3ffec73d805c38"
+      "metadata_hash": "e1beec0f49bb8488986960880fed4927d342d3ba8e44ba995b20298d62ef373a"
     },
     {
       "token_id": "eq-curve-memory-137",
@@ -502,8 +925,9 @@
         "animation": "./assets/animations/Eq7CurveMemory137.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "d53c594f9edd488b2ab5702ee36e0f74fba0766af924e26a704e9b3d0fc3631f"
+      "metadata_hash": "5c8dcdc6fb42a5b6cf96252dedfb1dd32c598bb42f5c867c1f38a86c19ee9861"
     },
     {
       "token_id": "eq-shield-mechanic-arp",
@@ -530,8 +954,9 @@
         "animation": "./assets/animations/Eq8ShieldingMechanism.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "185a2b9dd82ad3fcad04c0aa73aa4d1cf15ae2cb4e2c5199c34df03e936790ef"
+      "metadata_hash": "5d7aced21f62f565d4f0fb7adbf013e98a2a9ccbf9ef01236cee43e4307ef23a"
     },
     {
       "token_id": "eq-parity-pump",
@@ -558,8 +983,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "63c2ed3285d47c4af4906f8e043c714085bcb7293cc024ccc72efad537875cf7"
+      "metadata_hash": "0430ae826357d592bc9754f44a2fa374060823c9abc39a19b2187fe13691f931"
     },
     {
       "token_id": "eq-dyn-constants-union",
@@ -586,8 +1012,9 @@
         "animation": "./assets/animations/Eq6UnifiedDynamicConstants.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "c010721d38993d028180b847518311fe9f50ddf9f6af44660fe7dd5831c4f6bc"
+      "metadata_hash": "e54b15f0a1ec3e560cbce0b5da38581c1fa2245daa0c2446726694da854ac63d"
     },
     {
       "token_id": "eq-pi-a-gauged-phase-lift",
@@ -614,8 +1041,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "22b3d462d448ccdf22f5270e9b75e76ac13d963b965bc26a9469f467954bd399"
+      "metadata_hash": "50edbd7c5780153d2d93a3b2e3eb9c84c4cf404362f766c85c151a727c462515"
     },
     {
       "token_id": "eq-redshift-arp-superc",
@@ -642,8 +1070,9 @@
         "animation": "./assets/animations/Eq9RedshiftARPSuperconductivity.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "a27fa189a719ccdd85e0e25edd035413398edf017a0d46775321c3cade8ea673"
+      "metadata_hash": "6145dfc116dccc588cf90f7645f7afc58f72b1e48d2c14a470794c5118978b5d"
     },
     {
       "token_id": "eq-adaptive-phase-lift-unwrapping",
@@ -668,8 +1097,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "fb634dfb431673fef0cbd368e837099ed35c394b134639ea08088538d08f2c46"
+      "metadata_hash": "26775b480a0e99018ea01d459916e26b9f2654d18143805d43384234724a4adc"
     },
     {
       "token_id": "eq-arp-weighted-dirichlet-energy",
@@ -694,8 +1124,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "459de9b72cb7e7ca9f36b337c4f94127cfca1992596b88d8bfacff624303f5c3"
+      "metadata_hash": "0258f0dbaf0b93128b4b26741c802ac8a817259466d0502680ef417c41136e3d"
     },
     {
       "token_id": "eq-un-det-phase",
@@ -722,8 +1153,9 @@
         "animation": "./assets/animations/eq-un-det-phase.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "05444dca6605d7ea3ec2dba5411a275705e6e78fcc281e1a32e4c09f64498845"
+      "metadata_hash": "c33decd3961ccea48d64e233be95d753dd6ce31c7ea9cecd71376b7b47357c21"
     },
     {
       "token_id": "eq-adaptive-connection-chern",
@@ -748,8 +1180,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "f2663546c1890345b712f70a31548b1c357880513ae5868df028ec6e7af31c4d"
+      "metadata_hash": "7da63347fe3d987a1f00acdccb7c090c96ed9c4eed633b43666e260968008bec"
     },
     {
       "token_id": "eq-parity-from-adaptive-chern",
@@ -774,8 +1207,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "71b1e5c3a3c72eae109b325249436bc9ba4b0c09025ad2ef8d5e0c4239b3e6d3"
+      "metadata_hash": "3ed088c83547f9bdcdcb5722bd10fe94a8068347f920d8dcf5096e5b67ea32eb"
     },
     {
       "token_id": "eq-cm-integration-state",
@@ -802,8 +1236,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "2afc726fa55ac735f55d6ba1613c15b9d1db21e870c327a19438635c2520449d"
+      "metadata_hash": "76999877a3598a70a6b5a2f6b8f9efa4ccb8daa0ced20dbb7acf250bf9ed8456"
     },
     {
       "token_id": "eq-un-wilson-holonomy",
@@ -830,8 +1265,9 @@
         "animation": "./assets/animations/eq-un-wilson-holonomy.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "aa103107bacc359ffc5f46f7db7b61f9578b6b1653536aa44e8b81f61dc9c778"
+      "metadata_hash": "7f76de1f38cb9da922ea81cdc35807e3cba121df8f2f2a5c6e07ce482e0b05f2"
     },
     {
       "token_id": "eq-dimensionless-phase-flow",
@@ -856,8 +1292,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "e3a141821b26fd8305f56b18f7c22bcd7ba1f5034cff5ba87ed6447076f32a14"
+      "metadata_hash": "1e37e599d3a75d908a7ae976c2750dfd112133c9ce62d56f875f69a61424b7ab"
     },
     {
       "token_id": "eq-adaptive-monodromy-spectrum",
@@ -884,8 +1321,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "745063367cf6d962620917d52ca850f01d5fcc2e229f2d7cacf6ed0e787b7aa3"
+      "metadata_hash": "0a0b5c748d058923eb7f0cb2e657cc1e8ad77744c87ddd7497dd7d273111ba86"
     },
     {
       "token_id": "eq-adaptive-discriminant-set",
@@ -910,8 +1348,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "d64fc7c74653b6f109ea13a9282123b61a64a0bdc7e80c45718f7b4761328295"
+      "metadata_hash": "c29059648b7539a344c338eebd0dbc4520bad726d482d9cab059a1f3bb0cbee9"
     },
     {
       "token_id": "eq-qwz-engineered-single-jump",
@@ -936,8 +1375,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "56f65883ad8e36d66e37e7273effbed0f752f4a2518f8e56284274bd10e29eda"
+      "metadata_hash": "9b445e39d681d55ec2be46524264d43d1ba5beba3586cffb828f8eb7536bea24"
     },
     {
       "token_id": "eq-paper1-adler-rsj-phase",
@@ -964,8 +1404,9 @@
         "animation": "./assets/animations/APGP0CoreModel.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "b75498964ef3d31f3d34e9989c61589eaa6be4d8a3b61c815a68d428e4251a93"
+      "metadata_hash": "624e16cde68a1fdb1f268b0685ba5d37788a0e338b24e0b6d434a6e97869fdd5"
     },
     {
       "token_id": "eq-paper1-arp-reinforce-decay",
@@ -992,8 +1433,9 @@
         "animation": "./assets/animations/Eq1ARPCoreLaw.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "f4890e6438f5d80b56b1dc2d395fd7e6ff2aa29988635e64374205d707b45f56"
+      "metadata_hash": "c992c5c66857af4ad877677b34803d56068a170498bb32188853e08e29943bfa"
     },
     {
       "token_id": "eq-paper1-activity-closure",
@@ -1020,8 +1462,9 @@
         "animation": "./assets/animations/AHCParityLocking.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "d6bdc5505cf2ac0b4c9e93dbf24a72c37be576e305f9b18de710bab80a2908af"
+      "metadata_hash": "dbb661c91d592cb65d01cf93fe17574284fad36f31bf324c81fa8d294efaa607"
     },
     {
       "token_id": "eq-paper1-slip-asymptote",
@@ -1048,8 +1491,9 @@
         "animation": "./assets/animations/PhaseLiftExplained.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "109d794df57a1e5d875683b2918da923a1b1fcfa257c7c581737291a7082bf1a"
+      "metadata_hash": "605b33dd8e2a5d6a1e466fd601ef0495abc13c3b55997fc5813d5ca193180a34"
     },
     {
       "token_id": "eq-paper1-langevin-noise",
@@ -1076,8 +1520,9 @@
         "animation": "./assets/animations/HysteresisMemory.mp4",
         "image": "./assets/langevin_parity_lock.png"
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "79110ed0e5c15b517de27740480122d70f46adff9dd596aaa09dd801c6217c92"
+      "metadata_hash": "68ca5ec29eb14d7a629c7ad58fb11a6baec7d9ca1f6c559f0654218aff1bbd5c"
     },
     {
       "token_id": "eq-paper1-qwz-hamiltonian",
@@ -1104,8 +1549,9 @@
         "animation": "./assets/animations/AdaptiveQWZReEntrance.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "916b7159b4ef90c9e67165a8e5d50be61fea58af0e227f9209bae0848b31bada"
+      "metadata_hash": "2d8ba66d083ea9796012bb70c960b24597fd338adff29e036fb797251bd8abf8"
     },
     {
       "token_id": "eq-paper1-adaptive-geometry-mass",
@@ -1132,8 +1578,9 @@
         "animation": "./assets/animations/PRRootExplained.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "b8e420632d90620055e933dd41cfd6d2fd5edb9858fab9c668bf610e5af33e46"
+      "metadata_hash": "ce0354b78a9f0c8769160492716118324319d2c5be74b806150e7b86d6e422de"
     },
     {
       "token_id": "eq-paper1-chern-marker-bianco-resta",
@@ -1160,8 +1607,9 @@
         "animation": "./assets/animations/AdaptivePiGeometry.mp4",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "e51badc0fa9e215891e3f361ad2c65f55f6fd36560e68474922280d149bf334f"
+      "metadata_hash": "7e67f6a4671c0ed970b23c37db7dfe5ed6a807faeaa4e07b7aa4b9b6a5b6032c"
     },
     {
       "token_id": "eq-mesh-synced-certificate-consistency",
@@ -1188,8 +1636,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "f60cddd96fd6b9c4777640407cc5dcb18fe720f999522b42cfacbc2d248cddd9"
+      "metadata_hash": "ee09cb6780b8145f4d9dcbf9c42c64503c316a898baac784d4c4ec31f731acec"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1216,8 +1665,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "3d340822f41c5f94cf7f87ca8fcba8f4caf04c0ef4e39e63ee2e29d15536c90f"
+      "metadata_hash": "6911b3b3dbd2b549973418d395d13bedc4bb1e61af29b45d70e4f9aed110c9cc"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
@@ -1244,8 +1694,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "9feac3dce0552d5baf099eff87127cf01896dd02c405918f640957b3b6a9bd7d"
+      "metadata_hash": "bcb22659939e0ae5448fdd844630cee66b5999f8ce13acb9f16109034ca22707"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-7",
@@ -1272,8 +1723,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "e4c70745d427c2feec0b2bd3b1a4dbf62d66f4cb2d959a8e070b3e1845fd0656"
+      "metadata_hash": "a9074393889daa9faa45cae6481dcddd6ab2089b93b3132d99007d5a246c88a1"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-10",
@@ -1300,8 +1752,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "e6e3c3819cd98da1477df7314b214e6f1a3e8301f6a791c009382ea5fcfb8959"
+      "metadata_hash": "7d1bf911d994792597c1ddf1da182a3034232e9193f53a1572557ca0d8a79f6d"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-11",
@@ -1328,8 +1781,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "ff09492e106f988a1f23e5f94a1299b6f974c8750ef81fcb50c171a5dc7e24ee"
+      "metadata_hash": "24f2ec6da39887f4ef34e24ca2cdc8f20a5ef2963bac2e4ab8b80db0a464d7da"
     },
     {
       "token_id": "eq-hlatn-three-force-conductance-lock",
@@ -1356,8 +1810,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "05170f972e75d9358bb118d746af2adf17a68742e076dfd607e6fc363bd540da"
+      "metadata_hash": "c02603a25195d046fad2e4b96623b303788d1a853d669d966b7208881f220c6e"
     },
     {
       "token_id": "eq-hlatn-phase-lift-branch-safe-update",
@@ -1384,8 +1839,9 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "5464acc50df7e81e846635881699af101b7997ae33580d1b6a005e2c4bee7292"
+      "metadata_hash": "f4fd6a0f72195c061a32f31a43fed63d64e20dc5eea605860d2fe1a0a68bf484"
     },
     {
       "token_id": "eq-hlatn-plaquette-holonomy",
@@ -1412,8 +1868,67 @@
         "animation": "",
         "image": ""
       },
+      "tier": "derived",
       "version": 1,
-      "metadata_hash": "28dc121084b66ea6833f84d965578e87fab3cea62453cc426931b700f90c3a78"
+      "metadata_hash": "3571143fb2a3114827bea59572192a137fb2fd0645c82eb6c4ea8c75e1168a7f"
+    },
+    {
+      "token_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
+      "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
+      "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G\\,S(t)\\,|I_{ij}| \\cos\\!\\Big(\\frac{\\theta_{R,ij}}{2\\pi_a}\\Big) - \\mu_G G_{ij} - \\lambda_G\\,G_{ij}\\,\\frac{\\Delta\\theta_{R,ij}^2}{(2\\pi_a)^2}",
+      "equation_hash": "cdb60bd1b572234675141a29828e9bcb75fa1304de8e8265efbc5cfb6dd6da59",
+      "score": 66,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)",
+      "date": "2026-02-24",
+      "description": "Winding-aware, entropy-gated, suppression-coupled adaptive conductance law. Three structural couplings: (1) entropy-weighted reinforcement proportional to S(t), (2) phase-position selectivity via cos(theta_R/2pi_a) embedding branch geometry into conductance evolution, (3) quadratic winding-penalty stabilization suppressing runaway multi-sheet excursions. Coupled with adaptive bound dynamics d(pi_a)/dt = alpha_pi*S(t) - mu_pi*(pi_a - pi_0) + eta_pi*r_b and parity-mass coupling m_eff = m_0 + beta*<Delta_theta_R^2>/(2*pi_a)^2 - gamma*r_b.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "version": 1,
+      "metadata_hash": "e6748e1622fdbdf4174b484b05de101cb4ca4f7b463cd6a3258387c12adbbcb6"
+    },
+    {
+      "token_id": "eq-egatl-phase-coupled-conductance-update",
+      "name": "EGATL Phase-Coupled Conductance Update",
+      "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
+      "equation_hash": "0e0eefe3e5c6e217a0fcb5d5cbad0630d74048012868bbea78ccfb8ff676002d",
+      "score": 69,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "EGATL original claim (ARP framework)",
+      "date": "2026-02-24",
+      "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay \u2014 links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "version": 1,
+      "metadata_hash": "0cbb6fdd8a9c50e65d4cf276e5c9278b73a6c8c9b13438e66b2e7c394560dd73"
     }
   ]
 }

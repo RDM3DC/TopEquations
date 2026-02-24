@@ -14,7 +14,11 @@
       "equationLatex": "z=re^{i\\theta},\\quad \\theta\\equiv\\theta+2\\pi k,\\ k\\in\\mathbb{Z}",
       "description": "Multi-valuedness comes from the (2π)-quotient on phase. Starting axiom motivating the Phase-Lift framework.",
       "source": "Equation Sheet v1.1 §A (Eq.1)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/",
+      "validation": 18,
+      "artifactCompleteness": 0,
+      "score": 83,
+      "derivativeCount": 28
     },
     {
       "id": "core-phase-lift",
@@ -32,7 +36,11 @@
       "equationLatex": "(\\,\\,\\,\\,\\,\\u29c9 f\\,\\,\\,)(z;\\theta_{\\rm ref}) := f(z)\\ \\text{computed using}\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{\\rm ref})",
       "description": "Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.",
       "source": "canonical-core paper 04 / Eq.Sheet §A (Eq.2)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/",
+      "validation": 14,
+      "artifactCompleteness": 2,
+      "score": 69,
+      "derivativeCount": 13
     },
     {
       "id": "core-unwrap-rule",
@@ -47,7 +55,11 @@
       "equationLatex": "\\mathrm{unwrap}(\\theta;\\theta_{\\rm ref})=\\theta+2\\pi\\,\\mathrm{round}\\!\\Big(\\frac{\\theta_{\\rm ref}-\\theta}{2\\pi}\\Big)",
       "description": "Pick the representative closest to the reference. The concrete algorithm behind Phase-Lift: a single deterministic formula for branch selection.",
       "source": "Equation Sheet v1.1 §A (Eq.3)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/",
+      "validation": 18,
+      "artifactCompleteness": 0,
+      "score": 80,
+      "derivativeCount": 13
     },
     {
       "id": "core-path-continuity",
@@ -62,7 +74,11 @@
       "equationLatex": "\\theta_{R,k}=\\mathrm{unwrap}(\\arg z_k;\\,\\theta_{R,k-1})",
       "description": "Turns phase into a continuous real trajectory by chaining the unwrap rule sample-to-sample (except at true singularities like z=0).",
       "source": "Equation Sheet v1.1 §A (Eq.4)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/",
+      "validation": 10,
+      "artifactCompleteness": 0,
+      "score": 66,
+      "derivativeCount": 2
     },
     {
       "id": "core-pr-root",
@@ -80,7 +96,11 @@
       "equationLatex": "\\u29c9\\sqrt{z;\\theta_{ref}}:=\\sqrt{r}\\,e^{i\\theta_R/2}\\ \"where\"\\ z=re^{i\\theta}\\ \"and\"\\ \\theta_R=\\mathrm{unwrap}(\\arg z;\\theta_{ref})",
       "description": "Phase-resolved square root: deterministic branch choice encoded by the resolved phase.",
       "source": "canonical-core paper 04 / Eq.Sheet §A (Eq.5)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\\u29c9"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/#4-pr-root-\\u29c9",
+      "validation": 8,
+      "artifactCompleteness": 2,
+      "score": 60,
+      "derivativeCount": 3
     },
     {
       "id": "core-winding-parity",
@@ -98,7 +118,11 @@
       "equationLatex": "w=\\frac{\\Delta\\theta_R}{2\\pi}\\in\\mathbb{Z},\\qquad \\nu:=w\\bmod 2\\in\\{0,1\\},\\quad b=(-1)^w\\in\\{\\pm1\\}",
       "description": "Counts how many times the lifted phase winds (w); ℤ₂ parity b predicts whether PR-Root returns to the same or opposite sheet.",
       "source": "canonical-core papers 02/04 / Eq.Sheet §B (Eq.6–7)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/docs/notation/",
+      "validation": 18,
+      "artifactCompleteness": 2,
+      "score": 79,
+      "derivativeCount": 22
     },
     {
       "id": "core-conformal-metric",
@@ -113,7 +137,11 @@
       "equationLatex": "\\Omega(x,t):=\\frac{\\pi_a(x,t)}{\\pi},\\qquad g_{ij}(x,t)=\\Omega(x,t)^2\\,\\delta_{ij}",
       "description": "πₐ/π acts like a local ruler scaling. Defines the conformal metric induced by the adaptive-π field on the underlying flat geometry.",
       "source": "Equation Sheet v1.1 §C (Eq.8)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/",
+      "validation": 14,
+      "artifactCompleteness": 0,
+      "score": 66,
+      "derivativeCount": 14
     },
     {
       "id": "core-adaptive-arc-length",
@@ -128,7 +156,11 @@
       "equationLatex": "L_g(\\gamma)=\\int_0^1 \\Omega(\\gamma(t),t)\\,|\\dot\\gamma(t)|\\,dt",
       "description": "Distances and penalties are measured in the adaptive geometry: path lengths scale with the local πₐ field.",
       "source": "Equation Sheet v1.1 §C (Eq.9)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/",
+      "validation": 4,
+      "artifactCompleteness": 0,
+      "score": 50,
+      "derivativeCount": 1
     },
     {
       "id": "core-pi-a",
@@ -146,7 +178,11 @@
       "equationLatex": "\\theta=\\theta_R+2\\pi_a(x,t)\\,w,\\ \"with\"\\ w\\in\\mathbb{Z}\\ \"and\"\\ \\pi_a\\to\\pi",
       "description": "Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.",
       "source": "canonical-core paper 02 + paper 04",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/",
+      "validation": 14,
+      "artifactCompleteness": 2,
+      "score": 67,
+      "derivativeCount": 25
     },
     {
       "id": "core-pi-a-dynamics",
@@ -161,7 +197,11 @@
       "equationLatex": "\\frac{d\\pi_a}{dt}=\\alpha_\\pi\\,s(x,t)-\\mu_\\pi(\\pi_a-\\pi_0)",
       "description": "πₐ increases under stimulus (events/errors/curvature) and relaxes toward π₀ (often π). The core adaptive mechanism of the geometry layer.",
       "source": "Equation Sheet v1.1 §C (Eq.10)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/",
+      "validation": 16,
+      "artifactCompleteness": 0,
+      "score": 70,
+      "derivativeCount": 26
     },
     {
       "id": "core-arp-ode",
@@ -179,7 +219,11 @@
       "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|-\\mu_G\\,G_{ij}(t)",
       "description": "Canonical Adaptive Resistance Principle update rule for edge conductance. Edges that carry activity reinforce; unused edges decay (self-organizing backbones).",
       "source": "canonical-core paper 01 / Eq.Sheet §D (Eq.11)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/",
+      "validation": 18,
+      "artifactCompleteness": 2,
+      "score": 83,
+      "derivativeCount": 25
     },
     {
       "id": "core-curvature-salience",
@@ -194,7 +238,11 @@
       "equationLatex": "\\kappa(s)=|\\gamma''(s)|",
       "description": "Salience equals curvature: sharp bends in a trajectory mark events and transitions. Defines the geometric primitive used by curve-memory.",
       "source": "Equation Sheet v1.1 §E (Eq.12)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/02-adaptive-pi-geometry/",
+      "validation": 18,
+      "artifactCompleteness": 0,
+      "score": 83,
+      "derivativeCount": 6
     },
     {
       "id": "core-reinforce-decay-memory",
@@ -209,7 +257,11 @@
       "equationLatex": "\\frac{dM}{dt}=\\alpha\\,S(t)-\\mu\\,M(t)",
       "description": "A generic time-constant memory law: M grows under stimulus S and decays at rate μ. Can drive s(x,t) for πₐ or any curve-memory trace.",
       "source": "Equation Sheet v1.1 §E (Eq.13)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/01-arp-ain/",
+      "validation": 16,
+      "artifactCompleteness": 0,
+      "score": 73,
+      "derivativeCount": 12
     },
     {
       "id": "core-phase-lifted-stokes",
@@ -227,7 +279,11 @@
       "equationLatex": "\\theta_R[\\gamma]:=\\mathrm{unwrap}\\!\\left(\\oint_{\\gamma} A\\,;\\theta_{\\rm ref}\\right)=\\int_{S:\\,\\partial S=\\gamma}F+2\\pi_a\\,w,\\quad w\\in\\mathbb{Z},\\quad b(\\gamma)=(-1)^w",
       "description": "Turns the usual Stokes/holonomy statement ‘mod 2π’ into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-π generalizes the period to 2πₐ.",
       "source": "canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)",
-      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/"
+      "sourceUrl": "https://rdm3dc.github.io/canonical-core/papers/04-phase-lift-pros/",
+      "validation": 14,
+      "artifactCompleteness": 2,
+      "score": 64,
+      "derivativeCount": 14
     }
   ]
 }
