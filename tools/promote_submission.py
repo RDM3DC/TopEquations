@@ -36,11 +36,12 @@ def _clamp(v: int, lo: int, hi: int) -> int:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Promote a pending submission into ranked equations")
     ap.add_argument("--submission-id", required=True)
-    ap.add_argument("--tractability", type=int, required=True)
-    ap.add_argument("--plausibility", type=int, required=True)
-    ap.add_argument("--validation", type=int, required=True)
-    ap.add_argument("--artifact", type=int, required=True, help="Artifact completeness 0-10")
-    ap.add_argument("--novelty", type=int, required=True, help="Novelty tag score")
+    ap.add_argument("--tractability", type=int, default=-1)
+    ap.add_argument("--plausibility", type=int, default=-1)
+    ap.add_argument("--validation", type=int, default=-1)
+    ap.add_argument("--artifact", type=int, default=-1, help="Artifact completeness 0-10")
+    ap.add_argument("--novelty", type=int, default=-1, help="Novelty tag score")
+    ap.add_argument("--from-review", action="store_true", help="Use review scores already stored in submissions.json")
     ap.add_argument("--equation-id", default="", help="Optional override for final equation id")
     args = ap.parse_args()
 
@@ -58,11 +59,22 @@ def main() -> None:
     if str(entry.get("status", "")).lower() == "promoted":
         raise SystemExit(f"submission already promoted: {args.submission_id}")
 
-    tract = _clamp(args.tractability, 0, 20)
-    plaus = _clamp(args.plausibility, 0, 20)
-    validation = _clamp(args.validation, 0, 20)
-    artifact = _clamp(args.artifact, 0, 10)
-    novelty = _clamp(args.novelty, 0, 30)
+    if args.from_review:
+        review = entry.get("review", {}) or {}
+        scores = review.get("scores", {}) or {}
+        tract = _clamp(scores.get("tractability", 0), 0, 20)
+        plaus = _clamp(scores.get("plausibility", 0), 0, 20)
+        validation = _clamp(scores.get("validation", 0), 0, 20)
+        artifact = _clamp(scores.get("artifactCompleteness", 0), 0, 10)
+        novelty = _clamp(review.get("novelty", 0), 0, 30)
+    else:
+        if min(args.tractability, args.plausibility, args.validation, args.artifact, args.novelty) < 0:
+            raise SystemExit("manual promotion requires --tractability --plausibility --validation --artifact --novelty, or use --from-review")
+        tract = _clamp(args.tractability, 0, 20)
+        plaus = _clamp(args.plausibility, 0, 20)
+        validation = _clamp(args.validation, 0, 20)
+        artifact = _clamp(args.artifact, 0, 10)
+        novelty = _clamp(args.novelty, 0, 30)
 
     total = int(round(((tract + plaus + validation + artifact) / 70.0) * 100.0))
 

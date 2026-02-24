@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-02-22",
+  "lastUpdated": "2026-02-24",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -1443,6 +1443,42 @@
         "novelty": {
           "date": "2026-02-22",
           "score": 10
+        }
+      }
+    },
+    {
+      "id": "eq-mesh-synced-certificate-consistency",
+      "name": "Mesh-Synced Certificate Consistency",
+      "firstSeen": "2026-02-24",
+      "source": "manual setup",
+      "score": 53,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 7,
+        "artifactCompleteness": 2
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Chain-level consistency metric for equation certificates across synchronized nodes.",
+      "assumptions": [
+        "Nodes share deterministic genesis",
+        "Consensus endpoint converges under bounded delays"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
+      "tags": {
+        "novelty": {
+          "score": 18,
+          "date": "2026-02-24"
         }
       }
     }

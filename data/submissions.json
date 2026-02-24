@@ -6,7 +6,7 @@
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
       "submittedAt": "2026-02-24",
       "submitter": "local",
-      "status": "pending",
+      "status": "promoted",
       "name": "Mesh-Synced Certificate Consistency",
       "equationLatex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
       "description": "Chain-level consistency metric for equation certificates across synchronized nodes.",
@@ -25,7 +25,18 @@
         "status": "planned",
         "path": ""
       },
-      "review": {}
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-mesh-synced-certificate-consistency",
+        "score": 53,
+        "scores": {
+          "tractability": 15,
+          "plausibility": 13,
+          "validation": 7,
+          "artifactCompleteness": 2
+        },
+        "novelty": 18
+      }
     }
   ]
 }

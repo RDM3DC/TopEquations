@@ -18,6 +18,27 @@ Canonical repository for tracking equation discoveries, derivations, rankings, a
 python tools\generate_leaderboard.py
 ```
 
+## Submission Workflow
+Submit a candidate:
+```powershell
+python tools\submit_equation.py --name "Example" --equation "\\frac{dG}{dt}=..." --description "..." --source "discord" --submitter "ryan"
+```
+
+Score a pending submission:
+```powershell
+python tools\score_submission.py --submission-id sub-YYYY-MM-DD-example
+```
+
+Promote into ranked board (from stored review):
+```powershell
+python tools\promote_submission.py --submission-id sub-YYYY-MM-DD-example --from-review
+```
+
+All-in-one pipeline (score + promote + certificates):
+```powershell
+python tools\openclaw_submission_pipeline.py --submission-id sub-YYYY-MM-DD-example --score --promote --publish-chain --node-url http://127.0.0.1:5000 --signer-file D:/coins2/Adaptive-Curvature-Coin/wallet.json
+```
+
 ## Source workflows
 This repo is updated by the OpenClaw daily equation pipeline.
 - Derivation: `equations` agent
