@@ -14,6 +14,7 @@ def main() -> None:
     repo = Path(__file__).resolve().parents[1]
     src_path = repo / "data" / "equations.json"
     core_path = repo / "data" / "core.json"
+    famous_path = repo / "data" / "famous_equations.json"
     out_path = repo / "data" / "certificates" / "equation_certificates.json"
 
     raw = src_path.read_text(encoding="utf-8")
@@ -26,6 +27,14 @@ def main() -> None:
         core_raw = core_path.read_text(encoding="utf-8")
         core_doc = json.loads(core_raw)
         core_entries = list(core_doc.get("entries", []))
+
+    # Also include famous equations on the chain
+    famous_raw = ""
+    famous_entries: list[dict] = []
+    if famous_path.exists():
+        famous_raw = famous_path.read_text(encoding="utf-8")
+        famous_doc = json.loads(famous_raw)
+        famous_entries = list(famous_doc.get("entries", []))
 
     entries = []
 
@@ -93,11 +102,45 @@ def main() -> None:
         cert["metadata_hash"] = sha256_text(cert_blob)
         entries.append(cert)
 
+    # Famous equations (tagged as tier: famous)
+    for e in famous_entries:
+        equation_latex = e.get("equationLatex", "")
+        t = e.get("tractability", 0)
+        p = e.get("plausibility", 0)
+        v = e.get("validation", 0)
+        a = e.get("artifactCompleteness", 0)
+        score = int(round(((t + p + v + a) / 70.0) * 100.0))
+        cert = {
+            "token_id": e.get("id", ""),
+            "name": e.get("name", ""),
+            "equation_latex": equation_latex,
+            "equation_hash": sha256_text(equation_latex),
+            "score": score,
+            "scores": {
+                "tractability": t,
+                "plausibility": p,
+                "validation": v,
+                "artifactCompleteness": a,
+            },
+            "novelty": {"score": e.get("novelty", 0), "date": "famous"},
+            "source": "famous-adjusted",
+            "date": "famous",
+            "description": e.get("description", ""),
+            "units": e.get("units", ""),
+            "theory": e.get("theory", ""),
+            "tier": "famous",
+            "coreRefs": e.get("coreRefs", []),
+            "version": 1,
+        }
+        cert_blob = json.dumps(cert, sort_keys=True, separators=(",", ":"))
+        cert["metadata_hash"] = sha256_text(cert_blob)
+        entries.append(cert)
+
     payload = {
         "schema": "top-equations-certificate-v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_file": str(src_path),
-        "source_sha256": sha256_text(raw + core_raw),
+        "source_sha256": sha256_text(raw + core_raw + famous_raw),
         "count": len(entries),
         "entries": entries,
     }

@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Famous Equations</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602241537' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602241549' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602241537'></script>
+  <script defer src='./assets/app.js?v=202602241549'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -80,9 +80,10 @@
   <div class='card__rank'>F1</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>Schrodinger (without i via Madelung + Phase-Lift)</h2>
+      <h2 class='card__title'>Schrödinger Equation</h2>
+      <div class='card__subtitle muted'>Madelung + Phase-Lift real-valued split</div>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 44</span>
+        <span class='badge badge--score'>Score 60</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--good'>PASS</span>
@@ -92,20 +93,21 @@
 
     <div class='equation'>
       <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$\partial_t\rho+\nabla\cdot(\rho\,\mathbf v)=0,\quad \hbar\,\partial_t\phi+\frac{m}{2}\mathbf v^2+V+Q[\rho]=0$$</div>
+      <div class='equation__tex'>$$\partial_t\rho+\nabla\cdot(\rho\,\mathbf v)=0,\quad \hbar\,\partial_t\phi+\tfrac{m}{2}\mathbf v^2+V+Q[\rho]=0$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Madelung + Phase-Lift split into continuity and Hamilton-Jacobi style real equations.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 16/20, V 0/20, A 0/10, normalized to 44/100</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Schrödinger&#x27;s equation rewritten via the Madelung decomposition with Phase-Lift: the complex wave function splits into a continuity equation for probability density ρ and a Hamilton–Jacobi equation for lifted phase φ, eliminating the imaginary unit entirely.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 16/20, P 16/20, V 10/20, A 0/10, normalized to 60/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>26 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>Q[rho] is the quantum potential term; phi is the lifted phase field.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>rho is positive and smooth enough for Q[rho] to be well-defined.</li><li>Phase-Lift variable theta_R maps consistently to phi over the domain.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Equivalent only under the stated smoothness and phase mapping assumptions.</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>ρ = probability density; v = probability-current velocity; φ = Phase-Lifted field; Q[ρ] = Bohm quantum potential; V = external potential.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ρ &gt; 0 everywhere so Q[ρ] is well-defined (no nodes).</li><li>Phase-Lift variable θ_R maps bijectively to φ over the domain.</li><li>The decomposition is exact when ψ ≠ 0.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Equivalent only under the stated smoothness conditions; nodal regions (ρ = 0) require separate treatment.</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F1</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-phase-ambiguity'>core-phase-ambiguity</a>, <a href='core.html#core-unwrap-rule'>core-unwrap-rule</a></div></div>
     </div>
   </div>
 </section>
@@ -115,9 +117,10 @@
   <div class='card__rank'>F2</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>Aharonov-Bohm phase (Phase-Lifted)</h2>
+      <h2 class='card__title'>Aharonov–Bohm Effect</h2>
+      <div class='card__subtitle muted'>Phase-Lifted geometric phase with winding sectors</div>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 44</span>
+        <span class='badge badge--score'>Score 60</span>
         <span class='badge badge--score'>Famous</span>
         <span class='pill pill--good'>OK</span>
         <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
@@ -127,20 +130,21 @@
 
     <div class='equation'>
       <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$\theta_R[\gamma]=\mathrm{unwrap}\!\big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\theta_{\rm ref},\pi_a\big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w$$</div>
+      <div class='equation__tex'>$$\theta_R[\gamma]=\mathrm{unwrap}\!\Big(\frac{q}{\hbar}\oint_\gamma \mathbf A\cdot d\mathbf\ell;\;\theta_{\rm ref},\pi_a\Big)=\frac{q}{\hbar}\int_S \mathbf B\cdot d\mathbf S + 2\pi_a w$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Phase-Lifted AB phase relation with explicit winding sector.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 16/20, V 0/20, A 0/10, normalized to 44/100</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The Aharonov–Bohm phase expressed through Phase-Lift with explicit winding-number sectors. The unwrap operator removes branch-cut ambiguity and tracks accumulated windings w ∈ ℤ around the solenoid.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 16/20, P 16/20, V 10/20, A 0/10, normalized to 60/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>25 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>theta_R is unwrapped phase; w is integer winding sector.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Gauge region excludes singular crossings during unwrapping.</li><li>Chosen reference phase remains consistent along gamma.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Branch handling is convention-dependent without a fixed unwrapping policy.</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>θ_R = unwrapped (lifted) phase; γ = closed loop encircling solenoid; A = vector potential; B = magnetic field; w = integer winding number; π_a = adaptive period.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Gauge region excludes singular crossings during unwrapping.</li><li>Reference phase θ_ref is consistent along γ.</li><li>π_a → π in the classical limit.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Branch-handling conventions affect w assignment; the unwrap policy must be fixed before comparing experiments.</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F2</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-unwrap-rule'>core-unwrap-rule</a>, <a href='core.html#core-winding-parity'>core-winding-parity</a></div></div>
     </div>
   </div>
 </section>
@@ -150,7 +154,415 @@
   <div class='card__rank'>F3</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>Berry phase / overlap product (no multivalued Arg)</h2>
+      <h2 class='card__title'>Maxwell&#x27;s Equations</h2>
+      <div class='card__subtitle muted'>Phase-Lifted electromagnetic potentials with adaptive winding</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 56</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--good'>PASS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\mathbf E=-\nabla V-\partial_t\mathbf A,\quad \mathbf B=\nabla\times\mathbf A,\quad \theta_R=\mathrm{unwrap}\!\Big(\frac{q}{\hbar}\oint\mathbf A\cdot d\mathbf\ell;\;\theta_{\rm ref},\pi_a\Big)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Maxwell&#x27;s field equations expressed through gauge potentials (A, V) with Phase-Lift applied to the electromagnetic phase. The winding structure of A around closed loops is tracked explicitly via the unwrap operator, connecting classical electrodynamics to the quantum phase framework.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 16/20, P 15/20, V 8/20, A 0/10, normalized to 56/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>24 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>E = electric field; B = magnetic field; A = vector potential; V = scalar potential; θ_R = lifted electromagnetic phase around a loop.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Gauge freedom is fixed before applying Phase-Lift (e.g., Coulomb or Lorenz gauge).</li><li>The loop integral is well-defined (no singularities on the path).</li><li>π_a → π recovers standard flux quantization.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>The Phase-Lift layer adds topological tracking but does not modify Maxwell&#x27;s equations themselves; it enriches the description of the gauge sector.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F3</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-unwrap-rule'>core-unwrap-rule</a>, <a href='core.html#core-winding-parity'>core-winding-parity</a>, <a href='core.html#core-phase-lifted-stokes'>core-phase-lifted-stokes</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Euler–Lagrange Equation</h2>
+      <div class='card__subtitle muted'>Variational principle with Phase-Lift action</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 56</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--good'>PASS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\frac{\partial \mathcal L_{PL}}{\partial \theta_R}-\frac{d}{dt}\frac{\partial \mathcal L_{PL}}{\partial \dot\theta_R}=0,\quad \mathcal L_{PL}=\mathcal L(\rho,\theta_R,\pi_a,\dot\rho,\dot\theta_R,\dot\pi_a)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The Euler–Lagrange equation applied to a Phase-Lift Lagrangian where the generalized coordinates are (ρ, θ_R, π_a). Stationarity of the Phase-Lift action yields the equations of motion for the lifted phase field and the adaptive period.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 16/20, P 15/20, V 8/20, A 0/10, normalized to 56/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>20 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>L_PL = Phase-Lift Lagrangian; θ_R = lifted phase; ρ = amplitude field; π_a = adaptive period; dot denotes time derivative.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Phase-Lift Lagrangian is specified (not arbitrary).</li><li>Standard regularity conditions for the variational principle hold.</li><li>Boundary terms vanish or are handled explicitly.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>This is the variational framework — the specific L_PL determines the physics.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F4</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-pi-a-dynamics'>core-pi-a-dynamics</a>, <a href='core.html#core-arp-ode'>core-arp-ode</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F5</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Fourier Heat Equation</h2>
+      <div class='card__subtitle muted'>Diffusion with Phase-Lift curvature-salience source</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 56</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--good'>PASS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\partial_t u=\alpha\nabla^2 u + \kappa(x,t)\,u,\quad \kappa=\lambda\,\mathcal K[\theta_R]$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Fourier&#x27;s heat equation augmented with a curvature-salience source term. The coefficient κ is derived from the Phase-Lift curvature K[θ_R], making regions of high phase curvature act as local heat sources. This models phase-aware diffusion.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 16/20, P 15/20, V 8/20, A 0/10, normalized to 56/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>18 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>u = temperature field; α = thermal diffusivity; κ = curvature-driven source; K[θ_R] = curvature of lifted phase; λ = coupling constant.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The curvature-salience coupling λ is small enough for perturbative treatment.</li><li>θ_R is smooth enough for K[θ_R] to be computed.</li><li>Standard boundary and initial conditions apply.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>The curvature source term is a Phase-Lift extension; standard Fourier law is recovered when λ = 0.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F5</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-curvature-salience'>core-curvature-salience</a>, <a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-reinforce-decay-memory'>core-reinforce-decay-memory</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Berry Phase</h2>
+      <div class='card__subtitle muted'>Discrete overlap product with unwrapped accumulation</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 54</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!\big(\Arg\langle\psi_{k+1}|\psi_k\rangle;\;\theta_{\rm ref},\pi_a\big)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Berry&#x27;s geometric phase computed as a discrete sum of unwrapped overlap arguments along a closed parameter path. Phase-Lift eliminates the multivalued Arg ambiguity at each step.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 15/20, V 8/20, A 0/10, normalized to 54/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>24 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>Arg = principal argument (before unwrapping); ⟨ψ_{k+1}|ψ_k⟩ = overlap between adjacent adiabatic states; θ_ref = reference phase for unwrapping.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Adjacent-state overlaps are non-zero along the entire path.</li><li>Sampling density is fine enough to prevent spurious 2π_a jumps.</li><li>The adiabatic approximation holds throughout.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Numerical stability depends on path discretization; coarse sampling can alias the accumulated phase.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F6</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-unwrap-rule'>core-unwrap-rule</a>, <a href='core.html#core-path-continuity'>core-path-continuity</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Noether&#x27;s Theorem</h2>
+      <div class='card__subtitle muted'>Conserved current from Phase-Lift symmetry</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 54</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--good'>PASS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\partial_\mu j^\mu_{PL}=0,\quad j^\mu_{PL}=\frac{\partial\mathcal L_{PL}}{\partial(\partial_\mu\theta_R)}\,\delta\theta_R+\frac{\partial\mathcal L_{PL}}{\partial(\partial_\mu\pi_a)}\,\delta\pi_a$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Noether&#x27;s theorem applied to the Phase-Lift Lagrangian: continuous symmetries of L_PL yield conserved currents j^μ_PL. The lifted phase θ_R and adaptive period π_a each contribute to the conserved current when the action is invariant under their transformations.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 15/20, V 8/20, A 0/10, normalized to 54/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>21 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>j^μ_PL = Phase-Lift Noether current; L_PL = Phase-Lift Lagrangian; δθ_R, δπ_a = infinitesimal symmetry variations.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Phase-Lift action admits the continuous symmetry in question.</li><li>Fields are on-shell (equations of motion satisfied).</li><li>Boundary terms vanish in the variational derivation.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>The specific conserved quantities depend on which symmetry is applied; this is the structural form.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F7</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-pi-a'>core-pi-a</a>, <a href='core.html#core-arp-ode'>core-arp-ode</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F8</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Josephson Relations</h2>
+      <div class='card__subtitle muted'>Adaptive-π phase dynamics in superconducting junctions</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 53</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$I=I_c\sin\!\Big(\frac{\pi}{\pi_a}\theta_R\Big),\quad \frac{d}{dt}\Big(\frac{\pi}{\pi_a}\theta_R\Big)=\frac{2e}{\hbar}V$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The DC and AC Josephson relations with adaptive-π scaling. The standard sin(φ) current–phase relation becomes sin(πθ_R/π_a), where π_a is an adaptive period parameter that recovers the classical limit when π_a → π.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 14/20, V 8/20, A 0/10, normalized to 53/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>22 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>I_c = critical current; θ_R = lifted phase difference across junction; π_a = adaptive period; V = junction voltage; e = electron charge.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>π_a varies slowly relative to junction dynamics.</li><li>Calibration restores the classical Josephson limit when π_a → π.</li><li>Single-junction, short-junction approximation applies.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Non-standard phase scaling requires experimental calibration; not a replacement for the standard Josephson effect.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F8</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-pi-a'>core-pi-a</a>, <a href='core.html#core-pi-a-dynamics'>core-pi-a-dynamics</a>, <a href='core.html#core-phase-lift'>core-phase-lift</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F9</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Dirac Equation</h2>
+      <div class='card__subtitle muted'>Spinor polar decomposition with Phase-Lift</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$(i\gamma^\mu\partial_\mu - m)\psi=0,\quad \psi^{PL}=\sqrt{\rho}\,R\,e^{i\phi},\;\phi=\frac{\pi}{\pi_a}\theta_R$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The Dirac equation for a free spin-½ particle with the four-component spinor decomposed into amplitude √ρ, an SU(2) rotation R, and a Phase-Lifted scalar phase φ. This separates the spin degree of freedom from the Phase-Lift winding structure.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 14/20, P 14/20, V 6/20, A 0/10, normalized to 49/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>23 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>γ^μ = Dirac gamma matrices; ψ = four-component spinor; ρ = probability density; R ∈ SU(2) = spin rotation; φ = lifted phase; m = rest mass.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The polar decomposition ψ = √ρ R exp(iφ) is valid where ψ ≠ 0.</li><li>Spin and phase degrees of freedom decouple at the decomposition level.</li><li>Relativistic and non-relativistic limits are tracked separately.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>The spinor decomposition breaks down at nodes; this is a representation change, not a modification of Dirac physics.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F9</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-phase-ambiguity'>core-phase-ambiguity</a>, <a href='core.html#core-pi-a'>core-pi-a</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Navier–Stokes (Vorticity Form)</h2>
+      <div class='card__subtitle muted'>Phase-Lift vortex tracking with adaptive winding</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\partial_t\boldsymbol\omega+(\mathbf v\cdot\nabla)\boldsymbol\omega=(\boldsymbol\omega\cdot\nabla)\mathbf v+\nu\nabla^2\boldsymbol\omega,\quad w=\frac{1}{2\pi_a}\oint\mathbf v\cdot d\mathbf\ell$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The vorticity transport equation from Navier–Stokes with Phase-Lift applied to circulation integrals. The integer winding number w counts vortex sheet crossings using the adaptive period π_a, connecting fluid topology to the phase framework.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 14/20, P 14/20, V 6/20, A 0/10, normalized to 49/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>22 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>ω = ∇ × v = vorticity; v = velocity field; ν = kinematic viscosity; w = winding number of velocity circulation.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Flow is incompressible (∇·v = 0).</li><li>Viscosity is constant and isotropic.</li><li>Circulation integral is well-defined (no singularities on the contour).</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Phase-Lift adds topological vortex tracking; it does not solve the Navier–Stokes existence/smoothness problem.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F10</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-winding-parity'>core-winding-parity</a>, <a href='core.html#core-phase-lifted-stokes'>core-phase-lifted-stokes</a>, <a href='core.html#core-curvature-salience'>core-curvature-salience</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F11</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Feynman Path Integral</h2>
+      <div class='card__subtitle muted'>Sector-summed partition function with Phase-Lift winding constraint</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta\!\big(\theta_R(T)-\theta_R(0)-2\pi_a w\big)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Feynman&#x27;s path integral reformulated with Phase-Lift coordinates. The sum over winding sectors w replaces the standard sum over paths, and the delta function enforces quantized phase returns. Each sector contributes independently.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 14/20, P 14/20, V 6/20, A 0/10, normalized to 49/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>23 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>Z = partition function; S_PL = Phase-Lift action; w = winding number; δ = Dirac delta enforcing boundary condition.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Phase-Lift measure D[ρ,θ_R,π_a] is well-defined.</li><li>The sector sum converges or is regularized consistently.</li><li>S_PL is specified concretely for the system.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>The action S_PL must be given explicitly for any concrete calculation; this is the structural framework.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F11</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-winding-parity'>core-winding-parity</a>, <a href='core.html#core-phase-ambiguity'>core-phase-ambiguity</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F12</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>U(N) Gauge Holonomy</h2>
+      <div class='card__subtitle muted'>Determinant-phase splitting with Phase-Lift winding</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$U(\gamma)=e^{i\varphi}V,\; V\in SU(N),\quad \theta_R=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a),\quad w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A U(N) holonomy (parallel transport around a loop γ) factored into an SU(N) part V and a U(1) determinant phase. Phase-Lift tracks the determinant phase through unwrapping, yielding an integer winding number w_det that classifies the topological sector.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 14/20, P 14/20, V 6/20, A 0/10, normalized to 49/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>21 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>U(γ) = holonomy matrix; φ = det-phase; V = SU(N) component; w_det = determinant winding number.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Holonomy path admits stable determinant-phase unwrapping.</li><li>Global phase convention is fixed over the loop.</li><li>The U(1) ⊗ SU(N) factorization is non-degenerate.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Winding assignment can shift under different gauge conventions; this is a frame-dependent decomposition.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F12</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-unwrap-rule'>core-unwrap-rule</a>, <a href='core.html#core-winding-parity'>core-winding-parity</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F13</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Klein–Gordon Equation</h2>
+      <div class='card__subtitle muted'>Relativistic scalar field with polar Phase-Lift decomposition</div>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 49</span>
+        <span class='badge badge--score'>Famous</span>
+        <span class='pill pill--good'>OK</span>
+        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
+        <span class='pill pill--warn'>Adjusted</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Adjusted form</div>
+      <div class='equation__tex'>$$\Big(\Box+\frac{m^2c^2}{\hbar^2}\Big)\psi=0,\quad \psi^{PL}=\sqrt{\rho}\,e^{i\phi},\;\phi=\frac{\pi}{\pi_a}\theta_R$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>The Klein–Gordon equation for a relativistic scalar field, with the complex field ψ decomposed into amplitude √ρ and Phase-Lifted scalar phase φ = πθ_R/π_a. This separates amplitude dynamics from phase winding in a Lorentz-covariant setting.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 14/20, P 14/20, V 6/20, A 0/10, normalized to 49/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>20 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>□ = d&#x27;Alembertian (∂²/∂t² − c²∇²); ψ = complex scalar field; ρ = |ψ|²; φ = lifted phase; m = particle mass.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Polar decomposition is valid where ψ ≠ 0.</li><li>Relativistic and non-relativistic limits are not mixed in derived reductions.</li><li>π_a → π recovers the standard Klein–Gordon phase.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Nodal regions (ψ = 0) require separate treatment; this is a representation, not a modification.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F13</div></div>
+      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-phase-lift'>core-phase-lift</a>, <a href='core.html#core-pi-a'>core-pi-a</a>, <a href='core.html#core-phase-ambiguity'>core-phase-ambiguity</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card'>
+  <div class='card__rank'>F14</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Einstein Field Equations</h2>
+      <div class='card__subtitle muted'>Conformal-metric Phase-Lift with adaptive curvature scale</div>
       <div class='card__meta'>
         <span class='badge badge--score'>Score 43</span>
         <span class='badge badge--score'>Famous</span>
@@ -162,160 +574,21 @@
 
     <div class='equation'>
       <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$\theta_R[\gamma]=\sum_k \mathrm{unwrap}\!(\Arg\langle\psi_{k+1}|\psi_k\rangle;\theta_{\rm ref},\pi_a)$$</div>
+      <div class='equation__tex'>$$G_{\mu\nu}+\Lambda g_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu},\quad \tilde g_{\mu\nu}=e^{2\sigma(\pi_a)}g_{\mu\nu},\;\sigma(\pi_a)=\ln\!\Big(\frac{\pi_a}{\pi}\Big)$$</div>
     </div>
 
     <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Discrete Berry-phase accumulation with unwrapped phase tracking.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 15/20, V 0/20, A 0/10, normalized to 43/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>24 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>Arg denotes principal argument before unwrapping.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Adjacent state overlaps are non-zero along the path.</li><li>Sampling is fine enough to avoid unwrap jumps.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Numerical stability depends on path discretization and overlap conditioning.</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F3</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Einstein&#x27;s field equations with a Phase-Lift conformal rescaling of the metric. The conformal factor σ(π_a) is determined by the adaptive period, linking spacetime curvature to the phase framework. When π_a → π, the standard metric is recovered.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 13/20, P 13/20, V 4/20, A 0/10, normalized to 43/100</div></div>
+      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>25 @ legacy</div></div>
+      <div class='kv'><div class='k'>Definitions</div><div class='v'>G_μν = Einstein tensor; Λ = cosmological constant; T_μν = stress-energy tensor; g̃_μν = conformally rescaled metric; σ = conformal factor from π_a.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The conformal rescaling is smooth and non-degenerate.</li><li>π_a varies on scales much larger than the Planck length.</li><li>The rescaled equations reduce to standard GR when π_a = π.</li></ul></div></div>
+      <div class='kv'><div class='k'>Caveat</div><div class='v'>Highly speculative application; conformal rescaling changes the physical content unless carefully constrained. This is a framework suggestion, not established physics.</div></div>
+      <div class='kv'><div class='k'>List index</div><div class='v'>F14</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>F4</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Josephson relations (Phase-Lift + adaptive-pi)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 41</span>
-        <span class='badge badge--score'>Famous</span>
-        <span class='pill pill--good'>OK</span>
-        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
-        <span class='pill pill--warn'>Adjusted</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$I=I_c\sin\!\big(\frac{\pi}{\pi_a}\theta_R\big),\quad \frac{d}{dt}\big(\frac{\pi}{\pi_a}\theta_R\big)=\frac{2e}{\hbar}V$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Adaptive-pi phase dynamics inserted into Josephson current/voltage relations.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20, P 14/20, V 0/20, A 0/10, normalized to 41/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>22 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>pi_a is an adaptive period parameter replacing fixed pi in phase scaling.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>pi_a varies slowly relative to junction dynamics.</li><li>Calibration restores the classical limit when pi_a approaches pi.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Non-standard phase scaling requires experimental calibration before physical claims.</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F4</div></div>
-      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>F5</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Path integral with Phase-Lift sectors</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 37</span>
-        <span class='badge badge--score'>Famous</span>
-        <span class='pill pill--warn'>WARN</span>
-        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
-        <span class='pill pill--warn'>Adjusted</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$Z=\sum_{w\in\mathbb Z}\int \mathcal D\rho\,\mathcal D\theta_R\,\mathcal D\pi_a\; e^{\frac{i}{\hbar}S_{PL}[\rho,\theta_R,\pi_a]}\;\delta(\theta_R(T)-\theta_R(0)-2\pi_a w)$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Sector-aware path integral with explicit winding constraint.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 13/20, P 13/20, V 0/20, A 0/10, normalized to 37/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>23 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>S_PL is the proposed Phase-Lift action functional.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measure and action are well-defined under the Phase-Lift parameterization.</li><li>Sector sum converges or is regularized consistently.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>S_PL must be specified explicitly for reproducible calculations.</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F5</div></div>
-      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>F6</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>U(N) holonomy split (Phase-Lift det-phase)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 37</span>
-        <span class='badge badge--score'>Famous</span>
-        <span class='pill pill--warn'>WARN</span>
-        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
-        <span class='pill pill--warn'>Adjusted</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$U(\gamma)=e^{i\varphi}V, V\in SU(N), \theta_R:=\mathrm{unwrap}(\varphi;\theta_{\rm ref},\pi_a), w_{\det}=\frac{\theta_R(T)-\theta_R(0)}{2\pi_a}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Separates determinant phase and tracks lifted winding in U(N) holonomy.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 13/20, P 13/20, V 0/20, A 0/10, normalized to 37/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>21 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>V is the SU(N) component after factoring determinant phase.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Holonomy path admits stable determinant phase unwrapping.</li><li>Global phase convention is fixed over the loop.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Winding assignment can shift under different gauge conventions.</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F6</div></div>
-      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card'>
-  <div class='card__rank'>F7</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Klein-Gordon (polar split + Phase-Lift)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 34</span>
-        <span class='badge badge--score'>Famous</span>
-        <span class='pill pill--warn'>WARN</span>
-        <span class='pill pill--warn'>PASS-WITH-ASSUMPTIONS</span>
-        <span class='pill pill--warn'>Adjusted</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$$(\Box+\frac{m^2c^2}{\hbar^2})\psi=0,\quad \psi^{PL}=\sqrt\rho\,e^{i\phi}, \phi=\frac{\pi}{\pi_a}\theta_R$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Polar/Phase-Lift form of Klein-Gordon with explicit adaptive-pi phase mapping.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 12/20, P 12/20, V 0/20, A 0/10, normalized to 34/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>20 @ legacy</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>Box is the d&#x27;Alembertian operator; psi is relativistic scalar field.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Polar decomposition remains valid where psi is non-zero.</li><li>Relativistic and non-relativistic terms are not mixed in derived reductions.</li></ul></div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>Use caution: some downstream interpretations can mix relativistic and non-relativistic forms.</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F7</div></div>
-      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'><a href='core.html#core-conformal-metric'>core-conformal-metric</a>, <a href='core.html#core-pi-a'>core-pi-a</a>, <a href='core.html#core-adaptive-arc-length'>core-adaptive-arc-length</a></div></div>
     </div>
   </div>
 </section>
@@ -326,7 +599,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 15:37</strong></div>
+      <div>Last built: <strong>2026-02-24 15:49</strong></div>
     </footer>
   </main>
 </body>

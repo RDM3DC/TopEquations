@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-24T23:37:10.122780+00:00",
+  "generated_at": "2026-02-24T23:49:44.083251+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "09d2099a5401f983bb459a3d4403ef6247c9256e8556f1deb39efed0e63b1808",
-  "count": 67,
+  "source_sha256": "cced20ac82aa5a2136fbb600221deac9629f903122ae671a69bb5d10009bf7b0",
+  "count": 81,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -1929,6 +1929,427 @@
       "tier": "derived",
       "version": 1,
       "metadata_hash": "0cbb6fdd8a9c50e65d4cf276e5c9278b73a6c8c9b13438e66b2e7c394560dd73"
+    },
+    {
+      "token_id": "famous-schrodinger",
+      "name": "Schr\u00f6dinger Equation",
+      "equation_latex": "\\partial_t\\rho+\\nabla\\cdot(\\rho\\,\\mathbf v)=0,\\quad \\hbar\\,\\partial_t\\phi+\\tfrac{m}{2}\\mathbf v^2+V+Q[\\rho]=0",
+      "equation_hash": "d47e8c4cd7500d380a4269873daee15efbc36694b6588182fff6b96fd280d912",
+      "score": 60,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 10,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 26,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Schr\u00f6dinger's equation rewritten via the Madelung decomposition with Phase-Lift: the complex wave function splits into a continuity equation for probability density \u03c1 and a Hamilton\u2013Jacobi equation for lifted phase \u03c6, eliminating the imaginary unit entirely.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-phase-ambiguity",
+        "core-unwrap-rule"
+      ],
+      "version": 1,
+      "metadata_hash": "b32921239a38f3079ae8e6c55f9563342b539beec35633bdf9a9d5759e231bf9"
+    },
+    {
+      "token_id": "famous-aharonov-bohm",
+      "name": "Aharonov\u2013Bohm Effect",
+      "equation_latex": "\\theta_R[\\gamma]=\\mathrm{unwrap}\\!\\Big(\\frac{q}{\\hbar}\\oint_\\gamma \\mathbf A\\cdot d\\mathbf\\ell;\\;\\theta_{\\rm ref},\\pi_a\\Big)=\\frac{q}{\\hbar}\\int_S \\mathbf B\\cdot d\\mathbf S + 2\\pi_a w",
+      "equation_hash": "305e553474133239b10f097aeeab09e3676be0674e78d89ba3d37458e06ffaba",
+      "score": 60,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 10,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 25,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The Aharonov\u2013Bohm phase expressed through Phase-Lift with explicit winding-number sectors. The unwrap operator removes branch-cut ambiguity and tracks accumulated windings w \u2208 \u2124 around the solenoid.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity"
+      ],
+      "version": 1,
+      "metadata_hash": "180b24445e435563538e3244b10d0d39b9ae81e187930fff66287938a5a39c62"
+    },
+    {
+      "token_id": "famous-berry-phase",
+      "name": "Berry Phase",
+      "equation_latex": "\\theta_R[\\gamma]=\\sum_k \\mathrm{unwrap}\\!\\big(\\Arg\\langle\\psi_{k+1}|\\psi_k\\rangle;\\;\\theta_{\\rm ref},\\pi_a\\big)",
+      "equation_hash": "02c6aafa23c27da84f48dee081e4daaa384be9ab83ea713ef07da5370257c76e",
+      "score": 54,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 24,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Berry's geometric phase computed as a discrete sum of unwrapped overlap arguments along a closed parameter path. Phase-Lift eliminates the multivalued Arg ambiguity at each step.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-path-continuity"
+      ],
+      "version": 1,
+      "metadata_hash": "34b61d13b2c71971582a2c98a2f6749d989bf3415640677aaed1a74e061042de"
+    },
+    {
+      "token_id": "famous-josephson",
+      "name": "Josephson Relations",
+      "equation_latex": "I=I_c\\sin\\!\\Big(\\frac{\\pi}{\\pi_a}\\theta_R\\Big),\\quad \\frac{d}{dt}\\Big(\\frac{\\pi}{\\pi_a}\\theta_R\\Big)=\\frac{2e}{\\hbar}V",
+      "equation_hash": "28310b8b01e83e8a41ece13babaeb9e015ba4b7582291de16cce9a7918da5c16",
+      "score": 53,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 22,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The DC and AC Josephson relations with adaptive-\u03c0 scaling. The standard sin(\u03c6) current\u2013phase relation becomes sin(\u03c0\u03b8_R/\u03c0_a), where \u03c0_a is an adaptive period parameter that recovers the classical limit when \u03c0_a \u2192 \u03c0.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-pi-a",
+        "core-pi-a-dynamics",
+        "core-phase-lift"
+      ],
+      "version": 1,
+      "metadata_hash": "c57f3fed377286457c80150fdb3b539ee5200cc004ffc10b085af2044580fae1"
+    },
+    {
+      "token_id": "famous-maxwell",
+      "name": "Maxwell's Equations",
+      "equation_latex": "\\mathbf E=-\\nabla V-\\partial_t\\mathbf A,\\quad \\mathbf B=\\nabla\\times\\mathbf A,\\quad \\theta_R=\\mathrm{unwrap}\\!\\Big(\\frac{q}{\\hbar}\\oint\\mathbf A\\cdot d\\mathbf\\ell;\\;\\theta_{\\rm ref},\\pi_a\\Big)",
+      "equation_hash": "23b2bb04f0ad72ae8ff459cb9b30b0a727ff4fc191d529ea29d0cdcb6310025d",
+      "score": 56,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 24,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Maxwell's field equations expressed through gauge potentials (A, V) with Phase-Lift applied to the electromagnetic phase. The winding structure of A around closed loops is tracked explicitly via the unwrap operator, connecting classical electrodynamics to the quantum phase framework.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity",
+        "core-phase-lifted-stokes"
+      ],
+      "version": 1,
+      "metadata_hash": "3b6423dec5b2e49ef5954f8278914f510431d779f08b6d00640de0f3341385e5"
+    },
+    {
+      "token_id": "famous-dirac",
+      "name": "Dirac Equation",
+      "equation_latex": "(i\\gamma^\\mu\\partial_\\mu - m)\\psi=0,\\quad \\psi^{PL}=\\sqrt{\\rho}\\,R\\,e^{i\\phi},\\;\\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
+      "equation_hash": "ec960dcca00afa05b9812ee32487d75281266fa21c27a2db4fba4acb02d02f00",
+      "score": 49,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 23,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The Dirac equation for a free spin-\u00bd particle with the four-component spinor decomposed into amplitude \u221a\u03c1, an SU(2) rotation R, and a Phase-Lifted scalar phase \u03c6. This separates the spin degree of freedom from the Phase-Lift winding structure.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-phase-ambiguity",
+        "core-pi-a"
+      ],
+      "version": 1,
+      "metadata_hash": "20532cca48fa417af4835e1126612b41ca83e994ab0d416a6ad6b50f8fed6a98"
+    },
+    {
+      "token_id": "famous-euler-lagrange",
+      "name": "Euler\u2013Lagrange Equation",
+      "equation_latex": "\\frac{\\partial \\mathcal L_{PL}}{\\partial \\theta_R}-\\frac{d}{dt}\\frac{\\partial \\mathcal L_{PL}}{\\partial \\dot\\theta_R}=0,\\quad \\mathcal L_{PL}=\\mathcal L(\\rho,\\theta_R,\\pi_a,\\dot\\rho,\\dot\\theta_R,\\dot\\pi_a)",
+      "equation_hash": "69eb041d36633488eead805fd49b873db54a3da92be2fd977effbf7d035dd802",
+      "score": 56,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 20,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The Euler\u2013Lagrange equation applied to a Phase-Lift Lagrangian where the generalized coordinates are (\u03c1, \u03b8_R, \u03c0_a). Stationarity of the Phase-Lift action yields the equations of motion for the lifted phase field and the adaptive period.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a-dynamics",
+        "core-arp-ode"
+      ],
+      "version": 1,
+      "metadata_hash": "64d61e30c25a9e70e6af1522c07147dc1ac550e61f67ef70ce99b4e99300fcca"
+    },
+    {
+      "token_id": "famous-navier-stokes",
+      "name": "Navier\u2013Stokes (Vorticity Form)",
+      "equation_latex": "\\partial_t\\boldsymbol\\omega+(\\mathbf v\\cdot\\nabla)\\boldsymbol\\omega=(\\boldsymbol\\omega\\cdot\\nabla)\\mathbf v+\\nu\\nabla^2\\boldsymbol\\omega,\\quad w=\\frac{1}{2\\pi_a}\\oint\\mathbf v\\cdot d\\mathbf\\ell",
+      "equation_hash": "29e0071634e429d71b4dc160c0b65ddda794aa2716915e04a557293aa4f7ba09",
+      "score": 49,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 22,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The vorticity transport equation from Navier\u2013Stokes with Phase-Lift applied to circulation integrals. The integer winding number w counts vortex sheet crossings using the adaptive period \u03c0_a, connecting fluid topology to the phase framework.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-winding-parity",
+        "core-phase-lifted-stokes",
+        "core-curvature-salience"
+      ],
+      "version": 1,
+      "metadata_hash": "47820b1e7f43f6cfd12d6089c5e01fdc543620a713d95dcdf0dd7923b9c54552"
+    },
+    {
+      "token_id": "famous-path-integral",
+      "name": "Feynman Path Integral",
+      "equation_latex": "Z=\\sum_{w\\in\\mathbb Z}\\int \\mathcal D\\rho\\,\\mathcal D\\theta_R\\,\\mathcal D\\pi_a\\; e^{\\frac{i}{\\hbar}S_{PL}[\\rho,\\theta_R,\\pi_a]}\\;\\delta\\!\\big(\\theta_R(T)-\\theta_R(0)-2\\pi_a w\\big)",
+      "equation_hash": "085f4007879bae909dde21bedbd260e7442cf77f71692f665ef71bbb77237d40",
+      "score": 49,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 23,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Feynman's path integral reformulated with Phase-Lift coordinates. The sum over winding sectors w replaces the standard sum over paths, and the delta function enforces quantized phase returns. Each sector contributes independently.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-winding-parity",
+        "core-phase-ambiguity"
+      ],
+      "version": 1,
+      "metadata_hash": "9395e7f87d1863089d2326f443536254e650a2be00eda1dd7b0573e3c9c6464c"
+    },
+    {
+      "token_id": "famous-holonomy",
+      "name": "U(N) Gauge Holonomy",
+      "equation_latex": "U(\\gamma)=e^{i\\varphi}V,\\; V\\in SU(N),\\quad \\theta_R=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a),\\quad w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
+      "equation_hash": "97d0c661b61349202e4e6c5de9307d8918829f5d377464fe99046c92202a0171",
+      "score": 49,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 21,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "A U(N) holonomy (parallel transport around a loop \u03b3) factored into an SU(N) part V and a U(1) determinant phase. Phase-Lift tracks the determinant phase through unwrapping, yielding an integer winding number w_det that classifies the topological sector.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity"
+      ],
+      "version": 1,
+      "metadata_hash": "e553885f27c9cebd32051489e8831f727a2345dec0fcbc1b5b9759d704f991de"
+    },
+    {
+      "token_id": "famous-klein-gordon",
+      "name": "Klein\u2013Gordon Equation",
+      "equation_latex": "\\Big(\\Box+\\frac{m^2c^2}{\\hbar^2}\\Big)\\psi=0,\\quad \\psi^{PL}=\\sqrt{\\rho}\\,e^{i\\phi},\\;\\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
+      "equation_hash": "1582f75bd5522248f2f14bdfbdd84e74980efa6f58ac5585a2419537394a8d72",
+      "score": 49,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 20,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "The Klein\u2013Gordon equation for a relativistic scalar field, with the complex field \u03c8 decomposed into amplitude \u221a\u03c1 and Phase-Lifted scalar phase \u03c6 = \u03c0\u03b8_R/\u03c0_a. This separates amplitude dynamics from phase winding in a Lorentz-covariant setting.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a",
+        "core-phase-ambiguity"
+      ],
+      "version": 1,
+      "metadata_hash": "d524d69f0ad90bffa3eb0e6bbba98a8f60f9700aeea3a6c3e1044fba64c6599f"
+    },
+    {
+      "token_id": "famous-einstein-field",
+      "name": "Einstein Field Equations",
+      "equation_latex": "G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=\\frac{8\\pi G}{c^4}T_{\\mu\\nu},\\quad \\tilde g_{\\mu\\nu}=e^{2\\sigma(\\pi_a)}g_{\\mu\\nu},\\;\\sigma(\\pi_a)=\\ln\\!\\Big(\\frac{\\pi_a}{\\pi}\\Big)",
+      "equation_hash": "91fe07d587409b9b5897e1306481364435e11380a61f73ac365bce39b227ff1c",
+      "score": 43,
+      "scores": {
+        "tractability": 13,
+        "plausibility": 13,
+        "validation": 4,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 25,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Einstein's field equations with a Phase-Lift conformal rescaling of the metric. The conformal factor \u03c3(\u03c0_a) is determined by the adaptive period, linking spacetime curvature to the phase framework. When \u03c0_a \u2192 \u03c0, the standard metric is recovered.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-conformal-metric",
+        "core-pi-a",
+        "core-adaptive-arc-length"
+      ],
+      "version": 1,
+      "metadata_hash": "fccce705df5ef583dcb95e339a001248f4521bed05a5e91439a5b396865073db"
+    },
+    {
+      "token_id": "famous-fourier-heat",
+      "name": "Fourier Heat Equation",
+      "equation_latex": "\\partial_t u=\\alpha\\nabla^2 u + \\kappa(x,t)\\,u,\\quad \\kappa=\\lambda\\,\\mathcal K[\\theta_R]",
+      "equation_hash": "fed194fa4d3ef2a558548d67f71d764e56dc5e6def943698b3967487a9786624",
+      "score": 56,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 18,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Fourier's heat equation augmented with a curvature-salience source term. The coefficient \u03ba is derived from the Phase-Lift curvature K[\u03b8_R], making regions of high phase curvature act as local heat sources. This models phase-aware diffusion.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-curvature-salience",
+        "core-phase-lift",
+        "core-reinforce-decay-memory"
+      ],
+      "version": 1,
+      "metadata_hash": "a401a9d91eca2b90cf060f9b09b245832ce7e1511338f6600cb7b371066f0519"
+    },
+    {
+      "token_id": "famous-noether",
+      "name": "Noether's Theorem",
+      "equation_latex": "\\partial_\\mu j^\\mu_{PL}=0,\\quad j^\\mu_{PL}=\\frac{\\partial\\mathcal L_{PL}}{\\partial(\\partial_\\mu\\theta_R)}\\,\\delta\\theta_R+\\frac{\\partial\\mathcal L_{PL}}{\\partial(\\partial_\\mu\\pi_a)}\\,\\delta\\pi_a",
+      "equation_hash": "a0cf0fabf2235ba27c6f93cd229a0fdfbd95edc611eeccc1168245ca21e28cd7",
+      "score": 54,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "score": 21,
+        "date": "famous"
+      },
+      "source": "famous-adjusted",
+      "date": "famous",
+      "description": "Noether's theorem applied to the Phase-Lift Lagrangian: continuous symmetries of L_PL yield conserved currents j^\u03bc_PL. The lifted phase \u03b8_R and adaptive period \u03c0_a each contribute to the conserved current when the action is invariant under their transformations.",
+      "units": "OK",
+      "theory": "PASS",
+      "tier": "famous",
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a",
+        "core-arp-ode"
+      ],
+      "version": 1,
+      "metadata_hash": "a3f7e6f1c7c4fc13bef2c759c94fc33ff514698ba1bc283395f27ac85dda0f9e"
     }
   ]
 }

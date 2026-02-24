@@ -256,6 +256,8 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                         "animation": e.get("animation", "planned"),
                         "image": e.get("image", "planned"),
                         "assumptions": e.get("assumptions", []),
+                        "subtitle": str(e.get("subtitle", "")).strip(),
+                        "coreRefs": e.get("coreRefs", []),
                     }
                 )
             if out:
@@ -359,6 +361,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
     famous_cards: list[str] = []
     for idx, (e, total_score, rb) in enumerate(scored_entries, start=1):
         title = e.get("name", "") or f"Famous Equation {idx}"
+        subtitle = e.get("subtitle", "")
         equation_expr = e.get("equationLatex", "") or "(pending)"
         desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
         definitions = e.get("definitions", "") or ""
@@ -366,14 +369,17 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         units = (e.get("units", "WARN") or "WARN").upper()
         theory = (e.get("theory", "PASS-WITH-ASSUMPTIONS") or "PASS-WITH-ASSUMPTIONS").upper()
         assumptions = e.get("assumptions", []) or []
+        core_refs = e.get("coreRefs", []) or []
         if not isinstance(assumptions, list):
             assumptions = [str(assumptions)]
         assumptions_html = "".join(f"<li>{_esc(a)}</li>" for a in assumptions if str(a).strip())
+        core_refs_html = ", ".join(f"<a href='core.html#{_esc(r)}'>{_esc(r)}</a>" for r in core_refs) if core_refs else "—"
         theory_css = "warn"
         if theory == "PASS":
             theory_css = "good"
         elif theory == "FAIL":
             theory_css = "bad"
+        subtitle_html = f"<div class='card__subtitle muted'>{_esc(subtitle)}</div>" if subtitle else ""
 
         famous_cards.append(
             f"""
@@ -382,6 +388,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>{_esc(title)}</h2>
+      {subtitle_html}
       <div class='card__meta'>
         <span class='badge badge--score'>{_esc(f'Score {total_score}')}</span>
         <span class='badge badge--score'>Famous</span>
@@ -407,6 +414,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
       <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
+      <div class='kv'><div class='k'>Core refs</div><div class='v'>{core_refs_html}</div></div>
     </div>
   </div>
 </section>
