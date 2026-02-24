@@ -1,38 +1,109 @@
-# AGENTS.md (TopEquations)
+# AGENTS.md — Equation Lab ∑
 
-This repository is the canonical storage for equation rankings and submissions.
+This is the TopEquations workspace. Canonical storage for equation rankings, submissions, scoring, and blockchain-backed certificates.
 
-## Daily Equation Workflow
-1. Pick a source equation from `C:\Users\RDM3D\.openclaw\workspace\memory\discovery-matrix.md`.
-2. Derive at least one new equation/transformation.
-3. Score and validate (`units`, `theory`) and store structured results in `data/equations.json`.
-4. Write daily entry to `submissions/YYYY-MM-DD.md`.
-5. Regenerate `leaderboard.md` by running:
-   - `python tools/generate_leaderboard.py`
-6. Ensure leaderboard sections include:
-   - Current Top Equations (All-Time)
-   - Newest Top-Ranked Equations (This Month)
-   - All Equations Since 2025 (Registry)
-7. Include animation/image links or `planned` status with each ranked equation.
-8. Do not use separate animation/image ranking columns.
+## Every Session
 
-## OpenClaw Reliable Workflow (Discord/Slack Intake)
+Before doing anything else:
 
-Use this flow to avoid no-op responses:
+1. Read `SOUL.md` — this is who you are
+2. Read `USER.md` — this is who you're helping
+3. Read `TOOLS.md` — paths and commands for this workspace
 
-1. Intake
-   - Parse structured submission fields from chat (name, equation, description, assumptions, source, submitter).
-   - Run `python tools/submit_equation.py ...` and return `submissionId`.
-2. Scoring
-   - Run `python tools/score_submission.py --submission-id <id>`.
-   - Status becomes `ready` (>= threshold) or `needs-review`.
-3. Promotion
-   - Run `python tools/promote_submission.py --submission-id <id> --from-review`.
-4. Site refresh
-   - Run `python tools/generate_leaderboard.py` and `python tools/build_site.py`.
-5. Chain provenance
-   - Run `python tools/export_equation_certificates.py`.
-   - Run `python tools/register_equation_certificates.py --node-url <url> --signer-file <path> --mine`.
+Don't ask permission. Just do it.
 
-One-command orchestrator:
-- `python tools/openclaw_submission_pipeline.py --submission-id <id> --score --promote --publish-chain --node-url http://127.0.0.1:5000 --signer-file D:/coins2/Adaptive-Curvature-Coin/wallet.json`
+## Memory
+
+- Write daily notes to `submissions/YYYY-MM-DD.md`
+- Track equations in `data/equations.json` and submissions in `data/submissions.json`
+- If you learn something, update AGENTS.md or TOOLS.md so future-you knows
+
+## Safety
+
+- Local-repo-first behavior. No destructive operations.
+- Do not delete data files. If something is wrong, fix it in place.
+- `git` commits are safe — use them freely.
+
+## Submission Pipeline (Intake → Score → Promote → Publish)
+
+This is the primary workflow. Every equation flows through these 5 steps.
+
+### Step 1: Intake
+
+Parse submission fields and create the record:
+
+```powershell
+python tools/submit_equation.py --name "Equation Name" --equation "F = ma" --description "Newton's second law" --source "Principia" --submitter "Ryan" --assumption "Classical regime" --evidence "Experimental validation"
+```
+
+Returns a `submissionId` like `sub-2026-02-24-equation-name`.
+
+### Step 2: Score
+
+Run evidence-aware heuristic scoring:
+
+```powershell
+python tools/score_submission.py --submission-id <id>
+```
+
+Score >= 68 → status becomes `ready`. Below → `needs-review`.
+
+### Step 3: Promote
+
+Move scored submission into the ranked equations list:
+
+```powershell
+python tools/promote_submission.py --submission-id <id> --from-review
+```
+
+### Step 4: Site Refresh
+
+Rebuild leaderboard and website:
+
+```powershell
+python tools/generate_leaderboard.py
+python tools/build_site.py
+```
+
+### Step 5: Chain Provenance
+
+Publish certificates to blockchain:
+
+```powershell
+python tools/export_equation_certificates.py
+python tools/register_equation_certificates.py --node-url http://127.0.0.1:5000 --signer-file D:/coins2/Adaptive-Curvature-Coin/wallet.json --mine
+```
+
+### One-Command Orchestrator
+
+Run all steps at once:
+
+```powershell
+python tools/openclaw_submission_pipeline.py --submission-id <id> --score --promote --publish-chain --node-url http://127.0.0.1:5000 --signer-file D:/coins2/Adaptive-Curvature-Coin/wallet.json
+```
+
+### Rescore + Sync
+
+Rescore all submissions (including promoted) and sync back to equations.json:
+
+```powershell
+python tools/score_submission.py --include-promoted --sync-equations
+```
+
+## Daily Equation Derivation
+
+When working proactively (heartbeat or cron):
+
+1. Pick a source equation from the discovery matrix or `data/equations.json`
+2. Derive at least one new equation/transformation with explicit assumptions
+3. Run the submission pipeline (Steps 1-4 above)
+4. Request unit validation from the `units` agent if dimensional expressions are involved
+5. Request theory validation from the `theory` agent for novel derivations
+6. Log results in `submissions/YYYY-MM-DD.md`
+
+## Data Files
+
+- `data/equations.json` — ranked equations (display threshold: score >= 68)
+- `data/submissions.json` — all submissions with review status and scores
+- `submissions/YYYY-MM-DD.md` — daily submission logs
+- `docs/` — GitHub Pages site (generated by build_site.py)

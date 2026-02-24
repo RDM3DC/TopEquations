@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-24T06:28:40.797538+00:00",
+  "generated_at": "2026-02-24T21:58:49.058989+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "1f1b855e1b86039690d56175bb56b25870094ca07cd161caebff09633e413ed6",
-  "count": 42,
+  "source_sha256": "0479c03066a34f9074da4ec1698720432a279979dc692bc08fc7c4324bcc7ad2",
+  "count": 45,
   "entries": [
     {
       "token_id": "eq-arp-redshift",
@@ -1162,6 +1162,90 @@
       },
       "version": 1,
       "metadata_hash": "e51badc0fa9e215891e3f361ad2c65f55f6fd36560e68474922280d149bf334f"
+    },
+    {
+      "token_id": "eq-mesh-synced-certificate-consistency",
+      "name": "Mesh-Synced Certificate Consistency",
+      "equation_latex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
+      "equation_hash": "cbb1551f6c19908502202c4e54bf5bf86988311eb01cf189a033f5207dd7877f",
+      "score": 57,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 9,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 18,
+        "date": "2026-02-24"
+      },
+      "source": "manual setup",
+      "date": "2026-02-24",
+      "description": "Chain-level consistency metric for equation certificates across synchronized nodes.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "f60cddd96fd6b9c4777640407cc5dcb18fe720f999522b42cfacbc2d248cddd9"
+    },
+    {
+      "token_id": "eq-adaptive-entropy-production-rate-aepr",
+      "name": "Adaptive Entropy Production Rate (AEPR)",
+      "equation_latex": "dS/dt = sigma_S * sum_ij(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
+      "equation_hash": "193614a6170590243f029e90ec957a1dca1d427b9a0558581cc6f922420e61a6",
+      "score": 51,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "Slack DM 2026-02-24",
+      "date": "2026-02-24",
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 \u2014 Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 \u2014 Thermal relaxation (entropy decays toward baseline S_0), Term 3 \u2014 Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network).",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "3d340822f41c5f94cf7f87ca8fcba8f4caf04c0ef4e39e63ee2e29d15536c90f"
+    },
+    {
+      "token_id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
+      "name": "Adaptive Entropy Production Rate (AEPR)",
+      "equation_latex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
+      "score": 70,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "Slack DM 2026-02-24",
+      "date": "2026-02-24",
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 \u2014 Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 \u2014 Thermal relaxation (entropy decays toward baseline S_0), Term 3 \u2014 Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "9feac3dce0552d5baf099eff87127cf01896dd02c405918f640957b3b6a9bd7d"
     }
   ]
 }

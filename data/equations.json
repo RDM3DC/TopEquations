@@ -1481,6 +1481,77 @@
           "date": "2026-02-24"
         }
       }
+    },
+    {
+      "id": "eq-adaptive-entropy-production-rate-aepr",
+      "name": "Adaptive Entropy Production Rate (AEPR)",
+      "firstSeen": "2026-02-24",
+      "source": "Slack DM 2026-02-24",
+      "score": 51,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network).",
+      "assumptions": [],
+      "date": "2026-02-24",
+      "equationLatex": "dS/dt = sigma_S * sum_ij(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
+      "tags": {
+        "novelty": {
+          "score": 16,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
+      "name": "Adaptive Entropy Production Rate (AEPR)",
+      "firstSeen": "2026-02-24",
+      "source": "Slack DM 2026-02-24",
+      "score": 70,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 15,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "image": {
+        "status": "in-progress",
+        "path": ""
+      },
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
+      "assumptions": [
+        "G_ij and I_ij follow EGATL conductance update rules",
+        "S_0 is a measurable steady-state entropy for the network",
+        "r_b (parity-flip birth rate) is bounded and non-negative",
+        "sigma_S, kappa_S, xi_S are positive material constants"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "tags": {
+        "novelty": {
+          "score": 16,
+          "date": "2026-02-24"
+        }
+      }
     }
   ]
 }

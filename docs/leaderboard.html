@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602240331' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602241359' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602240331'></script>
+  <script defer src='./assets/app.js?v=202602241359'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -715,8 +715,38 @@
 </section>
 
 
-<section class='card' data-rank='22' data-score='69' data-haslatex='1'>
+<section class='card' data-rank='22' data-score='70' data-haslatex='1'>
   <div class='card__rank'>#22</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 70</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>Slack DM 2026-02-24</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G_ij and I_ij follow EGATL conductance update rules</li><li>S_0 is a measurable steady-state entropy for the network</li><li>r_b (parity-flip birth rate) is bounded and non-negative</li><li>sigma_S, kappa_S, xi_S are positive material constants</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-adaptive-entropy-production-rate-aepr-e-aepr-2'>view on chain record</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='23' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -745,8 +775,8 @@
 </section>
 
 
-<section class='card' data-rank='23' data-score='69' data-haslatex='1'>
-  <div class='card__rank'>#23</div>
+<section class='card' data-rank='24' data-score='69' data-haslatex='1'>
+  <div class='card__rank'>#24</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Event Stimulus (phase-jump indicator)</h2>
@@ -780,7 +810,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 03:31</strong></div>
+      <div>Last built: <strong>2026-02-24 13:59</strong></div>
     </footer>
   </main>
 </body>
