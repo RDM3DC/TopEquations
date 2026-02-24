@@ -129,6 +129,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./core.html'>Core</a>
         <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./certificates.html'>Certificates</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
@@ -510,6 +511,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         anim = _artifact(e.get("animation"))
         img = _artifact(e.get("image"))
         date = e.get("date", "")
+        eq_id = (e.get("id") or "").strip()
 
         has_latex = "1" if (e.get("equationLatex") or "").strip() else "0"
         # Optional educational metadata
@@ -532,6 +534,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
             extra += f"<div class='kv'><div class='k'>Derivation bridge</div><div class='v'>{_esc(derivation)}</div></div>"
         if assumptions:
             extra += f"<div class='kv'><div class='k'>Assumptions</div><div class='v'>{_ul([str(x) for x in assumptions])}</div></div>"
+        if eq_id:
+          extra += f"<div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>view on chain record</a></div></div>"
 
         cards.append(
             f"""
@@ -709,6 +713,86 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
     (docs / "harvest.html").write_text(_page("TopEquations — Harvest", body, updated), encoding="utf-8")
 
 
+def build_certificates(repo_root: Path, docs: Path) -> None:
+    src_cert = repo_root / "data" / "certificates" / "equation_certificates.json"
+    src_receipt = repo_root / "data" / "certificates" / "chain_publish_receipt.json"
+    cert = _load_json_safe(src_cert, {"entries": []})
+    receipt = _load_json_safe(src_receipt, {})
+
+    dst_dir = docs / "data" / "certificates"
+    dst_dir.mkdir(parents=True, exist_ok=True)
+    if src_cert.exists():
+        (dst_dir / "equation_certificates.json").write_text(src_cert.read_text(encoding="utf-8"), encoding="utf-8")
+    if src_receipt.exists():
+        (dst_dir / "chain_publish_receipt.json").write_text(src_receipt.read_text(encoding="utf-8"), encoding="utf-8")
+
+    rows: list[str] = []
+    for e in cert.get("entries", []):
+        eq_id = str(e.get("token_id", "")).strip()
+        if not eq_id:
+            continue
+        rows.append(
+            f"""
+<tr id='{_esc(eq_id)}'>
+  <td><code>{_esc(eq_id)}</code></td>
+  <td>{_esc(e.get('name', ''))}</td>
+  <td>{_esc(e.get('score', ''))}</td>
+  <td><code>{_esc(str(e.get('metadata_hash', ''))[:20])}…</code></td>
+  <td><code>{_esc(str(e.get('equation_hash', ''))[:20])}…</code></td>
+</tr>
+"""
+        )
+
+    published = receipt.get("published_at", "-")
+    count = receipt.get("count", cert.get("count", 0))
+    node_url = receipt.get("node_url", "-")
+
+    body = f"""
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Equation Certificates</h1>
+    <p>Signed equation records used for chain provenance and version tracking.</p>
+  </div>
+</div>
+
+<div class='panel'>
+  <div><strong>Published at:</strong> {_esc(published)}</div>
+  <div><strong>Node endpoint:</strong> <code>{_esc(node_url)}</code></div>
+  <div><strong>Certificates:</strong> {_esc(count)}</div>
+  <div class='muted' style='margin-top:8px'>Data files: <code>data/certificates/equation_certificates.json</code> and <code>data/certificates/chain_publish_receipt.json</code></div>
+</div>
+
+<div class='panel'>
+  <h2>Certificate Index</h2>
+  <div style='overflow:auto'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Equation ID</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Metadata hash</th>
+        <th>Equation hash</th>
+      </tr>
+    </thead>
+    <tbody>
+      {''.join(rows)}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+  </section>
+</div>
+"""
+
+    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    (docs / "certificates.html").write_text(_page("TopEquations — Certificates", body, updated), encoding="utf-8")
+
+
 def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     docs = repo_root / "docs"
@@ -718,6 +802,7 @@ def main() -> None:
     build_core(repo_root, docs)
     build_famous(repo_root, docs)
     build_leaderboard(repo_root, docs)
+    build_certificates(repo_root, docs)
     build_harvest(repo_root, docs)
 
     print("Built docs/*.html")

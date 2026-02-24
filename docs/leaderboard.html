@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602222008' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602240220' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602222008'></script>
+  <script defer src='./assets/app.js?v=202602240220'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -42,6 +42,7 @@
         <a href='./core.html'>Core</a>
         <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./certificates.html'>Certificates</a>
         <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
@@ -105,7 +106,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Canonical entropy-gated Phase-Lifted ARP conductance update. Single traceable boxed equation with 4 supporting definitions (all from Core + #3/#10). Entropy dynamics are 2nd-law safe; BZ ruler self-consistency feeds a uniform m_eff into QWZ preserving the single Chern jump.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt} = \sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right) + \kappa\sum_{ij}|\Delta w_{ij}(t)| - \gamma\,(S - S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2–4): \theta_{R,ij}(k,t) = \mathrm{unwrap}(\arg I_{ij}(k,t);\;\theta_{R,ij}(k,t-\Delta t),\;\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\in\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \alpha_G(S) = \alpha_0/[1+\exp((S-S_c)/\Delta S)],\quad \mu_G(S) = \mu_0\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \varepsilon_{\rm eff}(t) = \sqrt{1-(1/(\pi\langle 1/\pi_a\rangle_{\rm BZ}))^2},\quad m_{\rm eff} = m_0/\sqrt{1-\varepsilon_{\rm eff}^2}. Feed m_0\mapsto m_{\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \varepsilon_c=\sqrt{3}/2). (4) Slip entropy: |\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\pi_a(k,t) from Core Eq. 10; weights in BZ average are uniform or occupation (user choice).</li><li>Chern number via FHS lattice method; Phase-Lift supplies continuous \theta_R history and slip detection only.</li><li>Entropy production uses Re(1/\tilde G) ≥ 0 for passive response (2nd-law safe).</li><li>\varepsilon_{\mathrm{eff}} inversion assumes the cosine form \pi_a=\pi(1+\varepsilon\cos\lambda) and |\varepsilon_{\mathrm{eff}}|&lt;1.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt} = \sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right) + \kappa\sum_{ij}|\Delta w_{ij}(t)| - \gamma\,(S - S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2–4): \theta_{R,ij}(k,t) = \mathrm{unwrap}(\arg I_{ij}(k,t);\;\theta_{R,ij}(k,t-\Delta t),\;\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\in\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \alpha_G(S) = \alpha_0/[1+\exp((S-S_c)/\Delta S)],\quad \mu_G(S) = \mu_0\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \varepsilon_{\rm eff}(t) = \sqrt{1-(1/(\pi\langle 1/\pi_a\rangle_{\rm BZ}))^2},\quad m_{\rm eff} = m_0/\sqrt{1-\varepsilon_{\rm eff}^2}. Feed m_0\mapsto m_{\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \varepsilon_c=\sqrt{3}/2). (4) Slip entropy: |\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\pi_a(k,t) from Core Eq. 10; weights in BZ average are uniform or occupation (user choice).</li><li>Chern number via FHS lattice method; Phase-Lift supplies continuous \theta_R history and slip detection only.</li><li>Entropy production uses Re(1/\tilde G) ≥ 0 for passive response (2nd-law safe).</li><li>\varepsilon_{\mathrm{eff}} inversion assumes the cosine form \pi_a=\pi(1+\varepsilon\cos\lambda) and |\varepsilon_{\mathrm{eff}}|&lt;1.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-bz-phase-lifted-complex-conductance-entropy-gated'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZPhaseLiftConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -135,7 +136,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Unwrapped phase difference φ(t) tries to run at detuning Δ, but adaptive coupling λG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single junction / single mode approximation.</li><li>λG is the effective adaptive coupling strength (positive, ARP-governed).</li><li>Detuning Δ is constant or slowly varying compared to phase dynamics.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single junction / single mode approximation.</li><li>λG is the effective adaptive coupling strength (positive, ARP-governed).</li><li>Detuning Δ is constant or slowly varying compared to phase dynamics.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-adler-rsj-phase'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/APGP0CoreModel.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -165,7 +166,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>The canonical 2D Chern insulator (Qi–Wu–Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two-band model on square lattice with nearest-neighbor hopping.</li><li>Topological phases at C=±1 for −2&lt;u&lt;0 and 0&lt;u&lt;2; trivial otherwise.</li><li>Real-space version uses tight-binding Hamiltonian with same band structure.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two-band model on square lattice with nearest-neighbor hopping.</li><li>Topological phases at C=±1 for −2&lt;u&lt;0 and 0&lt;u&lt;2; trivial otherwise.</li><li>Real-space version uses tight-binding Hamiltonian with same band structure.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-qwz-hamiltonian'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptiveQWZReEntrance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -195,7 +196,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Conductance/coupling G increases with activity A(φ,G) at gain α, and relaxes toward baseline G₀ at rate μ. The workhorse ARP law in its most general continuous-time form.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).</li><li>Single relaxation timescale μ⁻¹ dominates.</li><li>G₀ &gt; 0 is a stable equilibrium baseline.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).</li><li>Single relaxation timescale μ⁻¹ dominates.</li><li>G₀ &gt; 0 is a stable equilibrium baseline.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-arp-reinforce-decay'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq1ARPCoreLaw.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -225,7 +226,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-redshift'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq2ARPRedshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -255,7 +256,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>The same phase mismatch that produces restoring torque (sinφ) also teaches the coupling. This tight self-referential closure is what makes parity locking possible — the key novel ingredient of Paper I.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity proportional to both G and |sinφ| (multiplicative coupling).</li><li>No external activity source — entirely self-referential.</li><li>Valid for single-mode / single-junction systems.</li></ul></div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity proportional to both G and |sinφ| (multiplicative coupling).</li><li>No external activity source — entirely self-referential.</li><li>Valid for single-mode / single-junction systems.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-activity-closure'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -285,7 +286,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>When coupling can&#x27;t lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-slip-asymptote'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -315,7 +316,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough (&#x27;parity locking&#x27;). This is the primary testable quantity for the qubit Berry-loop experiment.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>K is large enough for the ratio to be statistically meaningful.</li><li>Parity flips are detected correctly (no double-counting at coincident singularities).</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>K is large enough for the ratio to be statistically meaningful.</li><li>Parity flips are detected correctly (no double-counting at coincident singularities).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-parity-flip-rate'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/ParityLockingBifurcation.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -345,7 +346,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>BZ-average removes k-oscillation: &lt;(1+ε cosλ)^{-1}&gt; = (1-ε^2)^{-1/2}, giving a uniform m_eff(ε) and a single Chern jump at ε_c (for m0=-1: ε_c=√3/2).</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-qwz-bz-avg-ruler-mass'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZAveragedRulerQWZ.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -375,7 +376,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>The adaptive-π conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or ±2, the Chern phase can switch — without external tuning, purely via ARP reinforcement + memory. This is Paper I&#x27;s central claim: geometry drives topology autonomously.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.</li><li>β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).</li><li>Entropy S_edge is the local entropy proxy from Eq. 8.</li></ul></div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.</li><li>β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).</li><li>Entropy S_edge is the local entropy proxy from Eq. 8.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-adaptive-geometry-mass'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PRRootExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -405,7 +406,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes &#x27;almost locked&#x27; with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>White noise approximation valid (correlation time ≪ phase dynamics timescale).</li><li>D &gt; 0 but small enough that lock survives (D ≪ λG).</li><li>Stratonovich vs Itô distinction negligible for additive noise.</li></ul></div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>White noise approximation valid (correlation time ≪ phase dynamics timescale).</li><li>D &gt; 0 but small enough that lock survives (D ≪ λG).</li><li>Stratonovich vs Itô distinction negligible for additive noise.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-langevin-noise'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/HysteresisMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='./assets/langevin_parity_lock.png' target='_blank' rel='noopener'>link</a></div></div>
@@ -435,7 +436,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Core AHC innovation: clip the residual to adaptive bounds ±πₐ. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>π_{a,k-1} is positive and represents a trusted local phase step-limit.</li><li>Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>π_{a,k-1} is positive and represents a trusted local phase step-limit.</li><li>Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-step-limit'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-step-limit.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -465,7 +466,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-qwz-pia-modulated-mass'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PiAModulatedQWZMass.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -495,7 +496,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-running-winding'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/WindingParityExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -525,7 +526,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-phase-critical-collapse'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq3PhaseCoupledThreshold.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -555,7 +556,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Discrete version of πₐ dynamics for the AHC loop: widens bound after events (α_π S_k term), relaxes toward π₀ otherwise.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.</li><li>π_0 is a stable rest value (typically π).</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.</li><li>π_0 is a stable rest value (typically π).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-pi-a-update'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-pi-a-update.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -585,7 +586,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-chern-marker-bianco-resta'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -615,7 +616,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.</div></div>
-      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = z_h\gamma e^{-\gamma t}\left(1-\epsilon\cos(\omega t+\phi)\right) + z_h\left(1-e^{-\gamma t}\right)\epsilon\omega\sin(\omega t+\phi)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\gamma t}). Modulate by bounded factor m(t)=1-\epsilon cos(\omega t+\phi). For 0&lt;=\epsilon&lt;1, m(t) in [1-\epsilon,1+\epsilon], so z(t)=z_env(t)m(t)&gt;=0 over the full interval.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single effective horizon scale z_h over the modeled interval.</li><li>Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.</li><li>Bounded modulation 0&lt;=epsilon&lt;1 ensures nonnegative trajectory.</li></ul></div></div>
+      <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = z_h\gamma e^{-\gamma t}\left(1-\epsilon\cos(\omega t+\phi)\right) + z_h\left(1-e^{-\gamma t}\right)\epsilon\omega\sin(\omega t+\phi)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Start with ARP relaxation envelope z_env(t)=z_h(1-e^{-\gamma t}). Modulate by bounded factor m(t)=1-\epsilon cos(\omega t+\phi). For 0&lt;=\epsilon&lt;1, m(t) in [1-\epsilon,1+\epsilon], so z(t)=z_env(t)m(t)&gt;=0 over the full interval.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single effective horizon scale z_h over the modeled interval.</li><li>Two separated timescales: envelope gamma^{-1} and modulation omega^{-1}.</li><li>Bounded modulation 0&lt;=epsilon&lt;1 ensures nonnegative trajectory.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-redshift-bounded-oscillation'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-21</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png' target='_blank' rel='noopener'>link</a></div></div>
@@ -645,7 +646,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-phase-lifted-complex-conductance'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq4PhaseLiftedComplexConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -675,7 +676,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measurement φ_k is a well-defined principal-value phase in (-π, π].</li><li>Previous lifted phase θ_{R,k-1} is available and trusted.</li></ul></div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measurement φ_k is a well-defined principal-value phase in (-π, π].</li><li>Previous lifted phase θ_{R,k-1} is available and trusted.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-candidate-unwrap'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-candidate-unwrap.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -705,7 +706,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-residual'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-residual.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -735,7 +736,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Extends ARP equilibrium with an exponential temperature factor for material sensitivity.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-temp-conductance'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq10TempConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -765,7 +766,7 @@
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ |Δ²θ_R|. Triggers πₐ widening.</div></div>
-      
+      <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-event-stimulus'>view on chain record</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-event-stimulus.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -779,7 +780,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-22 20:08</strong></div>
+      <div>Last built: <strong>2026-02-24 02:20</strong></div>
     </footer>
   </main>
 </body>

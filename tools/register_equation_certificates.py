@@ -38,7 +38,8 @@ def get_json(url: str, timeout: int = 8) -> tuple[int, str]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Register TopEquations certificates on chain")
     parser.add_argument("--cert-file", default="data/certificates/equation_certificates.json")
-    parser.add_argument("--wallet-file", default="D:/coins2/Adaptive-Curvature-Coin/wallet.json")
+    parser.add_argument("--signer-file", default="D:/coins2/Adaptive-Curvature-Coin/wallet.json")
+    parser.add_argument("--wallet-file", default=None, help="Deprecated alias for --signer-file")
     parser.add_argument("--node-url", default="http://127.0.0.1:5000")
     parser.add_argument("--limit", type=int, default=0, help="Optional max number of certificates to publish")
     parser.add_argument("--mine", action="store_true", help="Call /mine_block after publishing")
@@ -46,12 +47,14 @@ def main() -> None:
 
     repo = Path(__file__).resolve().parents[1]
     cert_path = (repo / args.cert_file).resolve()
-    wallet_path = Path(args.wallet_file)
+    signer_path = Path(args.signer_file)
+    if args.wallet_file:
+        signer_path = Path(args.wallet_file)
 
     cert_doc = json.loads(cert_path.read_text(encoding="utf-8"))
-    wallet = json.loads(wallet_path.read_text(encoding="utf-8"))
-    sender = wallet["public_key"]
-    priv = wallet["private_key"]
+    signer = json.loads(signer_path.read_text(encoding="utf-8"))
+    sender = signer["public_key"]
+    priv = signer["private_key"]
 
     entries = cert_doc.get("entries", [])
     if args.limit and args.limit > 0:
@@ -85,7 +88,7 @@ def main() -> None:
         "published_at": datetime.now(timezone.utc).isoformat(),
         "node_url": args.node_url,
         "cert_file": str(cert_path),
-        "wallet_file": str(wallet_path),
+        "signer_file": str(signer_path),
         "count": len(results),
         "results": results,
         "mine_result": mine_result,

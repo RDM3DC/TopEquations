@@ -1,0 +1,1167 @@
+{
+  "schema": "top-equations-certificate-v1",
+  "generated_at": "2026-02-24T06:28:40.797538+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "1f1b855e1b86039690d56175bb56b25870094ca07cd161caebff09633e413ed6",
+  "count": 42,
+  "entries": [
+    {
+      "token_id": "eq-arp-redshift",
+      "name": "ARP Redshift Law (derived mapping)",
+      "equation_latex": "z(t)=z_0\\,(1-e^{-\\gamma t})",
+      "equation_hash": "1b09a03c9d0d5f657bb53a3462dec3e8d56fab53ea470d41f287e0e4c955c86b",
+      "score": 91,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 24,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 24
+      },
+      "source": "discovery-matrix #1",
+      "date": "2026-02-20",
+      "description": "A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq2ARPRedshift.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "e25bbc615f2b527ef8ce44cf882c3532583219a02182f3dc66270eee336b9360"
+    },
+    {
+      "token_id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
+      "name": "BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)",
+      "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\;|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\;\\tilde{G}_{ij}(t)",
+      "equation_hash": "7995d0ace9e88c24e08d389e8e6744b89b24a65ae83023bc2ebe0d10721d57eb",
+      "score": 97,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 19,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 29
+      },
+      "source": "derived: Core Eqs 2\u20134, 6\u20137, 10\u201311 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)",
+      "date": "2026-02-22",
+      "description": "Canonical entropy-gated Phase-Lifted ARP conductance update. Single traceable boxed equation with 4 supporting definitions (all from Core + #3/#10). Entropy dynamics are 2nd-law safe; BZ ruler self-consistency feeds a uniform m_eff into QWZ preserving the single Chern jump.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/BZPhaseLiftConductance.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "f786eabcc28843c7ead8d314f53925f6b4c234c8b5004ffa3bdd070705af596f"
+    },
+    {
+      "token_id": "eq-ahc-parity-flip-rate",
+      "name": "AHC Parity Flip-Rate (locking observable)",
+      "equation_latex": "r_b=\\frac{\\#\\{k:\\ b_k\\neq b_{k-1}\\}}{K-1}",
+      "equation_hash": "e4a9f4422d8a7c86af0310b28abc8fb395f83b6fa46b4041dd5587e686ec3829",
+      "score": 87,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 8
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 28
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.20)",
+      "date": "2026-02-22",
+      "description": "The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when \u03b1_\u03c0/\u03bc_\u03c0 is high enough ('parity locking'). This is the primary testable quantity for the qubit Berry-loop experiment.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/ParityLockingBifurcation.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "60feb72de6f5cd6bc2fd0433ae070e5e019761cbadbe16163108ed6e86585f68"
+    },
+    {
+      "token_id": "eq-qwz-bz-avg-ruler-mass",
+      "name": "BZ-Averaged Ruler Coupling for Single-Jump QWZ Transition",
+      "equation_latex": "\\left\\langle\\frac{1}{1+\\epsilon\\cos\\lambda}\\right\\rangle_{BZ}=\\frac{1}{\\sqrt{1-\\epsilon^2}},\\quad m_{\\mathrm{eff}}(\\epsilon)=\\frac{m_0}{\\sqrt{1-\\epsilon^2}}\\ (|\\epsilon|<1),\\quad \\epsilon_c=\\sqrt{1-(|m_0|/2)^2}",
+      "equation_hash": "4b6980a162a4982ee5be49698b96c22e3d306fcaad3e98fd3430fa4344e28bad",
+      "score": 86,
+      "scores": {
+        "novelty": 0,
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 5
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "BZ-average removes k-oscillation: <(1+\u03b5 cos\u03bb)^{-1}> = (1-\u03b5^2)^{-1/2}, giving a uniform m_eff(\u03b5) and a single Chern jump at \u03b5_c (for m0=-1: \u03b5_c=\u221a3/2).",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/BZAveragedRulerQWZ.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "302405798ec9ad94b7faa2b0816648ce345186fd67f403f2e652024e0b33fdf4"
+    },
+    {
+      "token_id": "eq-ahc-step-limit",
+      "name": "AHC Adaptive Step-Limit Update (\u03c0\u2090 clip)",
+      "equation_latex": "\\theta_{R,k}=\\theta_{R,k-1}+\\mathrm{clip}(r_k,\\,-\\pi_{a,k-1},\\,\\pi_{a,k-1})",
+      "equation_hash": "a3e665688c986254831e486a91efc373730f504b92a9003f67969314dd516eb4",
+      "score": 81,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 26
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.16)",
+      "date": "2026-02-22",
+      "description": "Core AHC innovation: clip the residual to adaptive bounds \u00b1\u03c0\u2090. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-ahc-step-limit.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "59927d7a3af36bc5305642347c712dbc79326e38902acb266e702fb6f028a5b8"
+    },
+    {
+      "token_id": "eq-qwz-pia-modulated-mass",
+      "name": "pi_a-Modulated QWZ Mass (momentum-dependent; re-entrant transitions)",
+      "equation_latex": "\\pi_a(\\lambda)=\\pi(1+\\epsilon\\cos\\lambda),\\quad m_{\\mathrm{eff}}(k_x)=m_0+\\beta\\left(\\frac{1}{1+\\epsilon\\cos k_x}-1\\right)",
+      "equation_hash": "4e22ea5e116ac3a3b76b8b54911fb8165e1825efd32593e8046f923325d65bc0",
+      "score": 80,
+      "scores": {
+        "novelty": 0,
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 14,
+        "artifactCompleteness": 5
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/PiAModulatedQWZMass.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "4893f00805d4416d4c852fc024fa45a94662a9dadf943a0ecebab730ee2f954e"
+    },
+    {
+      "token_id": "eq-ahc-running-winding",
+      "name": "AHC Running Winding + Parity",
+      "equation_latex": "w_k=\\mathrm{round}\\!\\Big(\\frac{\\theta_{R,k}-\\theta_{R,0}}{2\\pi}\\Big),\\qquad b_k=(-1)^{w_k}",
+      "equation_hash": "42aa5381edfbfeef2314b168b4985118138c07458bfe35d118c57705404bed99",
+      "score": 79,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 22
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.19)",
+      "date": "2026-02-22",
+      "description": "Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/WindingParityExplained.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "9cefdd676f1cb2085766dd1b84628df70f1a22d8d24a7e5651d42a58971dfd82"
+    },
+    {
+      "token_id": "eq-arp-phase-critical-collapse",
+      "name": "Phase-Coupled Stability Threshold Law",
+      "equation_latex": "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
+      "equation_hash": "d24565a4b4c287c2778cc987f832dd1a96123b8618470da9dd11e2b0226ffe9f",
+      "score": 77,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 28
+      },
+      "source": "derived: ARP + Phase-Lift + Adaptive-\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac",
+      "date": "2026-02-20",
+      "description": "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090. Predicts a sharp stability/transition-like behavior when \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R approaches half-integer multiples of \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 (maximal sin\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b2). Assumptions: \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 sets the relevant phase period; \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb has units 1/time.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq3PhaseCoupledThreshold.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "390e6d6544898e0fa5b057a138135b820bc53f2b1fc066cbf44c986b8ff87488"
+    },
+    {
+      "token_id": "eq-ahc-pi-a-update",
+      "name": "AHC Adaptive \u03c0\u2090 Update (discrete)",
+      "equation_latex": "\\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0)",
+      "equation_hash": "4fa2045fce35744a79d90c5d655efdc8f4ab4d188554aa689ec86eab36936964",
+      "score": 76,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 12,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 24
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.18)",
+      "date": "2026-02-22",
+      "description": "Discrete version of \u03c0\u2090 dynamics for the AHC loop: widens bound after events (\u03b1_\u03c0 S_k term), relaxes toward \u03c0\u2080 otherwise.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-ahc-pi-a-update.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "fe36091541ddf4930626bc515f52ff3476f3bc8204a0867fdd546cc9ea8adaff"
+    },
+    {
+      "token_id": "eq-arp-redshift-bounded-oscillation",
+      "name": "ARP Redshift Law with Bounded Oscillatory Steering",
+      "equation_latex": "z(t)=z_h\\left(1-e^{-\\gamma t}\\right)\\left(1-\\epsilon\\cos(\\omega t+\\phi)\\right),\\quad 0\\le\\epsilon<1",
+      "equation_hash": "31332939be13a30edf6fd86521dc9965dd011a83aef7b9d95a9c5266bdf6d36b",
+      "score": 73,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 15,
+        "validation": 8,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-21",
+        "score": 21
+      },
+      "source": "derived mapping extension",
+      "date": "2026-02-21",
+      "description": "A redshift-relaxation bypass law with bounded oscillatory steering. Keeps ARP exponential approach while adding controlled wobble without sign flips when epsilon is constrained.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/ARPRedshiftLawBridge.mp4",
+        "image": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
+      },
+      "version": 1,
+      "metadata_hash": "bbc5fef2a615c0800594552fbd90302a74083d0146ab6ddee66091fde192cfd7"
+    },
+    {
+      "token_id": "eq-arp-phase-lifted-complex-conductance",
+      "name": "Phase-Lifted Complex Conductance Update",
+      "equation_latex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
+      "equation_hash": "89ccac2150b3ade9f4e6b5a85d80fabf00e2370755a1bca93b794f03f5af7a89",
+      "score": 71,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 26
+      },
+      "source": "derived: ARP core + Phase-Lift + Adaptive-\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac",
+      "date": "2026-02-20",
+      "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{i\u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R,ij} to model sign flips under branch crossings.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq4PhaseLiftedComplexConductance.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "815a6544c0ecaabcaaaa4ef569e1425dbf44f796cead88e0e14b47422894a250"
+    },
+    {
+      "token_id": "eq-ahc-candidate-unwrap",
+      "name": "AHC Candidate Unwrap (standard 2\u03c0 lift)",
+      "equation_latex": "u_k=\\mathrm{unwrap}(\\phi_k;\\theta_{R,k-1})",
+      "equation_hash": "d130b069dea3d89147fa76d36316944fa146418ae0748b5eddd8ea271fd3d691",
+      "score": 70,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 20
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.14)",
+      "date": "2026-02-22",
+      "description": "Apply standard 2\u03c0 unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-ahc-candidate-unwrap.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "94b4701a1945a95dd200c39c437cdb7269affef415c722e04c328ef389a2f108"
+    },
+    {
+      "token_id": "eq-ahc-residual",
+      "name": "AHC Residual",
+      "equation_latex": "r_k=u_k-\\theta_{R,k-1}",
+      "equation_hash": "9c0ba62b902a1f2e25c61d624899cbd587a38a434520ce5c6096a79316641090",
+      "score": 70,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 18
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.15)",
+      "date": "2026-02-22",
+      "description": "Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-ahc-residual.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "d5f7dd34f62b3666b565fda8e5aa0b749031ae27dea6b85fe7b4671f27854f39"
+    },
+    {
+      "token_id": "eq-arp-temp-conductance",
+      "name": "Temperature-Dependent Conductance Law",
+      "equation_latex": "G(T)=G_{eq}\\,e^{\\beta\\,(T-T_0)}",
+      "equation_hash": "3f204e25c7c3b32ca9ef9c14dd8e110d23a7f54029cf5a92bbb8d8b832f2c4d5",
+      "score": 69,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 16,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-19",
+        "score": 20
+      },
+      "source": "daily run 2026-02-19",
+      "date": "2026-02-19",
+      "description": "Extends ARP equilibrium with an exponential temperature factor for material sensitivity.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq10TempConductance.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "f89f83e4ae4ae1a8e0819cccf9319cf820b493097d2b184bbd45ce877d0b4e94"
+    },
+    {
+      "token_id": "eq-ahc-event-stimulus",
+      "name": "AHC Event Stimulus (phase-jump indicator)",
+      "equation_latex": "S_k=\\mathbf{1}\\{|r_k|>\\pi_{a,k-1}\\}",
+      "equation_hash": "10e8e42a4c149975e99c6da7669fb9a075ec9c3526fce4b2dc6cf5d8951bcb5f",
+      "score": 69,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 19
+      },
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.17)",
+      "date": "2026-02-22",
+      "description": "Binary indicator: 1 when a residual exceeds the current \u03c0\u2090 bound, 0 otherwise. Alternative: curvature-based S_k \u221d |\u0394\u00b2\u03b8_R|. Triggers \u03c0\u2090 widening.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-ahc-event-stimulus.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "ac51a7d9117a590c24b3315a754ad62577f023fcf2b46ecadeaadc69ce105231"
+    },
+    {
+      "token_id": "eq-arp-lyapunov-stability",
+      "name": "ARP Lyapunov Stability Form",
+      "equation_latex": "V(x)\\ge 0,\\ V(0)=0;\\ \\dot V(x)=\\nabla V\\cdot \\dot x\\le -\\alpha V(x)",
+      "equation_hash": "743378804c5e99f369837e100afa3eff4f48ef39b1667cb35269414dfe5b69e7",
+      "score": 66,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 14,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-19",
+        "score": 22
+      },
+      "source": "discovery-matrix #2",
+      "date": "2026-02-19",
+      "description": "Candidate stability proof template for adaptive conductance dynamics.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq5ARPLyapunov.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "521490431bcd792262f82c9968a1a218c465c171255fc04d2699e9c0781bbc28"
+    },
+    {
+      "token_id": "eq-arp-gradient-flow-bridge",
+      "name": "ARP as Gradient Flow in Adaptive-\u03c0 Geometry",
+      "equation_latex": "\\dot G_{ij}=\\alpha_G\\,|I_{ij}|-\\mu_G\\,G_{ij},\\quad |I_{ij}|\\propto \\frac{\\partial\\sqrt{\\mathcal{E}}}{\\partial(\\sqrt{\\Omega_{ij}G_{ij}})}",
+      "equation_hash": "375a855e235ab3a14cf36d4e4133601125a69ff2017dfe8c5a8fdf83096a4a58",
+      "score": 66,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 8,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 29
+      },
+      "source": "4-pillar fusion \u00a73",
+      "date": "2026-02-22",
+      "description": "Bridge theorem: ARP reinforcement is proportional to edge energy contributions in a \u03c0\u2090-weighted Dirichlet landscape. ARP is a 'lazy' gradient flow where \u03a9 = \u03c0_a/\u03c0 changes what counts as a short/cheap path. Prediction: increasing \u03c0\u2090 in a region re-routes the ARP backbone away, even under the same boundary forcing. '\u03c0\u2090 sculpts geodesics; ARP discovers them.'",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "c1199b58ce96b6685ce2e7d256f67fe9db5207c947de44f20f3ffec73d805c38"
+    },
+    {
+      "token_id": "eq-curve-memory-137",
+      "name": "Curve Memory Fine-Structure Emergence",
+      "equation_latex": "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
+      "equation_hash": "d1e757903ab9e338b85c74e4733c122e23414d936472a51599657ec3191dbefb",
+      "score": 63,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 23
+      },
+      "source": "discovery-matrix #4",
+      "date": "2026-02-20",
+      "description": "Formalizes the emergence of the inverse fine-structure constant (\u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b1\u00c3\u0192\u00c2\u00a2\u00c3\u201a\u00c2\u0081\u00c3\u201a\u00c2\u00bb\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b9 \u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00b0\u00c3\u2039\u00e2\u20ac\u00a0 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq7CurveMemory137.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "d53c594f9edd488b2ab5702ee36e0f74fba0766af924e26a704e9b3d0fc3631f"
+    },
+    {
+      "token_id": "eq-shield-mechanic-arp",
+      "name": "Shielding Mechanism Law (ARP)",
+      "equation_latex": "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0<\\lambda<1",
+      "equation_hash": "3ceffa88fbc85095109df55299b286006f958e1e94ae7b9b2f9d9f9feafa5f93",
+      "score": 63,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 15,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 22
+      },
+      "source": "discovery-matrix #5",
+      "date": "2026-02-20",
+      "description": "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 \u00c3\u0192\u00c2\u00a2\u00c3\u2039\u00e2\u20ac\u00a0\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2 \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb)E_ext, while the induced adaptive current follows J_adapt = \u00c3\u0192\u00c2\u008f\u00c3\u2020\u00e2\u20ac\u2122E_ext, with 0 < \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb < 1.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq8ShieldingMechanism.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "185a2b9dd82ad3fcad04c0aa73aa4d1cf15ae2cb4e2c5199c34df03e936790ef"
+    },
+    {
+      "token_id": "eq-parity-pump",
+      "name": "Parity Pump (\u03c0\u2090-gradient \u2124\u2082 flip mechanism)",
+      "equation_latex": "\\varphi(t) := \\frac{\\theta_R(t)}{2\\pi_a(t)},\\qquad \\int_\\gamma d(\\ln\\pi_a)\\neq 0 \\;\\Rightarrow\\; b_a[\\gamma]\\text{ can flip}",
+      "equation_hash": "cba4c290545a8f381f526b0debcf6e3ac027464aff6c0bb83ba9f4e7551a42de",
+      "score": 63,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 30
+      },
+      "source": "4-pillar fusion \u00a72",
+      "date": "2026-02-22",
+      "description": "Novel mechanism: parity can flip due to geometry-field motion, not only due to circling a branch point. A Z\u2082 pump controlled by ln(\u03c0\u2090) dynamics. Conjecture: if \u0394\u03b8=0 but \u222b d(ln \u03c0\u2090) \u2260 0 over a closed loop, admissible lifts exist where b_a flips \u2014 the adaptive-\u03c0 analog of geometric phase without dynamical phase.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "63c2ed3285d47c4af4906f8e043c714085bcb7293cc024ccc72efad537875cf7"
+    },
+    {
+      "token_id": "eq-dyn-constants-union",
+      "name": "Unified Dynamic Constants Law",
+      "equation_latex": "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
+      "equation_hash": "c47e35c02b72cbef0fecf7e2bc94c601bfefbe81c7b17ee301bc1d424074f5e1",
+      "score": 61,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 16,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 25
+      },
+      "source": "discovery-matrix #3",
+      "date": "2026-02-20",
+      "description": "First-order linear coupling for adaptive updates of \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090, e, \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00a2, and c, expressing networked rates of change\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u009dmodels the unification of ARP, AIN, and \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 system parameters.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq6UnifiedDynamicConstants.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "c010721d38993d028180b847518311fe9f50ddf9f6af44660fe7dd5831c4f6bc"
+    },
+    {
+      "token_id": "eq-pi-a-gauged-phase-lift",
+      "name": "\u03c0\u2090-Gauged Phase-Lift (adaptive unwrap + invariants)",
+      "equation_latex": "\\theta_R(t_k) = \\theta(t_k) + 2\\pi_a(t_k)\\,m_k,\\quad w_a[\\gamma]:=\\sum_k m_k,\\quad b_a[\\gamma]=(-1)^{w_a}",
+      "equation_hash": "476f191e0b0a92f150b039c0d159560494eba14c61040b83d8e381e5751f3437",
+      "score": 61,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 28
+      },
+      "source": "4-pillar fusion \u00a71",
+      "date": "2026-02-22",
+      "description": "Generalizes Phase-Lift unwrapping from fixed 2\u03c0 to adaptive 2\u03c0\u2090: sheet jumps happen in units of the local identification length. Derives \u03c0\u2090-gauged winding w_a and \u2124\u2082 shadow parity b_a. Novel: the unit of winding is no longer constant, coupling topology to a geometry field.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "22b3d462d448ccdf22f5270e9b75e76ac13d963b965bc26a9469f467954bd399"
+    },
+    {
+      "token_id": "eq-redshift-arp-superc",
+      "name": "Redshift-ARP Superconductivity Law",
+      "equation_latex": "R_s(z) = R_{s,0} (1 + z)^\\alpha",
+      "equation_hash": "5bbc0f7f2d5d52759d1ff4499fa526bf6e4c7bc3d3b6fc869e49f7d162c89d00",
+      "score": 60,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 13,
+        "artifactCompleteness": 0
+      },
+      "novelty": {
+        "date": "2026-02-20",
+        "score": 21
+      },
+      "source": "discovery-matrix #1 (supercond.)",
+      "date": "2026-02-20",
+      "description": "Proposes a cosmological scaling for critical superconducting resistance: R_s(z) = R_{s,0} (1+z)^alpha. Assumes layered structure, universal conductance constant, ARP regime dominant.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq9RedshiftARPSuperconductivity.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "a27fa189a719ccdd85e0e25edd035413398edf017a0d46775321c3cade8ea673"
+    },
+    {
+      "token_id": "eq-adaptive-phase-lift-unwrapping",
+      "name": "Adaptive Phase-Lift Unwrap Recurrence (pi_a-gauged)",
+      "equation_latex": "\\theta_R(t_k)=\\theta(t_k)+2\\pi_a(t_k)m_k,\\quad m_k=\\arg\\min_{m\\in\\mathbb{Z}}\\left|\\theta(t_k)+2\\pi_a(t_k)m-\\theta_R(t_{k-1})\\right|",
+      "equation_hash": "1175dbd16639e1177075fa4bea6d6692e31e58734a417d0c22d35f0cf836f953",
+      "score": 60,
+      "scores": {
+        "novelty": 0,
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Adaptive Phase-Lift recurrence: unwrap arg using local identification length 2\u03c0_a (not fixed 2\u03c0); yields integer sheet count and Z2 parity tracking.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "fb634dfb431673fef0cbd368e837099ed35c394b134639ea08088538d08f2c46"
+    },
+    {
+      "token_id": "eq-arp-weighted-dirichlet-energy",
+      "name": "Weighted Dirichlet Energy (ARP learns Omega-geodesics)",
+      "equation_latex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac12\\sum_{(i,j)}\\Omega_{ij}G_{ij}(\\phi_i-\\phi_j)^2",
+      "equation_hash": "38ece0389d04bd76f682e97717eaa4ad41d2723e5164f2a312967f9ea30ba6f7",
+      "score": 60,
+      "scores": {
+        "novelty": 0,
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Graph Dirichlet energy with adaptive-\u03c0 weights \u03a9_ij; suggests ARP reinforcement concentrates conductance on \u03a9-weighted shortest paths / backbones.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "459de9b72cb7e7ca9f36b337c4f94127cfca1992596b88d8bfacff624303f5c3"
+    },
+    {
+      "token_id": "eq-un-det-phase",
+      "name": "U(N) Det-Phase on Lifted Branch",
+      "equation_latex": "\\theta_R=\\mathrm{unwrap}(\\arg\\det U;\\theta_{\\rm ref},\\pi_a),\\qquad w_{\\det}=\\frac{\\Delta\\theta_R}{2\\pi_a},\\qquad b(\\gamma)=(-1)^{w_{\\det}}",
+      "equation_hash": "2cd499d20a446b843b67f572fb1f47b9551aadb67ae71ed61c8b78bd1467f380",
+      "score": 59,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 16,
+        "validation": 8,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 22
+      },
+      "source": "Equation Sheet v1.1 \u00a7G (Eq.22)",
+      "date": "2026-02-22",
+      "description": "Same Phase-Lift bookkeeping (integer winding + \u2124\u2082 shadow) applied to the determinant phase of U(N) holonomy. Bridges the U(1) parity framework to non-abelian gauge systems.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-un-det-phase.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "05444dca6605d7ea3ec2dba5411a275705e6e78fcc281e1a32e4c09f64498845"
+    },
+    {
+      "token_id": "eq-adaptive-connection-chern",
+      "name": "Adaptive Connection and Adaptive Chern Number (Theorem B candidate)",
+      "equation_latex": "\\widehat A:=A/(2\\pi_a),\\quad \\widehat F:=d\\widehat A,\\quad C_a:=\\frac{1}{2\\pi}\\int_{T^2}\\widehat F\\in\\mathbb{Z}",
+      "equation_hash": "6c05ec834d611e71a19d3d6f2696cb7896cd122829cc2e9b905272ab986269fe",
+      "score": 59,
+      "scores": {
+        "novelty": 0,
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Defines a rescaled connection \u00c2=A/(2\u03c0_a) and curvature F\u0302=d\u00c2; C_a is integer-valued when the rescaling is globally well-defined.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "f2663546c1890345b712f70a31548b1c357880513ae5868df028ec6e7af31c4d"
+    },
+    {
+      "token_id": "eq-parity-from-adaptive-chern",
+      "name": "Parity Pump Law from Adaptive Chern",
+      "equation_latex": "b_{\\mathrm{pumped}}=(-1)^{C_a}",
+      "equation_hash": "c1f14a4796b5a6a7aedf95bc373d3e105a6a94d828f57b99b465e1c9358a14b7",
+      "score": 59,
+      "scores": {
+        "novelty": 0,
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Mod-2 holonomy/parity flip controlled by the integer adaptive Chern invariant.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "71b1e5c3a3c72eae109b325249436bc9ba4b0c09025ad2ef8d5e0c4239b3e6d3"
+    },
+    {
+      "token_id": "eq-cm-integration-state",
+      "name": "Curve-Memory Integration State (unified closed loop)",
+      "equation_latex": "s(t)=\\big(\\theta_R,\\,w_a,\\,b_a,\\,\\pi_a,\\,M_k\\big),\\quad \\dot\\pi_a=\\alpha_\\pi\\,\\kappa_{\\text{mem}}-\\mu_\\pi(\\pi_a-\\pi)",
+      "equation_hash": "7b59b3d78750a843b00d80dfab2164920c8c486ee23ae1194c95623867d471c9",
+      "score": 57,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 27
+      },
+      "source": "4-pillar fusion \u00a74",
+      "date": "2026-02-22",
+      "description": "Defines a unified integration state s(t) = (\u03b8_R, w_a, b_a, \u03c0_a, M_k) bundling Phase-Lift, winding/parity, adaptive-\u03c0, and curve-memory features. Curve-memory curvature drives \u03c0_a, \u03c0_a changes phase unwrapping sensitivity, parity flips become detectable stable motifs. Turns topological sheet changes into an event grammar.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "2afc726fa55ac735f55d6ba1613c15b9d1db21e870c327a19438635c2520449d"
+    },
+    {
+      "token_id": "eq-un-wilson-holonomy",
+      "name": "U(N) Wilson / Holonomy",
+      "equation_latex": "U(\\gamma)=\\mathcal{P}\\exp\\!\\Big(-\\oint_\\gamma A\\cdot d\\lambda\\Big)\\in U(N)",
+      "equation_hash": "57f9c4ea3c030bbb597becd6f34c4adaa708cadf8baaf70d4ccf616769026fca",
+      "score": 56,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 16,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 20
+      },
+      "source": "Equation Sheet v1.1 \u00a7G (Eq.21)",
+      "date": "2026-02-22",
+      "description": "Path-ordered exponential giving the U(N) holonomy around a closed loop \u03b3. Extends the Phase-Lift framework beyond the U(1) case to non-abelian gauge fields.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/eq-un-wilson-holonomy.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "aa103107bacc359ffc5f46f7db7b61f9578b6b1653536aa44e8b81f61dc9c778"
+    },
+    {
+      "token_id": "eq-dimensionless-phase-flow",
+      "name": "Dimensionless Lifted Phase Flow (pi_a-driven pump term)",
+      "equation_latex": "\\varphi:=\\theta_R/(2\\pi_a),\\quad \\dot\\varphi=\\dot\\theta_R/(2\\pi_a)-\\varphi\\,\\frac{d}{dt}(\\ln\\pi_a)",
+      "equation_hash": "3a2c4d88e900b254e99f8efd80df94c3183268ef9f43b5527182876c87743891",
+      "score": 56,
+      "scores": {
+        "novelty": 0,
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 3,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Defines \u03c6=\u03b8_R/(2\u03c0_a) and shows \u03c0_a dynamics can drive half-integer crossings (a Z2 pump mechanism) even with smooth \u03b8_R.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "e3a141821b26fd8305f56b18f7c22bcd7ba1f5034cff5ba87ed6447076f32a14"
+    },
+    {
+      "token_id": "eq-adaptive-monodromy-spectrum",
+      "name": "Adaptive Monodromy Spectrum (bifurcation framework)",
+      "equation_latex": "\\mathcal{M}_a(\\gamma)=\\big(w_a(\\gamma),\\,b_a(\\gamma)\\big)\\in\\mathbb{Z}\\times\\{\\pm1\\}",
+      "equation_hash": "6fd2664b85496fbed7fab060d3c9f0e18a6e21522ed93cc2a6817080bdec2e4b",
+      "score": 54,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 16,
+        "validation": 4,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 26
+      },
+      "source": "4-pillar fusion \u00a75",
+      "date": "2026-02-22",
+      "description": "For loop families \u03b3_\u03bb under \u03c0\u2090 evolution, the Adaptive Monodromy Pair M_a(\u03b3) = (w_a, b_a) \u2208 \u2124 \u00d7 {\u00b11} traces out a reachable set that can bifurcate: parity flips occur without classical winding as (\u03b1_\u03c0, \u03bc_\u03c0) or CM thresholds vary. Defines a research program: map bifurcation diagrams of M_a vs parameters.",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "745063367cf6d962620917d52ca850f01d5fcc2e229f2d7cacf6ed0e787b7aa3"
+    },
+    {
+      "token_id": "eq-adaptive-discriminant-set",
+      "name": "Adaptive Discriminant Set for Parity/Winding Stability",
+      "equation_latex": "\\mathcal{D}=\\{z=0\\}\\cup\\{\\pi_a=0\\}",
+      "equation_hash": "c1e947ed9143331b151764e9f96beb74dc58c93267ee63be15caf5cfde62a2c2",
+      "score": 53,
+      "scores": {
+        "novelty": 0,
+        "tractability": 16,
+        "plausibility": 17,
+        "validation": 2,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Singular set where the lift can fail and winding/parity may change; away from D, w and b are homotopy invariants.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "d64fc7c74653b6f109ea13a9282123b61a64a0bdc7e80c45718f7b4761328295"
+    },
+    {
+      "token_id": "eq-qwz-engineered-single-jump",
+      "name": "Engineered Pinch-to-Transition Mass Drive (single-jump toy)",
+      "equation_latex": "m_{\\mathrm{eff}}(\\epsilon)=m_0-\\beta\\frac{\\epsilon^p}{1-\\epsilon}\\ (\\epsilon<1),\\quad m_{\\mathrm{eff}}(\\epsilon)=m_{\\mathrm{triv}}\\ (\\epsilon\\ge 1)",
+      "equation_hash": "f5a6fb396c5f8659d29d7398d40bd2fbb980973751a9a3e67897671cc0081857",
+      "score": 51,
+      "scores": {
+        "novelty": 0,
+        "tractability": 17,
+        "plausibility": 15,
+        "validation": 2,
+        "artifactCompleteness": 2
+      },
+      "novelty": {},
+      "source": "chat: PR Root Guide convo 2026-02-22",
+      "date": "2026-02-22",
+      "description": "Monotone coupling that forces one Chern jump near \u03b5\u21921^- (useful as a controllable toy model; clamp to trivial mass after the discriminant).",
+      "units": "WARN",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "56f65883ad8e36d66e37e7273effbed0f752f4a2518f8e56284274bd10e29eda"
+    },
+    {
+      "token_id": "eq-paper1-adler-rsj-phase",
+      "name": "Phase (Adler/RSJ) Dynamics",
+      "equation_latex": "\\dot{\\phi}=\\Delta-\\lambda\\,G\\,\\sin\\phi",
+      "equation_hash": "d1db8f6d18b7bd7b499d03ce860f912bd57e24ee4a7d1a29b1c099a8fa81f545",
+      "score": 96,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 14
+      },
+      "source": "Paper I draft \u00a72 (Eq.1)",
+      "date": "2026-02-22",
+      "description": "Unwrapped phase difference \u03c6(t) tries to run at detuning \u0394, but adaptive coupling \u03bbG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/APGP0CoreModel.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "b75498964ef3d31f3d34e9989c61589eaa6be4d8a3b61c815a68d428e4251a93"
+    },
+    {
+      "token_id": "eq-paper1-arp-reinforce-decay",
+      "name": "Generic ARP Reinforce/Decay Law",
+      "equation_latex": "\\dot{G}=\\alpha\\,\\mathcal{A}(\\phi,G)-\\mu\\,(G-G_0)",
+      "equation_hash": "80a9b3ded5b4214e8bc79a870e4d5bc0569015439f9ffa3fb8f20a08c3ec086f",
+      "score": 93,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 17,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 22
+      },
+      "source": "Paper I draft \u00a72 (Eq.2)",
+      "date": "2026-02-22",
+      "description": "Conductance/coupling G increases with activity A(\u03c6,G) at gain \u03b1, and relaxes toward baseline G\u2080 at rate \u03bc. The workhorse ARP law in its most general continuous-time form.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/Eq1ARPCoreLaw.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "f4890e6438f5d80b56b1dc2d395fd7e6ff2aa29988635e64374205d707b45f56"
+    },
+    {
+      "token_id": "eq-paper1-activity-closure",
+      "name": "Activity Closure A = G|sin\u03c6| (Parity Lock Mechanism)",
+      "equation_latex": "\\mathcal{A}(\\phi,G)=G\\,|\\sin\\phi|\\quad\\Rightarrow\\quad\\dot{G}=\\alpha\\,G|\\sin\\phi|-\\mu(G-G_0)",
+      "equation_hash": "cf7a6acb1988fe0bf75e479b3c3c281c60c6d9e223fd0b594b0cf03ea6cc3f96",
+      "score": 91,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 17,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 26
+      },
+      "source": "Paper I draft \u00a72 (Eq.3)",
+      "date": "2026-02-22",
+      "description": "The same phase mismatch that produces restoring torque (sin\u03c6) also teaches the coupling. This tight self-referential closure is what makes parity locking possible \u2014 the key novel ingredient of Paper I.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/AHCParityLocking.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "d6bdc5505cf2ac0b4c9e93dbf24a72c37be576e305f9b18de710bab80a2908af"
+    },
+    {
+      "token_id": "eq-paper1-slip-asymptote",
+      "name": "Slip-Regime Asymptote (1/\u03c0 Signature)",
+      "equation_latex": "r_b=\\frac{|\\Delta|}{\\pi}",
+      "equation_hash": "34340e53d87e072682d4f4999b2b1e45b087712e8438406d93e57c4ad676ef7f",
+      "score": 90,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 8
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 27
+      },
+      "source": "Paper I draft \u00a73 (Eq.6)",
+      "date": "2026-02-22",
+      "description": "When coupling can't lock, \u03c6\u0307\u2192\u0394, so parity flips at a universal rate set by detuning. With \u0394=1, r_b = 1/\u03c0 \u2248 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |\u0394|/\u03c0.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/PhaseLiftExplained.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "109d794df57a1e5d875683b2918da923a1b1fcfa257c7c581737291a7082bf1a"
+    },
+    {
+      "token_id": "eq-paper1-langevin-noise",
+      "name": "Noise-Robust Langevin Extension (Rounded Transition)",
+      "equation_latex": "\\dot{\\phi}=\\Delta-\\lambda G\\sin\\phi + \\sqrt{2D}\\,\\eta(t)",
+      "equation_hash": "194c6b0e92b8bf1bc62da245feb1a12237a37524974779b59c1361e6880c2afd",
+      "score": 84,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 18
+      },
+      "source": "Paper I draft \u00a74 (Eq.7)",
+      "date": "2026-02-22",
+      "description": "Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes 'almost locked' with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/HysteresisMemory.mp4",
+        "image": "./assets/langevin_parity_lock.png"
+      },
+      "version": 1,
+      "metadata_hash": "79110ed0e5c15b517de27740480122d70f46adff9dd596aaa09dd801c6217c92"
+    },
+    {
+      "token_id": "eq-paper1-qwz-hamiltonian",
+      "name": "QWZ Chern-Insulator Hamiltonian (Reference Form)",
+      "equation_latex": "H(\\mathbf{k})=\\sin k_x\\,\\sigma_x+\\sin k_y\\,\\sigma_y+\\big(u+\\cos k_x+\\cos k_y\\big)\\sigma_z",
+      "equation_hash": "492fd052575e149b509a4ab84003d971f4a6637efdfef71af7b498fee8e3f82c",
+      "score": 94,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 8
+      },
+      "source": "Paper I / Step-2 Simulator (Eq.9)",
+      "date": "2026-02-22",
+      "description": "The canonical 2D Chern insulator (Qi\u2013Wu\u2013Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/AdaptiveQWZReEntrance.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "916b7159b4ef90c9e67165a8e5d50be61fea58af0e227f9209bae0848b31bada"
+    },
+    {
+      "token_id": "eq-paper1-adaptive-geometry-mass",
+      "name": "Adaptive Geometry \u2192 Effective Mass Channel (Step-2 Coupling)",
+      "equation_latex": "\\pi_a(t)=\\pi+\\beta\\big(\\langle G\\rangle_{\\text{edge}}-G_{eq}\\big),\\qquad u_{\\mathrm{eff}}(t)=u_0+\\gamma\\Big(\\frac{\\pi_a(t)}{\\pi}-1\\Big)+\\delta\\,S_{\\text{edge}}(t)",
+      "equation_hash": "f5d9c6493a44c89f5ac86a3ad9b5225fb0c3be6a9da5c9d1ab8becdfc080f4dd",
+      "score": 86,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 8
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 29
+      },
+      "source": "Paper I / Step-2 Simulator (Eq.10)",
+      "date": "2026-02-22",
+      "description": "The adaptive-\u03c0 conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or \u00b12, the Chern phase can switch \u2014 without external tuning, purely via ARP reinforcement + memory. This is Paper I's central claim: geometry drives topology autonomously.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "./assets/animations/PRRootExplained.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "b8e420632d90620055e933dd41cfd6d2fd5edb9858fab9c668bf610e5af33e46"
+    },
+    {
+      "token_id": "eq-paper1-chern-marker-bianco-resta",
+      "name": "Real-Space Chern Marker (Bianco\u2013Resta, Open Boundaries)",
+      "equation_latex": "C(\\mathbf{r})=-2\\pi i\\,\\langle \\mathbf{r}\\,|\\,[PXP,\\;PYP]\\,|\\,\\mathbf{r}\\rangle,\\quad P=\\sum_{E_n<E_F}|n\\rangle\\langle n|",
+      "equation_hash": "d093d91d8d1a29448b7fedabaf9cb9c22a5e54cd51eb389c532be8abbf99fa4a",
+      "score": 76,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 19,
+        "validation": 12,
+        "artifactCompleteness": 6
+      },
+      "novelty": {
+        "date": "2026-02-22",
+        "score": 10
+      },
+      "source": "Paper I / Step-2 Simulator (Bonus)",
+      "date": "2026-02-22",
+      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/AdaptivePiGeometry.mp4",
+        "image": ""
+      },
+      "version": 1,
+      "metadata_hash": "e51badc0fa9e215891e3f361ad2c65f55f6fd36560e68474922280d149bf334f"
+    }
+  ]
+}
