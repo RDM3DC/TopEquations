@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Harvest</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602240307' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602240317' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602240307'></script>
+  <script defer src='./assets/app.js?v=202602240317'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -34,7 +34,7 @@
         <div class='brand__mark'>∑</div>
         <div class='brand__text'>
           <div class='brand__title'>TopEquations</div>
-          <div class='brand__sub'>Curated leaderboard + harvested registry</div>
+          <div class='brand__sub'>Curated leaderboard + certificate registry</div>
         </div>
       </div>
       <nav class='nav'>
@@ -44,7 +44,6 @@
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./certificates.html'>Certificates</a>
         <a href='./submissions.html'>Submissions</a>
-        <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
@@ -55,35 +54,17 @@
     
 <div class='hero'>
   <div class='hero__left'>
-    <h1>All harvested equations</h1>
-    <p>~15k deduped candidates harvested from local RDM3DC repos. Default view is <strong>LaTeX-only</strong> (best looking).</p>
-  </div>
-  <div class='hero__right'>
-    <div class='controls'>
-      <div class='search'>
-        <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
-      </div>
-      <div class='row'>
-        <label class='check'>
-          <input id='harvestLatexOnly' type='checkbox' checked />
-          <span>LaTeX only</span>
-        </label>
-      </div>
-    </div>
+    <h1>Harvest List Hidden</h1>
+    <p>The public harvested-equation list is disabled. Candidates are kept privately for later manual submission and review.</p>
   </div>
 </div>
 
 <div class='panel'>
-  <div class='muted'>Source file: <code>data/harvest/equation_harvest.json</code></div>
-  <div id='harvestMeta' class='muted' style='margin-top:8px'>Loading…</div>
+  <div class='muted'>Use the submission workflow to promote selected candidates into the ranked board.</div>
 </div>
 
-<div id='harvestList' class='cardrow'></div>
-
-<script defer src='./assets/harvest.js'></script>
-
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 03:07</strong></div>
+      <div>Last built: <strong>2026-02-24 03:17</strong></div>
     </footer>
   </main>
 </body>

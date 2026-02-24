@@ -121,7 +121,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <div class='brand__mark'>∑</div>
         <div class='brand__text'>
           <div class='brand__title'>TopEquations</div>
-          <div class='brand__sub'>Curated leaderboard + harvested registry</div>
+          <div class='brand__sub'>Curated leaderboard + certificate registry</div>
         </div>
       </div>
       <nav class='nav'>
@@ -131,7 +131,6 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./certificates.html'>Certificates</a>
         <a href='./submissions.html'>Submissions</a>
-        <a href='./harvest.html'>All harvested</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
@@ -623,9 +622,6 @@ def build_index(repo_root: Path, docs: Path) -> None:
     core = _load_json_safe(repo_root / "data" / "core.json", {"entries": []})
     core_n = len(core.get("entries", []))
 
-    harvest = _load_json_safe(repo_root / "data" / "harvest" / "equation_harvest.json", {"stats": {}, "entries": []})
-    uniq = harvest.get("stats", {}).get("unique", "?")
-
     body = f"""
 <div class='hero hero--home'>
   <div class='hero__left'>
@@ -635,7 +631,6 @@ def build_index(repo_root: Path, docs: Path) -> None:
       <a class='btn' href='./core.html'>Canonical Core</a>
       <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
       <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
-      <a class='btn btn--ghost' href='./harvest.html'>Browse Harvest</a>
     </div>
   </div>
   <div class='hero__right'>
@@ -657,7 +652,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
   <ul>
     <li><strong>Canonical Core</strong> lives in <code>data/core.json</code> and links out to Canonical Core docs.</li>
     <li><strong>Ranked derived equations</strong> live in <code>data/equations.json</code>.</li>
-    <li><strong>Raw harvest</strong> lives in <code>data/harvest/equation_harvest.json</code> (deduped).</li>
+    <li><strong>Submission queue</strong> lives in <code>data/submissions.json</code> and is promoted into ranked equations after review.</li>
   </ul>
 </div>
 """
@@ -667,47 +662,18 @@ def build_index(repo_root: Path, docs: Path) -> None:
 
 
 def build_harvest(repo_root: Path, docs: Path) -> None:
-    # Copy harvest json into docs so the client can fetch it.
-    src_json = repo_root / "data" / "harvest" / "equation_harvest.json"
-    dst_json = docs / "data" / "harvest" / "equation_harvest.json"
-    dst_json.parent.mkdir(parents=True, exist_ok=True)
-    dst_json.write_text(src_json.read_text(encoding="utf-8"), encoding="utf-8")
-
-    # Copy scored candidates (not promoted) if present.
-    src_scored = repo_root / "data" / "harvest" / "scored_candidates.json"
-    dst_scored = docs / "data" / "harvest" / "scored_candidates.json"
-    if src_scored.exists():
-        dst_scored.write_text(src_scored.read_text(encoding="utf-8"), encoding="utf-8")
-
+    # Keep source harvest data private to repo; do not publish in docs/data.
     body = """
 <div class='hero'>
   <div class='hero__left'>
-    <h1>All harvested equations</h1>
-    <p>~15k deduped candidates harvested from local RDM3DC repos. Default view is <strong>LaTeX-only</strong> (best looking).</p>
-  </div>
-  <div class='hero__right'>
-    <div class='controls'>
-      <div class='search'>
-        <input id='harvestSearch' type='search' placeholder='Search equation text / source…' />
-      </div>
-      <div class='row'>
-        <label class='check'>
-          <input id='harvestLatexOnly' type='checkbox' checked />
-          <span>LaTeX only</span>
-        </label>
-      </div>
-    </div>
+    <h1>Harvest List Hidden</h1>
+    <p>The public harvested-equation list is disabled. Candidates are kept privately for later manual submission and review.</p>
   </div>
 </div>
 
 <div class='panel'>
-  <div class='muted'>Source file: <code>data/harvest/equation_harvest.json</code></div>
-  <div id='harvestMeta' class='muted' style='margin-top:8px'>Loading…</div>
+  <div class='muted'>Use the submission workflow to promote selected candidates into the ranked board.</div>
 </div>
-
-<div id='harvestList' class='cardrow'></div>
-
-<script defer src='./assets/harvest.js'></script>
 """
 
     updated = datetime.now().strftime("%Y-%m-%d %H:%M")
