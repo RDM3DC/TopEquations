@@ -130,7 +130,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./certificates.html'>Certificates</a>
-        <a href='./submissions.html'>Submissions</a>
+        <a href='./submissions.html'>All Submissions</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
         <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
@@ -622,6 +622,9 @@ def build_index(repo_root: Path, docs: Path) -> None:
     core = _load_json_safe(repo_root / "data" / "core.json", {"entries": []})
     core_n = len(core.get("entries", []))
 
+    subs = _load_json_safe(repo_root / "data" / "submissions.json", {"entries": []})
+    subs_n = len(subs.get("entries", []))
+
     body = f"""
 <div class='hero hero--home'>
   <div class='hero__left'>
@@ -631,6 +634,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
       <a class='btn' href='./core.html'>Canonical Core</a>
       <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
       <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
+      <a class='btn btn--ghost' href='./submissions.html'>All Submissions</a>
     </div>
   </div>
   <div class='hero__right'>
@@ -642,6 +646,10 @@ def build_index(repo_root: Path, docs: Path) -> None:
       <div class='stat'>
         <div class='stat__num'>{_esc(n)}</div>
         <div class='stat__label'>Ranked derived equations</div>
+      </div>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(subs_n)}</div>
+        <div class='stat__label'>Total submissions</div>
       </div>
     </div>
   </div>
@@ -690,23 +698,96 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
 
     entries = list(data.get("entries", []))
-    entries.sort(key=lambda x: str(x.get("submittedAt", "")), reverse=True)
+    entries.sort(key=lambda x: (x.get("review", {}) or {}).get("score", 0), reverse=True)
 
-    rows: list[str] = []
-    for e in entries:
+    total = len(entries)
+    promoted = sum(1 for e in entries if str(e.get("status", "")).lower() == "promoted")
+    ready = sum(1 for e in entries if str(e.get("status", "")).lower() == "ready")
+    review = sum(1 for e in entries if str(e.get("status", "")).lower() == "needs-review")
+
+    cards: list[str] = []
+    for idx, e in enumerate(entries, start=1):
         sid = str(e.get("submissionId", ""))
-        status = str(e.get("status", "pending"))
-        eqid = str((e.get("review", {}) or {}).get("equationId", ""))
-        eqid_cell = f"<a href='./leaderboard.html'>{_esc(eqid)}</a>" if eqid else "-"
-        rows.append(
+        name = e.get("name", sid)
+        status = str(e.get("status", "pending")).lower()
+        eq = e.get("equationLatex", "") or "(pending)"
+        desc = e.get("description", "")
+        source = e.get("source", "")
+        submitter = e.get("submitter", "")
+        date = e.get("submittedAt", "")
+        units = str(e.get("units", "TBD")).upper()
+        theory = str(e.get("theory", "")).upper()
+
+        review_data = e.get("review", {}) or {}
+        score = review_data.get("score", "-")
+        scores = review_data.get("scores", {}) or {}
+        tract = scores.get("tractability", "-")
+        plaus = scores.get("plausibility", "-")
+        valid = scores.get("validation", "-")
+        artif = scores.get("artifactCompleteness", "-")
+        novelty = review_data.get("novelty", "-")
+        eq_id = str(review_data.get("equationId", "")).strip()
+
+        assumptions = e.get("assumptions", []) or []
+        if not isinstance(assumptions, list):
+            assumptions = [str(assumptions)]
+        assumptions_html = "".join(f"<li>{_esc(a)}</li>" for a in assumptions if str(a).strip())
+
+        evidence = e.get("evidence", []) or []
+        evidence_html = ""
+        if evidence:
+            ev_items = "".join(f"<li>{_esc(ev.get('label', '') if isinstance(ev, dict) else str(ev))}</li>" for ev in evidence)
+            evidence_html = f"<div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'>{ev_items}</ul></div></div>"
+
+        anim = _artifact(e.get("animation"))
+        img = _artifact(e.get("image"))
+
+        # Status badge styling
+        if status == "promoted":
+            status_pill = "<span class='pill pill--good'>PROMOTED</span>"
+        elif status == "ready":
+            status_pill = "<span class='pill pill--warn'>READY</span>"
+        else:
+            status_pill = "<span class='pill pill--neutral'>NEEDS REVIEW</span>"
+
+        chain_link = ""
+        if eq_id and status == "promoted":
+            chain_link = f"<div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>{_esc(eq_id)}</a></div></div>"
+
+        cards.append(
             f"""
-<tr>
-  <td><code>{_esc(sid)}</code></td>
-  <td>{_esc(e.get('submittedAt', ''))}</td>
-  <td>{_esc(e.get('name', ''))}</td>
-  <td>{_esc(status)}</td>
-  <td>{eqid_cell}</td>
-</tr>
+<section class='card' data-status='{_esc(status)}' data-score='{_esc(score)}'>
+  <div class='card__rank'>#{idx}</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>{_esc(name)}</h2>
+      <div class='card__meta'>
+        {_badge(f"Score {score}", 'score')}
+        {status_pill}
+        {_status_badge(str(units), 'units')}
+        {_status_badge(str(theory), 'theory')}
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$${_esc(eq)}$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>{_esc(source)}</span> &middot; Submitter: <span class='muted'>{_esc(submitter)}</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T {_esc(tract)}/20 &middot; P {_esc(plaus)}/20 &middot; V {_esc(valid)}/20 &middot; A {_esc(artif)}/10 &middot; Novelty {_esc(novelty)}</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{("<ul class='ul'>" + assumptions_html + "</ul>") if assumptions_html else "None listed."}</div></div>
+      {evidence_html}
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>{_esc(date)}</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
+      {chain_link}
+    </div>
+  </div>
+</section>
 """
         )
 
@@ -716,35 +797,49 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
 
 <div class='hero'>
   <div class='hero__left'>
-    <h1>Equation Submissions</h1>
-    <p>Submit candidates into the review queue, then promote scored entries into the ranked board.</p>
+    <h1>All Submissions</h1>
+    <p>Every equation submitted through the pipeline — scored, reviewed, and tracked. Promoted entries carry a chain certificate.</p>
+  </div>
+  <div class='hero__right'>
+    <div class='statbox'>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(total)}</div>
+        <div class='stat__label'>Total submissions</div>
+      </div>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(promoted)}</div>
+        <div class='stat__label'>Promoted</div>
+      </div>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(ready)}</div>
+        <div class='stat__label'>Ready</div>
+      </div>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(review)}</div>
+        <div class='stat__label'>In review</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class='panel'>
-  <h2>CLI Workflow</h2>
-  <pre><code>python tools/submit_equation.py --name "My Equation" --equation "\\frac{{dG}}{{dt}}=..." --description "..." --source "manual" --assumption "A1"</code></pre>
-  <pre><code>python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-my-equation --tractability 16 --plausibility 16 --validation 14 --artifact 4 --novelty 22</code></pre>
+  <h2>Pipeline</h2>
+  <ul>
+    <li><strong>Submit</strong> &rarr; equation enters queue with status <em>needs-review</em></li>
+    <li><strong>Score</strong> &rarr; heuristic rubric (T/P/V/A out of 70, normalized to 100). Threshold: 68 = ready</li>
+    <li><strong>Promote</strong> &rarr; equation moves to the ranked leaderboard + chain certificate</li>
+  </ul>
 </div>
 
 <div class='panel'>
-  <h2>Queue</h2>
-  <div style='overflow:auto'>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th>Submission ID</th>
-        <th>Date</th>
-        <th>Name</th>
-        <th>Status</th>
-        <th>Promoted Equation ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      {''.join(rows) if rows else '<tr><td colspan="5">No submissions yet.</td></tr>'}
-    </tbody>
-  </table>
-  </div>
+  <h2>CLI</h2>
+  <pre><code>python tools/submit_equation.py --name "..." --equation "..." --description "..." --source "..." --assumption "..."
+python tools/score_submission.py
+python tools/promote_submission.py --submission-id sub-... --from-review</code></pre>
+</div>
+
+<div id='submissionCards' class='cardrow'>
+{''.join(cards) if cards else "<p class='muted'>No submissions yet.</p>"}
 </div>
 
   </section>
@@ -752,7 +847,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
 """
 
     updated = datetime.now().strftime("%Y-%m-%d %H:%M")
-    (docs / "submissions.html").write_text(_page("TopEquations — Submissions", body, updated), encoding="utf-8")
+    (docs / "submissions.html").write_text(_page("TopEquations — All Submissions", body, updated), encoding="utf-8")
 
 
 def build_certificates(repo_root: Path, docs: Path) -> None:
