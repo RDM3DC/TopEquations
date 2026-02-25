@@ -220,7 +220,7 @@ def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
             }
             if "llm_scores" in metrics:
                 row["tags"]["llm"] = metrics["llm_scores"]
-            if "blended_score" in metrics:
+            if "blended_score" in metrics and "manual_score" not in metrics:
                 row["score"] = metrics["blended_score"]
             updated = True
             break
@@ -284,6 +284,7 @@ def main() -> None:
         if args.manual_score >= 0:
             final_score = _clamp(args.manual_score, 0, 100)
             method = "manual-override"
+            metrics["manual_score"] = final_score
         elif blended is not None:
             final_score = blended
         else:

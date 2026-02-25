@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T07:28:19.629402+00:00",
+  "generated_at": "2026-02-25T07:42:03.442631+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "edec61574c9f32215c0bfc88feb860e0980f8402113eae500dab546a5ef1af2a",
+  "source_sha256": "b93f8def5cd21947ac127911571776149660f928a76d2b210e81b8ed2908d334",
   "count": 86,
   "entries": [
     {
@@ -2092,7 +2092,7 @@
       "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
       "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
       "equation_hash": "c7c9a94fdcd996f290636aa773cbe492f82863725927b802d800585c4a184747",
-      "score": 93,
+      "score": 97,
       "scores": {
         "tractability": 20,
         "plausibility": 20,
@@ -2115,14 +2115,14 @@
       "tier": "derived",
       "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
       "version": 1,
-      "metadata_hash": "1ed96ee7e71a334af683c1c4525de7b3ac988b48f209449958b012f3df0d40a7"
+      "metadata_hash": "a385b9d0adc2b1c10771bbfadc318cfa48e5fb23b7460e6bb24627d862b5908f"
     },
     {
       "token_id": "eq-gemini-curve-memory-topological-frustration-pruning",
       "name": "Gemini Curve-Memory Topological Frustration Pruning",
       "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,\\left(1 + \\xi \\int_0^t e^{-\\frac{t-\\tau}{\\tau_M}} \\left|\\frac{d\\theta_{R,ij}}{d\\tau}\\right|^2 d\\tau \\right)\\,\\tilde{G}_{ij}(t)",
       "equation_hash": "3e55f275b3de154625b2809d333e9fb0170523c1b5a628498b73124c909abeda",
-      "score": 91,
+      "score": 96,
       "scores": {
         "tractability": 18,
         "plausibility": 19,
@@ -2145,7 +2145,7 @@
       "tier": "derived",
       "submitter_hash": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
       "version": 1,
-      "metadata_hash": "70b9478965a3220700877972ff57f66427e00aafc8283761554d4bf0e8f29773"
+      "metadata_hash": "490b4162e6912e0607837b13001af728e65d4b0feb6d59b623b7fca45fc0e752"
     },
     {
       "token_id": "famous-schrodinger",

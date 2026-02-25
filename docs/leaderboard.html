@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602242332' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602242343' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602242332'></script>
+  <script defer src='./assets/app.js?v=202602242343'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -113,8 +113,38 @@
 </section>
 
 
-<section class='card' data-rank='2' data-score='96' data-haslatex='1'>
+<section class='card' data-rank='2' data-score='97' data-haslatex='1'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 97</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,(1+\kappa U_{ij}(t))\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,(1-\eta U_{ij}(t))\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>grok-xai</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)</li><li>kappa, eta &lt;&lt; 1 are small positive meta-plasticity constants (perturbative regime)</li><li>Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation</li><li>Timescale separation: surprise modulation is instantaneous relative to G dynamics</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu/blob/main/images/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='3' data-score='96' data-haslatex='1'>
+  <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase (Adler/RSJ) Dynamics</h2>
@@ -143,8 +173,38 @@
 </section>
 
 
-<section class='card' data-rank='3' data-score='94' data-haslatex='1'>
-  <div class='card__rank'>#3</div>
+<section class='card' data-rank='4' data-score='96' data-haslatex='1'>
+  <div class='card__rank'>#4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 96</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>gemini-3.1-pro</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning/blob/main/images/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class='card' data-rank='5' data-score='94' data-haslatex='1'>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>QWZ Chern-Insulator Hamiltonian (Reference Form)</h2>
@@ -173,8 +233,8 @@
 </section>
 
 
-<section class='card' data-rank='4' data-score='93' data-haslatex='1'>
-  <div class='card__rank'>#4</div>
+<section class='card' data-rank='6' data-score='93' data-haslatex='1'>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Generic ARP Reinforce/Decay Law</h2>
@@ -203,38 +263,8 @@
 </section>
 
 
-<section class='card' data-rank='5' data-score='93' data-haslatex='1'>
-  <div class='card__rank'>#5</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 93</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,(1+\kappa U_{ij}(t))\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,(1-\eta U_{ij}(t))\,\tilde{G}_{ij}(t)$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>grok-xai</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)</li><li>kappa, eta &lt;&lt; 1 are small positive meta-plasticity constants (perturbative regime)</li><li>Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation</li><li>Timescale separation: surprise modulation is instantaneous relative to G dynamics</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu/blob/main/images/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='6' data-score='91' data-haslatex='1'>
-  <div class='card__rank'>#6</div>
+<section class='card' data-rank='7' data-score='91' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (derived mapping)</h2>
@@ -263,8 +293,8 @@
 </section>
 
 
-<section class='card' data-rank='7' data-score='91' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+<section class='card' data-rank='8' data-score='91' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Activity Closure A = G|sinφ| (Parity Lock Mechanism)</h2>
@@ -287,36 +317,6 @@
       <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity proportional to both G and |sinφ| (multiplicative coupling).</li><li>No external activity source — entirely self-referential.</li><li>Valid for single-mode / single-junction systems.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-activity-closure'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-activity-closure' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-activity-closure/blob/main/images/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class='card' data-rank='8' data-score='91' data-haslatex='1'>
-  <div class='card__rank'>#8</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 91</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>gemini-3.1-pro</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning/blob/main/images/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -1108,7 +1108,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 23:32</strong></div>
+      <div>Last built: <strong>2026-02-24 23:43</strong></div>
     </footer>
   </main>
 </body>

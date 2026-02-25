@@ -766,7 +766,8 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
 
     entries = list(data.get("entries", []))
-    entries.sort(key=lambda x: (x.get("review", {}) or {}).get("score", 0), reverse=True)
+    # Sort by submission date (newest first); scores belong on the leaderboard page
+    entries.sort(key=lambda x: x.get("submittedAt", ""), reverse=True)
 
     total = len(entries)
     promoted = sum(1 for e in entries if str(e.get("status", "")).lower() == "promoted")
@@ -787,13 +788,6 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         theory = str(e.get("theory", "")).upper()
 
         review_data = e.get("review", {}) or {}
-        score = review_data.get("score", "-")
-        scores = review_data.get("scores", {}) or {}
-        tract = scores.get("tractability", "-")
-        plaus = scores.get("plausibility", "-")
-        valid = scores.get("validation", "-")
-        artif = scores.get("artifactCompleteness", "-")
-        novelty = review_data.get("novelty", "-")
         eq_id = str(review_data.get("equationId", "")).strip()
 
         assumptions = e.get("assumptions", []) or []
@@ -824,13 +818,12 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
 
         cards.append(
             f"""
-<section class='card' data-status='{_esc(status)}' data-score='{_esc(score)}'>
+<section class='card' data-status='{_esc(status)}'>
   <div class='card__rank'>#{idx}</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>{_esc(name)}</h2>
       <div class='card__meta'>
-        {_badge(f"Score {score}", 'score')}
         {status_pill}
         {_status_badge(str(units), 'units')}
         {_status_badge(str(theory), 'theory')}
@@ -846,7 +839,6 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T {_esc(tract)}/20 &middot; P {_esc(plaus)}/20 &middot; V {_esc(valid)}/20 &middot; A {_esc(artif)}/10 &middot; Novelty {_esc(novelty)}</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'>{("<ul class='ul'>" + assumptions_html + "</ul>") if assumptions_html else "None listed."}</div></div>
       {evidence_html}
       <div class='kv'><div class='k'>Submitted</div><div class='v'>{_esc(date)}</div></div>

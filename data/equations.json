@@ -2118,7 +2118,7 @@
       "source": "grok-xai",
       "submitter": "Grok",
       "repoUrl": "https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
-      "score": 93,
+      "score": 97,
       "scores": {
         "tractability": 20,
         "plausibility": 20,
@@ -2168,7 +2168,7 @@
       "source": "gemini-3.1-pro",
       "submitter": "Gemini",
       "repoUrl": "https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning",
-      "score": 91,
+      "score": 96,
       "scores": {
         "tractability": 18,
         "plausibility": 19,

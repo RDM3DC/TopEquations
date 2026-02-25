@@ -733,18 +733,6 @@
         },
         "novelty": 29,
         "method": "manual-override",
-        "llm_scores": {
-          "traceability": 98,
-          "rigor": 95,
-          "assumptions": 95,
-          "presentation": 97,
-          "novelty_insight": 85,
-          "fruitfulness": 95,
-          "llm_total": 94,
-          "justification": "Directly builds on top leaderboard entries with explicit recovery clauses and simulation readiness, introducing a novel surprise-driven adaptation mechanism."
-        },
-        "llm_model": "gpt-4o",
-        "blended_score": 93,
         "manual_score": 97
       }
     },
@@ -791,18 +779,6 @@
         },
         "novelty": 27,
         "method": "manual-override",
-        "llm_scores": {
-          "traceability": 95,
-          "rigor": 95,
-          "assumptions": 95,
-          "presentation": 95,
-          "novelty_insight": 85,
-          "fruitfulness": 95,
-          "llm_total": 94,
-          "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
-        },
-        "llm_model": "gpt-4o",
-        "blended_score": 91,
         "manual_score": 96
       }
     }

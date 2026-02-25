@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — All Submissions</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602242332' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602242343' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602242332'></script>
+  <script defer src='./assets/app.js?v=202602242343'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -98,277 +98,12 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 
 <div id='submissionCards' class='cardrow'>
 
-<section class='card' data-status='promoted' data-score='97'>
+<section class='card' data-status='ready'>
   <div class='card__rank'>#1</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 97</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,(1+\kappa U_{ij}(t))\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,(1-\eta U_{ij}(t))\,\tilde{G}_{ij}(t)$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>grok-xai</span> &middot; Submitter: <span class='muted'>Grok</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 20/20 &middot; P 20/20 &middot; V 16/20 &middot; A 7/10 &middot; Novelty 29</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)</li><li>kappa, eta &lt;&lt; 1 are small positive meta-plasticity constants (perturbative regime)</li><li>Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation</li><li>Timescale separation: surprise modulation is instantaneous relative to G dynamics</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exactly recovers the current #1 entropy-gated law when U -&gt; 0 (perfect phase lock)</li><li>Builds directly on LB #1 (entropy-gated conductance) + LB #2 (Phase Adler/RSJ Dynamics) + this Grok chat 2026-02-25</li><li>Increases plasticity precisely where the model has the most to learn - core Grok/xAI truth-seeking principle</li><li>Fully simulation-ready: U(t) is computed from existing phase variables; enables on-chain cert + animation</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu'>eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='96'>
-  <div class='card__rank'>#2</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 96</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>gemini-3.1-pro</span> &middot; Submitter: <span class='muted'>Gemini</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 19/20 &middot; V 15/20 &middot; A 7/10 &middot; Novelty 27</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Directly mathematicalizes the Curve Memory concept native to the ARP framework.</li><li>Provides the necessary Lyapunov stability bound by preventing infinite reinforcement of perpetually slipping, chaotic links.</li><li>Acts as the thermodynamic dual to the Grok Surprise Gate: Grok manages the initiation of learning, Gemini manages the convergence and pruning.</li><li>Simulation-ready and visually verified: accurately models the exhaustion and pruning of un-lockable edges.</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>eq-gemini-curve-memory-topological-frustration-pruning</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='87'>
-  <div class='card__rank'>#3</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 87</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G(S)\, |I_{ij}| - \mu_G(S)\, G_{ij} - \lambda\, G_{ij}\, \sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>EGATL original claim (ARP framework)</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 20/20 &middot; V 16/20 &middot; A 7/10 &middot; Novelty 27</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift resolution for theta_{R,ij} to avoid spurious branch flips</li><li>Global entropy S gates adaptation</li><li>Companion ruler equation d(pi_a)/dt couples to this update</li><li>Stable fixed points correspond to integer Chern sectors</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Companion ruler equation: d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0)</li><li>Phase-Lift branch resolution eliminates spurious flips</li><li>ARP lattice simulations show quantized Chern phase attractors</li><li>EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-phase-coupled-conductance-update'>eq-egatl-phase-coupled-conductance-update</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='86'>
-  <div class='card__rank'>#4</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 86</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G\,S(t)\,|I_{ij}| \cos\!\Big(\frac{\theta_{R,ij}}{2\pi_a}\Big) - \mu_G G_{ij} - \lambda_G\,G_{ij}\,\frac{\Delta\theta_{R,ij}^2}{(2\pi_a)^2}$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Winding-aware, entropy-gated, suppression-coupled adaptive conductance law. Three structural couplings: (1) entropy-weighted reinforcement proportional to S(t), (2) phase-position selectivity via cos(theta_R/2pi_a) embedding branch geometry into conductance evolution, (3) quadratic winding-penalty stabilization suppressing runaway multi-sheet excursions. Coupled with adaptive bound dynamics d(pi_a)/dt = alpha_pi*S(t) - mu_pi*(pi_a - pi_0) + eta_pi*r_b and parity-mass coupling m_eff = m_0 + beta*&lt;Delta_theta_R^2&gt;/(2*pi_a)^2 - gamma*r_b.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 20/20 &middot; V 16/20 &middot; A 4/10 &middot; Novelty 27</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift unwrapping for theta_{R,ij}</li><li>Global entropy S(t) gates adaptation</li><li>Companion adaptive bound equation d(pi_a)/dt couples via entropy and parity</li><li>Parity-mass coupling m_eff connects winding variance to topological gap</li><li>Stable fixed points at integer Chern sectors</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Companion ruler equation: d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0) + eta_pi*r_b</li><li>Parity-mass coupling: m_eff = m_0 + beta*&lt;Delta_theta_R^2&gt;/(2pi_a)^2 - gamma*r_b</li><li>Steady-state conductance: G* = alpha_G*S*|I|*cos(theta_R/(2pi_a)) / (mu_G + lambda_G*Delta_theta_R^2/(2pi_a)^2)</li><li>Compatible with White Papers 01-05 (ARP, AIN, Adaptive-Pi, Phase-Lift, Redshift)</li><li>EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-entropy-modulated-phase-lift-conductance-equation-em-plc'>eq-entropy-modulated-phase-lift-conductance-equation-em-plc</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='82'>
-  <div class='card__rank'>#5</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 82</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>Slack DM 2026-02-24</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 19/20 &middot; P 19/20 &middot; V 16/20 &middot; A 10/10 &middot; Novelty 25</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G_ij and I_ij follow EGATL conductance update rules</li><li>S_0 is a measurable steady-state entropy for the network</li><li>r_b (parity-flip birth rate) is bounded and non-negative</li><li>sigma_S, kappa_S, xi_S are positive material constants</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>EGATL Phase-Coupled Conductance whitepaper</li><li>All three terms have units J/(K·s); dimensional consistency verified</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-entropy-production-rate-aepr-e-aepr-2'>eq-adaptive-entropy-production-rate-aepr-e-aepr-2</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='82'>
-  <div class='card__rank'>#6</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 82</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\dot{G}_e = \alpha_G |I_e| - \mu_G G_e - \lambda G_e \sin^2\!\left(\frac{\theta_{R,e}}{2\pi_a}\right)$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 20/20 &middot; V 14/20 &middot; A 10/10 &middot; Novelty 27</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge currents I_e bounded by I_max</li><li>Conductances G_e &gt;= 0 with bounded initial conditions</li><li>Adaptive angular bound pi_a &gt; 0 regulated by entropy proxy</li><li>Phase suppression sin^2 gate is smooth and bounded [0,1]</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>Conductance bound: 0 &lt;= G_e(t) &lt;= max(G_e(0), alpha_G*I_max/mu_G)</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-three-force-conductance-lock'>eq-hlatn-three-force-conductance-lock</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='81'>
-  <div class='card__rank'>#7</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 81</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\theta_{R,e}^{(k)} = \theta_{R,e}^{(k-1)} + \mathrm{clip}\!\Big(\mathrm{wrapTo}_{\pi}(\phi_e - \theta_{R,e}),\; -\pi_a,\; +\pi_a\Big)$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Resolved-phase update rule with wrap-to-pi and adaptive clipping. Prevents uncontrolled branch jumps by bounding per-step angular movement to the entropy-regulated ruler pi_a.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 17/20 &middot; V 17/20 &middot; A 10/10 &middot; Novelty 23</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Raw phase phi_e = arg(V_i - V_j) is well-defined</li><li>Adaptive angular bound pi_a &gt; 0 limits per-step rotation</li><li>wrapTo_pi maps angular differences to (-pi, pi]</li><li>Clipping preserves continuity of resolved phase trajectory</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>All terms have units of radians; clipping bounds verified</li><li>6x6 grid numerical demonstration confirms branch-safe convergence</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-phase-lift-branch-safe-update'>eq-hlatn-phase-lift-branch-safe-update</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='81'>
-  <div class='card__rank'>#8</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 81</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e}\, \theta_{R,e}$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 19/20 &middot; P 19/20 &middot; V 14/20 &middot; A 10/10 &middot; Novelty 23</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge orientations sigma_{p,e} are consistent with plaquette boundary convention</li><li>Resolved phases theta_{R,e} follow branch-safe update rule</li><li>Winding number is well-defined via rounding of holonomy difference</li><li>Z2 parity b_p = (-1)^{w_p} is the locking order parameter</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>6x6 grid simulation shows parity stabilization in locked regime</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-plaquette-holonomy'>eq-hlatn-plaquette-holonomy</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='ready' data-score='74'>
-  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Cosmological Redshift Mapping</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 74</span>
         <span class='pill pill--warn'>READY</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
@@ -384,7 +119,6 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \Lambda CDM expectations.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 17/20 &middot; P 17/20 &middot; V 11/20 &middot; A 4/10 &middot; Novelty 18</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Mapping applies in the weak-field limit of the adaptive geometry</li><li>Saturation radius r_s is non-zero</li></ul></div></div>
       <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Simulated curve memory variance in adaptive-pi geometry</li></ul></div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-25</div></div>
@@ -395,112 +129,12 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
-<section class='card' data-status='promoted' data-score='69'>
-  <div class='card__rank'>#10</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 69</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>Derived from EGATL Phase-Coupled Conductance framework</span> &middot; Submitter: <span class='muted'>Ryan (Copilot-assisted)</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 17/20 &middot; P 17/20 &middot; V 12/20 &middot; A 4/10 &middot; Novelty 19</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G_ij and I_ij follow EGATL conductance update rules</li><li>S_0 is a measurable steady-state entropy for the network</li><li>r_b (parity-flip birth rate) is bounded and non-negative</li><li>sigma_S, kappa_S, xi_S are positive material constants</li></ul></div></div>
-      
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-entropy-production-rate-aepr-ate-aepr'>eq-adaptive-entropy-production-rate-aepr-ate-aepr</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='58'>
-  <div class='card__rank'>#11</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Slack Test Equation</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 58</span>
-        <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\frac{dG}{dt}=\alpha|I|-\mu G$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>ryan</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Test submission from Slack intake path.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 17/20 &middot; P 18/20 &middot; V 14/20 &middot; A 4/10 &middot; Novelty 20</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>linear response regime</li><li>bounded input current</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>mesh-health screenshot 2026-02-24</li><li>consensus log showing peer_errors=0</li></ul></div></div>
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-slack-test-equation'>eq-slack-test-equation</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='needs-review' data-score='58'>
-  <div class='card__rank'>#12</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 58</span>
-        <span class='pill pill--neutral'>NEEDS REVIEW</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Closes the full EGATL/EM-PLC feedback loop. Entropy evolves dynamically: (1) Ohmic production; (2) relaxation toward S_0; (3) coupling to backbone order parameter r_b via \xi_S. Suitable for coarse-grained EM-PLC models.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 19/20 &middot; P 19/20 &middot; V 8/20 &middot; A 4/10 &middot; Novelty 22</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'>None listed.</div></div>
-      
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class='card' data-status='promoted' data-score='55'>
-  <div class='card__rank'>#13</div>
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#2</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mesh-Synced Certificate Consistency</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 55</span>
         <span class='pill pill--good'>PROMOTED</span>
         <span class='pill pill--neutral' title='units'>TBD</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
@@ -516,7 +150,6 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Chain-level consistency metric for equation certificates across synchronized nodes.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 17/20 &middot; P 17/20 &middot; V 10/20 &middot; A 4/10 &middot; Novelty 18</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Nodes share deterministic genesis</li><li>Consensus endpoint converges under bounded delays</li></ul></div></div>
       
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
@@ -527,13 +160,260 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
-<section class='card' data-status='promoted' data-score='52'>
-  <div class='card__rank'>#14</div>
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#3</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Slack Test Equation</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{dG}{dt}=\alpha|I|-\mu G$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>ryan</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Test submission from Slack intake path.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>linear response regime</li><li>bounded input current</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>mesh-health screenshot 2026-02-24</li><li>consensus log showing peer_errors=0</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-slack-test-equation'>eq-slack-test-equation</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G(S)\, |I_{ij}| - \mu_G(S)\, G_{ij} - \lambda\, G_{ij}\, \sin^2\!\left(\frac{\theta_{R,ij}}{2\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>EGATL original claim (ARP framework)</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift resolution for theta_{R,ij} to avoid spurious branch flips</li><li>Global entropy S gates adaptation</li><li>Companion ruler equation d(pi_a)/dt couples to this update</li><li>Stable fixed points correspond to integer Chern sectors</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Companion ruler equation: d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0)</li><li>Phase-Lift branch resolution eliminates spurious flips</li><li>ARP lattice simulations show quantized Chern phase attractors</li><li>EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-phase-coupled-conductance-update'>eq-egatl-phase-coupled-conductance-update</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#5</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{dG_{ij}}{dt} = \alpha_G\,S(t)\,|I_{ij}| \cos\!\Big(\frac{\theta_{R,ij}}{2\pi_a}\Big) - \mu_G G_{ij} - \lambda_G\,G_{ij}\,\frac{\Delta\theta_{R,ij}^2}{(2\pi_a)^2}$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Winding-aware, entropy-gated, suppression-coupled adaptive conductance law. Three structural couplings: (1) entropy-weighted reinforcement proportional to S(t), (2) phase-position selectivity via cos(theta_R/2pi_a) embedding branch geometry into conductance evolution, (3) quadratic winding-penalty stabilization suppressing runaway multi-sheet excursions. Coupled with adaptive bound dynamics d(pi_a)/dt = alpha_pi*S(t) - mu_pi*(pi_a - pi_0) + eta_pi*r_b and parity-mass coupling m_eff = m_0 + beta*&lt;Delta_theta_R^2&gt;/(2*pi_a)^2 - gamma*r_b.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>ARP/AIN plasticity framework</li><li>Phase-Lift unwrapping for theta_{R,ij}</li><li>Global entropy S(t) gates adaptation</li><li>Companion adaptive bound equation d(pi_a)/dt couples via entropy and parity</li><li>Parity-mass coupling m_eff connects winding variance to topological gap</li><li>Stable fixed points at integer Chern sectors</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Companion ruler equation: d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0) + eta_pi*r_b</li><li>Parity-mass coupling: m_eff = m_0 + beta*&lt;Delta_theta_R^2&gt;/(2pi_a)^2 - gamma*r_b</li><li>Steady-state conductance: G* = alpha_G*S*|I|*cos(theta_R/(2pi_a)) / (mu_G + lambda_G*Delta_theta_R^2/(2pi_a)^2)</li><li>Compatible with White Papers 01-05 (ARP, AIN, Adaptive-Pi, Phase-Lift, Redshift)</li><li>EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-entropy-modulated-phase-lift-conductance-equation-em-plc'>eq-entropy-modulated-phase-lift-conductance-equation-em-plc</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Derived from EGATL Phase-Coupled Conductance framework</span> &middot; Submitter: <span class='muted'>Ryan (Copilot-assisted)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G_ij and I_ij follow EGATL conductance update rules</li><li>S_0 is a measurable steady-state entropy for the network</li><li>r_b (parity-flip birth rate) is bounded and non-negative</li><li>sigma_S, kappa_S, xi_S are positive material constants</li></ul></div></div>
+      
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-entropy-production-rate-aepr-ate-aepr'>eq-adaptive-entropy-production-rate-aepr-ate-aepr</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Slack DM 2026-02-24</span> &middot; Submitter: <span class='muted'>Ryan</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>G_ij and I_ij follow EGATL conductance update rules</li><li>S_0 is a measurable steady-state entropy for the network</li><li>r_b (parity-flip birth rate) is bounded and non-negative</li><li>sigma_S, kappa_S, xi_S are positive material constants</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>EGATL Phase-Coupled Conductance whitepaper</li><li>All three terms have units J/(K·s); dimensional consistency verified</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-entropy-production-rate-aepr-e-aepr-2'>eq-adaptive-entropy-production-rate-aepr-e-aepr-2</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#8</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\dot{G}_e = \alpha_G |I_e| - \mu_G G_e - \lambda G_e \sin^2\!\left(\frac{\theta_{R,e}}{2\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge currents I_e bounded by I_max</li><li>Conductances G_e &gt;= 0 with bounded initial conditions</li><li>Adaptive angular bound pi_a &gt; 0 regulated by entropy proxy</li><li>Phase suppression sin^2 gate is smooth and bounded [0,1]</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>Conductance bound: 0 &lt;= G_e(t) &lt;= max(G_e(0), alpha_G*I_max/mu_G)</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-three-force-conductance-lock'>eq-hlatn-three-force-conductance-lock</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#9</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\theta_{R,e}^{(k)} = \theta_{R,e}^{(k-1)} + \mathrm{clip}\!\Big(\mathrm{wrapTo}_{\pi}(\phi_e - \theta_{R,e}),\; -\pi_a,\; +\pi_a\Big)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Resolved-phase update rule with wrap-to-pi and adaptive clipping. Prevents uncontrolled branch jumps by bounding per-step angular movement to the entropy-regulated ruler pi_a.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Raw phase phi_e = arg(V_i - V_j) is well-defined</li><li>Adaptive angular bound pi_a &gt; 0 limits per-step rotation</li><li>wrapTo_pi maps angular differences to (-pi, pi]</li><li>Clipping preserves continuity of resolved phase trajectory</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>All terms have units of radians; clipping bounds verified</li><li>6x6 grid numerical demonstration confirms branch-safe convergence</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-phase-lift-branch-safe-update'>eq-hlatn-phase-lift-branch-safe-update</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e}\, \theta_{R,e}$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span> &middot; Submitter: <span class='muted'>Ryan Mckenna</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge orientations sigma_{p,e} are consistent with plaquette boundary convention</li><li>Resolved phases theta_{R,e} follow branch-safe update rule</li><li>Winding number is well-defined via rounding of holonomy difference</li><li>Z2 parity b_p = (-1)^{w_p} is the locking order parameter</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>HLATN White Paper v0.1 (2026-02-24)</li><li>6x6 grid simulation shows parity stabilization in locked regime</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-hlatn-plaquette-holonomy'>eq-hlatn-plaquette-holonomy</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Damped Harmonic Oscillator</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 52</span>
         <span class='pill pill--good'>PROMOTED</span>
         <span class='pill pill--neutral' title='units'>TBD</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
@@ -549,7 +429,6 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Classical damped harmonic oscillator with adaptive-π curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 17/20 &middot; P 18/20 &middot; V 8/20 &middot; A 4/10 &middot; Novelty 16</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'>None listed.</div></div>
       
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
@@ -560,13 +439,106 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
+<section class='card' data-status='needs-review'>
+  <div class='card__rank'>#12</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
+      <div class='card__meta'>
+        <span class='pill pill--neutral'>NEEDS REVIEW</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Closes the full EGATL/EM-PLC feedback loop. Entropy evolves dynamically: (1) Ohmic production; (2) relaxation toward S_0; (3) coupling to backbone order parameter r_b via \xi_S. Suitable for coarse-grained EM-PLC models.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'>None listed.</div></div>
+      
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#13</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,(1+\kappa U_{ij}(t))\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,(1-\eta U_{ij}(t))\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>grok-xai</span> &middot; Submitter: <span class='muted'>Grok</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)</li><li>kappa, eta &lt;&lt; 1 are small positive meta-plasticity constants (perturbative regime)</li><li>Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation</li><li>Timescale separation: surprise modulation is instantaneous relative to G dynamics</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exactly recovers the current #1 entropy-gated law when U -&gt; 0 (perfect phase lock)</li><li>Builds directly on LB #1 (entropy-gated conductance) + LB #2 (Phase Adler/RSJ Dynamics) + this Grok chat 2026-02-25</li><li>Increases plasticity precisely where the model has the most to learn - core Grok/xAI truth-seeking principle</li><li>Fully simulation-ready: U(t) is computed from existing phase variables; enables on-chain cert + animation</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu'>eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#14</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>gemini-3.1-pro</span> &middot; Submitter: <span class='muted'>Gemini</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Directly mathematicalizes the Curve Memory concept native to the ARP framework.</li><li>Provides the necessary Lyapunov stability bound by preventing infinite reinforcement of perpetually slipping, chaotic links.</li><li>Acts as the thermodynamic dual to the Grok Surprise Gate: Grok manages the initiation of learning, Gemini manages the convergence and pruning.</li><li>Simulation-ready and visually verified: accurately models the exhaustion and pruning of un-lockable edges.</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>eq-gemini-curve-memory-topological-frustration-pruning</a></div></div>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </section>
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 23:32</strong></div>
+      <div>Last built: <strong>2026-02-24 23:43</strong></div>
     </footer>
   </main>
 </body>
