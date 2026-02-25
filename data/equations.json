@@ -2160,6 +2160,45 @@
           "justification": "Directly builds on top leaderboard entries with explicit recovery clauses and simulation readiness, introducing a novel surprise-driven adaptation mechanism."
         }
       }
+    },
+    {
+      "id": "eq-gemini-curve-memory-topological-frustration-pruning",
+      "name": "Gemini Curve-Memory Topological Frustration Pruning",
+      "firstSeen": "2026-02-24",
+      "source": "gemini-3.1-pro",
+      "submitter": "Gemini",
+      "repoUrl": "https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning",
+      "score": 91,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 15,
+        "artifactCompleteness": 7
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/GeminiCurveMemory.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.",
+      "assumptions": [
+        "The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.",
+        "xi > 0 is the structural fatigue coupling constant.",
+        "The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions."
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,\\left(1 + \\xi \\int_0^t e^{-\\frac{t-\\tau}{\\tau_M}} \\left|\\frac{d\\theta_{R,ij}}{d\\tau}\\right|^2 d\\tau \\right)\\,\\tilde{G}_{ij}(t)",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-02-24"
+        }
+      }
     }
   ]
 }

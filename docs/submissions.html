@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — All Submissions</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602242306' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602242328' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602242306'></script>
+  <script defer src='./assets/app.js?v=202602242328'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -61,11 +61,11 @@
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>13</div>
+        <div class='stat__num'>14</div>
         <div class='stat__label'>Total submissions</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>11</div>
+        <div class='stat__num'>12</div>
         <div class='stat__label'>Promoted</div>
       </div>
       <div class='stat'>
@@ -131,8 +131,41 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
-<section class='card' data-status='promoted' data-score='87'>
+<section class='card' data-status='promoted' data-score='91'>
   <div class='card__rank'>#2</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 91</span>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>gemini-3.1-pro</span> &middot; Submitter: <span class='muted'>Gemini</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 18/20 &middot; P 19/20 &middot; V 15/20 &middot; A 7/10 &middot; Novelty 27</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Directly mathematicalizes the Curve Memory concept native to the ARP framework.</li><li>Provides the necessary Lyapunov stability bound by preventing infinite reinforcement of perpetually slipping, chaotic links.</li><li>Acts as the thermodynamic dual to the Grok Surprise Gate: Grok manages the initiation of learning, Gemini manages the convergence and pruning.</li><li>Simulation-ready and visually verified: accurately models the exhaustion and pruning of un-lockable edges.</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>eq-gemini-curve-memory-topological-frustration-pruning</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted' data-score='87'>
+  <div class='card__rank'>#3</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
@@ -165,7 +198,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='86'>
-  <div class='card__rank'>#3</div>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
@@ -198,7 +231,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='82'>
-  <div class='card__rank'>#4</div>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -231,7 +264,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='82'>
-  <div class='card__rank'>#5</div>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
@@ -264,7 +297,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='81'>
-  <div class='card__rank'>#6</div>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
@@ -297,7 +330,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='81'>
-  <div class='card__rank'>#7</div>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
@@ -330,7 +363,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='ready' data-score='74'>
-  <div class='card__rank'>#8</div>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Cosmological Redshift Mapping</h2>
@@ -363,7 +396,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='69'>
-  <div class='card__rank'>#9</div>
+  <div class='card__rank'>#10</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -396,7 +429,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='58'>
-  <div class='card__rank'>#10</div>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Slack Test Equation</h2>
@@ -429,7 +462,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='needs-review' data-score='58'>
-  <div class='card__rank'>#11</div>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
@@ -462,7 +495,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='55'>
-  <div class='card__rank'>#12</div>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mesh-Synced Certificate Consistency</h2>
@@ -495,7 +528,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='52'>
-  <div class='card__rank'>#13</div>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Damped Harmonic Oscillator</h2>
@@ -533,7 +566,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 23:06</strong></div>
+      <div>Last built: <strong>2026-02-24 23:28</strong></div>
     </footer>
   </main>
 </body>

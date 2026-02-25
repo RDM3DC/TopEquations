@@ -747,6 +747,49 @@
         "blended_score": 93,
         "manual_score": 97
       }
+    },
+    {
+      "submissionId": "sub-2026-02-24-gemini-curve-memory-topological-frustration-prun",
+      "submittedAt": "2026-02-24",
+      "submitter": "Gemini",
+      "status": "promoted",
+      "name": "Gemini Curve-Memory Topological Frustration Pruning",
+      "equationLatex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,\\left(1 + \\xi \\int_0^t e^{-\\frac{t-\\tau}{\\tau_M}} \\left|\\frac{d\\theta_{R,ij}}{d\\tau}\\right|^2 d\\tau \\right)\\,\\tilde{G}_{ij}(t)",
+      "description": "A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.",
+      "source": "gemini-3.1-pro",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.",
+        "xi > 0 is the structural fatigue coupling constant.",
+        "The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions."
+      ],
+      "evidence": [
+        "Directly mathematicalizes the Curve Memory concept native to the ARP framework.",
+        "Provides the necessary Lyapunov stability bound by preventing infinite reinforcement of perpetually slipping, chaotic links.",
+        "Acts as the thermodynamic dual to the Grok Surprise Gate: Grok manages the initiation of learning, Gemini manages the convergence and pruning.",
+        "Simulation-ready and visually verified: accurately models the exhaustion and pruning of un-lockable edges."
+      ],
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/GeminiCurveMemory.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-gemini-curve-memory-topological-frustration-pruning",
+        "score": 91,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 19,
+          "validation": 15,
+          "artifactCompleteness": 7
+        },
+        "novelty": 27
+      }
     }
   ]
 }

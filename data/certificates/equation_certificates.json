@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T07:22:56.674257+00:00",
+  "generated_at": "2026-02-25T07:28:19.629402+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "1c5e90e469e331b4cc3e30bc8dae5199044a89c2ab18c17b416537c180c54cb6",
-  "count": 85,
+  "source_sha256": "edec61574c9f32215c0bfc88feb860e0980f8402113eae500dab546a5ef1af2a",
+  "count": 86,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2116,6 +2116,36 @@
       "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
       "version": 1,
       "metadata_hash": "1ed96ee7e71a334af683c1c4525de7b3ac988b48f209449958b012f3df0d40a7"
+    },
+    {
+      "token_id": "eq-gemini-curve-memory-topological-frustration-pruning",
+      "name": "Gemini Curve-Memory Topological Frustration Pruning",
+      "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,\\left(1 + \\xi \\int_0^t e^{-\\frac{t-\\tau}{\\tau_M}} \\left|\\frac{d\\theta_{R,ij}}{d\\tau}\\right|^2 d\\tau \\right)\\,\\tilde{G}_{ij}(t)",
+      "equation_hash": "3e55f275b3de154625b2809d333e9fb0170523c1b5a628498b73124c909abeda",
+      "score": 91,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 15,
+        "artifactCompleteness": 7
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-02-24"
+      },
+      "source": "gemini-3.1-pro",
+      "date": "2026-02-24",
+      "description": "A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/GeminiCurveMemory.mp4",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+      "version": 1,
+      "metadata_hash": "70b9478965a3220700877972ff57f66427e00aafc8283761554d4bf0e8f29773"
     },
     {
       "token_id": "famous-schrodinger",
