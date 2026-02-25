@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T03:22:56.632855+00:00",
+  "generated_at": "2026-02-25T06:37:36.214411+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "13a6f26c9a7884fe245bce64cb22b94d84ba5e7b36ca934ccac5abb7f2051d79",
-  "count": 84,
+  "source_sha256": "a5e48268d5682db3538b30deb9251e5963d9e60e147d04ccefd6c3b10fe62db3",
+  "count": 85,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -1672,15 +1672,15 @@
       "name": "Mesh-Synced Certificate Consistency",
       "equation_latex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
       "equation_hash": "cbb1551f6c19908502202c4e54bf5bf86988311eb01cf189a033f5207dd7877f",
-      "score": 57,
+      "score": 53,
       "scores": {
         "tractability": 15,
-        "plausibility": 14,
-        "validation": 9,
+        "plausibility": 13,
+        "validation": 7,
         "artifactCompleteness": 2
       },
       "novelty": {
-        "score": 18,
+        "score": 13,
         "date": "2026-02-24"
       },
       "source": "manual setup",
@@ -1695,7 +1695,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "52d9cad3933364237f90c37c1258beec7ca7cdcbbace95897da4162317e38906"
+      "metadata_hash": "94495c8480e1ec196dc4e62f0e82c935a0850213f33b096719f4b5ddb0d1062b"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1732,15 +1732,15 @@
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equation_latex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
       "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
-      "score": 70,
+      "score": 67,
       "scores": {
         "tractability": 14,
         "plausibility": 15,
-        "validation": 14,
+        "validation": 12,
         "artifactCompleteness": 6
       },
       "novelty": {
-        "score": 16,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "Slack DM 2026-02-24",
@@ -1755,7 +1755,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "72cb74cab6110dde2f318cfe1e7f4e1820038b7dfa402230defd1cda4a0b6b1e"
+      "metadata_hash": "49b11ddabe8b6592cdf6bdba18ad1a0ef53275f443f0b1cd28e6d057b1a548ac"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-7",
@@ -1852,15 +1852,15 @@
       "name": "HLATN Three-Force Conductance Lock",
       "equation_latex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
       "equation_hash": "f944e4196b40c905b14dcfe319f9058e9c9dc0c832ec0b888c89a158cd9061d6",
-      "score": 71,
+      "score": 67,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 10,
         "artifactCompleteness": 6
       },
       "novelty": {
-        "score": 16,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "HLATN_White_Paper_2026-02-24.pdf",
@@ -1875,18 +1875,18 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "626e797b641b10bf701fb11e4987e969e5e0aad5aab6e2c7b82d906ecddd62b2"
+      "metadata_hash": "70d9c87b07c8d671da3812a4902e5ffac02f5b67e7ccc20547bcbfaa770decef"
     },
     {
       "token_id": "eq-hlatn-phase-lift-branch-safe-update",
       "name": "HLATN Phase-Lift Branch-Safe Update",
       "equation_latex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\!\\Big(\\mathrm{wrapTo}_{\\pi}(\\phi_e - \\theta_{R,e}),\\; -\\pi_a,\\; +\\pi_a\\Big)",
       "equation_hash": "727ea4aa8c9ace0b1ca1ad97b5c575dd5c7e1c6ab528f643a9fdd9973c6759f6",
-      "score": 70,
+      "score": 67,
       "scores": {
         "tractability": 15,
         "plausibility": 13,
-        "validation": 15,
+        "validation": 13,
         "artifactCompleteness": 6
       },
       "novelty": {
@@ -1905,22 +1905,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "497322f8a57ab171b273e69f0f7661d64a4cd240c39cf51fae23f4035254858f"
+      "metadata_hash": "b38f19d100eadfbcf4a586c418ef04945e1dbb30d7c583a9150f273f8039f3fe"
     },
     {
       "token_id": "eq-hlatn-plaquette-holonomy",
       "name": "HLATN Plaquette Holonomy",
       "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
       "equation_hash": "55e25b3f97eb4e330db7871b725a2e6437d43557934ab18c5fa6de6e5b2fe086",
-      "score": 69,
+      "score": 64,
       "scores": {
         "tractability": 14,
         "plausibility": 15,
-        "validation": 13,
+        "validation": 10,
         "artifactCompleteness": 6
       },
       "novelty": {
-        "score": 16,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "HLATN_White_Paper_2026-02-24.pdf",
@@ -1935,22 +1935,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "509e009ec0cda578768804abd71bfb0ede623b03b17e9bc4cf55e0f8e0c9467a"
+      "metadata_hash": "9b64710beda17b868e940500cb5bccab8aa1b121236423637a34d763c4e1362f"
     },
     {
       "token_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
       "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
       "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G\\,S(t)\\,|I_{ij}| \\cos\\!\\Big(\\frac{\\theta_{R,ij}}{2\\pi_a}\\Big) - \\mu_G G_{ij} - \\lambda_G\\,G_{ij}\\,\\frac{\\Delta\\theta_{R,ij}^2}{(2\\pi_a)^2}",
       "equation_hash": "cdb60bd1b572234675141a29828e9bcb75fa1304de8e8265efbc5cfb6dd6da59",
-      "score": 66,
+      "score": 63,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 11,
         "artifactCompleteness": 2
       },
       "novelty": {
-        "score": 16,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)",
@@ -1965,22 +1965,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "4be97c6bc4829a674e6df3d2f411cb4833eb3872661b6643d4afd992b8a3f349"
+      "metadata_hash": "8eafcf2a575a5c965f876dde2263ba976f212eb2154853748e094ea1685f66e8"
     },
     {
       "token_id": "eq-egatl-phase-coupled-conductance-update",
       "name": "EGATL Phase-Coupled Conductance Update",
       "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
       "equation_hash": "0e0eefe3e5c6e217a0fcb5d5cbad0630d74048012868bbea78ccfb8ff676002d",
-      "score": 69,
+      "score": 66,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 11,
         "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 16,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "EGATL original claim (ARP framework)",
@@ -1995,22 +1995,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "f81edbe5a148cbb39afe7cff0cf5a887ed168f62b5ae9eb9df1dc6c5a5215cd9"
+      "metadata_hash": "5887dea68d80e0fa4b7157bb99bcb2d8a4ebe52ff19474062b9e6e472fc6256a"
     },
     {
       "token_id": "eq-slack-test-equation",
       "name": "Slack Test Equation",
       "equation_latex": "\\frac{dG}{dt}=\\alpha|I|-\\mu G",
       "equation_hash": "71ae568220c2da0ff73fb590c14942714f47575a3779862657ae06f5990d0d63",
-      "score": 63,
+      "score": 61,
       "scores": {
         "tractability": 15,
         "plausibility": 15,
-        "validation": 12,
+        "validation": 11,
         "artifactCompleteness": 2
       },
       "novelty": {
-        "score": 16,
+        "score": 15,
         "date": "2026-02-24"
       },
       "source": "slack",
@@ -2025,22 +2025,22 @@
       "tier": "derived",
       "submitter_hash": "e0e3a2b6471d044a53a7757994b51dd33c6b3ec90e1aca21cebc8e2ae79d6d9b",
       "version": 1,
-      "metadata_hash": "a84d1ed9732df7e9c1df9b3af6ee74a97ba54cd8141ba6d28a079eb742960a7e"
+      "metadata_hash": "fbdde08570a71c8011c2c364c5dd14b045a33c5dd8d34a78c427697d037c2750"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equation_latex": "dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
       "equation_hash": "b26fbaf3d0810839aaa94300a91d6a8e69111a0c3f31d43ace314063e3031e23",
-      "score": 53,
+      "score": 54,
       "scores": {
         "tractability": 15,
         "plausibility": 13,
-        "validation": 7,
+        "validation": 8,
         "artifactCompleteness": 2
       },
       "novelty": {
-        "score": 16,
+        "score": 14,
         "date": "2026-02-24"
       },
       "source": "Derived from EGATL Phase-Coupled Conductance framework",
@@ -2055,22 +2055,22 @@
       "tier": "derived",
       "submitter_hash": "57521f88c27503e483bc2de891c352fe858b2f2ff34ae1d9b89e1eddd981330d",
       "version": 1,
-      "metadata_hash": "4d61d6a8eff20468ba40e68f7f3a168846abb3e298844372e91061ad5900ada4"
+      "metadata_hash": "aeb30cb8c6320e0d9b081cb3f445bb20aeca7c91c2049a6ec5024b999ad0e8ff"
     },
     {
       "token_id": "eq-adaptive-damped-harmonic-oscillator",
       "name": "Adaptive Damped Harmonic Oscillator",
       "equation_latex": "x(t) = A\u00b7exp(-\u03b3\u00b7\u03c0_\u03b1\u00b7t)\u00b7cos(\u03c9\u2080\u00b7\u221a(1 - (\u03b3\u00b7\u03c0_\u03b1/\u03c9\u2080)\u00b2)\u00b7t + \u03c6)",
       "equation_hash": "c0e7553873516af8e2e1cf96001e4432a7377243b1da69348f84a989ae6fd786",
-      "score": 53,
+      "score": 51,
       "scores": {
         "tractability": 15,
         "plausibility": 14,
-        "validation": 6,
+        "validation": 5,
         "artifactCompleteness": 2
       },
       "novelty": {
-        "score": 16,
+        "score": 12,
         "date": "2026-02-24"
       },
       "source": "discord-test",
@@ -2085,7 +2085,37 @@
       "tier": "derived",
       "submitter_hash": "48530533e7847fa53832a67425ebbfb36da45aa41584e67058f0e5d46e48cfe7",
       "version": 1,
-      "metadata_hash": "d58e0742f200276b850c784a9d361a5a9127ecd16c3288f50f385404d83bb736"
+      "metadata_hash": "b6410b64893c812d16637745ee59d4cc7c0e13dad125e85c80790339307e9802"
+    },
+    {
+      "token_id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+      "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
+      "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
+      "equation_hash": "c7c9a94fdcd996f290636aa773cbe492f82863725927b802d800585c4a184747",
+      "score": 64,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 18,
+        "date": "2026-02-24"
+      },
+      "source": "grok-xai",
+      "date": "2026-02-24",
+      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows \u00e2\u20ac\u201d implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/GrokSurpriseAnimation.mp4",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
+      "version": 1,
+      "metadata_hash": "064ece4b2a3bd9d9a2a8605168cbbc167161b03ff53eeac254a521a1657905a4"
     },
     {
       "token_id": "famous-schrodinger",

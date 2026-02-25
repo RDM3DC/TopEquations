@@ -77,7 +77,7 @@ def main() -> None:
         artifact = _clamp(args.artifact, 0, 10)
         novelty = _clamp(args.novelty, 0, 30)
 
-    total = int(round(((tract + plaus + validation + artifact) / 70.0) * 100.0))
+    total = tract + plaus + validation + artifact + novelty
 
     eid = args.equation_id.strip() or f"eq-{_slug(entry.get('name', 'submission'))}"
     existing_ids = {str(x.get("id")) for x in equations.get("entries", [])}

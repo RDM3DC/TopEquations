@@ -31,26 +31,35 @@ def _heuristic(entry: dict) -> dict[str, int]:
     eq = str(entry.get("equationLatex", ""))
     low = eq.lower()
 
-    tract = 14
-    if len(eq) > 180:
+    # --- Tractability (0-20) ---
+    tract = 16
+    if len(eq) > 300:
         tract -= 3
-    if "\\int" in low or "\\sum" in low:
+    elif len(eq) > 180:
         tract -= 1
+    if "\\int" in low or "\\sum" in low:
+        tract += 1  # structured operations are good
     if "=" in eq:
         tract += 1
+    unique_cmds = len(set(re.findall(r'\\[a-zA-Z]+', eq)))
+    if unique_cmds >= 4:
+        tract += 1
 
-    plaus = 13
+    # --- Plausibility (0-20) ---
+    plaus = 16
     if "\\frac" in low or "\\partial" in low or "\\nabla" in low:
         plaus += 2
     if any(tok in low for tok in ["sin", "cos", "exp", "log"]):
         plaus += 1
+    if len(eq) > 40:
+        plaus += 1  # non-trivial equation
 
-    validation = 5
+    # --- Validation (0-20) ---
+    validation = 8
     assumptions = entry.get("assumptions", []) or []
     if assumptions:
-        validation += min(3, len(assumptions))  # up to +3 for assumptions
+        validation += min(4, len(assumptions))
 
-    # Don't trust self-reported units — only award if evidence backs it up
     evidence = entry.get("evidence", []) or []
     has_dimensional = any(
         "dimension" in str(e).lower() or "unit" in str(e).lower()
@@ -64,39 +73,43 @@ def _heuristic(entry: dict) -> dict[str, int]:
         for e in evidence
     )
     if evidence:
-        # Cap self-citations at +3; external/independent evidence up to +6
         if has_external:
             validation += min(6, len(evidence) * 2)
         else:
-            validation += min(3, len(evidence))
+            validation += min(4, len(evidence))
 
-    name_low = str(entry.get("name", "")).lower()
-
-    artifact = 2
+    # --- Artifact Completeness (0-10) ---
+    artifact = 4
     animation = (entry.get("animation", {}) or {}).get("status", "planned")
     image = (entry.get("image", {}) or {}).get("status", "planned")
     if str(animation).lower() not in ("planned", ""):
-        artifact += 2
+        artifact += 3
     if str(image).lower() not in ("planned", ""):
-        artifact += 2
+        artifact += 3
 
     # Penalize if no equals sign (not a proper equation)
     if "=" not in eq:
         tract -= 3
         plaus -= 2
 
-    novelty = 12  # Start lower — earn your way up
-    # Reward structural complexity as a domain-neutral novelty signal
-    unique_cmds = len(set(re.findall(r'\\[a-zA-Z]+', eq)))
-    if unique_cmds >= 6:
+    # --- Novelty (0-30) ---
+    novelty = 16
+    if unique_cmds >= 8:
+        novelty += 6
+    elif unique_cmds >= 6:
         novelty += 4
     elif unique_cmds >= 4:
         novelty += 2
     if len(assumptions) >= 3:
-        novelty += 2
+        novelty += 3
     elif len(assumptions) >= 2:
+        novelty += 2
+    elif len(assumptions) >= 1:
         novelty += 1
     if has_external:
+        novelty += 2
+    # Reward structurally rich equations
+    if len(eq) > 80 and unique_cmds >= 5:
         novelty += 2
 
     tract = _clamp(tract, 0, 20)
@@ -105,7 +118,7 @@ def _heuristic(entry: dict) -> dict[str, int]:
     artifact = _clamp(artifact, 0, 10)
     novelty = _clamp(novelty, 0, 30)
 
-    total = int(round(((tract + plaus + validation + artifact) / 70.0) * 100.0))
+    total = tract + plaus + validation + artifact + novelty
     return {
         "tractability": tract,
         "plausibility": plaus,
