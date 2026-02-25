@@ -139,6 +139,12 @@ def _page(title: str, body: str, updated: str) -> str:
     {body}
     <footer class='footer'>
       <div>Last built: <strong>{_esc(updated)}</strong></div>
+      <div style='margin-top:.5rem'>
+        <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
+           style='color:#00d632;font-weight:600;text-decoration:none'>
+          &#x1F4B2; Support via Cash App — $rdm3d
+        </a>
+      </div>
     </footer>
   </main>
 </body>
