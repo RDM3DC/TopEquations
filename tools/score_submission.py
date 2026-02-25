@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from datetime import datetime
 from pathlib import Path
@@ -146,6 +147,17 @@ def _pick_entries(data: dict, submission_id: str | None, all_pending: bool, incl
     return []
 
 
+def _run_llm_scoring(entry: dict, api_key: str, api_base: str, model: str) -> dict | None:
+    """Run LLM advisory scoring via llm_score_submission module."""
+    from llm_score_submission import score_submission as llm_score
+    return llm_score(entry, api_key, api_base, model)
+
+
+def _blend(heuristic_total: int, llm_total: int) -> int:
+    """40% heuristic + 60% LLM."""
+    return int(round(0.4 * heuristic_total + 0.6 * llm_total))
+
+
 def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
     review = submission.get("review", {}) or {}
     eq_id = str(review.get("equationId", "")).strip()
@@ -176,6 +188,10 @@ def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
                 "score": metrics["novelty"],
                 "date": _today(),
             }
+            if "llm_scores" in metrics:
+                row["tags"]["llm"] = metrics["llm_scores"]
+            if "blended_score" in metrics:
+                row["score"] = metrics["blended_score"]
             updated = True
             break
 
@@ -189,13 +205,21 @@ def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Heuristically score pending submissions")
+    ap = argparse.ArgumentParser(description="Score pending submissions (heuristic + optional LLM)")
     ap.add_argument("--submission-id", default="")
     ap.add_argument("--all-pending", action="store_true")
     ap.add_argument("--mark-ready-threshold", type=int, default=65)
     ap.add_argument("--include-promoted", action="store_true", help="Allow rescoring submissions already promoted")
     ap.add_argument("--sync-equations", action="store_true", help="When rescoring promoted submissions, sync score back to equations.json")
+    ap.add_argument("--llm", action="store_true", help="Run LLM advisory scoring and compute blended score (40%% heuristic + 60%% LLM)")
+    ap.add_argument("--llm-model", default=os.environ.get("LLM_SCORE_MODEL", "gpt-4o-mini"))
+    ap.add_argument("--llm-api-base", default=os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1"))
+    ap.add_argument("--manual-score", type=int, default=-1, help="Override final score with a manual value (0-100)")
     args = ap.parse_args()
+
+    api_key = os.environ.get("OPENAI_API_KEY", "")
+    if args.llm and not api_key:
+        raise SystemExit("Set OPENAI_API_KEY environment variable for --llm scoring")
 
     data = _load(SUBMISSIONS_JSON)
     targets = _pick_entries(data, args.submission_id.strip() or None, args.all_pending, args.include_promoted)
@@ -209,13 +233,41 @@ def main() -> None:
         if status == "promoted" and not args.include_promoted:
             continue
         metrics = _heuristic(e)
-        score = metrics["score"]
+        heuristic_score = metrics["score"]
+        method = "heuristic-v2"
+
+        # LLM advisory layer
+        llm_scores = None
+        blended = None
+        if args.llm:
+            llm_scores = _run_llm_scoring(e, api_key, args.llm_api_base, args.llm_model)
+            if llm_scores:
+                blended = _blend(heuristic_score, llm_scores["llm_total"])
+                metrics["llm_scores"] = llm_scores
+                metrics["blended_score"] = blended
+                method = f"blended-v1 ({args.llm_model})"
+                print(f"  llm: {llm_scores['llm_total']} blended: {blended} ({llm_scores.get('justification', '')})")
+            else:
+                print(f"  llm: FAILED — using heuristic only")
+
+        # Manual override takes precedence over everything
+        if args.manual_score >= 0:
+            final_score = _clamp(args.manual_score, 0, 100)
+            method = "manual-override"
+        elif blended is not None:
+            final_score = blended
+        else:
+            final_score = heuristic_score
+
+        metrics["score"] = final_score
+
         prior_review = e.get("review", {}) or {}
         prior_eqid = str(prior_review.get("equationId", "")).strip()
-        e["review"] = {
+        review = {
             "date": _today(),
             "equationId": prior_eqid,
-            "score": score,
+            "score": final_score,
+            "heuristic_score": heuristic_score,
             "scores": {
                 "tractability": metrics["tractability"],
                 "plausibility": metrics["plausibility"],
@@ -223,15 +275,23 @@ def main() -> None:
                 "artifactCompleteness": metrics["artifactCompleteness"],
             },
             "novelty": metrics["novelty"],
-            "method": "heuristic-v1",
+            "method": method,
         }
+        if llm_scores:
+            review["llm_scores"] = llm_scores
+            review["llm_model"] = args.llm_model
+            review["blended_score"] = blended
+        if args.manual_score >= 0:
+            review["manual_score"] = args.manual_score
+        e["review"] = review
+
         if status != "promoted":
-            e["status"] = "ready" if score >= args.mark_ready_threshold else "needs-review"
+            e["status"] = "ready" if final_score >= args.mark_ready_threshold else "needs-review"
         if status == "promoted" and args.sync_equations:
             if _sync_equation_score(e, metrics):
                 eq_sync += 1
         count += 1
-        print(f"scored: {e.get('submissionId')} score={score} status={e.get('status')}")
+        print(f"scored: {e.get('submissionId')} score={final_score} (h={heuristic_score}) status={e.get('status')}")
 
     data["lastUpdated"] = _today()
     _save(SUBMISSIONS_JSON, data)

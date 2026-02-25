@@ -21,6 +21,7 @@ from urllib.error import URLError
 
 REPO = Path(__file__).resolve().parents[1]
 SUBMISSIONS_JSON = REPO / "data" / "submissions.json"
+EQUATIONS_JSON = REPO / "data" / "equations.json"
 
 # Configurable via environment
 API_KEY_ENV = "OPENAI_API_KEY"
@@ -31,41 +32,58 @@ DEFAULT_BASE = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = """\
-You are a skeptical, rigorous equation reviewer for a scientific leaderboard.
-Score the submitted equation on five axes. Be TOUGH. Most submissions should
-score 40-70 total. Only landmark results deserve 80+.
+You are a rigorous but fair equation reviewer for the TopEquations research
+leaderboard. This leaderboard showcases NOVEL, ORIGINAL equations — not
+textbook classics. Score the submitted equation on five axes.
 
-CALIBRATION ANCHORS (use these to set your scale):
-  Schrodinger equation (i*hbar*d_psi/dt = H*psi): ~85 total
-  Euler identity (e^(i*pi)+1=0):                   ~45 total (elegant but no new physics)
-  x = x:                                           ~5 total (tautology)
-  A well-structured but unverified new PDE:         ~55 total
+CONTEXT: TopEquations is a platform for researchers submitting new theoretical
+results, extensions, and derivations. Submissions typically build on established
+physics/math frameworks (conductance, phase dynamics, entropy, etc.) to propose
+genuinely new governing equations. Most submissions include self-authored
+evidence (whitepapers, derivations, simulations). Independent peer review is
+rare at submission time — that does not make the work low quality.
+
+CALIBRATION ANCHORS (for this leaderboard's scale):
+  Trivial tautology (x=x):                         ~5 total
+  Known textbook result resubmitted:                ~25-35 total
+  Relabeled known result with minor twist:          ~40-50 total
+  Well-structured novel PDE with clear derivation:  ~65-75 total
+  Novel equation with strong evidence + animations: ~80-90 total
+  Landmark unifying equation with limit recovery:   ~90-97 total
 
 Axes (integer scores):
-  physical_validity  (0-20): Is it dimensionally consistent and physically correct?
-      Ask: could you derive this from first principles? Is it a tautology or
-      trivial rearrangement? Penalize if units/dimensions are unclear.
-      0 = nonsense/tautology, 10 = plausible but unverified, 20 = rigorously derivable
-  novelty            (0-20): Is this genuinely new or a known result restated?
-      DEFAULT TO LOW. Assume the equation is a restatement of known work unless
-      you can confirm otherwise. Renaming variables in a known equation = 2-5.
-      0 = textbook standard, 5 = relabeled known result, 10 = meaningful extension,
-      15 = novel combination, 20 = fundamentally new insight
-  clarity            (0-20): Are all variables defined? Is the notation standard?
-      0 = incomprehensible, 10 = readable but some terms undefined, 20 = publication-ready
-  evidence_quality   (0-20): Is it backed by INDEPENDENT evidence?
-      Self-citations and self-authored whitepapers cap at 10. Only independent
-      replication, peer-reviewed references, or verified experimental data can
-      score above 10. Listing assumptions alone = 3-5.
-      0 = nothing, 5 = assumptions only, 10 = self-authored proof, 15 = independent
-      confirmation, 20 = peer-reviewed + experimental
+  physical_validity  (0-20): Is it dimensionally consistent and physically sound?
+      Does it have well-defined state variables? Can you trace a derivation path?
+      0 = nonsense/tautology, 8 = plausible but hand-wavy, 14 = solid derivation
+      logic, 18 = rigorously derivable, 20 = textbook-level rigor
+  novelty            (0-20): Does it introduce genuinely new dynamics or coupling?
+      Building on known frameworks IS expected — score the NEW contribution.
+      0 = exact copy, 5 = trivial rearrangement, 10 = meaningful extension,
+      14 = novel coupling of known concepts, 18 = new mechanism, 20 = paradigm shift
+  clarity            (0-20): Are all variables defined? Is notation standard?
+      0 = incomprehensible, 10 = readable but gaps, 15 = clear with minor issues,
+      18 = publication-ready, 20 = exemplary
+  evidence_quality   (0-20): What evidence supports this equation?
+      Self-authored derivations, simulations, and whitepapers ARE valid evidence
+      for a research leaderboard. Score the quality and rigor of what is provided.
+      0 = nothing, 5 = assumptions only, 10 = derivation sketch, 13 = detailed
+      self-authored proof/simulation, 16 = with visualization artifacts,
+      18 = independent confirmation, 20 = peer-reviewed + experimental
   significance       (0-20): How impactful is this if correct?
-      Most niche results = 5-10. Cross-domain impact = 12-16. Field-changing = 18-20.
-      0 = trivial, 10 = useful niche, 15 = cross-domain, 20 = field-changing
+      Consider: does it unify concepts? Does it generalize existing results?
+      Does it reduce to known equations in limiting cases?
+      0 = trivial, 8 = niche utility, 12 = useful generalization,
+      15 = cross-domain bridge, 18 = field-advancing, 20 = transformative
 
-ALSO check for reducibility: can the equation be trivially simplified or is it
-an over-parameterized version of something simpler? If so, penalize novelty and
-significance.
+KEY SCORING SIGNALS (reward these):
+  - Limit recovery: equation reduces to known result when a parameter → 0
+  - Unification: bridges two or more previously separate frameworks
+  - Visualization: has animations/simulations backing the dynamics
+  - Clear assumptions: explicitly stated domain + boundary conditions
+  - Novel coupling terms: new interaction mechanisms not in parent equations
+
+Check for reducibility: can the equation be trivially simplified? If so, penalize
+novelty and significance proportionally.
 
 Return ONLY this JSON (no markdown, no extra text):
 {"physical_validity": N, "novelty": N, "clarity": N, "evidence_quality": N, "significance": N, "reducible": true/false, "justification": "One sentence summary."}
@@ -98,6 +116,27 @@ def _build_user_prompt(entry: dict) -> str:
     else:
         evidence = []
 
+    # Build leaderboard context so LLM can verify lineage claims
+    lb_context = ""
+    try:
+        eq_data = json.loads(EQUATIONS_JSON.read_text(encoding="utf-8"))
+        top = sorted(eq_data.get("entries", []), key=lambda x: x.get("score", 0), reverse=True)[:10]
+        if top:
+            lines = ["Current top leaderboard entries (for lineage reference):"]
+            for i, t in enumerate(top, 1):
+                t_name = str(t.get("name", ""))[:120]
+                t_score = t.get("score", 0)
+                t_eq = str(t.get("equationLatex", ""))[:200]
+                lines.append(f"  #{i}: {t_name} (score {t_score}) — {t_eq}")
+            lb_context = "\n".join(lines) + "\n"
+    except Exception:
+        pass
+
+    animation_status = ""
+    anim = entry.get("animation", {})
+    if isinstance(anim, dict) and str(anim.get("status", "")).lower() not in ("planned", ""):
+        animation_status = f"Animation: provided ({anim.get('status', '')})\n"
+
     return (
         f"Name: {name}\n"
         f"Equation: {equation}\n"
@@ -106,6 +145,8 @@ def _build_user_prompt(entry: dict) -> str:
         f"Theory check: {theory}\n"
         f"Assumptions: {json.dumps(assumptions)}\n"
         f"Evidence: {json.dumps(evidence)}\n"
+        f"{animation_status}"
+        f"{lb_context}"
     )
 
 

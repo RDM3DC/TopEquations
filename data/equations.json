@@ -1493,7 +1493,7 @@
       "name": "Mesh-Synced Certificate Consistency",
       "firstSeen": "2026-02-24",
       "source": "manual setup",
-      "score": 66,
+      "score": 48,
       "scores": {
         "tractability": 17,
         "plausibility": 17,
@@ -1521,6 +1521,16 @@
         "novelty": {
           "score": 18,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 8,
+          "significance": 8,
+          "evidence_quality": 0,
+          "novelty": 10,
+          "clarity": 10,
+          "llm_total": 36,
+          "reducible": true,
+          "justification": "Simple difference equation with no provided evidence or detailed derivation."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-mesh-synced-certificate-consistency"
@@ -1564,7 +1574,7 @@
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "firstSeen": "2026-02-24",
       "source": "Slack DM 2026-02-24",
-      "score": 89,
+      "score": 83,
       "scores": {
         "tractability": 19,
         "plausibility": 19,
@@ -1594,6 +1604,16 @@
         "novelty": {
           "score": 25,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 15,
+          "evidence_quality": 16,
+          "novelty": 14,
+          "clarity": 18,
+          "llm_total": 79,
+          "reducible": false,
+          "justification": "Well-defined novel entropy dynamics with clear derivation and evidence."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2"
@@ -1705,7 +1725,7 @@
       "name": "HLATN Three-Force Conductance Lock",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 89,
+      "score": 79,
       "scores": {
         "tractability": 18,
         "plausibility": 20,
@@ -1735,6 +1755,16 @@
         "novelty": {
           "score": 27,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 14,
+          "evidence_quality": 13,
+          "novelty": 14,
+          "clarity": 15,
+          "llm_total": 72,
+          "reducible": false,
+          "justification": "Well-defined conductance dynamics with novel phase-suppression term, supported by whitepaper and animations."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock"
@@ -1744,7 +1774,7 @@
       "name": "HLATN Phase-Lift Branch-Safe Update",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 85,
+      "score": 76,
       "scores": {
         "tractability": 18,
         "plausibility": 17,
@@ -1774,6 +1804,16 @@
         "novelty": {
           "score": 23,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 12,
+          "evidence_quality": 13,
+          "novelty": 14,
+          "clarity": 15,
+          "llm_total": 70,
+          "reducible": false,
+          "justification": "Novel phase update rule with adaptive clipping and clear derivation, supported by numerical evidence."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update"
@@ -1783,7 +1823,7 @@
       "name": "HLATN Plaquette Holonomy",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 85,
+      "score": 76,
       "scores": {
         "tractability": 19,
         "plausibility": 19,
@@ -1813,6 +1853,16 @@
         "novelty": {
           "score": 23,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 12,
+          "evidence_quality": 13,
+          "novelty": 14,
+          "clarity": 15,
+          "llm_total": 70,
+          "reducible": false,
+          "justification": "The equation introduces a novel coupling of edge phases to define a Z2 parity order parameter, supported by simulations and a white paper."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy"
@@ -1822,7 +1872,7 @@
       "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
       "firstSeen": "2026-02-24",
       "source": "PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)",
-      "score": 85,
+      "score": 77,
       "scores": {
         "tractability": 18,
         "plausibility": 20,
@@ -1854,6 +1904,16 @@
         "novelty": {
           "score": 27,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 14,
+          "evidence_quality": 13,
+          "novelty": 15,
+          "clarity": 14,
+          "llm_total": 72,
+          "reducible": false,
+          "justification": "The equation presents a novel coupling of entropy and phase dynamics with a clear derivation path and supporting evidence, though clarity and evidence could be improved."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc"
@@ -1863,7 +1923,7 @@
       "name": "EGATL Phase-Coupled Conductance Update",
       "firstSeen": "2026-02-24",
       "source": "EGATL original claim (ARP framework)",
-      "score": 88,
+      "score": 83,
       "scores": {
         "tractability": 18,
         "plausibility": 20,
@@ -1894,6 +1954,16 @@
         "novelty": {
           "score": 27,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 16,
+          "significance": 16,
+          "evidence_quality": 16,
+          "novelty": 15,
+          "clarity": 17,
+          "llm_total": 80,
+          "reducible": false,
+          "justification": "Well-defined novel coupling with strong evidence and clear assumptions."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update"
@@ -1904,7 +1974,7 @@
       "firstSeen": "2026-02-24",
       "source": "slack",
       "submitter": "ryan",
-      "score": 73,
+      "score": 53,
       "scores": {
         "tractability": 17,
         "plausibility": 18,
@@ -1932,6 +2002,16 @@
         "novelty": {
           "score": 20,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 12,
+          "significance": 8,
+          "evidence_quality": 5,
+          "novelty": 5,
+          "clarity": 10,
+          "llm_total": 40,
+          "reducible": true,
+          "justification": "Simple linear decay equation with limited novelty and evidence."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-slack-test-equation"
@@ -1942,7 +2022,7 @@
       "firstSeen": "2026-02-24",
       "source": "Derived from EGATL Phase-Coupled Conductance framework",
       "submitter": "Ryan (Copilot-assisted)",
-      "score": 69,
+      "score": 64,
       "scores": {
         "tractability": 17,
         "plausibility": 17,
@@ -1972,6 +2052,16 @@
         "novelty": {
           "score": 19,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 14,
+          "significance": 12,
+          "evidence_quality": 5,
+          "novelty": 14,
+          "clarity": 15,
+          "llm_total": 60,
+          "reducible": false,
+          "justification": "Plausible derivation with novel coupling but lacks evidence."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr"
@@ -1982,7 +2072,7 @@
       "firstSeen": "2026-02-24",
       "source": "discord-test",
       "submitter": "clawdad42",
-      "score": 63,
+      "score": 59,
       "scores": {
         "tractability": 17,
         "plausibility": 18,
@@ -2007,6 +2097,16 @@
         "novelty": {
           "score": 16,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "physical_validity": 14,
+          "significance": 10,
+          "evidence_quality": 5,
+          "novelty": 12,
+          "clarity": 15,
+          "llm_total": 56,
+          "reducible": false,
+          "justification": "Adaptive damping introduces a novel twist but lacks strong evidence."
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-damped-harmonic-oscillator"
@@ -2048,6 +2148,16 @@
         "novelty": {
           "score": 25,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "novelty": 16,
+          "significance": 17,
+          "evidence_quality": 16,
+          "clarity": 18,
+          "physical_validity": 18,
+          "llm_total": 85,
+          "reducible": false,
+          "justification": "Novel extension with strong evidence and clear derivation, building on top-ranked equations."
         }
       }
     }

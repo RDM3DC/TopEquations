@@ -44,6 +44,7 @@ def main() -> None:
     ap.add_argument("--novelty", type=int, default=-1, help="Novelty tag score")
     ap.add_argument("--from-review", action="store_true", help="Use review scores already stored in submissions.json")
     ap.add_argument("--equation-id", default="", help="Optional override for final equation id")
+    ap.add_argument("--manual-score", type=int, default=-1, help="Override final score (0-100)")
     args = ap.parse_args()
 
     submissions = _load(SUBMISSIONS_JSON)
@@ -78,6 +79,16 @@ def main() -> None:
         novelty = _clamp(args.novelty, 0, 30)
 
     total = tract + plaus + validation + artifact + novelty
+
+    # Use blended score from review if available, or manual override
+    if args.manual_score >= 0:
+        total = _clamp(args.manual_score, 0, 100)
+    elif args.from_review:
+        review = entry.get("review", {}) or {}
+        if review.get("blended_score"):
+            total = int(review["blended_score"])
+        elif review.get("score"):
+            total = int(review["score"])
 
     eid = args.equation_id.strip() or f"eq-{_slug(entry.get('name', 'submission'))}"
     existing_ids = {str(x.get("id")) for x in equations.get("entries", [])}
