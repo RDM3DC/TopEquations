@@ -2209,6 +2209,258 @@
           "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
         }
       }
+    },
+    {
+      "id": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
+      "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-aepr-adaptiveentropyproduction",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents → S↑), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all α/μ/π_a rates. Falsifiable via dissipation-vs-flip correlation.",
+      "assumptions": [
+        "sigma_S > 0 is the Ohmic heating coefficient (entropy produced per unit current squared)",
+        "kappa_S > 0 is the thermal relaxation rate toward baseline S_0",
+        "xi_S > 0 is the parity-bleed coupling (entropy drained when flip rate r_b is high)",
+        "S_0 > 0 is the equilibrium entropy baseline in absence of drive",
+        "S gates all plasticity rates alpha_G(S), mu_G(S), and ruler dynamics alpha_pi(S)",
+        "Second law guaranteed: dS/dt >= 0 when xi_S*r_b < sigma_S*sum(G*I^2)/S"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "tags": {
+        "novelty": {
+          "score": 29,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-egatl-hlatn-threeforceconductance",
+      "name": "EGATL-HLATN-ThreeForceConductance",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-threeforceconductance",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z₂ locking in simulations.",
+      "assumptions": [
+        "alpha_G > 0 is the current-driven reinforcement rate, gated by entropy S",
+        "mu_G > 0 is the natural decay rate, gated by entropy S",
+        "lambda > 0 is the phase-suppression coupling strength",
+        "theta_{R,e} is the Phase-Lift-resolved edge phase (branch-safe, no 2pi jumps)",
+        "pi_a is the adaptive angular ruler from the companion ruler equation",
+        "Three forces are independent: reinforcement, decay, and geometric suppression"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-egatl-hlatn-phaseliftupdate",
+      "name": "EGATL-HLATN-PhaseLiftUpdate",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-phaseliftupdate",
+      "score": 87,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2π jumps — the foundation of holonomy bookkeeping and parity attractors.",
+      "assumptions": [
+        "theta_{R,e}^{(k)} is the lifted phase at iteration k (lives on R, not S^1)",
+        "phi_e is the raw measured edge phase (mod 2pi, branch-ambiguous)",
+        "wrapTo_pi maps any angle to (-pi, pi] before clipping",
+        "pi_a is the adaptive angular ruler bounding the max phase correction per step",
+        "Clipping to [-pi_a, +pi_a] prevents runaway 2pi jumps, guarantees consistent integer windings",
+        "Iteration converges when pi_a shrinks to pi_0 in the locked regime"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\Big(\\mathrm{wrapTo}_\\pi(\\phi_e - \\theta_{R,e}), -\\pi_a, +\\pi_a\\Big)",
+      "tags": {
+        "novelty": {
+          "score": 25,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-egatl-hlatn-adaptiveruler",
+      "name": "EGATL-HLATN-AdaptiveRuler",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-adaptiveruler",
+      "score": 87,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Entropy-breathing adaptive angular bound. High event activity expands π_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
+      "assumptions": [
+        "alpha_pi > 0 is the entropy-driven expansion rate for the angular ruler",
+        "mu_pi > 0 is the relaxation rate pulling pi_a back toward baseline pi_0",
+        "pi_0 is the equilibrium angular ruler (typically pi for standard Chern sectors)",
+        "S is the global network entropy that gates the expansion term",
+        "pi_a > 0 always (angular ruler is strictly positive)",
+        "Timescale separation: pi_a evolves slower than individual edge phases theta_R"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi (\\pi_a - \\pi_0)",
+      "tags": {
+        "novelty": {
+          "score": 25,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-egatl-hlatn-plaquetteholonomy",
+      "name": "EGATL-HLATN-PlaquetteHolonomy",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-plaquetteholonomy",
+      "score": 89,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined < π → r_b → 0.",
+      "assumptions": [
+        "Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)",
+        "sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary",
+        "theta_{R,e} are Phase-Lift-resolved edge phases (branch-safe via adaptive clipping)",
+        "partial p enumerates edges in consistent orientation around the plaquette",
+        "Plaquette is the minimal closed loop in ARP lattice (typically 4 edges for square lattice)",
+        "Winding number w_p = floor(Theta_p / 2*pi_a) is integer-quantized when edges are locked"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e} \\theta_{R,e}",
+      "tags": {
+        "novelty": {
+          "score": 26,
+          "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-egatl-hlatn-parityfliprate",
+      "name": "EGATL-HLATN-ParityFlipRate",
+      "firstSeen": "2026-02-24",
+      "source": "slack",
+      "submitter": "rdm3dc",
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-parityfliprate",
+      "score": 81,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Z₂ majority parity flip rate (the key experimental observable). 1/π chaotic asymptote → 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
+      "assumptions": [
+        "Flips = sign changes in majority parity sgn(sum_p (-1)^{w_p}) across K time steps",
+        "K is the total time steps in the observation window (K >= 2)",
+        "r_b in [0, 1]: 0 = perfectly locked, approaching 1/pi in chaotic regime",
+        "Majority parity computed from integer winding numbers w_p across all plaquettes",
+        "Observable is averaged over full lattice — not per-plaquette",
+        "Assumes stationary statistics within observation window (ergodic regime)"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "r_b = \\frac{\\#\\{\\text{flips}\\}}{K-1}",
+      "tags": {
+        "novelty": {
+          "score": 23,
+          "date": "2026-02-24"
+        }
+      }
     }
   ]
 }

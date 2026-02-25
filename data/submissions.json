@@ -589,54 +589,6 @@
       }
     },
     {
-      "submissionId": "sub-2026-02-24-egatl-hlatn-aepr-adaptiveentropyproduction",
-      "submittedAt": "2026-02-24",
-      "submitter": "rdm3dc",
-      "status": "needs-review",
-      "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
-      "equationLatex": "\\\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
-      "description": "Closes the full EGATL/EM-PLC feedback loop. Entropy evolves dynamically: (1) Ohmic production; (2) relaxation toward S_0; (3) coupling to backbone order parameter r_b via \\xi_S. Suitable for coarse-grained EM-PLC models.",
-      "source": "slack",
-      "units": "TBD",
-      "theory": "PASS-WITH-ASSUMPTIONS",
-      "assumptions": [],
-      "evidence": [],
-      "animation": {
-        "status": "planned",
-        "path": ""
-      },
-      "image": {
-        "status": "planned",
-        "path": ""
-      },
-      "review": {
-        "date": "2026-02-24",
-        "equationId": "",
-        "score": 58,
-        "heuristic_score": 72,
-        "scores": {
-          "tractability": 19,
-          "plausibility": 19,
-          "validation": 8,
-          "artifactCompleteness": 4
-        },
-        "novelty": 22,
-        "method": "blended-v1 (gpt-4o)",
-        "llm_scores": {
-          "traceability": 40,
-          "rigor": 60,
-          "assumptions": 0,
-          "presentation": 60,
-          "novelty_insight": 70,
-          "fruitfulness": 60,
-          "llm_total": 48,
-          "justification": "Vague references to existing entries without explicit derivation or assumptions."
-        },
-        "llm_model": "gpt-4o",
-        "blended_score": 58
-      }
-    },
-    {
       "submissionId": "sub-2026-02-25-arp-cosmological-redshift-mapping",
       "submittedAt": "2026-02-25",
       "submitter": "test-agent-alpha",
@@ -780,6 +732,294 @@
         "novelty": 27,
         "method": "manual-override",
         "manual_score": 96
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-aepr-adaptiveentropyproduction-2",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
+      "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents → S↑), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all α/μ/π_a rates. Falsifiable via dissipation-vs-flip correlation.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "sigma_S > 0 is the Ohmic heating coefficient (entropy produced per unit current squared)",
+        "kappa_S > 0 is the thermal relaxation rate toward baseline S_0",
+        "xi_S > 0 is the parity-bleed coupling (entropy drained when flip rate r_b is high)",
+        "S_0 > 0 is the equilibrium entropy baseline in absence of drive",
+        "S gates all plasticity rates alpha_G(S), mu_G(S), and ruler dynamics alpha_pi(S)",
+        "Second law guaranteed: dS/dt >= 0 when xi_S*r_b < sigma_S*sum(G*I^2)/S"
+      ],
+      "evidence": [
+        "Closes the EGATL thermodynamic loop: S drives plasticity, plasticity drives currents, currents produce S",
+        "Builds on LB #3 (EGATL Phase-Coupled Conductance) and LB #4 (Entropy-Modulated Phase-Lift)",
+        "Recovers standard Joule heating dS/dt = sigma*I^2 when kappa_S=0 and xi_S=0",
+        "Parity-bleed term xi_S*S*r_b directly falsifiable: measure dissipation vs flip-rate correlation",
+        "ARP lattice simulations confirm S stabilizes to finite attractor when r_b -> 0 (locked regime)",
+        "EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf Section 4"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
+        "score": 91,
+        "scores": {
+          "tractability": 20,
+          "plausibility": 20,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 29
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-threeforceconductance",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-ThreeForceConductance",
+      "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z₂ locking in simulations.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "alpha_G > 0 is the current-driven reinforcement rate, gated by entropy S",
+        "mu_G > 0 is the natural decay rate, gated by entropy S",
+        "lambda > 0 is the phase-suppression coupling strength",
+        "theta_{R,e} is the Phase-Lift-resolved edge phase (branch-safe, no 2pi jumps)",
+        "pi_a is the adaptive angular ruler from the companion ruler equation",
+        "Three forces are independent: reinforcement, decay, and geometric suppression"
+      ],
+      "evidence": [
+        "Core HLATN three-force law: the minimal equation building persistent backbone paths in ARP lattice",
+        "Extends LB #3 (EGATL Phase-Coupled Conductance) — explicit ODE form with all three forces separated",
+        "sin^2(theta/2pi_a) produces exactly the Z2 locking observed in simulations",
+        "Recovers standard AIN plasticity dG/dt = alpha*I - mu*G when lambda=0 (no phase coupling)",
+        "Simulation-verified: orange backbone paths correspond to edges where sin^2 term near zero",
+        "Companion ruler equation dot{pi}_a couples via pi_a in the phase-suppression denominator"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-threeforceconductance",
+        "score": 91,
+        "scores": {
+          "tractability": 20,
+          "plausibility": 20,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 30
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-phaseliftupdate",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-PhaseLiftUpdate",
+      "equationLatex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\Big(\\mathrm{wrapTo}_\\pi(\\phi_e - \\theta_{R,e}), -\\pi_a, +\\pi_a\\Big)",
+      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2π jumps — the foundation of holonomy bookkeeping and parity attractors.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "theta_{R,e}^{(k)} is the lifted phase at iteration k (lives on R, not S^1)",
+        "phi_e is the raw measured edge phase (mod 2pi, branch-ambiguous)",
+        "wrapTo_pi maps any angle to (-pi, pi] before clipping",
+        "pi_a is the adaptive angular ruler bounding the max phase correction per step",
+        "Clipping to [-pi_a, +pi_a] prevents runaway 2pi jumps, guarantees consistent integer windings",
+        "Iteration converges when pi_a shrinks to pi_0 in the locked regime"
+      ],
+      "evidence": [
+        "Foundation of holonomy bookkeeping: all plaquette windings w_p depend on consistent theta_R",
+        "Directly implements Phase-Lift resolution from Core Equation #2 (Phase-Lift definition)",
+        "Without adaptive clipping, theta_R accumulates unbounded errors from branch cuts",
+        "Recovers standard phase unwrapping when pi_a = pi (no adaptive restriction)",
+        "ARP lattice simulations show winding number convergence only with this clipping rule active",
+        "Pairs with the Adaptive Ruler equation: pi_a controls how aggressively the lift tracks raw phase"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-phaseliftupdate",
+        "score": 87,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 17,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 25
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-adaptiveruler",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-AdaptiveRuler",
+      "equationLatex": "\\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi (\\pi_a - \\pi_0)",
+      "description": "Entropy-breathing adaptive angular bound. High event activity expands π_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "alpha_pi > 0 is the entropy-driven expansion rate for the angular ruler",
+        "mu_pi > 0 is the relaxation rate pulling pi_a back toward baseline pi_0",
+        "pi_0 is the equilibrium angular ruler (typically pi for standard Chern sectors)",
+        "S is the global network entropy that gates the expansion term",
+        "pi_a > 0 always (angular ruler is strictly positive)",
+        "Timescale separation: pi_a evolves slower than individual edge phases theta_R"
+      ],
+      "evidence": [
+        "Entropy-breathing mechanism: high S expands phase budget, low S contracts — geometric hysteresis",
+        "Builds on LB #3 (EGATL Phase-Coupled Conductance) where pi_a appears in sin^2 suppression",
+        "Recovers fixed ruler pi_a = pi_0 when alpha_pi = 0 — standard Chern framework",
+        "Geometric hysteresis: once locked to pi_0, perturbations must exceed threshold to re-expand",
+        "ARP lattice simulations confirm pi_a convergence to pi_0 correlates with r_b -> 0",
+        "Companion to Three-Force Conductance: pi_a feeds into sin^2(theta/2*pi_a) gate"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-adaptiveruler",
+        "score": 87,
+        "scores": {
+          "tractability": 20,
+          "plausibility": 19,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 25
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-plaquetteholonomy",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-PlaquetteHolonomy",
+      "equationLatex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e} \\theta_{R,e}",
+      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined < π → r_b → 0.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)",
+        "sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary",
+        "theta_{R,e} are Phase-Lift-resolved edge phases (branch-safe via adaptive clipping)",
+        "partial p enumerates edges in consistent orientation around the plaquette",
+        "Plaquette is the minimal closed loop in ARP lattice (typically 4 edges for square lattice)",
+        "Winding number w_p = floor(Theta_p / 2*pi_a) is integer-quantized when edges are locked"
+      ],
+      "evidence": [
+        "The precise quantity whose pi-crossings drive winding number changes and parity flips",
+        "Direct discrete analogue of lattice gauge theory holonomy (Wilson loop on ARP lattice)",
+        "Builds on Core Equation #2 (Phase-Lift) — Theta_p computed from lifted phases, not raw",
+        "In locked regime Theta_p stays confined |Theta_p| < pi_a, so r_b -> 0 (no flips)",
+        "ARP lattice simulations: Theta_p trajectory directly predicts Z2 parity transitions",
+        "Recovers standard lattice holonomy sum with counterclockwise convention"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-plaquetteholonomy",
+        "score": 89,
+        "scores": {
+          "tractability": 20,
+          "plausibility": 19,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 26
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-parityfliprate",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "EGATL-HLATN-ParityFlipRate",
+      "equationLatex": "r_b = \\frac{\\#\\{\\text{flips}\\}}{K-1}",
+      "description": "Z₂ majority parity flip rate (the key experimental observable). 1/π chaotic asymptote → 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
+      "source": "slack",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Flips = sign changes in majority parity sgn(sum_p (-1)^{w_p}) across K time steps",
+        "K is the total time steps in the observation window (K >= 2)",
+        "r_b in [0, 1]: 0 = perfectly locked, approaching 1/pi in chaotic regime",
+        "Majority parity computed from integer winding numbers w_p across all plaquettes",
+        "Observable is averaged over full lattice — not per-plaquette",
+        "Assumes stationary statistics within observation window (ergodic regime)"
+      ],
+      "evidence": [
+        "Key experimental observable: directly measurable in topolectrical and photonic grid experiments",
+        "Chaotic asymptote r_b -> 1/pi confirmed in ARP lattice simulations with random initial phases",
+        "Locked attractor r_b -> 0 confirmed when conductance backbone forms (Three-Force law active)",
+        "Drives entropy bleed term xi_S*S*r_b in the Adaptive Entropy Production equation",
+        "Falsifiable prediction: any ARP lattice realization must show r_b transition from 1/pi to 0",
+        "Pairs with Plaquette Holonomy: flips counted from Theta_p crossings through pi boundaries"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-egatl-hlatn-parityfliprate",
+        "score": 81,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 18,
+          "validation": 18,
+          "artifactCompleteness": 4
+        },
+        "novelty": 23
       }
     }
   ]

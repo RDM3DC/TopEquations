@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — All Submissions</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602242343' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602242359' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602242343'></script>
+  <script defer src='./assets/app.js?v=202602242359'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -61,11 +61,11 @@
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>14</div>
+        <div class='stat__num'>19</div>
         <div class='stat__label'>Total submissions</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>12</div>
+        <div class='stat__num'>18</div>
         <div class='stat__label'>Promoted</div>
       </div>
       <div class='stat'>
@@ -73,7 +73,7 @@
         <div class='stat__label'>Ready</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>1</div>
+        <div class='stat__num'>0</div>
         <div class='stat__label'>In review</div>
       </div>
     </div>
@@ -439,39 +439,8 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
-<section class='card' data-status='needs-review'>
-  <div class='card__rank'>#12</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
-      <div class='card__meta'>
-        <span class='pill pill--neutral'>NEEDS REVIEW</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$$\\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
-    </div>
-
-    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Closes the full EGATL/EM-PLC feedback loop. Entropy evolves dynamically: (1) Ohmic production; (2) relaxation toward S_0; (3) coupling to backbone order parameter r_b via \xi_S. Suitable for coarse-grained EM-PLC models.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'>None listed.</div></div>
-      
-      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-      
-    </div>
-  </div>
-</section>
-
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#13</div>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
@@ -502,7 +471,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#14</div>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
@@ -532,13 +501,199 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#14</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\frac{dS}{dt} = \sigma_S \sum_{ij} G_{ij} |I_{ij}|^2 - \kappa_S (S - S_0) - \xi_S S \cdot r_b$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents → S↑), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all α/μ/π_a rates. Falsifiable via dissipation-vs-flip correlation.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>sigma_S &gt; 0 is the Ohmic heating coefficient (entropy produced per unit current squared)</li><li>kappa_S &gt; 0 is the thermal relaxation rate toward baseline S_0</li><li>xi_S &gt; 0 is the parity-bleed coupling (entropy drained when flip rate r_b is high)</li><li>S_0 &gt; 0 is the equilibrium entropy baseline in absence of drive</li><li>S gates all plasticity rates alpha_G(S), mu_G(S), and ruler dynamics alpha_pi(S)</li><li>Second law guaranteed: dS/dt &gt;= 0 when xi_S*r_b &lt; sigma_S*sum(G*I^2)/S</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Closes the EGATL thermodynamic loop: S drives plasticity, plasticity drives currents, currents produce S</li><li>Builds on LB #3 (EGATL Phase-Coupled Conductance) and LB #4 (Entropy-Modulated Phase-Lift)</li><li>Recovers standard Joule heating dS/dt = sigma*I^2 when kappa_S=0 and xi_S=0</li><li>Parity-bleed term xi_S*S*r_b directly falsifiable: measure dissipation vs flip-rate correlation</li><li>ARP lattice simulations confirm S stabilizes to finite attractor when r_b -&gt; 0 (locked regime)</li><li>EGATL_Autonomous_Chern_Locking_whitepaper_v0_1.pdf Section 4</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-aepr-adaptiveentropyproduction'>eq-egatl-hlatn-aepr-adaptiveentropyproduction</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#15</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-ThreeForceConductance</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\dot{G}_e = \alpha_G |I_e| - \mu_G G_e - \lambda G_e \sin^2\left(\frac{\theta_{R,e}}{2\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z₂ locking in simulations.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>alpha_G &gt; 0 is the current-driven reinforcement rate, gated by entropy S</li><li>mu_G &gt; 0 is the natural decay rate, gated by entropy S</li><li>lambda &gt; 0 is the phase-suppression coupling strength</li><li>theta_{R,e} is the Phase-Lift-resolved edge phase (branch-safe, no 2pi jumps)</li><li>pi_a is the adaptive angular ruler from the companion ruler equation</li><li>Three forces are independent: reinforcement, decay, and geometric suppression</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Core HLATN three-force law: the minimal equation building persistent backbone paths in ARP lattice</li><li>Extends LB #3 (EGATL Phase-Coupled Conductance) — explicit ODE form with all three forces separated</li><li>sin^2(theta/2pi_a) produces exactly the Z2 locking observed in simulations</li><li>Recovers standard AIN plasticity dG/dt = alpha*I - mu*G when lambda=0 (no phase coupling)</li><li>Simulation-verified: orange backbone paths correspond to edges where sin^2 term near zero</li><li>Companion ruler equation dot{pi}_a couples via pi_a in the phase-suppression denominator</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-threeforceconductance'>eq-egatl-hlatn-threeforceconductance</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#16</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-PhaseLiftUpdate</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\theta_{R,e}^{(k)} = \theta_{R,e}^{(k-1)} + \mathrm{clip}\Big(\mathrm{wrapTo}_\pi(\phi_e - \theta_{R,e}), -\pi_a, +\pi_a\Big)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2π jumps — the foundation of holonomy bookkeeping and parity attractors.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>theta_{R,e}^{(k)} is the lifted phase at iteration k (lives on R, not S^1)</li><li>phi_e is the raw measured edge phase (mod 2pi, branch-ambiguous)</li><li>wrapTo_pi maps any angle to (-pi, pi] before clipping</li><li>pi_a is the adaptive angular ruler bounding the max phase correction per step</li><li>Clipping to [-pi_a, +pi_a] prevents runaway 2pi jumps, guarantees consistent integer windings</li><li>Iteration converges when pi_a shrinks to pi_0 in the locked regime</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Foundation of holonomy bookkeeping: all plaquette windings w_p depend on consistent theta_R</li><li>Directly implements Phase-Lift resolution from Core Equation #2 (Phase-Lift definition)</li><li>Without adaptive clipping, theta_R accumulates unbounded errors from branch cuts</li><li>Recovers standard phase unwrapping when pi_a = pi (no adaptive restriction)</li><li>ARP lattice simulations show winding number convergence only with this clipping rule active</li><li>Pairs with the Adaptive Ruler equation: pi_a controls how aggressively the lift tracks raw phase</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-phaseliftupdate'>eq-egatl-hlatn-phaseliftupdate</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#17</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-AdaptiveRuler</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\dot{\pi}_a = \alpha_\pi S - \mu_\pi (\pi_a - \pi_0)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Entropy-breathing adaptive angular bound. High event activity expands π_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>alpha_pi &gt; 0 is the entropy-driven expansion rate for the angular ruler</li><li>mu_pi &gt; 0 is the relaxation rate pulling pi_a back toward baseline pi_0</li><li>pi_0 is the equilibrium angular ruler (typically pi for standard Chern sectors)</li><li>S is the global network entropy that gates the expansion term</li><li>pi_a &gt; 0 always (angular ruler is strictly positive)</li><li>Timescale separation: pi_a evolves slower than individual edge phases theta_R</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Entropy-breathing mechanism: high S expands phase budget, low S contracts — geometric hysteresis</li><li>Builds on LB #3 (EGATL Phase-Coupled Conductance) where pi_a appears in sin^2 suppression</li><li>Recovers fixed ruler pi_a = pi_0 when alpha_pi = 0 — standard Chern framework</li><li>Geometric hysteresis: once locked to pi_0, perturbations must exceed threshold to re-expand</li><li>ARP lattice simulations confirm pi_a convergence to pi_0 correlates with r_b -&gt; 0</li><li>Companion to Three-Force Conductance: pi_a feeds into sin^2(theta/2*pi_a) gate</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-adaptiveruler'>eq-egatl-hlatn-adaptiveruler</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#18</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-PlaquetteHolonomy</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e} \theta_{R,e}$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined &lt; π → r_b → 0.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)</li><li>sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary</li><li>theta_{R,e} are Phase-Lift-resolved edge phases (branch-safe via adaptive clipping)</li><li>partial p enumerates edges in consistent orientation around the plaquette</li><li>Plaquette is the minimal closed loop in ARP lattice (typically 4 edges for square lattice)</li><li>Winding number w_p = floor(Theta_p / 2*pi_a) is integer-quantized when edges are locked</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>The precise quantity whose pi-crossings drive winding number changes and parity flips</li><li>Direct discrete analogue of lattice gauge theory holonomy (Wilson loop on ARP lattice)</li><li>Builds on Core Equation #2 (Phase-Lift) — Theta_p computed from lifted phases, not raw</li><li>In locked regime Theta_p stays confined |Theta_p| &lt; pi_a, so r_b -&gt; 0 (no flips)</li><li>ARP lattice simulations: Theta_p trajectory directly predicts Z2 parity transitions</li><li>Recovers standard lattice holonomy sum with counterclockwise convention</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-plaquetteholonomy'>eq-egatl-hlatn-plaquetteholonomy</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#19</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-ParityFlipRate</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$r_b = \frac{\#\{\text{flips}\}}{K-1}$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>slack</span> &middot; Submitter: <span class='muted'>rdm3dc</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Z₂ majority parity flip rate (the key experimental observable). 1/π chaotic asymptote → 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Flips = sign changes in majority parity sgn(sum_p (-1)^{w_p}) across K time steps</li><li>K is the total time steps in the observation window (K &gt;= 2)</li><li>r_b in [0, 1]: 0 = perfectly locked, approaching 1/pi in chaotic regime</li><li>Majority parity computed from integer winding numbers w_p across all plaquettes</li><li>Observable is averaged over full lattice — not per-plaquette</li><li>Assumes stationary statistics within observation window (ergodic regime)</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Key experimental observable: directly measurable in topolectrical and photonic grid experiments</li><li>Chaotic asymptote r_b -&gt; 1/pi confirmed in ARP lattice simulations with random initial phases</li><li>Locked attractor r_b -&gt; 0 confirmed when conductance backbone forms (Three-Force law active)</li><li>Drives entropy bleed term xi_S*S*r_b in the Adaptive Entropy Production equation</li><li>Falsifiable prediction: any ARP lattice realization must show r_b transition from 1/pi to 0</li><li>Pairs with Plaquette Holonomy: flips counted from Theta_p crossings through pi boundaries</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-parityfliprate'>eq-egatl-hlatn-parityfliprate</a></div></div>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </section>
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 23:43</strong></div>
+      <div>Last built: <strong>2026-02-24 23:59</strong></div>
     </footer>
   </main>
 </body>

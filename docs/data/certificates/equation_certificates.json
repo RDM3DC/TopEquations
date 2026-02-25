@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T07:42:03.442631+00:00",
+  "generated_at": "2026-02-25T07:59:51.022153+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "b93f8def5cd21947ac127911571776149660f928a76d2b210e81b8ed2908d334",
-  "count": 86,
+  "source_sha256": "32fe43a87e51d0233475b8a7ff9e3a82fdd3a031180ba7ed006d27213b713fb0",
+  "count": 92,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2146,6 +2146,186 @@
       "submitter_hash": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
       "version": 1,
       "metadata_hash": "490b4162e6912e0607837b13001af728e65d4b0feb6d59b623b7fca45fc0e752"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
+      "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
+      "equation_latex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents \u2192 S\u2191), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all \u03b1/\u03bc/\u03c0_a rates. Falsifiable via dissipation-vs-flip correlation.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "a15eec70bd72fb7e50203db0c286f6094d9b268c16c9676e810f363d481870d2"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-threeforceconductance",
+      "name": "EGATL-HLATN-ThreeForceConductance",
+      "equation_latex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "equation_hash": "d178ce97d178b44b7f1e4dbe65b96d2a4133cbc711d88db92b9bf4d8571756c4",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z\u2082 locking in simulations.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "4a26c07e85c0cb46e2ea30cc647708e78fc36d513db6d6e21e1579df3ae0629e"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-phaseliftupdate",
+      "name": "EGATL-HLATN-PhaseLiftUpdate",
+      "equation_latex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\Big(\\mathrm{wrapTo}_\\pi(\\phi_e - \\theta_{R,e}), -\\pi_a, +\\pi_a\\Big)",
+      "equation_hash": "d25300a370677569151521d161705e32666b4a2876e39a80de5b806bc1b98396",
+      "score": 87,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 25,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2\u03c0 jumps \u2014 the foundation of holonomy bookkeeping and parity attractors.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "2a3f0097adc56e2eaa775304dcd5a3f153d14155070080795f152d35da999279"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-adaptiveruler",
+      "name": "EGATL-HLATN-AdaptiveRuler",
+      "equation_latex": "\\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi (\\pi_a - \\pi_0)",
+      "equation_hash": "cf9ccc190743818f8dbf15079979dd4759b8997bf80702a00ae25480faf64958",
+      "score": 87,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 25,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Entropy-breathing adaptive angular bound. High event activity expands \u03c0_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "ad5dae7cb8fd45517f7a2a7f39e58f061e87ce2d35a447da61dbea8d0e2896a8"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-plaquetteholonomy",
+      "name": "EGATL-HLATN-PlaquetteHolonomy",
+      "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e} \\theta_{R,e}",
+      "equation_hash": "1e7e4c62729ef4430b62794803d246d2a324ea82a1ec5885463d34079a238723",
+      "score": 89,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 26,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime \u0398_p stays confined < \u03c0 \u2192 r_b \u2192 0.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "85b7519830d4a7f1a98dd4f10a6a5c8cd348a17dffa91c405884128172c72df5"
+    },
+    {
+      "token_id": "eq-egatl-hlatn-parityfliprate",
+      "name": "EGATL-HLATN-ParityFlipRate",
+      "equation_latex": "r_b = \\frac{\\#\\{\\text{flips}\\}}{K-1}",
+      "equation_hash": "3c3d15d575775174181f7348679baa62789f3b2a12782546bdeaca2fb520dad0",
+      "score": 81,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 23,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Z\u2082 majority parity flip rate (the key experimental observable). 1/\u03c0 chaotic asymptote \u2192 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "a86b9e01697dfd5d2061e39a500855a7a1366cc24a6d35fd71824b24f88bf7f0"
     },
     {
       "token_id": "famous-schrodinger",
