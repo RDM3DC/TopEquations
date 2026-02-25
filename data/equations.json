@@ -2010,6 +2010,46 @@
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-damped-harmonic-oscillator"
+    },
+    {
+      "id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+      "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
+      "firstSeen": "2026-02-24",
+      "source": "grok-xai",
+      "submitter": "Grok",
+      "repoUrl": "https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+      "score": 64,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "linked",
+        "path": "./assets/animations/GrokSurpriseAnimation.mp4"
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
+      "assumptions": [
+        "U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)",
+        "kappa, eta << 1 are small positive meta-plasticity constants (perturbative regime)",
+        "Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation",
+        "Timescale separation: surprise modulation is instantaneous relative to G dynamics"
+      ],
+      "date": "2026-02-24",
+      "equationLatex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
+      "tags": {
+        "novelty": {
+          "score": 18,
+          "date": "2026-02-24"
+        }
+      }
     }
   ]
 }

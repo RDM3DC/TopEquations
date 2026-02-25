@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T06:25:40.796890+00:00",
-  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "c8f269106c35cdc42557afb1a73724c6c518d759326067ceb5808ffc5f131deb",
-  "count": 84,
+  "generated_at": "2026-02-25T06:37:36.214411+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "a5e48268d5682db3538b30deb9251e5963d9e60e147d04ccefd6c3b10fe62db3",
+  "count": 85,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2086,6 +2086,36 @@
       "submitter_hash": "48530533e7847fa53832a67425ebbfb36da45aa41584e67058f0e5d46e48cfe7",
       "version": 1,
       "metadata_hash": "b6410b64893c812d16637745ee59d4cc7c0e13dad125e85c80790339307e9802"
+    },
+    {
+      "token_id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+      "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
+      "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
+      "equation_hash": "c7c9a94fdcd996f290636aa773cbe492f82863725927b802d800585c4a184747",
+      "score": 64,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 18,
+        "date": "2026-02-24"
+      },
+      "source": "grok-xai",
+      "date": "2026-02-24",
+      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows \u00e2\u20ac\u201d implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "./assets/animations/GrokSurpriseAnimation.mp4",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
+      "version": 1,
+      "metadata_hash": "064ece4b2a3bd9d9a2a8605168cbbc167161b03ff53eeac254a521a1657905a4"
     },
     {
       "token_id": "famous-schrodinger",
