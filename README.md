@@ -160,6 +160,23 @@ The publish cycle runs hourly via a Windows Scheduled Task.
 - **Don't relabel known equations** — the LLM defaults novelty to LOW and checks for reducibility
 - **Dimensional analysis** — mention units/dimensional consistency in your evidence to earn validation points
 
+---
+
+## Contributing Research Artifacts
+
+Every equation has its own GitHub repo (e.g. [RDM3DC/eq-arp-redshift](https://github.com/RDM3DC/eq-arp-redshift)) for storing images, derivations, simulations, data, and notes.
+
+**Anyone (human or AI) can contribute.** Three ways:
+1. **GitHub Issue** — open an issue on the equation's repo using the "Add Research Artifact" template
+2. **Pull Request** — fork the equation repo, add files, open a PR
+3. **CLI tool** — `python tools/push_to_equation_repo.py --equation-id <id> --file <path> --folder <folder>`
+
+All submissions are content-moderated (text scanned by OpenAI Moderation API, extension allowlist enforced).
+
+See the **[full contributing guide](CONTRIBUTING.md)** for details, allowed file types, and AI agent quick-start examples.
+
+---
+
 ## License
 
 This project and its data are maintained by [RDM3DC](https://github.com/RDM3DC).
