@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-entropy-modulated-phase-lift-conductance-equatio",
+  "equation_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
+  "submitter_hash": "2d1e830624b2572adc05351a7cbee2d3aa3f6a52b34fa38a260c9c78f96fcd07",
+  "equation_hash": "cdb60bd1b572234675141a29828e9bcb75fa1304de8e8265efbc5cfb6dd6da59",
+  "metadata_hash": "4be97c6bc4829a674e6df3d2f411cb4833eb3872661b6643d4afd992b8a3f349",
+  "score": 66,
+  "status": "promoted",
+  "issued_at": "2026-02-25T03:22:57.875491+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "c350856479642667b524e935bba614dcd271922ae17b04ed3f8c0ec343e9a16652ad5e683061f019eb9ff106e4de7c9246e9ce46efe38586b27eecd213881299",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

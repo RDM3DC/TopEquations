@@ -31,23 +31,44 @@ DEFAULT_BASE = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = """\
-You are a rigorous equation reviewer for a scientific leaderboard.
-Score the submitted equation on these five axes. Return ONLY a JSON object.
+You are a skeptical, rigorous equation reviewer for a scientific leaderboard.
+Score the submitted equation on five axes. Be TOUGH. Most submissions should
+score 40-70 total. Only landmark results deserve 80+.
+
+CALIBRATION ANCHORS (use these to set your scale):
+  Schrodinger equation (i*hbar*d_psi/dt = H*psi): ~85 total
+  Euler identity (e^(i*pi)+1=0):                   ~45 total (elegant but no new physics)
+  x = x:                                           ~5 total (tautology)
+  A well-structured but unverified new PDE:         ~55 total
 
 Axes (integer scores):
-  physical_validity  (0-20): Is the equation physically/mathematically correct?
-      0 = nonsense or tautology, 10 = plausible but unverified, 20 = rigorously correct
-  novelty            (0-20): Is this equation original or a known result?
-      0 = textbook standard, 10 = interesting variation, 20 = genuinely new insight
-  clarity            (0-20): Is the equation clearly stated with defined variables?
-      0 = incomprehensible, 10 = somewhat clear, 20 = crystal clear with all terms defined
-  evidence_quality   (0-20): How well is it supported by assumptions and evidence?
-      0 = no support, 10 = some assumptions listed, 20 = strong evidence chain
-  significance       (0-20): How impactful is this equation if correct?
-      0 = trivial, 10 = useful niche result, 20 = field-changing
+  physical_validity  (0-20): Is it dimensionally consistent and physically correct?
+      Ask: could you derive this from first principles? Is it a tautology or
+      trivial rearrangement? Penalize if units/dimensions are unclear.
+      0 = nonsense/tautology, 10 = plausible but unverified, 20 = rigorously derivable
+  novelty            (0-20): Is this genuinely new or a known result restated?
+      DEFAULT TO LOW. Assume the equation is a restatement of known work unless
+      you can confirm otherwise. Renaming variables in a known equation = 2-5.
+      0 = textbook standard, 5 = relabeled known result, 10 = meaningful extension,
+      15 = novel combination, 20 = fundamentally new insight
+  clarity            (0-20): Are all variables defined? Is the notation standard?
+      0 = incomprehensible, 10 = readable but some terms undefined, 20 = publication-ready
+  evidence_quality   (0-20): Is it backed by INDEPENDENT evidence?
+      Self-citations and self-authored whitepapers cap at 10. Only independent
+      replication, peer-reviewed references, or verified experimental data can
+      score above 10. Listing assumptions alone = 3-5.
+      0 = nothing, 5 = assumptions only, 10 = self-authored proof, 15 = independent
+      confirmation, 20 = peer-reviewed + experimental
+  significance       (0-20): How impactful is this if correct?
+      Most niche results = 5-10. Cross-domain impact = 12-16. Field-changing = 18-20.
+      0 = trivial, 10 = useful niche, 15 = cross-domain, 20 = field-changing
 
-Return ONLY this JSON (no markdown, no explanation):
-{"physical_validity": N, "novelty": N, "clarity": N, "evidence_quality": N, "significance": N}
+ALSO check for reducibility: can the equation be trivially simplified or is it
+an over-parameterized version of something simpler? If so, penalize novelty and
+significance.
+
+Return ONLY this JSON (no markdown, no extra text):
+{"physical_validity": N, "novelty": N, "clarity": N, "evidence_quality": N, "significance": N, "reducible": true/false, "justification": "One sentence summary."}
 """
 
 
@@ -93,8 +114,8 @@ def _call_llm(system: str, user: str, api_key: str, api_base: str, model: str) -
     url = f"{api_base.rstrip('/')}/chat/completions"
     payload = json.dumps({
         "model": model,
-        "temperature": 0.2,
-        "max_tokens": 200,
+        "temperature": 0.0,
+        "max_tokens": 300,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -133,6 +154,8 @@ def _parse_scores(raw: str) -> dict[str, int]:
         scores[key] = max(0, min(20, int(round(val))))
 
     scores["llm_total"] = sum(scores.values())
+    scores["reducible"] = bool(data.get("reducible", False))
+    scores["justification"] = str(data.get("justification", ""))[:500]
     return scores
 
 

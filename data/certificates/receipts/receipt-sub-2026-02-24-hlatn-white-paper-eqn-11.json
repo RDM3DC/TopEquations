@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-hlatn-white-paper-eqn-11",
+  "equation_id": "eq-hlatn-plaquette-holonomy",
+  "submitter_hash": "8f6a2c67459e61e06e5ae23c858bb759c0d619a49c85fa01c7fa7a046b27bc16",
+  "equation_hash": "55e25b3f97eb4e330db7871b725a2e6437d43557934ab18c5fa6de6e5b2fe086",
+  "metadata_hash": "509e009ec0cda578768804abd71bfb0ede623b03b17e9bc4cf55e0f8e0c9467a",
+  "score": 69,
+  "status": "promoted",
+  "issued_at": "2026-02-25T03:22:58.519362+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "6115f6244a14c45027162a2b0e42dc3d7669ada9fdf7ecea1ac44e6058826d9705fa3e78ef12ae065a31a3cbd66cc2ce0debf60682b8d55d4ae31e8dd8c402eb",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

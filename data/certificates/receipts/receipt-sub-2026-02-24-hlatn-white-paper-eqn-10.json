@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-hlatn-white-paper-eqn-10",
+  "equation_id": "eq-hlatn-phase-lift-branch-safe-update",
+  "submitter_hash": "8f6a2c67459e61e06e5ae23c858bb759c0d619a49c85fa01c7fa7a046b27bc16",
+  "equation_hash": "727ea4aa8c9ace0b1ca1ad97b5c575dd5c7e1c6ab528f643a9fdd9973c6759f6",
+  "metadata_hash": "497322f8a57ab171b273e69f0f7661d64a4cd240c39cf51fae23f4035254858f",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-02-25T03:22:58.363121+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "c0bfffcff984db30e44435d04d38b217ad94bf39437d7eca454c6c8691aa8e3c8edb52dd4af473ee5e5970943086013d2e65b8f2ea7fa60d1e8ada26f1013dd0",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

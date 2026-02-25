@@ -36,7 +36,16 @@
           "artifactCompleteness": 2
         },
         "novelty": 18,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "physical_validity": 15,
+          "evidence_quality": 5,
+          "clarity": 18,
+          "novelty": 12,
+          "significance": 14,
+          "llm_total": 64
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -76,7 +85,16 @@
           "validation": 12,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 16,
+        "llm_scores": {
+          "novelty": 5,
+          "clarity": 16,
+          "significance": 10,
+          "physical_validity": 15,
+          "evidence_quality": 12,
+          "llm_total": 58
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -121,7 +139,16 @@
           "validation": 13,
           "artifactCompleteness": 4
         },
-        "novelty": 16
+        "novelty": 16,
+        "llm_scores": {
+          "evidence_quality": 19,
+          "significance": 20,
+          "novelty": 18,
+          "clarity": 17,
+          "physical_validity": 20,
+          "llm_total": 94
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -168,7 +195,16 @@
           "validation": 13,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 16,
+        "llm_scores": {
+          "novelty": 17,
+          "clarity": 15,
+          "physical_validity": 18,
+          "significance": 19,
+          "evidence_quality": 18,
+          "llm_total": 87
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -207,7 +243,16 @@
           "validation": 7,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 16,
+        "llm_scores": {
+          "novelty": 18,
+          "clarity": 16,
+          "evidence_quality": 5,
+          "physical_validity": 15,
+          "significance": 17,
+          "llm_total": 71
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -258,7 +303,16 @@
           "artifactCompleteness": 6
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "clarity": 17,
+          "significance": 19,
+          "physical_validity": 18,
+          "evidence_quality": 18,
+          "novelty": 15,
+          "llm_total": 87
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -309,7 +363,16 @@
           "artifactCompleteness": 6
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "clarity": 18,
+          "physical_validity": 20,
+          "significance": 19,
+          "novelty": 15,
+          "evidence_quality": 17,
+          "llm_total": 89
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -365,7 +428,16 @@
           "artifactCompleteness": 6
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "significance": 17,
+          "clarity": 18,
+          "evidence_quality": 18,
+          "physical_validity": 20,
+          "novelty": 15,
+          "llm_total": 88
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -416,7 +488,16 @@
           "artifactCompleteness": 6
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "significance": 19,
+          "novelty": 15,
+          "evidence_quality": 17,
+          "physical_validity": 20,
+          "clarity": 18,
+          "llm_total": 89
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -450,7 +531,16 @@
           "validation": 6,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 16,
+        "llm_scores": {
+          "novelty": 12,
+          "evidence_quality": 5,
+          "physical_validity": 15,
+          "clarity": 16,
+          "significance": 14,
+          "llm_total": 62
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -485,7 +575,16 @@
           "artifactCompleteness": 2
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "physical_validity": 15,
+          "novelty": 18,
+          "clarity": 16,
+          "significance": 17,
+          "evidence_quality": 5,
+          "llm_total": 71
+        },
+        "llm_model": "gpt-4o-mini"
       }
     },
     {
@@ -525,7 +624,16 @@
           "artifactCompleteness": 2
         },
         "novelty": 20,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "novelty": 18,
+          "significance": 17,
+          "physical_validity": 15,
+          "clarity": 16,
+          "evidence_quality": 15,
+          "llm_total": 81
+        },
+        "llm_model": "gpt-4o-mini"
       }
     }
   ]

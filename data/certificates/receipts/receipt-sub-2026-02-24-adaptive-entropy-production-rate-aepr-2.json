@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-adaptive-entropy-production-rate-aepr-2",
+  "equation_id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
+  "submitter_hash": "2d1e830624b2572adc05351a7cbee2d3aa3f6a52b34fa38a260c9c78f96fcd07",
+  "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
+  "metadata_hash": "72cb74cab6110dde2f318cfe1e7f4e1820038b7dfa402230defd1cda4a0b6b1e",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-02-25T03:22:58.034366+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "bd0b0366ba7052fc3c8f7bb329bf7848ffa4cf762df6b187c6890d2f52cb6da2e179bf5c65008edd67a56541b0290940b6a2557e4d2c932dcf4a4e3fcd73a0ab",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

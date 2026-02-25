@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-mesh-synced-certificate-consistency",
+  "equation_id": "eq-mesh-synced-certificate-consistency",
+  "submitter_hash": "25bf8e1a2393f1108d37029b3df5593236c755742ec93465bbafa9b290bddcf6",
+  "equation_hash": "cbb1551f6c19908502202c4e54bf5bf86988311eb01cf189a033f5207dd7877f",
+  "metadata_hash": "52d9cad3933364237f90c37c1258beec7ca7cdcbbace95897da4162317e38906",
+  "score": 57,
+  "status": "promoted",
+  "issued_at": "2026-02-25T03:22:57.560793+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "1f166e0fe2345a1e5bd561f1d158278b1a18208beaf4f699d0f64b9d6767a5aeb5d97f293dd4a4d03f8cfc7622f599de34da5f507e7880a8309c7e3351a645be",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

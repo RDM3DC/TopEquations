@@ -48,14 +48,27 @@ def _heuristic(entry: dict) -> dict[str, int]:
     validation = 5
     assumptions = entry.get("assumptions", []) or []
     if assumptions:
-        validation += 2
-    if str(entry.get("units", "")).upper() == "OK":
+        validation += min(3, len(assumptions))  # up to +3 for assumptions
+
+    # Don't trust self-reported units — only award if evidence backs it up
+    evidence = entry.get("evidence", []) or []
+    has_dimensional = any(
+        "dimension" in str(e).lower() or "unit" in str(e).lower()
+        for e in evidence
+    )
+    if str(entry.get("units", "")).upper() == "OK" and has_dimensional:
         validation += 2
 
-    evidence = entry.get("evidence", []) or []
+    has_external = any(
+        any(kw in str(e).lower() for kw in ["peer", "journal", "arxiv", "doi", "experiment", "replicat"])
+        for e in evidence
+    )
     if evidence:
-        # Evidence items (links, tx hashes, run logs) directly strengthen validation.
-        validation += min(6, len(evidence) * 2)
+        # Cap self-citations at +3; external/independent evidence up to +6
+        if has_external:
+            validation += min(6, len(evidence) * 2)
+        else:
+            validation += min(3, len(evidence))
 
     name_low = str(entry.get("name", "")).lower()
 
@@ -67,14 +80,24 @@ def _heuristic(entry: dict) -> dict[str, int]:
     if str(image).lower() not in ("planned", ""):
         artifact += 2
 
-    novelty = 16
+    # Penalize if no equals sign (not a proper equation)
+    if "=" not in eq:
+        tract -= 3
+        plaus -= 2
+
+    novelty = 12  # Start lower — earn your way up
     # Reward structural complexity as a domain-neutral novelty signal
-    if len(set(re.findall(r'\\[a-zA-Z]+', eq))) >= 4:
-        novelty += 3
-    if len(assumptions) >= 2:
+    unique_cmds = len(set(re.findall(r'\\[a-zA-Z]+', eq)))
+    if unique_cmds >= 6:
+        novelty += 4
+    elif unique_cmds >= 4:
         novelty += 2
-    if len(evidence) >= 2:
+    if len(assumptions) >= 3:
+        novelty += 2
+    elif len(assumptions) >= 2:
         novelty += 1
+    if has_external:
+        novelty += 2
 
     tract = _clamp(tract, 0, 20)
     plaus = _clamp(plaus, 0, 20)
