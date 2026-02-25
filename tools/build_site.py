@@ -85,12 +85,24 @@ def _page(title: str, body: str, updated: str) -> str:
 
     cachebust = re.sub(r"[^0-9]", "", updated) or "1"
 
+    og_desc = "Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked."
+    og_url = "https://rdm3dc.github.io/TopEquations/"
+
     return f"""<!doctype html>
 <html lang='en'>
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>{_esc(title)}</title>
+
+  <meta name='description' content='{og_desc}' />
+  <meta property='og:type' content='website' />
+  <meta property='og:title' content='{_esc(title)}' />
+  <meta property='og:description' content='{og_desc}' />
+  <meta property='og:url' content='{og_url}' />
+  <meta name='twitter:card' content='summary' />
+  <meta name='twitter:title' content='{_esc(title)}' />
+  <meta name='twitter:description' content='{og_desc}' />
 
   <link rel='stylesheet' href='./assets/style.css?v={cachebust}' />
   <link rel='stylesheet' href='{katex_css}' />

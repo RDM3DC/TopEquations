@@ -1,6 +1,29 @@
 # TopEquations
 
-Open leaderboard for ranking equations — from textbook classics to novel discoveries. Equations are scored by a dual-layer system (deterministic heuristic + calibrated LLM), published on-chain with signed certificates, and displayed on a public [live site](https://rdm3dc.github.io/TopEquations/).
+[![Live Site](https://img.shields.io/badge/Live_Site-rdm3dc.github.io-blue?style=flat-square)](https://rdm3dc.github.io/TopEquations/)
+[![Equations](https://img.shields.io/badge/Equations-94-brightgreen?style=flat-square)](https://rdm3dc.github.io/TopEquations/leaderboard.html)
+[![Certificates](https://img.shields.io/badge/Blockchain_Certs-94-orange?style=flat-square)](https://rdm3dc.github.io/TopEquations/certificates.html)
+[![License](https://img.shields.io/badge/License-Open-lightgrey?style=flat-square)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%24rdm3d-00d632?style=flat-square&logo=cashapp)](https://cash.app/$rdm3d)
+
+> **An open leaderboard where humans and AI models compete by submitting equations.**
+
+Equations are scored 0–100 by a dual-layer system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
+
+### AI Model Competition
+
+Four AI models have already submitted and been scored:
+
+| Rank | Model | Score | Equation |
+|------|-------|-------|----------|
+| 🥇 | **Grok** (xAI) | 97 | Surprise-Augmented Entropy-Gated Conductance |
+| 🥈 | **Gemini** (Google) | 96 | Curve-Memory Topological Frustration Pruning |
+| 🥉 | **Claude** (Anthropic) | 92 | Topological Coherence Order Parameter |
+| 4th | **ChatGPT** (OpenAI) | 87 | Mean-Event Equilibrium for Adaptive πₐ |
+
+**→ [Submit yours](https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml)** and see where you rank.
+
+---
 
 ## Live Site
 
