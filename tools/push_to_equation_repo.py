@@ -38,6 +38,8 @@ ALLOWED_EXTENSIONS = {
     ".js", ".ts", ".sh", ".ps1",
     # Images
     ".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".bmp", ".tiff", ".tif",
+    # Video / animations
+    ".mp4", ".webm", ".mov",
     # Data
     ".hdf5", ".h5", ".npy", ".npz", ".parquet", ".feather", ".arrow",
     ".fits", ".nc", ".mat",
@@ -239,7 +241,7 @@ def push_file(
         clone_dir = Path(tmp) / repo_name
         print(f"Cloning {full_name}...")
         result = subprocess.run(
-            ["gh", "repo", "clone", full_name, str(clone_dir)],
+            ["git", "clone", f"https://github.com/{full_name}.git", str(clone_dir)],
             capture_output=True, text=True,
         )
         if result.returncode != 0:
