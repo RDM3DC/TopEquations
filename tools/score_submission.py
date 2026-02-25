@@ -57,13 +57,7 @@ def _heuristic(entry: dict) -> dict[str, int]:
         # Evidence items (links, tx hashes, run logs) directly strengthen validation.
         validation += min(6, len(evidence) * 2)
 
-    source_low = str(entry.get("source", "")).lower()
     name_low = str(entry.get("name", "")).lower()
-    if any(tok in source_low for tok in ["discord", "slack", "pipeline", "manual setup"]):
-        validation += 1
-    if any(tok in name_low for tok in ["consistency", "consensus", "mesh", "certificate"]):
-        plaus += 1
-        validation += 1
 
     artifact = 2
     animation = (entry.get("animation", {}) or {}).get("status", "planned")
@@ -74,10 +68,13 @@ def _heuristic(entry: dict) -> dict[str, int]:
         artifact += 2
 
     novelty = 16
-    if "arp" in low or "phase" in low or "holonomy" in low:
-        novelty += 4
-    if "certificate" in name_low or "consistency" in name_low:
+    # Reward structural complexity as a domain-neutral novelty signal
+    if len(set(re.findall(r'\\[a-zA-Z]+', eq))) >= 4:
+        novelty += 3
+    if len(assumptions) >= 2:
         novelty += 2
+    if len(evidence) >= 2:
+        novelty += 1
 
     tract = _clamp(tract, 0, 20)
     plaus = _clamp(plaus, 0, 20)
