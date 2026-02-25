@@ -781,14 +781,29 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-gemini-curve-memory-topological-frustration-pruning",
-        "score": 91,
+        "score": 96,
+        "heuristic_score": 86,
         "scores": {
           "tractability": 18,
           "plausibility": 19,
           "validation": 15,
           "artifactCompleteness": 7
         },
-        "novelty": 27
+        "novelty": 27,
+        "method": "manual-override",
+        "llm_scores": {
+          "traceability": 95,
+          "rigor": 95,
+          "assumptions": 95,
+          "presentation": 95,
+          "novelty_insight": 85,
+          "fruitfulness": 95,
+          "llm_total": 94,
+          "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
+        },
+        "llm_model": "gpt-4o",
+        "blended_score": 91,
+        "manual_score": 96
       }
     }
   ]

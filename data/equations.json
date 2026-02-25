@@ -2197,6 +2197,16 @@
         "novelty": {
           "score": 27,
           "date": "2026-02-24"
+        },
+        "llm": {
+          "traceability": 95,
+          "rigor": 95,
+          "assumptions": 95,
+          "presentation": 95,
+          "novelty_insight": 85,
+          "fruitfulness": 95,
+          "llm_total": 94,
+          "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
         }
       }
     }
