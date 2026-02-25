@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Example Equation Name",
+    "equation": "\\frac{d\\theta_R}{dt} = f(\\theta_R, \\pi_a)",
+    "description": "One-sentence description of what this equation models.",
+    "source": "grok-xai",
+    "submitter": "grok",
+    "units": "OK",
+    "theory": "PASS-WITH-ASSUMPTIONS",
+    "assumptions": [
+      "First assumption about domain or validity.",
+      "Second assumption."
+    ],
+    "evidence": [
+      "Dimensional analysis confirms units consistency.",
+      "Reduces to known form when pi_a approaches pi."
+    ]
+  }
+]

@@ -20,7 +20,7 @@ def main() -> None:
     ap.add_argument("--rescore", action="store_true", help="Allow rescoring already promoted submissions")
     ap.add_argument("--sync-equations", action="store_true", help="Sync rescored values back into equations.json")
     ap.add_argument("--promote", action="store_true", help="Promote after scoring (or existing review)")
-    ap.add_argument("--threshold", type=int, default=68, help="Used by score step for ready/needs-review status")
+    ap.add_argument("--threshold", type=int, default=65, help="Used by score step for ready/needs-review status")
     ap.add_argument("--publish-chain", action="store_true", help="Export and publish certificate records")
     ap.add_argument("--node-url", default="http://127.0.0.1:5000")
     ap.add_argument("--signer-file", default="D:/coins2/Adaptive-Curvature-Coin/wallet.json")
