@@ -170,6 +170,16 @@ def score_submission(entry: dict, api_key: str, api_base: str, model: str) -> di
         return None
 
 
+def blend_scores(heuristic_score: int, llm_total: int) -> int:
+    """Compute blended score: 40% heuristic + 60% LLM.
+
+    Heuristic is the security gate (deterministic, no LLM involvement).
+    LLM provides calibrated quality assessment. The blend gives a more
+    accurate final score while keeping the heuristic as the safety floor.
+    """
+    return int(round(0.4 * heuristic_score + 0.6 * llm_total))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="LLM-based quality scoring for submissions")
     ap.add_argument("--submission-id", required=True)
@@ -206,6 +216,11 @@ def main() -> None:
     review = entry.get("review", {}) or {}
     review["llm_scores"] = scores
     review["llm_model"] = args.model
+
+    # Compute blended score (heuristic 40% + LLM 60%)
+    heuristic_score = int(review.get("score", 0))
+    blended = blend_scores(heuristic_score, scores["llm_total"])
+    review["blended_score"] = blended
     entry["review"] = review
 
     data["lastUpdated"] = entry.get("submittedAt", "")
@@ -215,6 +230,7 @@ def main() -> None:
 
     print(f"llm_scored: {args.submission_id}")
     print(f"model: {args.model}")
+    print(f"blended_score: {blended} (heuristic={heuristic_score}, llm={scores['llm_total']})")
     print(json.dumps(scores, indent=2))
 
 

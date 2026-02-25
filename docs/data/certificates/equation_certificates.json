@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T01:26:53.827574+00:00",
+  "generated_at": "2026-02-25T03:22:56.632855+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "cced20ac82aa5a2136fbb600221deac9629f903122ae671a69bb5d10009bf7b0",
-  "count": 81,
+  "source_sha256": "13a6f26c9a7884fe245bce64cb22b94d84ba5e7b36ca934ccac5abb7f2051d79",
+  "count": 84,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -1996,6 +1996,96 @@
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
       "metadata_hash": "f81edbe5a148cbb39afe7cff0cf5a887ed168f62b5ae9eb9df1dc6c5a5215cd9"
+    },
+    {
+      "token_id": "eq-slack-test-equation",
+      "name": "Slack Test Equation",
+      "equation_latex": "\\frac{dG}{dt}=\\alpha|I|-\\mu G",
+      "equation_hash": "71ae568220c2da0ff73fb590c14942714f47575a3779862657ae06f5990d0d63",
+      "score": 63,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 15,
+        "validation": 12,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "slack",
+      "date": "2026-02-24",
+      "description": "Test submission from Slack intake path.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "e0e3a2b6471d044a53a7757994b51dd33c6b3ec90e1aca21cebc8e2ae79d6d9b",
+      "version": 1,
+      "metadata_hash": "a84d1ed9732df7e9c1df9b3af6ee74a97ba54cd8141ba6d28a079eb742960a7e"
+    },
+    {
+      "token_id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
+      "name": "Adaptive Entropy Production Rate (AEPR)",
+      "equation_latex": "dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
+      "equation_hash": "b26fbaf3d0810839aaa94300a91d6a8e69111a0c3f31d43ace314063e3031e23",
+      "score": 53,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 13,
+        "validation": 7,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "Derived from EGATL Phase-Coupled Conductance framework",
+      "date": "2026-02-24",
+      "description": "Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "57521f88c27503e483bc2de891c352fe858b2f2ff34ae1d9b89e1eddd981330d",
+      "version": 1,
+      "metadata_hash": "4d61d6a8eff20468ba40e68f7f3a168846abb3e298844372e91061ad5900ada4"
+    },
+    {
+      "token_id": "eq-adaptive-damped-harmonic-oscillator",
+      "name": "Adaptive Damped Harmonic Oscillator",
+      "equation_latex": "x(t) = A\u00b7exp(-\u03b3\u00b7\u03c0_\u03b1\u00b7t)\u00b7cos(\u03c9\u2080\u00b7\u221a(1 - (\u03b3\u00b7\u03c0_\u03b1/\u03c9\u2080)\u00b2)\u00b7t + \u03c6)",
+      "equation_hash": "c0e7553873516af8e2e1cf96001e4432a7377243b1da69348f84a989ae6fd786",
+      "score": 53,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 14,
+        "validation": 6,
+        "artifactCompleteness": 2
+      },
+      "novelty": {
+        "score": 16,
+        "date": "2026-02-24"
+      },
+      "source": "discord-test",
+      "date": "2026-02-24",
+      "description": "Classical damped harmonic oscillator with adaptive-\u03c0 curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "48530533e7847fa53832a67425ebbfb36da45aa41584e67058f0e5d46e48cfe7",
+      "version": 1,
+      "metadata_hash": "d58e0742f200276b850c784a9d361a5a9127ecd16c3288f50f385404d83bb736"
     },
     {
       "token_id": "famous-schrodinger",

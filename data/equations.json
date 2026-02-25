@@ -1451,11 +1451,11 @@
       "name": "Mesh-Synced Certificate Consistency",
       "firstSeen": "2026-02-24",
       "source": "manual setup",
-      "score": 57,
+      "score": 53,
       "scores": {
         "tractability": 15,
-        "plausibility": 14,
-        "validation": 9,
+        "plausibility": 13,
+        "validation": 7,
         "artifactCompleteness": 2
       },
       "units": "TBD",
@@ -1477,7 +1477,7 @@
       "equationLatex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
       "tags": {
         "novelty": {
-          "score": 18,
+          "score": 13,
           "date": "2026-02-24"
         }
       }
@@ -1520,11 +1520,11 @@
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "firstSeen": "2026-02-24",
       "source": "Slack DM 2026-02-24",
-      "score": 70,
+      "score": 67,
       "scores": {
         "tractability": 14,
         "plausibility": 15,
-        "validation": 14,
+        "validation": 12,
         "artifactCompleteness": 6
       },
       "units": "OK",
@@ -1548,7 +1548,7 @@
       "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 18,
           "date": "2026-02-24"
         }
       }
@@ -1657,11 +1657,11 @@
       "name": "HLATN Three-Force Conductance Lock",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 71,
+      "score": 67,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 10,
         "artifactCompleteness": 6
       },
       "units": "OK",
@@ -1685,7 +1685,7 @@
       "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 18,
           "date": "2026-02-24"
         }
       }
@@ -1695,11 +1695,11 @@
       "name": "HLATN Phase-Lift Branch-Safe Update",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 70,
+      "score": 67,
       "scores": {
         "tractability": 15,
         "plausibility": 13,
-        "validation": 15,
+        "validation": 13,
         "artifactCompleteness": 6
       },
       "units": "OK",
@@ -1733,11 +1733,11 @@
       "name": "HLATN Plaquette Holonomy",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 69,
+      "score": 64,
       "scores": {
         "tractability": 14,
         "plausibility": 15,
-        "validation": 13,
+        "validation": 10,
         "artifactCompleteness": 6
       },
       "units": "OK",
@@ -1761,7 +1761,7 @@
       "equationLatex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 18,
           "date": "2026-02-24"
         }
       }
@@ -1771,11 +1771,11 @@
       "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
       "firstSeen": "2026-02-24",
       "source": "PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)",
-      "score": 66,
+      "score": 63,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 11,
         "artifactCompleteness": 2
       },
       "units": "TBD",
@@ -1801,7 +1801,7 @@
       "equationLatex": "\\frac{dG_{ij}}{dt} = \\alpha_G\\,S(t)\\,|I_{ij}| \\cos\\!\\Big(\\frac{\\theta_{R,ij}}{2\\pi_a}\\Big) - \\mu_G G_{ij} - \\lambda_G\\,G_{ij}\\,\\frac{\\Delta\\theta_{R,ij}^2}{(2\\pi_a)^2}",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 18,
           "date": "2026-02-24"
         }
       }
@@ -1811,11 +1811,11 @@
       "name": "EGATL Phase-Coupled Conductance Update",
       "firstSeen": "2026-02-24",
       "source": "EGATL original claim (ARP framework)",
-      "score": 69,
+      "score": 66,
       "scores": {
         "tractability": 15,
         "plausibility": 16,
-        "validation": 13,
+        "validation": 11,
         "artifactCompleteness": 4
       },
       "units": "TBD",
@@ -1840,7 +1840,7 @@
       "equationLatex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 18,
           "date": "2026-02-24"
         }
       }
@@ -1851,11 +1851,11 @@
       "firstSeen": "2026-02-24",
       "source": "slack",
       "submitter": "ryan",
-      "score": 63,
+      "score": 61,
       "scores": {
         "tractability": 15,
         "plausibility": 15,
-        "validation": 12,
+        "validation": 11,
         "artifactCompleteness": 2
       },
       "units": "TBD",
@@ -1877,7 +1877,7 @@
       "equationLatex": "\\frac{dG}{dt}=\\alpha|I|-\\mu G",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 15,
           "date": "2026-02-24"
         }
       }
@@ -1888,11 +1888,11 @@
       "firstSeen": "2026-02-24",
       "source": "Derived from EGATL Phase-Coupled Conductance framework",
       "submitter": "Ryan (Copilot-assisted)",
-      "score": 53,
+      "score": 54,
       "scores": {
         "tractability": 15,
         "plausibility": 13,
-        "validation": 7,
+        "validation": 8,
         "artifactCompleteness": 2
       },
       "units": "TBD",
@@ -1916,7 +1916,7 @@
       "equationLatex": "dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 14,
           "date": "2026-02-24"
         }
       }
@@ -1927,11 +1927,11 @@
       "firstSeen": "2026-02-24",
       "source": "discord-test",
       "submitter": "clawdad42",
-      "score": 53,
+      "score": 51,
       "scores": {
         "tractability": 15,
         "plausibility": 14,
-        "validation": 6,
+        "validation": 5,
         "artifactCompleteness": 2
       },
       "units": "TBD",
@@ -1950,7 +1950,7 @@
       "equationLatex": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1 - (γ·π_α/ω₀)²)·t + φ)",
       "tags": {
         "novelty": {
-          "score": 16,
+          "score": 12,
           "date": "2026-02-24"
         }
       }

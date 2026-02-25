@@ -632,17 +632,20 @@ def build_index(repo_root: Path, docs: Path) -> None:
 
     subs = _load_json_safe(repo_root / "data" / "submissions.json", {"entries": []})
     subs_n = len(subs.get("entries", []))
+    promoted_n = sum(1 for e in subs.get("entries", []) if str(e.get("status", "")).lower() == "promoted")
 
     body = f"""
 <div class='hero hero--home'>
   <div class='hero__left'>
     <h1>TopEquations</h1>
-    <p><strong>Canonical Core</strong> and <strong>Ranked Derived</strong> are split into dedicated pages.</p>
+    <p>Open leaderboard for ranking equations &mdash; from textbook classics to novel discoveries.<br>
+    Scored by a dual-layer system, published on-chain with signed certificates.</p>
     <div class='cta'>
       <a class='btn' href='./core.html'>Canonical Core</a>
       <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
-      <a class='btn btn--ghost' href='./leaderboard.html'>Ranked Derived</a>
+      <a class='btn btn--ghost' href='./leaderboard.html'>Leaderboard</a>
       <a class='btn btn--ghost' href='./submissions.html'>All Submissions</a>
+      <a class='btn btn--ghost' href='https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml'>Submit an Equation</a>
     </div>
   </div>
   <div class='hero__right'>
@@ -659,16 +662,59 @@ def build_index(repo_root: Path, docs: Path) -> None:
         <div class='stat__num'>{_esc(subs_n)}</div>
         <div class='stat__label'>Total submissions</div>
       </div>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(promoted_n)}</div>
+        <div class='stat__label'>Promoted to leaderboard</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class='panel'>
-  <h2>Structure</h2>
+  <h2>How to Submit</h2>
+  <p>Anyone &mdash; human or AI agent &mdash; can submit equations. The easiest way:</p>
+  <ol>
+    <li>Go to <a href='https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml'><strong>New Equation Submission</strong></a></li>
+    <li>Paste a JSON object with your equation, description, and evidence</li>
+    <li>The pipeline validates, scores, and (if score &ge; 65) promotes automatically</li>
+    <li>You&rsquo;ll receive a receipt comment with your heuristic score, LLM quality score, and blended score</li>
+  </ol>
+  <p>See the <a href='https://github.com/RDM3DC/TopEquations#how-to-submit-an-equation'>README</a> for JSON format details and tips for high scores.</p>
+</div>
+
+<div class='panel'>
+  <h2>How Scoring Works</h2>
+  <table class='tbl'>
+    <thead>
+      <tr><th>Layer</th><th>Role</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Heuristic</strong></td>
+        <td>Security gate (deterministic)</td>
+        <td>Tractability, plausibility, validation, artifacts, novelty &mdash; no LLM involved</td>
+      </tr>
+      <tr>
+        <td><strong>LLM Review</strong></td>
+        <td>Quality assessment (advisory)</td>
+        <td>Calibrated GPT-4o-mini: physical validity, novelty, clarity, evidence quality, significance</td>
+      </tr>
+      <tr>
+        <td><strong>Blended</strong></td>
+        <td>Final score</td>
+        <td>40% heuristic + 60% LLM &mdash; balanced quality signal</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class='panel'>
+  <h2>Data Structure</h2>
   <ul>
-    <li><strong>Canonical Core</strong> lives in <code>data/core.json</code> and links out to Canonical Core docs.</li>
-    <li><strong>Ranked derived equations</strong> live in <code>data/equations.json</code>.</li>
-    <li><strong>Submission queue</strong> lives in <code>data/submissions.json</code> and is promoted into ranked equations after review.</li>
+    <li><strong>Canonical Core</strong> &mdash; 14 anchor equations in <code>data/core.json</code></li>
+    <li><strong>Ranked Derived</strong> &mdash; promoted equations in <code>data/equations.json</code></li>
+    <li><strong>Submissions</strong> &mdash; all submissions in <code>data/submissions.json</code>, promoted after review</li>
+    <li><strong>Certificates</strong> &mdash; on-chain ECDSA-signed certificates for every promoted equation</li>
   </ul>
 </div>
 """

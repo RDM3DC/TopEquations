@@ -28,15 +28,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-mesh-synced-certificate-consistency",
-        "score": 57,
+        "score": 53,
         "scores": {
           "tractability": 15,
-          "plausibility": 14,
-          "validation": 9,
+          "plausibility": 13,
+          "validation": 7,
           "artifactCompleteness": 2
         },
-        "novelty": 18,
-        "method": "heuristic-v1"
+        "novelty": 13,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "clarity": 15,
+          "novelty": 5,
+          "evidence_quality": 0,
+          "significance": 8,
+          "physical_validity": 10,
+          "llm_total": 38,
+          "reducible": false,
+          "justification": "The equation proposes a consistency metric but lacks independent evidence and relies on assumptions without verification."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 44
       }
     },
     {
@@ -69,14 +81,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-slack-test-equation",
-        "score": 63,
+        "score": 61,
         "scores": {
           "tractability": 15,
           "plausibility": 15,
-          "validation": 12,
+          "validation": 11,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 15,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "significance": 8,
+          "physical_validity": 10,
+          "evidence_quality": 5,
+          "novelty": 5,
+          "clarity": 15,
+          "llm_total": 43,
+          "reducible": false,
+          "justification": "The equation presents a plausible model with assumptions but lacks independent verification and is not fundamentally new."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 50
       }
     },
     {
@@ -114,14 +139,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-egatl-phase-coupled-conductance-update",
-        "score": 69,
+        "score": 66,
         "scores": {
           "tractability": 15,
           "plausibility": 16,
-          "validation": 13,
+          "validation": 11,
           "artifactCompleteness": 4
         },
-        "novelty": 16
+        "novelty": 18,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "physical_validity": 10,
+          "clarity": 15,
+          "evidence_quality": 10,
+          "significance": 15,
+          "novelty": 15,
+          "llm_total": 65,
+          "reducible": false,
+          "justification": "The equation presents a novel approach to conductance updates in a phase-coupled system, but relies on unverified assumptions and lacks independent evidence."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 65
       }
     },
     {
@@ -161,14 +199,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
-        "score": 66,
+        "score": 63,
         "scores": {
           "tractability": 15,
           "plausibility": 16,
-          "validation": 13,
+          "validation": 11,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 18,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "clarity": 10,
+          "significance": 10,
+          "physical_validity": 10,
+          "evidence_quality": 5,
+          "novelty": 10,
+          "llm_total": 45,
+          "reducible": true,
+          "justification": "The equation presents a complex model with multiple assumptions and couplings, but lacks independent verification and may be reducible to simpler forms."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 52
       }
     },
     {
@@ -200,14 +251,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
-        "score": 53,
+        "score": 54,
         "scores": {
           "tractability": 15,
           "plausibility": 13,
-          "validation": 7,
+          "validation": 8,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 14,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "novelty": 10,
+          "physical_validity": 10,
+          "clarity": 15,
+          "significance": 10,
+          "evidence_quality": 0,
+          "llm_total": 45,
+          "reducible": false,
+          "justification": "The equation presents a plausible framework for entropy production in neural networks but lacks independent evidence and clear unit definitions."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 49
       }
     },
     {
@@ -250,15 +314,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
-        "score": 70,
+        "score": 67,
         "scores": {
           "tractability": 14,
           "plausibility": 15,
-          "validation": 14,
+          "validation": 12,
           "artifactCompleteness": 6
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 18,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "physical_validity": 15,
+          "novelty": 10,
+          "significance": 12,
+          "evidence_quality": 5,
+          "clarity": 15,
+          "llm_total": 57,
+          "reducible": false,
+          "justification": "The equation presents a plausible framework for entropy dynamics in adaptive networks but relies on unverified assumptions and lacks independent evidence."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 61
       }
     },
     {
@@ -301,15 +377,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-three-force-conductance-lock",
-        "score": 71,
+        "score": 67,
         "scores": {
           "tractability": 15,
           "plausibility": 16,
-          "validation": 13,
+          "validation": 10,
           "artifactCompleteness": 6
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 18,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "significance": 12,
+          "clarity": 15,
+          "physical_validity": 10,
+          "novelty": 10,
+          "evidence_quality": 5,
+          "llm_total": 52,
+          "reducible": false,
+          "justification": "The equation presents a plausible new framework for conductance feedback but lacks independent verification and relies on self-citations."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 58
       }
     },
     {
@@ -357,15 +445,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-phase-lift-branch-safe-update",
-        "score": 70,
+        "score": 67,
         "scores": {
           "tractability": 15,
           "plausibility": 13,
-          "validation": 15,
+          "validation": 13,
           "artifactCompleteness": 6
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "physical_validity": 15,
+          "evidence_quality": 10,
+          "novelty": 10,
+          "significance": 12,
+          "clarity": 15,
+          "llm_total": 62,
+          "reducible": false,
+          "justification": "The equation presents a novel update rule with practical applications, but relies on assumptions and lacks independent peer-reviewed validation."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 64
       }
     },
     {
@@ -408,15 +508,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-plaquette-holonomy",
-        "score": 69,
+        "score": 64,
         "scores": {
           "tractability": 14,
           "plausibility": 15,
-          "validation": 13,
+          "validation": 10,
           "artifactCompleteness": 6
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 18,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "novelty": 10,
+          "clarity": 15,
+          "physical_validity": 15,
+          "evidence_quality": 5,
+          "significance": 12,
+          "llm_total": 57,
+          "reducible": false,
+          "justification": "The equation presents a plausible new method for defining a Z2 parity locking order parameter, but relies on unverified assumptions and self-references."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 60
       }
     },
     {
@@ -443,14 +555,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-damped-harmonic-oscillator",
-        "score": 53,
+        "score": 51,
         "scores": {
           "tractability": 15,
           "plausibility": 14,
-          "validation": 6,
+          "validation": 5,
           "artifactCompleteness": 2
         },
-        "novelty": 16
+        "novelty": 12,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "evidence_quality": 0,
+          "physical_validity": 10,
+          "novelty": 5,
+          "clarity": 10,
+          "significance": 8,
+          "llm_total": 33,
+          "reducible": true,
+          "justification": "The equation presents a modification of a known system with unclear units and lacks independent evidence, making it less impactful."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 40
       }
     },
     {
@@ -477,15 +602,27 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "",
-        "score": 53,
+        "score": 51,
         "scores": {
           "tractability": 14,
           "plausibility": 15,
-          "validation": 6,
+          "validation": 5,
           "artifactCompleteness": 2
         },
         "novelty": 16,
-        "method": "heuristic-v1"
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "significance": 10,
+          "physical_validity": 10,
+          "novelty": 5,
+          "evidence_quality": 0,
+          "clarity": 10,
+          "llm_total": 35,
+          "reducible": true,
+          "justification": "The equation presents a plausible framework for entropy production but lacks independent evidence and may be reducible to simpler forms."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 41
       }
     },
     {
@@ -515,17 +652,29 @@
         "path": ""
       },
       "review": {
-        "date": "2026-02-25",
+        "date": "2026-02-24",
         "equationId": "",
-        "score": 59,
+        "score": 54,
         "scores": {
           "tractability": 15,
           "plausibility": 13,
-          "validation": 11,
+          "validation": 8,
           "artifactCompleteness": 2
         },
-        "novelty": 20,
-        "method": "heuristic-v1"
+        "novelty": 13,
+        "method": "heuristic-v1",
+        "llm_scores": {
+          "clarity": 15,
+          "evidence_quality": 5,
+          "significance": 12,
+          "novelty": 10,
+          "physical_validity": 15,
+          "llm_total": 57,
+          "reducible": false,
+          "justification": "The equation presents a plausible modification to standard cosmological redshift but lacks independent verification and relies on assumptions."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 56
       }
     }
   ]

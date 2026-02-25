@@ -169,6 +169,15 @@ jobs:
                   break
           " 2>/dev/null || echo "N/A")
             echo "llm_total=$LLM_TOTAL" >> "$GITHUB_OUTPUT"
+            BLENDED=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  print((e.get('review') or {}).get('blended_score', 'N/A'))
+                  break
+          " 2>/dev/null || echo "N/A")
+            echo "blended=$BLENDED" >> "$GITHUB_OUTPUT"
           else
             echo "LLM scoring skipped (no OPENAI_API_KEY)"
             echo "llm_total=N/A" >> "$GITHUB_OUTPUT"
@@ -200,12 +209,14 @@ jobs:
             const status = '${{ steps.pipeline.outputs.status }}';
             const promoted = '${{ steps.pipeline.outputs.promoted }}' === 'true';
             const llmTotal = '${{ steps.pipeline.outputs.llm_total }}';
+            const blended = '${{ steps.pipeline.outputs.blended }}';
 
             let body = `## Submission Receipt\n\n`;
             body += `| Field | Value |\n|-------|-------|\n`;
             body += `| Submission ID | \`${subId}\` |\n`;
             body += `| Heuristic Score | **${score}** / 100 |\n`;
             body += `| LLM Quality Score | **${llmTotal}** / 100 |\n`;
+            body += `| Blended Score | **${blended}** / 100 |\n`;
             body += `| Status | ${status} |\n`;
             body += `| Promoted | ${promoted ? '✅ Yes — added to leaderboard' : '⏳ Needs review (score < 65)'} |\n`;
             body += `| Chain publish | 🕐 Pending next local publish cycle |\n\n`;
