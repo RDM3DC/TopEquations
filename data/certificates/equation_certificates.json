@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T06:37:36.214411+00:00",
+  "generated_at": "2026-02-25T07:22:56.674257+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "a5e48268d5682db3538b30deb9251e5963d9e60e147d04ccefd6c3b10fe62db3",
+  "source_sha256": "1c5e90e469e331b4cc3e30bc8dae5199044a89c2ab18c17b416537c180c54cb6",
   "count": 85,
   "entries": [
     {
@@ -1672,15 +1672,15 @@
       "name": "Mesh-Synced Certificate Consistency",
       "equation_latex": "\\\\Delta H_{cert}(t)=H_{nodeA}(t)-H_{nodeB}(t)\\\\to 0",
       "equation_hash": "cbb1551f6c19908502202c4e54bf5bf86988311eb01cf189a033f5207dd7877f",
-      "score": 53,
+      "score": 55,
       "scores": {
-        "tractability": 15,
-        "plausibility": 13,
-        "validation": 7,
-        "artifactCompleteness": 2
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 10,
+        "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 13,
+        "score": 18,
         "date": "2026-02-24"
       },
       "source": "manual setup",
@@ -1695,7 +1695,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "94495c8480e1ec196dc4e62f0e82c935a0850213f33b096719f4b5ddb0d1062b"
+      "metadata_hash": "8b66dc6dc81573ae50d70266a0247e22b6361e18ca6cf813a99e3eab9ef4e242"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1732,15 +1732,15 @@
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equation_latex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
       "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
-      "score": 67,
+      "score": 82,
       "scores": {
-        "tractability": 14,
-        "plausibility": 15,
-        "validation": 12,
-        "artifactCompleteness": 6
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 18,
+        "score": 25,
         "date": "2026-02-24"
       },
       "source": "Slack DM 2026-02-24",
@@ -1755,7 +1755,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "49b11ddabe8b6592cdf6bdba18ad1a0ef53275f443f0b1cd28e6d057b1a548ac"
+      "metadata_hash": "215b0ea7e1debb95fd441feb878d68cc68742a0e28574e9d66a95a35e1ce0eee"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-7",
@@ -1852,15 +1852,15 @@
       "name": "HLATN Three-Force Conductance Lock",
       "equation_latex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
       "equation_hash": "f944e4196b40c905b14dcfe319f9058e9c9dc0c832ec0b888c89a158cd9061d6",
-      "score": 67,
+      "score": 82,
       "scores": {
-        "tractability": 15,
-        "plausibility": 16,
-        "validation": 10,
-        "artifactCompleteness": 6
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 14,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 18,
+        "score": 27,
         "date": "2026-02-24"
       },
       "source": "HLATN_White_Paper_2026-02-24.pdf",
@@ -1875,22 +1875,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "70d9c87b07c8d671da3812a4902e5ffac02f5b67e7ccc20547bcbfaa770decef"
+      "metadata_hash": "c547cc0af18412afa80cb50c2c4a5f08138d5188c16c727c148d12113bd99ddc"
     },
     {
       "token_id": "eq-hlatn-phase-lift-branch-safe-update",
       "name": "HLATN Phase-Lift Branch-Safe Update",
       "equation_latex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\!\\Big(\\mathrm{wrapTo}_{\\pi}(\\phi_e - \\theta_{R,e}),\\; -\\pi_a,\\; +\\pi_a\\Big)",
       "equation_hash": "727ea4aa8c9ace0b1ca1ad97b5c575dd5c7e1c6ab528f643a9fdd9973c6759f6",
-      "score": 67,
+      "score": 81,
       "scores": {
-        "tractability": 15,
-        "plausibility": 13,
-        "validation": 13,
-        "artifactCompleteness": 6
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 17,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 16,
+        "score": 23,
         "date": "2026-02-24"
       },
       "source": "HLATN_White_Paper_2026-02-24.pdf",
@@ -1905,22 +1905,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "b38f19d100eadfbcf4a586c418ef04945e1dbb30d7c583a9150f273f8039f3fe"
+      "metadata_hash": "74a62fe4b399408e6526edfbcf6cd82053eafeb95236a3524faa23ab05075544"
     },
     {
       "token_id": "eq-hlatn-plaquette-holonomy",
       "name": "HLATN Plaquette Holonomy",
       "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
       "equation_hash": "55e25b3f97eb4e330db7871b725a2e6437d43557934ab18c5fa6de6e5b2fe086",
-      "score": 64,
+      "score": 81,
       "scores": {
-        "tractability": 14,
-        "plausibility": 15,
-        "validation": 10,
-        "artifactCompleteness": 6
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 14,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 18,
+        "score": 23,
         "date": "2026-02-24"
       },
       "source": "HLATN_White_Paper_2026-02-24.pdf",
@@ -1935,22 +1935,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "9b64710beda17b868e940500cb5bccab8aa1b121236423637a34d763c4e1362f"
+      "metadata_hash": "86e2c9884fa8373f6a596ae282fe28afcde88aec23fa0eace449e6c50cb78d15"
     },
     {
       "token_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
       "name": "Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)",
       "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G\\,S(t)\\,|I_{ij}| \\cos\\!\\Big(\\frac{\\theta_{R,ij}}{2\\pi_a}\\Big) - \\mu_G G_{ij} - \\lambda_G\\,G_{ij}\\,\\frac{\\Delta\\theta_{R,ij}^2}{(2\\pi_a)^2}",
       "equation_hash": "cdb60bd1b572234675141a29828e9bcb75fa1304de8e8265efbc5cfb6dd6da59",
-      "score": 63,
+      "score": 86,
       "scores": {
-        "tractability": 15,
-        "plausibility": 16,
-        "validation": 11,
-        "artifactCompleteness": 2
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 18,
+        "score": 27,
         "date": "2026-02-24"
       },
       "source": "PR Root Guide framework (ARP/AIN/Phase-Lift/Adaptive-Pi)",
@@ -1965,22 +1965,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "8eafcf2a575a5c965f876dde2263ba976f212eb2154853748e094ea1685f66e8"
+      "metadata_hash": "dc947cec8f5e0f81266e5255ddc9403decd98351ca9bc0baa391bb507cc30b4e"
     },
     {
       "token_id": "eq-egatl-phase-coupled-conductance-update",
       "name": "EGATL Phase-Coupled Conductance Update",
       "equation_latex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
       "equation_hash": "0e0eefe3e5c6e217a0fcb5d5cbad0630d74048012868bbea78ccfb8ff676002d",
-      "score": 66,
+      "score": 87,
       "scores": {
-        "tractability": 15,
-        "plausibility": 16,
-        "validation": 11,
-        "artifactCompleteness": 4
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 7
       },
       "novelty": {
-        "score": 18,
+        "score": 27,
         "date": "2026-02-24"
       },
       "source": "EGATL original claim (ARP framework)",
@@ -1995,22 +1995,22 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "5887dea68d80e0fa4b7157bb99bcb2d8a4ebe52ff19474062b9e6e472fc6256a"
+      "metadata_hash": "69b24d6c29b7309632cc5d82acc7137644169b1faa7515ca088802175de89c9c"
     },
     {
       "token_id": "eq-slack-test-equation",
       "name": "Slack Test Equation",
       "equation_latex": "\\frac{dG}{dt}=\\alpha|I|-\\mu G",
       "equation_hash": "71ae568220c2da0ff73fb590c14942714f47575a3779862657ae06f5990d0d63",
-      "score": 61,
+      "score": 58,
       "scores": {
-        "tractability": 15,
-        "plausibility": 15,
-        "validation": 11,
-        "artifactCompleteness": 2
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 14,
+        "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 15,
+        "score": 20,
         "date": "2026-02-24"
       },
       "source": "slack",
@@ -2025,22 +2025,22 @@
       "tier": "derived",
       "submitter_hash": "e0e3a2b6471d044a53a7757994b51dd33c6b3ec90e1aca21cebc8e2ae79d6d9b",
       "version": 1,
-      "metadata_hash": "fbdde08570a71c8011c2c364c5dd14b045a33c5dd8d34a78c427697d037c2750"
+      "metadata_hash": "d32a267ef69485e1ce4ab55186d9300b7cf351e20b2f1e9b7318f66f576c57a2"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equation_latex": "dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
       "equation_hash": "b26fbaf3d0810839aaa94300a91d6a8e69111a0c3f31d43ace314063e3031e23",
-      "score": 54,
+      "score": 69,
       "scores": {
-        "tractability": 15,
-        "plausibility": 13,
-        "validation": 8,
-        "artifactCompleteness": 2
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 12,
+        "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 14,
+        "score": 19,
         "date": "2026-02-24"
       },
       "source": "Derived from EGATL Phase-Coupled Conductance framework",
@@ -2055,22 +2055,22 @@
       "tier": "derived",
       "submitter_hash": "57521f88c27503e483bc2de891c352fe858b2f2ff34ae1d9b89e1eddd981330d",
       "version": 1,
-      "metadata_hash": "aeb30cb8c6320e0d9b081cb3f445bb20aeca7c91c2049a6ec5024b999ad0e8ff"
+      "metadata_hash": "e9fb18282bbaaad1168fa3edc528424a30b6c9a730f3eaa860f410f8dede337c"
     },
     {
       "token_id": "eq-adaptive-damped-harmonic-oscillator",
       "name": "Adaptive Damped Harmonic Oscillator",
       "equation_latex": "x(t) = A\u00b7exp(-\u03b3\u00b7\u03c0_\u03b1\u00b7t)\u00b7cos(\u03c9\u2080\u00b7\u221a(1 - (\u03b3\u00b7\u03c0_\u03b1/\u03c9\u2080)\u00b2)\u00b7t + \u03c6)",
       "equation_hash": "c0e7553873516af8e2e1cf96001e4432a7377243b1da69348f84a989ae6fd786",
-      "score": 51,
+      "score": 52,
       "scores": {
-        "tractability": 15,
-        "plausibility": 14,
-        "validation": 5,
-        "artifactCompleteness": 2
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 8,
+        "artifactCompleteness": 4
       },
       "novelty": {
-        "score": 12,
+        "score": 16,
         "date": "2026-02-24"
       },
       "source": "discord-test",
@@ -2085,22 +2085,22 @@
       "tier": "derived",
       "submitter_hash": "48530533e7847fa53832a67425ebbfb36da45aa41584e67058f0e5d46e48cfe7",
       "version": 1,
-      "metadata_hash": "b6410b64893c812d16637745ee59d4cc7c0e13dad125e85c80790339307e9802"
+      "metadata_hash": "8b9d63a821c18ad9ad1a70eec8580805b72d43f45a3efca83abc708a26dfe076"
     },
     {
       "token_id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
       "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
       "equation_latex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
       "equation_hash": "c7c9a94fdcd996f290636aa773cbe492f82863725927b802d800585c4a184747",
-      "score": 64,
+      "score": 93,
       "scores": {
-        "tractability": 15,
-        "plausibility": 15,
-        "validation": 11,
-        "artifactCompleteness": 4
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 7
       },
       "novelty": {
-        "score": 18,
+        "score": 29,
         "date": "2026-02-24"
       },
       "source": "grok-xai",
@@ -2115,7 +2115,7 @@
       "tier": "derived",
       "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
       "version": 1,
-      "metadata_hash": "064ece4b2a3bd9d9a2a8605168cbbc167161b03ff53eeac254a521a1657905a4"
+      "metadata_hash": "1ed96ee7e71a334af683c1c4525de7b3ac988b48f209449958b012f3df0d40a7"
     },
     {
       "token_id": "famous-schrodinger",

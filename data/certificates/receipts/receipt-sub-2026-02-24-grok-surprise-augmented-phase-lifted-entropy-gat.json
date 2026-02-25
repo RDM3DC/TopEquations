@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-grok-surprise-augmented-phase-lifted-entropy-gat",
+  "equation_id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+  "submitter_hash": "dca61d32363b091bf130e0b539eaa6557a3a035be17a1be1e3dc2c183eafcd2f",
+  "equation_hash": "c7c9a94fdcd996f290636aa773cbe492f82863725927b802d800585c4a184747",
+  "metadata_hash": "1ed96ee7e71a334af683c1c4525de7b3ac988b48f209449958b012f3df0d40a7",
+  "score": 97,
+  "status": "promoted",
+  "issued_at": "2026-02-25T07:22:57.494937+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "4d7a4a620f71a96edc0feb14c96285a324191a3082182af2691d4201faad845d85e16c78364dcaa08b66ecbfbc7a66e7873afa8b982c83c72679ecf444aae3c8",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}
