@@ -104,9 +104,7 @@ def _page(title: str, body: str, updated: str) -> str:
         window.renderMathInElement(document.body, {{
           delimiters: [
             {{left: '$$', right: '$$', display: true}},
-            {{left: '\\[', right: '\\]', display: true}},
             {{left: '$', right: '$', display: false}},
-            {{left: '\\(', right: '\\)', display: false}},
           ],
           throwOnError: false,
         }});
@@ -519,10 +517,20 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         score = e.get("score", "")
         units = e.get("units", "")
         theory = e.get("theory", "")
-        anim = _artifact(e.get("animation"))
-        img = _artifact(e.get("image"))
         date = e.get("date", "")
         eq_id = (e.get("id") or "").strip()
+        repo_url = (e.get("repoUrl") or "").strip()
+
+        # Point animation/image links to the equation repo when available
+        def _repo_artifact(obj, repo_url):
+            if isinstance(obj, dict) and obj.get("path", "").strip() and repo_url:
+                fname = Path(obj["path"]).name
+                url = f"{repo_url}/blob/main/images/{fname}"
+                return f"<a href='{_esc(url)}' target='_blank' rel='noopener'>link</a>"
+            return _artifact(obj)
+
+        anim = _repo_artifact(e.get("animation"), repo_url)
+        img = _repo_artifact(e.get("image"), repo_url)
 
         has_latex = "1" if (e.get("equationLatex") or "").strip() else "0"
         # Optional educational metadata
@@ -548,7 +556,6 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         if eq_id:
           extra += f"<div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>view on chain record</a></div></div>"
 
-        repo_url = (e.get("repoUrl") or "").strip()
         if repo_url:
           extra += f"<div class='kv'><div class='k'>Repository</div><div class='v'><a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>"
 
