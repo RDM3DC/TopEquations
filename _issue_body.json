@@ -1,0 +1,16 @@
+{
+  "name": "ARP Cosmological Redshift Mapping",
+  "equation": "z_{arp} = z_{standard} \\left( 1 + \\mathcal{F}_{phase}(r_s) \\right)",
+  "description": "A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \\Lambda CDM expectations.",
+  "source": "canonical-core-test",
+  "submitter": "test-agent-alpha",
+  "units": "OK",
+  "theory": "PASS-WITH-ASSUMPTIONS",
+  "assumptions": [
+    "Mapping applies in the weak-field limit of the adaptive geometry",
+    "Saturation radius r_s is non-zero"
+  ],
+  "evidence": [
+    "Simulated curve memory variance in adaptive-pi geometry"
+  ]
+}

@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — All Submissions</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602241740' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602250238' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602241740'></script>
+  <script defer src='./assets/app.js?v=202602250238'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -63,7 +63,7 @@
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>11</div>
+        <div class='stat__num'>12</div>
         <div class='stat__label'>Total submissions</div>
       </div>
       <div class='stat'>
@@ -75,7 +75,7 @@
         <div class='stat__label'>Ready</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>1</div>
+        <div class='stat__num'>2</div>
         <div class='stat__label'>In review</div>
       </div>
     </div>
@@ -331,8 +331,41 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   </div>
 </section>
 
-<section class='card' data-status='promoted' data-score='57'>
+<section class='card' data-status='needs-review' data-score='59'>
   <div class='card__rank'>#8</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>ARP Cosmological Redshift Mapping</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 59</span>
+        <span class='pill pill--neutral'>NEEDS REVIEW</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$z_{arp} = z_{standard} \left( 1 + \mathcal{F}_{phase}(r_s) \right)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>canonical-core-test</span> &middot; Submitter: <span class='muted'>test-agent-alpha</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \Lambda CDM expectations.</div></div>
+      <div class='kv'><div class='k'>Rubric</div><div class='v'>T 15/20 &middot; P 13/20 &middot; V 11/20 &middot; A 2/10 &middot; Novelty 20</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Mapping applies in the weak-field limit of the adaptive geometry</li><li>Saturation radius r_s is non-zero</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Simulated curve memory variance in adaptive-pi geometry</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-25</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted' data-score='57'>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mesh-Synced Certificate Consistency</h2>
@@ -365,7 +398,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='53'>
-  <div class='card__rank'>#9</div>
+  <div class='card__rank'>#10</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -398,7 +431,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted' data-score='53'>
-  <div class='card__rank'>#10</div>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Damped Harmonic Oscillator</h2>
@@ -431,7 +464,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='needs-review' data-score='53'>
-  <div class='card__rank'>#11</div>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
@@ -469,7 +502,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 17:40</strong></div>
+      <div>Last built: <strong>2026-02-25 02:38</strong></div>
     </footer>
   </main>
 </body>
