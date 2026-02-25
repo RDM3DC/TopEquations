@@ -5,10 +5,10 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — All Submissions</title>
 
-  <link rel='stylesheet' href='./assets/style.css?v=202602242359' />
+  <link rel='stylesheet' href='./assets/style.css?v=202602250002' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202602242359'></script>
+  <script defer src='./assets/app.js?v=202602250002'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -61,11 +61,11 @@
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>19</div>
+        <div class='stat__num'>20</div>
         <div class='stat__label'>Total submissions</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>18</div>
+        <div class='stat__num'>19</div>
         <div class='stat__label'>Promoted</div>
       </div>
       <div class='stat'>
@@ -133,6 +133,37 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
   <div class='card__rank'>#2</div>
   <div class='card__body'>
     <div class='card__head'>
+      <h2 class='card__title'>Mean-Event Equilibrium for Adaptive πₐ (discrete)</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\pi_a^{\star} = \pi_0 + \frac{\alpha_{\pi}}{\mu_{\pi}}\,\mathbb{E}[S_k]$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>gpt-5.2 (PR Root Guide)</span> &middot; Submitter: <span class='muted'>ChatGPT</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Stationary mean equilibrium of the discrete adaptive-π bound update. Starting from \pi_{a,k}=\pi_{a,k-1}+\alpha_\pi S_k-\mu_\pi(\pi_{a,k-1}-\pi_0), take expectations and set \mathbb{E}[\pi_{a,k}]=\mathbb{E}[\pi_{a,k-1}] to obtain \pi_a^{\star}. Interprets \mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Discrete update uses constant \alpha_\pi and \mu_\pi over the averaging window</li><li>A stationary regime exists with \mathbb{E}[\pi_{a,k}]=\mathbb{E}[\pi_{a,k-1}]</li><li>\mathbb{E}[S_k] exists (ergodic/long-run average approximates expectation)</li><li>\mu_\pi&gt;0 and the mean dynamics are stable (no divergence of \mathbb{E}[\pi_a])</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Derivation: take expectation of \pi_{a,k}=\pi_{a,k-1}+\alpha_\pi S_k-\mu_\pi(\pi_{a,k-1}-\pi_0) and solve the fixed point of \mathbb{E}[\Delta\pi_a]=0</li><li>Sanity check: if \mathbb{E}[S_k]=0 (no events), then \pi_a^{\star}=\pi_0 (no-event fixed point)</li><li>Monotonicity: \pi_a^{\star} increases linearly with mean event rate \mathbb{E}[S_k]</li><li>Builds directly on LB Adaptive Ruler equation \dot{\pi}_a = \alpha_\pi S - \mu_\pi(\pi_a - \pi_0) — this is its discrete stationary solution</li><li>Limit recovery: when \alpha_\pi \to 0, \pi_a^{\star} \to \pi_0 (standard Chern framework)</li></ul></div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-02-25</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-mean-event-equilibrium-for-adaptive-discrete'>eq-mean-event-equilibrium-for-adaptive-discrete</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#3</div>
+  <div class='card__body'>
+    <div class='card__head'>
       <h2 class='card__title'>Mesh-Synced Certificate Consistency</h2>
       <div class='card__meta'>
         <span class='pill pill--good'>PROMOTED</span>
@@ -161,7 +192,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#3</div>
+  <div class='card__rank'>#4</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Slack Test Equation</h2>
@@ -192,7 +223,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#4</div>
+  <div class='card__rank'>#5</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
@@ -223,7 +254,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#5</div>
+  <div class='card__rank'>#6</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
@@ -254,7 +285,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#6</div>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -285,7 +316,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#7</div>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -316,7 +347,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#8</div>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
@@ -347,7 +378,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#9</div>
+  <div class='card__rank'>#10</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
@@ -378,7 +409,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#10</div>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
@@ -409,7 +440,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#11</div>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Damped Harmonic Oscillator</h2>
@@ -440,7 +471,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#12</div>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
@@ -471,7 +502,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#13</div>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
@@ -502,7 +533,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#14</div>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
@@ -533,7 +564,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#15</div>
+  <div class='card__rank'>#16</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ThreeForceConductance</h2>
@@ -564,7 +595,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#16</div>
+  <div class='card__rank'>#17</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PhaseLiftUpdate</h2>
@@ -595,7 +626,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#17</div>
+  <div class='card__rank'>#18</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AdaptiveRuler</h2>
@@ -626,7 +657,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#18</div>
+  <div class='card__rank'>#19</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PlaquetteHolonomy</h2>
@@ -657,7 +688,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#19</div>
+  <div class='card__rank'>#20</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ParityFlipRate</h2>
@@ -693,7 +724,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-02-24 23:59</strong></div>
+      <div>Last built: <strong>2026-02-25 00:02</strong></div>
     </footer>
   </main>
 </body>

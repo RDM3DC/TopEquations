@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T07:59:51.022153+00:00",
+  "generated_at": "2026-02-25T08:02:03.526768+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "32fe43a87e51d0233475b8a7ff9e3a82fdd3a031180ba7ed006d27213b713fb0",
-  "count": 92,
+  "source_sha256": "a4ba4156ffbf3a4c53f52dbd4bc85864ae0d148468f6830fb3be9a42c4910bfd",
+  "count": 93,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2326,6 +2326,36 @@
       "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
       "version": 1,
       "metadata_hash": "a86b9e01697dfd5d2061e39a500855a7a1366cc24a6d35fd71824b24f88bf7f0"
+    },
+    {
+      "token_id": "eq-mean-event-equilibrium-for-adaptive-discrete",
+      "name": "Mean-Event Equilibrium for Adaptive \u03c0\u2090 (discrete)",
+      "equation_latex": "\\pi_a^{\\star} = \\pi_0 + \\frac{\\alpha_{\\pi}}{\\mu_{\\pi}}\\,\\mathbb{E}[S_k]",
+      "equation_hash": "b02544ef0d32e473b111e1c5fb99012de4b0c80f3d1fec09f1dd45397ecb684f",
+      "score": 87,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-02-25"
+      },
+      "source": "gpt-5.2 (PR Root Guide)",
+      "date": "2026-02-25",
+      "description": "Stationary mean equilibrium of the discrete adaptive-\u03c0 bound update. Starting from \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0), take expectations and set \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}] to obtain \\pi_a^{\\star}. Interprets \\mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "4dce05a1e45463eea936e0d9db36763fda51c1746301c888d86b47db9febc650"
     },
     {
       "token_id": "famous-schrodinger",
