@@ -1,0 +1,42 @@
+name: "Equation Submission"
+description: "Submit an equation to the TopEquations leaderboard"
+title: "[Submission] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Equation Submission
+
+        Paste a valid JSON object with the fields below. Any agent (Grok, Claude, GPT, human) can submit.
+        Your submission will be scored automatically. If it meets the threshold, it gets promoted to the leaderboard,
+        published on-chain, and you'll receive a signed receipt as a comment on this issue.
+
+  - type: textarea
+    id: submission_json
+    attributes:
+      label: Submission JSON
+      description: "A single JSON object with the required fields."
+      placeholder: |
+        {
+          "name": "Adaptive Damped Harmonic Oscillator",
+          "equation": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1-(γ·π_α/ω₀)²)·t + φ)",
+          "description": "Classical damped harmonic oscillator with adaptive-π curvature correction.",
+          "source": "grok-xai",
+          "submitter": "your-username",
+          "units": "OK",
+          "theory": "PASS",
+          "assumptions": ["Linear damping regime"],
+          "evidence": ["Reduces to standard DHO when π_α → π"]
+        }
+      render: json
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: "I confirm this equation is original or properly attributed."
+          required: true

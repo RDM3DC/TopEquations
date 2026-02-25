@@ -1,0 +1,84 @@
+name: "Heartbeat — Health Check"
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Every 6 hours
+  workflow_dispatch: {}      # Manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check for stale data and rebuild if needed
+        id: check
+        run: |
+          set -e
+          CHANGED=false
+
+          # Check if any submissions are pending/needs-review that should be processed
+          PENDING=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          count = sum(1 for e in subs.get('entries', []) if e.get('status') in ('pending', 'needs-review'))
+          print(count)
+          ")
+          echo "pending_submissions=$PENDING" >> "$GITHUB_OUTPUT"
+
+          # Check if leaderboard.md is older than equations.json
+          LEADERBOARD_STALE=$(python -c "
+          import os
+          eq_mtime = os.path.getmtime('data/equations.json')
+          lb_mtime = os.path.getmtime('leaderboard.md') if os.path.exists('leaderboard.md') else 0
+          html_mtime = os.path.getmtime('docs/leaderboard.html') if os.path.exists('docs/leaderboard.html') else 0
+          print('true' if eq_mtime > min(lb_mtime, html_mtime) else 'false')
+          ")
+          echo "leaderboard_stale=$LEADERBOARD_STALE" >> "$GITHUB_OUTPUT"
+
+          # Rebuild if stale
+          if [ "$LEADERBOARD_STALE" = "true" ]; then
+            echo "Leaderboard is stale, rebuilding..."
+            python tools/generate_leaderboard.py
+            python tools/build_site.py
+            CHANGED=true
+          fi
+
+          # Re-export certificates if equations changed
+          CERTS_STALE=$(python -c "
+          import os
+          eq_mtime = os.path.getmtime('data/equations.json')
+          cert_path = 'data/certificates/equation_certificates.json'
+          cert_mtime = os.path.getmtime(cert_path) if os.path.exists(cert_path) else 0
+          print('true' if eq_mtime > cert_mtime else 'false')
+          ")
+
+          if [ "$CERTS_STALE" = "true" ]; then
+            echo "Certificates are stale, re-exporting..."
+            python tools/export_equation_certificates.py
+            CHANGED=true
+          fi
+
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push if changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "TopEquations Bot"
+          git config user.email "bot@topequations.local"
+          git add -A
+          git diff --cached --quiet && echo "No changes" || git commit -m "Heartbeat: rebuild stale data"
+          git push

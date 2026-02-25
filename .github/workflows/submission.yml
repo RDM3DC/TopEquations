@@ -1,0 +1,221 @@
+name: "Process Equation Submission"
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process-submission:
+    if: contains(github.event.issue.labels.*.name, 'submission')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Extract submission JSON from issue body
+        id: extract
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            // Find the JSON block within the "Submission JSON" textarea
+            // The issue template wraps it in a section with id submission_json
+            // GitHub renders it as: ### Submission JSON\n\n<content>
+            let jsonText = body;
+
+            // Try to extract from between the Submission JSON header and the next header/checkbox
+            const sectionMatch = body.match(/### Submission JSON\s*\n+([\s\S]*?)(?=\n### |\n- \[|$)/);
+            if (sectionMatch) {
+              jsonText = sectionMatch[1].trim();
+            }
+
+            // Strip markdown code fences if present
+            const fenceMatch = jsonText.match(/```(?:json)?\s*\n([\s\S]*?)\n\s*```/);
+            if (fenceMatch) {
+              jsonText = fenceMatch[1].trim();
+            }
+
+            // Write to file for Python to parse (avoids shell escaping issues entirely)
+            const fs = require('fs');
+            fs.writeFileSync('_issue_body.json', jsonText, 'utf8');
+            core.setOutput('issue_number', context.payload.issue.number);
+            core.setOutput('issue_author', context.payload.issue.user.login);
+
+      - name: Validate submission JSON
+        id: validate
+        run: |
+          python tools/parse_github_issue.py _issue_body.json > _parsed.json 2> _validation_error.txt
+          if [ $? -ne 0 ]; then
+            echo "valid=false" >> "$GITHUB_OUTPUT"
+            echo "error=$(cat _validation_error.txt)" >> "$GITHUB_OUTPUT"
+          else
+            echo "valid=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment validation error and close
+        if: steps.validate.outputs.valid == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const error = fs.readFileSync('_validation_error.txt', 'utf8').trim();
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              body: `❌ **Submission validation failed**\n\n\`\`\`\n${error}\n\`\`\`\n\nPlease fix the JSON and resubmit.`
+            });
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              labels: ['invalid']
+            });
+
+      - name: Run submission pipeline
+        if: steps.validate.outputs.valid == 'true'
+        id: pipeline
+        run: |
+          set -e
+
+          # Read parsed fields safely via Python (no shell interpolation of user input)
+          SUBMISSION_ID=$(python -c "
+          import json, subprocess, sys
+          d = json.load(open('_parsed.json'))
+          args = [
+              sys.executable, 'tools/submit_equation.py',
+              '--name', d['name'],
+              '--equation', d['equation'],
+              '--description', d['description'],
+              '--source', d.get('source', 'github-issue'),
+              '--submitter', d.get('submitter', 'anonymous'),
+              '--units', d.get('units', 'TBD'),
+              '--theory', d.get('theory', 'TBD'),
+          ]
+          for a in d.get('assumptions', []):
+              args.extend(['--assumption', a])
+          for e in d.get('evidence', []):
+              args.extend(['--evidence', e])
+          result = subprocess.run(args, capture_output=True, text=True, cwd='.')
+          print(result.stdout, file=sys.stderr)
+          # Extract submission ID from output
+          for line in result.stdout.strip().split('\n'):
+              if line.startswith('submitted:'):
+                  print(line.split(':', 1)[1].strip())
+                  break
+          ")
+
+          echo "submission_id=$SUBMISSION_ID" >> "$GITHUB_OUTPUT"
+          echo "Submitted: $SUBMISSION_ID"
+
+          # Score
+          python tools/score_submission.py --submission-id "$SUBMISSION_ID" --mark-ready-threshold 65
+
+          # Read score result
+          SCORE=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  review = e.get('review', {}) or {}
+                  print(review.get('score', 0))
+                  break
+          ")
+          STATUS=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  print(e.get('status', 'unknown'))
+                  break
+          ")
+
+          echo "score=$SCORE" >> "$GITHUB_OUTPUT"
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          echo "Score: $SCORE, Status: $STATUS"
+
+          # Promote if ready (score >= 65)
+          if [ "$STATUS" = "ready" ]; then
+            python tools/promote_submission.py --submission-id "$SUBMISSION_ID" --from-review
+            echo "promoted=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "promoted=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # Rebuild leaderboard and site
+          python tools/generate_leaderboard.py
+          python tools/build_site.py
+
+          # Export certificates (chain publish handled separately by local cron)
+          python tools/export_equation_certificates.py
+
+      - name: Commit and push changes
+        if: steps.validate.outputs.valid == 'true'
+        run: |
+          git config user.name "TopEquations Bot"
+          git config user.email "bot@topequations.local"
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Pipeline: ${{ steps.pipeline.outputs.submission_id }} (score ${{ steps.pipeline.outputs.score }})"
+          git push
+
+      - name: Post receipt comment
+        if: steps.validate.outputs.valid == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const subId = '${{ steps.pipeline.outputs.submission_id }}';
+            const score = '${{ steps.pipeline.outputs.score }}';
+            const status = '${{ steps.pipeline.outputs.status }}';
+            const promoted = '${{ steps.pipeline.outputs.promoted }}' === 'true';
+
+            let body = `## Submission Receipt\n\n`;
+            body += `| Field | Value |\n|-------|-------|\n`;
+            body += `| Submission ID | \`${subId}\` |\n`;
+            body += `| Score | **${score}** |\n`;
+            body += `| Status | ${status} |\n`;
+            body += `| Promoted | ${promoted ? '✅ Yes — added to leaderboard' : '⏳ Needs review (score < 65)'} |\n`;
+            body += `| Chain publish | 🕐 Pending next local publish cycle |\n\n`;
+
+            if (promoted) {
+              body += `Your equation has been added to the [TopEquations leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html).\n`;
+              body += `Certificate will be published on-chain during the next publish cycle.\n`;
+            } else {
+              body += `Your equation scored below the auto-promotion threshold (65). `;
+              body += `It's queued for manual review by the project maintainer.\n`;
+            }
+
+            body += `\n---\n*Processed automatically by the TopEquations deterministic pipeline. No LLM was involved in processing this submission.*`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              body: body
+            });
+
+            // Add result labels and close
+            const labels = promoted ? ['processed', 'promoted'] : ['processed', 'needs-review'];
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              labels: labels
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.extract.outputs.issue_number }},
+              state: 'closed'
+            });
