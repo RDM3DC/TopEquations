@@ -2501,6 +2501,48 @@
           "date": "2026-02-25"
         }
       }
+    },
+    {
+      "id": "eq-topological-coherence-order-parameter-arp-locking",
+      "name": "Topological Coherence Order Parameter (ARP Locking)",
+      "firstSeen": "2026-02-25",
+      "source": "claude-opus-4.6",
+      "submitter": "Claude",
+      "repoUrl": "https://github.com/RDM3DC/eq-topological-coherence-order-parameter-arp-locking",
+      "score": 92,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Scalar order parameter for the ARP Z\\u2082 locking phase transition. Averages the cosine of each plaquette holonomy \\Theta_p (normalized by the adaptive ruler \\pi_a) over all N_p plaquettes. \\Psi \\to 1 when every holonomy sits at an integer multiple of \\pi_a (perfect Chern locking); \\Psi \\to 0 when holonomies are uniformly distributed (chaotic/disordered regime). Serves as the Landau-type order parameter that makes the locking transition a sharp, measurable phase boundary in (S, \\lambda) parameter space. Directly computable from existing simulation variables with no new free parameters.",
+      "assumptions": [
+        "\\Theta_p is the signed plaquette holonomy from the Phase-Lift framework (LB Plaquette Holonomy equation)",
+        "\\pi_a is the adaptive angular ruler from the companion ODE \\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi(\\pi_a - \\pi_0)",
+        "N_p is the number of plaquettes in the ARP lattice (fixed topology, typically L^2 for square lattice)",
+        "Locked regime: \\Theta_p \\approx 2n\\pi_a for integer n, so cos(\\Theta_p/\\pi_a) \\approx 1 and \\Psi \\to 1",
+        "Chaotic regime: \\Theta_p uniformly distributed on (-\\pi, \\pi], so \\langle\\cos(\\Theta_p/\\pi_a)\\rangle \\to 0 by cancellation",
+        "\\Psi is dimensionless and bounded: \\Psi \\in [-1, 1], with \\Psi > 0 indicating partial locking"
+      ],
+      "date": "2026-02-25",
+      "equationLatex": "\\Psi = \\frac{1}{N_p} \\sum_{p=1}^{N_p} \\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 29,
+          "date": "2026-02-25"
+        }
+      }
     }
   ]
 }

@@ -1066,6 +1066,55 @@
         },
         "novelty": 27
       }
+    },
+    {
+      "submissionId": "sub-2026-02-25-topological-coherence-order-parameter-arp-locking",
+      "name": "Topological Coherence Order Parameter (ARP Locking)",
+      "equationLatex": "\\Psi = \\frac{1}{N_p} \\sum_{p=1}^{N_p} \\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
+      "description": "Scalar order parameter for the ARP Z\\u2082 locking phase transition. Averages the cosine of each plaquette holonomy \\Theta_p (normalized by the adaptive ruler \\pi_a) over all N_p plaquettes. \\Psi \\to 1 when every holonomy sits at an integer multiple of \\pi_a (perfect Chern locking); \\Psi \\to 0 when holonomies are uniformly distributed (chaotic/disordered regime). Serves as the Landau-type order parameter that makes the locking transition a sharp, measurable phase boundary in (S, \\lambda) parameter space. Directly computable from existing simulation variables with no new free parameters.",
+      "source": "claude-opus-4.6",
+      "submitter": "Claude",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "\\Theta_p is the signed plaquette holonomy from the Phase-Lift framework (LB Plaquette Holonomy equation)",
+        "\\pi_a is the adaptive angular ruler from the companion ODE \\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi(\\pi_a - \\pi_0)",
+        "N_p is the number of plaquettes in the ARP lattice (fixed topology, typically L^2 for square lattice)",
+        "Locked regime: \\Theta_p \\approx 2n\\pi_a for integer n, so cos(\\Theta_p/\\pi_a) \\approx 1 and \\Psi \\to 1",
+        "Chaotic regime: \\Theta_p uniformly distributed on (-\\pi, \\pi], so \\langle\\cos(\\Theta_p/\\pi_a)\\rangle \\to 0 by cancellation",
+        "\\Psi is dimensionless and bounded: \\Psi \\in [-1, 1], with \\Psi > 0 indicating partial locking"
+      ],
+      "evidence": [
+        "Constructed from existing leaderboard quantities: \\Theta_p (Plaquette Holonomy, LB) and \\pi_a (Adaptive Ruler, LB) — no new free parameters",
+        "Directly analogous to Edwards-Anderson order parameter q_{EA} in spin glasses and magnetization M in Ising models",
+        "Recovers r_b \\to 0 correspondence: when \\Psi \\to 1, no holonomy crosses \\pi boundaries, so parity flip rate r_b \\to 0",
+        "Limit recovery: when \\pi_a \\to \\pi_0 = \\pi (standard Chern), reduces to \\Psi = N_p^{-1}\\sum_p \\cos(\\Theta_p/\\pi), the standard lattice gauge plaquette average",
+        "Falsifiable prediction: \\Psi should exhibit a sharp sigmoid transition as entropy S crosses the locking threshold S_c",
+        "Simulation-ready: computable in O(N_p) per timestep from variables already tracked in HLATN lattice code",
+        "Enables quantitative comparison across lattice sizes via finite-size scaling of \\Psi(S, L)"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "status": "promoted",
+      "submittedAt": "2026-02-25",
+      "review": {
+        "date": "2026-02-25",
+        "equationId": "eq-topological-coherence-order-parameter-arp-locking",
+        "score": 92,
+        "scores": {
+          "tractability": 20,
+          "plausibility": 20,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 29
+      }
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-25T08:02:03.526768+00:00",
+  "generated_at": "2026-02-25T08:05:51.525856+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "a4ba4156ffbf3a4c53f52dbd4bc85864ae0d148468f6830fb3be9a42c4910bfd",
-  "count": 93,
+  "source_sha256": "2733956a1947fbdc3d9136a0e87a611cda9ff23c59a4b09c2673b22f8f5a7404",
+  "count": 94,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2356,6 +2356,36 @@
       "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
       "version": 1,
       "metadata_hash": "4dce05a1e45463eea936e0d9db36763fda51c1746301c888d86b47db9febc650"
+    },
+    {
+      "token_id": "eq-topological-coherence-order-parameter-arp-locking",
+      "name": "Topological Coherence Order Parameter (ARP Locking)",
+      "equation_latex": "\\Psi = \\frac{1}{N_p} \\sum_{p=1}^{N_p} \\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
+      "equation_hash": "a2d47eb3f7404643b31481b0678b93b7b46568f5e54ee2ba8ef32d8b0f47db68",
+      "score": 92,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-02-25"
+      },
+      "source": "claude-opus-4.6",
+      "date": "2026-02-25",
+      "description": "Scalar order parameter for the ARP Z\\u2082 locking phase transition. Averages the cosine of each plaquette holonomy \\Theta_p (normalized by the adaptive ruler \\pi_a) over all N_p plaquettes. \\Psi \\to 1 when every holonomy sits at an integer multiple of \\pi_a (perfect Chern locking); \\Psi \\to 0 when holonomies are uniformly distributed (chaotic/disordered regime). Serves as the Landau-type order parameter that makes the locking transition a sharp, measurable phase boundary in (S, \\lambda) parameter space. Directly computable from existing simulation variables with no new free parameters.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+      "version": 1,
+      "metadata_hash": "a24bce089fa4898f0707b399ef4a3aeaa67bfe1ab2b74bd02349c0640e956128"
     },
     {
       "token_id": "famous-schrodinger",
