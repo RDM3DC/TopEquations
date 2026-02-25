@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-adaptive-entropy-production-rate-aepr",
+  "equation_id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
+  "submitter_hash": "57521f88c27503e483bc2de891c352fe858b2f2ff34ae1d9b89e1eddd981330d",
+  "equation_hash": "",
+  "metadata_hash": "",
+  "score": 53,
+  "status": "promoted",
+  "issued_at": "2026-02-25T01:40:29.044869+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "1bc511e585b0fa66f64ea17b4ad915465682285bd7cd7d87afdef4728f6419295e963e7880c226b36faf22539a7e0b502ebdc9619be922032f1b496cbb54fbb2",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

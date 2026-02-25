@@ -43,7 +43,7 @@
       "submissionId": "sub-2026-02-24-slack-test-equation",
       "submittedAt": "2026-02-24",
       "submitter": "ryan",
-      "status": "needs-review",
+      "status": "promoted",
       "name": "Slack Test Equation",
       "equationLatex": "\\frac{dG}{dt}=\\alpha|I|-\\mu G",
       "description": "Test submission from Slack intake path.",
@@ -68,7 +68,7 @@
       },
       "review": {
         "date": "2026-02-24",
-        "equationId": "",
+        "equationId": "eq-slack-test-equation",
         "score": 63,
         "scores": {
           "tractability": 15,
@@ -76,8 +76,7 @@
           "validation": 12,
           "artifactCompleteness": 2
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 16
       }
     },
     {
@@ -176,7 +175,7 @@
       "submissionId": "sub-2026-02-24-adaptive-entropy-production-rate-aepr",
       "submittedAt": "2026-02-24",
       "submitter": "Ryan (Copilot-assisted)",
-      "status": "needs-review",
+      "status": "promoted",
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equationLatex": "dS/dt = sigma_S * sum(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
       "description": "Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
@@ -200,7 +199,7 @@
       },
       "review": {
         "date": "2026-02-24",
-        "equationId": "",
+        "equationId": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
         "score": 53,
         "scores": {
           "tractability": 15,
@@ -208,8 +207,7 @@
           "validation": 7,
           "artifactCompleteness": 2
         },
-        "novelty": 16,
-        "method": "heuristic-v1"
+        "novelty": 16
       }
     },
     {
@@ -416,6 +414,75 @@
           "plausibility": 15,
           "validation": 13,
           "artifactCompleteness": 6
+        },
+        "novelty": 16,
+        "method": "heuristic-v1"
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-adaptive-damped-harmonic-oscillator",
+      "submittedAt": "2026-02-24",
+      "submitter": "clawdad42",
+      "status": "promoted",
+      "name": "Adaptive Damped Harmonic Oscillator",
+      "equationLatex": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1 - (γ·π_α/ω₀)²)·t + φ)",
+      "description": "Classical damped harmonic oscillator with adaptive-π curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
+      "source": "discord-test",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [],
+      "evidence": [],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "eq-adaptive-damped-harmonic-oscillator",
+        "score": 53,
+        "scores": {
+          "tractability": 15,
+          "plausibility": 14,
+          "validation": 6,
+          "artifactCompleteness": 2
+        },
+        "novelty": 16
+      }
+    },
+    {
+      "submissionId": "sub-2026-02-24-egatl-hlatn-aepr-adaptiveentropyproduction",
+      "submittedAt": "2026-02-24",
+      "submitter": "rdm3dc",
+      "status": "needs-review",
+      "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
+      "equationLatex": "\\\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
+      "description": "Closes the full EGATL/EM-PLC feedback loop. Entropy evolves dynamically: (1) Ohmic production; (2) relaxation toward S_0; (3) coupling to backbone order parameter r_b via \\xi_S. Suitable for coarse-grained EM-PLC models.",
+      "source": "slack",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [],
+      "evidence": [],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "",
+        "score": 53,
+        "scores": {
+          "tractability": 14,
+          "plausibility": 15,
+          "validation": 6,
+          "artifactCompleteness": 2
         },
         "novelty": 16,
         "method": "heuristic-v1"

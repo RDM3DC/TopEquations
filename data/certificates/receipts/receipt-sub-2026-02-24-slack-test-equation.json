@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-slack-test-equation",
+  "equation_id": "eq-slack-test-equation",
+  "submitter_hash": "e0e3a2b6471d044a53a7757994b51dd33c6b3ec90e1aca21cebc8e2ae79d6d9b",
+  "equation_hash": "",
+  "metadata_hash": "",
+  "score": 63,
+  "status": "promoted",
+  "issued_at": "2026-02-25T01:40:28.889784+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "73ed8a1621b1260272c00169c73b8ef7448edc3fb65898538a0444131ec29fc90e1e5d72777a09dd20213c50a64a06b454eb010dda4d3a835843b8f3a117e184",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}
