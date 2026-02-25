@@ -86,6 +86,8 @@ jobs:
       - name: Run submission pipeline
         if: steps.validate.outputs.valid == 'true'
         id: pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set -e
 
@@ -153,6 +155,25 @@ jobs:
             echo "promoted=false" >> "$GITHUB_OUTPUT"
           fi
 
+          # LLM quality score (advisory, does not affect promotion)
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            python tools/llm_score_submission.py --submission-id "$SUBMISSION_ID" || echo "LLM scoring skipped (API error)"
+            # Read LLM total for the receipt comment
+            LLM_TOTAL=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  llm = (e.get('review') or {}).get('llm_scores', {})
+                  print(llm.get('llm_total', 'N/A'))
+                  break
+          " 2>/dev/null || echo "N/A")
+            echo "llm_total=$LLM_TOTAL" >> "$GITHUB_OUTPUT"
+          else
+            echo "LLM scoring skipped (no OPENAI_API_KEY)"
+            echo "llm_total=N/A" >> "$GITHUB_OUTPUT"
+          fi
+
           # Rebuild leaderboard and site
           python tools/generate_leaderboard.py
           python tools/build_site.py
@@ -178,11 +199,13 @@ jobs:
             const score = '${{ steps.pipeline.outputs.score }}';
             const status = '${{ steps.pipeline.outputs.status }}';
             const promoted = '${{ steps.pipeline.outputs.promoted }}' === 'true';
+            const llmTotal = '${{ steps.pipeline.outputs.llm_total }}';
 
             let body = `## Submission Receipt\n\n`;
             body += `| Field | Value |\n|-------|-------|\n`;
             body += `| Submission ID | \`${subId}\` |\n`;
-            body += `| Score | **${score}** |\n`;
+            body += `| Heuristic Score | **${score}** / 100 |\n`;
+            body += `| LLM Quality Score | **${llmTotal}** / 100 |\n`;
             body += `| Status | ${status} |\n`;
             body += `| Promoted | ${promoted ? '✅ Yes — added to leaderboard' : '⏳ Needs review (score < 65)'} |\n`;
             body += `| Chain publish | 🕐 Pending next local publish cycle |\n\n`;
@@ -195,7 +218,7 @@ jobs:
               body += `It's queued for manual review by the project maintainer.\n`;
             }
 
-            body += `\n---\n*Processed automatically by the TopEquations deterministic pipeline. No LLM was involved in processing this submission.*`;
+            body += `\n---\n*Processed by the TopEquations pipeline. Heuristic gate is deterministic; LLM quality score is advisory only.*`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
