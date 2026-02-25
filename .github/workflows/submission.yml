@@ -2,7 +2,7 @@ name: "Process Equation Submission"
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, labeled]
 
 permissions:
   contents: write
