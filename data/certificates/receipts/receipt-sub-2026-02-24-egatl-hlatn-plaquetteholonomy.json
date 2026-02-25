@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-egatl-hlatn-plaquetteholonomy",
+  "equation_id": "eq-egatl-hlatn-plaquetteholonomy",
+  "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+  "equation_hash": "1e7e4c62729ef4430b62794803d246d2a324ea82a1ec5885463d34079a238723",
+  "metadata_hash": "85b7519830d4a7f1a98dd4f10a6a5c8cd348a17dffa91c405884128172c72df5",
+  "score": 89,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:58.473187+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "c50095b915fe59d7d867bd9dbe953c7c4bb2ac6081a11f30d5a83036b3975559b42501b0ebf8e72ec8959b53f01e3a25fe430398d508e3c42d2a2fb39fc3b767",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

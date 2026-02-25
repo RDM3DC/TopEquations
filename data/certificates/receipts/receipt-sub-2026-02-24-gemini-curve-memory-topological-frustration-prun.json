@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-gemini-curve-memory-topological-frustration-prun",
+  "equation_id": "eq-gemini-curve-memory-topological-frustration-pruning",
+  "submitter_hash": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+  "equation_hash": "3e55f275b3de154625b2809d333e9fb0170523c1b5a628498b73124c909abeda",
+  "metadata_hash": "490b4162e6912e0607837b13001af728e65d4b0feb6d59b623b7fca45fc0e752",
+  "score": 96,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:57.649556+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "e487e2ff0aad2a2bea9b56955ba24829b1b67d55622978597fe0fb12db01dfc88d9f5d14c77368033fbc8ba13a3ddceab00a8dbc3929f38d00097e31a4e3e373",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

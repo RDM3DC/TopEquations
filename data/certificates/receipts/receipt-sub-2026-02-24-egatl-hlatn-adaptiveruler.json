@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-egatl-hlatn-adaptiveruler",
+  "equation_id": "eq-egatl-hlatn-adaptiveruler",
+  "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+  "equation_hash": "cf9ccc190743818f8dbf15079979dd4759b8997bf80702a00ae25480faf64958",
+  "metadata_hash": "ad5dae7cb8fd45517f7a2a7f39e58f061e87ce2d35a447da61dbea8d0e2896a8",
+  "score": 87,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:58.314133+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "cbb28631d669013aacc9de250dd5f2d89c103a2787b1381173630cb6d599fe547c30ace85f3c4e98fafeae3b0012bc8ada0edf60e0e318210d246c806cfc3dbf",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

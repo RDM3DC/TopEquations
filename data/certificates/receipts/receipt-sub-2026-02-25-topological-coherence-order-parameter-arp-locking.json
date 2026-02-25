@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-25-topological-coherence-order-parameter-arp-locking",
+  "equation_id": "eq-topological-coherence-order-parameter-arp-locking",
+  "submitter_hash": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+  "equation_hash": "a2d47eb3f7404643b31481b0678b93b7b46568f5e54ee2ba8ef32d8b0f47db68",
+  "metadata_hash": "a24bce089fa4898f0707b399ef4a3aeaa67bfe1ab2b74bd02349c0640e956128",
+  "score": 92,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:58.955260+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "65a476f324f1cbba822e786d117f419e6f5b1579f783374f6407e0c69b30a95ac4c4b098e4112df459db735d27b7d405a470812c24ddb9f7e36e2c0ed940f4c0",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

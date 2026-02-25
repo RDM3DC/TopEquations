@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-egatl-hlatn-parityfliprate",
+  "equation_id": "eq-egatl-hlatn-parityfliprate",
+  "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+  "equation_hash": "3c3d15d575775174181f7348679baa62789f3b2a12782546bdeaca2fb520dad0",
+  "metadata_hash": "a86b9e01697dfd5d2061e39a500855a7a1366cc24a6d35fd71824b24f88bf7f0",
+  "score": 81,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:58.633379+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "372759110f8f766e14e8f5b6d8008d2b95fd30135d861b189003ce3cfbcb51ad1e03014a35c3448b7491872f5c0c6d65f3975729e80d148f55d7ae536d697b0e",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

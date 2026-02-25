@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-egatl-hlatn-aepr-adaptiveentropyproduction-2",
+  "equation_id": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
+  "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+  "equation_hash": "5a3f3564840e02624ca0b30586302676a2c8cc9ba4f6bf6f1807c8e83e1f9f8f",
+  "metadata_hash": "a15eec70bd72fb7e50203db0c286f6094d9b268c16c9676e810f363d481870d2",
+  "score": 91,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:57.813385+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "fb9f8bcef756aecfbfb5cb64c485ca9668f2bfcf19171caf68cd9afcf20de4cc76e15f5f7b2d58901b85572b3c048eb0d56ad07741d2bae69bccba1cf204652d",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

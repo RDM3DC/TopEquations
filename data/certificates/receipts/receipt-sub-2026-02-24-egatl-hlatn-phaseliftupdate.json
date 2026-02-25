@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-02-24-egatl-hlatn-phaseliftupdate",
+  "equation_id": "eq-egatl-hlatn-phaseliftupdate",
+  "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+  "equation_hash": "d25300a370677569151521d161705e32666b4a2876e39a80de5b806bc1b98396",
+  "metadata_hash": "2a3f0097adc56e2eaa775304dcd5a3f153d14155070080795f152d35da999279",
+  "score": 87,
+  "status": "promoted",
+  "issued_at": "2026-02-25T08:22:58.143302+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "030fb91410f76842d1de74cbf65dc19a30e3cae83a0a21e6b9259514583d2857bace9955474b6b592fc9a34f40700fd045e77746749918ea0f6baac82f1b2561",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}
