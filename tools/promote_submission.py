@@ -84,12 +84,15 @@ def main() -> None:
     if eid in existing_ids:
         eid = f"{eid}-{_slug(args.submission_id)[-8:]}"
 
+    repo_url = f"https://github.com/RDM3DC/{eid}"
+
     promoted = {
         "id": eid,
         "name": entry.get("name", ""),
         "firstSeen": _today(),
         "source": entry.get("source", "manual submission"),
         "submitter": entry.get("submitter", "unknown"),
+        "repoUrl": repo_url,
         "score": total,
         "scores": {
             "tractability": tract,

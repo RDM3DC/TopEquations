@@ -18,7 +18,8 @@
       "validation": 18,
       "artifactCompleteness": 0,
       "score": 83,
-      "derivativeCount": 28
+      "derivativeCount": 28,
+      "repoUrl": "https://github.com/RDM3DC/core-phase-ambiguity"
     },
     {
       "id": "core-phase-lift",
@@ -40,7 +41,8 @@
       "validation": 14,
       "artifactCompleteness": 2,
       "score": 69,
-      "derivativeCount": 13
+      "derivativeCount": 13,
+      "repoUrl": "https://github.com/RDM3DC/core-phase-lift"
     },
     {
       "id": "core-unwrap-rule",
@@ -59,7 +61,8 @@
       "validation": 18,
       "artifactCompleteness": 0,
       "score": 80,
-      "derivativeCount": 13
+      "derivativeCount": 13,
+      "repoUrl": "https://github.com/RDM3DC/core-unwrap-rule"
     },
     {
       "id": "core-path-continuity",
@@ -78,7 +81,8 @@
       "validation": 10,
       "artifactCompleteness": 0,
       "score": 66,
-      "derivativeCount": 2
+      "derivativeCount": 2,
+      "repoUrl": "https://github.com/RDM3DC/core-path-continuity"
     },
     {
       "id": "core-pr-root",
@@ -100,7 +104,8 @@
       "validation": 8,
       "artifactCompleteness": 2,
       "score": 60,
-      "derivativeCount": 3
+      "derivativeCount": 3,
+      "repoUrl": "https://github.com/RDM3DC/core-pr-root"
     },
     {
       "id": "core-winding-parity",
@@ -122,7 +127,8 @@
       "validation": 18,
       "artifactCompleteness": 2,
       "score": 79,
-      "derivativeCount": 22
+      "derivativeCount": 22,
+      "repoUrl": "https://github.com/RDM3DC/core-winding-parity"
     },
     {
       "id": "core-conformal-metric",
@@ -141,7 +147,8 @@
       "validation": 14,
       "artifactCompleteness": 0,
       "score": 66,
-      "derivativeCount": 14
+      "derivativeCount": 14,
+      "repoUrl": "https://github.com/RDM3DC/core-conformal-metric"
     },
     {
       "id": "core-adaptive-arc-length",
@@ -160,7 +167,8 @@
       "validation": 4,
       "artifactCompleteness": 0,
       "score": 50,
-      "derivativeCount": 1
+      "derivativeCount": 1,
+      "repoUrl": "https://github.com/RDM3DC/core-adaptive-arc-length"
     },
     {
       "id": "core-pi-a",
@@ -182,7 +190,8 @@
       "validation": 14,
       "artifactCompleteness": 2,
       "score": 67,
-      "derivativeCount": 25
+      "derivativeCount": 25,
+      "repoUrl": "https://github.com/RDM3DC/core-pi-a"
     },
     {
       "id": "core-pi-a-dynamics",
@@ -201,7 +210,8 @@
       "validation": 16,
       "artifactCompleteness": 0,
       "score": 70,
-      "derivativeCount": 26
+      "derivativeCount": 26,
+      "repoUrl": "https://github.com/RDM3DC/core-pi-a-dynamics"
     },
     {
       "id": "core-arp-ode",
@@ -223,7 +233,8 @@
       "validation": 18,
       "artifactCompleteness": 2,
       "score": 83,
-      "derivativeCount": 25
+      "derivativeCount": 25,
+      "repoUrl": "https://github.com/RDM3DC/core-arp-ode"
     },
     {
       "id": "core-curvature-salience",
@@ -242,7 +253,8 @@
       "validation": 18,
       "artifactCompleteness": 0,
       "score": 83,
-      "derivativeCount": 6
+      "derivativeCount": 6,
+      "repoUrl": "https://github.com/RDM3DC/core-curvature-salience"
     },
     {
       "id": "core-reinforce-decay-memory",
@@ -261,7 +273,8 @@
       "validation": 16,
       "artifactCompleteness": 0,
       "score": 73,
-      "derivativeCount": 12
+      "derivativeCount": 12,
+      "repoUrl": "https://github.com/RDM3DC/core-reinforce-decay-memory"
     },
     {
       "id": "core-phase-lifted-stokes",
@@ -283,7 +296,8 @@
       "validation": 14,
       "artifactCompleteness": 2,
       "score": 64,
-      "derivativeCount": 14
+      "derivativeCount": 14,
+      "repoUrl": "https://github.com/RDM3DC/core-phase-lifted-stokes"
     }
   ]
 }

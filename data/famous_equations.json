@@ -22,7 +22,12 @@
         "The decomposition is exact when ψ ≠ 0."
       ],
       "caveat": "Equivalent only under the stated smoothness conditions; nodal regions (ρ = 0) require separate treatment.",
-      "coreRefs": ["core-phase-lift", "core-phase-ambiguity", "core-unwrap-rule"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-phase-ambiguity",
+        "core-unwrap-rule"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-schrodinger"
     },
     {
       "id": "famous-aharonov-bohm",
@@ -46,7 +51,12 @@
         "π_a → π in the classical limit."
       ],
       "caveat": "Branch-handling conventions affect w assignment; the unwrap policy must be fixed before comparing experiments.",
-      "coreRefs": ["core-phase-lift", "core-unwrap-rule", "core-winding-parity"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-aharonov-bohm"
     },
     {
       "id": "famous-berry-phase",
@@ -70,7 +80,12 @@
         "The adiabatic approximation holds throughout."
       ],
       "caveat": "Numerical stability depends on path discretization; coarse sampling can alias the accumulated phase.",
-      "coreRefs": ["core-phase-lift", "core-unwrap-rule", "core-path-continuity"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-path-continuity"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-berry-phase"
     },
     {
       "id": "famous-josephson",
@@ -94,7 +109,12 @@
         "Single-junction, short-junction approximation applies."
       ],
       "caveat": "Non-standard phase scaling requires experimental calibration; not a replacement for the standard Josephson effect.",
-      "coreRefs": ["core-pi-a", "core-pi-a-dynamics", "core-phase-lift"]
+      "coreRefs": [
+        "core-pi-a",
+        "core-pi-a-dynamics",
+        "core-phase-lift"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-josephson"
     },
     {
       "id": "famous-maxwell",
@@ -118,7 +138,13 @@
         "π_a → π recovers standard flux quantization."
       ],
       "caveat": "The Phase-Lift layer adds topological tracking but does not modify Maxwell's equations themselves; it enriches the description of the gauge sector.",
-      "coreRefs": ["core-phase-lift", "core-unwrap-rule", "core-winding-parity", "core-phase-lifted-stokes"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity",
+        "core-phase-lifted-stokes"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-maxwell"
     },
     {
       "id": "famous-dirac",
@@ -142,7 +168,12 @@
         "Relativistic and non-relativistic limits are tracked separately."
       ],
       "caveat": "The spinor decomposition breaks down at nodes; this is a representation change, not a modification of Dirac physics.",
-      "coreRefs": ["core-phase-lift", "core-phase-ambiguity", "core-pi-a"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-phase-ambiguity",
+        "core-pi-a"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-dirac"
     },
     {
       "id": "famous-euler-lagrange",
@@ -166,7 +197,12 @@
         "Boundary terms vanish or are handled explicitly."
       ],
       "caveat": "This is the variational framework — the specific L_PL determines the physics.",
-      "coreRefs": ["core-phase-lift", "core-pi-a-dynamics", "core-arp-ode"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a-dynamics",
+        "core-arp-ode"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-euler-lagrange"
     },
     {
       "id": "famous-navier-stokes",
@@ -190,7 +226,12 @@
         "Circulation integral is well-defined (no singularities on the contour)."
       ],
       "caveat": "Phase-Lift adds topological vortex tracking; it does not solve the Navier–Stokes existence/smoothness problem.",
-      "coreRefs": ["core-winding-parity", "core-phase-lifted-stokes", "core-curvature-salience"]
+      "coreRefs": [
+        "core-winding-parity",
+        "core-phase-lifted-stokes",
+        "core-curvature-salience"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-navier-stokes"
     },
     {
       "id": "famous-path-integral",
@@ -214,7 +255,12 @@
         "S_PL is specified concretely for the system."
       ],
       "caveat": "The action S_PL must be given explicitly for any concrete calculation; this is the structural framework.",
-      "coreRefs": ["core-phase-lift", "core-winding-parity", "core-phase-ambiguity"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-winding-parity",
+        "core-phase-ambiguity"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-path-integral"
     },
     {
       "id": "famous-holonomy",
@@ -238,7 +284,12 @@
         "The U(1) ⊗ SU(N) factorization is non-degenerate."
       ],
       "caveat": "Winding assignment can shift under different gauge conventions; this is a frame-dependent decomposition.",
-      "coreRefs": ["core-phase-lift", "core-unwrap-rule", "core-winding-parity"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-unwrap-rule",
+        "core-winding-parity"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-holonomy"
     },
     {
       "id": "famous-klein-gordon",
@@ -262,7 +313,12 @@
         "π_a → π recovers the standard Klein–Gordon phase."
       ],
       "caveat": "Nodal regions (ψ = 0) require separate treatment; this is a representation, not a modification.",
-      "coreRefs": ["core-phase-lift", "core-pi-a", "core-phase-ambiguity"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a",
+        "core-phase-ambiguity"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-klein-gordon"
     },
     {
       "id": "famous-einstein-field",
@@ -286,7 +342,12 @@
         "The rescaled equations reduce to standard GR when π_a = π."
       ],
       "caveat": "Highly speculative application; conformal rescaling changes the physical content unless carefully constrained. This is a framework suggestion, not established physics.",
-      "coreRefs": ["core-conformal-metric", "core-pi-a", "core-adaptive-arc-length"]
+      "coreRefs": [
+        "core-conformal-metric",
+        "core-pi-a",
+        "core-adaptive-arc-length"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-einstein-field"
     },
     {
       "id": "famous-fourier-heat",
@@ -310,7 +371,12 @@
         "Standard boundary and initial conditions apply."
       ],
       "caveat": "The curvature source term is a Phase-Lift extension; standard Fourier law is recovered when λ = 0.",
-      "coreRefs": ["core-curvature-salience", "core-phase-lift", "core-reinforce-decay-memory"]
+      "coreRefs": [
+        "core-curvature-salience",
+        "core-phase-lift",
+        "core-reinforce-decay-memory"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-fourier-heat"
     },
     {
       "id": "famous-noether",
@@ -334,7 +400,12 @@
         "Boundary terms vanish in the variational derivation."
       ],
       "caveat": "The specific conserved quantities depend on which symmetry is applied; this is the structural form.",
-      "coreRefs": ["core-phase-lift", "core-pi-a", "core-arp-ode"]
+      "coreRefs": [
+        "core-phase-lift",
+        "core-pi-a",
+        "core-arp-ode"
+      ],
+      "repoUrl": "https://github.com/RDM3DC/famous-noether"
     }
   ]
 }

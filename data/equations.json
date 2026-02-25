@@ -39,7 +39,8 @@
           "date": "2026-02-20",
           "score": 24
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift"
     },
     {
       "id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
@@ -79,7 +80,8 @@
           "date": "2026-02-22",
           "score": 29
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated"
     },
     {
       "id": "eq-ahc-parity-flip-rate",
@@ -115,7 +117,8 @@
           "date": "2026-02-22",
           "score": 28
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-parity-flip-rate"
     },
     {
       "id": "eq-qwz-bz-avg-ruler-mass",
@@ -142,7 +145,8 @@
       },
       "description": "BZ-average removes k-oscillation: <(1+ε cosλ)^{-1}> = (1-ε^2)^{-1/2}, giving a uniform m_eff(ε) and a single Chern jump at ε_c (for m0=-1: ε_c=√3/2).",
       "date": "2026-02-22",
-      "equationLatex": "\\left\\langle\\frac{1}{1+\\epsilon\\cos\\lambda}\\right\\rangle_{BZ}=\\frac{1}{\\sqrt{1-\\epsilon^2}},\\quad m_{\\mathrm{eff}}(\\epsilon)=\\frac{m_0}{\\sqrt{1-\\epsilon^2}}\\ (|\\epsilon|<1),\\quad \\epsilon_c=\\sqrt{1-(|m_0|/2)^2}"
+      "equationLatex": "\\left\\langle\\frac{1}{1+\\epsilon\\cos\\lambda}\\right\\rangle_{BZ}=\\frac{1}{\\sqrt{1-\\epsilon^2}},\\quad m_{\\mathrm{eff}}(\\epsilon)=\\frac{m_0}{\\sqrt{1-\\epsilon^2}}\\ (|\\epsilon|<1),\\quad \\epsilon_c=\\sqrt{1-(|m_0|/2)^2}",
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass"
     },
     {
       "id": "eq-ahc-step-limit",
@@ -178,7 +182,8 @@
           "date": "2026-02-22",
           "score": 26
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-step-limit"
     },
     {
       "id": "eq-qwz-pia-modulated-mass",
@@ -205,7 +210,8 @@
       },
       "description": "Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.",
       "date": "2026-02-22",
-      "equationLatex": "\\pi_a(\\lambda)=\\pi(1+\\epsilon\\cos\\lambda),\\quad m_{\\mathrm{eff}}(k_x)=m_0+\\beta\\left(\\frac{1}{1+\\epsilon\\cos k_x}-1\\right)"
+      "equationLatex": "\\pi_a(\\lambda)=\\pi(1+\\epsilon\\cos\\lambda),\\quad m_{\\mathrm{eff}}(k_x)=m_0+\\beta\\left(\\frac{1}{1+\\epsilon\\cos k_x}-1\\right)",
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-pia-modulated-mass"
     },
     {
       "id": "eq-ahc-running-winding",
@@ -237,7 +243,8 @@
           "date": "2026-02-22",
           "score": 22
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-running-winding"
     },
     {
       "id": "eq-arp-phase-critical-collapse",
@@ -269,7 +276,8 @@
           "date": "2026-02-20",
           "score": 28
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-critical-collapse"
     },
     {
       "id": "eq-ahc-pi-a-update",
@@ -305,7 +313,8 @@
           "date": "2026-02-22",
           "score": 24
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update"
     },
     {
       "id": "eq-arp-redshift-bounded-oscillation",
@@ -365,7 +374,8 @@
           "date": "2026-02-21",
           "score": 21
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation"
     },
     {
       "id": "eq-arp-phase-lifted-complex-conductance",
@@ -397,7 +407,8 @@
           "date": "2026-02-20",
           "score": 26
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance"
     },
     {
       "id": "eq-ahc-candidate-unwrap",
@@ -433,7 +444,8 @@
           "date": "2026-02-22",
           "score": 20
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-candidate-unwrap"
     },
     {
       "id": "eq-ahc-residual",
@@ -465,7 +477,8 @@
           "date": "2026-02-22",
           "score": 18
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-residual"
     },
     {
       "id": "eq-arp-temp-conductance",
@@ -497,7 +510,8 @@
           "date": "2026-02-19",
           "score": 20
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-temp-conductance"
     },
     {
       "id": "eq-ahc-event-stimulus",
@@ -529,7 +543,8 @@
           "date": "2026-02-22",
           "score": 19
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-event-stimulus"
     },
     {
       "id": "eq-arp-lyapunov-stability",
@@ -561,7 +576,8 @@
           "date": "2026-02-19",
           "score": 22
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-lyapunov-stability"
     },
     {
       "id": "eq-arp-gradient-flow-bridge",
@@ -600,7 +616,8 @@
           "date": "2026-02-22",
           "score": 29
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-gradient-flow-bridge"
     },
     {
       "id": "eq-curve-memory-137",
@@ -632,7 +649,8 @@
           "date": "2026-02-20",
           "score": 23
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-curve-memory-137"
     },
     {
       "id": "eq-shield-mechanic-arp",
@@ -664,7 +682,8 @@
           "date": "2026-02-20",
           "score": 22
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-shield-mechanic-arp"
     },
     {
       "id": "eq-parity-pump",
@@ -703,7 +722,8 @@
           "date": "2026-02-22",
           "score": 30
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-parity-pump"
     },
     {
       "id": "eq-dyn-constants-union",
@@ -735,7 +755,8 @@
           "date": "2026-02-20",
           "score": 25
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-dyn-constants-union"
     },
     {
       "id": "eq-pi-a-gauged-phase-lift",
@@ -774,7 +795,8 @@
           "date": "2026-02-22",
           "score": 28
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-pi-a-gauged-phase-lift"
     },
     {
       "id": "eq-redshift-arp-superc",
@@ -806,7 +828,8 @@
           "date": "2026-02-20",
           "score": 21
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-redshift-arp-superc"
     },
     {
       "id": "eq-adaptive-phase-lift-unwrapping",
@@ -833,7 +856,8 @@
       },
       "description": "Adaptive Phase-Lift recurrence: unwrap arg using local identification length 2π_a (not fixed 2π); yields integer sheet count and Z2 parity tracking.",
       "date": "2026-02-22",
-      "equationLatex": "\\theta_R(t_k)=\\theta(t_k)+2\\pi_a(t_k)m_k,\\quad m_k=\\arg\\min_{m\\in\\mathbb{Z}}\\left|\\theta(t_k)+2\\pi_a(t_k)m-\\theta_R(t_{k-1})\\right|"
+      "equationLatex": "\\theta_R(t_k)=\\theta(t_k)+2\\pi_a(t_k)m_k,\\quad m_k=\\arg\\min_{m\\in\\mathbb{Z}}\\left|\\theta(t_k)+2\\pi_a(t_k)m-\\theta_R(t_{k-1})\\right|",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-phase-lift-unwrapping"
     },
     {
       "id": "eq-arp-weighted-dirichlet-energy",
@@ -860,7 +884,8 @@
       },
       "description": "Graph Dirichlet energy with adaptive-π weights Ω_ij; suggests ARP reinforcement concentrates conductance on Ω-weighted shortest paths / backbones.",
       "date": "2026-02-22",
-      "equationLatex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac12\\sum_{(i,j)}\\Omega_{ij}G_{ij}(\\phi_i-\\phi_j)^2"
+      "equationLatex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac12\\sum_{(i,j)}\\Omega_{ij}G_{ij}(\\phi_i-\\phi_j)^2",
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-weighted-dirichlet-energy"
     },
     {
       "id": "eq-un-det-phase",
@@ -897,7 +922,8 @@
           "date": "2026-02-22",
           "score": 22
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-un-det-phase"
     },
     {
       "id": "eq-adaptive-connection-chern",
@@ -924,7 +950,8 @@
       },
       "description": "Defines a rescaled connection Â=A/(2π_a) and curvature F̂=dÂ; C_a is integer-valued when the rescaling is globally well-defined.",
       "date": "2026-02-22",
-      "equationLatex": "\\widehat A:=A/(2\\pi_a),\\quad \\widehat F:=d\\widehat A,\\quad C_a:=\\frac{1}{2\\pi}\\int_{T^2}\\widehat F\\in\\mathbb{Z}"
+      "equationLatex": "\\widehat A:=A/(2\\pi_a),\\quad \\widehat F:=d\\widehat A,\\quad C_a:=\\frac{1}{2\\pi}\\int_{T^2}\\widehat F\\in\\mathbb{Z}",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-connection-chern"
     },
     {
       "id": "eq-parity-from-adaptive-chern",
@@ -951,7 +978,8 @@
       },
       "description": "Mod-2 holonomy/parity flip controlled by the integer adaptive Chern invariant.",
       "date": "2026-02-22",
-      "equationLatex": "b_{\\mathrm{pumped}}=(-1)^{C_a}"
+      "equationLatex": "b_{\\mathrm{pumped}}=(-1)^{C_a}",
+      "repoUrl": "https://github.com/RDM3DC/eq-parity-from-adaptive-chern"
     },
     {
       "id": "eq-cm-integration-state",
@@ -989,7 +1017,8 @@
           "date": "2026-02-22",
           "score": 27
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-cm-integration-state"
     },
     {
       "id": "eq-un-wilson-holonomy",
@@ -1026,7 +1055,8 @@
           "date": "2026-02-22",
           "score": 20
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-un-wilson-holonomy"
     },
     {
       "id": "eq-dimensionless-phase-flow",
@@ -1053,7 +1083,8 @@
       },
       "description": "Defines φ=θ_R/(2π_a) and shows π_a dynamics can drive half-integer crossings (a Z2 pump mechanism) even with smooth θ_R.",
       "date": "2026-02-22",
-      "equationLatex": "\\varphi:=\\theta_R/(2\\pi_a),\\quad \\dot\\varphi=\\dot\\theta_R/(2\\pi_a)-\\varphi\\,\\frac{d}{dt}(\\ln\\pi_a)"
+      "equationLatex": "\\varphi:=\\theta_R/(2\\pi_a),\\quad \\dot\\varphi=\\dot\\theta_R/(2\\pi_a)-\\varphi\\,\\frac{d}{dt}(\\ln\\pi_a)",
+      "repoUrl": "https://github.com/RDM3DC/eq-dimensionless-phase-flow"
     },
     {
       "id": "eq-adaptive-monodromy-spectrum",
@@ -1090,7 +1121,8 @@
           "date": "2026-02-22",
           "score": 26
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-monodromy-spectrum"
     },
     {
       "id": "eq-adaptive-discriminant-set",
@@ -1117,7 +1149,8 @@
       },
       "description": "Singular set where the lift can fail and winding/parity may change; away from D, w and b are homotopy invariants.",
       "date": "2026-02-22",
-      "equationLatex": "\\mathcal{D}=\\{z=0\\}\\cup\\{\\pi_a=0\\}"
+      "equationLatex": "\\mathcal{D}=\\{z=0\\}\\cup\\{\\pi_a=0\\}",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-discriminant-set"
     },
     {
       "id": "eq-qwz-engineered-single-jump",
@@ -1144,7 +1177,8 @@
       },
       "description": "Monotone coupling that forces one Chern jump near ε→1^- (useful as a controllable toy model; clamp to trivial mass after the discriminant).",
       "date": "2026-02-22",
-      "equationLatex": "m_{\\mathrm{eff}}(\\epsilon)=m_0-\\beta\\frac{\\epsilon^p}{1-\\epsilon}\\ (\\epsilon<1),\\quad m_{\\mathrm{eff}}(\\epsilon)=m_{\\mathrm{triv}}\\ (\\epsilon\\ge 1)"
+      "equationLatex": "m_{\\mathrm{eff}}(\\epsilon)=m_0-\\beta\\frac{\\epsilon^p}{1-\\epsilon}\\ (\\epsilon<1),\\quad m_{\\mathrm{eff}}(\\epsilon)=m_{\\mathrm{triv}}\\ (\\epsilon\\ge 1)",
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-engineered-single-jump"
     },
     {
       "id": "eq-paper1-adler-rsj-phase",
@@ -1181,7 +1215,8 @@
           "date": "2026-02-22",
           "score": 14
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adler-rsj-phase"
     },
     {
       "id": "eq-paper1-arp-reinforce-decay",
@@ -1218,7 +1253,8 @@
           "date": "2026-02-22",
           "score": 22
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay"
     },
     {
       "id": "eq-paper1-activity-closure",
@@ -1256,7 +1292,8 @@
           "date": "2026-02-22",
           "score": 26
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-activity-closure"
     },
     {
       "id": "eq-paper1-slip-asymptote",
@@ -1294,7 +1331,8 @@
           "date": "2026-02-22",
           "score": 27
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-slip-asymptote"
     },
     {
       "id": "eq-paper1-langevin-noise",
@@ -1332,7 +1370,8 @@
           "date": "2026-02-22",
           "score": 18
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-langevin-noise"
     },
     {
       "id": "eq-paper1-qwz-hamiltonian",
@@ -1369,7 +1408,8 @@
           "date": "2026-02-22",
           "score": 8
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian"
     },
     {
       "id": "eq-paper1-adaptive-geometry-mass",
@@ -1407,7 +1447,8 @@
           "date": "2026-02-22",
           "score": 29
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass"
     },
     {
       "id": "eq-paper1-chern-marker-bianco-resta",
@@ -1444,7 +1485,8 @@
           "date": "2026-02-22",
           "score": 10
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta"
     },
     {
       "id": "eq-mesh-synced-certificate-consistency",
@@ -1480,7 +1522,8 @@
           "score": 13,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-mesh-synced-certificate-consistency"
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1513,7 +1556,8 @@
           "score": 16,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr"
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
@@ -1551,7 +1595,8 @@
           "score": 18,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2"
     },
     {
       "id": "eq-hlatn-white-paper-eqn-7",
@@ -1584,7 +1629,8 @@
           "score": 16,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-7"
     },
     {
       "id": "eq-hlatn-white-paper-eqn-10",
@@ -1617,7 +1663,8 @@
           "score": 16,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-10"
     },
     {
       "id": "eq-hlatn-white-paper-eqn-11",
@@ -1650,7 +1697,8 @@
           "score": 16,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-11"
     },
     {
       "id": "eq-hlatn-three-force-conductance-lock",
@@ -1688,7 +1736,8 @@
           "score": 18,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock"
     },
     {
       "id": "eq-hlatn-phase-lift-branch-safe-update",
@@ -1726,7 +1775,8 @@
           "score": 16,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update"
     },
     {
       "id": "eq-hlatn-plaquette-holonomy",
@@ -1764,7 +1814,8 @@
           "score": 18,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy"
     },
     {
       "id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
@@ -1804,7 +1855,8 @@
           "score": 18,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc"
     },
     {
       "id": "eq-egatl-phase-coupled-conductance-update",
@@ -1843,7 +1895,8 @@
           "score": 18,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update"
     },
     {
       "id": "eq-slack-test-equation",
@@ -1880,7 +1933,8 @@
           "score": 15,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-slack-test-equation"
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
@@ -1919,7 +1973,8 @@
           "score": 14,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr"
     },
     {
       "id": "eq-adaptive-damped-harmonic-oscillator",
@@ -1953,7 +2008,8 @@
           "score": 12,
           "date": "2026-02-24"
         }
-      }
+      },
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-damped-harmonic-oscillator"
     }
   ]
 }

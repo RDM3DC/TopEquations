@@ -192,6 +192,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
+      <div class='kv'><div class='k'>Repository</div><div class='v'>{("<a href='" + _esc(e.get('repoUrl','')) + "' target='_blank' rel='noopener'>equation repo &rarr;</a>") if e.get('repoUrl') else '<span class=\'muted\'>—</span>'}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
     </div>
@@ -258,6 +259,7 @@ def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
                         "assumptions": e.get("assumptions", []),
                         "subtitle": str(e.get("subtitle", "")).strip(),
                         "coreRefs": e.get("coreRefs", []),
+                        "repoUrl": str(e.get("repoUrl", "")).strip(),
                     }
                 )
             if out:
@@ -415,6 +417,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
       <div class='kv'><div class='k'>Core refs</div><div class='v'>{core_refs_html}</div></div>
+      <div class='kv'><div class='k'>Repository</div><div class='v'>{("<a href='" + _esc(e.get('repoUrl','')) + "' target='_blank' rel='noopener'>equation repo &rarr;</a>") if e.get('repoUrl') else '<span class=\'muted\'>—</span>'}</div></div>
     </div>
   </div>
 </section>
@@ -544,6 +547,10 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
             extra += f"<div class='kv'><div class='k'>Assumptions</div><div class='v'>{_ul([str(x) for x in assumptions])}</div></div>"
         if eq_id:
           extra += f"<div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>view on chain record</a></div></div>"
+
+        repo_url = (e.get("repoUrl") or "").strip()
+        if repo_url:
+          extra += f"<div class='kv'><div class='k'>Repository</div><div class='v'><a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>"
 
         cards.append(
             f"""
