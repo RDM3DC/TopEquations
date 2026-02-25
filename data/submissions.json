@@ -420,6 +420,41 @@
         "novelty": 16,
         "method": "heuristic-v1"
       }
+    },
+    {
+      "submissionId": "sub-2026-02-24-adaptive-damped-harmonic-oscillator",
+      "submittedAt": "2026-02-24",
+      "submitter": "clawdad42",
+      "status": "needs-review",
+      "name": "Adaptive Damped Harmonic Oscillator",
+      "equationLatex": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1 - (γ·π_α/ω₀)²)·t + φ)",
+      "description": "Classical damped harmonic oscillator with adaptive-π curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
+      "source": "discord-test",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [],
+      "evidence": [],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-02-24",
+        "equationId": "",
+        "score": 53,
+        "scores": {
+          "tractability": 15,
+          "plausibility": 14,
+          "validation": 6,
+          "artifactCompleteness": 2
+        },
+        "novelty": 16,
+        "method": "heuristic-v1"
+      }
     }
   ]
 }

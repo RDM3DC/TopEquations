@@ -70,6 +70,7 @@ def main() -> None:
             "equation_id": cert.get("token_id"),
             "metadata_hash": cert.get("metadata_hash"),
             "equation_hash": cert.get("equation_hash"),
+            "submitter_hash": cert.get("submitter_hash", ""),
             "score": cert.get("score"),
             "version": cert.get("version", 1),
             "ts": datetime.now(timezone.utc).isoformat(),

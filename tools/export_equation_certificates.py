@@ -65,6 +65,7 @@ def main() -> None:
             "units": e.get("units", ""),
             "theory": e.get("theory", ""),
             "tier": "core",
+            "submitter_hash": sha256_text("topequations-project"),
             "artifact_refs": {
                 "animation": (e.get("animation", {}) if isinstance(e.get("animation"), dict) else {}).get("path", ""),
                 "image": (e.get("image", {}) if isinstance(e.get("image"), dict) else {}).get("path", ""),
@@ -96,6 +97,7 @@ def main() -> None:
                 "image": (e.get("image", {}) or {}).get("path", ""),
             },
             "tier": "derived",
+            "submitter_hash": sha256_text(e.get("submitter", "topequations-project")),
             "version": 1,
         }
         cert_blob = json.dumps(cert, sort_keys=True, separators=(",", ":"))
@@ -129,6 +131,7 @@ def main() -> None:
             "units": e.get("units", ""),
             "theory": e.get("theory", ""),
             "tier": "famous",
+            "submitter_hash": sha256_text("topequations-project"),
             "coreRefs": e.get("coreRefs", []),
             "version": 1,
         }

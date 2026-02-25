@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -88,6 +89,7 @@ def main() -> None:
         "name": entry.get("name", ""),
         "firstSeen": _today(),
         "source": entry.get("source", "manual submission"),
+        "submitter": entry.get("submitter", "unknown"),
         "score": total,
         "scores": {
             "tractability": tract,

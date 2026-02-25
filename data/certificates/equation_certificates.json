@@ -1,6 +1,6 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-02-24T23:49:44.083251+00:00",
+  "generated_at": "2026-02-25T01:26:53.827574+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
   "source_sha256": "cced20ac82aa5a2136fbb600221deac9629f903122ae671a69bb5d10009bf7b0",
   "count": 81,
@@ -27,12 +27,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "6e82ceb3e7603efb59f505b6a968564f5c5746a6bddd8f525d932bc2f18d32bb"
+      "metadata_hash": "4e40ce74055d9b8624cc5afca3875206736c0416ecdcdb316cce3619b816a094"
     },
     {
       "token_id": "core-phase-lift",
@@ -56,12 +57,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-phase-lift.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "c23e28e68a7b181904c20ca3124c1b905e406c1e496909bfe83d76e8a149a368"
+      "metadata_hash": "31a24314cb65428f2d9f99ae1e4518930b901d66803fc4537148ac0312293a3c"
     },
     {
       "token_id": "core-unwrap-rule",
@@ -85,12 +87,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "8a1c6cd12ee80740733595dd25ce4dc62f22cc60f2e0e0a94aee1e073559f106"
+      "metadata_hash": "f74b918cfeb41b4215c630ae09ba90b769747e2b0405d7d3628a527ecd2b441a"
     },
     {
       "token_id": "core-path-continuity",
@@ -114,12 +117,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "1ddd8f13baa752e9c6cc3341dd6515419b54881837be5bf9818ca5da7ec22097"
+      "metadata_hash": "2b06a0ef82e8aacc3b6a0bad3fda08086b0ba2371386a7296884a58ea58fd55d"
     },
     {
       "token_id": "core-pr-root",
@@ -143,12 +147,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-pr-root.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "88c367df4406a8d9af6a4e2d19a7f11e10d01c7340c0632d0210dfe9cf5b9c0a"
+      "metadata_hash": "3d98abf6505f37a3997bc2e4b80ce867675bc411b0b1f04fd46ae6100d99b830"
     },
     {
       "token_id": "core-winding-parity",
@@ -172,12 +177,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-winding-parity.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "86593a67fc1ee640eed552300902942a09a8c252dfc1fe9bcce57fd6afbdcab5"
+      "metadata_hash": "306b35354542f40be2cca46ae4ff46931e4f27481075799276a4b921ab225cf3"
     },
     {
       "token_id": "core-conformal-metric",
@@ -201,12 +207,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "a1a5dabd46411bcbffda0a0ceb3f93597e4a1794f1091fa41776cc943c71e700"
+      "metadata_hash": "a58a1986ff9c388391c8558b6b7a9ae89ae3281690269cbaceee24265fce00eb"
     },
     {
       "token_id": "core-adaptive-arc-length",
@@ -230,12 +237,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "85f7e3953fd4e63216d75c720b2cc5ffe54821582f73aaa18a26bd11b4d2a7af"
+      "metadata_hash": "ccf1e51e2795a1b0e346f90256d2862133f745fc841b3ce828e53ab9e7929ea9"
     },
     {
       "token_id": "core-pi-a",
@@ -259,12 +267,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-pi-a.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "4cc01213706da8221b55bca1e9203cd84f11e30d62fe3873ad00be7da27d3fa8"
+      "metadata_hash": "2ac70548e5762e0b8cd9c20b19654523c8f5fca1cc7315adab76bd501ce2ab09"
     },
     {
       "token_id": "core-pi-a-dynamics",
@@ -288,12 +297,13 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "1984db1d56988f72ebade2b7ae518c3672775c8b78a370e0c37fe879c6368f6a"
+      "metadata_hash": "9d2bc3fdd73ad8289966a78a8bc1884a761b7eb5cc4beb4d3c89f3524a76bc50"
     },
     {
       "token_id": "core-arp-ode",
@@ -317,12 +327,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-arp-ode.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "ccbdf47e289f2a2388a092e3a843b4e34d878db8277f005f7ae941fb2dcb1693"
+      "metadata_hash": "5bbe688e6ea22d15d7b1b749770a8d79f59d3a4a7bf4cd289cbed5b4c2382ddb"
     },
     {
       "token_id": "core-curvature-salience",
@@ -346,12 +357,13 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "739fef45d028796cb7cc18676080e53734697d76abca49cccfa58b6c8b0194e7"
+      "metadata_hash": "43a773f0b30751e2dc06cd6e2232dd69aa8e3f6d69d206295d8dcf44acd060bd"
     },
     {
       "token_id": "core-reinforce-decay-memory",
@@ -375,12 +387,13 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "34d81a2571b83e4db09176949da99034482c814e7208b3639aa5bf86a6931043"
+      "metadata_hash": "092e05d439ec804d05493e1091de2389b045171c339422750e119cbb7463551c"
     },
     {
       "token_id": "core-phase-lifted-stokes",
@@ -404,12 +417,13 @@
       "units": "WARN",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "core",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "artifact_refs": {
         "animation": "./assets/animations/core-phase-lifted-stokes.mp4",
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "a7d5f60ce6b59c9548a052d3c0f1e1832e91d1e003d6f9fe168c7c29e6f56b84"
+      "metadata_hash": "2965b35a8177bfb7550fa463723f9544deb6845785c398df586365df83454904"
     },
     {
       "token_id": "eq-arp-redshift",
@@ -437,8 +451,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "8a42776bbd1addef71d203ce79d668a6d6f5583a28c9bc0652ea43bd9107a7a3"
+      "metadata_hash": "df3b6236fe5b4ae0c52bb869a9049cd5680bea1a8594843c6cd71430a7464e52"
     },
     {
       "token_id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
@@ -466,8 +481,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "e2f261c3af8856c6373f4ac9e9151ffe04c4eaa3480eb58bd302d9caf95e372d"
+      "metadata_hash": "00cac17115d8b53cc97c8081fc866d1d9fca7884a659c5b9722a0e74cb22d9ed"
     },
     {
       "token_id": "eq-ahc-parity-flip-rate",
@@ -495,8 +511,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "4d6520fca42b5040d0dcaa264200db2b87df496c2f6e73410ffb9a98616ce983"
+      "metadata_hash": "ca869692de23184a5fc8e49853c2c4048774d667f725245f25a50388d63ec66f"
     },
     {
       "token_id": "eq-qwz-bz-avg-ruler-mass",
@@ -522,8 +539,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "af5011877bbcc8b6748ae471b90f1f4cdb0977013d8619a963bd850aff78e384"
+      "metadata_hash": "6ede2bce62345158f2cc4559d74a8131e4ff81eaf9b2d4d590b56830989291bc"
     },
     {
       "token_id": "eq-ahc-step-limit",
@@ -551,8 +569,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "94130ce7d461e4d8e70df553961b45861a5d0e4ddcf94d776fc2e950a03480a3"
+      "metadata_hash": "164e13a77ea37700182c6bc130f1e71c60073bc26d0d36bdc9873456dab4a4a3"
     },
     {
       "token_id": "eq-qwz-pia-modulated-mass",
@@ -578,8 +597,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "3ada83de0545da27bc6868682149d5ade8c602a1845bcfee30cdd4a27f1510b1"
+      "metadata_hash": "4b1423eb897826f9909d2b40bdd3aafb9898407ab8bf948a4f74500014227403"
     },
     {
       "token_id": "eq-ahc-running-winding",
@@ -607,8 +627,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "2117d9e523bb25db6fedb4d1289665d15e73ce40966c616e2e477ef431d1d252"
+      "metadata_hash": "d6e56dd4972346dfedb4fbab051acb7b02207a850c974533b06e55ca270e8d2c"
     },
     {
       "token_id": "eq-arp-phase-critical-collapse",
@@ -636,8 +657,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "6a2e93f9376712fcf84400715b27989c4ef14e2b3e6c2d9ee414936beedde932"
+      "metadata_hash": "344ce3d57cc5e8f9fdf17405e33baa5196370f00a543805dab511d2e6bda3686"
     },
     {
       "token_id": "eq-ahc-pi-a-update",
@@ -665,8 +687,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "00069b29e651cbddf7038768616b894ca2a47a9f2ae63187cdde2706f2d752f8"
+      "metadata_hash": "1b8122cc1e7ffa92e7b0818b70e0db717ba3f09ace3f254b817c81a384fef263"
     },
     {
       "token_id": "eq-arp-redshift-bounded-oscillation",
@@ -694,8 +717,9 @@
         "image": "https://github.com/RDM3DC/ARP-Redshift-Law-d-e-r-i-v-e-d-m-a-p-p-i-n-g/blob/main/assets/eq-bounded-oscillatory-redshift.png"
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "72618efa4937ec881670442cb9f1a3d2a92b85f87103d9bd111ff2f7744425fa"
+      "metadata_hash": "9a26bf5f72245e447fb0bbdb08a614ddd359f69c032763046020360e50b438dc"
     },
     {
       "token_id": "eq-arp-phase-lifted-complex-conductance",
@@ -723,8 +747,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "38d02a1ac99af3060616a518d9eb635ad59582e143dd2354ab99525a8aec7f33"
+      "metadata_hash": "476e5b9532e903f0688dc40f48a036061b252b59911d0cf4371b79a6bf2d612c"
     },
     {
       "token_id": "eq-ahc-candidate-unwrap",
@@ -752,8 +777,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "d455c243d5b99b2027f51030c43bc2c5be673edcd7d0045a74f2a0153b0026a7"
+      "metadata_hash": "7006a274c660fbde61441cff4260592b8747dc75a685e0075411ff39e3822b39"
     },
     {
       "token_id": "eq-ahc-residual",
@@ -781,8 +807,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "ff31402115160804b70147a0c9c1338a38febee4d57f81ea017c54dec8906da3"
+      "metadata_hash": "db272e41f96de6f775936372cbef871fac22974740544b7a5725007b7d1c5053"
     },
     {
       "token_id": "eq-arp-temp-conductance",
@@ -810,8 +837,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "7863e03064b9fafe74a256687b559aed21f91ee6a4471a2e0ff6c6d9ef07983a"
+      "metadata_hash": "9441b0f7f85cfc19f0f213520daddf3c7803b6d874b69f6a45bcc51178ce33c9"
     },
     {
       "token_id": "eq-ahc-event-stimulus",
@@ -839,8 +867,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "9fabb82817fb28e8cd660f97982fe4ca395f41e49a44fe4b29dabafa1a3ad781"
+      "metadata_hash": "42aebea84892bd6180c8359818678e0646929d511c3cb4866b84b455109358a8"
     },
     {
       "token_id": "eq-arp-lyapunov-stability",
@@ -868,8 +897,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "47a363e9ee867e29d9a1f62d749f49f6c2d174c2a64e5937701d5a53ff12b35b"
+      "metadata_hash": "0a78fb7b6f7449d96ee0007c0dbda242bc7ffdaa483381ce6843dd1f11e12987"
     },
     {
       "token_id": "eq-arp-gradient-flow-bridge",
@@ -897,8 +927,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "e1beec0f49bb8488986960880fed4927d342d3ba8e44ba995b20298d62ef373a"
+      "metadata_hash": "562292b6b71b153231e635a4a03315ae61baa96ac06b79aea5a416393b948ef4"
     },
     {
       "token_id": "eq-curve-memory-137",
@@ -926,8 +957,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "5c8dcdc6fb42a5b6cf96252dedfb1dd32c598bb42f5c867c1f38a86c19ee9861"
+      "metadata_hash": "942142182196dc79b7471307139364a6f119760c3734f0873d028d5357f8886d"
     },
     {
       "token_id": "eq-shield-mechanic-arp",
@@ -955,8 +987,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "5d7aced21f62f565d4f0fb7adbf013e98a2a9ccbf9ef01236cee43e4307ef23a"
+      "metadata_hash": "723ab47d20371ec3298bef9e3804cea4d884c334e6aad07335acde337099075b"
     },
     {
       "token_id": "eq-parity-pump",
@@ -984,8 +1017,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "0430ae826357d592bc9754f44a2fa374060823c9abc39a19b2187fe13691f931"
+      "metadata_hash": "fbcc184d8b6bc9f97a2ba6c738f96c11cb6adb812f184d646649d18c4058fee9"
     },
     {
       "token_id": "eq-dyn-constants-union",
@@ -1013,8 +1047,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "e54b15f0a1ec3e560cbce0b5da38581c1fa2245daa0c2446726694da854ac63d"
+      "metadata_hash": "c1cb6b5d7f811241e3ea2b85a0bf5ad5d2f66fa6bc29223784dc5a8ee9758b9f"
     },
     {
       "token_id": "eq-pi-a-gauged-phase-lift",
@@ -1042,8 +1077,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "50edbd7c5780153d2d93a3b2e3eb9c84c4cf404362f766c85c151a727c462515"
+      "metadata_hash": "603771982545e08ac06471df6376324f010c4d91919a7ef418568906a31a2ad8"
     },
     {
       "token_id": "eq-redshift-arp-superc",
@@ -1071,8 +1107,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "6145dfc116dccc588cf90f7645f7afc58f72b1e48d2c14a470794c5118978b5d"
+      "metadata_hash": "8de1f2159a94f88ed7da066abbe490c9186094e69748ed4d29bc30adcbbe7f64"
     },
     {
       "token_id": "eq-adaptive-phase-lift-unwrapping",
@@ -1098,8 +1135,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "26775b480a0e99018ea01d459916e26b9f2654d18143805d43384234724a4adc"
+      "metadata_hash": "4d4a516e41f107ca2651da0fc48db3eaa5d36ce9b85ca4df70ea445ca0b0c40e"
     },
     {
       "token_id": "eq-arp-weighted-dirichlet-energy",
@@ -1125,8 +1163,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "0258f0dbaf0b93128b4b26741c802ac8a817259466d0502680ef417c41136e3d"
+      "metadata_hash": "fd743d2f24761e29a6d5e9689116175833d26e726aa4ef94ede5a968128698be"
     },
     {
       "token_id": "eq-un-det-phase",
@@ -1154,8 +1193,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "c33decd3961ccea48d64e233be95d753dd6ce31c7ea9cecd71376b7b47357c21"
+      "metadata_hash": "67f271438e2c6b4c28c3aa8302d84c1975a09ced390d6dc6876b0ed72e62400e"
     },
     {
       "token_id": "eq-adaptive-connection-chern",
@@ -1181,8 +1221,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "7da63347fe3d987a1f00acdccb7c090c96ed9c4eed633b43666e260968008bec"
+      "metadata_hash": "151abde85b3ec7663d1139cfe6d9d39e1c9b884fbd094bf7295856b0ae565da2"
     },
     {
       "token_id": "eq-parity-from-adaptive-chern",
@@ -1208,8 +1249,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "3ed088c83547f9bdcdcb5722bd10fe94a8068347f920d8dcf5096e5b67ea32eb"
+      "metadata_hash": "61c2a82c82e4add3e68f52ed4ee73d4ba190deee730b8c7459c5f5d850570159"
     },
     {
       "token_id": "eq-cm-integration-state",
@@ -1237,8 +1279,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "76999877a3598a70a6b5a2f6b8f9efa4ccb8daa0ced20dbb7acf250bf9ed8456"
+      "metadata_hash": "902d8f02d1ede7af1485ef1b924c8f19a0a26b345f314adfda719390a40de8a5"
     },
     {
       "token_id": "eq-un-wilson-holonomy",
@@ -1266,8 +1309,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "7f76de1f38cb9da922ea81cdc35807e3cba121df8f2f2a5c6e07ce482e0b05f2"
+      "metadata_hash": "d8d18e13b9e9ba9a9632208f78412f5895cda1693985c92d3b6bcd4b16fc4880"
     },
     {
       "token_id": "eq-dimensionless-phase-flow",
@@ -1293,8 +1337,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "1e37e599d3a75d908a7ae976c2750dfd112133c9ce62d56f875f69a61424b7ab"
+      "metadata_hash": "23975c710a0ada7df040074a66a6fc5407d6725c51c4dc1e6f0791e1ed597f76"
     },
     {
       "token_id": "eq-adaptive-monodromy-spectrum",
@@ -1322,8 +1367,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "0a0b5c748d058923eb7f0cb2e657cc1e8ad77744c87ddd7497dd7d273111ba86"
+      "metadata_hash": "58c98d48caf95d799a38ab5b42d4f31d347c4637b19899dba41df5b7b7234d63"
     },
     {
       "token_id": "eq-adaptive-discriminant-set",
@@ -1349,8 +1395,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "c29059648b7539a344c338eebd0dbc4520bad726d482d9cab059a1f3bb0cbee9"
+      "metadata_hash": "daf3a74e41e71fecb4a8e01eaee29601c624e14f4ea1239c368e77654b7556c0"
     },
     {
       "token_id": "eq-qwz-engineered-single-jump",
@@ -1376,8 +1423,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "9b445e39d681d55ec2be46524264d43d1ba5beba3586cffb828f8eb7536bea24"
+      "metadata_hash": "cb8036eea63827c7331e8903d019323fa070b6dd34b4bc7e33fbb343c243f89d"
     },
     {
       "token_id": "eq-paper1-adler-rsj-phase",
@@ -1405,8 +1453,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "624e16cde68a1fdb1f268b0685ba5d37788a0e338b24e0b6d434a6e97869fdd5"
+      "metadata_hash": "eb98c6de4f50d21cf62cfecaecb08e9f680a801e50c71de11822eac4d25c792b"
     },
     {
       "token_id": "eq-paper1-arp-reinforce-decay",
@@ -1434,8 +1483,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "c992c5c66857af4ad877677b34803d56068a170498bb32188853e08e29943bfa"
+      "metadata_hash": "eae925f707466963135564b2df8470df4a541980145824c270acd24979b093fa"
     },
     {
       "token_id": "eq-paper1-activity-closure",
@@ -1463,8 +1513,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "dbb661c91d592cb65d01cf93fe17574284fad36f31bf324c81fa8d294efaa607"
+      "metadata_hash": "111f426bccb6cb583e6eb4dc1e7362cce69322b1fcaff52f83c2f0d052559f95"
     },
     {
       "token_id": "eq-paper1-slip-asymptote",
@@ -1492,8 +1543,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "605b33dd8e2a5d6a1e466fd601ef0495abc13c3b55997fc5813d5ca193180a34"
+      "metadata_hash": "10d09d0881ccd1d9e66dd74c81a9d6fcb882bebf7dc6019d7be465acd6a03168"
     },
     {
       "token_id": "eq-paper1-langevin-noise",
@@ -1521,8 +1573,9 @@
         "image": "./assets/langevin_parity_lock.png"
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "68ca5ec29eb14d7a629c7ad58fb11a6baec7d9ca1f6c559f0654218aff1bbd5c"
+      "metadata_hash": "8959d7aea4a4b157156bbd759360e0b5e239f9a8ebcc6c938dcaa3ee38af4dab"
     },
     {
       "token_id": "eq-paper1-qwz-hamiltonian",
@@ -1550,8 +1603,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "2d8ba66d083ea9796012bb70c960b24597fd338adff29e036fb797251bd8abf8"
+      "metadata_hash": "89d4e63f35e49293f0b7d66402aaea7c74d938bb7d1ce1b059fce21b258beeb3"
     },
     {
       "token_id": "eq-paper1-adaptive-geometry-mass",
@@ -1579,8 +1633,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "ce0354b78a9f0c8769160492716118324319d2c5be74b806150e7b86d6e422de"
+      "metadata_hash": "af392372b18d579942b13ca4aa6996ea47372a7d027d7dba06aac2a9453a3c5c"
     },
     {
       "token_id": "eq-paper1-chern-marker-bianco-resta",
@@ -1608,8 +1663,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "7e67f6a4671c0ed970b23c37db7dfe5ed6a807faeaa4e07b7aa4b9b6a5b6032c"
+      "metadata_hash": "e492d0d25a1ec9759e7cbe2e3f9f3239ebeb60ee27ec92949dcaef7623f6d4a7"
     },
     {
       "token_id": "eq-mesh-synced-certificate-consistency",
@@ -1637,8 +1693,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "ee09cb6780b8145f4d9dcbf9c42c64503c316a898baac784d4c4ec31f731acec"
+      "metadata_hash": "52d9cad3933364237f90c37c1258beec7ca7cdcbbace95897da4162317e38906"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1666,8 +1723,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "6911b3b3dbd2b549973418d395d13bedc4bb1e61af29b45d70e4f9aed110c9cc"
+      "metadata_hash": "f9389868fee7a8adb92c1249c605e1eb885d07aa9b4375ddecb73fca70bcb54f"
     },
     {
       "token_id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
@@ -1695,8 +1753,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "bcb22659939e0ae5448fdd844630cee66b5999f8ce13acb9f16109034ca22707"
+      "metadata_hash": "72cb74cab6110dde2f318cfe1e7f4e1820038b7dfa402230defd1cda4a0b6b1e"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-7",
@@ -1724,8 +1783,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "a9074393889daa9faa45cae6481dcddd6ab2089b93b3132d99007d5a246c88a1"
+      "metadata_hash": "fcb654c05fa65b9b93b8a973dcd13c44bdb2718aaf333aaac218421215982e1c"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-10",
@@ -1753,8 +1813,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "7d1bf911d994792597c1ddf1da182a3034232e9193f53a1572557ca0d8a79f6d"
+      "metadata_hash": "aa02597ab6575a9ec0a83a719678d0a604d571c364f5212003db00c2e5e88ba9"
     },
     {
       "token_id": "eq-hlatn-white-paper-eqn-11",
@@ -1782,8 +1843,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "24f2ec6da39887f4ef34e24ca2cdc8f20a5ef2963bac2e4ab8b80db0a464d7da"
+      "metadata_hash": "40733032e946e94c1569e8003798e3b092e67637e53bcc404a93f5d656b5a522"
     },
     {
       "token_id": "eq-hlatn-three-force-conductance-lock",
@@ -1811,8 +1873,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "c02603a25195d046fad2e4b96623b303788d1a853d669d966b7208881f220c6e"
+      "metadata_hash": "626e797b641b10bf701fb11e4987e969e5e0aad5aab6e2c7b82d906ecddd62b2"
     },
     {
       "token_id": "eq-hlatn-phase-lift-branch-safe-update",
@@ -1840,8 +1903,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "f4fd6a0f72195c061a32f31a43fed63d64e20dc5eea605860d2fe1a0a68bf484"
+      "metadata_hash": "497322f8a57ab171b273e69f0f7661d64a4cd240c39cf51fae23f4035254858f"
     },
     {
       "token_id": "eq-hlatn-plaquette-holonomy",
@@ -1869,8 +1933,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "3571143fb2a3114827bea59572192a137fb2fd0645c82eb6c4ea8c75e1168a7f"
+      "metadata_hash": "509e009ec0cda578768804abd71bfb0ede623b03b17e9bc4cf55e0f8e0c9467a"
     },
     {
       "token_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
@@ -1898,8 +1963,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "e6748e1622fdbdf4174b484b05de101cb4ca4f7b463cd6a3258387c12adbbcb6"
+      "metadata_hash": "4be97c6bc4829a674e6df3d2f411cb4833eb3872661b6643d4afd992b8a3f349"
     },
     {
       "token_id": "eq-egatl-phase-coupled-conductance-update",
@@ -1927,8 +1993,9 @@
         "image": ""
       },
       "tier": "derived",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "0cbb6fdd8a9c50e65d4cf276e5c9278b73a6c8c9b13438e66b2e7c394560dd73"
+      "metadata_hash": "f81edbe5a148cbb39afe7cff0cf5a887ed168f62b5ae9eb9df1dc6c5a5215cd9"
     },
     {
       "token_id": "famous-schrodinger",
@@ -1952,13 +2019,14 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-phase-ambiguity",
         "core-unwrap-rule"
       ],
       "version": 1,
-      "metadata_hash": "b32921239a38f3079ae8e6c55f9563342b539beec35633bdf9a9d5759e231bf9"
+      "metadata_hash": "4c46245134299a098f402706da3526001717d3e6aa0502e8c9dd2938fc941ade"
     },
     {
       "token_id": "famous-aharonov-bohm",
@@ -1982,13 +2050,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-unwrap-rule",
         "core-winding-parity"
       ],
       "version": 1,
-      "metadata_hash": "180b24445e435563538e3244b10d0d39b9ae81e187930fff66287938a5a39c62"
+      "metadata_hash": "206d5b548376b58953bc52ec6fe09922e5c4f27006c9bea7ca498207112eb0ad"
     },
     {
       "token_id": "famous-berry-phase",
@@ -2012,13 +2081,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-unwrap-rule",
         "core-path-continuity"
       ],
       "version": 1,
-      "metadata_hash": "34b61d13b2c71971582a2c98a2f6749d989bf3415640677aaed1a74e061042de"
+      "metadata_hash": "7d4bc9ca2eed7bae2d743a4990bc3224dfd61fae69a5b150f3f18497864fd8ce"
     },
     {
       "token_id": "famous-josephson",
@@ -2042,13 +2112,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-pi-a",
         "core-pi-a-dynamics",
         "core-phase-lift"
       ],
       "version": 1,
-      "metadata_hash": "c57f3fed377286457c80150fdb3b539ee5200cc004ffc10b085af2044580fae1"
+      "metadata_hash": "ea14d9f8ff9f0cf3785c9fe181de84d9b4f44f462c0f235457bceeb44f5dfe37"
     },
     {
       "token_id": "famous-maxwell",
@@ -2072,6 +2143,7 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-unwrap-rule",
@@ -2079,7 +2151,7 @@
         "core-phase-lifted-stokes"
       ],
       "version": 1,
-      "metadata_hash": "3b6423dec5b2e49ef5954f8278914f510431d779f08b6d00640de0f3341385e5"
+      "metadata_hash": "6a4f189dbbd6e11a6a599674da605f855fea17bab60e6440fd4598c0d7817a32"
     },
     {
       "token_id": "famous-dirac",
@@ -2103,13 +2175,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-phase-ambiguity",
         "core-pi-a"
       ],
       "version": 1,
-      "metadata_hash": "20532cca48fa417af4835e1126612b41ca83e994ab0d416a6ad6b50f8fed6a98"
+      "metadata_hash": "d0b8254dce7701338549c0bb6b88d146c488415f584f2ef68942050e4d6eb56f"
     },
     {
       "token_id": "famous-euler-lagrange",
@@ -2133,13 +2206,14 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-pi-a-dynamics",
         "core-arp-ode"
       ],
       "version": 1,
-      "metadata_hash": "64d61e30c25a9e70e6af1522c07147dc1ac550e61f67ef70ce99b4e99300fcca"
+      "metadata_hash": "922d5e93f3f22d5773955acbcda686fb138304b21f226e88cbdd430163d5cecf"
     },
     {
       "token_id": "famous-navier-stokes",
@@ -2163,13 +2237,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-winding-parity",
         "core-phase-lifted-stokes",
         "core-curvature-salience"
       ],
       "version": 1,
-      "metadata_hash": "47820b1e7f43f6cfd12d6089c5e01fdc543620a713d95dcdf0dd7923b9c54552"
+      "metadata_hash": "2b3fa61617d98ab3d77918247e641bf648553dd83398af5b0e8a93b2a1591168"
     },
     {
       "token_id": "famous-path-integral",
@@ -2193,13 +2268,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-winding-parity",
         "core-phase-ambiguity"
       ],
       "version": 1,
-      "metadata_hash": "9395e7f87d1863089d2326f443536254e650a2be00eda1dd7b0573e3c9c6464c"
+      "metadata_hash": "6f2eb6c17fe62ba01d33d7c417140a5f6de21f45f72eaec4716439d6c569c536"
     },
     {
       "token_id": "famous-holonomy",
@@ -2223,13 +2299,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-unwrap-rule",
         "core-winding-parity"
       ],
       "version": 1,
-      "metadata_hash": "e553885f27c9cebd32051489e8831f727a2345dec0fcbc1b5b9759d704f991de"
+      "metadata_hash": "d0b2db41615f0e7ec071b54f56d248e38b32c47ee06367cc458954223ec8b7a1"
     },
     {
       "token_id": "famous-klein-gordon",
@@ -2253,13 +2330,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-pi-a",
         "core-phase-ambiguity"
       ],
       "version": 1,
-      "metadata_hash": "d524d69f0ad90bffa3eb0e6bbba98a8f60f9700aeea3a6c3e1044fba64c6599f"
+      "metadata_hash": "f556fbb72666d08efd3b5f010cec96ea6f858e2d79e1d5da89afbf224ce6b08a"
     },
     {
       "token_id": "famous-einstein-field",
@@ -2283,13 +2361,14 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-conformal-metric",
         "core-pi-a",
         "core-adaptive-arc-length"
       ],
       "version": 1,
-      "metadata_hash": "fccce705df5ef583dcb95e339a001248f4521bed05a5e91439a5b396865073db"
+      "metadata_hash": "13c45dca35cfb3c75236a2db264c3df2dadbba7601a5321761892be7a7692ce4"
     },
     {
       "token_id": "famous-fourier-heat",
@@ -2313,13 +2392,14 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-curvature-salience",
         "core-phase-lift",
         "core-reinforce-decay-memory"
       ],
       "version": 1,
-      "metadata_hash": "a401a9d91eca2b90cf060f9b09b245832ce7e1511338f6600cb7b371066f0519"
+      "metadata_hash": "82372fb518c52d19687d917a57b54a27db538da8f0ddd383c314d271e463719e"
     },
     {
       "token_id": "famous-noether",
@@ -2343,13 +2423,14 @@
       "units": "OK",
       "theory": "PASS",
       "tier": "famous",
+      "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "coreRefs": [
         "core-phase-lift",
         "core-pi-a",
         "core-arp-ode"
       ],
       "version": 1,
-      "metadata_hash": "a3f7e6f1c7c4fc13bef2c759c94fc33ff514698ba1bc283395f27ac85dda0f9e"
+      "metadata_hash": "f0a581422aefb09fb81f0d8f340cfdaead86a739e81d1c278b76a681e12801f5"
     }
   ]
 }
