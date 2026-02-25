@@ -56,12 +56,11 @@ jobs:
       - name: Validate submission JSON
         id: validate
         run: |
-          python tools/parse_github_issue.py _issue_body.json > _parsed.json 2> _validation_error.txt
-          if [ $? -ne 0 ]; then
+          if python tools/parse_github_issue.py _issue_body.json > _parsed.json 2> _validation_error.txt; then
+            echo "valid=true" >> "$GITHUB_OUTPUT"
+          else
             echo "valid=false" >> "$GITHUB_OUTPUT"
             echo "error=$(cat _validation_error.txt)" >> "$GITHUB_OUTPUT"
-          else
-            echo "valid=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Comment validation error and close
