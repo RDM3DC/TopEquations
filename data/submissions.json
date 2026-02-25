@@ -28,7 +28,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-mesh-synced-certificate-consistency",
-        "score": 48,
+        "score": 55,
         "heuristic_score": 66,
         "scores": {
           "tractability": 17,
@@ -39,17 +39,17 @@
         "novelty": 18,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 8,
-          "significance": 8,
-          "evidence_quality": 0,
-          "novelty": 10,
-          "clarity": 10,
-          "llm_total": 36,
-          "reducible": true,
-          "justification": "Simple difference equation with no provided evidence or detailed derivation."
+          "traceability": 40,
+          "rigor": 40,
+          "assumptions": 60,
+          "presentation": 60,
+          "novelty_insight": 50,
+          "fruitfulness": 40,
+          "llm_total": 47,
+          "justification": "Vague references and no clear lineage to existing leaderboard entries."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 48
+        "blended_score": 55
       }
     },
     {
@@ -82,7 +82,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-slack-test-equation",
-        "score": 53,
+        "score": 58,
         "heuristic_score": 73,
         "scores": {
           "tractability": 17,
@@ -93,17 +93,17 @@
         "novelty": 20,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 12,
-          "significance": 8,
-          "evidence_quality": 5,
-          "novelty": 5,
-          "clarity": 10,
-          "llm_total": 40,
-          "reducible": true,
-          "justification": "Simple linear decay equation with limited novelty and evidence."
+          "traceability": 40,
+          "rigor": 60,
+          "assumptions": 60,
+          "presentation": 40,
+          "novelty_insight": 30,
+          "fruitfulness": 60,
+          "llm_total": 48,
+          "justification": "Test submission with vague references and basic derivation, lacking clear lineage and presentation."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 53
+        "blended_score": 58
       }
     },
     {
@@ -141,7 +141,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-egatl-phase-coupled-conductance-update",
-        "score": 83,
+        "score": 87,
         "heuristic_score": 88,
         "scores": {
           "tractability": 18,
@@ -152,17 +152,17 @@
         "novelty": 27,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 16,
-          "evidence_quality": 16,
-          "novelty": 15,
-          "clarity": 17,
-          "llm_total": 80,
-          "reducible": false,
-          "justification": "Well-defined novel coupling with strong evidence and clear assumptions."
+          "traceability": 95,
+          "rigor": 80,
+          "assumptions": 85,
+          "presentation": 90,
+          "novelty_insight": 85,
+          "fruitfulness": 80,
+          "llm_total": 86,
+          "justification": "Builds on LB #1 and #2 with explicit recovery and derivation, rigorous but units check pending, clear assumptions and presentation, introduces novel phase-coupled suppression."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 83
+        "blended_score": 87
       }
     },
     {
@@ -202,7 +202,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
-        "score": 77,
+        "score": 86,
         "heuristic_score": 85,
         "scores": {
           "tractability": 18,
@@ -213,17 +213,17 @@
         "novelty": 27,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 14,
-          "evidence_quality": 13,
-          "novelty": 15,
-          "clarity": 14,
-          "llm_total": 72,
-          "reducible": false,
-          "justification": "The equation presents a novel coupling of entropy and phase dynamics with a clear derivation path and supporting evidence, though clarity and evidence could be improved."
+          "traceability": 95,
+          "rigor": 85,
+          "assumptions": 90,
+          "presentation": 80,
+          "novelty_insight": 85,
+          "fruitfulness": 80,
+          "llm_total": 87,
+          "justification": "Strong derivation chain with explicit recovery clauses and novel coupling mechanisms."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 77
+        "blended_score": 86
       }
     },
     {
@@ -255,7 +255,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
-        "score": 64,
+        "score": 69,
         "heuristic_score": 69,
         "scores": {
           "tractability": 17,
@@ -266,17 +266,17 @@
         "novelty": 19,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 14,
-          "significance": 12,
-          "evidence_quality": 5,
-          "novelty": 14,
-          "clarity": 15,
-          "llm_total": 60,
-          "reducible": false,
-          "justification": "Plausible derivation with novel coupling but lacks evidence."
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 60,
+          "novelty_insight": 70,
+          "fruitfulness": 60,
+          "llm_total": 69,
+          "justification": "Builds on EGATL conductance rules but lacks explicit derivation and units check."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 64
+        "blended_score": 69
       }
     },
     {
@@ -319,7 +319,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
-        "score": 83,
+        "score": 82,
         "heuristic_score": 89,
         "scores": {
           "tractability": 19,
@@ -330,17 +330,17 @@
         "novelty": 25,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 15,
-          "evidence_quality": 16,
-          "novelty": 14,
-          "clarity": 18,
-          "llm_total": 79,
-          "reducible": false,
-          "justification": "Well-defined novel entropy dynamics with clear derivation and evidence."
+          "traceability": 80,
+          "rigor": 80,
+          "assumptions": 80,
+          "presentation": 80,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 78,
+          "justification": "Solid derivation with clear assumptions and units check, builds on EGATL framework but lacks explicit lineage to top leaderboard entries."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 83
+        "blended_score": 82
       }
     },
     {
@@ -383,7 +383,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-three-force-conductance-lock",
-        "score": 79,
+        "score": 82,
         "heuristic_score": 89,
         "scores": {
           "tractability": 18,
@@ -394,17 +394,17 @@
         "novelty": 27,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 14,
-          "evidence_quality": 13,
-          "novelty": 14,
-          "clarity": 15,
-          "llm_total": 72,
-          "reducible": false,
-          "justification": "Well-defined conductance dynamics with novel phase-suppression term, supported by whitepaper and animations."
+          "traceability": 80,
+          "rigor": 80,
+          "assumptions": 80,
+          "presentation": 80,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 78,
+          "justification": "Builds on LB #1 and #10 with clear assumptions and derivation, but lacks explicit recovery clause."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 79
+        "blended_score": 82
       }
     },
     {
@@ -452,7 +452,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-phase-lift-branch-safe-update",
-        "score": 76,
+        "score": 81,
         "heuristic_score": 85,
         "scores": {
           "tractability": 18,
@@ -463,17 +463,17 @@
         "novelty": 23,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 12,
-          "evidence_quality": 13,
-          "novelty": 14,
-          "clarity": 15,
-          "llm_total": 70,
-          "reducible": false,
-          "justification": "Novel phase update rule with adaptive clipping and clear derivation, supported by numerical evidence."
+          "traceability": 80,
+          "rigor": 80,
+          "assumptions": 80,
+          "presentation": 80,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 78,
+          "justification": "Builds on existing phase-lifted dynamics with clear assumptions and derivation, but lacks explicit lineage to top leaderboard entries."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 76
+        "blended_score": 81
       }
     },
     {
@@ -516,7 +516,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-hlatn-plaquette-holonomy",
-        "score": 76,
+        "score": 81,
         "heuristic_score": 85,
         "scores": {
           "tractability": 19,
@@ -527,17 +527,17 @@
         "novelty": 23,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 16,
-          "significance": 12,
-          "evidence_quality": 13,
-          "novelty": 14,
-          "clarity": 15,
-          "llm_total": 70,
-          "reducible": false,
-          "justification": "The equation introduces a novel coupling of edge phases to define a Z2 parity order parameter, supported by simulations and a white paper."
+          "traceability": 80,
+          "rigor": 80,
+          "assumptions": 80,
+          "presentation": 80,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 78,
+          "justification": "Solid derivation with clear assumptions and simulation evidence, but lacks explicit lineage to top leaderboard entries."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 76
+        "blended_score": 81
       }
     },
     {
@@ -564,7 +564,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-adaptive-damped-harmonic-oscillator",
-        "score": 59,
+        "score": 52,
         "heuristic_score": 63,
         "scores": {
           "tractability": 17,
@@ -575,17 +575,17 @@
         "novelty": 16,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 14,
-          "significance": 10,
-          "evidence_quality": 5,
-          "novelty": 12,
-          "clarity": 15,
-          "llm_total": 56,
-          "reducible": false,
-          "justification": "Adaptive damping introduces a novel twist but lacks strong evidence."
+          "traceability": 40,
+          "rigor": 60,
+          "assumptions": 0,
+          "presentation": 60,
+          "novelty_insight": 50,
+          "fruitfulness": 60,
+          "llm_total": 45,
+          "justification": "Lacks explicit lineage to leaderboard entries and assumptions, but presents a plausible extension of the classical damped harmonic oscillator with adaptive features."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 59
+        "blended_score": 52
       }
     },
     {
@@ -612,7 +612,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "",
-        "score": 62,
+        "score": 58,
         "heuristic_score": 72,
         "scores": {
           "tractability": 19,
@@ -623,17 +623,17 @@
         "novelty": 22,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 14,
-          "significance": 10,
-          "evidence_quality": 5,
-          "novelty": 14,
-          "clarity": 12,
-          "llm_total": 55,
-          "reducible": false,
-          "justification": "Plausible dynamics with novel coupling, but lacks detailed evidence and clarity."
+          "traceability": 40,
+          "rigor": 60,
+          "assumptions": 0,
+          "presentation": 60,
+          "novelty_insight": 70,
+          "fruitfulness": 60,
+          "llm_total": 48,
+          "justification": "Vague references to existing entries without explicit derivation or assumptions."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 62
+        "blended_score": 58
       }
     },
     {
@@ -665,7 +665,7 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "",
-        "score": 66,
+        "score": 74,
         "heuristic_score": 67,
         "scores": {
           "tractability": 17,
@@ -676,17 +676,17 @@
         "novelty": 18,
         "method": "blended-v1 (gpt-4o)",
         "llm_scores": {
-          "physical_validity": 14,
-          "significance": 12,
-          "evidence_quality": 13,
-          "novelty": 12,
-          "clarity": 15,
-          "llm_total": 66,
-          "reducible": false,
-          "justification": "A novel extension to cosmological redshift mapping with clear assumptions and simulation evidence, but lacks groundbreaking novelty or significance."
+          "traceability": 80,
+          "rigor": 80,
+          "assumptions": 80,
+          "presentation": 80,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 78,
+          "justification": "Solid derivation with clear assumptions and simulation evidence, but lacks explicit lineage to top leaderboard entries."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 66
+        "blended_score": 74
       }
     },
     {
@@ -724,27 +724,27 @@
         "date": "2026-02-24",
         "equationId": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
         "score": 97,
-        "heuristic_score": 85,
+        "heuristic_score": 92,
         "scores": {
-          "tractability": 18,
-          "plausibility": 19,
+          "tractability": 20,
+          "plausibility": 20,
           "validation": 16,
           "artifactCompleteness": 7
         },
-        "novelty": 25,
+        "novelty": 29,
         "method": "manual-override",
         "llm_scores": {
-          "novelty": 16,
-          "significance": 17,
-          "evidence_quality": 16,
-          "clarity": 18,
-          "physical_validity": 18,
-          "llm_total": 85,
-          "reducible": false,
-          "justification": "Novel extension with strong evidence and clear derivation, building on top-ranked equations."
+          "traceability": 98,
+          "rigor": 95,
+          "assumptions": 95,
+          "presentation": 97,
+          "novelty_insight": 85,
+          "fruitfulness": 95,
+          "llm_total": 94,
+          "justification": "Directly builds on top leaderboard entries with explicit recovery clauses and simulation readiness, introducing a novel surprise-driven adaptation mechanism."
         },
         "llm_model": "gpt-4o",
-        "blended_score": 85,
+        "blended_score": 93,
         "manual_score": 97
       }
     }

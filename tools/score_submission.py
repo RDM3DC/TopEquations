@@ -31,6 +31,10 @@ def _clamp(v: int, lo: int, hi: int) -> int:
 def _heuristic(entry: dict) -> dict[str, int]:
     eq = str(entry.get("equationLatex", ""))
     low = eq.lower()
+    desc = str(entry.get("description", "")).lower()
+    evidence = entry.get("evidence", []) or []
+    evidence_text = " ".join(str(e) for e in evidence).lower()
+    all_text = f"{desc} {evidence_text}"
 
     # --- Tractability (0-20) ---
     tract = 16
@@ -61,7 +65,6 @@ def _heuristic(entry: dict) -> dict[str, int]:
     if assumptions:
         validation += min(4, len(assumptions))
 
-    evidence = entry.get("evidence", []) or []
     has_dimensional = any(
         "dimension" in str(e).lower() or "unit" in str(e).lower()
         for e in evidence
@@ -113,6 +116,32 @@ def _heuristic(entry: dict) -> dict[str, int]:
     if len(eq) > 80 and unique_cmds >= 5:
         novelty += 2
 
+    # --- Lineage / Framework Integration bonus ---
+    # Detect references to existing leaderboard entries or recovery clauses
+    lineage_signals = [
+        r"builds?\s+(directly\s+)?on",
+        r"extends?\s+(the\s+)?(current|existing|#\d|lb\s*#)",
+        r"recover(s|y|ing)\b.*\b(when|as|if|limit)",
+        r"\bLB\s*#\d",
+        r"leaderboard\s*#\d",
+        r"current\s*#\d",
+        r"→\s*0",
+        r"\\to\s*0",
+        r"backward.?compat",
+        r"limit.?recovery",
+        r"unif(y|ies|ying|ication)",
+    ]
+    lineage_hits = sum(1 for pat in lineage_signals if re.search(pat, all_text, re.IGNORECASE))
+    if lineage_hits >= 3:
+        tract = min(20, tract + 2)
+        plaus = min(20, plaus + 2)
+        novelty = min(30, novelty + 4)
+    elif lineage_hits >= 2:
+        tract = min(20, tract + 1)
+        novelty = min(30, novelty + 3)
+    elif lineage_hits >= 1:
+        novelty = min(30, novelty + 2)
+
     tract = _clamp(tract, 0, 20)
     plaus = _clamp(plaus, 0, 20)
     validation = _clamp(validation, 0, 20)
@@ -126,6 +155,7 @@ def _heuristic(entry: dict) -> dict[str, int]:
         "validation": validation,
         "artifactCompleteness": artifact,
         "novelty": novelty,
+        "lineage_hits": lineage_hits,
         "score": total,
     }
 

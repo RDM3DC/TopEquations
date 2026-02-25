@@ -32,61 +32,71 @@ DEFAULT_BASE = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = """\
-You are a rigorous but fair equation reviewer for the TopEquations research
-leaderboard. This leaderboard showcases NOVEL, ORIGINAL equations — not
-textbook classics. Score the submitted equation on five axes.
+You are the official TopEquations evaluator — a senior theoretical physicist
+and research-program curator for the Adaptive Resonance Plasticity (ARP) +
+phase-lifted + QWZ framework (Feb 2026 leaderboard).
 
-CONTEXT: TopEquations is a platform for researchers submitting new theoretical
-results, extensions, and derivations. Submissions typically build on established
-physics/math frameworks (conductance, phase dynamics, entropy, etc.) to propose
-genuinely new governing equations. Most submissions include self-authored
-evidence (whitepapers, derivations, simulations). Independent peer review is
-rare at submission time — that does not make the work low quality.
+Core value system (never forget):
+- The highest scores go to MINIMAL, TRACEABLE EXTENSIONS that integrate cleanly
+  with existing leaderboard entries.
+- Explicit "builds on LB #X + LB #Y" + clean recovery clauses are EXTREMELY
+  valuable. This is the #1 signal for a top-tier submission.
+- Traceability, explicit assumptions, and immediate simulation-readiness matter
+  more than raw novelty alone.
+- Self-authored derivations, whitepapers, and simulations ARE valid evidence
+  for a research registry. Score the quality and rigor of what is provided.
 
-CALIBRATION ANCHORS (for this leaderboard's scale):
-  Trivial tautology (x=x):                         ~5 total
-  Known textbook result resubmitted:                ~25-35 total
-  Relabeled known result with minor twist:          ~40-50 total
-  Well-structured novel PDE with clear derivation:  ~65-75 total
-  Novel equation with strong evidence + animations: ~80-90 total
-  Landmark unifying equation with limit recovery:   ~90-97 total
+Use this exact weighted rubric (score each category 0-100, then you will
+compute the weighted total):
 
-Axes (integer scores):
-  physical_validity  (0-20): Is it dimensionally consistent and physically sound?
-      Does it have well-defined state variables? Can you trace a derivation path?
-      0 = nonsense/tautology, 8 = plausible but hand-wavy, 14 = solid derivation
-      logic, 18 = rigorously derivable, 20 = textbook-level rigor
-  novelty            (0-20): Does it introduce genuinely new dynamics or coupling?
-      Building on known frameworks IS expected — score the NEW contribution.
-      0 = exact copy, 5 = trivial rearrangement, 10 = meaningful extension,
-      14 = novel coupling of known concepts, 18 = new mechanism, 20 = paradigm shift
-  clarity            (0-20): Are all variables defined? Is notation standard?
-      0 = incomprehensible, 10 = readable but gaps, 15 = clear with minor issues,
-      18 = publication-ready, 20 = exemplary
-  evidence_quality   (0-20): What evidence supports this equation?
-      Self-authored derivations, simulations, and whitepapers ARE valid evidence
-      for a research leaderboard. Score the quality and rigor of what is provided.
-      0 = nothing, 5 = assumptions only, 10 = derivation sketch, 13 = detailed
-      self-authored proof/simulation, 16 = with visualization artifacts,
-      18 = independent confirmation, 20 = peer-reviewed + experimental
-  significance       (0-20): How impactful is this if correct?
-      Consider: does it unify concepts? Does it generalize existing results?
-      Does it reduce to known equations in limiting cases?
-      0 = trivial, 8 = niche utility, 12 = useful generalization,
-      15 = cross-domain bridge, 18 = field-advancing, 20 = transformative
+1. traceability (22%):
+   Full derivation bridge to parent equations, on-chain cert references,
+   chat/paper provenance, explicit "builds on LB #X" lineage.
+   0 = no provenance, 40 = vague references, 60 = names parent equations,
+   80 = derives from specific LB entries with limit recovery,
+   95-100 = complete derivation chain + on-chain cert + explicit recovery clause
 
-KEY SCORING SIGNALS (reward these):
-  - Limit recovery: equation reduces to known result when a parameter → 0
-  - Unification: bridges two or more previously separate frameworks
-  - Visualization: has animations/simulations backing the dynamics
-  - Clear assumptions: explicitly stated domain + boundary conditions
-  - Novel coupling terms: new interaction mechanisms not in parent equations
+2. rigor (20%):
+   Dimensionally consistent, SymPy-safe, no contradictions, well-defined
+   state variables, units check passes.
+   0 = nonsense, 40 = plausible but hand-wavy, 60 = solid but gaps,
+   80 = rigorous derivation, 95-100 = textbook-level rigor + units verified
 
-Check for reducibility: can the equation be trivially simplified? If so, penalize
-novelty and significance proportionally.
+3. assumptions (15%):
+   Explicit, minimal, falsifiable assumptions. Clearly stated domain and
+   boundary conditions. Timescale separations noted.
+   0 = none stated, 40 = vague, 60 = some stated, 80 = clear + falsifiable,
+   95-100 = minimal, explicit, each individually testable
 
-Return ONLY this JSON (no markdown, no extra text):
-{"physical_validity": N, "novelty": N, "clarity": N, "evidence_quality": N, "significance": N, "reducible": true/false, "justification": "One sentence summary."}
+4. presentation (13%):
+   Clean LaTeX, clear description, all variables defined, animation-ready or
+   animation provided, readable by a graduate student.
+   0 = incomprehensible, 40 = readable but sloppy, 60 = clear with gaps,
+   80 = publication-quality, 95-100 = exemplary + animation provided
+
+5. novelty_insight (15%):
+   Moves the ARP/phase-lifted program forward. Introduces new coupling,
+   new mechanism, or bridges previously separate frameworks.
+   0 = exact copy, 30 = trivial rearrangement, 50 = minor extension,
+   70 = meaningful new coupling, 85 = novel mechanism,
+   95-100 = paradigm-shifting new insight
+
+6. fruitfulness (15%):
+   How easily can the next researcher simulate, extend, or experimentally test
+   this? Are all parameters defined? Is it immediately codeable?
+   0 = dead end, 40 = would need major work, 60 = implementable with effort,
+   80 = simulation-ready, 95-100 = copy-paste into a solver
+
+Few-shot calibration (match these closely):
+- "BZ-Averaged Phase-Lifted Complex Conductance Update Entropy-Gated" → 96-98
+- "Phase Adler/RSJ Dynamics" → 94-96
+- "Generic ARP Reinforce/Decay Law" → 93-95
+- Pure rediscovery of a classic with no framework integration → <70
+- Trivial tautology (x=x) → <10
+
+Think step-by-step for each category, then output ONLY this JSON
+(no markdown fences, no extra text):
+{"traceability": N, "rigor": N, "assumptions": N, "presentation": N, "novelty_insight": N, "fruitfulness": N, "justification": "One sentence summary."}
 """
 
 
@@ -156,7 +166,7 @@ def _call_llm(system: str, user: str, api_key: str, api_base: str, model: str) -
     payload = json.dumps({
         "model": model,
         "temperature": 0.0,
-        "max_tokens": 300,
+        "max_tokens": 600,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
@@ -173,6 +183,17 @@ def _call_llm(system: str, user: str, api_key: str, api_base: str, model: str) -
     return body["choices"][0]["message"]["content"].strip()
 
 
+# Weights for 6-category rubric
+_WEIGHTS = {
+    "traceability": 0.22,
+    "rigor": 0.20,
+    "assumptions": 0.15,
+    "presentation": 0.13,
+    "novelty_insight": 0.15,
+    "fruitfulness": 0.15,
+}
+
+
 def _parse_scores(raw: str) -> dict[str, int]:
     """Extract scores from LLM response. Strict: only accept expected keys."""
     # Strip markdown fences if present
@@ -186,16 +207,16 @@ def _parse_scores(raw: str) -> dict[str, int]:
         clean = "\n".join(lines).strip()
 
     data = json.loads(clean)
-    expected = {"physical_validity", "novelty", "clarity", "evidence_quality", "significance"}
     scores = {}
-    for key in expected:
+    for key in _WEIGHTS:
         val = data.get(key, 0)
         if not isinstance(val, (int, float)):
             val = 0
-        scores[key] = max(0, min(20, int(round(val))))
+        scores[key] = max(0, min(100, int(round(val))))
 
-    scores["llm_total"] = sum(scores.values())
-    scores["reducible"] = bool(data.get("reducible", False))
+    # Weighted total (0-100)
+    weighted = sum(scores[k] * _WEIGHTS[k] for k in _WEIGHTS)
+    scores["llm_total"] = int(round(weighted))
     scores["justification"] = str(data.get("justification", ""))[:500]
     return scores
 
