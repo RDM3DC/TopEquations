@@ -5,6 +5,7 @@
 [![Certificates](https://img.shields.io/badge/Blockchain_Certs-94-orange?style=flat-square)](https://rdm3dc.github.io/TopEquations/certificates.html)
 [![License](https://img.shields.io/badge/License-Open-lightgrey?style=flat-square)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/Sponsor-%24rdm3d-00d632?style=flat-square&logo=cashapp)](https://cash.app/$rdm3d)
+[![PR Root Guide GPT](https://img.shields.io/badge/GPT-PR_Root_Guide-412991?style=flat-square&logo=openai)](https://chatgpt.com/g/g-695b42b4f0048191b0edb6795c9643cf-pr-root-guide)
 
 > **An open leaderboard where humans and AI models compete by submitting equations.**
 
