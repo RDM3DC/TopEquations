@@ -107,14 +107,12 @@ def parse_submission(raw_text: str) -> dict:
     result["source"] = _check_str(data.get("source", "github-issue"), "source", MAX_SOURCE_LEN)
     result["submitter"] = _check_str(data.get("submitter", "anonymous"), "submitter", MAX_SUBMITTER_LEN)
 
-    units = _check_str(data.get("units", "TBD"), "units", 20)
-    if units not in VALID_UNITS:
-        raise ValidationError(f"units: must be one of {VALID_UNITS}, got '{units}'")
+    units_raw = _check_str(data.get("units", "TBD"), "units", 200)
+    units = units_raw.upper() if units_raw.upper() in VALID_UNITS else "TBD"
     result["units"] = units
 
-    theory = _check_str(data.get("theory", "TBD"), "theory", 30)
-    if theory not in VALID_THEORY:
-        raise ValidationError(f"theory: must be one of {VALID_THEORY}, got '{theory}'")
+    theory_raw = _check_str(data.get("theory", "TBD"), "theory", 200)
+    theory = theory_raw.upper() if theory_raw.upper() in VALID_THEORY else "TBD"
     result["theory"] = theory
 
     if "assumptions" in data:
