@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-phase-coupled-suppression-conductance-law",
+  "equation_id": "eq-phase-coupled-suppression-conductance-law",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "c9baf70c48742bac27a44b1a14808fd2cdc100a1d916b3add19a9f29b161bd5d",
+  "metadata_hash": "77f61b76f4902bce2910ae782b45cc283dfe3b0d3abeb006ac45559d27b78608",
+  "score": 71,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:58.623870+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "1b80c25c15a034563e6649b26ee3ca27895558404baf1980956d9c1cd0ea3c53e81ffaa8b7ca02268f55729ae08755ea58d548837dfedeab10a8e13d07f45953",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

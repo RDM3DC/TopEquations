@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-phase-lift-clipped-unwrap-branch-safe",
+  "equation_id": "eq-phase-lift-clipped-unwrap-branch-safe",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "aa4ad72f6eb929b578db660038f6bb257ad0b449e3da423ef419042a49a86a1e",
+  "metadata_hash": "ee35e66c62724c02912a84b7203dcfe6f371955c55b9a7968aff8bf37f6992bc",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:57.790938+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "a5abb89437c71ea4b7d62e092702120445813522257fa454299e1d2c01b02d39a5f9049a8c3a7746dc65031c0ad87a51abea2bb523589d741f38fd3227d6f1d7",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

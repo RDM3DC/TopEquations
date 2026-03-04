@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-winding-parity-estimator-and-flip-rate-order-par",
+  "equation_id": "eq-winding-parity-estimator-and-flip-rate-order-parameter",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "ff78cf788aa83fe18321f2f7f85678372ad9d62398c68cd6ddc94f3fee4d55c8",
+  "metadata_hash": "b5368cadfcde668f90c393a3cbecdf8ba66b374c6eb1e0ce4a40673ed17bf14a",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:58.138626+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "96f15f5729a77179c49c8eb30b0d786ec564c75e19df0ce275b53983d633cc9a03e3c6852d12170285d6c9b50cd67abcee599fb831f81ef96bbcb11669695cc7",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

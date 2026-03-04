@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-arp-redshift-law-with-bounded-oscillatory-steeri",
+  "equation_id": "eq-arp-redshift-law-with-bounded-oscillatory-steering",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "35fc6afec450aa1eaf1037759aa3eadc69a6aed458e6bf3dced478a50c884a2c",
+  "metadata_hash": "9ce8a3dd138b260c35e037b2a103a0d78e1fb93baf51b9b44515ef3e063d808f",
+  "score": 71,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:58.783012+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "d52e775c646e2e55d3e4dff246c7e509fa1486a9756935f5664aff6868ad005fcb0fe57a2d4be2d193d7f77bfe129a9d4847f14dd21f0807198e6bce5200f358",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

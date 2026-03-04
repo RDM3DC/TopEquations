@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-adaptive-ruler-qwz-effective-mass-geometry-induc",
+  "equation_id": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "1abc090698182468e6d8b745f02aa6c79c0175b5ae76f5871a6215481b7d6c34",
+  "metadata_hash": "867118fd90a33a9cc40e9413086ff1fecf9ec5bdb97d64772e4e8b6ed7ebab75",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:58.940950+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "383723482c3e4b1d56c91276fa53e5e4634294f0d7f344e510dd0e8257e0c6467892d3bbbc7701d9babc74fc52db01717a7b0bdced8ff8cc84fa08ba80c7e0ba",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-04-entropy-production-event-injection-s-field",
+  "equation_id": "eq-entropy-production-event-injection-s-field",
+  "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+  "equation_hash": "23f509b3bf6ba6697e83f983064d51717e24b235ad373e100d7badbdca771278",
+  "metadata_hash": "cfa9bb5fa6de560f0648a5009ba10d2f35cbca8b501cca1d11721041da4181c3",
+  "score": 70,
+  "status": "promoted",
+  "issued_at": "2026-03-04T05:22:58.464184+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "839a3529c07ff9e0c1e988628d0ff289318a943df5de12ee948ebdd3975ea90f5b1cbdc08865c1712b4f579d9e103c65a3d5b750e94a5dcf8bcbb71121fdb2c0",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}
