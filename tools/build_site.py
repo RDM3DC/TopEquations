@@ -139,6 +139,7 @@ def _page(title: str, body: str, updated: str) -> str:
         <a href='./core.html'>Core</a>
         <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./rising.html'>Rising</a>
         <a href='./certificates.html'>Certificates</a>
         <a href='./submissions.html'>All Submissions</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
@@ -655,6 +656,122 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     out.write_text(_page("TopEquations — Leaderboard", body, updated), encoding="utf-8")
 
 
+def build_rising(repo_root: Path, docs: Path) -> None:
+    """Equations below the leaderboard threshold — still in development."""
+    DISPLAY_THRESHOLD = 65
+
+    data_path = repo_root / "data" / "equations.json"
+    data = json.loads(data_path.read_text(encoding="utf-8"))
+    entries_all = list(data.get("entries", []))
+    entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
+
+    entries = [e for e in entries_all if float(e.get("score", 0)) < DISPLAY_THRESHOLD]
+
+    cards = []
+    for i, e in enumerate(entries, start=1):
+        name = e.get("name", "")
+        eq = e.get("equationLatex", "") or "(pending)"
+        src = e.get("source", "")
+        desc = e.get("description", "")
+        score = e.get("score", "")
+        units = e.get("units", "")
+        theory = e.get("theory", "")
+        date = e.get("date", "")
+        eq_id = (e.get("id") or "").strip()
+        repo_url = (e.get("repoUrl") or "").strip()
+
+        anim = _artifact(e.get("animation"))
+        img = _artifact(e.get("image"))
+
+        assumptions = e.get("assumptions") or []
+        if not isinstance(assumptions, list):
+            assumptions = [str(assumptions)]
+
+        def _ul(items: list[str]) -> str:
+            if not items:
+                return ""
+            lis = "".join(f"<li>{_esc(x)}</li>" for x in items if str(x).strip())
+            return f"<ul class='ul'>{lis}</ul>" if lis else ""
+
+        extra = ""
+        differential = (e.get("differentialLatex") or "").strip()
+        derivation = (e.get("derivation") or "").strip()
+        if differential:
+            extra += f"<div class='kv'><div class='k'>Differential form</div><div class='v'>$${_esc(differential)}$$</div></div>"
+        if derivation:
+            extra += f"<div class='kv'><div class='k'>Derivation bridge</div><div class='v'>{_esc(derivation)}</div></div>"
+        if assumptions:
+            extra += f"<div class='kv'><div class='k'>Assumptions</div><div class='v'>{_ul([str(x) for x in assumptions])}</div></div>"
+        if eq_id:
+            extra += f"<div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>view on chain record</a></div></div>"
+        if repo_url:
+            extra += f"<div class='kv'><div class='k'>Repository</div><div class='v'><a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>"
+
+        cards.append(
+            f"""
+<section class='card' data-rank='{i}' data-score='{_esc(score)}'>
+  <div class='card__rank'>#{i}</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>{_esc(name)}</h2>
+      <div class='card__meta'>
+        {_badge(f"Score {score}", 'score')}
+        {_status_badge(str(units), 'units')}
+        {_status_badge(str(theory), 'theory')}
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Equation</div>
+      <div class='equation__tex'>$${_esc(eq)}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
+      {extra}
+      <div class='kv'><div class='k'>Date</div><div class='v'>{_esc(date)}</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
+    </div>
+  </div>
+</section>
+"""
+        )
+
+    count = len(entries)
+    body = f"""
+<div class='layout layout--single'>
+  <section class='maincol'>
+
+<div class='hero'>
+  <div class='hero__left'>
+    <h1>Rising Equations</h1>
+    <p>Equations in development that haven&rsquo;t yet reached the leaderboard threshold (score&nbsp;&lt;&nbsp;{DISPLAY_THRESHOLD}). These are works in progress&nbsp;&mdash; refine assumptions, add evidence, or improve derivations to climb the board.</p>
+  </div>
+  <div class='hero__right'>
+    <div class='statbox'>
+      <div class='stat'>
+        <div class='stat__num'>{_esc(count)}</div>
+        <div class='stat__label'>Rising equations</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id='cards' class='cardrow'>
+""" + "\n".join(cards) + """
+</div>
+
+  </section>
+</div>
+"""
+
+    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    (docs / "rising.html").write_text(_page("TopEquations \u2014 Rising Equations", body, updated), encoding="utf-8")
+
+
 def build_index(repo_root: Path, docs: Path) -> None:
     data = _load_json_safe(repo_root / "data" / "equations.json", {"entries": []})
     n = len(data.get("entries", []))
@@ -1069,6 +1186,7 @@ def main() -> None:
     build_core(repo_root, docs)
     build_famous(repo_root, docs)
     build_leaderboard(repo_root, docs)
+    build_rising(repo_root, docs)
     build_certificates(repo_root, docs)
     build_submissions(repo_root, docs)
     build_harvest(repo_root, docs)
