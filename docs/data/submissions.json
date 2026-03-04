@@ -1380,6 +1380,59 @@
         "llm_model": "gpt-4o-mini",
         "blended_score": 71
       }
+    },
+    {
+      "submissionId": "sub-2026-03-04-phase-coupled-suppression-conductance-law",
+      "submittedAt": "2026-03-04",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Phase-Coupled Suppression Conductance Law",
+      "equationLatex": "d/dt G_ij = alpha*|I_ij| - mu*G_ij - lambda*G_ij*sin^2(theta_R,ij/(2*pi_a))",
+      "description": "Suppression extension: reinforcement/decay plus a phase-position penalty that activates when phase approaches the adaptive unwrap threshold pi_a.",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "alpha, mu, lambda >= 0",
+        "pi_a > 0",
+        "theta_R,ij is resolved phase difference"
+      ],
+      "evidence": [
+        "Introduces threshold-like behavior near branch boundaries",
+        "Predicts sharper transitions in parity flip-rate vs. parameters"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-04",
+        "equationId": "eq-phase-coupled-suppression-conductance-law",
+        "score": 71,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 18,
+          "validation": 13,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 60,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 72,
+          "justification": "The Phase-Coupled Suppression Conductance Law builds on existing conductance update frameworks with a new phase-position penalty, but lacks full rigor and presentation clarity."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 72
+      }
     }
   ]
 }

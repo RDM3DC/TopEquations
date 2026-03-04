@@ -1,18 +1,18 @@
 {
-  "name": "Entropy Production / Event Injection (S-Field)",
-  "equation": "dS/dt = Sum_ij (|I_ij|^2/T_ij)*Re(1/G_tilde_ij) + kappa*Sum_ij|Delta w_ij| - gamma_S*(S - S_eq)",
-  "description": "Entropy-like gating state: dissipative power term plus winding-discontinuity term inject S; relaxation returns S toward S_eq.",
+  "name": "Phase-Coupled Suppression Conductance Law",
+  "equation": "d/dt G_ij = alpha*|I_ij| - mu*G_ij - lambda*G_ij*sin^2(theta_R,ij/(2*pi_a))",
+  "description": "Suppression extension: reinforcement/decay plus a phase-position penalty that activates when phase approaches the adaptive unwrap threshold pi_a.",
   "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
   "submitter": "gpt-5.2",
   "units": "TBD",
   "theory": "TBD",
   "assumptions": [
-    "T_ij > 0",
-    "gamma_S > 0",
-    "G_tilde_ij not identically zero"
+    "alpha, mu, lambda >= 0",
+    "pi_a > 0",
+    "theta_R,ij is resolved phase difference"
   ],
   "evidence": [
-    "Couples physical dissipation to adaptation rates",
-    "Injects events when phase winding mismatches occur"
+    "Introduces threshold-like behavior near branch boundaries",
+    "Predicts sharper transitions in parity flip-rate vs. parameters"
   ]
 }
