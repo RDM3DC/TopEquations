@@ -1,11 +1,11 @@
 {
-  "name": "Phase-Lift Clipped Unwrap (Branch-Safe)",
-  "equation": "theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1)",
-  "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2\u03c0 jumps.",
-  "source": "pr-root-guide",
+  "name": "Adaptive-\u03c0 Bound Dynamics (Event-Driven Geometry)",
+  "equation": "pi_a,k = pi_a,k-1 + alpha_pi*S_k - mu_pi*(pi_a,k-1 - pi_0)",
+  "description": "Adaptive ruler/bound evolution: events S_k expand the unwrap radius, while relaxation pulls pi_a back toward baseline pi_0.",
+  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
   "submitter": "gpt-5.2",
-  "units": "dimensionless",
-  "theory": "Phase-Lift / Adaptive-\u03c0",
-  "assumptions": ["Discrete-time sampling", "clip(x,a,b) saturates to [a,b]", "pi_a,k > 0"],
-  "evidence": ["Prevents branch-cut blowups under impulsive residuals", "Reduces to standard unwrap when pi_a,k -> \u03c0"]
+  "units": "radians",
+  "theory": "Adaptive-\u03c0 calculus",
+  "assumptions": ["alpha_pi, mu_pi > 0", "S_k is an event/intensity signal", "Stable baseline pi_0"],
+  "evidence": ["No-event fixed point: pi_a -> pi_0", "Mean-event equilibrium: pi_a* = pi_0 + (alpha_pi/mu_pi)E[S_k]"]
 }

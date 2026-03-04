@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:36:32.364333+00:00",
+  "generated_at": "2026-03-04T04:38:28.450887+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "9510b79bec86042dbc71ccbb2266332ee9b70f91499c9411c491d92a4ad2afe8",
-  "count": 95,
+  "source_sha256": "62e61b5fede811de92ea73559fb42563832f401604bae8020baa81102858bdee",
+  "count": 96,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2416,6 +2416,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "ee35e66c62724c02912a84b7203dcfe6f371955c55b9a7968aff8bf37f6992bc"
+    },
+    {
+      "token_id": "eq-adaptive-bound-dynamics-event-driven-geometry",
+      "name": "Adaptive-\u03c0 Bound Dynamics (Event-Driven Geometry)",
+      "equation_latex": "pi_a,k = pi_a,k-1 + alpha_pi*S_k - mu_pi*(pi_a,k-1 - pi_0)",
+      "equation_hash": "e8411bd82dc4c2ba96a562e966cbb11c42b154c3c5554d052785565d8ea14704",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Adaptive ruler/bound evolution: events S_k expand the unwrap radius, while relaxation pulls pi_a back toward baseline pi_0.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "01b792d363216abc03534cd4ad8c0ee68cc02cede70b5a9c6b09f0df5c895c1f"
     },
     {
       "token_id": "famous-schrodinger",

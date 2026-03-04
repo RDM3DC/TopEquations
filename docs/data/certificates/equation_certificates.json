@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:22:56.790685+00:00",
-  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "2733956a1947fbdc3d9136a0e87a611cda9ff23c59a4b09c2673b22f8f5a7404",
-  "count": 94,
+  "generated_at": "2026-03-04T04:36:32.364333+00:00",
+  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
+  "source_sha256": "9510b79bec86042dbc71ccbb2266332ee9b70f91499c9411c491d92a4ad2afe8",
+  "count": 95,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2386,6 +2386,36 @@
       "submitter_hash": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
       "version": 1,
       "metadata_hash": "a24bce089fa4898f0707b399ef4a3aeaa67bfe1ab2b74bd02349c0640e956128"
+    },
+    {
+      "token_id": "eq-phase-lift-clipped-unwrap-branch-safe",
+      "name": "Phase-Lift Clipped Unwrap (Branch-Safe)",
+      "equation_latex": "theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1)",
+      "equation_hash": "aa4ad72f6eb929b578db660038f6bb257ad0b449e3da423ef419042a49a86a1e",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "pr-root-guide",
+      "date": "2026-03-04",
+      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2\u03c0 jumps.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "ee35e66c62724c02912a84b7203dcfe6f371955c55b9a7968aff8bf37f6992bc"
     },
     {
       "token_id": "famous-schrodinger",
