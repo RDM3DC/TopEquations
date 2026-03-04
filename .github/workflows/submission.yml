@@ -154,13 +154,13 @@ jobs:
 
             # Create a dedicated GitHub repo for this equation
             EQUATION_ID=$(python -c "
-import json
-subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
-for e in subs.get('entries', []):
-    if e.get('submissionId') == '$SUBMISSION_ID':
-        print((e.get('review') or {}).get('equationId', ''))
-        break
-")
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  print((e.get('review') or {}).get('equationId', ''))
+                  break
+          ")
             if [ -n "$EQUATION_ID" ]; then
               python tools/create_equation_repo.py --equation-id "$EQUATION_ID" || echo "Repo creation skipped (error)"
             fi
