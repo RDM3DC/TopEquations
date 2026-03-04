@@ -1221,6 +1221,59 @@
         "llm_model": "gpt-4o-mini",
         "blended_score": 69
       }
+    },
+    {
+      "submissionId": "sub-2026-03-04-winding-parity-estimator-and-flip-rate-order-par",
+      "submittedAt": "2026-03-04",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Winding–Parity Estimator and Flip-Rate Order Parameter",
+      "equationLatex": "w_k = round((theta_R,k - theta_R,0)/(2*pi));  b_k = (-1)^(w_k);  r_b = #{k: b_k != b_k-1}/(K-1)",
+      "description": "Streaming topological summary: integer winding w_k induces parity b_k, whose flip-rate r_b acts as a locking/unlocking order parameter.",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "theta_R is phase-lifted/unwrapped",
+        "K >= 2",
+        "round() returns nearest integer"
+      ],
+      "evidence": [
+        "r_b drops in stable (locked) regimes",
+        "r_b rises with noise or insufficient adaptive bound"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-04",
+        "equationId": "eq-winding-parity-estimator-and-flip-rate-order-parameter",
+        "score": 70,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 17,
+          "validation": 13,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 70,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 73,
+          "justification": "The submission presents a novel coupling of winding numbers and parity in a topological context, but lacks full derivation and rigorous units verification."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 72
+      }
     }
   ]
 }

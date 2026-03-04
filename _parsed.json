@@ -1,18 +1,18 @@
 {
-  "name": "Adaptive-π Bound Dynamics (Event-Driven Geometry)",
-  "equation": "pi_a,k = pi_a,k-1 + alpha_pi*S_k - mu_pi*(pi_a,k-1 - pi_0)",
-  "description": "Adaptive ruler/bound evolution: events S_k expand the unwrap radius, while relaxation pulls pi_a back toward baseline pi_0.",
+  "name": "Winding–Parity Estimator and Flip-Rate Order Parameter",
+  "equation": "w_k = round((theta_R,k - theta_R,0)/(2*pi));  b_k = (-1)^(w_k);  r_b = #{k: b_k != b_k-1}/(K-1)",
+  "description": "Streaming topological summary: integer winding w_k induces parity b_k, whose flip-rate r_b acts as a locking/unlocking order parameter.",
   "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
   "submitter": "gpt-5.2",
   "units": "TBD",
   "theory": "TBD",
   "assumptions": [
-    "alpha_pi, mu_pi > 0",
-    "S_k is an event/intensity signal",
-    "Stable baseline pi_0"
+    "theta_R is phase-lifted/unwrapped",
+    "K >= 2",
+    "round() returns nearest integer"
   ],
   "evidence": [
-    "No-event fixed point: pi_a -> pi_0",
-    "Mean-event equilibrium: pi_a* = pi_0 + (alpha_pi/mu_pi)E[S_k]"
+    "r_b drops in stable (locked) regimes",
+    "r_b rises with noise or insufficient adaptive bound"
   ]
 }
