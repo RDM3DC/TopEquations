@@ -1,11 +1,11 @@
 {
-  "name": "Entropy-Gated Complex Conductance (ARP Network)",
-  "equation": "d/dt G_tilde_ij = alpha_G(S)*|I_ij|*exp(i*theta_R,ij) - mu_G(S)*G_tilde_ij",
-  "description": "Complex conductance learning rule: reinforcement aligns conductance phase with resolved phase-lift angle; decay is entropy-gated via S.",
+  "name": "Entropy Production / Event Injection (S-Field)",
+  "equation": "dS/dt = Sum_ij (|I_ij|^2/T_ij)*Re(1/G_tilde_ij) + kappa*Sum_ij|Delta w_ij| - gamma_S*(S - S_eq)",
+  "description": "Entropy-like gating state: dissipative power term plus winding-discontinuity term inject S; relaxation returns S toward S_eq.",
   "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
   "submitter": "gpt-5.2",
-  "units": "siemens (complex)",
-  "theory": "ARP / entropy-gated adaptation",
-  "assumptions": ["alpha_G(S), mu_G(S) >= 0", "I_ij measurable", "theta_R,ij is Phase-Lift resolved"],
-  "evidence": ["Produces phase-coherent reinforcement under sustained current", "Allows adaptive forgetting under high-entropy regimes"]
+  "units": "arbitrary entropy units",
+  "theory": "Entropy-gated ARP / Phase-Lift events",
+  "assumptions": ["T_ij > 0", "gamma_S > 0", "G_tilde_ij not identically zero"],
+  "evidence": ["Couples physical dissipation to adaptation rates", "Injects events when phase winding mismatches occur"]
 }

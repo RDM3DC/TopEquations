@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:40:45.969262+00:00",
+  "generated_at": "2026-03-04T04:41:45.822264+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "29423150706db3c8f993864f372576294cab1c336fb367b29b53293be4d22ef5",
-  "count": 98,
+  "source_sha256": "6d2a5bfba2059efec78870dc5b22225966fc7722f437f198bc6006cab94bb9a8",
+  "count": 99,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2506,6 +2506,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "23e15cc0b549d6fbfd894a4d5290f64f6b53a694086d2c87259d6d93d9531952"
+    },
+    {
+      "token_id": "eq-entropy-production-event-injection-s-field",
+      "name": "Entropy Production / Event Injection (S-Field)",
+      "equation_latex": "dS/dt = Sum_ij (|I_ij|^2/T_ij)*Re(1/G_tilde_ij) + kappa*Sum_ij|Delta w_ij| - gamma_S*(S - S_eq)",
+      "equation_hash": "23f509b3bf6ba6697e83f983064d51717e24b235ad373e100d7badbdca771278",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Entropy-like gating state: dissipative power term plus winding-discontinuity term inject S; relaxation returns S toward S_eq.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "cfa9bb5fa6de560f0648a5009ba10d2f35cbca8b501cca1d11721041da4181c3"
     },
     {
       "token_id": "famous-schrodinger",
