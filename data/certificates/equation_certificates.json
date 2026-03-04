@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:39:32.281499+00:00",
+  "generated_at": "2026-03-04T04:40:45.969262+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "f7b89dbcc1d03c6736385893288585f6ba9a4f2005f0bd04c96a130dd6fde6e2",
-  "count": 97,
+  "source_sha256": "29423150706db3c8f993864f372576294cab1c336fb367b29b53293be4d22ef5",
+  "count": 98,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2476,6 +2476,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "b5368cadfcde668f90c393a3cbecdf8ba66b374c6eb1e0ce4a40673ed17bf14a"
+    },
+    {
+      "token_id": "eq-entropy-gated-complex-conductance-arp-network",
+      "name": "Entropy-Gated Complex Conductance (ARP Network)",
+      "equation_latex": "d/dt G_tilde_ij = alpha_G(S)*|I_ij|*exp(i*theta_R,ij) - mu_G(S)*G_tilde_ij",
+      "equation_hash": "84fb5222d513c95ce7be44926612fa00e64ed63f697fce21c76ba900e9bf610d",
+      "score": 71,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Complex conductance learning rule: reinforcement aligns conductance phase with resolved phase-lift angle; decay is entropy-gated via S.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "23e15cc0b549d6fbfd894a4d5290f64f6b53a694086d2c87259d6d93d9531952"
     },
     {
       "token_id": "famous-schrodinger",

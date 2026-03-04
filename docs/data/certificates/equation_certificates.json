@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:38:28.450887+00:00",
+  "generated_at": "2026-03-04T04:39:32.281499+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "62e61b5fede811de92ea73559fb42563832f401604bae8020baa81102858bdee",
-  "count": 96,
+  "source_sha256": "f7b89dbcc1d03c6736385893288585f6ba9a4f2005f0bd04c96a130dd6fde6e2",
+  "count": 97,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2446,6 +2446,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "01b792d363216abc03534cd4ad8c0ee68cc02cede70b5a9c6b09f0df5c895c1f"
+    },
+    {
+      "token_id": "eq-winding-parity-estimator-and-flip-rate-order-parameter",
+      "name": "Winding\u2013Parity Estimator and Flip-Rate Order Parameter",
+      "equation_latex": "w_k = round((theta_R,k - theta_R,0)/(2*pi));  b_k = (-1)^(w_k);  r_b = #{k: b_k != b_k-1}/(K-1)",
+      "equation_hash": "ff78cf788aa83fe18321f2f7f85678372ad9d62398c68cd6ddc94f3fee4d55c8",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Streaming topological summary: integer winding w_k induces parity b_k, whose flip-rate r_b acts as a locking/unlocking order parameter.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "b5368cadfcde668f90c393a3cbecdf8ba66b374c6eb1e0ce4a40673ed17bf14a"
     },
     {
       "token_id": "famous-schrodinger",
