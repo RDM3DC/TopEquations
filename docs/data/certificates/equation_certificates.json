@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:41:45.822264+00:00",
+  "generated_at": "2026-03-04T04:42:52.263058+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "6d2a5bfba2059efec78870dc5b22225966fc7722f437f198bc6006cab94bb9a8",
-  "count": 99,
+  "source_sha256": "9e0940a15409e6a1d24fb1bfad6a02cbff58edf555bd7ab3402ae4710680fc26",
+  "count": 100,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2536,6 +2536,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "cfa9bb5fa6de560f0648a5009ba10d2f35cbca8b501cca1d11721041da4181c3"
+    },
+    {
+      "token_id": "eq-phase-coupled-suppression-conductance-law",
+      "name": "Phase-Coupled Suppression Conductance Law",
+      "equation_latex": "d/dt G_ij = alpha*|I_ij| - mu*G_ij - lambda*G_ij*sin^2(theta_R,ij/(2*pi_a))",
+      "equation_hash": "c9baf70c48742bac27a44b1a14808fd2cdc100a1d916b3add19a9f29b161bd5d",
+      "score": 71,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Suppression extension: reinforcement/decay plus a phase-position penalty that activates when phase approaches the adaptive unwrap threshold pi_a.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "77f61b76f4902bce2910ae782b45cc283dfe3b0d3abeb006ac45559d27b78608"
     },
     {
       "token_id": "famous-schrodinger",

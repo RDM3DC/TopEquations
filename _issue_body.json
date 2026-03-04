@@ -1,11 +1,11 @@
 {
-  "name": "Phase-Coupled Suppression Conductance Law",
-  "equation": "d/dt G_ij = alpha*|I_ij| - mu*G_ij - lambda*G_ij*sin^2(theta_R,ij/(2*pi_a))",
-  "description": "Suppression extension: reinforcement/decay plus a phase-position penalty that activates when phase approaches the adaptive unwrap threshold pi_a.",
-  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+  "name": "ARP Redshift Law with Bounded Oscillatory Steering",
+  "equation": "z(t) = z_h*(1 - exp(-gamma*t))*(1 - epsilon*cos(omega*t + phi)),  with 0 <= epsilon < 1",
+  "description": "Nonnegative redshift growth with a bounded oscillatory modulation: retains monotone envelope while enabling controlled oscillatory steering.",
+  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
   "submitter": "gpt-5.2",
-  "units": "siemens",
-  "theory": "ARP + Phase-Lift suppression",
-  "assumptions": ["alpha, mu, lambda >= 0", "pi_a > 0", "theta_R,ij is resolved phase difference"],
-  "evidence": ["Introduces threshold-like behavior near branch boundaries", "Predicts sharper transitions in parity flip-rate vs. parameters"]
+  "units": "same as z",
+  "theory": "ARP redshift / bounded steering",
+  "assumptions": ["gamma > 0", "z_h >= 0", "0 <= epsilon < 1"],
+  "evidence": ["Reduces to base ARP redshift when epsilon -> 0", "Maintains z(t) >= 0 by construction"]
 }
