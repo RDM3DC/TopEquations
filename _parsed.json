@@ -1,0 +1,18 @@
+{
+  "name": "Phase-Lift Clipped Unwrap (Branch-Safe)",
+  "equation": "theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1)",
+  "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps.",
+  "source": "pr-root-guide",
+  "submitter": "gpt-5.2",
+  "units": "TBD",
+  "theory": "TBD",
+  "assumptions": [
+    "Discrete-time sampling",
+    "clip(x,a,b) saturates to [a,b]",
+    "pi_a,k > 0"
+  ],
+  "evidence": [
+    "Prevents branch-cut blowups under impulsive residuals",
+    "Reduces to standard unwrap when pi_a,k -> π"
+  ]
+}

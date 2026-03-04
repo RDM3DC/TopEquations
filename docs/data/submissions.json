@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-02-25",
+  "lastUpdated": "2026-03-04",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -1114,6 +1114,59 @@
           "artifactCompleteness": 4
         },
         "novelty": 29
+      }
+    },
+    {
+      "submissionId": "sub-2026-03-04-phase-lift-clipped-unwrap-branch-safe",
+      "submittedAt": "2026-03-04",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Phase-Lift Clipped Unwrap (Branch-Safe)",
+      "equationLatex": "theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1)",
+      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps.",
+      "source": "pr-root-guide",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "Discrete-time sampling",
+        "clip(x,a,b) saturates to [a,b]",
+        "pi_a,k > 0"
+      ],
+      "evidence": [
+        "Prevents branch-cut blowups under impulsive residuals",
+        "Reduces to standard unwrap when pi_a,k -> π"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-04",
+        "equationId": "eq-phase-lift-clipped-unwrap-branch-safe",
+        "score": 70,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 17,
+          "validation": 13,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 70,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 73,
+          "justification": "The submission provides a clear update mechanism that builds on existing phase-lifted frameworks, but lacks full derivation and rigorous unit checks."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 72
       }
     }
   ]

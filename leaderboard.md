@@ -1,5 +1,5 @@
 # Equation Leaderboard
-_Last updated: 2026-03-03_
+_Last updated: 2026-03-04_
 
 This is the canonical ranking board for existing and newly derived equations.
 
@@ -52,15 +52,16 @@ Scoring model (0-100):
 | 35 | Phase-Lifted Complex Conductance Update | \frac{d\tilde G_{ij}}{dt}=\alpha_G\,\|I_{ij}(t)\|\,e^{i\theta_{R,ij}(t)}-\mu_G\,\tilde G_{ij}(t),\qquad \theta_{R,ij}(t)=\mathrm{unwrap}\!\big(\arg I_{ij}(t);\theta_{\rm ref},\pi_a\big) | derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬ | 71 | 26 @ 2026-02-20 | OK | PASS-WITH-ASSUMPTIONS | ./assets/animations/Eq4PhaseLiftedComplexConductance.mp4 | planned | Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings. |
 | 36 | AHC Candidate Unwrap (standard 2π lift) | u_k=\mathrm{unwrap}(\phi_k;\theta_{R,k-1}) | Equation Sheet v1.1 §F (Eq.14) | 70 | 20 @ 2026-02-22 | OK | PASS | ./assets/animations/eq-ahc-candidate-unwrap.mp4 | planned | Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop. |
 | 37 | AHC Residual | r_k=u_k-\theta_{R,k-1} | Equation Sheet v1.1 §F (Eq.15) | 70 | 18 @ 2026-02-22 | OK | PASS | ./assets/animations/eq-ahc-residual.mp4 | planned | Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate. |
-| 38 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | 69 | 20 @ 2026-02-19 | OK | PASS | ./assets/animations/Eq10TempConductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
-| 39 | AHC Event Stimulus (phase-jump indicator) | S_k=\mathbf{1}\{\|r_k\|>\pi_{a,k-1}\} | Equation Sheet v1.1 §F (Eq.17) | 69 | 19 @ 2026-02-22 | OK | PASS | ./assets/animations/eq-ahc-event-stimulus.mp4 | planned | Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ \|Δ²θ_R\|. Triggers πₐ widening. |
-| 40 | Adaptive Entropy Production Rate (AEPR) | dS/dt = sigma_S * sum(G_ij * \|I_ij\|^2) - kappa_S * (S - S_0) - xi_S * S * r_b | Derived from EGATL Phase-Coupled Conductance framework | 69 | 19 @ 2026-02-24 | TBD | PASS-WITH-ASSUMPTIONS | planned | planned | Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy. |
+| 38 | Phase-Lift Clipped Unwrap (Branch-Safe) | theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1) | pr-root-guide | 70 | 19 @ 2026-03-04 | TBD | TBD | planned | planned | Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps. |
+| 39 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | 69 | 20 @ 2026-02-19 | OK | PASS | ./assets/animations/Eq10TempConductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
+| 40 | AHC Event Stimulus (phase-jump indicator) | S_k=\mathbf{1}\{\|r_k\|>\pi_{a,k-1}\} | Equation Sheet v1.1 §F (Eq.17) | 69 | 19 @ 2026-02-22 | OK | PASS | ./assets/animations/eq-ahc-event-stimulus.mp4 | planned | Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ \|Δ²θ_R\|. Triggers πₐ widening. |
+| 41 | Adaptive Entropy Production Rate (AEPR) | dS/dt = sigma_S * sum(G_ij * \|I_ij\|^2) - kappa_S * (S - S_0) - xi_S * S * r_b | Derived from EGATL Phase-Coupled Conductance framework | 69 | 19 @ 2026-02-24 | TBD | PASS-WITH-ASSUMPTIONS | planned | planned | Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy. |
 
 ## Newest Top-Ranked Equations (This Month)
 
 | Date | Equation Name | Score | Units | Theory | Animation | Image/Diagram | Short Description |
 | ------ | --------------- | ------- | ------- | -------- | ----------- | --------------- | ------------------- |
-| 2026-03 | (none yet) | - | - | - | planned | planned | No entries for this month yet. |
+| 2026-03-04 | Phase-Lift Clipped Unwrap (Branch-Safe) | 70 | TBD | TBD | planned | planned | Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps. |
 
 ## All Equations Since 2025 (Registry)
 
@@ -132,6 +133,7 @@ Scoring model (0-100):
 | 2026-02-24 | HLATN_White_Paper — eqn 10 | \\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}(\\mathrm{wrapTo}_\\pi(\\phi_e - \\theta_{R,e}), -\\pi_a, +\\pi_a) | HLATN_White_Paper_2026-02-24.pdf | PASS-WITH-ASSUMPTIONS | 50 | planned | planned |
 | 2026-02-25 | Topological Coherence Order Parameter (ARP Locking) | \Psi = \frac{1}{N_p} \sum_{p=1}^{N_p} \cos\!\left(\frac{\Theta_p}{\pi_a}\right) | claude-opus-4.6 | PASS | 92 | planned | planned |
 | 2026-02-25 | Mean-Event Equilibrium for Adaptive πₐ (discrete) | \pi_a^{\star} = \pi_0 + \frac{\alpha_{\pi}}{\mu_{\pi}}\,\mathbb{E}[S_k] | gpt-5.2 (PR Root Guide) | PASS-WITH-ASSUMPTIONS | 87 | planned | planned |
+| 2026-03-04 | Phase-Lift Clipped Unwrap (Branch-Safe) | theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1) | pr-root-guide | TBD | 70 | planned | planned |
 
 ## Update Rules
 
