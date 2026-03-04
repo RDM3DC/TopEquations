@@ -1,11 +1,11 @@
 {
-  "name": "ARP Redshift Law with Bounded Oscillatory Steering",
-  "equation": "z(t) = z_h*(1 - exp(-gamma*t))*(1 - epsilon*cos(omega*t + phi)),  with 0 <= epsilon < 1",
-  "description": "Nonnegative redshift growth with a bounded oscillatory modulation: retains monotone envelope while enabling controlled oscillatory steering.",
+  "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
+  "equation": "m_eff(epsilon) = m0/(1 - epsilon^2);  epsilon_c = sqrt(1 - (|m0|/2)^2)",
+  "description": "Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary.",
   "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
   "submitter": "gpt-5.2",
-  "units": "same as z",
-  "theory": "ARP redshift / bounded steering",
-  "assumptions": ["gamma > 0", "z_h >= 0", "0 <= epsilon < 1"],
-  "evidence": ["Reduces to base ARP redshift when epsilon -> 0", "Maintains z(t) >= 0 by construction"]
+  "units": "dimensionless mass parameter",
+  "theory": "Topological mass channel / adaptive ruler",
+  "assumptions": ["|epsilon| < 1", "QWZ model (standard), adaptive-ruler renormalization proposed here", "Chern boundary at |m|=2 (standard QWZ)"],
+  "evidence": ["Predicts a controllable topological transition via epsilon", "Divergence as |epsilon|->1 signals breakdown/criticality of the ruler"]
 }

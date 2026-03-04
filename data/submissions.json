@@ -1486,6 +1486,59 @@
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
       }
+    },
+    {
+      "submissionId": "sub-2026-03-04-adaptive-ruler-qwz-effective-mass-geometry-induc",
+      "submittedAt": "2026-03-04",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
+      "equationLatex": "m_eff(epsilon) = m0/(1 - epsilon^2);  epsilon_c = sqrt(1 - (|m0|/2)^2)",
+      "description": "Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary.",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "|epsilon| < 1",
+        "QWZ model (standard), adaptive-ruler renormalization proposed here",
+        "Chern boundary at |m|=2 (standard QWZ)"
+      ],
+      "evidence": [
+        "Predicts a controllable topological transition via epsilon",
+        "Divergence as |epsilon|->1 signals breakdown/criticality of the ruler"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-04",
+        "equationId": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
+        "score": 70,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 17,
+          "validation": 13,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 60,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 72,
+          "justification": "The submission builds on the QWZ framework with a new effective mass concept, but lacks full rigor and presentation clarity."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 71
+      }
     }
   ]
 }
