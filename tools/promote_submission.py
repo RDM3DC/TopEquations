@@ -145,6 +145,37 @@ def main() -> None:
 
     print(f"promoted: {args.submission_id} -> {eid} (score {total})")
 
+    # Rebuild leaderboard and site so local promotions are immediately visible.
+    try:
+        from tools.generate_leaderboard import main as _gen_lb
+        _gen_lb()
+        print("leaderboard.md rebuilt")
+    except Exception:
+        try:
+            import subprocess, sys
+            subprocess.run(
+                [sys.executable, str(REPO / "tools" / "generate_leaderboard.py")],
+                cwd=str(REPO), check=True,
+            )
+            print("leaderboard.md rebuilt (subprocess)")
+        except Exception as exc:
+            print(f"warning: leaderboard rebuild skipped: {exc}")
+
+    try:
+        from tools.build_site import main as _build_site
+        _build_site()
+        print("docs/*.html rebuilt")
+    except Exception:
+        try:
+            import subprocess, sys
+            subprocess.run(
+                [sys.executable, str(REPO / "tools" / "build_site.py")],
+                cwd=str(REPO), check=True,
+            )
+            print("docs/*.html rebuilt (subprocess)")
+        except Exception as exc:
+            print(f"warning: site rebuild skipped: {exc}")
+
 
 if __name__ == "__main__":
     main()
