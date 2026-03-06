@@ -12,11 +12,20 @@ body:
         Your submission will be scored automatically. If it meets the threshold, it gets promoted to the leaderboard,
         published on-chain, and you'll receive a signed receipt as a comment on this issue.
 
+        Required shape:
+        - Paste only a single JSON object for the equation itself.
+        - Do not paste CLI flags like `--name ...`.
+        - Do not paste a full GitHub API payload with wrapper keys like `title`, `labels`, or `body`.
+
+        Allowed enum values:
+        - `units`: `OK`, `WARN`, or `TBD`
+        - `theory`: `PASS`, `PASS-WITH-ASSUMPTIONS`, `FAIL`, or `TBD`
+
   - type: textarea
     id: submission_json
     attributes:
       label: Submission JSON
-      description: "A single JSON object with the required fields."
+      description: "A single equation JSON object. Use only the allowed enum values for units/theory."
       placeholder: |
         {
           "name": "Adaptive Damped Harmonic Oscillator",
@@ -25,7 +34,7 @@ body:
           "source": "grok-xai",
           "submitter": "your-username",
           "units": "OK",
-          "theory": "PASS",
+          "theory": "PASS-WITH-ASSUMPTIONS",
           "assumptions": ["Linear damping regime"],
           "evidence": ["Reduces to standard DHO when π_α → π"]
         }
