@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-03-06",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -1538,6 +1538,61 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 71
+      }
+    },
+    {
+      "submissionId": "sub-2026-03-06-phase-resolved-operator-general",
+      "submittedAt": "2026-03-06",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Phase-Resolved Operator (General)",
+      "equationLatex": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
+      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+      "source": "Option C theory (branch-honest analog computing)",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "z_k ∈ ℂ \\ {0}",
+        "θ_k = Arg(z_k) is the principal branch",
+        "wrap_pi(x) maps x to (-π, π]",
+        "clip(x, a, b) saturates to [a,b]",
+        "π_a,k > 0"
+      ],
+      "evidence": [
+        "PRO outputs are single-valued and continuous on the lifted cover",
+        "Branch fault rate reduces versus principal branch for log/sqrt/pow functions"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-06",
+        "equationId": "eq-phase-resolved-operator-general",
+        "score": 71,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 17,
+          "validation": 14,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 80,
+          "rigor": 60,
+          "assumptions": 80,
+          "presentation": 70,
+          "novelty_insight": 70,
+          "fruitfulness": 80,
+          "llm_total": 73,
+          "justification": "The Phase-Resolved Operator provides a clean extension to existing phase-lifted frameworks, though it lacks full derivation and rigorous unit checks."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 72
       }
     }
   ]

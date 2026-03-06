@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-04T04:43:57.243464+00:00",
+  "generated_at": "2026-03-06T00:26:53.024692+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "83b925b98fdf33151988aff91a0ae4dde4a32a9c32c453380412110bc65cf935",
-  "count": 101,
+  "source_sha256": "bd2480418f1417667919021a22693e2cdae1d1871625ceea9c8650d105f483da",
+  "count": 102,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2596,6 +2596,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "9ce8a3dd138b260c35e037b2a103a0d78e1fb93baf51b9b44515ef3e063d808f"
+    },
+    {
+      "token_id": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
+      "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
+      "equation_latex": "m_eff(epsilon) = m0/(1 - epsilon^2);  epsilon_c = sqrt(1 - (|m0|/2)^2)",
+      "equation_hash": "1abc090698182468e6d8b745f02aa6c79c0175b5ae76f5871a6215481b7d6c34",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-04"
+      },
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
+      "date": "2026-03-04",
+      "description": "Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "867118fd90a33a9cc40e9413086ff1fecf9ec5bdb97d64772e4e8b6ed7ebab75"
     },
     {
       "token_id": "famous-schrodinger",

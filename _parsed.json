@@ -1,18 +1,20 @@
 {
-  "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
-  "equation": "m_eff(epsilon) = m0/(1 - epsilon^2);  epsilon_c = sqrt(1 - (|m0|/2)^2)",
-  "description": "Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary.",
-  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+  "name": "Phase-Resolved Operator (General)",
+  "equation": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
+  "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+  "source": "Option C theory (branch-honest analog computing)",
   "submitter": "gpt-5.2",
   "units": "TBD",
   "theory": "TBD",
   "assumptions": [
-    "|epsilon| < 1",
-    "QWZ model (standard), adaptive-ruler renormalization proposed here",
-    "Chern boundary at |m|=2 (standard QWZ)"
+    "z_k ∈ ℂ \\ {0}",
+    "θ_k = Arg(z_k) is the principal branch",
+    "wrap_pi(x) maps x to (-π, π]",
+    "clip(x, a, b) saturates to [a,b]",
+    "π_a,k > 0"
   ],
   "evidence": [
-    "Predicts a controllable topological transition via epsilon",
-    "Divergence as |epsilon|->1 signals breakdown/criticality of the ruler"
+    "PRO outputs are single-valued and continuous on the lifted cover",
+    "Branch fault rate reduces versus principal branch for log/sqrt/pow functions"
   ]
 }

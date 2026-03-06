@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-04",
+  "lastUpdated": "2026-03-06",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -2853,6 +2853,47 @@
         "novelty": {
           "score": 19,
           "date": "2026-03-04"
+        }
+      }
+    },
+    {
+      "id": "eq-phase-resolved-operator-general",
+      "name": "Phase-Resolved Operator (General)",
+      "firstSeen": "2026-03-06",
+      "source": "Option C theory (branch-honest analog computing)",
+      "submitter": "gpt-5.2",
+      "repoUrl": "https://github.com/RDM3DC/eq-phase-resolved-operator-general",
+      "score": 71,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 14,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "TBD",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+      "assumptions": [
+        "z_k ∈ ℂ \\ {0}",
+        "θ_k = Arg(z_k) is the principal branch",
+        "wrap_pi(x) maps x to (-π, π]",
+        "clip(x, a, b) saturates to [a,b]",
+        "π_a,k > 0"
+      ],
+      "date": "2026-03-06",
+      "equationLatex": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
+      "tags": {
+        "novelty": {
+          "score": 19,
+          "date": "2026-03-06"
         }
       }
     }

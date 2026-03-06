@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T00:26:53.024692+00:00",
+  "generated_at": "2026-03-06T01:51:41.606586+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "bd2480418f1417667919021a22693e2cdae1d1871625ceea9c8650d105f483da",
-  "count": 102,
+  "source_sha256": "6d5d1bf1859b5b0ee6b0c1b356128982f08960e000f3f3a978df7f048b1faa2f",
+  "count": 103,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2626,6 +2626,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "867118fd90a33a9cc40e9413086ff1fecf9ec5bdb97d64772e4e8b6ed7ebab75"
+    },
+    {
+      "token_id": "eq-phase-resolved-operator-general",
+      "name": "Phase-Resolved Operator (General)",
+      "equation_latex": "\u29d2f(z_k) = f(|z_k|, \u03b8_R,k),  \u03b8_R,k = \u03b8_R,k-1 + clip(wrap_pi(\u03b8_k - \u03b8_k-1), -\u03c0_a,k-1, \u03c0_a,k-1)",
+      "equation_hash": "00e48641fcbc8c96111b60bb86fe5d63762c5204fafab12b3b6ab0e5542cf99c",
+      "score": 71,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 14,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-06"
+      },
+      "source": "Option C theory (branch-honest analog computing)",
+      "date": "2026-03-06",
+      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (\u03b8_R) of a complex signal to eliminate branch-cut discontinuities. Applies to \u29d2log, \u29d2sqrt, \u29d2pow and other analytic functions.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "a54978773f609321cf173130ed04e8d054a5768b5b737ef1a408b3af979ccaf0"
     },
     {
       "token_id": "famous-schrodinger",
