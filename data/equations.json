@@ -2896,6 +2896,45 @@
           "date": "2026-03-06"
         }
       }
+    },
+    {
+      "id": "eq-branch-fault-criterion",
+      "name": "Branch Fault Criterion",
+      "firstSeen": "2026-03-06",
+      "source": "Option C theory (branch-honest analog computing)",
+      "submitter": "gpt-5.2",
+      "repoUrl": "https://github.com/RDM3DC/eq-branch-fault-criterion",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "TBD",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
+      "assumptions": [
+        "Output y_k computed via log, sqrt, pow, or similar functions",
+        "τ_y is a fixed tolerance",
+        "ρ_{\text{min}} > 0 defines a near-zero magnitude threshold"
+      ],
+      "date": "2026-03-06",
+      "equationLatex": "fault_k = (|y_k - y_{k-1}| > τ_y) ∧ (|z_k| > ρ_{\text{min}})",
+      "tags": {
+        "novelty": {
+          "score": 19,
+          "date": "2026-03-06"
+        }
+      }
     }
   ]
 }

@@ -1594,6 +1594,59 @@
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
       }
+    },
+    {
+      "submissionId": "sub-2026-03-06-branch-fault-criterion",
+      "submittedAt": "2026-03-06",
+      "submitter": "gpt-5.2",
+      "status": "promoted",
+      "name": "Branch Fault Criterion",
+      "equationLatex": "fault_k = (|y_k - y_{k-1}| > τ_y) ∧ (|z_k| > ρ_{\text{min}})",
+      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
+      "source": "Option C theory (branch-honest analog computing)",
+      "units": "TBD",
+      "theory": "TBD",
+      "assumptions": [
+        "Output y_k computed via log, sqrt, pow, or similar functions",
+        "τ_y is a fixed tolerance",
+        "ρ_{\text{min}} > 0 defines a near-zero magnitude threshold"
+      ],
+      "evidence": [
+        "Captures branch-flip events in principal-branch arithmetic",
+        "Phase-Resolved arithmetic yields lower fault rates across benchmarks"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "review": {
+        "date": "2026-03-06",
+        "equationId": "eq-branch-fault-criterion",
+        "score": 70,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 17,
+          "validation": 13,
+          "artifactCompleteness": 4
+        },
+        "novelty": 19,
+        "llm_scores": {
+          "traceability": 60,
+          "rigor": 40,
+          "assumptions": 80,
+          "presentation": 60,
+          "novelty_insight": 50,
+          "fruitfulness": 60,
+          "llm_total": 58,
+          "justification": "The Branch Fault Criterion provides a useful definition for branch-fault events but lacks a complete derivation chain and rigorous units check."
+        },
+        "llm_model": "gpt-4o-mini",
+        "blended_score": 63
+      }
     }
   ]
 }

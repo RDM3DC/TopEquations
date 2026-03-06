@@ -1,20 +1,18 @@
 {
-  "name": "Phase-Resolved Operator (General)",
-  "equation": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
-  "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+  "name": "Branch Fault Criterion",
+  "equation": "fault_k = (|y_k - y_{k-1}| > τ_y) ∧ (|z_k| > ρ_{\text{min}})",
+  "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
   "source": "Option C theory (branch-honest analog computing)",
   "submitter": "gpt-5.2",
   "units": "TBD",
   "theory": "TBD",
   "assumptions": [
-    "z_k ∈ ℂ \\ {0}",
-    "θ_k = Arg(z_k) is the principal branch",
-    "wrap_pi(x) maps x to (-π, π]",
-    "clip(x, a, b) saturates to [a,b]",
-    "π_a,k > 0"
+    "Output y_k computed via log, sqrt, pow, or similar functions",
+    "τ_y is a fixed tolerance",
+    "ρ_{\text{min}} > 0 defines a near-zero magnitude threshold"
   ],
   "evidence": [
-    "PRO outputs are single-valued and continuous on the lifted cover",
-    "Branch fault rate reduces versus principal branch for log/sqrt/pow functions"
+    "Captures branch-flip events in principal-branch arithmetic",
+    "Phase-Resolved arithmetic yields lower fault rates across benchmarks"
   ]
 }

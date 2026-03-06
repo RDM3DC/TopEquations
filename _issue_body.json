@@ -1,11 +1,11 @@
 {
-  "name": "Phase-Resolved Operator (General)",
-  "equation": "\u29D2f(z_k) = f(|z_k|, \u03b8_R,k),  \u03b8_R,k = \u03b8_R,k-1 + clip(wrap_pi(\u03b8_k - \u03b8_k-1), -\u03c0_a,k-1, \u03c0_a,k-1)",
-  "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (\u03b8_R) of a complex signal to eliminate branch-cut discontinuities. Applies to \u29d2log, \u29d2sqrt, \u29d2pow and other analytic functions.",
+  "name": "Branch Fault Criterion",
+  "equation": "fault_k = (|y_k - y_{k-1}| > \u03c4_y) \u2227 (|z_k| > \u03c1_{\text{min}})",
+  "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance \u03c4_y and the input magnitude stays above a near-zero threshold \u03c1_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
   "source": "Option C theory (branch-honest analog computing)",
   "submitter": "gpt-5.2",
-  "units": "function-specific (same as f)",
-  "theory": "Branch-Honest Analog Computing / Phase-Lift",
-  "assumptions": ["z_k \u2208 \u2102 \\ {0}", "\u03b8_k = Arg(z_k) is the principal branch", "wrap_pi(x) maps x to (-\u03c0, \u03c0]", "clip(x, a, b) saturates to [a,b]", "\u03c0_a,k > 0"],
-  "evidence": ["PRO outputs are single-valued and continuous on the lifted cover", "Branch fault rate reduces versus principal branch for log/sqrt/pow functions"]
+  "units": "boolean",
+  "theory": "Branch-Honest Analog Computing / fault metric",
+  "assumptions": ["Output y_k computed via log, sqrt, pow, or similar functions", "\u03c4_y is a fixed tolerance", "\u03c1_{\text{min}} > 0 defines a near-zero magnitude threshold"],
+  "evidence": ["Captures branch-flip events in principal-branch arithmetic", "Phase-Resolved arithmetic yields lower fault rates across benchmarks"]
 }

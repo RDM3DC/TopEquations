@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T01:51:41.606586+00:00",
+  "generated_at": "2026-03-06T01:55:21.616125+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "6d5d1bf1859b5b0ee6b0c1b356128982f08960e000f3f3a978df7f048b1faa2f",
-  "count": 103,
+  "source_sha256": "d3bf8b0db9294c193c24e858f2202e8e6e180ec872cfa193be0b3b429dfd0a35",
+  "count": 104,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2656,6 +2656,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "a54978773f609321cf173130ed04e8d054a5768b5b737ef1a408b3af979ccaf0"
+    },
+    {
+      "token_id": "eq-branch-fault-criterion",
+      "name": "Branch Fault Criterion",
+      "equation_latex": "fault_k = (|y_k - y_{k-1}| > \u03c4_y) \u2227 (|z_k| > \u03c1_{\text{min}})",
+      "equation_hash": "02c26bf7eee5ded75a2a4a1a2312eb89fa84724fd37a44b6f02a3dbb28465fa7",
+      "score": 70,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 13,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-06"
+      },
+      "source": "Option C theory (branch-honest analog computing)",
+      "date": "2026-03-06",
+      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance \u03c4_y and the input magnitude stays above a near-zero threshold \u03c1_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
+      "units": "TBD",
+      "theory": "TBD",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
+      "version": 1,
+      "metadata_hash": "9592e2a69cd755f38eee7f6dc04abbeeed4c54a528c07580b0e4ebe528faf763"
     },
     {
       "token_id": "famous-schrodinger",
