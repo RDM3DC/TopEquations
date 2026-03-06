@@ -242,7 +242,7 @@ def main() -> None:
     ap.add_argument("--include-promoted", action="store_true", help="Allow rescoring submissions already promoted")
     ap.add_argument("--sync-equations", action="store_true", help="When rescoring promoted submissions, sync score back to equations.json")
     ap.add_argument("--llm", action="store_true", help="Run LLM advisory scoring and compute blended score (40%% heuristic + 60%% LLM)")
-    ap.add_argument("--llm-model", default=os.environ.get("LLM_SCORE_MODEL", "gpt-4o-mini"))
+    ap.add_argument("--llm-model", default=os.environ.get("LLM_SCORE_MODEL", "gpt-5.4"))
     ap.add_argument("--llm-api-base", default=os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1"))
     ap.add_argument("--manual-score", type=int, default=-1, help="Override final score with a manual value (0-100)")
     args = ap.parse_args()

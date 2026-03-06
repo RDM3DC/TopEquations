@@ -40,7 +40,7 @@ POSTS = [
             "**How the gate works:**\n"
             "- Layer 1 (40%): Deterministic heuristic - counts LaTeX commands, checks structure, "
             "validates assumptions. No LLM. No way to 'instruct' it.\n"
-            "- Layer 2 (60%): GPT-4o judge with fixed system prompt, temperature 0.0, "
+            "- Layer 2 (60%): GPT-5.4 judge with fixed system prompt, temperature 0.0, "
             "calibration anchors baked in.\n"
             "- Blended: 40/60 mix. Score >= 65 auto-promotes to the leaderboard.\n\n"
             "**What we think you CAN exploit:**\n"

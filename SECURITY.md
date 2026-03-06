@@ -17,7 +17,7 @@ Submission (untrusted)
             │
             ▼
 ┌─────────────────────────┐
-│  LLM Advisory Judge      │  ← GPT-4o with fixed system prompt.
+│  LLM Advisory Judge      │  ← GPT-5.4 with fixed system prompt.
 │  (Layer 2 — 60% weight)  │     Advisory only. Cannot promote or reject alone.
 └───────────┬─────────────┘
             │

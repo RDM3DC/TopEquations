@@ -883,7 +883,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
         <td><strong>LLM Judge</strong></td>
         <td>60%</td>
         <td>Quality assessment (advisory)</td>
-        <td>6-category weighted rubric (GPT-4o): traceability 22%, rigor 20%, assumptions 15%, presentation 13%, novelty 15%, fruitfulness 15%</td>
+        <td>6-category weighted rubric (GPT-5.4): traceability 22%, rigor 20%, assumptions 15%, presentation 13%, novelty 15%, fruitfulness 15%</td>
       </tr>
       <tr>
         <td><strong>Blended</strong></td>

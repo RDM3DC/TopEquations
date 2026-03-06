@@ -117,7 +117,7 @@ No LLM involved — fully deterministic and prompt-injection-proof.
 Score ≥ 65 → auto-promoted to leaderboard.
 
 ### Layer 2: Calibrated LLM Review (advisory)
-A GPT-4o-mini review with fixed calibration anchors (Schrödinger ~85, Euler identity ~45, tautology ~5). Scores five axes:
+A GPT-5.4 review with fixed calibration anchors (Schrödinger ~85, Euler identity ~45, tautology ~5). Scores five axes:
 
 - **Physical validity** (0-20) — dimensional consistency, derivability
 - **Novelty** (0-20) — defaults to LOW; must prove it's genuinely new
