@@ -147,6 +147,17 @@ jobs:
           echo "status=$STATUS" >> "$GITHUB_OUTPUT"
           echo "Score: $SCORE, Status: $STATUS"
 
+          DUPLICATE_WARNING=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  warnings = e.get('duplicateWarnings', []) or []
+                  print(' | '.join(str(x) for x in warnings))
+                  break
+          ")
+          echo "duplicate_warning=$DUPLICATE_WARNING" >> "$GITHUB_OUTPUT"
+
           # Promote if ready (score >= 65)
           if [ "$STATUS" = "ready" ]; then
             python tools/promote_submission.py --submission-id "$SUBMISSION_ID" --from-review
@@ -223,6 +234,7 @@ jobs:
             const promoted = '${{ steps.pipeline.outputs.promoted }}' === 'true';
             const llmTotal = '${{ steps.pipeline.outputs.llm_total }}';
             const blended = '${{ steps.pipeline.outputs.blended }}';
+            const duplicateWarning = '${{ steps.pipeline.outputs.duplicate_warning }}';
 
             let body = `## Submission Receipt\n\n`;
             body += `| Field | Value |\n|-------|-------|\n`;
@@ -240,6 +252,10 @@ jobs:
             } else {
               body += `Your equation scored below the auto-promotion threshold (65). `;
               body += `It's queued for manual review by the project maintainer.\n`;
+            }
+
+            if (duplicateWarning) {
+              body += `\n**Duplicate check:** ${duplicateWarning}\n`;
             }
 
             body += `\n---\n*Processed by the TopEquations pipeline. Heuristic gate is deterministic; LLM quality score is advisory only.*`;

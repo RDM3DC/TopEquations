@@ -3,11 +3,13 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 SUBMISSIONS_JSON = REPO / "data" / "submissions.json"
+EQUATIONS_JSON = REPO / "data" / "equations.json"
 SUBMISSIONS_DIR = REPO / "submissions"
 
 
@@ -21,6 +23,12 @@ def _slug(s: str) -> str:
     return s[:48] or "equation"
 
 
+def _normalize_text(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s or "")
+    s = s.lower().strip()
+    return re.sub(r"\s+", " ", s)
+
+
 def _load_json(path: Path, default: dict) -> dict:
     if not path.exists():
         return default
@@ -29,6 +37,45 @@ def _load_json(path: Path, default: dict) -> dict:
 
 def _save_json(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _find_duplicate_warnings(db: dict, equations: dict, name: str, equation_latex: str) -> list[str]:
+    warnings: list[str] = []
+    normalized_name = _normalize_text(name)
+    normalized_equation = _normalize_text(equation_latex)
+
+    promoted_name_matches = [
+        str(e.get("id", "")).strip()
+        for e in equations.get("entries", [])
+        if _normalize_text(str(e.get("name", ""))) == normalized_name
+    ]
+    if promoted_name_matches:
+        warnings.append(
+            "Exact name match with promoted equation(s): " + ", ".join(promoted_name_matches[:5])
+        )
+
+    promoted_equation_matches = [
+        str(e.get("id", "")).strip()
+        for e in equations.get("entries", [])
+        if normalized_equation and _normalize_text(str(e.get("equationLatex", ""))) == normalized_equation
+    ]
+    if promoted_equation_matches:
+        warnings.append(
+            "Exact equation match with promoted equation(s): " + ", ".join(promoted_equation_matches[:5])
+        )
+
+    pending_matches = [
+        str(e.get("submissionId", "")).strip()
+        for e in db.get("entries", [])
+        if _normalize_text(str(e.get("name", ""))) == normalized_name
+        and str(e.get("status", "")).lower() != "promoted"
+    ]
+    if pending_matches:
+        warnings.append(
+            "Exact name match with existing submission(s): " + ", ".join(pending_matches[:5])
+        )
+
+    return warnings
 
 
 def _append_daily_markdown(entry: dict) -> None:
@@ -88,6 +135,7 @@ def main() -> None:
             "entries": [],
         },
     )
+    equations = _load_json(EQUATIONS_JSON, {"entries": []})
 
     existing_ids = {str(e.get("submissionId")) for e in db.get("entries", [])}
     i = 2
@@ -95,6 +143,8 @@ def main() -> None:
     while submission_id in existing_ids:
         submission_id = f"{base_id}-{i}"
         i += 1
+
+    duplicate_warnings = _find_duplicate_warnings(db, equations, args.name.strip(), args.equation.strip())
 
     entry = {
         "submissionId": submission_id,
@@ -111,6 +161,7 @@ def main() -> None:
         "evidence": [x.strip() for x in args.evidence if x.strip()],
         "animation": {"status": "planned", "path": ""},
         "image": {"status": "planned", "path": ""},
+        "duplicateWarnings": duplicate_warnings,
         "review": {},
     }
 
@@ -121,6 +172,8 @@ def main() -> None:
 
     print(f"submitted: {submission_id}")
     print(f"queue file: {SUBMISSIONS_JSON}")
+    for warning in duplicate_warnings:
+        print(f"duplicate-warning: {warning}")
 
 
 if __name__ == "__main__":
