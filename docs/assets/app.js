@@ -30,11 +30,19 @@
     const mode = sortBy ? sortBy.value : 'rank';
     const visible = items.slice();
     visible.sort((a,b)=>{
+      const dateA = Date.parse(a.getAttribute('data-date') || '') || 0;
+      const dateB = Date.parse(b.getAttribute('data-date') || '') || 0;
       if(mode === 'score-desc'){
         return (parseFloat(b.getAttribute('data-score')||'0') - parseFloat(a.getAttribute('data-score')||'0'));
       }
       if(mode === 'score-asc'){
         return (parseFloat(a.getAttribute('data-score')||'0') - parseFloat(b.getAttribute('data-score')||'0'));
+      }
+      if(mode === 'date-desc'){
+        return dateB - dateA;
+      }
+      if(mode === 'date-asc'){
+        return dateA - dateB;
       }
       return (parseInt(a.getAttribute('data-rank')||'0',10) - parseInt(b.getAttribute('data-rank')||'0',10));
     });

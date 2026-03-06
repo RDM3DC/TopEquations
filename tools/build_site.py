@@ -579,8 +579,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
           extra += f"<div class='kv'><div class='k'>Repository</div><div class='v'><a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>"
 
         cards.append(
-            f"""
-<section class='card' data-rank='{i}' data-score='{_esc(score)}' data-haslatex='{has_latex}'>
+          f"""
+    <section class='card' data-rank='{i}' data-score='{_esc(score)}' data-date='{_esc(date)}' data-haslatex='{has_latex}'>
   <div class='card__rank'>#{i}</div>
   <div class='card__body'>
     <div class='card__head'>
@@ -635,6 +635,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
           <select id='sortBy'>
             <option value='score-desc' selected>Score ↓</option>
             <option value='score-asc'>Score ↑</option>
+            <option value='date-desc'>Date added ↓</option>
+            <option value='date-asc'>Date added ↑</option>
             <option value='rank'>Rank</option>
           </select>
         </label>
