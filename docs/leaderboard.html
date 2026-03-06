@@ -14,10 +14,10 @@
   <meta name='twitter:title' content='TopEquations — Leaderboard' />
   <meta name='twitter:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202603060432' />
+  <link rel='stylesheet' href='./assets/style.css?v=202603052045' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202603060432'></script>
+  <script defer src='./assets/app.js?v=202603052045'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -1025,8 +1025,38 @@
 </section>
 
 
-    <section class='card' data-rank='32' data-score='76' data-date='2026-02-22' data-haslatex='1'>
+    <section class='card' data-rank='32' data-score='77' data-date='2026-03-06' data-haslatex='1'>
   <div class='card__rank'>#32</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>History-Resolved Phase with Adaptive Ruler</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 77</span>
+        <span class='pill pill--neutral' title='units'>TBD</span>
+        <span class='pill pill--neutral' title='theory'>TBD</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>wrap(x) returns a principal argument in (-pi, pi]</li><li>clip(x, a, b) saturates x to the interval [a,b]</li><li>pi_a &gt; 0 and evolves according to an adaptive-ruler law</li><li>alpha_G(S) &gt; 0 is an entropy-gated gain</li><li>Full ablation modes allow turning off lift, adaptive ruler, and suppression</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-history-resolved-phase-with-adaptive-ruler'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-history-resolved-phase-with-adaptive-ruler' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-03-06</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class='card' data-rank='33' data-score='76' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#33</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive πₐ Update (discrete)</h2>
@@ -1055,8 +1085,8 @@
 </section>
 
 
-    <section class='card' data-rank='33' data-score='76' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#33</div>
+    <section class='card' data-rank='34' data-score='76' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#34</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Real-Space Chern Marker (Bianco–Resta, Open Boundaries)</h2>
@@ -1085,8 +1115,8 @@
 </section>
 
 
-    <section class='card' data-rank='34' data-score='73' data-date='2026-02-21' data-haslatex='1'>
-  <div class='card__rank'>#34</div>
+    <section class='card' data-rank='35' data-score='73' data-date='2026-02-21' data-haslatex='1'>
+  <div class='card__rank'>#35</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -1110,36 +1140,6 @@
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-21</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation/blob/main/images/ARPRedshiftLawBridge.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation/blob/main/images/eq-bounded-oscillatory-redshift.png' target='_blank' rel='noopener'>link</a></div></div>
-    </div>
-  </div>
-</section>
-
-
-    <section class='card' data-rank='35' data-score='72' data-date='2026-03-06' data-haslatex='1'>
-  <div class='card__rank'>#35</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>History-Resolved Phase with Adaptive Ruler</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 72</span>
-        <span class='pill pill--neutral' title='units'>TBD</span>
-        <span class='pill pill--neutral' title='theory'>TBD</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>wrap(x) returns a principal argument in (-pi, pi]</li><li>clip(x, a, b) saturates x to the interval [a,b]</li><li>pi_a &gt; 0 and evolves according to an adaptive-ruler law</li><li>alpha_G(S) &gt; 0 is an entropy-gated gain</li><li>Full ablation modes allow turning off lift, adaptive ruler, and suppression</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-history-resolved-phase-with-adaptive-ruler'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-history-resolved-phase-with-adaptive-ruler' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-03-06</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
@@ -1690,7 +1690,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-03-06 04:32</strong></div>
+      <div>Last built: <strong>2026-03-05 20:45</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>

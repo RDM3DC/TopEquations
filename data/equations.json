@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-05",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -2943,7 +2943,7 @@
       "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-phase-with-adaptive-ruler",
-      "score": 72,
+      "score": 77,
       "scores": {
         "tractability": 17,
         "plausibility": 17,
@@ -2973,7 +2973,17 @@
       "tags": {
         "novelty": {
           "score": 19,
-          "date": "2026-03-06"
+          "date": "2026-03-05"
+        },
+        "llm": {
+          "traceability": 86,
+          "rigor": 72,
+          "assumptions": 81,
+          "presentation": 78,
+          "novelty_insight": 74,
+          "fruitfulness": 88,
+          "llm_total": 80,
+          "justification": "A strong, minimal extension that clearly builds on LB #1/#2 by specifying the missing history-resolved phase update with explicit branch-memory behavior and ablation relevance, but it loses points for incomplete units/theory verification and the lack of a full derivation/recovery chain."
         }
       }
     }

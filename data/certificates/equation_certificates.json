@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T04:32:09.759895+00:00",
-  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "03316c7637179dcdfe3817e1e30879edc986dacfb6e211b61f747bd49d380e83",
+  "generated_at": "2026-03-06T04:45:00.390408+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "7994b1c6455c2e168c44f49a371163ef56797d598984dd806e9f902563224a1d",
   "count": 105,
   "entries": [
     {
@@ -2692,7 +2692,7 @@
       "name": "History-Resolved Phase with Adaptive Ruler",
       "equation_latex": "theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)",
       "equation_hash": "28fb8c69bf15cb4cbbf524a4f19a9239ec0dd7be6cf6375ff176945dfad2fcad",
-      "score": 72,
+      "score": 77,
       "scores": {
         "tractability": 17,
         "plausibility": 17,
@@ -2701,7 +2701,7 @@
       },
       "novelty": {
         "score": 19,
-        "date": "2026-03-06"
+        "date": "2026-03-05"
       },
       "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
       "date": "2026-03-06",
@@ -2715,7 +2715,7 @@
       "tier": "derived",
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
-      "metadata_hash": "759c5c3fcc897c739eefd1c2bad54da2213df090960bc96f4987e28c99b2df77"
+      "metadata_hash": "c2f04a04eb60b917faf0654e56723ebc1bbb07bc99aa6ccd980047680d6dc7fc"
     },
     {
       "token_id": "famous-schrodinger",
