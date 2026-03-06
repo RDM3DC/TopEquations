@@ -1,11 +1,11 @@
 {
-  "name": "Branch Fault Criterion",
-  "equation": "fault_k = (|y_k - y_{k-1}| > \u03c4_y) \u2227 (|z_k| > \u03c1_{\text{min}})",
-  "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance \u03c4_y and the input magnitude stays above a near-zero threshold \u03c1_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
-  "source": "Option C theory (branch-honest analog computing)",
+  "name": "History-Resolved Phase with Adaptive Ruler",
+  "equation": "theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)",
+  "description": "Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.",
+  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
   "submitter": "gpt-5.2",
-  "units": "boolean",
-  "theory": "Branch-Honest Analog Computing / fault metric",
-  "assumptions": ["Output y_k computed via log, sqrt, pow, or similar functions", "\u03c4_y is a fixed tolerance", "\u03c1_{\text{min}} > 0 defines a near-zero magnitude threshold"],
-  "evidence": ["Captures branch-flip events in principal-branch arithmetic", "Phase-Resolved arithmetic yields lower fault rates across benchmarks"]
+  "units": "radians",
+  "theory": "History-resolved adaptive complex networks",
+  "assumptions": ["wrap(x) returns a principal argument in (-pi, pi]", "clip(x, a, b) saturates x to the interval [a,b]", "pi_a > 0 and evolves according to an adaptive-ruler law", "alpha_G(S) > 0 is an entropy-gated gain", "Full ablation modes allow turning off lift, adaptive ruler, and suppression"],
+  "evidence": ["Simulation tests show that branch-resolved phase trajectories diverge from principal-branch baselines when winding histories differ despite identical present amplitudes", "Parity-linked regime transitions emerge when adaptive pi_a and S-gated alpha_G are enabled", "Ablation studies confirm that lifting and the adaptive ruler are necessary to observe branch-memory effects"]
 }

@@ -2935,6 +2935,47 @@
           "date": "2026-03-06"
         }
       }
+    },
+    {
+      "id": "eq-history-resolved-phase-with-adaptive-ruler",
+      "name": "History-Resolved Phase with Adaptive Ruler",
+      "firstSeen": "2026-03-06",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
+      "submitter": "gpt-5.2",
+      "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-phase-with-adaptive-ruler",
+      "score": 72,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "TBD",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.",
+      "assumptions": [
+        "wrap(x) returns a principal argument in (-pi, pi]",
+        "clip(x, a, b) saturates x to the interval [a,b]",
+        "pi_a > 0 and evolves according to an adaptive-ruler law",
+        "alpha_G(S) > 0 is an entropy-gated gain",
+        "Full ablation modes allow turning off lift, adaptive ruler, and suppression"
+      ],
+      "date": "2026-03-06",
+      "equationLatex": "theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)",
+      "tags": {
+        "novelty": {
+          "score": 19,
+          "date": "2026-03-06"
+        }
+      }
     }
   ]
 }
