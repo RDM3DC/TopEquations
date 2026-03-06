@@ -82,7 +82,7 @@ def main() -> None:
 
     # Use blended score from review if available, or manual override
     if args.manual_score >= 0:
-        total = _clamp(args.manual_score, 0, 100)
+        total = _clamp(args.manual_score, 0, 150)
     elif args.from_review:
         review = entry.get("review", {}) or {}
         if review.get("blended_score"):

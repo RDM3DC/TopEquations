@@ -179,6 +179,12 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         desc = e.get("description", "")
         src = e.get("source", "")
         url = e.get("sourceUrl", "")
+        repo_url = e.get("repoUrl", "")
+        repo_link = (
+            f"<a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a>"
+            if repo_url
+            else "<span class='muted'>-</span>"
+        )
         total_score, rb = _rubric_score(e)
         units = str(e.get("units", "WARN")).upper()
         theory = str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).upper()
@@ -209,7 +215,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Canonical source</div><div class='v'><a href='{_esc(url)}' target='_blank' rel='noopener'>{_esc(url)}</a></div></div>
-      <div class='kv'><div class='k'>Repository</div><div class='v'>{("<a href='" + _esc(e.get('repoUrl','')) + "' target='_blank' rel='noopener'>equation repo &rarr;</a>") if e.get('repoUrl') else '<span class=\'muted\'>—</span>'}</div></div>
+      <div class='kv'><div class='k'>Repository</div><div class='v'>{repo_link}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
     </div>
@@ -392,6 +398,7 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         if not isinstance(assumptions, list):
             assumptions = [str(assumptions)]
         assumptions_html = "".join(f"<li>{_esc(a)}</li>" for a in assumptions if str(a).strip())
+        assumptions_block = f"<ul class='ul'>{assumptions_html}</ul>" if assumptions_html else "None listed."
         core_refs_html = ", ".join(f"<a href='core.html#{_esc(r)}'>{_esc(r)}</a>" for r in core_refs) if core_refs else "—"
         theory_css = "warn"
         if theory == "PASS":
@@ -399,6 +406,12 @@ def build_famous(repo_root: Path, docs: Path) -> None:
         elif theory == "FAIL":
             theory_css = "bad"
         subtitle_html = f"<div class='card__subtitle muted'>{_esc(subtitle)}</div>" if subtitle else ""
+        repo_url = (e.get("repoUrl") or "").strip()
+        repo_link = (
+          f"<a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a>"
+          if repo_url
+          else "<span class='muted'>-</span>"
+        )
 
         famous_cards.append(
             f"""
@@ -429,12 +442,12 @@ def build_famous(repo_root: Path, docs: Path) -> None:
       <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
       <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
       <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{('<ul class=\'ul\'>' + assumptions_html + '</ul>') if assumptions_html else 'None listed.'}</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{assumptions_block}</div></div>
       <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
       <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
       <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
       <div class='kv'><div class='k'>Core refs</div><div class='v'>{core_refs_html}</div></div>
-      <div class='kv'><div class='k'>Repository</div><div class='v'>{("<a href='" + _esc(e.get('repoUrl','')) + "' target='_blank' rel='noopener'>equation repo &rarr;</a>") if e.get('repoUrl') else '<span class=\'muted\'>—</span>'}</div></div>
+      <div class='kv'><div class='k'>Repository</div><div class='v'>{repo_link}</div></div>
     </div>
   </div>
 </section>
@@ -542,10 +555,16 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
         # Point animation/image links to the equation repo when available
         def _repo_artifact(obj, repo_url):
-            if isinstance(obj, dict) and obj.get("path", "").strip() and repo_url:
-                fname = Path(obj["path"]).name
-                url = f"{repo_url}/blob/main/images/{fname}"
-                return f"<a href='{_esc(url)}' target='_blank' rel='noopener'>link</a>"
+          if isinstance(obj, dict):
+            path = obj.get("path", "").strip()
+            if not path:
+              return _artifact(obj)
+            if re.match(r"^[a-z]+://", path, re.IGNORECASE):
+              return _artifact(obj)
+            if repo_url:
+              fname = Path(path).name
+              url = f"{repo_url}/blob/main/images/{fname}"
+              return f"<a href='{_esc(url)}' target='_blank' rel='noopener'>link</a>"
             return _artifact(obj)
 
         anim = _repo_artifact(e.get("animation"), repo_url)

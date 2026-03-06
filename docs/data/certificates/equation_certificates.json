@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T04:45:00.390408+00:00",
+  "generated_at": "2026-03-06T06:54:40.722639+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "7994b1c6455c2e168c44f49a371163ef56797d598984dd806e9f902563224a1d",
+  "source_sha256": "61d7739f841d52200b8c5b13225d36006df164404e0a33272a5a870d096361e0",
   "count": 105,
   "entries": [
     {
@@ -923,13 +923,13 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
-        "animation": "",
+        "animation": "https://raw.githubusercontent.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks/main/history_resolved_phase_animation.gif",
         "image": ""
       },
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "562292b6b71b153231e635a4a03315ae61baa96ac06b79aea5a416393b948ef4"
+      "metadata_hash": "95413a0892601c50596c94e9774b81462f8b0fe9db2317391812edd3937900a2"
     },
     {
       "token_id": "eq-curve-memory-137",
@@ -1013,13 +1013,13 @@
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
-        "animation": "",
+        "animation": "https://raw.githubusercontent.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks/main/history_resolved_phase_animation.gif",
         "image": ""
       },
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "fbcc184d8b6bc9f97a2ba6c738f96c11cb6adb812f184d646649d18c4058fee9"
+      "metadata_hash": "56c12a9e2d04d6a23b3fef8157c304edc74bee044c634b8c36d68b8bea50664b"
     },
     {
       "token_id": "eq-dyn-constants-union",
@@ -2690,32 +2690,32 @@
     {
       "token_id": "eq-history-resolved-phase-with-adaptive-ruler",
       "name": "History-Resolved Phase with Adaptive Ruler",
-      "equation_latex": "theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)",
-      "equation_hash": "28fb8c69bf15cb4cbbf524a4f19a9239ec0dd7be6cf6375ff176945dfad2fcad",
-      "score": 77,
+      "equation_latex": "\\theta_R^{+}=\\theta_R+\\operatorname{clip}\\!\\left(\\operatorname{wrap}\\!\\left(\\theta_{\\mathrm{raw}}-\\theta_R\\right),-\\pi_a,+\\pi_a\\right)",
+      "equation_hash": "0ea8c453b5ff67197651cbfd6ba861cccf98ac56875d1ca973c70d282002018c",
+      "score": 102,
       "scores": {
-        "tractability": 17,
+        "tractability": 19,
         "plausibility": 17,
-        "validation": 15,
-        "artifactCompleteness": 4
+        "validation": 20,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 19,
+        "score": 30,
         "date": "2026-03-05"
       },
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
+      "source": "Builds on White Paper 01 (ARP/AIN), White Paper 02 (Adaptive-pi), White Paper 04 (Phase-Lift / PR-Root), and hafc_sim2.py",
       "date": "2026-03-06",
-      "description": "Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.",
-      "units": "TBD",
-      "theory": "TBD",
+      "description": "Contribution. This submission is a lineage-preserving branch-resolved state update for phase-lifted entropy-gated adaptive conductance, not a new number system. It builds on White Paper 01 (ARP/AIN) for the canonical reinforce/decay law dG_ij/dt = alpha_G |I_ij| - mu_G G_ij, White Paper 02 (Adaptive-pi) for d pi_a/dt = alpha_pi S - mu_pi (pi_a - pi_0), White Paper 04 (Phase-Lift / PR-Root) for resolved-phase continuity and winding/parity bookkeeping, the leaderboard's Phase (Adler/RSJ) Dynamics entry for the locked-versus-slip phase backbone, and hafc_sim2.py for the first integrated implementation. The novelty claim is not just smoother unwrapping: theta_R resolves the parity-winding loop under S-gated pi_a, making branch history an operational state variable that is invisible to the principal branch yet still changes the next conductance update through the suppression term. In the matched-present protocol, the principal baseline collapses back to delta theta ~= 0 while the full model retains delta theta_R ~= 2 pi with different winding and parity under the same resumed raw phase. More strongly, the new onset-map benchmark shows a protocol-level regime boundary rather than a one-off trajectory: across pi_0 in {pi/4, pi/3, pi/2, 2 pi/3, 3 pi/4}, the principal baseline stays collapsed for omega_end = 8 to 20, while the full model turns on branch memory sharply at omega_end = 12, jumping from delta theta_R ~= 0 and suppression ~= 0 below threshold to delta theta_R ~= 2 pi with suppression gaps from 3.348226e-03 to 1.092192e-01 at and above threshold. Derivation bridge: data/artifacts/history_resolved_phase_derivation.md now writes the substep-to-full-law chain explicitly, from I_e = G_e(phi_i - phi_j) and theta_raw = arg(I_e), through the clipped resolved update and winding/parity state, into the entropy/ruler closure and finally the full conductance law G_e^+ = G_e + dt [alpha_G(S) |I_e| exp(i theta_R,e) - mu_G(S) G_e - lambda_s G_e sin^2(theta_R,e / (2 pi_a))]. Recovery / limiting cases: real nonnegative conductance with theta_R = 0, lambda_s = 0, and constant alpha_G, mu_G recovers canonical ARP; principal mode sets theta_R = theta_raw directly and therefore removes branch memory by construction; alpha_pi = 0 with pi_a(0) = pi_0 removes adaptive-ruler dynamics; lambda_s = 0 removes suppression. Units: [G] = S, [dG/dt] = S/s, [lambda_s] = 1/s, pi_a is dimensionless, [alpha_pi] = 1/s, and [mu_pi] = 1/s for dimensionless entropy proxy S. Executable replication: tools/benchmark_history_resolved_phase.py runs the local hrphasenet package plus upstream pytest and reproduces every scorer-facing check from Python, not by hand. Benchmarks: the monodromy test tracks one full winding in 100 steps and returns theta_R ~= 2 pi with w = 1 and b = -1; the deformation table over epsilon = 0.00 to 0.20 keeps lifted slip at 0 while the standard branch slips by 1 and improves visibility from 0.7047 to 1.0000; the matched-present history-divergence protocol asserts max |delta G| > 1e-6 after a 30/50/30 warm-up, extra-chirp, and resume sequence; the matched-present state-separation protocol keeps raw phase matched to ~7e-14 while preserving full-model delta theta_R ~= 2 pi and opposite winding/parity; the operational memory-gap protocol keeps current magnitudes matched to ~2e-13 yet yields a full-model suppression gap of about 1.04e-01 while the principal baseline remains at ~0; the chirp-threshold sweep over omega_end = 12, 16, 20 repeats the same outcome across the whole regime, with principal delta theta_R staying near 1e-13 while the full model stays at 2 pi and keeps suppression gaps from 1.034409e-01 to 1.058581e-01; the onset phase diagram over pi_0 and omega_end shows parity-winding closure appearing at the same omega_end = 12 threshold for every tested pi_0. Boundedness tests keep |G| < 1e6 over 200 steps and pi_a in [0.01, pi] over 100 periodic steps. Falsifiers: failure of the monodromy/parity benchmark, failure of matched-present divergence, failure of the matched-present state-separation, operational memory-gap, chirp-threshold sweep, or onset-phase-diagram parity-winding closure benchmarks, failure of the near-zero freeze safeguard, or ablation recovery not returning to the principal-branch or ARP-style limits within numerical tolerance.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
-        "animation": "",
-        "image": ""
+        "animation": "https://raw.githubusercontent.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks/main/history_resolved_phase_animation.gif",
+        "image": "https://raw.githubusercontent.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks/main/history_resolved_phase_poster.png"
       },
       "tier": "derived",
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
-      "metadata_hash": "c2f04a04eb60b917faf0654e56723ebc1bbb07bc99aa6ccd980047680d6dc7fc"
+      "metadata_hash": "fd95710cc211ac7a437a52c15afbed1f214e236350caa088ccf6a818e9437e3d"
     },
     {
       "token_id": "famous-schrodinger",

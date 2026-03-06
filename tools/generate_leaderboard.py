@@ -46,7 +46,7 @@ def generate(input_path: Path, output_path: Path) -> None:
     lines.append("")
     lines.append("This is the canonical ranking board for existing and newly derived equations.")
     lines.append("")
-    lines.append("Scoring model (0-100):")
+    lines.append("Scoring model (0-150):")
     lines.append("- Tractability (0-20)")
     lines.append("- Physical plausibility (0-20)")
     lines.append("- Validation bonus (0-20)")

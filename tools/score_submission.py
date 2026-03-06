@@ -206,6 +206,12 @@ def _sync_equation_score(submission: dict, metrics: dict[str, int]) -> bool:
     updated = False
     for row in eq_data.get("entries", []):
         if str(row.get("id", "")).strip() == eq_id:
+            for field in ("source", "units", "theory", "description", "equationLatex"):
+                if field in submission:
+                    row[field] = submission.get(field)
+            for field in ("assumptions", "animation", "image"):
+                if field in submission:
+                    row[field] = submission.get(field)
             row["score"] = metrics["score"]
             row["scores"] = {
                 "tractability": metrics["tractability"],
@@ -282,7 +288,7 @@ def main() -> None:
 
         # Manual override takes precedence over everything
         if args.manual_score >= 0:
-            final_score = _clamp(args.manual_score, 0, 100)
+            final_score = _clamp(args.manual_score, 0, 150)
             method = "manual-override"
             metrics["manual_score"] = final_score
         elif blended is not None:
