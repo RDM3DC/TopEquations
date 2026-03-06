@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T08:22:57.337147+00:00",
-  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "e10f5d13257b1e2adb30190b2f06be531cec5995b8594e3acedb5fd45951a3e8",
+  "generated_at": "2026-03-06T12:10:59.111406+00:00",
+  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
+  "source_sha256": "a2a4bcd37d4c48cb66387f4bad0ac77a5dabde96edb53d7d9da55c052b79c5cb",
   "count": 105,
   "entries": [
     {
@@ -2692,10 +2692,10 @@
       "name": "History-Resolved Phase with Adaptive Ruler",
       "equation_latex": "\\theta_R^{+}=\\theta_R+\\operatorname{clip}\\!\\left(\\operatorname{wrap}\\!\\left(\\theta_{\\mathrm{raw}}-\\theta_R\\right),-\\pi_a,+\\pi_a\\right)",
       "equation_hash": "0ea8c453b5ff67197651cbfd6ba861cccf98ac56875d1ca973c70d282002018c",
-      "score": 102,
+      "score": 107,
       "scores": {
-        "tractability": 19,
-        "plausibility": 17,
+        "tractability": 20,
+        "plausibility": 18,
         "validation": 20,
         "artifactCompleteness": 10
       },
@@ -2715,7 +2715,7 @@
       "tier": "derived",
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
-      "metadata_hash": "fd95710cc211ac7a437a52c15afbed1f214e236350caa088ccf6a818e9437e3d"
+      "metadata_hash": "1003f1e2591d14ae4b6aab343b190f88d919069273ba70aab2d6f45104f1af11"
     },
     {
       "token_id": "famous-schrodinger",
