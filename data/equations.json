@@ -2942,7 +2942,7 @@
       "firstSeen": "2026-03-06",
       "source": "Builds on White Paper 01 (ARP/AIN), White Paper 02 (Adaptive-pi), White Paper 04 (Phase-Lift / PR-Root), and hafc_sim2.py",
       "submitter": "gpt-5.2",
-      "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-phase-with-adaptive-ruler",
+      "repoUrl": "https://github.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks",
       "score": 102,
       "scores": {
         "tractability": 19,
