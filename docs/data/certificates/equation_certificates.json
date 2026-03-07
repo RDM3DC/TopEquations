@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-07T01:24:25.636358+00:00",
+  "generated_at": "2026-03-07T04:19:22.818519+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "83c5111d3c369b83b3ad48cdc768fd397a2707bf7cd641f975d4f1389b7ba2de",
-  "count": 105,
+  "source_sha256": "593ed22aba19d509da2fde99f64e9b0619e84f8f526941cee1e5d40447ef4cf6",
+  "count": 106,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2716,6 +2716,36 @@
       "submitter_hash": "131e2083b68bde4fe879efc38ed9651b1623f8735eeb42157fa3b63ef943fdc6",
       "version": 1,
       "metadata_hash": "1003f1e2591d14ae4b6aab343b190f88d919069273ba70aab2d6f45104f1af11"
+    },
+    {
+      "token_id": "eq-phase-lift-commutator-bound",
+      "name": "Phase-Lift Commutator Bound",
+      "equation_latex": "\\|[\\hat{\\theta}_R, \\hat{\\pi}_a]\\| \\leq \\hbar_{\\mathrm{eff}} = \\pi_a / w",
+      "equation_hash": "7566049c5cabf3f6fe4f479bb116a8501163f306138ca7256c1ca72c678ccf58",
+      "score": 72,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 22,
+        "date": "2026-03-06"
+      },
+      "source": "ARP Phase-Lift axioms",
+      "date": "2026-03-06",
+      "description": "Upper bound on the commutator of the lifted-phase operator and the adaptive ruler, analogous to the Heisenberg uncertainty relation. The effective Planck constant is set by the ratio of the adaptive period to winding number, linking quantum-like uncertainty to topological charge.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2d1e830624b2572adc05351a7cbee2d3aa3f6a52b34fa38a260c9c78f96fcd07",
+      "version": 1,
+      "metadata_hash": "769e194d61c9c096d9de9a2a065e5666b44495e3b404b49d16ca27cbb9fe4d5c"
     },
     {
       "token_id": "famous-schrodinger",

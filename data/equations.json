@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-05",
+  "lastUpdated": "2026-03-06",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -2987,6 +2987,44 @@
           "fruitfulness": 99,
           "llm_total": 97,
           "justification": "Exemplary lineage-preserving extension that explicitly builds on White Papers 01/02/04 plus LB #4 and integrated simulator artifacts, with strong derivation/recovery clauses, units and benchmark coverage, and immediate simulation readiness; novelty is meaningful but intentionally minimal rather than paradigm-shifting."
+        }
+      }
+    },
+    {
+      "id": "eq-phase-lift-commutator-bound",
+      "name": "Phase-Lift Commutator Bound",
+      "firstSeen": "2026-03-06",
+      "source": "ARP Phase-Lift axioms",
+      "submitter": "Ryan",
+      "repoUrl": "https://github.com/RDM3DC/eq-phase-lift-commutator-bound",
+      "score": 72,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 17,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Upper bound on the commutator of the lifted-phase operator and the adaptive ruler, analogous to the Heisenberg uncertainty relation. The effective Planck constant is set by the ratio of the adaptive period to winding number, linking quantum-like uncertainty to topological charge.",
+      "assumptions": [
+        "Phase-Lift operators are well-defined on the Hilbert space of square-integrable sections",
+        "Winding number w is nonzero"
+      ],
+      "date": "2026-03-06",
+      "equationLatex": "\\|[\\hat{\\theta}_R, \\hat{\\pi}_a]\\| \\leq \\hbar_{\\mathrm{eff}} = \\pi_a / w",
+      "tags": {
+        "novelty": {
+          "score": 22,
+          "date": "2026-03-06"
         }
       }
     }
