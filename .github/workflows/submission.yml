@@ -24,6 +24,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install solver dependencies
+        run: |
+          pip install numpy scipy
+          pip install git+https://github.com/RDM3DC/History-Resolved-Phase-as-a-State-Variable-in-Adaptive-Complex-Networks.git || echo "hrphasenet install skipped (solver checks will be skipped)"
+
       - name: Extract submission JSON from issue body
         id: extract
         uses: actions/github-script@v7
@@ -121,8 +126,8 @@ jobs:
           echo "submission_id=$SUBMISSION_ID" >> "$GITHUB_OUTPUT"
           echo "Submitted: $SUBMISSION_ID"
 
-          # Score
-          python tools/score_submission.py --submission-id "$SUBMISSION_ID" --mark-ready-threshold 65
+          # Score (with solver verification if hrphasenet is available)
+          python tools/score_submission.py --submission-id \"$SUBMISSION_ID\" --mark-ready-threshold 65 --solver
 
           # Read score result
           SCORE=$(python -c "
@@ -207,6 +212,23 @@ jobs:
             echo "llm_total=N/A" >> "$GITHUB_OUTPUT"
           fi
 
+          # Read solver verification status
+          SOLVER_STATUS=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  sv = (e.get('review') or {}).get('solver_verification', {})
+                  if sv:
+                      p = sv.get('passed_count', 0)
+                      t = sv.get('total_count', 0)
+                      print(f'{p}/{t} passed' if sv.get('passed') else f'{p}/{t} (FAIL)')
+                  else:
+                      print('N/A')
+                  break
+          " 2>/dev/null || echo "N/A")
+          echo "solver_status=$SOLVER_STATUS" >> "$GITHUB_OUTPUT"
+
           # Rebuild leaderboard and site
           python tools/generate_leaderboard.py
           python tools/build_site.py
@@ -235,6 +257,7 @@ jobs:
             const llmTotal = '${{ steps.pipeline.outputs.llm_total }}';
             const blended = '${{ steps.pipeline.outputs.blended }}';
             const duplicateWarning = '${{ steps.pipeline.outputs.duplicate_warning }}';
+            const solverStatus = '${{ steps.pipeline.outputs.solver_status }}';
 
             let body = `## Submission Receipt\n\n`;
             body += `| Field | Value |\n|-------|-------|\n`;
@@ -242,6 +265,7 @@ jobs:
             body += `| Heuristic Score | **${score}** / 100 |\n`;
             body += `| LLM Quality Score | **${llmTotal}** / 100 |\n`;
             body += `| Blended Score | **${blended}** / 100 |\n`;
+            body += `| Solver Verification | ${solverStatus} |\n`;
             body += `| Status | ${status} |\n`;
             body += `| Promoted | ${promoted ? '✅ Yes — added to leaderboard' : '⏳ Needs review (score < 65)'} |\n`;
             body += `| Chain publish | 🕐 Pending next local publish cycle |\n\n`;

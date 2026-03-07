@@ -251,6 +251,7 @@ def main() -> None:
     ap.add_argument("--llm-model", default=os.environ.get("LLM_SCORE_MODEL", "gpt-5.4"))
     ap.add_argument("--llm-api-base", default=os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1"))
     ap.add_argument("--manual-score", type=int, default=-1, help="Override final score with a manual value (0-100)")
+    ap.add_argument("--solver", action="store_true", help="Run solver verification checks and boost validation score if benchmarks pass")
     args = ap.parse_args()
 
     api_key = os.environ.get("OPENAI_API_KEY", "")
@@ -271,6 +272,34 @@ def main() -> None:
         metrics = _heuristic(e)
         heuristic_score = metrics["score"]
         method = "heuristic-v2"
+
+        # Solver verification layer — run computational benchmarks if available
+        solver_result = None
+        if args.solver:
+            try:
+                from tools.run_solver_checks import run_checks_for_submission, solver_validation_boost
+                solver_result = run_checks_for_submission(e)
+                if solver_result is not None:
+                    boost = solver_validation_boost(solver_result)
+                    if boost > 0:
+                        metrics["validation"] = _clamp(metrics["validation"] + boost, 0, 20)
+                        # Recalculate total with boosted validation
+                        metrics["score"] = (
+                            metrics["tractability"] + metrics["plausibility"]
+                            + metrics["validation"] + metrics["artifactCompleteness"]
+                            + metrics["novelty"]
+                        )
+                        heuristic_score = metrics["score"]
+                    metrics["solver_result"] = solver_result
+                    sp = solver_result.get("passed_count", 0)
+                    st = solver_result.get("total_count", 0)
+                    print(f"  solver: {sp}/{st} checks passed (+{boost} validation)")
+                else:
+                    print(f"  solver: no verifier for this equation")
+            except ImportError:
+                print(f"  solver: hrphasenet not installed — skipping")
+            except Exception as exc:
+                print(f"  solver: ERROR — {exc}")
 
         # LLM advisory layer
         llm_scores = None
@@ -320,6 +349,13 @@ def main() -> None:
             review["blended_score"] = blended
         if args.manual_score >= 0:
             review["manual_score"] = args.manual_score
+        if solver_result is not None and solver_result.get("status") == "completed":
+            review["solver_verification"] = {
+                "passed": solver_result.get("pass", False),
+                "passed_count": solver_result.get("passed_count", 0),
+                "total_count": solver_result.get("total_count", 0),
+                "equation_id": solver_result.get("equation_id", ""),
+            }
         e["review"] = review
 
         if status != "promoted":

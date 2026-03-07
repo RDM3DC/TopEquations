@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-03-07T00:23:55.209169+00:00",
+  "results": [
+    {
+      "equation_id": "eq-egatl-hlatn-adaptiveruler",
+      "checks": {
+        "boundedness": {
+          "max_abs_G": 0.8382,
+          "entropy_nonneg": true,
+          "pi_a": 1.618,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-hlatn-plaquette-holonomy",
+      "checks": {
+        "plaquette_holonomy": {
+          "theta_p": 3.112044,
+          "winding_p": 0,
+          "edge_phases": [
+            -1.58384,
+            2.526817,
+            -1.408651,
+            -0.760416
+          ],
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-history-resolved-phase-with-adaptive-ruler",
+      "checks": {
+        "monodromy": {
+          "theta_R": 6.283185,
+          "winding": 1,
+          "parity": -1,
+          "pass": true
+        },
+        "history_divergence": {
+          "max_delta_G": 0.25856546,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 2,
+      "total_count": 2,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-hlatn-plaquette-holonomy",
+      "checks": {
+        "plaquette_holonomy": {
+          "theta_p": 3.112044,
+          "winding_p": 0,
+          "edge_phases": [
+            -1.58384,
+            2.526817,
+            -1.408651,
+            -0.760416
+          ],
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-paper1-chern-marker-bianco-resta",
+      "checks": {
+        "chern_marker": {
+          "C_bulk": 0.9969,
+          "expected": 1.0,
+          "error": 0.0031,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-paper1-slip-asymptote",
+      "checks": {
+        "slip_dynamics": {
+          "theta_R_max": 54.89,
+          "theta_R_nonzero": true,
+          "r_b_computable": true,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-qwz-chern-hamiltonian",
+      "checks": {
+        "m=-1.0": {
+          "C": -1,
+          "expected": -1,
+          "pass": true
+        },
+        "m=1.0": {
+          "C": 1,
+          "expected": 1,
+          "pass": true
+        },
+        "m=-3.0": {
+          "C": 0,
+          "expected": 0,
+          "pass": true
+        },
+        "m=3.0": {
+          "C": 0,
+          "expected": 0,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 4,
+      "total_count": 4,
+      "status": "completed"
+    },
+    {
+      "equation_id": "eq-topological-coherence-order-parameter-arp-locking",
+      "checks": {
+        "coherence_transition": {
+          "psi_locked": 0.9966,
+          "psi_chaotic": -0.3837,
+          "locked_more_coherent": true,
+          "pass": true
+        }
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "total": 8
+  }
+}
