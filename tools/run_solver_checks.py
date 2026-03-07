@@ -597,6 +597,128 @@ def _verify_famous_einstein() -> dict:
     return r
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# Core Equations — 14 verifiers (C1–C14) via AdaptiveCAD-Manim solver
+# ═══════════════════════════════════════════════════════════════════════════
+
+def _core(func_name: str) -> dict:
+    """Import and run a core-equation function from the cadmanim solver."""
+    import importlib
+    import sys as _sys
+    cadmanim_str = str(_CADMANIM)
+    if cadmanim_str not in _sys.path:
+        _sys.path.insert(0, cadmanim_str)
+    mod = importlib.import_module("solver.core")
+    fn = getattr(mod, func_name)
+    raw = fn()
+    passed = bool(raw.get("pass", False))
+    return {
+        "equation_id": raw.get("name", func_name),
+        "checks": {k: v for k, v in raw.items() if k not in ("name", "pass")},
+        "pass": passed,
+        "passed_count": 1 if passed else 0,
+        "total_count": 1,
+    }
+
+
+@_register("core-phase-ambiguity")
+def _verify_core_phase_ambiguity() -> dict:
+    r = _core("phase_ambiguity")
+    r["equation_id"] = "core-phase-ambiguity"
+    return r
+
+
+@_register("core-phase-lift")
+def _verify_core_phase_lift() -> dict:
+    r = _core("phase_lift_operator")
+    r["equation_id"] = "core-phase-lift"
+    return r
+
+
+@_register("core-unwrap-rule")
+def _verify_core_unwrap_rule() -> dict:
+    r = _core("deterministic_unwrap")
+    r["equation_id"] = "core-unwrap-rule"
+    return r
+
+
+@_register("core-path-continuity")
+def _verify_core_path_continuity() -> dict:
+    r = _core("path_continuity")
+    r["equation_id"] = "core-path-continuity"
+    return r
+
+
+@_register("core-pr-root")
+def _verify_core_pr_root() -> dict:
+    r = _core("pr_root")
+    r["equation_id"] = "core-pr-root"
+    return r
+
+
+@_register("core-winding-parity")
+def _verify_core_winding_parity() -> dict:
+    r = _core("winding_parity")
+    r["equation_id"] = "core-winding-parity"
+    return r
+
+
+@_register("core-conformal-metric")
+def _verify_core_conformal_metric() -> dict:
+    r = _core("conformal_metric")
+    r["equation_id"] = "core-conformal-metric"
+    return r
+
+
+@_register("core-adaptive-arc-length")
+def _verify_core_adaptive_arc_length() -> dict:
+    r = _core("adaptive_arc_length")
+    r["equation_id"] = "core-adaptive-arc-length"
+    return r
+
+
+@_register("core-pi-a")
+def _verify_core_pi_a() -> dict:
+    r = _core("adaptive_pi_limit")
+    r["equation_id"] = "core-pi-a"
+    return r
+
+
+@_register("core-pi-a-dynamics")
+def _verify_core_pi_a_dynamics() -> dict:
+    r = _core("pi_a_dynamics")
+    r["equation_id"] = "core-pi-a-dynamics"
+    return r
+
+
+@_register("core-arp-ode")
+def _verify_core_arp_ode() -> dict:
+    r = _core("arp_core_law")
+    r["equation_id"] = "core-arp-ode"
+    return r
+
+
+@_register("core-curvature-salience")
+def _verify_core_curvature_salience() -> dict:
+    r = _core("curvature_salience")
+    r["equation_id"] = "core-curvature-salience"
+    return r
+
+
+@_register("core-reinforce-decay-memory")
+def _verify_core_memory_law() -> dict:
+    r = _core("memory_law")
+    r["equation_id"] = "core-reinforce-decay-memory"
+    return r
+
+
+@_register("core-phase-lifted-stokes")
+def _verify_core_stokes() -> dict:
+    r = _core("stokes_quantization")
+    r["equation_id"] = "core-phase-lifted-stokes"
+    return r
+
+
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
@@ -703,8 +825,23 @@ def main() -> None:
             "results": results,
             "summary": {"passed": passed, "total": len(results)},
         }
+
+        class _Encoder(json.JSONEncoder):
+            def default(self, o):
+                try:
+                    import numpy as np
+                    if isinstance(o, (np.bool_, np.integer)):
+                        return int(o)
+                    if isinstance(o, np.floating):
+                        return float(o)
+                    if isinstance(o, np.ndarray):
+                        return o.tolist()
+                except ImportError:
+                    pass
+                return super().default(o)
+
         out = REPO / "data" / "solver_verification_report.json"
-        out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        out.write_text(json.dumps(report, indent=2, ensure_ascii=False, cls=_Encoder) + "\n", encoding="utf-8")
         print(f"Report: {out}")
         return
 

@@ -1,6 +1,346 @@
 {
-  "generated_at": "2026-03-07T00:28:57.172254+00:00",
+  "generated_at": "2026-03-07T00:35:32.801265+00:00",
   "results": [
+    {
+      "equation_id": "core-adaptive-arc-length",
+      "checks": {
+        "L_flat": 1.0,
+        "L_ramp": 1.5,
+        "L_ramp_exact": 1.5,
+        "L_bump": 1.501325367452393
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-arp-ode",
+      "checks": {
+        "n_edges": 20,
+        "active_edges": 10,
+        "active_G_range": [
+          4.650712441625668,
+          9.790977015820168
+        ],
+        "inactive_G_max": 2.264326697087641e-05,
+        "active_eq_error": 0.00042077520142846936,
+        "inactive_eq_error": 2.264326697087641e-05,
+        "backbone_emerged": true
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-conformal-metric",
+      "checks": {
+        "d": 2,
+        "entries": [
+          {
+            "pi_a": 1.5707963267948966,
+            "Omega": 0.5,
+            "g_det": 0.0625,
+            "is_flat": false
+          },
+          {
+            "pi_a": 3.141592653589793,
+            "Omega": 1.0,
+            "g_det": 1.0,
+            "is_flat": true
+          },
+          {
+            "pi_a": 4.71238898038469,
+            "Omega": 1.5,
+            "g_det": 5.0625,
+            "is_flat": false
+          },
+          {
+            "pi_a": 6.283185307179586,
+            "Omega": 2.0,
+            "g_det": 16.0,
+            "is_flat": false
+          }
+        ],
+        "flat_at_pi": true
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-curvature-salience",
+      "checks": {
+        "circle_kappa": 0.49999342029836386,
+        "circle_expected": 0.5,
+        "circle_error": 6.57970163614463e-06,
+        "line_kappa": 9.403935963270271e-13,
+        "fig8_kappa_max": 4.788156282543196,
+        "fig8_peak_t": 2.236813969355933
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-path-continuity",
+      "checks": {
+        "n_laps": 3,
+        "total_phase": 18.84955592153876,
+        "expected_phase": 18.84955592153876,
+        "max_step": 0.03777466116541106,
+        "continuous": true
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-phase-ambiguity",
+      "checks": {
+        "n_tests": 1000,
+        "k_range": [
+          -5,
+          5
+        ],
+        "max_error": 4.094300213216723e-14
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-phase-lift",
+      "checks": {
+        "n_tests": 500,
+        "branch_correct": 500
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-phase-lifted-stokes",
+      "checks": {
+        "entries": [
+          {
+            "Phi": 0.0,
+            "raw_phase": 0.0,
+            "F_surface": 0.0,
+            "w": 0,
+            "b": 1,
+            "theta_R": 0.0,
+            "error": 0.0
+          },
+          {
+            "Phi": 0.5,
+            "raw_phase": 3.141592653589793,
+            "F_surface": -3.141592653589793,
+            "w": 1,
+            "b": -1,
+            "theta_R": 3.141592653589793,
+            "error": 0.0
+          },
+          {
+            "Phi": 1.0,
+            "raw_phase": 6.283185307179586,
+            "F_surface": 0.0,
+            "w": 1,
+            "b": -1,
+            "theta_R": 6.283185307179586,
+            "error": 0.0
+          },
+          {
+            "Phi": 1.5,
+            "raw_phase": 9.42477796076938,
+            "F_surface": -3.141592653589793,
+            "w": 2,
+            "b": 1,
+            "theta_R": 9.42477796076938,
+            "error": 0.0
+          },
+          {
+            "Phi": 2.0,
+            "raw_phase": 12.566370614359172,
+            "F_surface": 0.0,
+            "w": 2,
+            "b": 1,
+            "theta_R": 12.566370614359172,
+            "error": 0.0
+          },
+          {
+            "Phi": 3.0,
+            "raw_phase": 18.84955592153876,
+            "F_surface": 0.0,
+            "w": 3,
+            "b": -1,
+            "theta_R": 18.84955592153876,
+            "error": 0.0
+          }
+        ]
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-pi-a",
+      "checks": {
+        "max_diff_pi_a_eq_pi": 8.881784197001252e-16,
+        "theta_std_final": 18.84955592153876,
+        "theta_adaptive_pi_final": 18.84955592153876,
+        "theta_adaptive_2pi_final": 18.84955592153876
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-pi-a-dynamics",
+      "checks": {
+        "pi_eq_expected": 3.891592653589793,
+        "pi_eq_actual": 3.886551819619895,
+        "equilibrium_error": 0.005040833969898184,
+        "tau_theoretical": 5.0,
+        "ratio_at_tau": 0.36769542477096345,
+        "exp_decay_expected": 0.36787944117144233
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-pr-root",
+      "checks": {
+        "n_tests": 500,
+        "max_squaring_error": 8.926082647349967e-15,
+        "mean_error": 1.8857714214672004e-15
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-reinforce-decay-memory",
+      "checks": {
+        "M_eq_expected": 5.0,
+        "M_eq_actual": 4.987680477744419,
+        "step_error": 0.01231952225558075,
+        "decay_ratio_at_tau": 0.36751125485715946,
+        "exp_neg1": 0.36787944117144233,
+        "decay_ratio_error": 0.0003681863142828701
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-unwrap-rule",
+      "checks": {
+        "n_tests": 1000,
+        "deterministic": 1000,
+        "idempotent": 1000,
+        "closest_branch": 1000
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "core-winding-parity",
+      "checks": {
+        "entries": [
+          {
+            "n_laps": -3,
+            "w": -3,
+            "nu": 1,
+            "b": -1.0,
+            "same_sheet": 0,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": -2,
+            "w": -2,
+            "nu": 0,
+            "b": 1.0,
+            "same_sheet": 1,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": -1,
+            "w": -1,
+            "nu": 1,
+            "b": -1.0,
+            "same_sheet": 0,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 0,
+            "w": 0,
+            "nu": 0,
+            "b": 1,
+            "same_sheet": 1,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 1,
+            "w": 1,
+            "nu": 1,
+            "b": -1,
+            "same_sheet": 0,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 2,
+            "w": 2,
+            "nu": 0,
+            "b": 1,
+            "same_sheet": 1,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 3,
+            "w": 3,
+            "nu": 1,
+            "b": -1,
+            "same_sheet": 0,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 4,
+            "w": 4,
+            "nu": 0,
+            "b": 1,
+            "same_sheet": 1,
+            "b_predicts_sheet": 1
+          },
+          {
+            "n_laps": 5,
+            "w": 5,
+            "nu": 1,
+            "b": -1,
+            "same_sheet": 0,
+            "b_predicts_sheet": 1
+          }
+        ]
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
     {
       "equation_id": "eq-egatl-hlatn-adaptiveruler",
       "checks": {
@@ -423,7 +763,7 @@
     }
   ],
   "summary": {
-    "passed": 22,
-    "total": 22
+    "passed": 36,
+    "total": 36
   }
 }
