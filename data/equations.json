@@ -3027,6 +3027,47 @@
           "date": "2026-03-06"
         }
       }
+    },
+    {
+      "id": "eq-adaptive-topological-self-healing-conductance-law",
+      "name": "Adaptive Topological Self-Healing Conductance Law",
+      "firstSeen": "2026-03-06",
+      "source": "pr-root-guide",
+      "submitter": "anonymous",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-topological-self-healing-conductance-law",
+      "score": 85,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Adaptive complex edge-conductance law for a damaged topological lattice with history-resolved phase memory. Each edge coupling g_e is reinforced by local bond activity |J_e| in the lifted phase direction e^{i theta_{R,e}}, decays at an entropy-gated rate mu_G(S), and is selectively suppressed when the resolved phase becomes incompatible with the current adaptive ruler pi_a. In a QWZ-style two-band block lattice, the same scalar update multiplies fixed 2x2 bond operators, so the law acts as a local self-healing rule for restoring boundary-dominated transport after bond damage.",
+      "assumptions": [
+        "g_e is a complex edge conductance or adaptive scalar bond multiplier with units of conductance; J_e is the corresponding complex bond current/activity, so alpha_G has units 1/(V*s), mu_G and lambda_s have units 1/s, and theta_{R,e}, pi_a are dimensionless.",
+        "theta_{R,e} is updated by a history-resolved clipped phase-lift rule relative to the previous edge phase, so branch continuity is retained and principal-branch aliasing is avoided over bounded increments.",
+        "S is a nonnegative entropy-like state that gates reinforcement and decay through alpha_G(S) and mu_G(S); pi_a may be constant or adapt by a companion ruler ODE.",
+        "The QWZ interpretation assumes each adaptive scalar g_e multiplies a fixed nearest-neighbour 2x2 bond block, while onsite mass m sets the bulk topological regime.",
+        "The suppression factor sin^2(theta_{R,e}/(2*pi_a)) is a bounded frustration penalty rather than a universal microscopic dissipation law."
+      ],
+      "date": "2026-03-06",
+      "equationLatex": "\\frac{d g_e}{dt} = \\alpha_G(S)\\,|J_e|\\,e^{i\\theta_{R,e}} - \\mu_G(S)\\,g_e - \\lambda_s\\,g_e\\,\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-03-06"
+        }
+      }
     }
   ]
 }

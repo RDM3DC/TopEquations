@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-07T04:19:22.818519+00:00",
+  "generated_at": "2026-03-07T04:23:38.303649+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "593ed22aba19d509da2fde99f64e9b0619e84f8f526941cee1e5d40447ef4cf6",
-  "count": 106,
+  "source_sha256": "2beb08e643a5f8b8235175896ba40b375a4d8d791678a613589b4b590a1e7b44",
+  "count": 107,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2746,6 +2746,36 @@
       "submitter_hash": "2d1e830624b2572adc05351a7cbee2d3aa3f6a52b34fa38a260c9c78f96fcd07",
       "version": 1,
       "metadata_hash": "769e194d61c9c096d9de9a2a065e5666b44495e3b404b49d16ca27cbb9fe4d5c"
+    },
+    {
+      "token_id": "eq-adaptive-topological-self-healing-conductance-law",
+      "name": "Adaptive Topological Self-Healing Conductance Law",
+      "equation_latex": "\\frac{d g_e}{dt} = \\alpha_G(S)\\,|J_e|\\,e^{i\\theta_{R,e}} - \\mu_G(S)\\,g_e - \\lambda_s\\,g_e\\,\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
+      "equation_hash": "16fb70ed218378939c509dfd32e333a778ad7cd948f2f312ee5cd8e51d5b9e45",
+      "score": 85,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-03-06"
+      },
+      "source": "pr-root-guide",
+      "date": "2026-03-06",
+      "description": "Adaptive complex edge-conductance law for a damaged topological lattice with history-resolved phase memory. Each edge coupling g_e is reinforced by local bond activity |J_e| in the lifted phase direction e^{i theta_{R,e}}, decays at an entropy-gated rate mu_G(S), and is selectively suppressed when the resolved phase becomes incompatible with the current adaptive ruler pi_a. In a QWZ-style two-band block lattice, the same scalar update multiplies fixed 2x2 bond operators, so the law acts as a local self-healing rule for restoring boundary-dominated transport after bond damage.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2f183a4e64493af3f377f745eda502363cd3e7ef6e4d266d444758de0a85fcc8",
+      "version": 1,
+      "metadata_hash": "6be69c99ba845a177fec3e13351e95ee888b57f3b0013f5188de09c82aab7657"
     },
     {
       "token_id": "famous-schrodinger",
