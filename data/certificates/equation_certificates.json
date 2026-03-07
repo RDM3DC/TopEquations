@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-06T23:22:57.562492+00:00",
-  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "a2a4bcd37d4c48cb66387f4bad0ac77a5dabde96edb53d7d9da55c052b79c5cb",
+  "generated_at": "2026-03-07T00:21:55.322138+00:00",
+  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
+  "source_sha256": "4ff564722e61d6fa95c61ff267c60b5cef6c42847375e96d761c6dac17c96182",
   "count": 105,
   "entries": [
     {
@@ -1522,12 +1522,12 @@
       "name": "Slip-Regime Asymptote (1/\u03c0 Signature)",
       "equation_latex": "r_b=\\frac{|\\Delta|}{\\pi}",
       "equation_hash": "34340e53d87e072682d4f4999b2b1e45b087712e8438406d93e57c4ad676ef7f",
-      "score": 90,
+      "score": 93,
       "scores": {
         "tractability": 18,
         "plausibility": 19,
-        "validation": 18,
-        "artifactCompleteness": 8
+        "validation": 19,
+        "artifactCompleteness": 9
       },
       "novelty": {
         "date": "2026-02-22",
@@ -1545,7 +1545,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "10d09d0881ccd1d9e66dd74c81a9d6fcb882bebf7dc6019d7be465acd6a03168"
+      "metadata_hash": "31e617fa74ad86b0baa902267c7c2178b6189f92cc1dc1029ad74de22e449a03"
     },
     {
       "token_id": "eq-paper1-langevin-noise",
@@ -1642,12 +1642,12 @@
       "name": "Real-Space Chern Marker (Bianco\u2013Resta, Open Boundaries)",
       "equation_latex": "C(\\mathbf{r})=-2\\pi i\\,\\langle \\mathbf{r}\\,|\\,[PXP,\\;PYP]\\,|\\,\\mathbf{r}\\rangle,\\quad P=\\sum_{E_n<E_F}|n\\rangle\\langle n|",
       "equation_hash": "d093d91d8d1a29448b7fedabaf9cb9c22a5e54cd51eb389c532be8abbf99fa4a",
-      "score": 76,
+      "score": 90,
       "scores": {
         "tractability": 16,
         "plausibility": 19,
-        "validation": 12,
-        "artifactCompleteness": 6
+        "validation": 18,
+        "artifactCompleteness": 9
       },
       "novelty": {
         "date": "2026-02-22",
@@ -1655,7 +1655,7 @@
       },
       "source": "Paper I / Step-2 Simulator (Bonus)",
       "date": "2026-02-22",
-      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.",
+      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Now implemented: solver computes C_bulk = -0.9969 at m=-1 on a 10x10 QWZ lattice with open boundaries (99.7% accuracy vs exact C=-1). Verified via benchmarks/benchmarks.py chern_marker_bianco_resta().",
       "units": "OK",
       "theory": "PASS",
       "artifact_refs": {
@@ -1665,7 +1665,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "e492d0d25a1ec9759e7cbe2e3f9f3239ebeb60ee27ec92949dcaef7623f6d4a7"
+      "metadata_hash": "0b2ccf18be8c9984b9476705db1158e64162e81c1446d0b3847fc193ebc2e070"
     },
     {
       "token_id": "eq-mesh-synced-certificate-consistency",
@@ -1912,11 +1912,11 @@
       "name": "HLATN Plaquette Holonomy",
       "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e}\\, \\theta_{R,e}",
       "equation_hash": "55e25b3f97eb4e330db7871b725a2e6437d43557934ab18c5fa6de6e5b2fe086",
-      "score": 81,
+      "score": 87,
       "scores": {
         "tractability": 19,
         "plausibility": 19,
-        "validation": 14,
+        "validation": 18,
         "artifactCompleteness": 10
       },
       "novelty": {
@@ -1935,7 +1935,7 @@
       "tier": "derived",
       "submitter_hash": "2cb3598355e82df51631f843f4bf4e351533175bd015abb67f5e374550b9c0c1",
       "version": 1,
-      "metadata_hash": "86e2c9884fa8373f6a596ae282fe28afcde88aec23fa0eace449e6c50cb78d15"
+      "metadata_hash": "a554d4a49e3dd1154fc23c0118fd9c90e39e747f6e4e0274882fd8a20a6eb112"
     },
     {
       "token_id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
@@ -2272,12 +2272,12 @@
       "name": "EGATL-HLATN-PlaquetteHolonomy",
       "equation_latex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e} \\theta_{R,e}",
       "equation_hash": "1e7e4c62729ef4430b62794803d246d2a324ea82a1ec5885463d34079a238723",
-      "score": 89,
+      "score": 93,
       "scores": {
         "tractability": 20,
         "plausibility": 19,
-        "validation": 16,
-        "artifactCompleteness": 4
+        "validation": 19,
+        "artifactCompleteness": 8
       },
       "novelty": {
         "score": 26,
@@ -2295,7 +2295,7 @@
       "tier": "derived",
       "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
       "version": 1,
-      "metadata_hash": "85b7519830d4a7f1a98dd4f10a6a5c8cd348a17dffa91c405884128172c72df5"
+      "metadata_hash": "cf311155dd75fac3145f3306641d0495b5631bed25296f9ee86ab1b71624a183"
     },
     {
       "token_id": "eq-egatl-hlatn-parityfliprate",
@@ -2362,12 +2362,12 @@
       "name": "Topological Coherence Order Parameter (ARP Locking)",
       "equation_latex": "\\Psi = \\frac{1}{N_p} \\sum_{p=1}^{N_p} \\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
       "equation_hash": "a2d47eb3f7404643b31481b0678b93b7b46568f5e54ee2ba8ef32d8b0f47db68",
-      "score": 92,
+      "score": 96,
       "scores": {
         "tractability": 20,
         "plausibility": 20,
-        "validation": 16,
-        "artifactCompleteness": 4
+        "validation": 19,
+        "artifactCompleteness": 8
       },
       "novelty": {
         "score": 29,
@@ -2385,7 +2385,7 @@
       "tier": "derived",
       "submitter_hash": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
       "version": 1,
-      "metadata_hash": "a24bce089fa4898f0707b399ef4a3aeaa67bfe1ab2b74bd02349c0640e956128"
+      "metadata_hash": "53430cc89d229f1fe744f695757e7f6681937ad2ba22ea0010a6a69a95ba5864"
     },
     {
       "token_id": "eq-phase-lift-clipped-unwrap-branch-safe",
