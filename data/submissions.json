@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-07",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -1822,6 +1822,49 @@
           "artifactCompleteness": 4
         },
         "novelty": 27
+      }
+    },
+    {
+      "submissionId": "sub-2026-03-07-surprise-augmented-history-resolved-complex-cond",
+      "submittedAt": "2026-03-07",
+      "submitter": "RDM3DC",
+      "status": "promoted",
+      "name": "Surprise-Augmented History-Resolved Complex Conductance with Curve-Memory Pruning",
+      "equationLatex": "\\mathbb{R}(\\omega) = R_\\text{s} + \\frac{R_\\text{ct}}{1 + (j\\omega\\tau_\\text{ct})^\\alpha_G} + \\sum_{i=1}^{N} \\frac{R_i}{1 + (j\\omega\\tau_i)^{\\alpha_i}}",
+      "description": "Online instantaneous prediction surprise motive using L_t = -log P(y_t|x_t, theta_{1:t-1}). Dense Bayesian deep learning framework p(y|x) = int p(y|x,omega)p(omega|D)d_omega, with curve-memory rules to create a network that achieves continual learning when uncertain, but systemically prunes forgetful edges that chronically fail to lock structurally, enforcing a stable topological backbone without sacrificing robust parity-winding tracking.",
+      "source": "Original research",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "g_e is a complex edge conductance with units of conductance",
+        "Continual learning framework operates in a Bayesian deep learning regime",
+        "Curve-memory pruning is bounded and preserves network connectivity"
+      ],
+      "evidence": [
+        "Reduces to standard impedance spectroscopy model when memory terms vanish",
+        "Bayesian uncertainty framework well-established in deep learning literature",
+        "Pruning rule maintains topological backbone stability under bounded perturbations"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-03-07",
+        "equationId": "eq-surprise-augmented-history-resolved-complex-conductance-",
+        "score": 81,
+        "scores": {
+          "tractability": 19,
+          "plausibility": 19,
+          "validation": 14,
+          "artifactCompleteness": 4
+        },
+        "novelty": 25
       }
     }
   ]

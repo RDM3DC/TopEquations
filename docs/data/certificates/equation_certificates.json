@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-07T04:23:38.303649+00:00",
+  "generated_at": "2026-03-07T16:42:30.676720+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "2beb08e643a5f8b8235175896ba40b375a4d8d791678a613589b4b590a1e7b44",
-  "count": 107,
+  "source_sha256": "3dbc93f71eccef5a0a4eda90af33b69688e80549efa65485ba5f65a1955a55dc",
+  "count": 108,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2776,6 +2776,36 @@
       "submitter_hash": "2f183a4e64493af3f377f745eda502363cd3e7ef6e4d266d444758de0a85fcc8",
       "version": 1,
       "metadata_hash": "6be69c99ba845a177fec3e13351e95ee888b57f3b0013f5188de09c82aab7657"
+    },
+    {
+      "token_id": "eq-surprise-augmented-history-resolved-complex-conductance-",
+      "name": "Surprise-Augmented History-Resolved Complex Conductance with Curve-Memory Pruning",
+      "equation_latex": "\\mathbb{R}(\\omega) = R_\\text{s} + \\frac{R_\\text{ct}}{1 + (j\\omega\\tau_\\text{ct})^\\alpha_G} + \\sum_{i=1}^{N} \\frac{R_i}{1 + (j\\omega\\tau_i)^{\\alpha_i}}",
+      "equation_hash": "0e80af9817b1c900870935e973997c69919fb4e7fee45972670a82653bf1da2b",
+      "score": 81,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 14,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 25,
+        "date": "2026-03-07"
+      },
+      "source": "Original research",
+      "date": "2026-03-07",
+      "description": "Online instantaneous prediction surprise motive using L_t = -log P(y_t|x_t, theta_{1:t-1}). Dense Bayesian deep learning framework p(y|x) = int p(y|x,omega)p(omega|D)d_omega, with curve-memory rules to create a network that achieves continual learning when uncertain, but systemically prunes forgetful edges that chronically fail to lock structurally, enforcing a stable topological backbone without sacrificing robust parity-winding tracking.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "18076dba3f0dc03e7762819d34a4bc67d113e1d841fb70ec2b8e1c3f884ee02f"
     },
     {
       "token_id": "famous-schrodinger",
