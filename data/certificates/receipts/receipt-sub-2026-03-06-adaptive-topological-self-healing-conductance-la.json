@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-06-adaptive-topological-self-healing-conductance-la",
+  "equation_id": "eq-adaptive-topological-self-healing-conductance-law",
+  "submitter_hash": "2f183a4e64493af3f377f745eda502363cd3e7ef6e4d266d444758de0a85fcc8",
+  "equation_hash": "16fb70ed218378939c509dfd32e333a778ad7cd948f2f312ee5cd8e51d5b9e45",
+  "metadata_hash": "6be69c99ba845a177fec3e13351e95ee888b57f3b0013f5188de09c82aab7657",
+  "score": 85,
+  "status": "promoted",
+  "issued_at": "2026-03-07T17:22:58.047591+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "7b923644121ff53e295a032d456be97d7fe0d48c18881b1430e4da68d8450f3726a65be915454ed94c67f490dd8f43b1de2c9992b6cc221fb14ba0a2efea08ab",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

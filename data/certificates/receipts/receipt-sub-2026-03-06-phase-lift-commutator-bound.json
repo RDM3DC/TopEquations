@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-06-phase-lift-commutator-bound",
+  "equation_id": "eq-phase-lift-commutator-bound",
+  "submitter_hash": "2d1e830624b2572adc05351a7cbee2d3aa3f6a52b34fa38a260c9c78f96fcd07",
+  "equation_hash": "7566049c5cabf3f6fe4f479bb116a8501163f306138ca7256c1ca72c678ccf58",
+  "metadata_hash": "769e194d61c9c096d9de9a2a065e5666b44495e3b404b49d16ca27cbb9fe4d5c",
+  "score": 72,
+  "status": "promoted",
+  "issued_at": "2026-03-07T17:22:57.891451+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "efb0711adaa4ff287a76820baa9520629f4ba42679edb354d72d90eedfd63de085398369d93d1014d49f01d99288491d94977695acd7e88aeab196e83d4dc488",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}
