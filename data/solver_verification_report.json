@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-07T00:23:55.209169+00:00",
+  "generated_at": "2026-03-07T00:28:57.172254+00:00",
   "results": [
     {
       "equation_id": "eq-egatl-hlatn-adaptiveruler",
@@ -148,10 +148,282 @@
       "passed_count": 1,
       "total_count": 1,
       "status": "completed"
+    },
+    {
+      "equation_id": "famous-aharonov-bohm",
+      "checks": {
+        "flux_quanta": 1.0,
+        "theta_R_final": 6.283185307179586,
+        "expected_phase": 6.283185307179586,
+        "winding_w": 1,
+        "pi_a": 3.141592653589793
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-berry-phase",
+      "checks": {
+        "mass": -1.0,
+        "total_berry_phase": -153.93804002589988,
+        "total_raw_phase": 3.141592653589793,
+        "berry_over_pi": -49.00000000000001,
+        "nk": 100
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-dirac",
+      "checks": {
+        "E": 2.23606797749979,
+        "p": 2.0,
+        "mass": 1.0,
+        "rho_const": 2.2425405839770103e-16,
+        "phi_range": [
+          0.0,
+          20.0
+        ],
+        "winding": 3
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-einstein-field",
+      "checks": {
+        "entries": [
+          {
+            "pi_a": 1.5707963267948966,
+            "pi_a_over_pi": 0.5,
+            "sigma": -0.6931471805599453,
+            "metric_scale": 0.25,
+            "curvature_factor": 4.0
+          },
+          {
+            "pi_a": 2.5132741228718345,
+            "pi_a_over_pi": 0.8,
+            "sigma": -0.2231435513142097,
+            "metric_scale": 0.64,
+            "curvature_factor": 1.5624999999999998
+          },
+          {
+            "pi_a": 3.141592653589793,
+            "pi_a_over_pi": 1.0,
+            "sigma": 0.0,
+            "metric_scale": 1.0,
+            "curvature_factor": 1.0
+          },
+          {
+            "pi_a": 3.7699111843077517,
+            "pi_a_over_pi": 1.2,
+            "sigma": 0.1823215567939546,
+            "metric_scale": 1.44,
+            "curvature_factor": 0.6944444444444445
+          },
+          {
+            "pi_a": 4.71238898038469,
+            "pi_a_over_pi": 1.5,
+            "sigma": 0.4054651081081644,
+            "metric_scale": 2.25,
+            "curvature_factor": 0.4444444444444444
+          },
+          {
+            "pi_a": 6.283185307179586,
+            "pi_a_over_pi": 2.0,
+            "sigma": 0.6931471805599453,
+            "metric_scale": 4.0,
+            "curvature_factor": 0.25
+          }
+        ],
+        "pi_a_eq_pi_recovers_flat": true
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-euler-lagrange",
+      "checks": {
+        "pi_a_final": 3.5293433725611227,
+        "pi_a_eq_expected": 3.766592653589793,
+        "pi_a_range": [
+          3.141592653589793,
+          3.5321916345247666
+        ]
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-fourier-heat",
+      "checks": {
+        "u_max_phaselift": 1000000.0,
+        "u_max_standard": 0.5774828594309259,
+        "curvature_effect": 999999.4225171405,
+        "K_max": 946.0404084216667,
+        "lambda": 0.5
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-holonomy",
+      "checks": {
+        "mass": -1.0,
+        "wilson_loop_phase": -1.1107951563527517e-16,
+        "theta_R": 0.0,
+        "w_det": 0,
+        "expected_berry": -3.141592653589793
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-josephson",
+      "checks": {
+        "I_c": 1.0,
+        "V": 0.8,
+        "pi_a": 3.141592653589793,
+        "expected_period": 7.853981633974483,
+        "measured_period": 7.851999999999999,
+        "period_error": 0.00025230947395029317,
+        "I_amplitude": 0.9999999243471311
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-klein-gordon",
+      "checks": {
+        "omega": 3.1622776601683795,
+        "k0": 3.0,
+        "mass": 1.0,
+        "rho_max_init": 1.0,
+        "rho_max_final": 1.0191987693786324,
+        "phi_range": [
+          -1.6473836675486015,
+          42.05204652747548
+        ],
+        "winding": 7
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-maxwell",
+      "checks": {
+        "B0": 1.0,
+        "areas": [
+          4.0,
+          16.0,
+          36.0,
+          64.0,
+          100.0
+        ],
+        "theta_R": [
+          4.0,
+          16.0,
+          36.0,
+          64.0,
+          100.0
+        ],
+        "windings": [
+          1,
+          3,
+          6,
+          10,
+          16
+        ],
+        "linear_flux": true
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-navier-stokes",
+      "checks": {
+        "Gamma": 6.283185307179586,
+        "omega_max_init": 49.99999999999999,
+        "omega_max_final": 0.8499108284503682,
+        "circulation_final": 6.283185307179579,
+        "winding_w": 1,
+        "nu": 0.01,
+        "decay_ratio": 0.01699821656900737
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-noether",
+      "checks": {
+        "E_conserved": 0.007104723881041037,
+        "E_mean": 0.4998424857958291,
+        "Q_range": [
+          -1.0000452949478793,
+          1.00004883566101
+        ]
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-path-integral",
+      "checks": {
+        "Z": 1.000000005350576,
+        "n_sectors": 11,
+        "dominant_sector": 0,
+        "dominant_weight": 0.999999994649424,
+        "w0_weight": 0.999999994649424,
+        "pi_a": 3.141592653589793
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
+    },
+    {
+      "equation_id": "famous-schrodinger",
+      "checks": {
+        "norm_preserved": 1.0000000000000122,
+        "Q_max": 0.6014147477032112,
+        "phi_R_range": [
+          -0.8363350349811342,
+          117.937676985569
+        ],
+        "winding_max": 1
+      },
+      "pass": true,
+      "passed_count": 1,
+      "total_count": 1,
+      "status": "completed"
     }
   ],
   "summary": {
-    "passed": 8,
-    "total": 8
+    "passed": 22,
+    "total": 22
   }
 }

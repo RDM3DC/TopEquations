@@ -472,6 +472,131 @@ def _verify_boundedness() -> dict:
     }
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# Famous Equations — 14 verifiers (F1–F14) via AdaptiveCAD-Manim solver
+# ═══════════════════════════════════════════════════════════════════════════
+
+_CADMANIM = REPO.parent / "AdaptiveCAD-Manim"
+
+
+def _famous(func_name: str) -> dict:
+    """Import and run a famous-equation function from the cadmanim solver."""
+    import importlib
+    import sys as _sys
+    cadmanim_str = str(_CADMANIM)
+    if cadmanim_str not in _sys.path:
+        _sys.path.insert(0, cadmanim_str)
+    mod = importlib.import_module("solver.famous")
+    fn = getattr(mod, func_name)
+    raw = fn()
+    passed = bool(raw.get("pass", False))
+    return {
+        "equation_id": raw.get("name", func_name),
+        "checks": {k: v for k, v in raw.items() if k not in ("name", "pass")},
+        "pass": passed,
+        "passed_count": 1 if passed else 0,
+        "total_count": 1,
+    }
+
+
+@_register("famous-schrodinger")
+def _verify_famous_schrodinger() -> dict:
+    r = _famous("schrodinger_madelung")
+    r["equation_id"] = "famous-schrodinger"
+    return r
+
+
+@_register("famous-aharonov-bohm")
+def _verify_famous_aharonov_bohm() -> dict:
+    r = _famous("aharonov_bohm")
+    r["equation_id"] = "famous-aharonov-bohm"
+    return r
+
+
+@_register("famous-maxwell")
+def _verify_famous_maxwell() -> dict:
+    r = _famous("maxwell_phase_lift")
+    r["equation_id"] = "famous-maxwell"
+    return r
+
+
+@_register("famous-euler-lagrange")
+def _verify_famous_euler_lagrange() -> dict:
+    r = _famous("euler_lagrange_phase_lift")
+    r["equation_id"] = "famous-euler-lagrange"
+    return r
+
+
+@_register("famous-fourier-heat")
+def _verify_famous_fourier_heat() -> dict:
+    r = _famous("fourier_heat_curvature")
+    r["equation_id"] = "famous-fourier-heat"
+    return r
+
+
+@_register("famous-berry-phase")
+def _verify_famous_berry_phase() -> dict:
+    r = _famous("berry_phase_qwz")
+    r["equation_id"] = "famous-berry-phase"
+    return r
+
+
+@_register("famous-noether")
+def _verify_famous_noether() -> dict:
+    r = _famous("noether_conservation")
+    r["equation_id"] = "famous-noether"
+    return r
+
+
+@_register("famous-josephson")
+def _verify_famous_josephson() -> dict:
+    r = _famous("josephson_adaptive")
+    r["equation_id"] = "famous-josephson"
+    return r
+
+
+@_register("famous-dirac")
+def _verify_famous_dirac() -> dict:
+    r = _famous("dirac_polar_decomposition")
+    r["equation_id"] = "famous-dirac"
+    return r
+
+
+@_register("famous-navier-stokes")
+def _verify_famous_navier_stokes() -> dict:
+    r = _famous("navier_stokes_vortex")
+    r["equation_id"] = "famous-navier-stokes"
+    return r
+
+
+@_register("famous-path-integral")
+def _verify_famous_path_integral() -> dict:
+    r = _famous("feynman_sectors")
+    r["equation_id"] = "famous-path-integral"
+    return r
+
+
+@_register("famous-holonomy")
+def _verify_famous_holonomy() -> dict:
+    r = _famous("gauge_holonomy_qwz")
+    r["equation_id"] = "famous-holonomy"
+    return r
+
+
+@_register("famous-klein-gordon")
+def _verify_famous_klein_gordon() -> dict:
+    r = _famous("klein_gordon_phase_lift")
+    r["equation_id"] = "famous-klein-gordon"
+    return r
+
+
+@_register("famous-einstein-field")
+def _verify_famous_einstein() -> dict:
+    r = _famous("einstein_conformal")
+    r["equation_id"] = "famous-einstein-field"
+    return r
+
+
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
