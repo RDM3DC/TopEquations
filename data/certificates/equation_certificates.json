@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-07T00:22:56.888192+00:00",
+  "generated_at": "2026-03-07T01:24:25.636358+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "4ff564722e61d6fa95c61ff267c60b5cef6c42847375e96d761c6dac17c96182",
+  "source_sha256": "83c5111d3c369b83b3ad48cdc768fd397a2707bf7cd641f975d4f1389b7ba2de",
   "count": 105,
   "entries": [
     {
@@ -14,7 +14,7 @@
       "scores": {
         "tractability": 20,
         "plausibility": 20,
-        "validation": 18,
+        "validation": 20,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -33,7 +33,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "4e40ce74055d9b8624cc5afca3875206736c0416ecdcdb316cce3619b816a094"
+      "metadata_hash": "927f296525fdcdf8c6c6c0e593467758bb38f3d2df2769f529731d6ff1bc9599"
     },
     {
       "token_id": "core-phase-lift",
@@ -44,7 +44,7 @@
       "scores": {
         "tractability": 16,
         "plausibility": 16,
-        "validation": 14,
+        "validation": 19,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -63,7 +63,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "31a24314cb65428f2d9f99ae1e4518930b901d66803fc4537148ac0312293a3c"
+      "metadata_hash": "caf38d093ff0a8bcdbb4de29b37aa94c3b0dc2005fbca738eae04d4849becc97"
     },
     {
       "token_id": "core-unwrap-rule",
@@ -74,7 +74,7 @@
       "scores": {
         "tractability": 19,
         "plausibility": 19,
-        "validation": 18,
+        "validation": 20,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -93,7 +93,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "f74b918cfeb41b4215c630ae09ba90b769747e2b0405d7d3628a527ecd2b441a"
+      "metadata_hash": "0f394fd70634555134b6dbbef98477ebeb5c680b55374c37435e1dbcd402e355"
     },
     {
       "token_id": "core-path-continuity",
@@ -104,7 +104,7 @@
       "scores": {
         "tractability": 18,
         "plausibility": 18,
-        "validation": 10,
+        "validation": 15,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -123,7 +123,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "2b06a0ef82e8aacc3b6a0bad3fda08086b0ba2371386a7296884a58ea58fd55d"
+      "metadata_hash": "61d802aa5e7acd577bf43cf4097d29340461ca1704d623e506ebbba04ffadede"
     },
     {
       "token_id": "core-pr-root",
@@ -134,7 +134,7 @@
       "scores": {
         "tractability": 16,
         "plausibility": 16,
-        "validation": 8,
+        "validation": 13,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -153,7 +153,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "3d98abf6505f37a3997bc2e4b80ce867675bc411b0b1f04fd46ae6100d99b830"
+      "metadata_hash": "d7fd5f85070fcd3f8c84f5cac265975d2a01dbe48c23091a8786fae55ddaa299"
     },
     {
       "token_id": "core-winding-parity",
@@ -164,7 +164,7 @@
       "scores": {
         "tractability": 18,
         "plausibility": 17,
-        "validation": 18,
+        "validation": 20,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -183,7 +183,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "306b35354542f40be2cca46ae4ff46931e4f27481075799276a4b921ab225cf3"
+      "metadata_hash": "999628fd3744a5640d5fc53c4e18382119a7d995db9c583af9749b92e7d922e5"
     },
     {
       "token_id": "core-conformal-metric",
@@ -194,7 +194,7 @@
       "scores": {
         "tractability": 16,
         "plausibility": 16,
-        "validation": 14,
+        "validation": 19,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -213,7 +213,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "a58a1986ff9c388391c8558b6b7a9ae89ae3281690269cbaceee24265fce00eb"
+      "metadata_hash": "0f622ffea7da9cf93ddbd1294d2a4b7b552d7a2363b0c48c000ef4dfbef465b0"
     },
     {
       "token_id": "core-adaptive-arc-length",
@@ -224,7 +224,7 @@
       "scores": {
         "tractability": 16,
         "plausibility": 15,
-        "validation": 4,
+        "validation": 9,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -243,7 +243,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "ccf1e51e2795a1b0e346f90256d2862133f745fc841b3ce828e53ab9e7929ea9"
+      "metadata_hash": "78414f9a2171b60335826157ed04169bfea4704cdc1e93123e045f8efe92a3d8"
     },
     {
       "token_id": "core-pi-a",
@@ -254,7 +254,7 @@
       "scores": {
         "tractability": 16,
         "plausibility": 15,
-        "validation": 14,
+        "validation": 19,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -273,7 +273,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "2ac70548e5762e0b8cd9c20b19654523c8f5fca1cc7315adab76bd501ce2ab09"
+      "metadata_hash": "b34afedba5f86b2ac7dd91214004187c52a59b8224d9f7aa19b9dd0ac2773a5f"
     },
     {
       "token_id": "core-pi-a-dynamics",
@@ -284,7 +284,7 @@
       "scores": {
         "tractability": 17,
         "plausibility": 16,
-        "validation": 16,
+        "validation": 20,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -303,7 +303,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "9d2bc3fdd73ad8289966a78a8bc1884a761b7eb5cc4beb4d3c89f3524a76bc50"
+      "metadata_hash": "d594a8adb21bf06c7e5f3ea381fabb79cdc1486486ccd8a4ba6d1d06b2a5ba39"
     },
     {
       "token_id": "core-arp-ode",
@@ -314,7 +314,7 @@
       "scores": {
         "tractability": 19,
         "plausibility": 19,
-        "validation": 18,
+        "validation": 20,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -333,7 +333,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "5bbe688e6ea22d15d7b1b749770a8d79f59d3a4a7bf4cd289cbed5b4c2382ddb"
+      "metadata_hash": "b66c22d4f3eebf8fce7616572e07486cf3ef47d6f888626f42dd38de3884fabb"
     },
     {
       "token_id": "core-curvature-salience",
@@ -344,7 +344,7 @@
       "scores": {
         "tractability": 20,
         "plausibility": 20,
-        "validation": 18,
+        "validation": 20,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -363,7 +363,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "43a773f0b30751e2dc06cd6e2232dd69aa8e3f6d69d206295d8dcf44acd060bd"
+      "metadata_hash": "246c3eac53bc5dba9e9fab0a60c933476f1e357b8566842860e3289c909daedb"
     },
     {
       "token_id": "core-reinforce-decay-memory",
@@ -374,7 +374,7 @@
       "scores": {
         "tractability": 18,
         "plausibility": 17,
-        "validation": 16,
+        "validation": 20,
         "artifactCompleteness": 0
       },
       "novelty": {
@@ -393,7 +393,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "092e05d439ec804d05493e1091de2389b045171c339422750e119cbb7463551c"
+      "metadata_hash": "4edfcfd9f7ad75032aa553ae08294f0e8c703c627b30a54d88efc7229ec55f4d"
     },
     {
       "token_id": "core-phase-lifted-stokes",
@@ -404,7 +404,7 @@
       "scores": {
         "tractability": 14,
         "plausibility": 15,
-        "validation": 14,
+        "validation": 19,
         "artifactCompleteness": 2
       },
       "novelty": {
@@ -423,7 +423,7 @@
         "image": ""
       },
       "version": 1,
-      "metadata_hash": "2965b35a8177bfb7550fa463723f9544deb6845785c398df586365df83454904"
+      "metadata_hash": "918e70c60f1039f08c82ccd058c0e23c3c123a7ac7c7a45305e8e13f2abe5d41"
     },
     {
       "token_id": "eq-arp-redshift",
@@ -2722,12 +2722,12 @@
       "name": "Schr\u00f6dinger Equation",
       "equation_latex": "\\partial_t\\rho+\\nabla\\cdot(\\rho\\,\\mathbf v)=0,\\quad \\hbar\\,\\partial_t\\phi+\\tfrac{m}{2}\\mathbf v^2+V+Q[\\rho]=0",
       "equation_hash": "d47e8c4cd7500d380a4269873daee15efbc36694b6588182fff6b96fd280d912",
-      "score": 60,
+      "score": 74,
       "scores": {
         "tractability": 16,
         "plausibility": 16,
-        "validation": 10,
-        "artifactCompleteness": 0
+        "validation": 15,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 26,
@@ -2746,19 +2746,19 @@
         "core-unwrap-rule"
       ],
       "version": 1,
-      "metadata_hash": "4c46245134299a098f402706da3526001717d3e6aa0502e8c9dd2938fc941ade"
+      "metadata_hash": "5c1d136e374ce2d95b4d07e5240a76992419e7492e52ebe6396e21d8e9a20523"
     },
     {
       "token_id": "famous-aharonov-bohm",
       "name": "Aharonov\u2013Bohm Effect",
       "equation_latex": "\\theta_R[\\gamma]=\\mathrm{unwrap}\\!\\Big(\\frac{q}{\\hbar}\\oint_\\gamma \\mathbf A\\cdot d\\mathbf\\ell;\\;\\theta_{\\rm ref},\\pi_a\\Big)=\\frac{q}{\\hbar}\\int_S \\mathbf B\\cdot d\\mathbf S + 2\\pi_a w",
       "equation_hash": "305e553474133239b10f097aeeab09e3676be0674e78d89ba3d37458e06ffaba",
-      "score": 60,
+      "score": 74,
       "scores": {
         "tractability": 16,
         "plausibility": 16,
-        "validation": 10,
-        "artifactCompleteness": 0
+        "validation": 15,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 25,
@@ -2777,19 +2777,19 @@
         "core-winding-parity"
       ],
       "version": 1,
-      "metadata_hash": "206d5b548376b58953bc52ec6fe09922e5c4f27006c9bea7ca498207112eb0ad"
+      "metadata_hash": "438315df0961068ea72cec1c676370d204ea2369a41bc54c41d4a18a67beb0e6"
     },
     {
       "token_id": "famous-berry-phase",
       "name": "Berry Phase",
       "equation_latex": "\\theta_R[\\gamma]=\\sum_k \\mathrm{unwrap}\\!\\big(\\Arg\\langle\\psi_{k+1}|\\psi_k\\rangle;\\;\\theta_{\\rm ref},\\pi_a\\big)",
       "equation_hash": "02c6aafa23c27da84f48dee081e4daaa384be9ab83ea713ef07da5370257c76e",
-      "score": 54,
+      "score": 69,
       "scores": {
         "tractability": 15,
         "plausibility": 15,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 24,
@@ -2808,19 +2808,19 @@
         "core-path-continuity"
       ],
       "version": 1,
-      "metadata_hash": "7d4bc9ca2eed7bae2d743a4990bc3224dfd61fae69a5b150f3f18497864fd8ce"
+      "metadata_hash": "0e9f5509ea45a69fd64883bc26ca00b3fd7bc5b829868ae1b2b06008aebd28fd"
     },
     {
       "token_id": "famous-josephson",
       "name": "Josephson Relations",
       "equation_latex": "I=I_c\\sin\\!\\Big(\\frac{\\pi}{\\pi_a}\\theta_R\\Big),\\quad \\frac{d}{dt}\\Big(\\frac{\\pi}{\\pi_a}\\theta_R\\Big)=\\frac{2e}{\\hbar}V",
       "equation_hash": "28310b8b01e83e8a41ece13babaeb9e015ba4b7582291de16cce9a7918da5c16",
-      "score": 53,
+      "score": 67,
       "scores": {
         "tractability": 15,
         "plausibility": 14,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 22,
@@ -2839,19 +2839,19 @@
         "core-phase-lift"
       ],
       "version": 1,
-      "metadata_hash": "ea14d9f8ff9f0cf3785c9fe181de84d9b4f44f462c0f235457bceeb44f5dfe37"
+      "metadata_hash": "3f6371c87916018aad4d88daa2d3f6465cb01534ab18f7f681af72b839749124"
     },
     {
       "token_id": "famous-maxwell",
       "name": "Maxwell's Equations",
       "equation_latex": "\\mathbf E=-\\nabla V-\\partial_t\\mathbf A,\\quad \\mathbf B=\\nabla\\times\\mathbf A,\\quad \\theta_R=\\mathrm{unwrap}\\!\\Big(\\frac{q}{\\hbar}\\oint\\mathbf A\\cdot d\\mathbf\\ell;\\;\\theta_{\\rm ref},\\pi_a\\Big)",
       "equation_hash": "23b2bb04f0ad72ae8ff459cb9b30b0a727ff4fc191d529ea29d0cdcb6310025d",
-      "score": 56,
+      "score": 70,
       "scores": {
         "tractability": 16,
         "plausibility": 15,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 24,
@@ -2871,19 +2871,19 @@
         "core-phase-lifted-stokes"
       ],
       "version": 1,
-      "metadata_hash": "6a4f189dbbd6e11a6a599674da605f855fea17bab60e6440fd4598c0d7817a32"
+      "metadata_hash": "abad3db3e745960ffbf8350f07b0b15de377f085ba1995418ff1d60d1597a3e5"
     },
     {
       "token_id": "famous-dirac",
       "name": "Dirac Equation",
       "equation_latex": "(i\\gamma^\\mu\\partial_\\mu - m)\\psi=0,\\quad \\psi^{PL}=\\sqrt{\\rho}\\,R\\,e^{i\\phi},\\;\\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
       "equation_hash": "ec960dcca00afa05b9812ee32487d75281266fa21c27a2db4fba4acb02d02f00",
-      "score": 49,
+      "score": 63,
       "scores": {
         "tractability": 14,
         "plausibility": 14,
-        "validation": 6,
-        "artifactCompleteness": 0
+        "validation": 11,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 23,
@@ -2902,19 +2902,19 @@
         "core-pi-a"
       ],
       "version": 1,
-      "metadata_hash": "d0b8254dce7701338549c0bb6b88d146c488415f584f2ef68942050e4d6eb56f"
+      "metadata_hash": "2b3e518deeb329c15504d4a94b7f9c28ee4215849500440a998509d814fa5055"
     },
     {
       "token_id": "famous-euler-lagrange",
       "name": "Euler\u2013Lagrange Equation",
       "equation_latex": "\\frac{\\partial \\mathcal L_{PL}}{\\partial \\theta_R}-\\frac{d}{dt}\\frac{\\partial \\mathcal L_{PL}}{\\partial \\dot\\theta_R}=0,\\quad \\mathcal L_{PL}=\\mathcal L(\\rho,\\theta_R,\\pi_a,\\dot\\rho,\\dot\\theta_R,\\dot\\pi_a)",
       "equation_hash": "69eb041d36633488eead805fd49b873db54a3da92be2fd977effbf7d035dd802",
-      "score": 56,
+      "score": 70,
       "scores": {
         "tractability": 16,
         "plausibility": 15,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 20,
@@ -2933,19 +2933,19 @@
         "core-arp-ode"
       ],
       "version": 1,
-      "metadata_hash": "922d5e93f3f22d5773955acbcda686fb138304b21f226e88cbdd430163d5cecf"
+      "metadata_hash": "954e89c9842d5a41c6a017a56640a488e1fc782cae3eb25170523ce023718c77"
     },
     {
       "token_id": "famous-navier-stokes",
       "name": "Navier\u2013Stokes (Vorticity Form)",
       "equation_latex": "\\partial_t\\boldsymbol\\omega+(\\mathbf v\\cdot\\nabla)\\boldsymbol\\omega=(\\boldsymbol\\omega\\cdot\\nabla)\\mathbf v+\\nu\\nabla^2\\boldsymbol\\omega,\\quad w=\\frac{1}{2\\pi_a}\\oint\\mathbf v\\cdot d\\mathbf\\ell",
       "equation_hash": "29e0071634e429d71b4dc160c0b65ddda794aa2716915e04a557293aa4f7ba09",
-      "score": 49,
+      "score": 63,
       "scores": {
         "tractability": 14,
         "plausibility": 14,
-        "validation": 6,
-        "artifactCompleteness": 0
+        "validation": 11,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 22,
@@ -2964,19 +2964,19 @@
         "core-curvature-salience"
       ],
       "version": 1,
-      "metadata_hash": "2b3fa61617d98ab3d77918247e641bf648553dd83398af5b0e8a93b2a1591168"
+      "metadata_hash": "425010aa4f807547242fde72f807db02b4e5e29ad0c9486050d01520148be1a5"
     },
     {
       "token_id": "famous-path-integral",
       "name": "Feynman Path Integral",
       "equation_latex": "Z=\\sum_{w\\in\\mathbb Z}\\int \\mathcal D\\rho\\,\\mathcal D\\theta_R\\,\\mathcal D\\pi_a\\; e^{\\frac{i}{\\hbar}S_{PL}[\\rho,\\theta_R,\\pi_a]}\\;\\delta\\!\\big(\\theta_R(T)-\\theta_R(0)-2\\pi_a w\\big)",
       "equation_hash": "085f4007879bae909dde21bedbd260e7442cf77f71692f665ef71bbb77237d40",
-      "score": 49,
+      "score": 63,
       "scores": {
         "tractability": 14,
         "plausibility": 14,
-        "validation": 6,
-        "artifactCompleteness": 0
+        "validation": 11,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 23,
@@ -2995,19 +2995,19 @@
         "core-phase-ambiguity"
       ],
       "version": 1,
-      "metadata_hash": "6f2eb6c17fe62ba01d33d7c417140a5f6de21f45f72eaec4716439d6c569c536"
+      "metadata_hash": "7cae86b24757abacf80c71636ef8964683eef18dec7d22646b90b70a34aad515"
     },
     {
       "token_id": "famous-holonomy",
       "name": "U(N) Gauge Holonomy",
       "equation_latex": "U(\\gamma)=e^{i\\varphi}V,\\; V\\in SU(N),\\quad \\theta_R=\\mathrm{unwrap}(\\varphi;\\theta_{\\rm ref},\\pi_a),\\quad w_{\\det}=\\frac{\\theta_R(T)-\\theta_R(0)}{2\\pi_a}",
       "equation_hash": "97d0c661b61349202e4e6c5de9307d8918829f5d377464fe99046c92202a0171",
-      "score": 49,
+      "score": 63,
       "scores": {
         "tractability": 14,
         "plausibility": 14,
-        "validation": 6,
-        "artifactCompleteness": 0
+        "validation": 11,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 21,
@@ -3026,19 +3026,19 @@
         "core-winding-parity"
       ],
       "version": 1,
-      "metadata_hash": "d0b2db41615f0e7ec071b54f56d248e38b32c47ee06367cc458954223ec8b7a1"
+      "metadata_hash": "ccbfb0363fe13cd689111e89e58363c84ee40b9591243cf743b2963e7b8c45b2"
     },
     {
       "token_id": "famous-klein-gordon",
       "name": "Klein\u2013Gordon Equation",
       "equation_latex": "\\Big(\\Box+\\frac{m^2c^2}{\\hbar^2}\\Big)\\psi=0,\\quad \\psi^{PL}=\\sqrt{\\rho}\\,e^{i\\phi},\\;\\phi=\\frac{\\pi}{\\pi_a}\\theta_R",
       "equation_hash": "1582f75bd5522248f2f14bdfbdd84e74980efa6f58ac5585a2419537394a8d72",
-      "score": 49,
+      "score": 63,
       "scores": {
         "tractability": 14,
         "plausibility": 14,
-        "validation": 6,
-        "artifactCompleteness": 0
+        "validation": 11,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 20,
@@ -3057,19 +3057,19 @@
         "core-phase-ambiguity"
       ],
       "version": 1,
-      "metadata_hash": "f556fbb72666d08efd3b5f010cec96ea6f858e2d79e1d5da89afbf224ce6b08a"
+      "metadata_hash": "cb44becd1778404dae0c6b1655e856e539502adc0060b2852b06d904503acc36"
     },
     {
       "token_id": "famous-einstein-field",
       "name": "Einstein Field Equations",
       "equation_latex": "G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=\\frac{8\\pi G}{c^4}T_{\\mu\\nu},\\quad \\tilde g_{\\mu\\nu}=e^{2\\sigma(\\pi_a)}g_{\\mu\\nu},\\;\\sigma(\\pi_a)=\\ln\\!\\Big(\\frac{\\pi_a}{\\pi}\\Big)",
       "equation_hash": "91fe07d587409b9b5897e1306481364435e11380a61f73ac365bce39b227ff1c",
-      "score": 43,
+      "score": 57,
       "scores": {
         "tractability": 13,
         "plausibility": 13,
-        "validation": 4,
-        "artifactCompleteness": 0
+        "validation": 9,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 25,
@@ -3088,19 +3088,19 @@
         "core-adaptive-arc-length"
       ],
       "version": 1,
-      "metadata_hash": "13c45dca35cfb3c75236a2db264c3df2dadbba7601a5321761892be7a7692ce4"
+      "metadata_hash": "891e2a7e7f83dd6bded5ba0a4ad8fb2e0717cf65e0ded82edf928b34b8be946e"
     },
     {
       "token_id": "famous-fourier-heat",
       "name": "Fourier Heat Equation",
       "equation_latex": "\\partial_t u=\\alpha\\nabla^2 u + \\kappa(x,t)\\,u,\\quad \\kappa=\\lambda\\,\\mathcal K[\\theta_R]",
       "equation_hash": "fed194fa4d3ef2a558548d67f71d764e56dc5e6def943698b3967487a9786624",
-      "score": 56,
+      "score": 70,
       "scores": {
         "tractability": 16,
         "plausibility": 15,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 18,
@@ -3119,19 +3119,19 @@
         "core-reinforce-decay-memory"
       ],
       "version": 1,
-      "metadata_hash": "82372fb518c52d19687d917a57b54a27db538da8f0ddd383c314d271e463719e"
+      "metadata_hash": "fcb058443fade5ce6a0e90a3a247cf4b8522a737a407598674b083f5814c3c8c"
     },
     {
       "token_id": "famous-noether",
       "name": "Noether's Theorem",
       "equation_latex": "\\partial_\\mu j^\\mu_{PL}=0,\\quad j^\\mu_{PL}=\\frac{\\partial\\mathcal L_{PL}}{\\partial(\\partial_\\mu\\theta_R)}\\,\\delta\\theta_R+\\frac{\\partial\\mathcal L_{PL}}{\\partial(\\partial_\\mu\\pi_a)}\\,\\delta\\pi_a",
       "equation_hash": "a0cf0fabf2235ba27c6f93cd229a0fdfbd95edc611eeccc1168245ca21e28cd7",
-      "score": 54,
+      "score": 69,
       "scores": {
         "tractability": 15,
         "plausibility": 15,
-        "validation": 8,
-        "artifactCompleteness": 0
+        "validation": 13,
+        "artifactCompleteness": 5
       },
       "novelty": {
         "score": 21,
@@ -3150,7 +3150,7 @@
         "core-arp-ode"
       ],
       "version": 1,
-      "metadata_hash": "f0a581422aefb09fb81f0d8f340cfdaead86a739e81d1c278b76a681e12801f5"
+      "metadata_hash": "6cfb35ef35adbfc5f95411ae8c58cb6b30db493c00898e58de3da688cdf1dd89"
     }
   ]
 }
