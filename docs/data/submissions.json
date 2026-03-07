@@ -964,12 +964,12 @@
       "review": {
         "date": "2026-02-24",
         "equationId": "eq-egatl-hlatn-plaquetteholonomy",
-        "score": 89,
+        "score": 93,
         "scores": {
           "tractability": 20,
           "plausibility": 19,
-          "validation": 16,
-          "artifactCompleteness": 4
+          "validation": 19,
+          "artifactCompleteness": 8
         },
         "novelty": 26
       }
@@ -1106,12 +1106,12 @@
       "review": {
         "date": "2026-02-25",
         "equationId": "eq-topological-coherence-order-parameter-arp-locking",
-        "score": 92,
+        "score": 96,
         "scores": {
           "tractability": 20,
           "plausibility": 20,
-          "validation": 16,
-          "artifactCompleteness": 4
+          "validation": 19,
+          "artifactCompleteness": 8
         },
         "novelty": 29
       }

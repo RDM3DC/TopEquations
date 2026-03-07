@@ -1300,12 +1300,12 @@
       "name": "Slip-Regime Asymptote (1/π Signature)",
       "firstSeen": "2026-02-22",
       "source": "Paper I draft §3 (Eq.6)",
-      "score": 90,
+      "score": 93,
       "scores": {
         "tractability": 18,
         "plausibility": 19,
-        "validation": 18,
-        "artifactCompleteness": 8
+        "validation": 19,
+        "artifactCompleteness": 9
       },
       "units": "OK",
       "theory": "PASS",
@@ -1455,12 +1455,12 @@
       "name": "Real-Space Chern Marker (Bianco–Resta, Open Boundaries)",
       "firstSeen": "2026-02-22",
       "source": "Paper I / Step-2 Simulator (Bonus)",
-      "score": 76,
+      "score": 90,
       "scores": {
         "tractability": 16,
         "plausibility": 19,
-        "validation": 12,
-        "artifactCompleteness": 6
+        "validation": 18,
+        "artifactCompleteness": 9
       },
       "units": "OK",
       "theory": "PASS",
@@ -1472,7 +1472,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.",
+      "description": "Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Now implemented: solver computes C_bulk = -0.9969 at m=-1 on a 10x10 QWZ lattice with open boundaries (99.7% accuracy vs exact C=-1). Verified via benchmarks/benchmarks.py chern_marker_bianco_resta().",
       "assumptions": [
         "P is the ground-state projector below Fermi energy E_F.",
         "Position operators X,Y are well-defined (open or periodic boundaries).",
@@ -1823,11 +1823,11 @@
       "name": "HLATN Plaquette Holonomy",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
-      "score": 81,
+      "score": 87,
       "scores": {
         "tractability": 19,
         "plausibility": 19,
-        "validation": 14,
+        "validation": 18,
         "artifactCompleteness": 10
       },
       "units": "OK",
@@ -2385,12 +2385,12 @@
       "source": "slack",
       "submitter": "rdm3dc",
       "repoUrl": "https://github.com/RDM3DC/eq-egatl-hlatn-plaquetteholonomy",
-      "score": 89,
+      "score": 93,
       "scores": {
         "tractability": 20,
         "plausibility": 19,
-        "validation": 16,
-        "artifactCompleteness": 4
+        "validation": 19,
+        "artifactCompleteness": 8
       },
       "units": "OK",
       "theory": "PASS",
@@ -2509,12 +2509,12 @@
       "source": "claude-opus-4.6",
       "submitter": "Claude",
       "repoUrl": "https://github.com/RDM3DC/eq-topological-coherence-order-parameter-arp-locking",
-      "score": 92,
+      "score": 96,
       "scores": {
         "tractability": 20,
         "plausibility": 20,
-        "validation": 16,
-        "artifactCompleteness": 4
+        "validation": 19,
+        "artifactCompleteness": 8
       },
       "units": "OK",
       "theory": "PASS",

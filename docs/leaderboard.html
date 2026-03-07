@@ -14,10 +14,10 @@
   <meta name='twitter:title' content='TopEquations — Leaderboard' />
   <meta name='twitter:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202603060036' />
+  <link rel='stylesheet' href='./assets/style.css?v=202603061606' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202603060036'></script>
+  <script defer src='./assets/app.js?v=202603061606'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -245,8 +245,38 @@
 </section>
 
 
-    <section class='card' data-rank='6' data-score='94' data-date='2026-02-22' data-haslatex='1'>
+    <section class='card' data-rank='6' data-score='96' data-date='2026-02-25' data-haslatex='1'>
   <div class='card__rank'>#6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Topological Coherence Order Parameter (ARP Locking)</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 96</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\Psi = \frac{1}{N_p} \sum_{p=1}^{N_p} \cos\!\left(\frac{\Theta_p}{\pi_a}\right)$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>claude-opus-4.6</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Scalar order parameter for the ARP Z\u2082 locking phase transition. Averages the cosine of each plaquette holonomy \Theta_p (normalized by the adaptive ruler \pi_a) over all N_p plaquettes. \Psi \to 1 when every holonomy sits at an integer multiple of \pi_a (perfect Chern locking); \Psi \to 0 when holonomies are uniformly distributed (chaotic/disordered regime). Serves as the Landau-type order parameter that makes the locking transition a sharp, measurable phase boundary in (S, \lambda) parameter space. Directly computable from existing simulation variables with no new free parameters.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\Theta_p is the signed plaquette holonomy from the Phase-Lift framework (LB Plaquette Holonomy equation)</li><li>\pi_a is the adaptive angular ruler from the companion ODE \dot{\pi}_a = \alpha_\pi S - \mu_\pi(\pi_a - \pi_0)</li><li>N_p is the number of plaquettes in the ARP lattice (fixed topology, typically L^2 for square lattice)</li><li>Locked regime: \Theta_p \approx 2n\pi_a for integer n, so cos(\Theta_p/\pi_a) \approx 1 and \Psi \to 1</li><li>Chaotic regime: \Theta_p uniformly distributed on (-\pi, \pi], so \langle\cos(\Theta_p/\pi_a)\rangle \to 0 by cancellation</li><li>\Psi is dimensionless and bounded: \Psi \in [-1, 1], with \Psi &gt; 0 indicating partial locking</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-topological-coherence-order-parameter-arp-locking'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-topological-coherence-order-parameter-arp-locking' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-25</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class='card' data-rank='7' data-score='94' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#7</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>QWZ Chern-Insulator Hamiltonian (Reference Form)</h2>
@@ -275,8 +305,8 @@
 </section>
 
 
-    <section class='card' data-rank='7' data-score='93' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#7</div>
+    <section class='card' data-rank='8' data-score='93' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Generic ARP Reinforce/Decay Law</h2>
@@ -305,13 +335,13 @@
 </section>
 
 
-    <section class='card' data-rank='8' data-score='92' data-date='2026-02-25' data-haslatex='1'>
-  <div class='card__rank'>#8</div>
+    <section class='card' data-rank='9' data-score='93' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>Topological Coherence Order Parameter (ARP Locking)</h2>
+      <h2 class='card__title'>Slip-Regime Asymptote (1/π Signature)</h2>
       <div class='card__meta'>
-        <span class='badge badge--score'>Score 92</span>
+        <span class='badge badge--score'>Score 93</span>
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--good' title='theory'>PASS</span>
       </div>
@@ -319,15 +349,45 @@
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\Psi = \frac{1}{N_p} \sum_{p=1}^{N_p} \cos\!\left(\frac{\Theta_p}{\pi_a}\right)$$</div>
+      <div class='equation__tex'>$$r_b=\frac{|\Delta|}{\pi}$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>claude-opus-4.6</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §3 (Eq.6)</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Scalar order parameter for the ARP Z\u2082 locking phase transition. Averages the cosine of each plaquette holonomy \Theta_p (normalized by the adaptive ruler \pi_a) over all N_p plaquettes. \Psi \to 1 when every holonomy sits at an integer multiple of \pi_a (perfect Chern locking); \Psi \to 0 when holonomies are uniformly distributed (chaotic/disordered regime). Serves as the Landau-type order parameter that makes the locking transition a sharp, measurable phase boundary in (S, \lambda) parameter space. Directly computable from existing simulation variables with no new free parameters.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\Theta_p is the signed plaquette holonomy from the Phase-Lift framework (LB Plaquette Holonomy equation)</li><li>\pi_a is the adaptive angular ruler from the companion ODE \dot{\pi}_a = \alpha_\pi S - \mu_\pi(\pi_a - \pi_0)</li><li>N_p is the number of plaquettes in the ARP lattice (fixed topology, typically L^2 for square lattice)</li><li>Locked regime: \Theta_p \approx 2n\pi_a for integer n, so cos(\Theta_p/\pi_a) \approx 1 and \Psi \to 1</li><li>Chaotic regime: \Theta_p uniformly distributed on (-\pi, \pi], so \langle\cos(\Theta_p/\pi_a)\rangle \to 0 by cancellation</li><li>\Psi is dimensionless and bounded: \Psi \in [-1, 1], with \Psi &gt; 0 indicating partial locking</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-topological-coherence-order-parameter-arp-locking'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-topological-coherence-order-parameter-arp-locking' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-25</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>When coupling can&#x27;t lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.</div></div>
+      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-slip-asymptote'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote/blob/main/images/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class='card' data-rank='10' data-score='93' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#10</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>EGATL-HLATN-PlaquetteHolonomy</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 93</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e} \theta_{R,e}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>slack</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined &lt; π → r_b → 0.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)</li><li>sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary</li><li>theta_{R,e} are Phase-Lift-resolved edge phases (branch-safe via adaptive clipping)</li><li>partial p enumerates edges in consistent orientation around the plaquette</li><li>Plaquette is the minimal closed loop in ARP lattice (typically 4 edges for square lattice)</li><li>Winding number w_p = floor(Theta_p / 2*pi_a) is integer-quantized when edges are locked</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-plaquetteholonomy'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-egatl-hlatn-plaquetteholonomy' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
@@ -335,8 +395,8 @@
 </section>
 
 
-    <section class='card' data-rank='9' data-score='91' data-date='2026-02-20' data-haslatex='1'>
-  <div class='card__rank'>#9</div>
+    <section class='card' data-rank='11' data-score='91' data-date='2026-02-20' data-haslatex='1'>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law (derived mapping)</h2>
@@ -365,8 +425,8 @@
 </section>
 
 
-    <section class='card' data-rank='10' data-score='91' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#10</div>
+    <section class='card' data-rank='12' data-score='91' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Activity Closure A = G|sinφ| (Parity Lock Mechanism)</h2>
@@ -395,8 +455,8 @@
 </section>
 
 
-    <section class='card' data-rank='11' data-score='91' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#11</div>
+    <section class='card' data-rank='13' data-score='91' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
@@ -425,8 +485,8 @@
 </section>
 
 
-    <section class='card' data-rank='12' data-score='91' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#12</div>
+    <section class='card' data-rank='14' data-score='91' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ThreeForceConductance</h2>
@@ -455,11 +515,11 @@
 </section>
 
 
-    <section class='card' data-rank='13' data-score='90' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#13</div>
+    <section class='card' data-rank='15' data-score='90' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>Slip-Regime Asymptote (1/π Signature)</h2>
+      <h2 class='card__title'>Real-Space Chern Marker (Bianco–Resta, Open Boundaries)</h2>
       <div class='card__meta'>
         <span class='badge badge--score'>Score 90</span>
         <span class='pill pill--good' title='units'>OK</span>
@@ -469,54 +529,24 @@
 
     <div class='equation'>
       <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$r_b=\frac{|\Delta|}{\pi}$$</div>
+      <div class='equation__tex'>$$C(\mathbf{r})=-2\pi i\,\langle \mathbf{r}\,|\,[PXP,\;PYP]\,|\,\mathbf{r}\rangle,\quad P=\sum_{E_n&lt;E_F}|n\rangle\langle n|$$</div>
     </div>
 
-    <div class='card__sub'>Reference: <span class='muted'>Paper I draft §3 (Eq.6)</span></div>
+    <div class='card__sub'>Reference: <span class='muted'>Paper I / Step-2 Simulator (Bonus)</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>When coupling can&#x27;t lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.</div></div>
-      <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-slip-asymptote'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Now implemented: solver computes C_bulk = -0.9969 at m=-1 on a 10x10 QWZ lattice with open boundaries (99.7% accuracy vs exact C=-1). Verified via benchmarks/benchmarks.py chern_marker_bianco_resta().</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-chern-marker-bianco-resta'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote/blob/main/images/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta/blob/main/images/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='14' data-score='89' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#14</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>EGATL-HLATN-PlaquetteHolonomy</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 89</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e} \theta_{R,e}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>slack</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined &lt; π → r_b → 0.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)</li><li>sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary</li><li>theta_{R,e} are Phase-Lift-resolved edge phases (branch-safe via adaptive clipping)</li><li>partial p enumerates edges in consistent orientation around the plaquette</li><li>Plaquette is the minimal closed loop in ARP lattice (typically 4 edges for square lattice)</li><li>Winding number w_p = floor(Theta_p / 2*pi_a) is integer-quantized when edges are locked</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-egatl-hlatn-plaquetteholonomy'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-egatl-hlatn-plaquetteholonomy' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-    <section class='card' data-rank='15' data-score='87' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#15</div>
+    <section class='card' data-rank='16' data-score='87' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#16</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Parity Flip-Rate (locking observable)</h2>
@@ -545,8 +575,38 @@
 </section>
 
 
-    <section class='card' data-rank='16' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#16</div>
+    <section class='card' data-rank='17' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#17</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 87</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e}\, \theta_{R,e}$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge orientations sigma_{p,e} are consistent with plaquette boundary convention</li><li>Resolved phases theta_{R,e} follow branch-safe update rule</li><li>Winding number is well-defined via rounding of holonomy difference</li><li>Z2 parity b_p = (-1)^{w_p} is the locking order parameter</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-hlatn-plaquette-holonomy'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class='card' data-rank='18' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#18</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
@@ -575,8 +635,8 @@
 </section>
 
 
-    <section class='card' data-rank='17' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#17</div>
+    <section class='card' data-rank='19' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#19</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PhaseLiftUpdate</h2>
@@ -605,8 +665,8 @@
 </section>
 
 
-    <section class='card' data-rank='18' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#18</div>
+    <section class='card' data-rank='20' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#20</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AdaptiveRuler</h2>
@@ -635,8 +695,8 @@
 </section>
 
 
-    <section class='card' data-rank='19' data-score='87' data-date='2026-02-25' data-haslatex='1'>
-  <div class='card__rank'>#19</div>
+    <section class='card' data-rank='21' data-score='87' data-date='2026-02-25' data-haslatex='1'>
+  <div class='card__rank'>#21</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mean-Event Equilibrium for Adaptive πₐ (discrete)</h2>
@@ -665,8 +725,8 @@
 </section>
 
 
-    <section class='card' data-rank='20' data-score='86' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#20</div>
+    <section class='card' data-rank='22' data-score='86' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#22</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>BZ-Averaged Ruler Coupling for Single-Jump QWZ Transition</h2>
@@ -695,8 +755,8 @@
 </section>
 
 
-    <section class='card' data-rank='21' data-score='86' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#21</div>
+    <section class='card' data-rank='23' data-score='86' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Geometry → Effective Mass Channel (Step-2 Coupling)</h2>
@@ -725,8 +785,8 @@
 </section>
 
 
-    <section class='card' data-rank='22' data-score='86' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#22</div>
+    <section class='card' data-rank='24' data-score='86' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#24</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
@@ -755,8 +815,8 @@
 </section>
 
 
-    <section class='card' data-rank='23' data-score='84' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#23</div>
+    <section class='card' data-rank='25' data-score='84' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#25</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Noise-Robust Langevin Extension (Rounded Transition)</h2>
@@ -785,8 +845,8 @@
 </section>
 
 
-    <section class='card' data-rank='24' data-score='82' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#24</div>
+    <section class='card' data-rank='26' data-score='82' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#26</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -815,8 +875,8 @@
 </section>
 
 
-    <section class='card' data-rank='25' data-score='82' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#25</div>
+    <section class='card' data-rank='27' data-score='82' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#27</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
@@ -845,8 +905,8 @@
 </section>
 
 
-    <section class='card' data-rank='26' data-score='81' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#26</div>
+    <section class='card' data-rank='28' data-score='81' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#28</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive Step-Limit Update (πₐ clip)</h2>
@@ -875,8 +935,8 @@
 </section>
 
 
-    <section class='card' data-rank='27' data-score='81' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#27</div>
+    <section class='card' data-rank='29' data-score='81' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#29</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
@@ -905,38 +965,8 @@
 </section>
 
 
-    <section class='card' data-rank='28' data-score='81' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#28</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 81</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$\Theta_p = \sum_{e \in \partial p} \sigma_{p,e}\, \theta_{R,e}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>HLATN_White_Paper_2026-02-24.pdf</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Plaquette holonomy computed as signed sum of resolved edge phases around a plaquette boundary. Combined with winding number w_p = round((Theta_p - Theta_p0)/(2pi)), this defines the Z2 parity locking order parameter.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge orientations sigma_{p,e} are consistent with plaquette boundary convention</li><li>Resolved phases theta_{R,e} follow branch-safe update rule</li><li>Winding number is well-defined via rounding of holonomy difference</li><li>Z2 parity b_p = (-1)^{w_p} is the locking order parameter</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-hlatn-plaquette-holonomy'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>in-progress</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>in-progress</div></div>
-    </div>
-  </div>
-</section>
-
-
-    <section class='card' data-rank='29' data-score='81' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#29</div>
+    <section class='card' data-rank='30' data-score='81' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#30</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ParityFlipRate</h2>
@@ -965,8 +995,8 @@
 </section>
 
 
-    <section class='card' data-rank='30' data-score='80' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#30</div>
+    <section class='card' data-rank='31' data-score='80' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#31</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_a-Modulated QWZ Mass (momentum-dependent; re-entrant transitions)</h2>
@@ -995,8 +1025,8 @@
 </section>
 
 
-    <section class='card' data-rank='31' data-score='79' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#31</div>
+    <section class='card' data-rank='32' data-score='79' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#32</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Running Winding + Parity</h2>
@@ -1025,8 +1055,8 @@
 </section>
 
 
-    <section class='card' data-rank='32' data-score='77' data-date='2026-02-20' data-haslatex='1'>
-  <div class='card__rank'>#32</div>
+    <section class='card' data-rank='33' data-score='77' data-date='2026-02-20' data-haslatex='1'>
+  <div class='card__rank'>#33</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -1055,8 +1085,8 @@
 </section>
 
 
-    <section class='card' data-rank='33' data-score='76' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#33</div>
+    <section class='card' data-rank='34' data-score='76' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#34</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive πₐ Update (discrete)</h2>
@@ -1079,36 +1109,6 @@
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.</li><li>π_0 is a stable rest value (typically π).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-pi-a-update'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-pi-a-update' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-pi-a-update/blob/main/images/eq-ahc-pi-a-update.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
-    </div>
-  </div>
-</section>
-
-
-    <section class='card' data-rank='34' data-score='76' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#34</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>Real-Space Chern Marker (Bianco–Resta, Open Boundaries)</h2>
-      <div class='card__meta'>
-        <span class='badge badge--score'>Score 76</span>
-        <span class='pill pill--good' title='units'>OK</span>
-        <span class='pill pill--good' title='theory'>PASS</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$$C(\mathbf{r})=-2\pi i\,\langle \mathbf{r}\,|\,[PXP,\;PYP]\,|\,\mathbf{r}\rangle,\quad P=\sum_{E_n&lt;E_F}|n\rangle\langle n|$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>Paper I / Step-2 Simulator (Bonus)</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Standard diagnostic but not yet implemented in the open-boundary sim code.</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-chern-marker-bianco-resta'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
-      <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta/blob/main/images/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -1690,7 +1690,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-03-06 00:36</strong></div>
+      <div>Last built: <strong>2026-03-06 16:06</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>
