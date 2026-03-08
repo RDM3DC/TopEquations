@@ -10,7 +10,10 @@ permissions:
 
 jobs:
   process-submission:
-    if: contains(github.event.issue.labels.*.name, 'submission')
+    if: >-
+      contains(github.event.issue.labels.*.name, 'submission')
+      && !contains(github.event.issue.labels.*.name, 'processed')
+      && !contains(github.event.issue.labels.*.name, 'invalid')
     runs-on: ubuntu-latest
 
     steps:
