@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-08T18:07:00.065272+00:00",
-  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "3dbc93f71eccef5a0a4eda90af33b69688e80549efa65485ba5f65a1955a55dc",
-  "count": 108,
+  "generated_at": "2026-03-08T22:52:06.017874+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "50127d8ad6bf54dec8b29bd961c9947726b79f8ca792510d77dfc5bfe2f27db4",
+  "count": 113,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2806,6 +2806,156 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "18076dba3f0dc03e7762819d34a4bc67d113e1d841fb70ec2b8e1c3f884ee02f"
+    },
+    {
+      "token_id": "eq-adaptive-chern-self-healing-conductance-law",
+      "name": "Adaptive Chern Self-Healing Conductance Law",
+      "equation_latex": "dg_e/dt = alpha_G(S)|J_e|exp(i theta_{R,e}) - mu_G(S) g_e - lambda_s g_e sin^2(theta_{R,e}/(2 pi_a)) + chi C_loc(t) g_e",
+      "equation_hash": "877e117de0bb9065a1e1f56da3afd5fbae0100cc257f54f42c259f5f13d76e8e",
+      "score": 73,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 19,
+        "date": "2026-03-08"
+      },
+      "source": "chatgpt",
+      "date": "2026-03-08",
+      "description": "An extension of the adaptive phase-lift conductance law that includes a local Chern topological feedback term, enabling self-healing of edge conductance in topological lattices under local perturbations. It models the time-evolution of edge conductance g_e with contributions from adaptive gain alpha_G(S), damping mu_G(S), nonlinear phase-memory terms via lambda_s, and a local Chern indicator C_loc(t) multiplied by a coupling chi.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "74e6faad7668d60b209787e9bf8a8dc3c9ea1382b2b10e5401f84b6511acae64"
+    },
+    {
+      "token_id": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",
+      "name": "Adaptive Chern Self-Healing Conductance Law",
+      "equation_latex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,|J_e|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s g_e\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi\\,C_{\\mathrm{loc}}(t)\\,g_e",
+      "equation_hash": "527491748006ee8f65e5cb6589c4c6a927c95d99c12f99f536a34cb7387d4caf",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-03-08"
+      },
+      "source": "chatgpt",
+      "date": "2026-03-08",
+      "description": "Adaptive complex edge-conductance law for a damaged topological lattice with history-resolved phase memory and local topological feedback. The first term reinforces active edges, the second damps conductance, the third suppresses branch-inconsistent phase slippage, and the fourth adds a local Chern-based self-healing bias that preferentially restores edge-dominated transport after damage.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "6c2d3ba5e2e6509f4d75c87c9979372e7cb761a68f82f09e79d62344ee81d80c"
+    },
+    {
+      "token_id": "eq-phase-lifted-thouless-pump-memory-law",
+      "name": "Phase-Lifted Thouless Pump Memory Law",
+      "equation_latex": "Q_{\\mathrm{cycle}}=e\\left(C+\\frac{\\Delta\\theta_R}{2\\pi_a}\\right)",
+      "equation_hash": "fa49adbbc21769f64c0ede86943abca0fb381ae2c5ffc6412b5f610b139fbaf2",
+      "score": 79,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 23,
+        "date": "2026-03-08"
+      },
+      "source": "chatgpt",
+      "date": "2026-03-08",
+      "description": "Memory-augmented quantized pump law in which the transported charge per cycle contains the usual topological contribution eC plus a branch-history correction from the lifted phase increment Delta theta_R. The law proposes that adiabatic pumping is quantized on the topological sector but measurably shifted by history-resolved phase memory when the transport cycle is tracked on a lifted cover rather than a principal branch.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "6f39b05de3918f06ed6e761c02fade2aa6443f5acc5e62032c88f553d63aca7c"
+    },
+    {
+      "token_id": "eq-landauer-phase-lift-conductance-law",
+      "name": "Landauer-Phase-Lift Conductance Law",
+      "equation_latex": "G=\\frac{2e^2}{h}\\sum_n T_n\\cos^2\\!\\left(\\frac{\\theta_{R,n}}{2\\pi_a}\\right)",
+      "equation_hash": "b05a797b1b5261bf4e7bc71975083cec4831fc015a8ed7f98f9ab2b8653edb7e",
+      "score": 81,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 23,
+        "date": "2026-03-08"
+      },
+      "source": "chatgpt",
+      "date": "2026-03-08",
+      "description": "Phase-memory extension of Landauer transport in which each transmission channel T_n is modulated by a bounded lifted-phase factor. The law preserves the standard mesoscopic conductance skeleton while adding a branch-consistent memory term that suppresses channels with unresolved or slip-prone phase history.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "314804b722d02720367fb46d183bd1b8e491f9a2ea46470494ffe9075432a942"
+    },
+    {
+      "token_id": "eq-phase-lifted-rg-memory-flow",
+      "name": "Phase-Lifted RG Memory Flow",
+      "equation_latex": "\\frac{d g}{d\\ln \\mu}=\\beta(g)-\\lambda_M g\\sin^2\\!\\left(\\frac{\\theta_R}{2\\pi_a}\\right)",
+      "equation_hash": "15cc171a5a57f8753485fa7cee5292c677813e7eec2a4ac09e24fd0382cb3c1b",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-03-08"
+      },
+      "source": "chatgpt",
+      "date": "2026-03-08",
+      "description": "Renormalization-group flow with a bounded phase-memory correction. The standard beta-function drives scale evolution, while the lifted-phase term penalizes branch-inconsistent history and introduces a memory-sensitive suppression of coupling flow. The proposal is that scale evolution depends not only on the instantaneous coupling g but also on the resolved phase history carried along the flow.",
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+      "version": 1,
+      "metadata_hash": "889a9953c957a3fa2ac5da240f51c56685f8fc24130ca9499bac2c5dbb12ab14"
     },
     {
       "token_id": "famous-schrodinger",

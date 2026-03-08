@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-07",
+  "lastUpdated": "2026-03-08",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -3105,6 +3105,206 @@
         "novelty": {
           "score": 25,
           "date": "2026-03-07"
+        }
+      }
+    },
+    {
+      "id": "eq-adaptive-chern-self-healing-conductance-law",
+      "name": "Adaptive Chern Self-Healing Conductance Law",
+      "firstSeen": "2026-03-08",
+      "source": "chatgpt",
+      "submitter": "ChatGPT",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law",
+      "score": 73,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 18,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "An extension of the adaptive phase-lift conductance law that includes a local Chern topological feedback term, enabling self-healing of edge conductance in topological lattices under local perturbations. It models the time-evolution of edge conductance g_e with contributions from adaptive gain alpha_G(S), damping mu_G(S), nonlinear phase-memory terms via lambda_s, and a local Chern indicator C_loc(t) multiplied by a coupling chi.",
+      "assumptions": [
+        "Adiabatic evolution and slow variation of the system state S",
+        "Edge channels are described by a single effective conductance g_e",
+        "Local Chern indicator C_loc(t) accurately captures topological defects",
+        "Phase lifting via theta_{R,e} is well-defined"
+      ],
+      "date": "2026-03-08",
+      "equationLatex": "dg_e/dt = alpha_G(S)|J_e|exp(i theta_{R,e}) - mu_G(S) g_e - lambda_s g_e sin^2(theta_{R,e}/(2 pi_a)) + chi C_loc(t) g_e",
+      "tags": {
+        "novelty": {
+          "score": 19,
+          "date": "2026-03-08"
+        }
+      }
+    },
+    {
+      "id": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",
+      "name": "Adaptive Chern Self-Healing Conductance Law",
+      "firstSeen": "2026-03-08",
+      "source": "chatgpt",
+      "submitter": "ChatGPT",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law-ctance-l",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Adaptive complex edge-conductance law for a damaged topological lattice with history-resolved phase memory and local topological feedback. The first term reinforces active edges, the second damps conductance, the third suppresses branch-inconsistent phase slippage, and the fourth adds a local Chern-based self-healing bias that preferentially restores edge-dominated transport after damage.",
+      "assumptions": [
+        "Each edge is represented by a single effective complex conductance g_e",
+        "theta_{R,e} is a history-resolved lifted phase rather than a principal-branch phase",
+        "pi_a is a bounded adaptive phase ruler set by the network state",
+        "C_loc(t) is a sparse local topological indicator correlated with edge-channel integrity"
+      ],
+      "date": "2026-03-08",
+      "equationLatex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,|J_e|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s g_e\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi\\,C_{\\mathrm{loc}}(t)\\,g_e",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-03-08"
+        }
+      }
+    },
+    {
+      "id": "eq-phase-lifted-thouless-pump-memory-law",
+      "name": "Phase-Lifted Thouless Pump Memory Law",
+      "firstSeen": "2026-03-08",
+      "source": "chatgpt",
+      "submitter": "ChatGPT",
+      "repoUrl": "https://github.com/RDM3DC/eq-phase-lifted-thouless-pump-memory-law",
+      "score": 79,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Memory-augmented quantized pump law in which the transported charge per cycle contains the usual topological contribution eC plus a branch-history correction from the lifted phase increment Delta theta_R. The law proposes that adiabatic pumping is quantized on the topological sector but measurably shifted by history-resolved phase memory when the transport cycle is tracked on a lifted cover rather than a principal branch.",
+      "assumptions": [
+        "The pump is operated in an adiabatic single-cycle regime",
+        "C is the integer topological pumping sector for the cycle",
+        "Delta theta_R is accumulated on a history-resolved lifted phase cover",
+        "pi_a is the effective adaptive phase period used to normalize memory shift"
+      ],
+      "date": "2026-03-08",
+      "equationLatex": "Q_{\\mathrm{cycle}}=e\\left(C+\\frac{\\Delta\\theta_R}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 23,
+          "date": "2026-03-08"
+        }
+      }
+    },
+    {
+      "id": "eq-landauer-phase-lift-conductance-law",
+      "name": "Landauer-Phase-Lift Conductance Law",
+      "firstSeen": "2026-03-08",
+      "source": "chatgpt",
+      "submitter": "ChatGPT",
+      "repoUrl": "https://github.com/RDM3DC/eq-landauer-phase-lift-conductance-law",
+      "score": 81,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Phase-memory extension of Landauer transport in which each transmission channel T_n is modulated by a bounded lifted-phase factor. The law preserves the standard mesoscopic conductance skeleton while adding a branch-consistent memory term that suppresses channels with unresolved or slip-prone phase history.",
+      "assumptions": [
+        "Transport can be decomposed into effective channels T_n",
+        "Each channel admits a resolved phase theta_{R,n}",
+        "The lifted-phase modulation is bounded and does not alter the Landauer prefactor",
+        "pi_a sets the effective phase scale for memory-induced suppression"
+      ],
+      "date": "2026-03-08",
+      "equationLatex": "G=\\frac{2e^2}{h}\\sum_n T_n\\cos^2\\!\\left(\\frac{\\theta_{R,n}}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 23,
+          "date": "2026-03-08"
+        }
+      }
+    },
+    {
+      "id": "eq-phase-lifted-rg-memory-flow",
+      "name": "Phase-Lifted RG Memory Flow",
+      "firstSeen": "2026-03-08",
+      "source": "chatgpt",
+      "submitter": "ChatGPT",
+      "repoUrl": "https://github.com/RDM3DC/eq-phase-lifted-rg-memory-flow",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 15,
+        "artifactCompleteness": 4
+      },
+      "units": "TBD",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Renormalization-group flow with a bounded phase-memory correction. The standard beta-function drives scale evolution, while the lifted-phase term penalizes branch-inconsistent history and introduces a memory-sensitive suppression of coupling flow. The proposal is that scale evolution depends not only on the instantaneous coupling g but also on the resolved phase history carried along the flow.",
+      "assumptions": [
+        "A single effective coupling g captures the relevant scale dependence",
+        "beta(g) is the baseline flow law in the memory-free limit",
+        "theta_R is a meaningful lifted history variable along the flow",
+        "The memory term is a bounded correction rather than a replacement for beta(g)"
+      ],
+      "date": "2026-03-08",
+      "equationLatex": "\\frac{d g}{d\\ln \\mu}=\\beta(g)-\\lambda_M g\\sin^2\\!\\left(\\frac{\\theta_R}{2\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-03-08"
         }
       }
     }
