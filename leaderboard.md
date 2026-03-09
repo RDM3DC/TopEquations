@@ -76,6 +76,7 @@ Scoring model (0-150):
 | 59 | Temperature-Dependent Conductance Law | G(T)=G_{eq}\,e^{\beta\,(T-T_0)} | daily run 2026-02-19 | 69 | 20 @ 2026-02-19 | OK | PASS | ./assets/animations/Eq10TempConductance.mp4 | planned | Extends ARP equilibrium with an exponential temperature factor for material sensitivity. |
 | 60 | AHC Event Stimulus (phase-jump indicator) | S_k=\mathbf{1}\{\|r_k\|>\pi_{a,k-1}\} | Equation Sheet v1.1 §F (Eq.17) | 69 | 19 @ 2026-02-22 | OK | PASS | ./assets/animations/eq-ahc-event-stimulus.mp4 | planned | Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ \|Δ²θ_R\|. Triggers πₐ widening. |
 | 61 | Adaptive Entropy Production Rate (AEPR) | dS/dt = sigma_S * sum(G_ij * \|I_ij\|^2) - kappa_S * (S - S_0) - xi_S * S * r_b | Derived from EGATL Phase-Coupled Conductance framework | 69 | 19 @ 2026-02-24 | TBD | PASS-WITH-ASSUMPTIONS | planned | planned | Entropy production rate for adaptive neural-mesh networks. First term: Ohmic dissipation from conductance-weighted currents. Second term: relaxation toward baseline entropy S_0. Third term: entropy drain coupled to parity-flip birth rate r_b. Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy. |
+| 62 | Newton's Second Law | F = ma | test-run | 69 | 20 @ 2026-03-09 | OK | PASS | planned | planned | Fundamental equation of classical mechanics: net force equals mass times acceleration. Cornerstone of Newtonian dynamics. |
 
 ## Newest Top-Ranked Equations (This Month)
 
@@ -102,6 +103,7 @@ Scoring model (0-150):
 | 2026-03-04 | Entropy Production / Event Injection (S-Field) | 70 | TBD | TBD | planned | planned | Entropy-like gating state: dissipative power term plus winding-discontinuity term inject S; relaxation returns S toward S_eq. |
 | 2026-03-04 | Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition) | 70 | TBD | TBD | planned | planned | Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary. |
 | 2026-03-06 | Branch Fault Criterion | 70 | TBD | TBD | planned | planned | Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic. |
+| 2026-03-09 | Newton's Second Law | 69 | OK | PASS | planned | planned | Fundamental equation of classical mechanics: net force equals mass times acceleration. Cornerstone of Newtonian dynamics. |
 
 ## All Equations Since 2025 (Registry)
 
@@ -194,6 +196,7 @@ Scoring model (0-150):
 | 2026-03-08 | Phase-Lifted Thouless Pump Memory Law | Q_{\mathrm{cycle}}=e\left(C+\frac{\Delta\theta_R}{2\pi_a}\right) | chatgpt | PASS-WITH-ASSUMPTIONS | 79 | planned | planned |
 | 2026-03-09 | Directional-Strength Proxy Chern Law | C_{\mathrm{proxy}}(t)=\mathcal{C}_{\mathrm{QWZ}}\!\left(\bar g_x(t),\bar g_y(t),m\right),\quad \bar g_d(t)=\left\langle \|g_e(t)\|\right\rangle_{e\parallel d},\ d\in\{x,y\} | PR Root Guide | PASS-WITH-ASSUMPTIONS | 86 | planned | planned |
 | 2026-03-09 | Slip-Suppressed Edge Recovery Law | \frac{d\eta_{\mathrm{rec}}}{dt}=\alpha\,f_{\partial}(t)\,f_{\mathrm{top}}(t)-\beta\,\rho_{\mathrm{slip}}(t)\,\eta_{\mathrm{rec}}(t) | QWZ Recovery Dashboard | PASS-WITH-ASSUMPTIONS | 84 | planned | planned |
+| 2026-03-09 | Newton's Second Law | F = ma | test-run | PASS | 69 | planned | planned |
 
 ## Update Rules
 

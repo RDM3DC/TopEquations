@@ -3397,6 +3397,44 @@
           "date": "2026-03-09"
         }
       }
+    },
+    {
+      "id": "eq-newton-s-second-law",
+      "name": "Newton's Second Law",
+      "firstSeen": "2026-03-09",
+      "source": "test-run",
+      "submitter": "copilot-agent",
+      "repoUrl": "https://github.com/RDM3DC/eq-newton-s-second-law",
+      "score": 69,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 12,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Fundamental equation of classical mechanics: net force equals mass times acceleration. Cornerstone of Newtonian dynamics.",
+      "assumptions": [
+        "Classical (non-relativistic) regime",
+        "Point-mass approximation"
+      ],
+      "date": "2026-03-09",
+      "equationLatex": "F = ma",
+      "tags": {
+        "novelty": {
+          "score": 20,
+          "date": "2026-03-09"
+        }
+      }
     }
   ]
 }
