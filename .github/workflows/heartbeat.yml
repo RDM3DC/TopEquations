@@ -9,6 +9,10 @@ permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: pipeline-data
+  cancel-in-progress: false
+
 jobs:
   heartbeat:
     runs-on: ubuntu-latest
@@ -39,25 +43,7 @@ jobs:
           ")
           echo "pending_submissions=$PENDING" >> "$GITHUB_OUTPUT"
 
-          # Check if leaderboard.md is older than equations.json
-          LEADERBOARD_STALE=$(python -c "
-          import os
-          eq_mtime = os.path.getmtime('data/equations.json')
-          lb_mtime = os.path.getmtime('leaderboard.md') if os.path.exists('leaderboard.md') else 0
-          html_mtime = os.path.getmtime('docs/leaderboard.html') if os.path.exists('docs/leaderboard.html') else 0
-          print('true' if eq_mtime > min(lb_mtime, html_mtime) else 'false')
-          ")
-          echo "leaderboard_stale=$LEADERBOARD_STALE" >> "$GITHUB_OUTPUT"
-
-          # Rebuild if stale
-          if [ "$LEADERBOARD_STALE" = "true" ]; then
-            echo "Leaderboard is stale, rebuilding..."
-            python tools/generate_leaderboard.py
-            python tools/build_site.py
-            CHANGED=true
-          fi
-
-          # Re-export certificates if equations changed
+          # Re-export certificates first if equations changed (must happen before site rebuild)
           CERTS_STALE=$(python -c "
           import os
           eq_mtime = os.path.getmtime('data/equations.json')
@@ -69,6 +55,27 @@ jobs:
           if [ "$CERTS_STALE" = "true" ]; then
             echo "Certificates are stale, re-exporting..."
             python tools/export_equation_certificates.py
+            CHANGED=true
+          fi
+
+          # Check if leaderboard.md is older than equations.json or certs (rebuild covers both)
+          LEADERBOARD_STALE=$(python -c "
+          import os
+          eq_mtime = os.path.getmtime('data/equations.json')
+          cert_path = 'data/certificates/equation_certificates.json'
+          cert_mtime = os.path.getmtime(cert_path) if os.path.exists(cert_path) else 0
+          src_mtime = max(eq_mtime, cert_mtime)
+          lb_mtime = os.path.getmtime('leaderboard.md') if os.path.exists('leaderboard.md') else 0
+          html_mtime = os.path.getmtime('docs/leaderboard.html') if os.path.exists('docs/leaderboard.html') else 0
+          print('true' if src_mtime > min(lb_mtime, html_mtime) else 'false')
+          ")
+          echo "leaderboard_stale=$LEADERBOARD_STALE" >> "$GITHUB_OUTPUT"
+
+          # Rebuild site if leaderboard or certificates were stale
+          if [ "$LEADERBOARD_STALE" = "true" ] || [ "$CERTS_STALE" = "true" ]; then
+            echo "Site is stale, rebuilding..."
+            python tools/generate_leaderboard.py
+            python tools/build_site.py
             CHANGED=true
           fi
 

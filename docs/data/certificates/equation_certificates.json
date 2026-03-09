@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-09T08:49:33.864790+00:00",
-  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "3fd170b0ece6874eb9efecd7a3cca2da5beb5be68414b07525271b9b420d1d5f",
-  "count": 114,
+  "generated_at": "2026-03-09T09:07:14.617046+00:00",
+  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
+  "source_sha256": "279dc57167fc05cf420cbb877c0b807369d0e8fabad8d4a24d854b90865e25f3",
+  "count": 115,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -2986,6 +2986,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "6bf3b5cafe7b02a169920edcdfec2a6e746bbd2dd29043f639d5c86b5f5acd70"
+    },
+    {
+      "token_id": "eq-slip-suppressed-edge-recovery-law",
+      "name": "Slip-Suppressed Edge Recovery Law",
+      "equation_latex": "\\frac{d\\eta_{\\mathrm{rec}}}{dt}=\\alpha\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)-\\beta\\,\\rho_{\\mathrm{slip}}(t)\\,\\eta_{\\mathrm{rec}}(t)",
+      "equation_hash": "ce86b099f0bf4fedf23ae997741704c9351f73d88163b8f9acb3a50ed3440343",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-03-09"
+      },
+      "source": "QWZ Recovery Dashboard",
+      "date": "2026-03-09",
+      "description": "Minimal recovery law for damaged adaptive topological transport. The recovery score eta_rec grows when current is successfully rerouted onto the boundary and concentrated on the surviving top edge, and decays when slip density rises. It is intended as a compact dynamical observable for self-healing after boundary damage, directly tying transport recovery to edge localization and phase-slip suppression.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "a8abb7921e207a40802ad6b43e9ce91a67a285c7d0c3dafc30445b50d9ab8429"
     },
     {
       "token_id": "famous-schrodinger",

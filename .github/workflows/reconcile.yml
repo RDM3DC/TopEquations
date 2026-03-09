@@ -6,8 +6,12 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+
+concurrency:
+  group: pipeline-data
+  cancel-in-progress: false
 
 jobs:
   reconcile:
@@ -16,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,6 +36,39 @@ jobs:
           COUNT=$(python -c "import json; r=json.load(open('_reconcile_report.json')); print(r['issue_count'])")
           echo "status=$STATUS" >> "$GITHUB_OUTPUT"
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+          # Auto-fix: stale_certificates and stale_site are safe to repair in-place
+          # Single Python call reads the report once and outputs both flags space-separated
+          read -r STALE_CERTS STALE_SITE < <(python -c "
+import json
+r = json.load(open('_reconcile_report.json'))
+types = {i['type'] for i in r.get('issues', [])}
+certs = 'true' if 'stale_certificates' in types else 'false'
+site  = 'true' if 'stale_site'         in types else 'false'
+print(certs, site)
+          ")
+          FIXED=false
+          if [ "$STALE_CERTS" = "true" ]; then
+            echo "Auto-fixing stale certificates..."
+            python tools/export_equation_certificates.py
+            FIXED=true
+          fi
+          if [ "$STALE_SITE" = "true" ] || [ "$STALE_CERTS" = "true" ]; then
+            echo "Auto-fixing stale site..."
+            python tools/generate_leaderboard.py
+            python tools/build_site.py
+            FIXED=true
+          fi
+          echo "auto_fixed=$FIXED" >> "$GITHUB_OUTPUT"
+
+      - name: Commit auto-fixes
+        if: steps.reconcile.outputs.auto_fixed == 'true'
+        run: |
+          git config user.name "TopEquations Bot"
+          git config user.email "bot@topequations.local"
+          git add -A
+          git diff --cached --quiet && echo "Nothing to commit" || git commit -m "Reconcile: auto-fix stale certs/site"
+          git push
 
       - name: Open integrity alert issue if drift detected
         if: steps.reconcile.outputs.status == 'DRIFT'

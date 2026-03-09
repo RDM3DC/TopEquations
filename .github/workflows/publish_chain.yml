@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pipeline-data
+  cancel-in-progress: false
+
 jobs:
   publish-chain:
     runs-on: ubuntu-latest
@@ -79,6 +83,11 @@ jobs:
             --node-url "$NODE_URL" \
             --signer-file "$wallet_path" \
             --mine
+
+      - name: Rebuild site with updated chain receipt
+        if: steps.config.outputs.configured == 'true' && steps.preflight.outputs.healthy == 'true'
+        run: |
+          python tools/build_site.py
 
       - name: Commit and push publish receipts
         if: steps.config.outputs.configured == 'true' && steps.preflight.outputs.healthy == 'true'
