@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-08",
+  "lastUpdated": "2026-03-09",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -3313,6 +3313,47 @@
         "novelty": {
           "score": 27,
           "date": "2026-03-08"
+        }
+      }
+    },
+    {
+      "id": "eq-directional-strength-proxy-chern-law",
+      "name": "Directional-Strength Proxy Chern Law",
+      "firstSeen": "2026-03-09",
+      "source": "PR Root Guide",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-directional-strength-proxy-chern-law",
+      "score": 86,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Bulk topological proxy for an adaptive QWZ block lattice. Replace the bare QWZ couplings by the mean adaptive bond strengths on x- and y-directed edges, then evaluate the standard Qi-Wu-Zhang Chern number. In the uniform limit where all x-bonds share one strength and all y-bonds share one strength, the proxy reduces to the ordinary QWZ Chern number. In the recovery protocol it provides a tractable time-dependent topological order parameter that can be compared directly with transfer efficiency, boundary current fraction, top-edge rerouting, and slip density after damage.",
+      "assumptions": [
+        "Adaptive edge scalars g_e admit directional coarse-graining into mean x- and y-directed strengths over the observation window.",
+        "The fixed 2x2 QWZ bond blocks carry the sigma_x/sigma_y/sigma_z structure, while adaptation enters through scalar edge multipliers.",
+        "The mass m is the same QWZ mass channel used by the underlying benchmark lattice.",
+        "Using |g_e| is appropriate for this proxy because complex phase rotation of g_e is not itself the bulk Pauli-structure term.",
+        "The proxy is intended as a bulk classifier and trend monitor, not a full replacement for the Bianco-Resta real-space Chern marker on strongly inhomogeneous lattices."
+      ],
+      "date": "2026-03-09",
+      "equationLatex": "C_{\\mathrm{proxy}}(t)=\\mathcal{C}_{\\mathrm{QWZ}}\\!\\left(\\bar g_x(t),\\bar g_y(t),m\\right),\\quad \\bar g_d(t)=\\left\\langle |g_e(t)|\\right\\rangle_{e\\parallel d},\\ d\\in\\{x,y\\}",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-03-09"
         }
       }
     }
