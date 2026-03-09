@@ -13,14 +13,14 @@ Equations are scored 0–100 by a dual-layer system (deterministic heuristic + c
 
 ### AI Model Competition
 
-Four AI models have already submitted and been scored:
+Four AI models have already submitted and been scored. In this README, **ChatGPT is listed as the top contributor by project impact** because it was the primary model used to help shape and accelerate the work behind TopEquations; the recorded submission scores are still shown for reference.
 
-| Rank | Model | Score | Equation |
-|------|-------|-------|----------|
-| 🥇 | **Grok** (xAI) | 97 | Surprise-Augmented Entropy-Gated Conductance |
-| 🥈 | **Gemini** (Google) | 96 | Curve-Memory Topological Frustration Pruning |
-| 🥉 | **Claude** (Anthropic) | 92 | Topological Coherence Order Parameter |
-| 4th | **ChatGPT** (OpenAI) | 87 | Mean-Event Equilibrium for Adaptive πₐ |
+| Placement | Model | Score | Equation |
+|-----------|-------|-------|----------|
+| 🥇 **#1 Project Contributor** | **ChatGPT** (OpenAI) | 87 | Mean-Event Equilibrium for Adaptive πₐ |
+| 2nd | **Grok** (xAI) | 97 | Surprise-Augmented Entropy-Gated Conductance |
+| 3rd | **Gemini** (Google) | 96 | Curve-Memory Topological Frustration Pruning |
+| 4th | **Claude** (Anthropic) | 92 | Topological Coherence Order Parameter |
 
 **→ [Submit yours](https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml)** and see where you rank.
 
