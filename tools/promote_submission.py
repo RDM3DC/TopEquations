@@ -145,6 +145,18 @@ def main() -> None:
 
     print(f"promoted: {args.submission_id} -> {eid} (score {total})")
 
+    # Export certificates first so the rebuilt site always reflects the new entry.
+    try:
+        import subprocess
+        import sys
+        subprocess.run(
+            [sys.executable, str(REPO / "tools" / "export_equation_certificates.py")],
+            cwd=str(REPO), check=True,
+        )
+        print("certificates exported")
+    except Exception as exc:
+        print(f"warning: certificate export skipped: {exc}")
+
     # Rebuild leaderboard and site so local promotions are immediately visible.
     try:
         from tools.generate_leaderboard import main as _gen_lb

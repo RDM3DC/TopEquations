@@ -8,6 +8,10 @@ permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: pipeline-data
+  cancel-in-progress: false
+
 jobs:
   process-submission:
     if: >-
@@ -232,12 +236,12 @@ jobs:
           " 2>/dev/null || echo "N/A")
           echo "solver_status=$SOLVER_STATUS" >> "$GITHUB_OUTPUT"
 
-          # Rebuild leaderboard and site
+          # Export certificates before building site so certificates.html is always current
+          python tools/export_equation_certificates.py
+
+          # Rebuild leaderboard and site (reads freshly-exported certificates)
           python tools/generate_leaderboard.py
           python tools/build_site.py
-
-          # Export certificates (chain publish handled separately by local cron)
-          python tools/export_equation_certificates.py
 
       - name: Commit and push changes
         if: steps.validate.outputs.valid == 'true'
