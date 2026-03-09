@@ -1,23 +1,23 @@
 {
-  "name": "Boundary-Reroute Recovery Index",
-  "equation": "R_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\lambda\\,\\rho_{\\mathrm{slip}}(t)}",
-  "description": "Compact recovery index for damaged adaptive topological transport. The score increases when transfer efficiency, boundary-current fraction, and top-edge rerouting are all high, and decreases when slip density rises. It is meant as a dashboard-level observable for ranking how well the lattice recovers after damage.",
+  "name": "Entropy-Gated Edge Recovery Score",
+  "equation": "E_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\rho_{\\mathrm{slip}}(t)}\\,\\exp\\!\\left[-\\gamma\\,|S(t)-S_{\\mathrm{eq}}|\\right]",
+  "description": "Entropy-gated recovery score for damaged adaptive topological transport. The score rises when transfer efficiency, boundary localization, and top-edge rerouting are all strong, is suppressed by slip density, and is further reduced when the system entropy deviates from its equilibrium recovery band. It is intended as a compact observable for comparing recovery quality across damage and ablation protocols.",
   "source": "QWZ Recovery Dashboard",
   "submitter": "RDM3DC",
   "units": "OK",
   "theory": "PASS-WITH-ASSUMPTIONS",
   "assumptions": [
-    "Transfer efficiency eta_tr(t), boundary fraction f_partial(t), top-edge fraction f_top(t), and slip density rho_slip(t) are all measured on a common time window.",
-    "High recovery requires simultaneous bulk-to-edge rerouting and sustained top-edge transport after damage.",
-    "Slip density acts as a suppressive factor on effective recovery quality in the tested regime.",
-    "The coefficient lambda is a positive weighting constant that sets the penalty strength of slip activity.",
-    "This index is a reduced observable for comparison and ranking, not a microscopic law for the full adaptive conductance dynamics."
+    "Transfer efficiency eta_tr(t), boundary fraction f_partial(t), top-edge fraction f_top(t), slip density rho_slip(t), and entropy S(t) are measured over a common time window.",
+    "Effective recovery requires simultaneous transport restoration and edge rerouting after damage.",
+    "Slip density degrades recovery quality by disrupting coherent edge-guided transport.",
+    "Entropy deviation |S(t)-S_eq| acts as a penalty for operating away from the recovery-favorable regime.",
+    "The coefficient gamma is a positive sensitivity constant controlling how strongly entropy mismatch suppresses the recovery score."
   ],
   "evidence": [
-    "Built directly from observables already reported in the recovery summaries and ablation dashboards.",
-    "Recovers a large score only when transfer, boundary localization, and top-edge rerouting all remain strong at the same time.",
-    "Drops continuously as slip density rises, matching the qualitative loss of coherent recovery after damage.",
-    "Can be compared side-by-side across damage protocols, mass sweeps, and phase-mode ablations as a single scalar benchmark.",
-    "Falsifiable by cases where high transfer is achieved without edge localization or where strong edge localization persists but slip density destroys transport quality."
+    "Built from observables already tracked in the recovery dashboards, including transfer efficiency, boundary fraction, top-edge fraction, slip density, and entropy.",
+    "Reduces to a purely transport-edge score when S(t)=S_eq, isolating the entropy gate as the added mechanism.",
+    "Drops when slip density rises even if edge localization remains high, matching the qualitative loss of useful recovery.",
+    "Penalizes over-driven or off-band states where transport may persist but entropy indicates the lattice is outside the stable healing regime.",
+    "Falsifiable by comparing runs with similar edge rerouting but different entropy trajectories and testing whether the lower-entropy-mismatch runs yield better sustained recovery."
   ]
 }

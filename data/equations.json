@@ -3476,6 +3476,47 @@
           "date": "2026-03-09"
         }
       }
+    },
+    {
+      "id": "eq-entropy-gated-edge-recovery-score",
+      "name": "Entropy-Gated Edge Recovery Score",
+      "firstSeen": "2026-03-09",
+      "source": "QWZ Recovery Dashboard",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-entropy-gated-edge-recovery-score",
+      "score": 87,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Entropy-gated recovery score for damaged adaptive topological transport. The score rises when transfer efficiency, boundary localization, and top-edge rerouting are all strong, is suppressed by slip density, and is further reduced when the system entropy deviates from its equilibrium recovery band. It is intended as a compact observable for comparing recovery quality across damage and ablation protocols.",
+      "assumptions": [
+        "Transfer efficiency eta_tr(t), boundary fraction f_partial(t), top-edge fraction f_top(t), slip density rho_slip(t), and entropy S(t) are measured over a common time window.",
+        "Effective recovery requires simultaneous transport restoration and edge rerouting after damage.",
+        "Slip density degrades recovery quality by disrupting coherent edge-guided transport.",
+        "Entropy deviation |S(t)-S_eq| acts as a penalty for operating away from the recovery-favorable regime.",
+        "The coefficient gamma is a positive sensitivity constant controlling how strongly entropy mismatch suppresses the recovery score."
+      ],
+      "date": "2026-03-09",
+      "equationLatex": "E_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\rho_{\\mathrm{slip}}(t)}\\,\\exp\\!\\left[-\\gamma\\,|S(t)-S_{\\mathrm{eq}}|\\right]",
+      "tags": {
+        "novelty": {
+          "score": 29,
+          "date": "2026-03-09"
+        }
+      }
     }
   ]
 }

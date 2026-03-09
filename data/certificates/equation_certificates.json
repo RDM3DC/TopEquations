@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-09T09:30:55.624899+00:00",
+  "generated_at": "2026-03-09T09:53:15.996157+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "3f1b59180bee088e7a335ccd0142be22367abc240502c59321988b7956bcbdd4",
-  "count": 117,
+  "source_sha256": "f483832418647d5b2aad1cb66df9fdf00803ea934e77c1f3d984bbe7bc96c08c",
+  "count": 118,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3076,6 +3076,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "a42d6fc1f9f19b6bdc29e4bd0cb64b722931ddc7fb462e0e7dd72c5b70f33f41"
+    },
+    {
+      "token_id": "eq-entropy-gated-edge-recovery-score",
+      "name": "Entropy-Gated Edge Recovery Score",
+      "equation_latex": "E_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\rho_{\\mathrm{slip}}(t)}\\,\\exp\\!\\left[-\\gamma\\,|S(t)-S_{\\mathrm{eq}}|\\right]",
+      "equation_hash": "72f068d0afc4a99a962442519eec1ea0d2dcfee46b2bfe6228927842bfa18fab",
+      "score": 87,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-03-09"
+      },
+      "source": "QWZ Recovery Dashboard",
+      "date": "2026-03-09",
+      "description": "Entropy-gated recovery score for damaged adaptive topological transport. The score rises when transfer efficiency, boundary localization, and top-edge rerouting are all strong, is suppressed by slip density, and is further reduced when the system entropy deviates from its equilibrium recovery band. It is intended as a compact observable for comparing recovery quality across damage and ablation protocols.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "4de074c8ebf82b5efd76b90d4fd40096c0daed0e827068cc7323bd512c6ef793"
     },
     {
       "token_id": "famous-schrodinger",
