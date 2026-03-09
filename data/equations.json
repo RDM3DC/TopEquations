@@ -3356,6 +3356,47 @@
           "date": "2026-03-09"
         }
       }
+    },
+    {
+      "id": "eq-slip-suppressed-edge-recovery-law",
+      "name": "Slip-Suppressed Edge Recovery Law",
+      "firstSeen": "2026-03-09",
+      "source": "QWZ Recovery Dashboard",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-slip-suppressed-edge-recovery-law",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Minimal recovery law for damaged adaptive topological transport. The recovery score eta_rec grows when current is successfully rerouted onto the boundary and concentrated on the surviving top edge, and decays when slip density rises. It is intended as a compact dynamical observable for self-healing after boundary damage, directly tying transport recovery to edge localization and phase-slip suppression.",
+      "assumptions": [
+        "The recovery process can be summarized by a scalar score eta_rec(t) over the observation window.",
+        "Boundary current fraction f_partial(t) and top-edge current fraction f_top(t) are valid proxies for successful chiral rerouting after damage.",
+        "Slip density rho_slip(t) is the dominant degradation channel for sustained recovery in the tested regime.",
+        "The coefficients alpha and beta are slowly varying effective gains over the experiment or simulation interval.",
+        "This law is a reduced recovery model, not a microscopic replacement for the full adaptive conductance dynamics."
+      ],
+      "date": "2026-03-09",
+      "equationLatex": "\\frac{d\\eta_{\\mathrm{rec}}}{dt}=\\alpha\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)-\\beta\\,\\rho_{\\mathrm{slip}}(t)\\,\\eta_{\\mathrm{rec}}(t)",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-03-09"
+        }
+      }
     }
   ]
 }

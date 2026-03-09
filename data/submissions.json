@@ -2150,6 +2150,65 @@
         },
         "novelty": 30
       }
+    },
+    {
+      "submissionId": "sub-2026-03-09-slip-suppressed-edge-recovery-law",
+      "submittedAt": "2026-03-09",
+      "submitter": "RDM3DC",
+      "status": "promoted",
+      "name": "Slip-Suppressed Edge Recovery Law",
+      "equationLatex": "\\frac{d\\eta_{\\mathrm{rec}}}{dt}=\\alpha\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)-\\beta\\,\\rho_{\\mathrm{slip}}(t)\\,\\eta_{\\mathrm{rec}}(t)",
+      "description": "Minimal recovery law for damaged adaptive topological transport. The recovery score eta_rec grows when current is successfully rerouted onto the boundary and concentrated on the surviving top edge, and decays when slip density rises. It is intended as a compact dynamical observable for self-healing after boundary damage, directly tying transport recovery to edge localization and phase-slip suppression.",
+      "source": "QWZ Recovery Dashboard",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "The recovery process can be summarized by a scalar score eta_rec(t) over the observation window.",
+        "Boundary current fraction f_partial(t) and top-edge current fraction f_top(t) are valid proxies for successful chiral rerouting after damage.",
+        "Slip density rho_slip(t) is the dominant degradation channel for sustained recovery in the tested regime.",
+        "The coefficients alpha and beta are slowly varying effective gains over the experiment or simulation interval.",
+        "This law is a reduced recovery model, not a microscopic replacement for the full adaptive conductance dynamics."
+      ],
+      "evidence": [
+        "Built from observables already tracked in the recovery dashboards: transfer efficiency, boundary fraction, top-edge fraction, and slip density.",
+        "Matches the qualitative recovery protocol where successful healing coincides with strong edge rerouting and reduced slip activity after damage.",
+        "Reduces to monotone growth when slip density is negligible and edge rerouting is sustained.",
+        "Predicts recovery collapse when rho_slip rises enough that beta*rho_slip dominates the growth term.",
+        "Falsifiable by ablations that independently suppress boundary localization, top-edge rerouting, or slip control and then comparing eta_rec(t) to measured transfer recovery."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-03-09",
+        "equationId": "eq-slip-suppressed-edge-recovery-law",
+        "score": 84,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 19,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 27,
+        "llm_scores": {
+          "traceability": 78,
+          "rigor": 84,
+          "assumptions": 90,
+          "presentation": 86,
+          "novelty_insight": 72,
+          "fruitfulness": 91,
+          "llm_total": 83,
+          "justification": "A clean, simulation-ready reduced observable that plausibly builds on LB #2, #5, #7, and #10 through tracked edge/slip observables, with strong assumptions discipline and good practical value, but lacking an explicit derivation bridge and recovery clause to score at the very top."
+        },
+        "llm_model": "gpt-5.4",
+        "blended_score": 83
+      }
     }
   ]
 }

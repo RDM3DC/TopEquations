@@ -1,21 +1,23 @@
 {
-  "name": "History-Resolved Phase with Adaptive Ruler",
-  "equation": "theta_R = theta_R + clip(wrap(theta_raw - theta_R), -pi_a, +pi_a)",
-  "description": "Core history-resolved phase update: the resolved phase theta_R is advanced by the wrapped difference between the raw principal phase theta_raw and the current theta_R, clipped to the adaptive phase ruler pi_a. This update underlies adaptive complex networks with S-gated conductance gain alpha_G, an adaptive pi_a bound, and controlled ablation modes.",
-  "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-pi + ARP/AIN thread)",
-  "submitter": "gpt-5.2",
-  "units": "TBD",
-  "theory": "TBD",
+  "name": "Slip-Suppressed Edge Recovery Law",
+  "equation": "\\frac{d\\eta_{\\mathrm{rec}}}{dt}=\\alpha\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)-\\beta\\,\\rho_{\\mathrm{slip}}(t)\\,\\eta_{\\mathrm{rec}}(t)",
+  "description": "Minimal recovery law for damaged adaptive topological transport. The recovery score eta_rec grows when current is successfully rerouted onto the boundary and concentrated on the surviving top edge, and decays when slip density rises. It is intended as a compact dynamical observable for self-healing after boundary damage, directly tying transport recovery to edge localization and phase-slip suppression.",
+  "source": "QWZ Recovery Dashboard",
+  "submitter": "RDM3DC",
+  "units": "OK",
+  "theory": "PASS-WITH-ASSUMPTIONS",
   "assumptions": [
-    "wrap(x) returns a principal argument in (-pi, pi]",
-    "clip(x, a, b) saturates x to the interval [a,b]",
-    "pi_a > 0 and evolves according to an adaptive-ruler law",
-    "alpha_G(S) > 0 is an entropy-gated gain",
-    "Full ablation modes allow turning off lift, adaptive ruler, and suppression"
+    "The recovery process can be summarized by a scalar score eta_rec(t) over the observation window.",
+    "Boundary current fraction f_partial(t) and top-edge current fraction f_top(t) are valid proxies for successful chiral rerouting after damage.",
+    "Slip density rho_slip(t) is the dominant degradation channel for sustained recovery in the tested regime.",
+    "The coefficients alpha and beta are slowly varying effective gains over the experiment or simulation interval.",
+    "This law is a reduced recovery model, not a microscopic replacement for the full adaptive conductance dynamics."
   ],
   "evidence": [
-    "Simulation tests show that branch-resolved phase trajectories diverge from principal-branch baselines when winding histories differ despite identical present amplitudes",
-    "Parity-linked regime transitions emerge when adaptive pi_a and S-gated alpha_G are enabled",
-    "Ablation studies confirm that lifting and the adaptive ruler are necessary to observe branch-memory effects"
+    "Built from observables already tracked in the recovery dashboards: transfer efficiency, boundary fraction, top-edge fraction, and slip density.",
+    "Matches the qualitative recovery protocol where successful healing coincides with strong edge rerouting and reduced slip activity after damage.",
+    "Reduces to monotone growth when slip density is negligible and edge rerouting is sustained.",
+    "Predicts recovery collapse when rho_slip rises enough that beta*rho_slip dominates the growth term.",
+    "Falsifiable by ablations that independently suppress boundary localization, top-edge rerouting, or slip control and then comparing eta_rec(t) to measured transfer recovery."
   ]
 }
