@@ -14,10 +14,10 @@
   <meta name='twitter:title' content='TopEquations — All Submissions' />
   <meta name='twitter:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202603081552' />
+  <link rel='stylesheet' href='./assets/style.css?v=202603081742' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202603081552'></script>
+  <script defer src='./assets/app.js?v=202603081742'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -161,9 +161,9 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Adaptive complex edge-conductance law for a damaged topological lattice with history-resolved phase memory and local topological feedback. The first term reinforces active edges, the second damps conductance, the third suppresses branch-inconsistent phase slippage, and the fourth adds a local Chern-based self-healing bias that preferentially restores edge-dominated transport after damage.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Each edge is represented by a single effective complex conductance g_e</li><li>theta_{R,e} is a history-resolved lifted phase rather than a principal-branch phase</li><li>pi_a is a bounded adaptive phase ruler set by the network state</li><li>C_loc(t) is a sparse local topological indicator correlated with edge-channel integrity</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Reduces to the phase-lifted adaptive conductance law when chi = 0</li><li>Predicts a falsifiable recovery advantage over principal-branch and fixed-ruler controls after targeted boundary damage</li><li>Ablation-ready: remove C_loc, remove suppression term, fix pi_a, or replace theta_R with principal phase and compare recovery time, boundary-current fraction, and transfer efficiency</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Reduces to the phase-lifted adaptive conductance law when chi = 0; recovers standard quantized conductance when C_loc → 0 and pi_a → pi</li><li>Predicts a falsifiable recovery advantage over principal-branch and fixed-ruler controls after targeted boundary damage</li><li>Ablation-ready: remove C_loc, remove suppression term, fix pi_a, or replace theta_R with principal phase and compare recovery time, boundary-current fraction, and transfer efficiency</li><li>1080p60 Manim animation (TopologicalSelfHealing.mp4) demonstrates complete healthy-lattice → boundary-damage → self-healing recovery cycle with visible topological feedback rerouting</li><li>Video ablation graph (Full Law vs Principal Branch Control) shows transfer efficiency recovering to 1.0 for full law while principal branch flatlines — direct falsification evidence</li><li>Builds directly on the adaptive phase-lifted conductance framework (LB #27); executable benchmark reproduces self-healing dynamics with boundary-current percentage restoration</li></ul></div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-03-08</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='1080p60/TopologicalSelfHealing.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-chern-self-healing-conductance-law-ctance-l'>eq-adaptive-chern-self-healing-conductance-law-ctance-l</a></div></div>
     </div>
@@ -1354,7 +1354,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-03-08 15:52</strong></div>
+      <div>Last built: <strong>2026-03-08 17:42</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>
