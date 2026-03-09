@@ -1,0 +1,94 @@
+name: "Publish Certificates on Chain"
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-chain:
+    runs-on: ubuntu-latest
+    env:
+      NODE_URL: ${{ secrets.CHAIN_NODE_URL }}
+      PUBLIC_KEY: ${{ secrets.CHAIN_WALLET_PUBLIC_KEY }}
+      CHAIN_WALLET_PRIVATE_KEY: ${{ secrets.CHAIN_WALLET_PRIVATE_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate chain publish configuration
+        id: config
+        shell: bash
+        run: |
+          missing=0
+          for name in NODE_URL PUBLIC_KEY CHAIN_WALLET_PRIVATE_KEY; do
+            if [ -z "${!name}" ]; then
+              echo "::notice::$name is not configured; chain publish job will exit without changes."
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -eq 0 ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        if: steps.config.outputs.configured == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          pip install ecdsa
+
+      - name: Export equation certificates
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          python tools/export_equation_certificates.py
+
+      - name: Preflight node health check
+        if: steps.config.outputs.configured == 'true'
+        id: preflight
+        shell: bash
+        run: |
+          echo "Checking node at $NODE_URL ..."
+          if curl -sf --max-time 10 "$NODE_URL/status" > /dev/null 2>&1; then
+            echo "Node is reachable."
+            echo "healthy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Chain node at $NODE_URL is unreachable — skipping publish."
+            echo "healthy=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish certificates to blockchain
+        if: steps.config.outputs.configured == 'true' && steps.preflight.outputs.healthy == 'true'
+        shell: bash
+        run: |
+          echo "::add-mask::$CHAIN_WALLET_PRIVATE_KEY"
+          wallet_path="$RUNNER_TEMP/wallet.json"
+          printf '{"public_key": "%s", "private_key": "%s"}\n' "$PUBLIC_KEY" "$CHAIN_WALLET_PRIVATE_KEY" > "$wallet_path"
+          python tools/register_equation_certificates.py \
+            --node-url "$NODE_URL" \
+            --signer-file "$wallet_path" \
+            --mine
+
+      - name: Commit and push publish receipts
+        if: steps.config.outputs.configured == 'true' && steps.preflight.outputs.healthy == 'true'
+        run: |
+          git config user.name "TopEquations Bot"
+          git config user.email "bot@topequations.local"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Chain publish: certificates published"
+            git push
+          else
+            echo "No publish changes to commit"
+          fi
