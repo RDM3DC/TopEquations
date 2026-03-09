@@ -25,8 +25,10 @@
 
 ## Chain Access
 
-- Node URL: `http://127.0.0.1:5000`
-- Wallet: `D:/coins2/Adaptive-Curvature-Coin/wallet.json`
+- Default automation path: `.github/workflows/publish_chain.yml`
+- Node URL: supplied by `CHAIN_NODE_URL` repository secret
+- Wallet: supplied by `CHAIN_WALLET_PUBLIC_KEY` and `CHAIN_WALLET_PRIVATE_KEY` repository secrets
+- Local fallback: `tools/chain_publish_cron.py --node-url <url> --signer-file <wallet.json>`
 
 ## Related Workspaces
 

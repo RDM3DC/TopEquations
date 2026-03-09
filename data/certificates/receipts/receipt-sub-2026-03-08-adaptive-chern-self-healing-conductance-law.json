@@ -1,0 +1,14 @@
+{
+  "type": "submitter_receipt",
+  "submission_id": "sub-2026-03-08-adaptive-chern-self-healing-conductance-law",
+  "equation_id": "eq-adaptive-chern-self-healing-conductance-law",
+  "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
+  "equation_hash": "877e117de0bb9065a1e1f56da3afd5fbae0100cc257f54f42c259f5f13d76e8e",
+  "metadata_hash": "4df404a2ff841ea04474a9788a598641667ed134fd379ed2744a29b4d261089e",
+  "score": 81,
+  "status": "promoted",
+  "issued_at": "2026-03-09T08:22:58.063842+00:00",
+  "issuer_pubkey": "907420eef7c75e6ee254288b4614281a1ba30434c57b00a47930003e6431d0f00e231616076a3367c2e50581c29d6cb4c47901894f6cf362d36374cda29c4804",
+  "signature": "a44377ee1e3efbeb162d82d3cc5be3fffe5826158b4db2f4aec2fe4e21cb0c1d727c99f5c4c569019f342671ebe8e678d1c3639d5a9cc159c50fb42c46796c9a",
+  "verify_note": "To verify: hash the receipt_data fields (all keys except 'signature' and 'verify_note') as sorted JSON, then check the ECDSA-SECP256k1 signature against issuer_pubkey."
+}

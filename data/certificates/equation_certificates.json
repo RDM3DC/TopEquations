@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-09T06:23:04.349799+00:00",
-  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "f03289e8e187a6925036fc4551bd4a51f943197707e959cf53e65e0aff5be49d",
+  "generated_at": "2026-03-09T08:22:57.101654+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "1e679c23c3055a47bc24834618648b31c34d16c5c99fc05f0fbd3c3434b6844a",
   "count": 113,
   "entries": [
     {
@@ -2812,12 +2812,12 @@
       "name": "Adaptive Chern Self-Healing Conductance Law",
       "equation_latex": "dg_e/dt = alpha_G(S)|J_e|exp(i theta_{R,e}) - mu_G(S) g_e - lambda_s g_e sin^2(theta_{R,e}/(2 pi_a)) + chi C_loc(t) g_e",
       "equation_hash": "877e117de0bb9065a1e1f56da3afd5fbae0100cc257f54f42c259f5f13d76e8e",
-      "score": 73,
+      "score": 81,
       "scores": {
         "tractability": 17,
         "plausibility": 18,
-        "validation": 15,
-        "artifactCompleteness": 4
+        "validation": 20,
+        "artifactCompleteness": 7
       },
       "novelty": {
         "score": 19,
@@ -2830,12 +2830,12 @@
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
         "animation": "",
-        "image": ""
+        "image": "data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png"
       },
       "tier": "derived",
       "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
       "version": 1,
-      "metadata_hash": "74e6faad7668d60b209787e9bf8a8dc3c9ea1382b2b10e5401f84b6511acae64"
+      "metadata_hash": "4df404a2ff841ea04474a9788a598641667ed134fd379ed2744a29b4d261089e"
     },
     {
       "token_id": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",

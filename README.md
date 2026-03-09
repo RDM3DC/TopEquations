@@ -150,13 +150,14 @@ tools/
   build_site.py              # Rebuild all HTML pages
   generate_leaderboard.py    # Rebuild leaderboard.md
   export_equation_certificates.py  # Generate on-chain certificates
-  chain_publish_cron.py      # Hourly on-chain publish cycle
+  chain_publish_cron.py      # Local fallback publish script
   reconcile.py               # Daily data integrity check
   parse_github_issue.py      # Strict JSON validator for GitHub Issues
   generate_submitter_receipt.py    # ECDSA-signed submitter receipts
 .github/
   workflows/
     submission.yml    # Auto-process GitHub Issue submissions
+    publish_chain.yml # Scheduled on-chain certificate publish job
     heartbeat.yml     # 6-hour health check
     reconcile.yml     # Daily integrity reconciliation
   ISSUE_TEMPLATE/
@@ -171,7 +172,7 @@ Promoted equations are published on-chain (Adaptive-Curvature-Coin) with ECDSA-S
 - Score breakdown
 - Signed receipt
 
-The publish cycle runs hourly via a Windows Scheduled Task.
+The default publish cycle runs hourly via GitHub Actions against a cloud-hosted node. Set `CHAIN_NODE_URL`, `CHAIN_WALLET_PUBLIC_KEY`, and `CHAIN_WALLET_PRIVATE_KEY` in repository secrets for automation. The local Windows scheduled task path remains available as a fallback for private or offline deployments.
 
 ---
 

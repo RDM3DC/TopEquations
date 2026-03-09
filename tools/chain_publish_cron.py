@@ -1,7 +1,10 @@
-"""Local chain publish cron — picks up unpublished certificates and publishes them.
+"""Local fallback chain publish cron — picks up unpublished certificates and publishes them.
 
 Run this on a schedule (e.g., Windows Task Scheduler every hour) on the machine
 where the blockchain node is running.
+
+Primary automation now lives in .github/workflows/publish_chain.yml. This script
+is retained for private-node deployments and manual fallback publishing.
 
 Usage:
     python tools/chain_publish_cron.py
@@ -19,7 +22,7 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Local chain publish cron")
+    ap = argparse.ArgumentParser(description="Local fallback chain publish cron")
     ap.add_argument("--node-url", default="http://127.0.0.1:5000")
     ap.add_argument("--signer-file", default="D:/coins2/Adaptive-Curvature-Coin/wallet.json")
     args = ap.parse_args()

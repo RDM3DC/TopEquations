@@ -74,6 +74,8 @@ python tools/export_equation_certificates.py
 python tools/register_equation_certificates.py --node-url http://127.0.0.1:5000 --signer-file D:/coins2/Adaptive-Curvature-Coin/wallet.json --mine
 ```
 
+Primary automation path: `.github/workflows/publish_chain.yml` runs this publish step on a schedule using repository secrets for the node URL and wallet keys. The local command above is the fallback path when working against a private node or testing manually.
+
 ### One-Command Orchestrator
 
 Run all steps at once:

@@ -1885,30 +1885,39 @@
         "Phase lifting via theta_{R,e} is well-defined"
       ],
       "evidence": [
-        "Reduces to the adaptive phase-lift conductance law when chi->0",
-        "Topological systems exhibit self-healing edge currents via local Chern number feedback",
-        "Simulation of the law recovers quantized conductance in the absence of perturbations"
+        "Verified artifact data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/summary.json reproduces the damaged-lattice benchmark at t = 5.1 s with full_law final boundary fraction 0.655135 versus principal_branch 0.477963 and full_law transfer efficiency 0.462059 versus 0.305733.",
+        "Verified artifact data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/matched_present/matched_present_summary.json reproduces the shared damaged snapshot ablation with full_law boundary fraction 0.655135 versus principal_branch 0.477958 and fixed_ruler at 0.573411.",
+        "Benchmark scripts data/artifacts/arp_topology_benchmark_v2/arp_topology/benchmarks/run_recovery_demo.py and run_matched_present.py rerun successfully from the repository copy and regenerate the JSON, CSV, and PNG artifacts deterministically.",
+        "The recovered full_law coherence stays above 0.9999998 in both generated summaries while principal_branch and no_topology_feedback underperform on boundary fraction and transfer efficiency."
       ],
       "animation": {
         "status": "planned",
         "path": ""
       },
       "image": {
-        "status": "planned",
-        "path": ""
+        "status": "attached",
+        "path": "data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png"
       },
       "duplicateWarnings": [],
       "review": {
         "date": "2026-03-08",
         "equationId": "eq-adaptive-chern-self-healing-conductance-law",
-        "score": 73,
+        "score": 81,
+        "heuristic_score": 81,
         "scores": {
           "tractability": 17,
           "plausibility": 18,
-          "validation": 15,
-          "artifactCompleteness": 4
+          "validation": 20,
+          "artifactCompleteness": 7
         },
-        "novelty": 19
+        "novelty": 19,
+        "method": "heuristic-v2",
+        "solver_verification": {
+          "passed": true,
+          "passed_count": 5,
+          "total_count": 5,
+          "equation_id": "eq-adaptive-chern-self-healing-conductance-law"
+        }
       }
     },
     {

@@ -3115,12 +3115,12 @@
       "source": "chatgpt",
       "submitter": "ChatGPT",
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law",
-      "score": 73,
+      "score": 81,
       "scores": {
         "tractability": 17,
         "plausibility": 18,
-        "validation": 15,
-        "artifactCompleteness": 4
+        "validation": 20,
+        "artifactCompleteness": 7
       },
       "units": "TBD",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -3129,8 +3129,8 @@
         "path": ""
       },
       "image": {
-        "status": "planned",
-        "path": ""
+        "status": "attached",
+        "path": "data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png"
       },
       "description": "An extension of the adaptive phase-lift conductance law that includes a local Chern topological feedback term, enabling self-healing of edge conductance in topological lattices under local perturbations. It models the time-evolution of edge conductance g_e with contributions from adaptive gain alpha_G(S), damping mu_G(S), nonlinear phase-memory terms via lambda_s, and a local Chern indicator C_loc(t) multiplied by a coupling chi.",
       "assumptions": [

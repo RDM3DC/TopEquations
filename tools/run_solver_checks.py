@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import subprocess
 import sys
 import traceback
 from datetime import datetime, timezone
@@ -717,6 +718,114 @@ def _verify_core_stokes() -> dict:
     r = _core("stokes_quantization")
     r["equation_id"] = "core-phase-lifted-stokes"
     return r
+
+
+def _adaptive_chern_benchmark_root() -> Path:
+    root = REPO / "data" / "artifacts" / "arp_topology_benchmark_v2" / "arp_topology"
+    if not root.exists():
+        raise FileNotFoundError(f"Adaptive Chern benchmark bundle not found: {root}")
+    return root
+
+
+def _load_json_file(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _run_adaptive_chern_benchmark_suite(equation_id: str) -> dict:
+    root = _adaptive_chern_benchmark_root()
+    for script in ("benchmarks/run_recovery_demo.py", "benchmarks/run_matched_present.py"):
+        subprocess.run(
+            [sys.executable, script],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+    recovery = _load_json_file(root / "outputs" / "recovery_demo" / "summary.json")
+    matched_rows = _load_json_file(root / "outputs" / "matched_present" / "matched_present_summary.json")
+    matched = {str(row.get("variant", "")): row for row in matched_rows}
+
+    full_recovery = recovery["variants"]["full_law"]
+    principal_recovery = recovery["variants"]["principal_branch"]
+    no_topology_recovery = recovery["variants"]["no_topology_feedback"]
+    fixed_ruler_recovery = recovery["variants"]["fixed_ruler"]
+
+    full_matched = matched["full_law"]
+    principal_matched = matched["principal_branch"]
+
+    checks = {}
+
+    boundary_advantage = (
+        full_recovery["final_boundary_fraction"] > principal_recovery["final_boundary_fraction"]
+        and full_recovery["final_boundary_fraction"] > no_topology_recovery["final_boundary_fraction"]
+    )
+    checks["recovery_boundary_advantage"] = {
+        "full_boundary_fraction": round(float(full_recovery["final_boundary_fraction"]), 6),
+        "principal_boundary_fraction": round(float(principal_recovery["final_boundary_fraction"]), 6),
+        "no_topology_boundary_fraction": round(float(no_topology_recovery["final_boundary_fraction"]), 6),
+        "pass": boundary_advantage,
+    }
+
+    transfer_advantage = (
+        full_recovery["final_transfer_efficiency"] > principal_recovery["final_transfer_efficiency"]
+        and full_recovery["final_transfer_efficiency"] > no_topology_recovery["final_transfer_efficiency"]
+    )
+    checks["recovery_transfer_advantage"] = {
+        "full_transfer_efficiency": round(float(full_recovery["final_transfer_efficiency"]), 6),
+        "principal_transfer_efficiency": round(float(principal_recovery["final_transfer_efficiency"]), 6),
+        "no_topology_transfer_efficiency": round(float(no_topology_recovery["final_transfer_efficiency"]), 6),
+        "pass": transfer_advantage,
+    }
+
+    matched_gap = float(full_matched["final_boundary_fraction"]) - float(principal_matched["final_boundary_fraction"])
+    checks["matched_present_memory_gap"] = {
+        "gap": round(matched_gap, 6),
+        "full_boundary_fraction": round(float(full_matched["final_boundary_fraction"]), 6),
+        "principal_boundary_fraction": round(float(principal_matched["final_boundary_fraction"]), 6),
+        "pass": matched_gap >= 0.15,
+    }
+
+    coherence_floor = min(
+        float(full_recovery["final_coherence"]),
+        float(full_matched["final_coherence"]),
+    )
+    checks["full_law_coherence"] = {
+        "coherence_floor": round(coherence_floor, 9),
+        "pass": coherence_floor >= 0.999,
+    }
+
+    ablation_ordering = (
+        principal_recovery["final_transfer_efficiency"]
+        < fixed_ruler_recovery["final_transfer_efficiency"]
+        < full_recovery["final_transfer_efficiency"]
+    )
+    checks["ablation_ordering"] = {
+        "principal_transfer_efficiency": round(float(principal_recovery["final_transfer_efficiency"]), 6),
+        "fixed_ruler_transfer_efficiency": round(float(fixed_ruler_recovery["final_transfer_efficiency"]), 6),
+        "full_transfer_efficiency": round(float(full_recovery["final_transfer_efficiency"]), 6),
+        "pass": ablation_ordering,
+    }
+
+    passed = sum(1 for item in checks.values() if item["pass"])
+    return {
+        "equation_id": equation_id,
+        "artifact_root": str(root.relative_to(REPO)).replace("\\", "/"),
+        "checks": checks,
+        "pass": passed == len(checks),
+        "passed_count": passed,
+        "total_count": len(checks),
+    }
+
+
+@_register("eq-adaptive-chern-self-healing-conductance-law")
+def _verify_adaptive_chern_self_healing_v1() -> dict:
+    return _run_adaptive_chern_benchmark_suite("eq-adaptive-chern-self-healing-conductance-law")
+
+
+@_register("eq-adaptive-chern-self-healing-conductance-law-ctance-l")
+def _verify_adaptive_chern_self_healing_v2() -> dict:
+    return _run_adaptive_chern_benchmark_suite("eq-adaptive-chern-self-healing-conductance-law-ctance-l")
 
 
 # ---------------------------------------------------------------------------

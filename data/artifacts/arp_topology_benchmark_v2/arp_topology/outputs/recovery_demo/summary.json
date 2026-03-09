@@ -1,0 +1,36 @@
+{
+  "damage_time": 5.1,
+  "pre_total_ref": 10.546273653129983,
+  "pre_boundary_ref": 0.8403797666386795,
+  "target_boundary_fraction": 0.65549621797817,
+  "variants": {
+    "full_law": {
+      "recovery_time": null,
+      "final_boundary_fraction": 0.6551349880817771,
+      "final_transfer_efficiency": 0.46205864507420624,
+      "final_edge_bulk_ratio": 1.0331575902056642,
+      "final_coherence": 0.9999998383869402
+    },
+    "principal_branch": {
+      "recovery_time": null,
+      "final_boundary_fraction": 0.47796325236191595,
+      "final_transfer_efficiency": 0.3057334005837351,
+      "final_edge_bulk_ratio": 0.9928113025705513,
+      "final_coherence": 0.99999984113312
+    },
+    "no_topology_feedback": {
+      "recovery_time": null,
+      "final_boundary_fraction": 0.4782218579913733,
+      "final_transfer_efficiency": 0.3055680888742933,
+      "final_edge_bulk_ratio": 0.9948914935396441,
+      "final_coherence": 1.0
+    },
+    "fixed_ruler": {
+      "recovery_time": null,
+      "final_boundary_fraction": 0.5477484268522524,
+      "final_transfer_efficiency": 0.3522330954154909,
+      "final_edge_bulk_ratio": 1.1516683255020423,
+      "final_coherence": 0.9999976892787201
+    }
+  }
+}

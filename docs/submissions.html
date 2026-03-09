@@ -14,10 +14,10 @@
   <meta name='twitter:title' content='TopEquations — All Submissions' />
   <meta name='twitter:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202603081758' />
+  <link rel='stylesheet' href='./assets/style.css?v=202603081913' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
 
-  <script defer src='./assets/app.js?v=202603081758'></script>
+  <script defer src='./assets/app.js?v=202603081913'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -130,10 +130,10 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>An extension of the adaptive phase-lift conductance law that includes a local Chern topological feedback term, enabling self-healing of edge conductance in topological lattices under local perturbations. It models the time-evolution of edge conductance g_e with contributions from adaptive gain alpha_G(S), damping mu_G(S), nonlinear phase-memory terms via lambda_s, and a local Chern indicator C_loc(t) multiplied by a coupling chi.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Adiabatic evolution and slow variation of the system state S</li><li>Edge channels are described by a single effective conductance g_e</li><li>Local Chern indicator C_loc(t) accurately captures topological defects</li><li>Phase lifting via theta_{R,e} is well-defined</li></ul></div></div>
-      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Reduces to the adaptive phase-lift conductance law when chi-&gt;0</li><li>Topological systems exhibit self-healing edge currents via local Chern number feedback</li><li>Simulation of the law recovers quantized conductance in the absence of perturbations</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Verified artifact data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/summary.json reproduces the damaged-lattice benchmark at t = 5.1 s with full_law final boundary fraction 0.655135 versus principal_branch 0.477963 and full_law transfer efficiency 0.462059 versus 0.305733.</li><li>Verified artifact data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/matched_present/matched_present_summary.json reproduces the shared damaged snapshot ablation with full_law boundary fraction 0.655135 versus principal_branch 0.477958 and fixed_ruler at 0.573411.</li><li>Benchmark scripts data/artifacts/arp_topology_benchmark_v2/arp_topology/benchmarks/run_recovery_demo.py and run_matched_present.py rerun successfully from the repository copy and regenerate the JSON, CSV, and PNG artifacts deterministically.</li><li>The recovered full_law coherence stays above 0.9999998 in both generated summaries while principal_branch and no_topology_feedback underperform on boundary fraction and transfer efficiency.</li></ul></div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-03-08</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-adaptive-chern-self-healing-conductance-law'>eq-adaptive-chern-self-healing-conductance-law</a></div></div>
     </div>
   </div>
@@ -1354,7 +1354,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-03-08 17:58</strong></div>
+      <div>Last built: <strong>2026-03-08 19:13</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>
