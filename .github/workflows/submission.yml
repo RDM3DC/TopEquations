@@ -3,6 +3,12 @@ name: "Process Equation Submission"
 on:
   issues:
     types: [opened, edited, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to (re-)process"
+        required: true
+        type: number
 
 permissions:
   contents: write
@@ -15,9 +21,10 @@ concurrency:
 jobs:
   process-submission:
     if: >-
-      contains(github.event.issue.labels.*.name, 'submission')
+      (github.event_name == 'workflow_dispatch') ||
+      (contains(github.event.issue.labels.*.name, 'submission')
       && !contains(github.event.issue.labels.*.name, 'processed')
-      && !contains(github.event.issue.labels.*.name, 'invalid')
+      && !contains(github.event.issue.labels.*.name, 'invalid'))
     runs-on: ubuntu-latest
 
     steps:
@@ -41,7 +48,27 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const body = context.payload.issue.body || '';
+            // Resolve the issue number from event payload or workflow_dispatch input
+            const issueNumber = context.eventName === 'workflow_dispatch'
+              ? parseInt(context.payload.inputs.issue_number, 10)
+              : context.payload.issue.number;
+
+            let issueBody = '';
+            let issueAuthor = '';
+            if (context.eventName === 'workflow_dispatch') {
+              const { data: issue } = await github.rest.issues.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+              });
+              issueBody = issue.body || '';
+              issueAuthor = issue.user.login;
+            } else {
+              issueBody = context.payload.issue.body || '';
+              issueAuthor = context.payload.issue.user.login;
+            }
+
+            const body = issueBody;
             // Find the JSON block within the "Submission JSON" textarea
             // The issue template wraps it in a section with id submission_json
             // GitHub renders it as: ### Submission JSON\n\n<content>
@@ -62,8 +89,8 @@ jobs:
             // Write to file for Python to parse (avoids shell escaping issues entirely)
             const fs = require('fs');
             fs.writeFileSync('_issue_body.json', jsonText, 'utf8');
-            core.setOutput('issue_number', context.payload.issue.number);
-            core.setOutput('issue_author', context.payload.issue.user.login);
+            core.setOutput('issue_number', issueNumber);
+            core.setOutput('issue_author', issueAuthor);
 
       - name: Validate submission JSON
         id: validate
@@ -104,9 +131,28 @@ jobs:
           set -e
 
           # Read parsed fields safely via Python (no shell interpolation of user input)
+          # First check if this equation is already promoted (idempotency guard for re-runs
+          # and concurrent triggered events). If found, reuse the existing record instead of
+          # creating a duplicate submission.
           SUBMISSION_ID=$(python -c "
           import json, subprocess, sys
+
           d = json.load(open('_parsed.json'))
+          name_norm = d['name'].strip().lower()
+
+          # Look for an existing promoted entry with the same name
+          try:
+              subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+              for e in subs.get('entries', []):
+                  if e.get('name', '').strip().lower() == name_norm and e.get('status') == 'promoted':
+                      sid = e['submissionId']
+                      print(f'found existing promoted: {sid}', file=sys.stderr)
+                      print(sid)
+                      sys.exit(0)
+          except Exception as ex:
+              print(f'existing check error: {ex}', file=sys.stderr)
+
+          # Not found — submit as new
           args = [
               sys.executable, 'tools/submit_equation.py',
               '--name', d['name'],
@@ -131,10 +177,24 @@ jobs:
           ")
 
           echo "submission_id=$SUBMISSION_ID" >> "$GITHUB_OUTPUT"
-          echo "Submitted: $SUBMISSION_ID"
+          echo "Submitted/Found: $SUBMISSION_ID"
 
-          # Score (with solver verification if hrphasenet is available)
-          python tools/score_submission.py --submission-id "$SUBMISSION_ID" --mark-ready-threshold 65 --solver
+          # Read current status to decide whether to run the score/promote pipeline
+          CURRENT_STATUS=$(python -c "
+          import json
+          subs = json.loads(open('data/submissions.json', encoding='utf-8').read())
+          for e in subs.get('entries', []):
+              if e.get('submissionId') == '$SUBMISSION_ID':
+                  print(e.get('status', 'pending'))
+                  break
+          " 2>/dev/null || echo "pending")
+
+          if [ "$CURRENT_STATUS" != "promoted" ]; then
+            # Score (with solver verification if hrphasenet is available)
+            python tools/score_submission.py --submission-id "$SUBMISSION_ID" --mark-ready-threshold 65 --solver
+          else
+            echo "Submission already promoted — skipping score/promote steps"
+          fi
 
           # Read score result
           SCORE=$(python -c "
@@ -170,7 +230,7 @@ jobs:
           ")
           echo "duplicate_warning=$DUPLICATE_WARNING" >> "$GITHUB_OUTPUT"
 
-          # Promote if ready (score >= 65)
+          # Promote if ready (score >= 65); treat already-promoted as promoted=true
           if [ "$STATUS" = "ready" ]; then
             python tools/promote_submission.py --submission-id "$SUBMISSION_ID" --from-review
             echo "promoted=true" >> "$GITHUB_OUTPUT"
@@ -187,6 +247,8 @@ jobs:
             if [ -n "$EQUATION_ID" ]; then
               python tools/create_equation_repo.py --equation-id "$EQUATION_ID" || echo "Repo creation skipped (error)"
             fi
+          elif [ "$STATUS" = "promoted" ]; then
+            echo "promoted=true" >> "$GITHUB_OUTPUT"
           else
             echo "promoted=false" >> "$GITHUB_OUTPUT"
           fi
@@ -250,13 +312,26 @@ jobs:
           git config user.email "bot@topequations.local"
           git add -A
           git diff --cached --quiet && echo "No changes to commit" || git commit -m "Pipeline: ${{ steps.pipeline.outputs.submission_id }} (score ${{ steps.pipeline.outputs.score }})"
-          git push
+          git push || (git pull --rebase && git push) || echo "::warning::Push failed after rebase; manual sync may be needed"
 
       - name: Post receipt comment
         if: steps.validate.outputs.valid == 'true'
         uses: actions/github-script@v7
         with:
           script: |
+            const issueNumber = ${{ steps.extract.outputs.issue_number }};
+
+            // Guard against duplicate processing: skip if the issue is already labeled 'processed'
+            const { data: currentIssue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+            if (currentIssue.labels.some(l => l.name === 'processed')) {
+              console.log('Issue already labeled processed — skipping duplicate receipt');
+              return;
+            }
+
             const subId = '${{ steps.pipeline.outputs.submission_id }}';
             const score = '${{ steps.pipeline.outputs.score }}';
             const status = '${{ steps.pipeline.outputs.status }}';
@@ -294,7 +369,7 @@ jobs:
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: issueNumber,
               body: body
             });
 
@@ -303,12 +378,12 @@ jobs:
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: issueNumber,
               labels: labels
             });
             await github.rest.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ steps.extract.outputs.issue_number }},
+              issue_number: issueNumber,
               state: 'closed'
             });
