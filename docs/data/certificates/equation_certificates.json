@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-09T00:22:57.403482+00:00",
+  "generated_at": "2026-03-09T00:58:49.418630+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "50127d8ad6bf54dec8b29bd961c9947726b79f8ca792510d77dfc5bfe2f27db4",
+  "source_sha256": "f03289e8e187a6925036fc4551bd4a51f943197707e959cf53e65e0aff5be49d",
   "count": 113,
   "entries": [
     {
@@ -2842,15 +2842,15 @@
       "name": "Adaptive Chern Self-Healing Conductance Law",
       "equation_latex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,|J_e|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s g_e\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi\\,C_{\\mathrm{loc}}(t)\\,g_e",
       "equation_hash": "527491748006ee8f65e5cb6589c4c6a927c95d99c12f99f536a34cb7387d4caf",
-      "score": 84,
+      "score": 100,
       "scores": {
-        "tractability": 18,
+        "tractability": 20,
         "plausibility": 20,
-        "validation": 15,
-        "artifactCompleteness": 4
+        "validation": 16,
+        "artifactCompleteness": 7
       },
       "novelty": {
-        "score": 27,
+        "score": 30,
         "date": "2026-03-08"
       },
       "source": "chatgpt",
@@ -2859,13 +2859,13 @@
       "units": "TBD",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
-        "animation": "",
+        "animation": "1080p60/TopologicalSelfHealing.mp4",
         "image": ""
       },
       "tier": "derived",
       "submitter_hash": "50a4122943273ad2f00ea92bff9c7cb6235e199f745321cb4272aa1857840463",
       "version": 1,
-      "metadata_hash": "6c2d3ba5e2e6509f4d75c87c9979372e7cb761a68f82f09e79d62344ee81d80c"
+      "metadata_hash": "fb07c62638cef04a7f617f5dc63cef30c70034b475cc47c6465bda9aa97118f2"
     },
     {
       "token_id": "eq-phase-lifted-thouless-pump-memory-law",
