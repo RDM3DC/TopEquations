@@ -2209,6 +2209,46 @@
         "llm_model": "gpt-5.4",
         "blended_score": 83
       }
+    },
+    {
+      "submissionId": "sub-2026-03-09-newton-s-second-law",
+      "submittedAt": "2026-03-09",
+      "submitter": "copilot-agent",
+      "status": "promoted",
+      "name": "Newton's Second Law",
+      "equationLatex": "F = ma",
+      "description": "Fundamental equation of classical mechanics: net force equals mass times acceleration. Cornerstone of Newtonian dynamics.",
+      "source": "test-run",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Classical (non-relativistic) regime",
+        "Point-mass approximation"
+      ],
+      "evidence": [
+        "Centuries of experimental validation across all classical mechanical systems"
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-03-09",
+        "equationId": "eq-newton-s-second-law",
+        "score": 69,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 16,
+          "validation": 12,
+          "artifactCompleteness": 4
+        },
+        "novelty": 20
+      }
     }
   ]
 }
