@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-03-09T09:25:15.795688+00:00",
+  "generated_at": "2026-03-09T09:30:55.624899+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "a4bbcc78c4f01f302c0fde7f7b3f0e65e24fc834c3b2a6d968cefdfb4fb6dc85",
-  "count": 116,
+  "source_sha256": "3f1b59180bee088e7a335ccd0142be22367abc240502c59321988b7956bcbdd4",
+  "count": 117,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3046,6 +3046,36 @@
       "submitter_hash": "660bc58d2fb728efacf44038f4a72c49c737b77b28de16f3f1a582ea298c62f6",
       "version": 1,
       "metadata_hash": "f42ecbeb815bfd00ed48598663f0943326049cf3847d8a536e46bff195a9a7a7"
+    },
+    {
+      "token_id": "eq-boundary-reroute-recovery-index",
+      "name": "Boundary-Reroute Recovery Index",
+      "equation_latex": "R_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\lambda\\,\\rho_{\\mathrm{slip}}(t)}",
+      "equation_hash": "fdc01084449147d9a4f18fee261e30835e27125a77cba85ab648bf76c8f95556",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-03-09"
+      },
+      "source": "QWZ Recovery Dashboard",
+      "date": "2026-03-09",
+      "description": "Compact recovery index for damaged adaptive topological transport. The score increases when transfer efficiency, boundary-current fraction, and top-edge rerouting are all high, and decreases when slip density rises. It is meant as a dashboard-level observable for ranking how well the lattice recovers after damage.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "a42d6fc1f9f19b6bdc29e4bd0cb64b722931ddc7fb462e0e7dd72c5b70f33f41"
     },
     {
       "token_id": "famous-schrodinger",

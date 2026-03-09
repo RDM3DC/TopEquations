@@ -2249,6 +2249,65 @@
         },
         "novelty": 20
       }
+    },
+    {
+      "submissionId": "sub-2026-03-09-boundary-reroute-recovery-index",
+      "submittedAt": "2026-03-09",
+      "submitter": "RDM3DC",
+      "status": "promoted",
+      "name": "Boundary-Reroute Recovery Index",
+      "equationLatex": "R_{\\mathrm{edge}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\lambda\\,\\rho_{\\mathrm{slip}}(t)}",
+      "description": "Compact recovery index for damaged adaptive topological transport. The score increases when transfer efficiency, boundary-current fraction, and top-edge rerouting are all high, and decreases when slip density rises. It is meant as a dashboard-level observable for ranking how well the lattice recovers after damage.",
+      "source": "QWZ Recovery Dashboard",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Transfer efficiency eta_tr(t), boundary fraction f_partial(t), top-edge fraction f_top(t), and slip density rho_slip(t) are all measured on a common time window.",
+        "High recovery requires simultaneous bulk-to-edge rerouting and sustained top-edge transport after damage.",
+        "Slip density acts as a suppressive factor on effective recovery quality in the tested regime.",
+        "The coefficient lambda is a positive weighting constant that sets the penalty strength of slip activity.",
+        "This index is a reduced observable for comparison and ranking, not a microscopic law for the full adaptive conductance dynamics."
+      ],
+      "evidence": [
+        "Built directly from observables already reported in the recovery summaries and ablation dashboards.",
+        "Recovers a large score only when transfer, boundary localization, and top-edge rerouting all remain strong at the same time.",
+        "Drops continuously as slip density rises, matching the qualitative loss of coherent recovery after damage.",
+        "Can be compared side-by-side across damage protocols, mass sweeps, and phase-mode ablations as a single scalar benchmark.",
+        "Falsifiable by cases where high transfer is achieved without edge localization or where strong edge localization persists but slip density destroys transport quality."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-03-09",
+        "equationId": "eq-boundary-reroute-recovery-index",
+        "score": 84,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 19,
+          "validation": 16,
+          "artifactCompleteness": 4
+        },
+        "novelty": 27,
+        "llm_scores": {
+          "traceability": 72,
+          "rigor": 78,
+          "assumptions": 88,
+          "presentation": 84,
+          "novelty_insight": 58,
+          "fruitfulness": 86,
+          "llm_total": 77,
+          "justification": "A clear, simulation-ready dashboard observable built from existing recovery metrics with explicit assumptions, but it lacks a strong derivation bridge and explicit recovery lineage to specific leaderboard equations such as LB #2, #7, and #10."
+        },
+        "llm_model": "gpt-5.4",
+        "blended_score": 80
+      }
     }
   ]
 }
