@@ -130,7 +130,7 @@ jobs:
           echo "Submitted: $SUBMISSION_ID"
 
           # Score (with solver verification if hrphasenet is available)
-          python tools/score_submission.py --submission-id \"$SUBMISSION_ID\" --mark-ready-threshold 65 --solver
+          python tools/score_submission.py --submission-id "$SUBMISSION_ID" --mark-ready-threshold 65 --solver
 
           # Read score result
           SCORE=$(python -c "
