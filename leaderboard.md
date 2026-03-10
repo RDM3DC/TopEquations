@@ -1,5 +1,5 @@
 # Equation Leaderboard
-_Last updated: 2026-03-09_
+_Last updated: 2026-03-10_
 
 This is the canonical ranking board for existing and newly derived equations.
 
