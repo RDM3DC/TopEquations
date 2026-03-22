@@ -78,7 +78,42 @@ def _artifact(val: dict | str | None) -> str:
     return _esc(status)
 
 
-def _page(title: str, body: str, updated: str) -> str:
+def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
+    top_entries = entries[:limit]
+    rows: list[str] = []
+    for index, entry in enumerate(top_entries, start=1):
+      equation = entry.get("equationLatex", "") or "(pending)"
+      rows.append(
+        "<tr>"
+        f"<td>{index}</td>"
+        f"<td>{_esc(entry.get('name', ''))}</td>"
+        f"<td>{_esc(entry.get('score', ''))}</td>"
+        f"<td>{_esc(entry.get('source', ''))}</td>"
+        f"<td><code>{_esc(equation)}</code></td>"
+        "</tr>"
+      )
+
+    table_html = "".join(rows) or "<tr><td colspan='5'>No leaderboard entries published yet.</td></tr>"
+    return (
+      "<div class='panel'>"
+      "<h2>Machine-Readable Access</h2>"
+      "<p>This page is fully pre-rendered in HTML, and the same data is also published as static JSON for external tools, crawlers, and AI agents.</p>"
+      "<ul>"
+      "<li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>"
+      "<li><a href='./data/equations.json'>Full promoted equations JSON</a></li>"
+      "<li><a href='./data/submissions.json'>Submission registry JSON</a></li>"
+      "<li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>"
+      "</ul>"
+      "<p>The table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript.</p>"
+      "<table class='tbl'>"
+      "<thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Source</th><th>Equation</th></tr></thead>"
+      f"<tbody>{table_html}</tbody>"
+      "</table>"
+      "</div>"
+    )
+
+
+def _page(title: str, body: str, updated: str, extra_head: str = "") -> str:
     # KaTeX for fast, crisp equation rendering.
     katex_css = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
     katex_js = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
@@ -107,6 +142,7 @@ def _page(title: str, body: str, updated: str) -> str:
 
   <link rel='stylesheet' href='./assets/style.css?v={cachebust}' />
   <link rel='stylesheet' href='{katex_css}' />
+  {extra_head}
 
   <script defer src='./assets/app.js?v={cachebust}'></script>
   <script defer src='{katex_js}'></script>
@@ -647,6 +683,12 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 """
         )
 
+    discovery_panel = _leaderboard_discovery_panel(entries)
+    extra_head = """
+  <link rel='alternate' type='application/json' href='./data/leaderboard.json' title='TopEquations leaderboard JSON' />
+  <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
+"""
+
     body = """
 <div class='layout layout--single'>
   <section class='maincol'>
@@ -681,6 +723,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
   </div>
 </div>
 
+""" + discovery_panel + """
+
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
 </div>
@@ -691,7 +735,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
     updated = datetime.now().strftime("%Y-%m-%d %H:%M")
     out = docs / "leaderboard.html"
-    out.write_text(_page("TopEquations — Leaderboard", body, updated), encoding="utf-8")
+    out.write_text(_page("TopEquations — Leaderboard", body, updated, extra_head=extra_head), encoding="utf-8")
 
 
 def build_rising(repo_root: Path, docs: Path) -> None:
@@ -954,6 +998,17 @@ def build_index(repo_root: Path, docs: Path) -> None:
     <li><strong>Ranked Derived</strong> &mdash; promoted equations in <code>data/equations.json</code></li>
     <li><strong>Submissions</strong> &mdash; all submissions in <code>data/submissions.json</code>, promoted after review</li>
     <li><strong>Certificates</strong> &mdash; on-chain ECDSA-signed certificates for every promoted equation</li>
+  </ul>
+</div>
+
+<div class='panel'>
+  <h2>Machine-Readable Exports</h2>
+  <p>External tools do not need JavaScript to read TopEquations. The site publishes pre-rendered HTML pages plus static JSON exports at stable URLs.</p>
+  <ul>
+    <li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>
+    <li><a href='./data/equations.json'>Promoted equations JSON</a></li>
+    <li><a href='./data/submissions.json'>Submissions JSON</a></li>
+    <li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>
   </ul>
 </div>
 """

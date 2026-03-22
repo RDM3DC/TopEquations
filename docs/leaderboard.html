@@ -5,19 +5,23 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations — Leaderboard</title>
 
-  <meta name='description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
+  <meta name='description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
   <meta property='og:type' content='website' />
   <meta property='og:title' content='TopEquations — Leaderboard' />
-  <meta property='og:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
+  <meta property='og:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
   <meta property='og:url' content='https://rdm3dc.github.io/TopEquations/' />
   <meta name='twitter:card' content='summary' />
   <meta name='twitter:title' content='TopEquations — Leaderboard' />
-  <meta name='twitter:description' content='Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked.' />
+  <meta name='twitter:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202603220311' />
+  <link rel='stylesheet' href='./assets/style.css?v=202603212117' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
+  
+  <link rel='alternate' type='application/json' href='./data/leaderboard.json' title='TopEquations leaderboard JSON' />
+  <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
 
-  <script defer src='./assets/app.js?v=202603220311'></script>
+
+  <script defer src='./assets/app.js?v=202603212117'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -92,6 +96,8 @@
     </div>
   </div>
 </div>
+
+<div class='panel'><h2>Machine-Readable Access</h2><p>This page is fully pre-rendered in HTML, and the same data is also published as static JSON for external tools, crawlers, and AI agents.</p><ul><li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li><li><a href='./data/equations.json'>Full promoted equations JSON</a></li><li><a href='./data/submissions.json'>Submission registry JSON</a></li><li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li></ul><p>The table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript.</p><table class='tbl'><thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Source</th><th>Equation</th></tr></thead><tbody><tr><td>1</td><td>History-Resolved Phase with Adaptive Ruler</td><td>107</td><td>Builds on White Paper 01 (ARP/AIN), White Paper 02 (Adaptive-pi), White Paper 04 (Phase-Lift / PR-Root), and hafc_sim2.py</td><td><code>\theta_R^{+}=\theta_R+\operatorname{clip}\!\left(\operatorname{wrap}\!\left(\theta_{\mathrm{raw}}-\theta_R\right),-\pi_a,+\pi_a\right)</code></td></tr><tr><td>2</td><td>Adaptive Chern Self-Healing Conductance Law</td><td>100</td><td>chatgpt</td><td><code>\frac{d g_e}{dt}=\alpha_G(S)\,|J_e|\,e^{i\theta_{R,e}}-\mu_G(S)\,g_e-\lambda_s g_e\sin^2\!\left(\frac{\theta_{R,e}}{2\pi_a}\right)+\chi\,C_{\mathrm{loc}}(t)\,g_e</code></td></tr><tr><td>3</td><td>BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)</td><td>97</td><td>derived: Core Eqs 2–4, 6–7, 10–11 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)</td><td><code>\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\;|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\;\tilde{G}_{ij}(t)</code></td></tr><tr><td>4</td><td>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</td><td>97</td><td>grok-xai</td><td><code>\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,(1+\kappa U_{ij}(t))\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,(1-\eta U_{ij}(t))\,\tilde{G}_{ij}(t)</code></td></tr><tr><td>5</td><td>Phase (Adler/RSJ) Dynamics</td><td>96</td><td>Paper I draft §2 (Eq.1)</td><td><code>\dot{\phi}=\Delta-\lambda\,G\,\sin\phi</code></td></tr><tr><td>6</td><td>Gemini Curve-Memory Topological Frustration Pruning</td><td>96</td><td>gemini-3.1-pro</td><td><code>\frac{d\tilde{G}_{ij}}{dt} = \alpha_G(S)\,|I_{ij}(t)|\,e^{i\theta_{R,ij}(t)} - \mu_G(S)\,\left(1 + \xi \int_0^t e^{-\frac{t-\tau}{\tau_M}} \left|\frac{d\theta_{R,ij}}{d\tau}\right|^2 d\tau \right)\,\tilde{G}_{ij}(t)</code></td></tr><tr><td>7</td><td>Topological Coherence Order Parameter (ARP Locking)</td><td>96</td><td>claude-opus-4.6</td><td><code>\Psi = \frac{1}{N_p} \sum_{p=1}^{N_p} \cos\!\left(\frac{\Theta_p}{\pi_a}\right)</code></td></tr><tr><td>8</td><td>QWZ Chern-Insulator Hamiltonian (Reference Form)</td><td>94</td><td>Paper I / Step-2 Simulator (Eq.9)</td><td><code>H(\mathbf{k})=\sin k_x\,\sigma_x+\sin k_y\,\sigma_y+\big(u+\cos k_x+\cos k_y\big)\sigma_z</code></td></tr><tr><td>9</td><td>Generic ARP Reinforce/Decay Law</td><td>93</td><td>Paper I draft §2 (Eq.2)</td><td><code>\dot{G}=\alpha\,\mathcal{A}(\phi,G)-\mu\,(G-G_0)</code></td></tr><tr><td>10</td><td>Slip-Regime Asymptote (1/π Signature)</td><td>93</td><td>Paper I draft §3 (Eq.6)</td><td><code>r_b=\frac{|\Delta|}{\pi}</code></td></tr></tbody></table></div>
 
 <div id='cards' class='cardrow'>
 
@@ -2080,7 +2086,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-03-22 03:11</strong></div>
+      <div>Last built: <strong>2026-03-21 21:17</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>

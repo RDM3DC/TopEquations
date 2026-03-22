@@ -190,11 +190,17 @@ def test_site_build_smoke_and_leaderboard_consistency(tmp_path: Path) -> None:
 
     published_equations = json.loads((docs / "data" / "equations.json").read_text(encoding="utf-8"))
     published_leaderboard = json.loads((docs / "data" / "leaderboard.json").read_text(encoding="utf-8"))
+    index_html = (docs / "index.html").read_text(encoding="utf-8")
     leaderboard_html = (docs / "leaderboard.html").read_text(encoding="utf-8")
 
     assert published_equations == equations
     assert [entry["id"] for entry in published_leaderboard["entries"]] == ["eq-high", "eq-threshold"]
     assert leaderboard_html.count("<section class='card'") == 2
+    assert "Machine-Readable Access" in leaderboard_html
+    assert "./data/leaderboard.json" in leaderboard_html
+    assert "<table class='tbl'>" in leaderboard_html
     assert "High Score Equation" in leaderboard_html
     assert "Threshold Equation" in leaderboard_html
     assert "Rising Equation" not in leaderboard_html
+    assert "Machine-Readable Exports" in index_html
+    assert "./data/equations.json" in index_html
