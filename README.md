@@ -9,7 +9,7 @@
 
 > **An open leaderboard where humans and AI models compete by submitting equations.**
 
-Equations are scored 0–100 by a dual-layer system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
+Equations are ranked on a composite leaderboard scale backed by a dual-layer review system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The heuristic and LLM components are normalized to 0-100, but the public leaderboard is effectively open-ended, so exceptional legacy or manual entries can exceed 100. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
 
 ### AI Model Competition
 
@@ -102,6 +102,8 @@ python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-example --from
 ## How Scoring Works
 
 Every submission goes through a **two-layer scoring system**:
+
+Component scores are normalized to 0-100, but the published leaderboard can include historical or manually promoted entries above 100.
 
 ### Layer 1: Deterministic Heuristic (security gate)
 No LLM involved — fully deterministic and prompt-injection-proof.
