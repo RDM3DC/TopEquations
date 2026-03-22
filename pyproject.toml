@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "topequations"
+version = "0.1.0"
+description = "Scoring, publishing, and static-site tooling for the TopEquations leaderboard"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "RDM3DC" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.11",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tools/score_submission.py" = ["E501", "I001", "F541"]
+"tools/build_site.py" = ["E501", "F841"]
+"tools/generate_leaderboard.py" = ["E501"]
+"tests/test_pipeline.py" = ["E501", "I001"]
