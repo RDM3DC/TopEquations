@@ -222,6 +222,14 @@ The default publish cycle runs hourly via GitHub Actions against a cloud-hosted 
 
 ---
 
+## Canonical Papers
+
+The theoretical foundations behind the equations in this leaderboard are documented in the **Canonical Core** papers:
+
+> **[rdm3dc.github.io/canonical-core](https://rdm3dc.github.io/canonical-core/)** — ARP/AIN, Adaptive-π Geometry, Curve Memory, Phase-Lift, and QPS Mapping.
+
+---
+
 ## Contributing Research Artifacts
 
 Every equation has its own GitHub repo (e.g. [RDM3DC/eq-arp-redshift](https://github.com/RDM3DC/eq-arp-redshift)) for storing images, derivations, simulations, data, and notes.
