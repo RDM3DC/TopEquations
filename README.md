@@ -3,7 +3,7 @@
 [![Live Site](https://img.shields.io/badge/Live_Site-rdm3dc.github.io-blue?style=flat-square)](https://rdm3dc.github.io/TopEquations/)
 [![Equations](https://img.shields.io/badge/Equations-94-brightgreen?style=flat-square)](https://rdm3dc.github.io/TopEquations/leaderboard.html)
 [![Certificates](https://img.shields.io/badge/Blockchain_Certs-94-orange?style=flat-square)](https://rdm3dc.github.io/TopEquations/certificates.html)
-[![License](https://img.shields.io/badge/License-Open-lightgrey?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/Sponsor-%24rdm3d-00d632?style=flat-square&logo=cashapp)](https://cash.app/$rdm3d)
 [![PR Root Guide GPT](https://img.shields.io/badge/GPT-PR_Root_Guide-412991?style=flat-square&logo=openai)](https://chatgpt.com/g/g-695b42b4f0048191b0edb6795c9643cf-pr-root-guide)
 
@@ -119,18 +119,19 @@ No LLM involved — fully deterministic and prompt-injection-proof.
 Score ≥ 65 → auto-promoted to leaderboard.
 
 ### Layer 2: Calibrated LLM Review (advisory)
-A GPT-5.4 review with fixed calibration anchors (Schrödinger ~85, Euler identity ~45, tautology ~5). Scores five axes:
+A GPT-5.4 review with fixed calibration anchors (Schrödinger ~85, Euler identity ~45, tautology ~5). It scores six weighted categories:
 
-- **Physical validity** (0-20) — dimensional consistency, derivability
-- **Novelty** (0-20) — defaults to LOW; must prove it's genuinely new
-- **Clarity** (0-20) — all variables defined, standard notation
-- **Evidence quality** (0-20) — self-citations cap at 10; independent evidence required for higher
-- **Significance** (0-20) — impact if correct
+- **Traceability** — lineage to existing entries, derivation bridges, recovery clauses
+- **Rigor** — dimensional consistency, variable definitions, internal coherence
+- **Assumptions** — explicit, falsifiable assumptions and stated operating domain
+- **Presentation** — readable notation, explanation quality, artifact readiness
+- **Novelty / insight** — whether the submission meaningfully extends the program
+- **Fruitfulness** — whether the submission is simulation-ready and easy to build on
 
 The LLM score is advisory and does not gate promotion. It's recorded alongside the heuristic for transparency.
 
 ### Blended Score
-Final score = **40% heuristic + 60% LLM**. Displayed on the submissions page for a balanced quality signal.
+When an LLM review is available, the advisory blended score is **40% heuristic + 60% LLM**. Promotion still keys off the heuristic review status in the current GitHub workflow.
 
 ---
 
@@ -165,6 +166,38 @@ tools/
   ISSUE_TEMPLATE/
     equation_submission.yml   # Structured submission form
 ```
+
+## Local Development
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e .[dev]
+pytest
+ruff check tests tools/score_submission.py tools/generate_leaderboard.py tools/build_site.py
+python tools/generate_leaderboard.py
+python tools/build_site.py
+```
+
+Recommended rebuild order:
+
+1. Update `data/equations.json` or `data/submissions.json`
+2. Run `python tools/generate_leaderboard.py`
+3. Run `python tools/build_site.py`
+
+This regenerates `leaderboard.md`, `docs/*.html`, and published machine-readable JSON under `docs/data/`.
+
+## Machine-Readable Outputs
+
+Published static artifacts are available at stable paths in GitHub Pages:
+
+- `docs/data/equations.json` — full promoted equation registry
+- `docs/data/leaderboard.json` — current displayed leaderboard slice
+- `docs/data/submissions.json` — submission queue and review state
+- `docs/data/certificates/equation_certificates.json` — published certificate set
+
+These files are generated from source data in `data/` and should be treated as public read-only exports.
 
 ## On-Chain Certificates
 
@@ -206,4 +239,6 @@ See the **[full contributing guide](CONTRIBUTING.md)** for details, allowed file
 
 ## License
 
-This project and its data are maintained by [RDM3DC](https://github.com/RDM3DC).
+This project is released under the [MIT License](LICENSE).
+
+Data and generated leaderboard outputs are distributed from this repository on the same basis unless a source artifact states otherwise.

@@ -20,6 +20,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import shutil
 from datetime import datetime
 from pathlib import Path
 
@@ -85,7 +86,7 @@ def _page(title: str, body: str, updated: str) -> str:
 
     cachebust = re.sub(r"[^0-9]", "", updated) or "1"
 
-    og_desc = "Open leaderboard ranking equations 0-100. Prompt-injection-hardened scoring, blockchain certificates, AI model competition. 94 equations ranked."
+    og_desc = "Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports."
     og_url = "https://rdm3dc.github.io/TopEquations/"
 
     return f"""<!doctype html>
@@ -530,7 +531,7 @@ def build_core(repo_root: Path, docs: Path) -> None:
 
 
 def build_leaderboard(repo_root: Path, docs: Path) -> None:
-    # Ranked derived equations only (display capped to score >= 68).
+  # Ranked derived equations only (display capped to score >= 65).
     DISPLAY_THRESHOLD = 65
 
     data_path = repo_root / "data" / "equations.json"
@@ -539,6 +540,22 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
 
     entries = [e for e in entries_all if float(e.get("score", 0)) >= DISPLAY_THRESHOLD]
+
+    data_dir = docs / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "leaderboard.json").write_text(
+      json.dumps(
+        {
+          "schemaVersion": 1,
+          "generatedAt": datetime.now().isoformat(),
+          "displayThreshold": DISPLAY_THRESHOLD,
+          "entries": entries,
+        },
+        indent=2,
+      )
+      + "\n",
+      encoding="utf-8",
+    )
 
     cards = []
     for i, e in enumerate(entries, start=1):
@@ -1198,10 +1215,22 @@ def build_certificates(repo_root: Path, docs: Path) -> None:
     (docs / "certificates.html").write_text(_page("TopEquations — Certificates", body, updated), encoding="utf-8")
 
 
+def publish_machine_readable_data(repo_root: Path, docs: Path) -> None:
+    data_dir = docs / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    for name in ("equations.json", "submissions.json", "core.json", "famous_equations.json"):
+        src = repo_root / "data" / name
+        if src.exists():
+            shutil.copyfile(src, data_dir / name)
+
+
 def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     docs = repo_root / "docs"
     (docs / "assets").mkdir(parents=True, exist_ok=True)
+
+    publish_machine_readable_data(repo_root, docs)
 
     build_index(repo_root, docs)
     build_core(repo_root, docs)
