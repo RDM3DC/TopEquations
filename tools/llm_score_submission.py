@@ -29,7 +29,7 @@ API_BASE_ENV = "OPENAI_API_BASE"
 MODEL_ENV = "LLM_SCORE_MODEL"
 
 DEFAULT_BASE = "https://api.openai.com/v1"
-DEFAULT_MODEL = "gpt-5.4"
+DEFAULT_MODEL = "gpt-5.4-nano"
 
 SYSTEM_PROMPT = """\
 You are the official TopEquations evaluator — a senior theoretical physicist

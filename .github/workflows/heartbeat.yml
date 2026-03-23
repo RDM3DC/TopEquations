@@ -2,7 +2,7 @@ name: "Heartbeat — Health Check"
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Every 6 hours
+    - cron: "0 4 * * 0"  # Weekly — Sunday 4:00 AM UTC
   workflow_dispatch: {}      # Manual trigger
 
 permissions:

@@ -2,7 +2,7 @@ name: "Reconcile — Integrity Check"
 
 on:
   schedule:
-    - cron: "30 3 * * *"  # Daily at 3:30 AM UTC
+    - cron: "30 3 * * 0"  # Weekly — Sunday 3:30 AM UTC
   workflow_dispatch: {}
 
 permissions:

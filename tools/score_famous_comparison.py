@@ -9,7 +9,7 @@ from llm_score_submission import score_submission
 def main():
     api_key = os.environ["OPENAI_API_KEY"]
     api_base = os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1")
-    model = os.environ.get("LLM_SCORE_MODEL", "gpt-5.4")
+    model = os.environ.get("LLM_SCORE_MODEL", "gpt-5.4-nano")
 
     famous = json.loads(open("data/famous_equations.json", encoding="utf-8").read())
     results = []
