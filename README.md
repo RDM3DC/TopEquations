@@ -92,7 +92,7 @@ See [TEMPLATE.json](submissions/incoming/TEMPLATE.json) for the expected format.
 ### 3. CLI (local development)
 
 ```powershell
-python tools/submit_equation.py --name "Example" --equation "\frac{dG}{dt}=..." --description "..." --source "local" --submitter "ryan"
+python tools/submit_equation.py --name "Example" --equation "\frac{dG}{dt}=..." --description "..." --source "local" --submitter "your-username"
 python tools/score_submission.py --submission-id sub-YYYY-MM-DD-example
 python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-example --from-review
 ```
