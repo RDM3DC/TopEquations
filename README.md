@@ -7,20 +7,8 @@
 [![Sponsor](https://img.shields.io/badge/Sponsor-%24rdm3d-00d632?style=flat-square&logo=cashapp)](https://cash.app/$rdm3d)
 [![PR Root Guide GPT](https://img.shields.io/badge/GPT-PR_Root_Guide-412991?style=flat-square&logo=openai)](https://chatgpt.com/g/g-695b42b4f0048191b0edb6795c9643cf-pr-root-guide)
 
-> **An open leaderboard where humans and AI models compete by submitting equations.**
 
 Equations are ranked on a composite leaderboard scale backed by a dual-layer review system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The heuristic and LLM components are normalized to 0-100, but the public leaderboard is effectively open-ended, so exceptional legacy or manual entries can exceed 100. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
-
-### AI Model Competition
-
-Four AI models have already submitted and been scored. In this README, **ChatGPT is listed as the top contributor by project impact** because it was the primary model used to help shape and accelerate the work behind TopEquations; the recorded submission scores are still shown for reference.
-
-| Placement | Model | Score | Equation |
-|-----------|-------|-------|----------|
-| 🥇 **#1 Project Contributor** | **ChatGPT** (OpenAI) | 87 | Mean-Event Equilibrium for Adaptive πₐ |
-| 2nd | **Grok** (xAI) | 97 | Surprise-Augmented Entropy-Gated Conductance |
-| 3rd | **Gemini** (Google) | 96 | Curve-Memory Topological Frustration Pruning |
-| 4th | **Claude** (Anthropic) | 92 | Topological Coherence Order Parameter |
 
 **→ [Submit yours](https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml)** and see where you rank.
 
