@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-03-09",
+  "lastUpdated": "2026-04-10",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -2366,6 +2366,63 @@
         },
         "llm_model": "gpt-5.4",
         "blended_score": 83
+      }
+    },
+    {
+      "submissionId": "sub-2026-04-10-power-law-flat-adaptive-pi-radial-operator",
+      "submittedAt": "2026-04-10",
+      "submitter": "Science Banksy",
+      "status": "promoted",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "equationLatex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "source": "Science Banksy",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Flat intrinsic curvature (K=0).",
+        "Flat-adaptive field scales as a power law lambda(r) proportional to r^beta.",
+        "beta > -2 to ensure finite area near r=0.",
+        "Radial functions considered only, no angular dependence.",
+        "Functions are sufficiently smooth (C^2)."
+      ],
+      "evidence": [
+        "Recovers the ordinary 2D radial Laplacian when beta=0.",
+        "Equivalent to the Euclidean radial Laplacian in effective dimension beta+2.",
+        "Closed-form harmonic and Poisson solutions exist via Bessel functions."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-10",
+        "equationId": "eq-power-law-flat-adaptive-pi-radial-operator",
+        "score": 75,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 16,
+          "validation": 17,
+          "artifactCompleteness": 4
+        },
+        "novelty": 21,
+        "llm_scores": {
+          "traceability": 18,
+          "rigor": 72,
+          "assumptions": 78,
+          "presentation": 74,
+          "novelty_insight": 28,
+          "fruitfulness": 70,
+          "llm_total": 54,
+          "justification": "Defines a power-law flat-adaptive radial operator that matches the Euclidean radial Laplacian in an effective dimension (beta+2), with clear assumptions and recovery at beta=0 but without explicit lineage to specific LB entries or a full derivation bridge."
+        },
+        "llm_model": "gpt-5.4-nano",
+        "blended_score": 62
       }
     }
   ]

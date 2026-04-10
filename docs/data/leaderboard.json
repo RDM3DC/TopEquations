@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-05T05:16:59.865767",
+  "generatedAt": "2026-04-10T23:39:34.795166",
   "displayThreshold": 65,
   "entries": [
     {
@@ -1860,6 +1860,47 @@
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update"
+    },
+    {
+      "id": "eq-power-law-flat-adaptive-pi-radial-operator",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "firstSeen": "2026-04-10",
+      "source": "Science Banksy",
+      "submitter": "Science Banksy",
+      "repoUrl": "https://github.com/RDM3DC/eq-power-law-flat-adaptive-pi-radial-operator",
+      "score": 75,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "assumptions": [
+        "Flat intrinsic curvature (K=0).",
+        "Flat-adaptive field scales as a power law lambda(r) proportional to r^beta.",
+        "beta > -2 to ensure finite area near r=0.",
+        "Radial functions considered only, no angular dependence.",
+        "Functions are sufficiently smooth (C^2)."
+      ],
+      "date": "2026-04-10",
+      "equationLatex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "tags": {
+        "novelty": {
+          "score": 21,
+          "date": "2026-04-10"
+        }
+      }
     },
     {
       "id": "eq-arp-redshift-bounded-oscillation",

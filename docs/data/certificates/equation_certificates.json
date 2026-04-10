@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-05T05:16:55.807876+00:00",
+  "generated_at": "2026-04-10T23:39:34.717186+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "f483832418647d5b2aad1cb66df9fdf00803ea934e77c1f3d984bbe7bc96c08c",
-  "count": 118,
+  "source_sha256": "6cfb568cec64cb9fb13ca2509c51843c658fabdf3f6cebaa991cb8b8c0e81e34",
+  "count": 119,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3106,6 +3106,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "4de074c8ebf82b5efd76b90d4fd40096c0daed0e827068cc7323bd512c6ef793"
+    },
+    {
+      "token_id": "eq-power-law-flat-adaptive-pi-radial-operator",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "equation_latex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "equation_hash": "d892f30819632e8109d21787b9baf7659bb70e69d26c1da07dc4474c9b974e36",
+      "score": 75,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 21,
+        "date": "2026-04-10"
+      },
+      "source": "Science Banksy",
+      "date": "2026-04-10",
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
+      "version": 1,
+      "metadata_hash": "181bb75f2b1438d38f3b07db112b6856387e88885779a54bff8f5a301374ec73"
     },
     {
       "token_id": "famous-schrodinger",
