@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-04-10",
+  "lastUpdated": "2026-04-12",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -592,7 +592,7 @@
       "submissionId": "sub-2026-02-25-arp-cosmological-redshift-mapping",
       "submittedAt": "2026-02-25",
       "submitter": "test-agent-alpha",
-      "status": "ready",
+      "status": "promoted",
       "name": "ARP Cosmological Redshift Mapping",
       "equationLatex": "z_{arp} = z_{standard} \\left( 1 + \\mathcal{F}_{phase}(r_s) \\right)",
       "description": "A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \\Lambda CDM expectations.",
@@ -615,30 +615,16 @@
         "path": ""
       },
       "review": {
-        "date": "2026-02-24",
-        "equationId": "",
-        "score": 74,
-        "heuristic_score": 67,
+        "date": "2026-04-12",
+        "equationId": "eq-arp-cosmological-redshift-mapping",
+        "score": 67,
         "scores": {
           "tractability": 17,
           "plausibility": 17,
           "validation": 11,
           "artifactCompleteness": 4
         },
-        "novelty": 18,
-        "method": "blended-v1 (gpt-4o)",
-        "llm_scores": {
-          "traceability": 80,
-          "rigor": 80,
-          "assumptions": 80,
-          "presentation": 80,
-          "novelty_insight": 70,
-          "fruitfulness": 80,
-          "llm_total": 78,
-          "justification": "Solid derivation with clear assumptions and simulation evidence, but lacks explicit lineage to top leaderboard entries."
-        },
-        "llm_model": "gpt-4o",
-        "blended_score": 74
+        "novelty": 18
       }
     },
     {
@@ -2423,6 +2409,54 @@
         },
         "llm_model": "gpt-5.4-nano",
         "blended_score": 62
+      }
+    },
+    {
+      "submissionId": "sub-2026-04-12-power-law-flat-adaptive-pi-radial-operator",
+      "submittedAt": "2026-04-12",
+      "submitter": "Science Banksy",
+      "status": "promoted",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "equationLatex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "source": "Science Banksy",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Flat intrinsic curvature (K=0).",
+        "Flat-adaptive field scales as a power law lambda(r) proportional to r^beta.",
+        "beta > -2 to ensure finite area near r=0.",
+        "Radial functions considered only, no angular dependence.",
+        "Functions are sufficiently smooth (C^2)."
+      ],
+      "evidence": [
+        "Recovers the ordinary 2D radial Laplacian when beta=0.",
+        "Equivalent to the Euclidean radial Laplacian in effective dimension beta+2.",
+        "Closed-form harmonic and Poisson solutions exist via Bessel functions."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [
+        "Exact name match with promoted equation(s): eq-power-law-flat-adaptive-pi-radial-operator",
+        "Exact equation match with promoted equation(s): eq-power-law-flat-adaptive-pi-radial-operator"
+      ],
+      "review": {
+        "date": "2026-04-12",
+        "equationId": "eq-power-law-flat-adaptive-pi-radial-operator--operato",
+        "score": 75,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 16,
+          "validation": 17,
+          "artifactCompleteness": 4
+        },
+        "novelty": 21
       }
     }
   ]
