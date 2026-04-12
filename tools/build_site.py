@@ -5,7 +5,6 @@
 Generates:
   - docs/index.html
   - docs/core.html          (canonical core only)
-  - docs/famous.html        (famous equations adjusted)
   - docs/leaderboard.html   (ranked derived only)
   - docs/harvest_preview.html
 
@@ -174,7 +173,6 @@ def _page(title: str, body: str, updated: str, extra_head: str = "") -> str:
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./core.html'>Core</a>
-        <a href='./famous.html'>Famous</a>
         <a href='./leaderboard.html'>Leaderboard</a>
         <a href='./rising.html'>Rising</a>
         <a href='./certificates.html'>Certificates</a>
@@ -264,119 +262,6 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     return core_cards
 
 
-def _extract_tier_lists(repo_root: Path) -> dict[str, list[str]]:
-    tier_lists: dict[str, list[str]] = {"all_time": [], "month": [], "famous": []}
-
-    def _extract_li(ol_html: str) -> list[str]:
-        return [m.group(1).strip() for m in re.finditer(r"<li>(.*?)</li>", ol_html, flags=re.I | re.S)]
-
-    try:
-        md = (repo_root / "leaderboard.md").read_text(encoding="utf-8")
-        if "## Tier Lists" in md and "<table" in md:
-            start = md.find("## Tier Lists")
-            t0 = md.find("<table", start)
-            t1 = md.find("</table>", t0)
-            if t0 != -1 and t1 != -1:
-                table = md[t0 : t1 + len("</table>")]
-                tds = re.findall(r"<td[^>]*>(.*?)</td>", table, flags=re.I | re.S)
-                if len(tds) >= 3:
-                    ols = []
-                    for td in tds[:3]:
-                        m = re.search(r"<ol>(.*?)</ol>", td, flags=re.I | re.S)
-                        ols.append(m.group(0) if m else "")
-                    tier_lists["all_time"] = _extract_li(ols[0])
-                    tier_lists["month"] = _extract_li(ols[1])
-                    tier_lists["famous"] = _extract_li(ols[2])
-    except Exception:
-        pass
-
-    return tier_lists
-
-
-def _load_famous_entries(repo_root: Path) -> list[dict[str, str]]:
-    famous_path = repo_root / "data" / "famous_equations.json"
-    if famous_path.exists():
-        try:
-            data = _load_json_safe(famous_path, {"entries": []})
-            out = []
-            for e in data.get("entries", []):
-                out.append(
-                    {
-                        "name": str(e.get("name", "")).strip(),
-                        "equationLatex": str(e.get("equationLatex", "")).strip(),
-                        "description": str(e.get("description", "")).strip(),
-                        "theory": str(e.get("theory", "PASS-WITH-ASSUMPTIONS")).strip(),
-                        "definitions": str(e.get("definitions", "")).strip(),
-                        "caveat": str(e.get("caveat", "")).strip(),
-                        "tags": e.get("tags", {"novelty": {"score": e.get("novelty", 0), "date": "legacy"}}),
-                        "tractability": e.get("tractability", 0),
-                        "plausibility": e.get("plausibility", 0),
-                        "validation": e.get("validation", 0),
-                        "artifactCompleteness": e.get("artifactCompleteness", 0),
-                        "units": str(e.get("units", "WARN")).strip(),
-                        "animation": e.get("animation", "planned"),
-                        "image": e.get("image", "planned"),
-                        "assumptions": e.get("assumptions", []),
-                        "subtitle": str(e.get("subtitle", "")).strip(),
-                        "coreRefs": e.get("coreRefs", []),
-                        "repoUrl": str(e.get("repoUrl", "")).strip(),
-                    }
-                )
-            if out:
-                return out
-        except Exception:
-            pass
-
-    # Fallback: try legacy markdown tier-list extraction.
-    tier_lists = _extract_tier_lists(repo_root)
-    famous_items = tier_lists.get("famous", [])
-    out: list[dict[str, str]] = []
-    for idx, item in enumerate(famous_items, start=1):
-        m = re.search(r"<b>(.*?)</b>", item, flags=re.I | re.S)
-        title = m.group(1).strip() if m else f"Famous Equation {idx}"
-        body_html = re.sub(r"<b>.*?</b>", "", item, count=1, flags=re.I | re.S).strip()
-        body_html = body_html.lstrip("<br/>").strip()
-
-        equation_expr = ""
-        for pat in (r"\$\$(.+?)\$\$", r"\\\((.+?)\\\)", r"\$(.+?)\$"):
-            mm = re.search(pat, body_html, flags=re.S)
-            if mm:
-                equation_expr = mm.group(1).strip()
-                break
-
-        desc_text = re.sub(r"<br\s*/?>", " ", body_html, flags=re.I)
-        desc_text = re.sub(r"<[^>]+>", " ", desc_text)
-        desc_text = re.sub(r"\\\(.+?\\\)", " ", desc_text)
-        desc_text = re.sub(r"\$\$.+?\$\$", " ", desc_text, flags=re.S)
-        desc_text = re.sub(r"\s+", " ", desc_text).strip()
-
-        out.append(
-            {
-                "name": title,
-                "equationLatex": equation_expr or "(pending)",
-                "description": desc_text or "Classic equation reformulated in your adjusted framework.",
-                "theory": "PASS-WITH-ASSUMPTIONS",
-                "definitions": "",
-                "caveat": "",
-                "tags": {"novelty": {"score": 20, "date": "legacy"}},
-                "tractability": 12,
-                "plausibility": 12,
-                "validation": 0,
-                "artifactCompleteness": 0,
-                "units": "WARN",
-                "animation": "planned",
-                "image": "planned",
-                "assumptions": [],
-            }
-        )
-    return out
-
-
-def _famous_score(e: dict) -> tuple[int, dict[str, int]]:
-    total, rb = _rubric_score(e)
-    return total, rb
-
-
 def _rubric_score(e: dict) -> tuple[int, dict[str, int]]:
     def _clamp(v: object, lo: int, hi: int) -> int:
         try:
@@ -410,121 +295,6 @@ def _rubric_score(e: dict) -> tuple[int, dict[str, int]]:
       "validation": validation,
       "artifact": artifact,
     }
-
-
-def build_famous(repo_root: Path, docs: Path) -> None:
-    famous_entries = _load_famous_entries(repo_root)
-    scored_entries: list[tuple[dict, int, dict[str, int]]] = []
-    for e in famous_entries:
-        total, breakdown = _famous_score(e)
-        scored_entries.append((e, total, breakdown))
-    scored_entries.sort(key=lambda x: x[1], reverse=True)
-
-    famous_cards: list[str] = []
-    for idx, (e, total_score, rb) in enumerate(scored_entries, start=1):
-        title = e.get("name", "") or f"Famous Equation {idx}"
-        subtitle = e.get("subtitle", "")
-        equation_expr = e.get("equationLatex", "") or "(pending)"
-        desc_text = e.get("description", "") or "Classic equation reformulated in your adjusted framework."
-        definitions = e.get("definitions", "") or ""
-        caveat = e.get("caveat", "") or ""
-        units = (e.get("units", "WARN") or "WARN").upper()
-        theory = (e.get("theory", "PASS-WITH-ASSUMPTIONS") or "PASS-WITH-ASSUMPTIONS").upper()
-        assumptions = e.get("assumptions", []) or []
-        core_refs = e.get("coreRefs", []) or []
-        if not isinstance(assumptions, list):
-            assumptions = [str(assumptions)]
-        assumptions_html = "".join(f"<li>{_esc(a)}</li>" for a in assumptions if str(a).strip())
-        assumptions_block = f"<ul class='ul'>{assumptions_html}</ul>" if assumptions_html else "None listed."
-        core_refs_html = ", ".join(f"<a href='core.html#{_esc(r)}'>{_esc(r)}</a>" for r in core_refs) if core_refs else "—"
-        theory_css = "warn"
-        if theory == "PASS":
-            theory_css = "good"
-        elif theory == "FAIL":
-            theory_css = "bad"
-        subtitle_html = f"<div class='card__subtitle muted'>{_esc(subtitle)}</div>" if subtitle else ""
-        repo_url = (e.get("repoUrl") or "").strip()
-        repo_link = (
-          f"<a href='{_esc(repo_url)}' target='_blank' rel='noopener'>equation repo &rarr;</a>"
-          if repo_url
-          else "<span class='muted'>-</span>"
-        )
-
-        famous_cards.append(
-            f"""
-<section class='card'>
-  <div class='card__rank'>F{idx}</div>
-  <div class='card__body'>
-    <div class='card__head'>
-      <h2 class='card__title'>{_esc(title)}</h2>
-      {subtitle_html}
-      <div class='card__meta'>
-        <span class='badge badge--score'>{_esc(f'Score {total_score}')}</span>
-        <span class='badge badge--score'>Famous</span>
-        <span class='pill pill--{'good' if units == 'OK' else 'warn'}'>{_esc(units)}</span>
-        <span class='pill pill--{theory_css}'>{_esc(theory)}</span>
-        <span class='pill pill--warn'>Adjusted</span>
-      </div>
-    </div>
-
-    <div class='equation'>
-      <div class='equation__label'>Adjusted form</div>
-      <div class='equation__tex'>$${_esc(equation_expr)}$$</div>
-    </div>
-
-    <div class='card__sub'>Reference: <span class='muted'>famous-adjusted list</span></div>
-
-    <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc_text)}</div></div>
-      <div class='kv'><div class='k'>Rubric</div><div class='v'>T {rb['tractability']}/20, P {rb['plausibility']}/20, V {rb['validation']}/20, A {rb['artifact']}/10, normalized to {total_score}/100</div></div>
-      <div class='kv'><div class='k'>Novelty tag</div><div class='v'>{_esc(rb['novelty_tag'])}</div></div>
-      <div class='kv'><div class='k'>Definitions</div><div class='v'>{_esc(definitions or 'See equation symbols.')}</div></div>
-      <div class='kv'><div class='k'>Assumptions</div><div class='v'>{assumptions_block}</div></div>
-      <div class='kv'><div class='k'>Caveat</div><div class='v'>{_esc(caveat or 'Modeling form; not a canonical replacement.')}</div></div>
-      <div class='kv'><div class='k'>List index</div><div class='v'>F{idx}</div></div>
-      <div class='kv'><div class='k'>Category</div><div class='v'>Famous (Adjusted)</div></div>
-      <div class='kv'><div class='k'>Core refs</div><div class='v'>{core_refs_html}</div></div>
-      <div class='kv'><div class='k'>Repository</div><div class='v'>{repo_link}</div></div>
-    </div>
-  </div>
-</section>
-"""
-        )
-
-    body = """
-<div class='layout layout--single'>
-  <section class='maincol'>
-
-<div class='hero'>
-  <div class='hero__left'>
-    <h1>Famous Equations (Adjusted)</h1>
-    <p>Curated classical forms rewritten in your Phase-Lift / Adaptive-π style, scored with the same leaderboard rubric.</p>
-  </div>
-</div>
-
-<div class='panel'>
-  <h2>Scoring Rubric (0-100)</h2>
-  <ul>
-    <li>Tractability (0-20)</li>
-    <li>Physical plausibility (0-20)</li>
-    <li>Validation (0-20)</li>
-    <li>Artifact completeness (0-10)</li>
-    <li>Total normalized from a 70-point base</li>
-    <li>Novelty is shown as a dated tag only</li>
-  </ul>
-</div>
-
-<div id='famousCards' class='cardrow'>
-""" + "\n".join(famous_cards) + """
-</div>
-
-  </section>
-</div>
-"""
-
-    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
-    out = docs / "famous.html"
-    out.write_text(_page("TopEquations — Famous Equations", body, updated), encoding="utf-8")
 
 
 def build_core(repo_root: Path, docs: Path) -> None:
@@ -873,7 +643,6 @@ def build_index(repo_root: Path, docs: Path) -> None:
     Scored by a dual-layer system, published on-chain with signed certificates.</p>
     <div class='cta'>
       <a class='btn' href='./core.html'>Canonical Core</a>
-      <a class='btn btn--ghost' href='./famous.html'>Famous Equations</a>
       <a class='btn btn--ghost' href='./leaderboard.html'>Leaderboard</a>
       <a class='btn btn--ghost' href='./submissions.html'>All Submissions</a>
       <a class='btn btn--ghost' href='https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml'>Submit an Equation</a>
@@ -1289,7 +1058,6 @@ def main() -> None:
 
     build_index(repo_root, docs)
     build_core(repo_root, docs)
-    build_famous(repo_root, docs)
     build_leaderboard(repo_root, docs)
     build_rising(repo_root, docs)
     build_certificates(repo_root, docs)
