@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-10T23:39:34.717186+00:00",
+  "generated_at": "2026-04-12T02:24:43.049878+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "6cfb568cec64cb9fb13ca2509c51843c658fabdf3f6cebaa991cb8b8c0e81e34",
-  "count": 119,
+  "source_sha256": "41c747d15a5c3518e86c907d30763a6ab6b66744ef15ee7ed4c353a89ce282aa",
+  "count": 121,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3136,6 +3136,66 @@
       "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
       "version": 1,
       "metadata_hash": "181bb75f2b1438d38f3b07db112b6856387e88885779a54bff8f5a301374ec73"
+    },
+    {
+      "token_id": "eq-arp-cosmological-redshift-mapping",
+      "name": "ARP Cosmological Redshift Mapping",
+      "equation_latex": "z_{arp} = z_{standard} \\left( 1 + \\mathcal{F}_{phase}(r_s) \\right)",
+      "equation_hash": "d5b81815eef621f27da39ff47af1b95f274cb0a434ec8cae7d6eac293561b972",
+      "score": 67,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 18,
+        "date": "2026-04-12"
+      },
+      "source": "canonical-core-test",
+      "date": "2026-04-12",
+      "description": "A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \\Lambda CDM expectations.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "668246b96a7e6088c5c3c243d804242a7c83c485689210b097b8c3507fa444ef",
+      "version": 1,
+      "metadata_hash": "8587f3dc76765ac159160c30e626fccb79e07d647efbf346ab3a4a18bc480155"
+    },
+    {
+      "token_id": "eq-power-law-flat-adaptive-pi-radial-operator--operato",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "equation_latex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "equation_hash": "d892f30819632e8109d21787b9baf7659bb70e69d26c1da07dc4474c9b974e36",
+      "score": 75,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 21,
+        "date": "2026-04-12"
+      },
+      "source": "Science Banksy",
+      "date": "2026-04-12",
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
+      "version": 1,
+      "metadata_hash": "e3f4f5f889c28ad4374a1f4649eee628a84d35bc121b02a42e58918a36a6ff46"
     },
     {
       "token_id": "famous-schrodinger",

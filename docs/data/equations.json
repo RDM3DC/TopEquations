@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-04-10",
+  "lastUpdated": "2026-04-12",
   "entries": [
     {
       "id": "eq-arp-redshift",
@@ -3556,6 +3556,85 @@
         "novelty": {
           "score": 21,
           "date": "2026-04-10"
+        }
+      }
+    },
+    {
+      "id": "eq-arp-cosmological-redshift-mapping",
+      "name": "ARP Cosmological Redshift Mapping",
+      "firstSeen": "2026-04-12",
+      "source": "canonical-core-test",
+      "submitter": "test-agent-alpha",
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-cosmological-redshift-mapping",
+      "score": 67,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 17,
+        "validation": 11,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "A derived mapping for cosmological redshift that incorporates a phase-lifted saturation radius modifier, tested against standard \\Lambda CDM expectations.",
+      "assumptions": [
+        "Mapping applies in the weak-field limit of the adaptive geometry",
+        "Saturation radius r_s is non-zero"
+      ],
+      "date": "2026-04-12",
+      "equationLatex": "z_{arp} = z_{standard} \\left( 1 + \\mathcal{F}_{phase}(r_s) \\right)",
+      "tags": {
+        "novelty": {
+          "score": 18,
+          "date": "2026-04-12"
+        }
+      }
+    },
+    {
+      "id": "eq-power-law-flat-adaptive-pi-radial-operator--operato",
+      "name": "Power-Law Flat Adaptive Pi Radial Operator",
+      "firstSeen": "2026-04-12",
+      "source": "Science Banksy",
+      "submitter": "Science Banksy",
+      "repoUrl": "https://github.com/RDM3DC/eq-power-law-flat-adaptive-pi-radial-operator--operato",
+      "score": 75,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 16,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
+      "assumptions": [
+        "Flat intrinsic curvature (K=0).",
+        "Flat-adaptive field scales as a power law lambda(r) proportional to r^beta.",
+        "beta > -2 to ensure finite area near r=0.",
+        "Radial functions considered only, no angular dependence.",
+        "Functions are sufficiently smooth (C^2)."
+      ],
+      "date": "2026-04-12",
+      "equationLatex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
+      "tags": {
+        "novelty": {
+          "score": 21,
+          "date": "2026-04-12"
         }
       }
     }
