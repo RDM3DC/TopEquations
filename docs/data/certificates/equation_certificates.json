@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-12T02:24:43.049878+00:00",
+  "generated_at": "2026-04-12T02:31:25.425231+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "41c747d15a5c3518e86c907d30763a6ab6b66744ef15ee7ed4c353a89ce282aa",
-  "count": 121,
+  "source_sha256": "0b39bed1b7c027119d7eed63881e970ed03f690c27920bd2a69c768c40ed7d8b",
+  "count": 122,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3196,6 +3196,36 @@
       "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
       "version": 1,
       "metadata_hash": "e3f4f5f889c28ad4374a1f4649eee628a84d35bc121b02a42e58918a36a6ff46"
+    },
+    {
+      "token_id": "eq-flat-channel-loop-signature-pi-f-health-observable",
+      "name": "Flat-Channel Loop Signature (pi_f Health Observable)",
+      "equation_latex": "\\Sigma_{\\Gamma}^{(\\pi_f)}(t)=\\exp\\!\\left[\\frac{1}{|\\Gamma|}\\sum_{e\\in\\Gamma}\\ln\\!\\left(\\frac{\\pi_{f,e}(t)}{\\pi}\\right)\\right]\\,\\frac{1+\\cos\\!\\left(\\Theta_\\Gamma(t)/\\pi_a(t)\\right)}{2},\\quad \\Theta_\\Gamma(t)=\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\,\\arg g_e(t),\\quad \\pi_{f,e}(t)=\\pi |g_e(t)|",
+      "equation_hash": "db6f5ccf3e802ddf5e773cf0156766de0babfaf3ec453a10879f7516f1d3b929",
+      "score": 95,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-04-12"
+      },
+      "source": "derived: HAFC/EGATL pi_f field + loop holonomy + adaptive ruler",
+      "date": "2026-04-12",
+      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. The observable stays high only when both bond magnitude (pi_f) and phase consistency survive; on the top-edge loop it acts as a localized damage precursor ahead of Bott breakdown.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "f276d3d7df3f6a945fc94369931b990aa33d5e0d31e605991354a98f04f0b551"
     },
     {
       "token_id": "famous-schrodinger",

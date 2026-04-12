@@ -2458,6 +2458,52 @@
         },
         "novelty": 21
       }
+    },
+    {
+      "submissionId": "sub-2026-04-12-flat-channel-loop-signature-pi-f-health-observab",
+      "submittedAt": "2026-04-12",
+      "submitter": "RDM3DC",
+      "status": "promoted",
+      "name": "Flat-Channel Loop Signature (pi_f Health Observable)",
+      "equationLatex": "\\Sigma_{\\Gamma}^{(\\pi_f)}(t)=\\exp\\!\\left[\\frac{1}{|\\Gamma|}\\sum_{e\\in\\Gamma}\\ln\\!\\left(\\frac{\\pi_{f,e}(t)}{\\pi}\\right)\\right]\\,\\frac{1+\\cos\\!\\left(\\Theta_\\Gamma(t)/\\pi_a(t)\\right)}{2},\\quad \\Theta_\\Gamma(t)=\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\,\\arg g_e(t),\\quad \\pi_{f,e}(t)=\\pi |g_e(t)|",
+      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. The observable stays high only when both bond magnitude (pi_f) and phase consistency survive; on the top-edge loop it acts as a localized damage precursor ahead of Bott breakdown.",
+      "source": "derived: HAFC/EGATL pi_f field + loop holonomy + adaptive ruler",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Each bond carries a complex adaptive conductance g_e with pi_{f,e}=pi|g_e| as the flat-channel reduction.",
+        "Theta_Gamma is the oriented loop holonomy built from the same resolved complex phases used by the EGATL/HLATN stack.",
+        "pi_a(t) > 0 is the adaptive ruler from the companion EGATL/HLATN ruler law.",
+        "Gamma is a fixed loop family (boundary, top edge, or plaquette boundary) chosen before evaluation."
+      ],
+      "evidence": [
+        "Implemented directly in solver/egatl.py via boundary_loop_signature(), top_edge_loop_signature(), and plaquette_signatures().",
+        "Live smoke run: hafc_pi_field_signature.py --T 6 --damage-time 2 gave Sig_top_edge 1.2137 -> 0.0142 while Sig_plaquette stayed at 0.9983 of pre-damage, showing localized sensitivity rather than bulk collapse.",
+        "Live no-damage retention verification: hafc_topology_retention_sweep.py --sizes 10 --phase-noise 0.00 --qzw-pi-gains 0.25 --T 24 --no-damage produced sig_top_precursor_time=9.0 and bott_loss_time=21.5, so the pi_f precursor led Bott loss by 12.5 time units with drop_z_max=10.34.",
+        "Archived sweeps in hafc_topology_retention_extended_nodamage.csv show positive precursor_lead_time across multiple sizes and gains.",
+        "Local artifacts: hafc_pi_f_dashboard.png, hafc_topology_retention_sweep.png, hafc_topology_retention_nodamage.png, hafc_topology_retention_extended_nodamage.png."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-12",
+        "equationId": "eq-flat-channel-loop-signature-pi-f-health-observable",
+        "score": 95,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 20,
+          "validation": 18,
+          "artifactCompleteness": 4
+        },
+        "novelty": 27
+      }
     }
   ]
 }
