@@ -453,7 +453,6 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 """
         )
 
-    discovery_panel = _leaderboard_discovery_panel(entries)
     extra_head = """
   <link rel='alternate' type='application/json' href='./data/leaderboard.json' title='TopEquations leaderboard JSON' />
   <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
@@ -492,8 +491,6 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     </div>
   </div>
 </div>
-
-""" + discovery_panel + """
 
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
