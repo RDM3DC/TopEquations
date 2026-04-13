@@ -1,0 +1,46 @@
+{
+  "equationId": "eq-flat-channel-loop-signature-pi-f-health-observable",
+  "generator": "tools/generate_flat_channel_loop_artifacts.py",
+  "parameters": {
+    "nx": 6,
+    "ny": 6,
+    "T": 6.0,
+    "dt": 0.1,
+    "seed": 0,
+    "damage_time": 2.0,
+    "mass": -1.0
+  },
+  "summary": {
+    "damage_time": 2.0,
+    "damage_index": 20,
+    "top_strip_pre": 0.08958649266939309,
+    "top_strip_at_damage": 0.0007380783943164382,
+    "top_strip_post": 1.0688905781400612e-05,
+    "top_strip_min_post": 1.0688905781400612e-05,
+    "boundary_pre": 0.06295390479037262,
+    "boundary_at_damage": 0.0032329681248179174,
+    "boundary_post": 1.1064119668899545e-05,
+    "center_pre": 0.009295083065890532,
+    "center_at_damage": 0.0033741720151533572,
+    "center_post": 1.792696033140049e-06,
+    "transfer_pre": 0.813369172215723,
+    "transfer_at_damage": 0.8226194325664945,
+    "transfer_post": 0.828331189317564,
+    "top_edge_fraction_pre": 0.7791812919980821,
+    "top_edge_fraction_at_damage": 0.9501328690887084,
+    "top_edge_fraction_post": 0.45145374742317046,
+    "proxy_chern_pre": -4.238410067461352e-20,
+    "proxy_chern_post": -4.114058853674883e-27,
+    "slip_density_post_mean": 0.0,
+    "drop_ratios": {
+      "top_strip_min_over_pre": 0.0001193138101839368,
+      "boundary_min_over_pre": 0.00017574953778866394,
+      "center_min_over_pre": 0.00019286498253238542
+    },
+    "damage_step_ratios": {
+      "top_strip_over_pre": 0.008238724079088768,
+      "boundary_over_pre": 0.051354528930067686,
+      "center_over_pre": 0.36300611745314065
+    }
+  }
+}

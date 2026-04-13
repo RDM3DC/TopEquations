@@ -3649,20 +3649,20 @@
       "scores": {
         "tractability": 18,
         "plausibility": 20,
-        "validation": 18,
-        "artifactCompleteness": 4
+        "validation": 16,
+        "artifactCompleteness": 10
       },
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "animation": {
-        "status": "planned",
-        "path": ""
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_loop_signature/flat_channel_loop_damage.gif"
       },
       "image": {
-        "status": "planned",
-        "path": ""
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_loop_signature/flat_channel_loop_dashboard.png"
       },
-      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. The observable stays high only when both bond magnitude (pi_f) and phase consistency survive; on the top-edge loop it acts as a localized damage precursor ahead of Bott breakdown.",
+      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. On the top-strip loop surrounding the damaged boundary channel, it acts as a localized loop-health monitor for top-edge failure and recovery rather than a generic bulk transport score.",
       "assumptions": [
         "Each bond carries a complex adaptive conductance g_e with pi_{f,e}=pi|g_e| as the flat-channel reduction.",
         "Theta_Gamma is the oriented loop holonomy built from the same resolved complex phases used by the EGATL/HLATN stack.",
@@ -3673,7 +3673,7 @@
       "equationLatex": "\\Sigma_{\\Gamma}^{(\\pi_f)}(t)=\\exp\\!\\left[\\frac{1}{|\\Gamma|}\\sum_{e\\in\\Gamma}\\ln\\!\\left(\\frac{\\pi_{f,e}(t)}{\\pi}\\right)\\right]\\,\\frac{1+\\cos\\!\\left(\\Theta_\\Gamma(t)/\\pi_a(t)\\right)}{2},\\quad \\Theta_\\Gamma(t)=\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\,\\arg g_e(t),\\quad \\pi_{f,e}(t)=\\pi |g_e(t)|",
       "tags": {
         "novelty": {
-          "score": 27,
+          "score": 29,
           "date": "2026-04-12"
         }
       }

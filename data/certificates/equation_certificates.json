@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-13T00:36:19.541445+00:00",
+  "generated_at": "2026-04-13T00:57:35.652102+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "0a6e2d6b6ceb6cbcaa232d8486f256f838b059b18987131b7daa514838d91c8c",
+  "source_sha256": "c41173d322131c9bba4748f287ff2a72bdf56bd591748f26300b24a3b12b5406",
   "count": 123,
   "entries": [
     {
@@ -3206,26 +3206,26 @@
       "scores": {
         "tractability": 18,
         "plausibility": 20,
-        "validation": 18,
-        "artifactCompleteness": 4
+        "validation": 16,
+        "artifactCompleteness": 10
       },
       "novelty": {
-        "score": 27,
+        "score": 29,
         "date": "2026-04-12"
       },
       "source": "derived: HAFC/EGATL pi_f field + loop holonomy + adaptive ruler",
       "date": "2026-04-12",
-      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. The observable stays high only when both bond magnitude (pi_f) and phase consistency survive; on the top-edge loop it acts as a localized damage precursor ahead of Bott breakdown.",
+      "description": "Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. On the top-strip loop surrounding the damaged boundary channel, it acts as a localized loop-health monitor for top-edge failure and recovery rather than a generic bulk transport score.",
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
-        "animation": "",
-        "image": ""
+        "animation": "data/artifacts/flat_channel_loop_signature/flat_channel_loop_damage.gif",
+        "image": "data/artifacts/flat_channel_loop_signature/flat_channel_loop_dashboard.png"
       },
       "tier": "derived",
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
-      "metadata_hash": "f276d3d7df3f6a945fc94369931b990aa33d5e0d31e605991354a98f04f0b551"
+      "metadata_hash": "dd22274ac7c4a5bd4bd0d005384cce46fb89da01757cdb9556261409562432f7"
     },
     {
       "token_id": "eq-loop-coherence-gated-edge-recovery-score",
