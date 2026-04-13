@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-13T01:09:17.501478+00:00",
+  "generated_at": "2026-04-13T01:37:47.119867+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "d929b9ab78946c34847ef64d47ba895ecb3f615e0650daa070a4bb07d54cce1e",
-  "count": 124,
+  "source_sha256": "5ae86be80c4772014344b2841e51ceb4e37c9db0d171a45dc7965dac7dc41b63",
+  "count": 125,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3286,6 +3286,36 @@
       "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
       "version": 1,
       "metadata_hash": "1214a2a2538e3736981c0e10a22443586d5f79d16e21565e3339465eb9435701"
+    },
+    {
+      "token_id": "eq-history-resolved-pif-anticipatory-self-healing-law",
+      "name": "History-Resolved pi_f Anticipatory Self-Healing Conductance Law",
+      "equation_latex": "\\dot g_e = \\alpha_G(S)\\,[1+\\xi H_e^{(f)}] \\,|J_e|\\,e^{i\\Theta_e} - \\mu_G(S)\\,g_e - \\lambda_s g_e\\sin^2\\!\\left(\\frac{\\Theta_e}{2\\pi_a}\\right) + \\chi C_e g_e",
+      "equation_hash": "64bad36fb910eb9bf9ea0e22950082aacb3d89db0874988460daeb02fe012396",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-12"
+      },
+      "source": "derived: LB #1 history-resolved phase + LB #31 self-healing conductance + LB #8 pi_f loop signature",
+      "date": "2026-04-12",
+      "description": "Builds on LB #1 History-Resolved Phase with Adaptive Ruler, LB #31 Adaptive Topological Self-Healing Conductance Law, and LB #8 Flat-Channel Loop Signature (pi_f Health Observable). It inserts a flat-adaptive pi_f precursor gate into the reinforcement term so loop-health mismatch can bias conductance growth before visible recovery collapse, rather than acting only as a passive readout after damage.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_preview.gif",
+        "image": "data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_dashboard.png"
+      },
+      "tier": "derived",
+      "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
+      "version": 1,
+      "metadata_hash": "e8d3e3e2b01137524df4d1ca4f548d58c72750b1a4545ce29b7976697a2a00c0"
     },
     {
       "token_id": "famous-schrodinger",

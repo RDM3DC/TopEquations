@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-12T18:09:17.901243",
+  "generatedAt": "2026-04-12T18:37:47.573994",
   "displayThreshold": 65,
   "entries": [
     {
@@ -764,6 +764,48 @@
         "novelty": {
           "score": 30,
           "date": "2026-02-24"
+        }
+      }
+    },
+    {
+      "id": "eq-history-resolved-pif-anticipatory-self-healing-law",
+      "name": "History-Resolved pi_f Anticipatory Self-Healing Conductance Law",
+      "firstSeen": "2026-04-12",
+      "source": "derived: LB #1 history-resolved phase + LB #31 self-healing conductance + LB #8 pi_f loop signature",
+      "submitter": "Science Banksy",
+      "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-pif-anticipatory-self-healing-law",
+      "score": 91,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "provided",
+        "path": "data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_preview.gif"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_dashboard.png"
+      },
+      "description": "Builds on LB #1 History-Resolved Phase with Adaptive Ruler, LB #31 Adaptive Topological Self-Healing Conductance Law, and LB #8 Flat-Channel Loop Signature (pi_f Health Observable). It inserts a flat-adaptive pi_f precursor gate into the reinforcement term so loop-health mismatch can bias conductance growth before visible recovery collapse, rather than acting only as a passive readout after damage.",
+      "assumptions": [
+        "Each edge e carries a complex conductance g_e and current magnitude |J_e|.",
+        "Theta_e is a history-resolved lifted phase, not a principal-branch phase.",
+        "pi_a > 0 is a bounded adaptive ruler entering the phase-slip suppression term.",
+        "C_e is a local topological integrity factor or healing score associated with edge e.",
+        "H_e^(f) is a dimensionless flat-adaptive loop-health precursor aggregated from loops containing edge e, with prototype definition H_e^(f)=sum_{ell contains e} w_{e ell} tanh((Sigma_ell^(f)-Sigma_ref,ell^(f))/(sigma_ell+eps)).",
+        "xi >= 0 and chi >= 0 are precursor and healing feedback strengths, and the loop weights w_{e ell} are fixed non-negative coefficients."
+      ],
+      "date": "2026-04-12",
+      "equationLatex": "\\dot g_e = \\alpha_G(S)\\,[1+\\xi H_e^{(f)}] \\,|J_e|\\,e^{i\\Theta_e} - \\mu_G(S)\\,g_e - \\lambda_s g_e\\sin^2\\!\\left(\\frac{\\Theta_e}{2\\pi_a}\\right) + \\chi C_e g_e",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-12"
         }
       }
     },

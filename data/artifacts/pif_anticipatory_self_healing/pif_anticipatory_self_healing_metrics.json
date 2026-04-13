@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-04-13T01:35:25.682183+00:00",
+  "sourceFiles": {
+    "results": "data/artifacts/pif_anticipatory_self_healing/benchmark_results.csv",
+    "summary": "data/artifacts/pif_anticipatory_self_healing/benchmark_summary.csv",
+    "summaryImage": "data/artifacts/pif_anticipatory_self_healing/benchmark_summary.png",
+    "mazeTrace": "data/artifacts/pif_anticipatory_self_healing/maze_trace_seed0.png",
+    "classicTrace": ""
+  },
+  "validation": {
+    "summary_matches_grouped_results": true,
+    "max_abs_diff": 1.1102230246251565e-16,
+    "per_column_abs_diff": {
+      "recovery_ratio": 1.1102230246251565e-16,
+      "G_ratio": 0.0,
+      "mismatch_peak_5": 2.168404344971009e-19,
+      "mismatch_tail": 0.0,
+      "mean_pi_f_final": 0.0,
+      "damaged_edges": 0.0
+    },
+    "max_seed_std": 0.0
+  },
+  "modes": {
+    "classic": {
+      "off": {
+        "recovery_ratio": 1.0000000237378222,
+        "G_ratio": 0.9869243816421696,
+        "mismatch_peak_5": 0.0018552495599806,
+        "mismatch_tail": 9.522928129402198e-09,
+        "mean_pi_f_final": 3.141592653589793
+      },
+      "on": {
+        "recovery_ratio": 1.0000012189624046,
+        "G_ratio": 1.0237692769447917,
+        "mismatch_peak_5": 0.0120172511495114,
+        "mismatch_tail": 0.0049139759914304,
+        "mean_pi_f_final": 2.558109565834939
+      },
+      "delta": {
+        "recovery_ratio": 1.1952245824176089e-06,
+        "G_ratio": 0.03684489530262214,
+        "mismatch_peak_5": 0.0101620015895308,
+        "mismatch_tail": 0.0049139664685022705,
+        "mean_pi_f_final": -0.5834830877548542
+      }
+    },
+    "maze": {
+      "off": {
+        "recovery_ratio": 0.9984670022864264,
+        "G_ratio": 1.0,
+        "mismatch_peak_5": 0.1182037462101195,
+        "mismatch_tail": 0.0336859821564511,
+        "mean_pi_f_final": 3.141592653589793
+      },
+      "on": {
+        "recovery_ratio": 1.0087855289720686,
+        "G_ratio": 1.0,
+        "mismatch_peak_5": 0.2745813494021462,
+        "mismatch_tail": 0.0039427309869478,
+        "mean_pi_f_final": 3.728119176649117
+      },
+      "delta": {
+        "recovery_ratio": 0.01031852668564226,
+        "G_ratio": 0.0,
+        "mismatch_peak_5": 0.15637760319202668,
+        "mismatch_tail": -0.0297432511695033,
+        "mean_pi_f_final": 0.586526523059324,
+        "mismatch_tail_relative_reduction": 0.8829563297683829
+      }
+    }
+  },
+  "headlineFindings": [
+    "Maze-mode recovery ratio improves by +0.010319 with pi_f enabled.",
+    "Maze-mode tail mismatch falls by 0.029743, a 88.30% relative reduction.",
+    "Classic-mode final conductance ratio rises by +0.036845 with pi_f enabled.",
+    "Classic-mode tail mismatch increases by +0.004914, so the current evidence is stronger in maze mode than in classic mode.",
+    "The committed 10-seed bundle is numerically deterministic across listed seeds (max seed std = 0.000e+00)."
+  ],
+  "limitations": [
+    "The graph-mode benchmark harness is preserved as a source snapshot, but TopEquations does not include the imported hafc_sim or hafc_sim_pif_active modules needed to rerun it in-place.",
+    "Current evidence is graph-mode only; lattice or EGATL ablations with the same pi_f channel are still missing.",
+    "A direct precursor lead-time comparison against Bott or Chern observables is not yet part of this bundle."
+  ]
+}
