@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-13T15:49:24.147244+00:00",
+  "generated_at": "2026-04-13T19:51:30.633663+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "4d83b5634aaebcb75fde292e7676f6ba358ca1aa9d29928e75bb7cadef15f0c4",
-  "count": 111,
+  "source_sha256": "339a978a600493619a53c1330e3d67ae75cde3b33ab4345c26dc9d2f217c3bde",
+  "count": 112,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3316,6 +3316,36 @@
       "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
       "version": 1,
       "metadata_hash": "e8d3e3e2b01137524df4d1ca4f548d58c72750b1a4545ce29b7976697a2a00c0"
+    },
+    {
+      "token_id": "eq-effective-dimension-of-the-power-law-flat-branch",
+      "name": "Effective Dimension of the Power-Law Flat Branch",
+      "equation_latex": "d_{\\mathrm{eff}} = \\beta + 2",
+      "equation_hash": "115dd0ff9319526b96eaacc45b73608b7a11a1f933dbec5e2b15121d536f082c",
+      "score": 82,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 23,
+        "date": "2026-04-13"
+      },
+      "source": "local workspace",
+      "date": "2026-04-13",
+      "description": "In the flat-adaptive radial branch with lambda(r) proportional to r^beta, the operator Delta_f^rad u = u'' + ((beta+1)/r) u'' matches the Euclidean radial Laplacian in effective dimension d_eff = beta+2. This gives an exact dictionary from the power-law flat branch to standard radial PDE theory.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
+      "version": 1,
+      "metadata_hash": "e4864636dc2df4f33a30b12ce6aec378ca343f18e65758d98f03210cbb5a3d42"
     }
   ]
 }

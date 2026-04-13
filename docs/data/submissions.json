@@ -2643,6 +2643,54 @@
         },
         "novelty": 30
       }
+    },
+    {
+      "submissionId": "sub-2026-04-13-effective-dimension-of-the-power-law-flat-branch",
+      "submittedAt": "2026-04-13",
+      "submitter": "rdm3dc",
+      "status": "promoted",
+      "name": "Effective Dimension of the Power-Law Flat Branch",
+      "equationLatex": "d_{\\mathrm{eff}} = \\beta + 2",
+      "description": "In the flat-adaptive radial branch with lambda(r) proportional to r^beta, the operator Delta_f^rad u = u'' + ((beta+1)/r) u'' matches the Euclidean radial Laplacian in effective dimension d_eff = beta+2. This gives an exact dictionary from the power-law flat branch to standard radial PDE theory.",
+      "source": "local workspace",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Flat intrinsic curvature and radial sector only.",
+        "The flat-adaptive field scales as lambda(r) proportional to r^beta with dimensionless beta.",
+        "Coefficient matching is made against the Euclidean radial Laplacian u'' + ((d-1)/r) u''.",
+        "beta > -2 for finite radial area near r=0.",
+        "Functions are sufficiently smooth."
+      ],
+      "evidence": [
+        "Builds directly on the current leaderboard Power-Law Flat Adaptive Pi Radial Operator Delta_f^rad u = u'' + ((beta+1)/r) u''.",
+        "Exact coefficient matching gives d_eff - 1 = beta + 1 and therefore d_eff = beta + 2.",
+        "Recovers the ordinary 2D radial Laplacian when beta -> 0.",
+        "This unifies the flat power-law branch with the Euclidean radial operator family.",
+        "Harmonic and Poisson solution theory can be imported from the Euclidean radial case in dimension d_eff.",
+        "Dimensionless identification: both d_eff and beta are pure numbers, so the units are consistent."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-13",
+        "equationId": "eq-effective-dimension-of-the-power-law-flat-branch",
+        "score": 82,
+        "scores": {
+          "tractability": 19,
+          "plausibility": 18,
+          "validation": 18,
+          "artifactCompleteness": 4
+        },
+        "novelty": 23
+      }
     }
   ]
 }
