@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-12T05:18:30.044812+00:00",
-  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "0b39bed1b7c027119d7eed63881e970ed03f690c27920bd2a69c768c40ed7d8b",
-  "count": 122,
+  "generated_at": "2026-04-13T00:36:19.541445+00:00",
+  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
+  "source_sha256": "0a6e2d6b6ceb6cbcaa232d8486f256f838b059b18987131b7daa514838d91c8c",
+  "count": 123,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3226,6 +3226,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "f276d3d7df3f6a945fc94369931b990aa33d5e0d31e605991354a98f04f0b551"
+    },
+    {
+      "token_id": "eq-loop-coherence-gated-edge-recovery-score",
+      "name": "Loop-Coherence-Gated Edge Recovery Score",
+      "equation_latex": "E_{\\mathrm{loop}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\rho_{\\mathrm{slip}}(t)}\\,\\exp\\!\\left[-\\gamma\\,|S(t)-S_{\\mathrm{eq}}|\\right]\\left[(1-\\kappa_{\\Psi})+\\frac{\\kappa_{\\Psi}}{2}\\bigl(1+\\Psi(t)\\bigr)\\right],\\quad \\Psi(t)=\\frac{1}{N_p}\\sum_{p=1}^{N_p}\\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
+      "equation_hash": "2c1dab123783ba66130f9627e8f792436614485e48038723b779e47a4089f391",
+      "score": 93,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 20,
+        "artifactCompleteness": 7
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-12"
+      },
+      "source": "QWZ Recovery Dashboard + ARP locking lineage",
+      "date": "2026-04-12",
+      "description": "Builds on LB #23 (Entropy-Gated Edge Recovery Score), LB #7 (Topological Coherence Order Parameter), and complements LB #8 (Flat-Channel Loop Signature (pi_f Health Observable)). This lineage-preserving recovery observable multiplies the transport-entropy score by a tunable loop-coherence gate derived from plaquette holonomy, so it distinguishes superficially good rerouting from genuinely loop-consistent, topologically locked recovery after damage and ablation.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": "data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png"
+      },
+      "tier": "derived",
+      "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
+      "version": 1,
+      "metadata_hash": "29d5bc028b63ac4e2d980f0ba5812b418aca928089848728d6b4b54a00aaecbc"
     },
     {
       "token_id": "famous-schrodinger",
