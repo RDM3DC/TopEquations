@@ -987,8 +987,12 @@ def build_certificates(repo_root: Path, docs: Path) -> None:
         )
 
     published = receipt.get("published_at", "-")
-    count = receipt.get("count", cert.get("count", 0))
+    current_count = cert.get("count", len(cert.get("entries", [])))
+    published_count = receipt.get("count")
     node_url = receipt.get("node_url", "-")
+    published_count_line = ""
+    if published_count not in (None, "", current_count):
+      published_count_line = f"\n  <div><strong>Last chain publish count:</strong> {_esc(published_count)}</div>"
 
     body = f"""
 <div class='layout layout--single'>
@@ -1004,7 +1008,7 @@ def build_certificates(repo_root: Path, docs: Path) -> None:
 <div class='panel'>
   <div><strong>Published at:</strong> {_esc(published)}</div>
   <div><strong>Node endpoint:</strong> <code>{_esc(node_url)}</code></div>
-  <div><strong>Certificates:</strong> {_esc(count)}</div>
+  <div><strong>Registry entries:</strong> {_esc(current_count)}</div>{published_count_line}
   <div class='muted' style='margin-top:8px'>Data files: <code>data/certificates/equation_certificates.json</code> and <code>data/certificates/chain_publish_receipt.json</code></div>
 </div>
 

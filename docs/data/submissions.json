@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-04-12",
+  "lastUpdated": "2026-04-13",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -659,9 +659,9 @@
         "path": ""
       },
       "review": {
-        "date": "2026-02-24",
+        "date": "2026-04-13",
         "equationId": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
-        "score": 97,
+        "score": 92,
         "heuristic_score": 92,
         "scores": {
           "tractability": 20,
@@ -670,8 +670,7 @@
           "artifactCompleteness": 7
         },
         "novelty": 29,
-        "method": "manual-override",
-        "manual_score": 97
+        "method": "heuristic-v2"
       }
     },
     {
@@ -705,9 +704,9 @@
         "path": ""
       },
       "review": {
-        "date": "2026-02-24",
+        "date": "2026-04-13",
         "equationId": "eq-gemini-curve-memory-topological-frustration-pruning",
-        "score": 96,
+        "score": 86,
         "heuristic_score": 86,
         "scores": {
           "tractability": 18,
@@ -716,8 +715,7 @@
           "artifactCompleteness": 7
         },
         "novelty": 27,
-        "method": "manual-override",
-        "manual_score": 96
+        "method": "heuristic-v2"
       }
     },
     {
@@ -1695,31 +1693,18 @@
       },
       "duplicateWarnings": [],
       "review": {
-        "date": "2026-03-05",
+        "date": "2026-04-13",
         "equationId": "eq-history-resolved-phase-with-adaptive-ruler",
-        "score": 107,
+        "score": 96,
         "heuristic_score": 96,
         "scores": {
-          "tractability": 20,
-          "plausibility": 18,
+          "tractability": 19,
+          "plausibility": 17,
           "validation": 20,
           "artifactCompleteness": 10
         },
         "novelty": 30,
-        "method": "manual-override",
-        "llm_scores": {
-          "traceability": 100,
-          "rigor": 98,
-          "assumptions": 97,
-          "presentation": 98,
-          "novelty_insight": 90,
-          "fruitfulness": 99,
-          "llm_total": 97,
-          "justification": "Exemplary lineage-preserving extension that explicitly builds on White Papers 01/02/04 plus LB #4 and integrated simulator artifacts, with strong derivation/recovery clauses, units and benchmark coverage, and immediate simulation readiness; novelty is meaningful but intentionally minimal rather than paradigm-shifting."
-        },
-        "llm_model": "gpt-5.4",
-        "blended_score": 97,
-        "manual_score": 107
+        "method": "heuristic-v2"
       }
     },
     {
@@ -1943,9 +1928,9 @@
         "Exact name match with existing submission(s): sub-2026-03-08-adaptive-chern-self-healing-conductance-law"
       ],
       "review": {
-        "date": "2026-03-08",
+        "date": "2026-04-13",
         "equationId": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",
-        "score": 100,
+        "score": 93,
         "heuristic_score": 93,
         "scores": {
           "tractability": 20,
@@ -1954,8 +1939,7 @@
           "artifactCompleteness": 7
         },
         "novelty": 30,
-        "method": "manual-override",
-        "manual_score": 100
+        "method": "heuristic-v2"
       }
     },
     {
@@ -2493,9 +2477,9 @@
       },
       "duplicateWarnings": [],
       "review": {
-        "date": "2026-04-12",
+        "date": "2026-04-13",
         "equationId": "eq-flat-channel-loop-signature-pi-f-health-observable",
-        "score": 95,
+        "score": 93,
         "heuristic_score": 93,
         "scores": {
           "tractability": 18,
@@ -2504,8 +2488,7 @@
           "artifactCompleteness": 10
         },
         "novelty": 29,
-        "method": "manual-override",
-        "manual_score": 95
+        "method": "heuristic-v2"
       }
     },
     {
