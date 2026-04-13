@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-13T00:57:35.652102+00:00",
+  "generated_at": "2026-04-13T01:09:17.501478+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "c41173d322131c9bba4748f287ff2a72bdf56bd591748f26300b24a3b12b5406",
-  "count": 123,
+  "source_sha256": "d929b9ab78946c34847ef64d47ba895ecb3f615e0650daa070a4bb07d54cce1e",
+  "count": 124,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3256,6 +3256,36 @@
       "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
       "version": 1,
       "metadata_hash": "29d5bc028b63ac4e2d980f0ba5812b418aca928089848728d6b4b54a00aaecbc"
+    },
+    {
+      "token_id": "eq-flat-channel-deficit-gated-self-healing-law",
+      "name": "Flat-Channel Deficit-Gated Self-Healing Law",
+      "equation_latex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,\\|J_e\\|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s\\,g_e\\,\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi_\\Gamma W_e^{(\\Gamma)} D_\\Gamma(t)\\left(g_{\\mathrm{ref}}e^{i\\bar{\\theta}_\\Gamma(t)}-g_e\\right),\\quad D_\\Gamma(t)=\\left[1-\\frac{\\Sigma_\\Gamma^{(\\pi_f)}(t)}{\\Sigma_{\\Gamma,\\mathrm{ref}}^{(\\pi_f)}+\\varepsilon}\\right]_+,\\quad \\bar{\\theta}_\\Gamma(t)=\\Theta_\\Gamma(t)/|\\Gamma|",
+      "equation_hash": "1db03b2b5a16fb9db9fbf5a2acc2e47a7923b69452150c6e3cf1e58094da7660",
+      "score": 93,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 10
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-12"
+      },
+      "source": "derived: EGATL phase-coupled conductance + Flat-Channel Loop Signature + self-healing repair bias",
+      "date": "2026-04-12",
+      "description": "Loop-local self-healing extension of the EGATL phase-coupled conductance law. It uses the flat-channel loop signature as a deficit gate, so only edges on a monitored loop receive an extra repair drive when that loop health collapses relative to its own reference window.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_activation.gif",
+        "image": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_dashboard.png"
+      },
+      "tier": "derived",
+      "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
+      "version": 1,
+      "metadata_hash": "1214a2a2538e3736981c0e10a22443586d5f79d16e21565e3339465eb9435701"
     },
     {
       "token_id": "famous-schrodinger",

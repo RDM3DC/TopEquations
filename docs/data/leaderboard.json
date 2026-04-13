@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-12T17:57:36.105879",
+  "generatedAt": "2026-04-12T18:09:17.901243",
   "displayThreshold": 65,
   "entries": [
     {
@@ -556,6 +556,47 @@
       ],
       "date": "2026-04-12",
       "equationLatex": "E_{\\mathrm{loop}}(t)=\\frac{\\eta_{\\mathrm{tr}}(t)\\,f_{\\partial}(t)\\,f_{\\mathrm{top}}(t)}{1+\\rho_{\\mathrm{slip}}(t)}\\,\\exp\\!\\left[-\\gamma\\,|S(t)-S_{\\mathrm{eq}}|\\right]\\left[(1-\\kappa_{\\Psi})+\\frac{\\kappa_{\\Psi}}{2}\\bigl(1+\\Psi(t)\\bigr)\\right],\\quad \\Psi(t)=\\frac{1}{N_p}\\sum_{p=1}^{N_p}\\cos\\!\\left(\\frac{\\Theta_p}{\\pi_a}\\right)",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-12"
+        }
+      }
+    },
+    {
+      "id": "eq-flat-channel-deficit-gated-self-healing-law",
+      "name": "Flat-Channel Deficit-Gated Self-Healing Law",
+      "firstSeen": "2026-04-12",
+      "source": "derived: EGATL phase-coupled conductance + Flat-Channel Loop Signature + self-healing repair bias",
+      "submitter": "GitHub Copilot",
+      "repoUrl": "https://github.com/RDM3DC/eq-flat-channel-deficit-gated-self-healing-law",
+      "score": 93,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_activation.gif"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_dashboard.png"
+      },
+      "description": "Loop-local self-healing extension of the EGATL phase-coupled conductance law. It uses the flat-channel loop signature as a deficit gate, so only edges on a monitored loop receive an extra repair drive when that loop health collapses relative to its own reference window.",
+      "assumptions": [
+        "W_e^(Gamma) is a fixed loop-membership mask chosen before evaluation, so the added repair term stays local to the monitored loop.",
+        "g_ref is a healthy-loop reference conductance estimated from a calibration window on the same loop family.",
+        "D_Gamma(t)=[1-Sigma_Gamma/Sigma_Gamma,ref]_+ is clipped to [0,1] and is dimensionless.",
+        "chi_Gamma has units 1/time, while g_ref e^{i theta_bar_Gamma}-g_e has the same conductance units as g_e.",
+        "When chi_Gamma=0 or D_Gamma(t)=0, the law reduces exactly to the base EGATL phase-coupled conductance update."
+      ],
+      "date": "2026-04-12",
+      "equationLatex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,\\|J_e\\|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s\\,g_e\\,\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi_\\Gamma W_e^{(\\Gamma)} D_\\Gamma(t)\\left(g_{\\mathrm{ref}}e^{i\\bar{\\theta}_\\Gamma(t)}-g_e\\right),\\quad D_\\Gamma(t)=\\left[1-\\frac{\\Sigma_\\Gamma^{(\\pi_f)}(t)}{\\Sigma_{\\Gamma,\\mathrm{ref}}^{(\\pi_f)}+\\varepsilon}\\right]_+,\\quad \\bar{\\theta}_\\Gamma(t)=\\Theta_\\Gamma(t)/|\\Gamma|",
       "tags": {
         "novelty": {
           "score": 30,

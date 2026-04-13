@@ -1,0 +1,21 @@
+{
+  "equationId": "eq-flat-channel-deficit-gated-self-healing-law",
+  "generator": "tools/generate_flat_channel_deficit_gated_artifacts.py",
+  "sourceArtifact": "data/artifacts/flat_channel_loop_signature/flat_channel_loop_timeseries.csv",
+  "summary": {
+    "damage_time": 2.0,
+    "damage_index": 20,
+    "top_strip_deficit_at_damage": 0.9917612759209112,
+    "boundary_deficit_at_damage": 0.9486454710699324,
+    "center_deficit_at_damage": 0.6369938825468593,
+    "top_strip_signature_at_damage": 0.0007380783943164382,
+    "boundary_signature_at_damage": 0.0032329681248179174,
+    "center_signature_at_damage": 0.0033741720151533572,
+    "transfer_pre": 0.813369172215723,
+    "transfer_post": 0.828331189317564,
+    "exact_recovery_conditions": [
+      "chi_Gamma = 0 removes the deficit-gated repair term exactly.",
+      "D_Gamma(t) = 0 when the monitored loop stays at its reference signature, so the law reduces to the base EGATL phase-coupled conductance update."
+    ]
+  }
+}

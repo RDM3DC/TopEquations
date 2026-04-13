@@ -2556,6 +2556,53 @@
         },
         "novelty": 30
       }
+    },
+    {
+      "submissionId": "sub-2026-04-12-flat-channel-deficit-gated-self-healing-law",
+      "submittedAt": "2026-04-12",
+      "submitter": "GitHub Copilot",
+      "status": "promoted",
+      "name": "Flat-Channel Deficit-Gated Self-Healing Law",
+      "equationLatex": "\\frac{d g_e}{dt}=\\alpha_G(S)\\,\\|J_e\\|\\,e^{i\\theta_{R,e}}-\\mu_G(S)\\,g_e-\\lambda_s\\,g_e\\,\\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)+\\chi_\\Gamma W_e^{(\\Gamma)} D_\\Gamma(t)\\left(g_{\\mathrm{ref}}e^{i\\bar{\\theta}_\\Gamma(t)}-g_e\\right),\\quad D_\\Gamma(t)=\\left[1-\\frac{\\Sigma_\\Gamma^{(\\pi_f)}(t)}{\\Sigma_{\\Gamma,\\mathrm{ref}}^{(\\pi_f)}+\\varepsilon}\\right]_+,\\quad \\bar{\\theta}_\\Gamma(t)=\\Theta_\\Gamma(t)/|\\Gamma|",
+      "description": "Loop-local self-healing extension of the EGATL phase-coupled conductance law. It uses the flat-channel loop signature as a deficit gate, so only edges on a monitored loop receive an extra repair drive when that loop health collapses relative to its own reference window.",
+      "source": "derived: EGATL phase-coupled conductance + Flat-Channel Loop Signature + self-healing repair bias",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "W_e^(Gamma) is a fixed loop-membership mask chosen before evaluation, so the added repair term stays local to the monitored loop.",
+        "g_ref is a healthy-loop reference conductance estimated from a calibration window on the same loop family.",
+        "D_Gamma(t)=[1-Sigma_Gamma/Sigma_Gamma,ref]_+ is clipped to [0,1] and is dimensionless.",
+        "chi_Gamma has units 1/time, while g_ref e^{i theta_bar_Gamma}-g_e has the same conductance units as g_e.",
+        "When chi_Gamma=0 or D_Gamma(t)=0, the law reduces exactly to the base EGATL phase-coupled conductance update."
+      ],
+      "evidence": [
+        "Builds directly on EGATL Phase-Coupled Conductance Update, Adaptive Topological Self-Healing Conductance Law, and LB #8 Flat-Channel Loop Signature (pi_f Health Observable).",
+        "Exact recovery clause: the added repair term vanishes when chi_Gamma=0 or D_Gamma(t)=0, so the equation preserves the existing EGATL law in the healthy-loop limit.",
+        "Artifact generator tools/generate_flat_channel_deficit_gated_artifacts.py converts the published flat-channel timeseries into a dashboard PNG, a GIF animation, a metrics JSON, and a deficit-gate CSV under data/artifacts/flat_channel_deficit_gated_self_healing/.",
+        "On the published 6x6 recovery run, the damage-step deficit gate reaches 0.991761 on the top strip, 0.948645 on the full boundary loop, and 0.636994 on the central plaquette, so the strongest repair activation is localized on the damaged loop.",
+        "The same source run keeps transfer high from 0.813369 in the pre window to 0.828331 in the post window, which is consistent with a local repair drive rather than a global throughput penalty."
+      ],
+      "animation": {
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_activation.gif"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_dashboard.png"
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-12",
+        "equationId": "eq-flat-channel-deficit-gated-self-healing-law",
+        "score": 93,
+        "scores": {
+          "tractability": 17,
+          "plausibility": 20,
+          "validation": 16,
+          "artifactCompleteness": 10
+        },
+        "novelty": 30
+      }
     }
   ]
 }
