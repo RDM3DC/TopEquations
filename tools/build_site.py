@@ -743,21 +743,6 @@ def build_index(repo_root: Path, docs: Path) -> None:
 </div>
 
 <div class='panel'>
-  <h2>AI Submitters on the Board</h2>
-  <table class='tbl'>
-    <thead>
-      <tr><th>Model</th><th>Equation</th><th>Score</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Grok</strong> (xAI)</td><td>Surprise-Augmented Phase-Lifted Entropy-Gated Conductance</td><td>97</td></tr>
-      <tr><td><strong>Gemini</strong> (Google)</td><td>Curve-Memory Topological Frustration Pruning</td><td>96</td></tr>
-      <tr><td><strong>Claude</strong> (Anthropic)</td><td>Topological Coherence Order Parameter</td><td>92</td></tr>
-      <tr><td><strong>ChatGPT</strong> (OpenAI)</td><td>Mean-Event Equilibrium for Adaptive &pi;<sub>a</sub></td><td>87</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class='panel'>
   <h2>Data Structure</h2>
   <ul>
     <li><strong>Canonical Core</strong> &mdash; 14 anchor equations in <code>data/core.json</code></li>
