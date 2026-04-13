@@ -1,21 +1,21 @@
 {
-  "name": "Power-Law Flat Adaptive Pi Radial Operator",
-  "equation": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
-  "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
-  "source": "Science Banksy",
+  "name": "History-Resolved Loop-Coherent Chern Self-Healing Law",
+  "equation": "(1) theta_R,e^{+} = theta_R,e + clip(wrap(theta_raw,e - theta_R,e), -pi_a, +pi_a); (2) Theta_p(t)=sum_{e in p} sigma_{p,e} theta_R,e(t), Psi(t)= (1/N_p) sum_{p=1}^{N_p} cos(Theta_p(t)/pi_a); (3) d g_e / dt = alpha_G(S)[1 + kappa_Psi Psi(t)] |J_e| e^{i theta_R,e} - mu_G(S) g_e - lambda_s g_e sin^2(theta_R,e/(2 pi_a)) + chi C_loc(t) g_e",
+  "description": "An adaptive-conductance law that preserves history-resolved phase with an adaptive ruler (Eq.1), measures topological loop coherence via a plaquette order parameter Psi(t) (Eq.2), and embeds both into a Chern self-healing conductance equation (Eq.3). When kappa_Psi=0 the law reduces to the Chern self-healing form; when chi=0 and C_loc(t)=0 it becomes a loop-aware ARP law driven purely by history-resolved phase.",
+  "source": "ChatGPT + user",
   "submitter": "Science Banksy",
   "units": "OK",
-  "theory": "PASS",
+  "theory": "PASS-with-assumptions",
   "assumptions": [
-    "Flat intrinsic curvature (K=0).",
-    "Flat-adaptive field scales as a power law lambda(r) proportional to r^beta.",
-    "beta > -2 to ensure finite area near r=0.",
-    "Radial functions considered only, no angular dependence.",
-    "Functions are sufficiently smooth (C^2)."
+    "The ARP / adaptive-pi_a framework and units from the existing TopEquations lineage apply.",
+    "Plaquette structure and orientation signs sigma_{p,e} are well-defined on the underlying lattice.",
+    "Psi(t) is computed over a fixed plaquette set with slowly varying topology (no tearing events during a run).",
+    "kappa_Psi >= 0, chi >= 0, and other parameters (mu_G, alpha_G, lambda_s) behave as in the parent laws."
   ],
   "evidence": [
-    "Recovers the ordinary 2D radial Laplacian when beta=0.",
-    "Equivalent to the Euclidean radial Laplacian in effective dimension beta+2.",
-    "Closed-form harmonic and Poisson solutions exist via Bessel functions."
+    "Builds on leaderboard #1 (History-Resolved Phase with Adaptive Ruler), #2 (Adaptive Chern Self-Healing Conductance Law) and #7 (Topological Coherence Order Parameter).",
+    "Reduces to the existing Chern self-healing law when kappa_Psi = 0.",
+    "Reduces to a loop-aware ARP law when chi = 0 and C_loc(t) = 0.",
+    "Proposed validation: compare locked vs slipping regimes in QWZ and SSH lattices while varying kappa_Psi; show that high Psi(t) correlates with stable edge channels and self-healing after local defects."
   ]
 }

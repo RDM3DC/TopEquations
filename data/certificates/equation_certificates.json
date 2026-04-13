@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-13T19:51:30.633663+00:00",
-  "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "339a978a600493619a53c1330e3d67ae75cde3b33ab4345c26dc9d2f217c3bde",
-  "count": 112,
+  "generated_at": "2026-04-13T23:02:42.305451+00:00",
+  "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
+  "source_sha256": "46e6bd4dafe23dab448839f54cd0fcac91dbb70966d16ac1a913fd0d7581dce7",
+  "count": 113,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3346,6 +3346,36 @@
       "submitter_hash": "2a89d1099c2034093a88b9ac6c156ad20055412f8c136b96d0becc2881b01b90",
       "version": 1,
       "metadata_hash": "e4864636dc2df4f33a30b12ce6aec378ca343f18e65758d98f03210cbb5a3d42"
+    },
+    {
+      "token_id": "eq-history-resolved-loop-coherent-chern-self-healing-law",
+      "name": "History-Resolved Loop-Coherent Chern Self-Healing Law",
+      "equation_latex": "(1) theta_R,e^{+} = theta_R,e + clip(wrap(theta_raw,e - theta_R,e), -pi_a, +pi_a); (2) Theta_p(t)=sum_{e in p} sigma_{p,e} theta_R,e(t), Psi(t)= (1/N_p) sum_{p=1}^{N_p} cos(Theta_p(t)/pi_a); (3) d g_e / dt = alpha_G(S)[1 + kappa_Psi Psi(t)] |J_e| e^{i theta_R,e} - mu_G(S) g_e - lambda_s g_e sin^2(theta_R,e/(2 pi_a)) + chi C_loc(t) g_e",
+      "equation_hash": "ea929599029a20a0943b8ed35c46760a1481954e735b9f7b4d4c2d10eff6aa43",
+      "score": 75,
+      "scores": {
+        "tractability": 15,
+        "plausibility": 18,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 22,
+        "date": "2026-04-13"
+      },
+      "source": "ChatGPT + user",
+      "date": "2026-04-13",
+      "description": "An adaptive-conductance law that preserves history-resolved phase with an adaptive ruler (Eq.1), measures topological loop coherence via a plaquette order parameter Psi(t) (Eq.2), and embeds both into a Chern self-healing conductance equation (Eq.3). When kappa_Psi=0 the law reduces to the Chern self-healing form; when chi=0 and C_loc(t)=0 it becomes a loop-aware ARP law driven purely by history-resolved phase.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
+      "version": 1,
+      "metadata_hash": "5284965bd7db92aef5385d4462fb30c166d8a8d3fc9221bf35cf20e300facd4b"
     }
   ]
 }
