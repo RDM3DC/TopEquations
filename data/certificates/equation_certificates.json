@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-14T02:29:10.928456+00:00",
+  "generated_at": "2026-04-14T03:40:37.106164+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "c8b0639e6946a802c68fa44f8bc220c642e2a6861f69625f08a1d3e3abae709d",
-  "count": 114,
+  "source_sha256": "103ab78dd2f65dc729c6f6d07df053b45ee8dbe03238a46e8c84a392d030e4ce",
+  "count": 115,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3406,6 +3406,36 @@
       "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
       "version": 1,
       "metadata_hash": "81d17374dc662e87f943092ffbfd00f858d912916e867789f301d8e158f1faec"
+    },
+    {
+      "token_id": "eq-pi-f-loop-health-balance-law",
+      "name": "pi_f Loop-Health Balance Law",
+      "equation_latex": "\\dot \\Sigma_{\\Gamma}^{(\\pi_f)}=\\Sigma_{\\Gamma}^{(\\pi_f)}\\mathcal{R}_{\\Gamma}(t),\\quad \\mathcal{R}_{\\Gamma}(t)=\\frac{1}{\\lvert\\Gamma\\rvert}\\sum_{e\\in\\Gamma}\\frac{\\alpha(S)I_{\\mathrm{norm},e}-\\mu(S)(G_e-g_{\\min})}{G_e}-\\tan\\!\\left(\\frac{\\Theta_{\\Gamma}}{2\\pi_a}\\right)\\left[\\frac{\\lambda_s}{\\pi_a}\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\sin\\!\\left(I_{\\phi,e}-\\phi_e\\right)-\\frac{\\Theta_{\\Gamma}}{\\pi_a^2}\\left(\\alpha_{\\pi}S-\\mu_{\\pi}(\\pi_a-\\pi_0)\\right)\\right]",
+      "equation_hash": "20541ca2769d273127ecf7514b6a06c66234b0aa6f0f0a249f7e346b228c950c",
+      "score": 88,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 7
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-04-13"
+      },
+      "source": "derived: Flat-Channel Loop Signature (pi_f Health Observable) + HAFC/EGATL magnitude/phase/ruler backend",
+      "date": "2026-04-13",
+      "description": "Derived time-evolution law for the existing flat-channel loop signature. Instead of introducing another static observable, this submission differentiates the established pi_f loop-health signature and substitutes the HAFC/EGATL backend's implemented magnitude, phase-alignment, and adaptive-ruler updates. The result is a loop-scale balance law whose tangent factor explains why the pi_f signature can collapse early as a localized precursor before full Bott/topological failure.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": "data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png"
+      },
+      "tier": "derived",
+      "submitter_hash": "ed249d417dcd38dbe28bd76002c6c1f6ccdbb21cf520a2054bb67ce63c27d32b",
+      "version": 1,
+      "metadata_hash": "2838f3b265cd5dd271702f63b2888904d6e6ff790cc5ac01bcfbf6530b49547a"
     }
   ]
 }

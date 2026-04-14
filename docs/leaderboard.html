@@ -14,14 +14,14 @@
   <meta name='twitter:title' content='TopEquations — Leaderboard' />
   <meta name='twitter:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202604131929' />
+  <link rel='stylesheet' href='./assets/style.css?v=202604132041' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
   
   <link rel='alternate' type='application/json' href='./data/leaderboard.json' title='TopEquations leaderboard JSON' />
   <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
 
 
-  <script defer src='./assets/app.js?v=202604131929'></script>
+  <script defer src='./assets/app.js?v=202604132041'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -121,8 +121,8 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Lineage-preserving extension of the current BZ-averaged phase-lifted complex conductance update. It inserts a bounded loop-coherence gain through Psi and a chronic-slip curve-memory stabilizer through M_ij, so reinforcement is strongest on edges that are simultaneously active, loop-consistent, and not carrying accumulated topological stress. It recovers the current #1 law exactly when kappa_Psi=0 and xi=0, recovers pure loop-coherence gating when xi=0, and recovers pure curve-memory stabilization when kappa_Psi=0.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Psi=(1/N_p) sum_p cos(Theta_p/pi_a) is dimensionless and bounded on the monitored plaquette family.</li><li>M_ij(t) is a nonnegative curve-memory stress integral or discrete exponential moving average built from resolved-phase slip energy.</li><li>xi &gt;= 0 and kappa_Psi &gt;= 0 so the reinforcement prefactor remains nonnegative and reduces smoothly to known limits.</li><li>alpha_G(S) and mu_G(S) retain the units and entropy gating of the current BZ law.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-13</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc/blob/main/images/DerivationBridge.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc/blob/main/images/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/DerivationBridge.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
@@ -151,7 +151,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Canonical entropy-gated Phase-Lifted ARP conductance update. Single traceable boxed equation with 4 supporting definitions (all from Core + #3/#10). Entropy dynamics are 2nd-law safe; BZ ruler self-consistency feeds a uniform m_eff into QWZ preserving the single Chern jump.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\frac{dS}{dt} = \sum_{ij}\frac{|I_{ij}|^2}{T_{ij}}\,\operatorname{Re}\!\left(\frac{1}{\tilde{G}_{ij}}\right) + \kappa\sum_{ij}|\Delta w_{ij}(t)| - \gamma\,(S - S_{\rm eq})$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2–4): \theta_{R,ij}(k,t) = \mathrm{unwrap}(\arg I_{ij}(k,t);\;\theta_{R,ij}(k,t-\Delta t),\;\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\in\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \alpha_G(S) = \alpha_0/[1+\exp((S-S_c)/\Delta S)],\quad \mu_G(S) = \mu_0\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \varepsilon_{\rm eff}(t) = \sqrt{1-(1/(\pi\langle 1/\pi_a\rangle_{\rm BZ}))^2},\quad m_{\rm eff} = m_0/\sqrt{1-\varepsilon_{\rm eff}^2}. Feed m_0\mapsto m_{\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \varepsilon_c=\sqrt{3}/2). (4) Slip entropy: |\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>\pi_a(k,t) from Core Eq. 10; weights in BZ average are uniform or occupation (user choice).</li><li>Chern number via FHS lattice method; Phase-Lift supplies continuous \theta_R history and slip detection only.</li><li>Entropy production uses Re(1/\tilde G) ≥ 0 for passive response (2nd-law safe).</li><li>\varepsilon_{\mathrm{eff}} inversion assumes the cosine form \pi_a=\pi(1+\varepsilon\cos\lambda) and |\varepsilon_{\mathrm{eff}}|&lt;1.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-bz-phase-lifted-complex-conductance-entropy-gated'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated/blob/main/images/BZPhaseLiftConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZPhaseLiftConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -181,7 +181,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Unwrapped phase difference φ(t) tries to run at detuning Δ, but adaptive coupling λG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single junction / single mode approximation.</li><li>λG is the effective adaptive coupling strength (positive, ARP-governed).</li><li>Detuning Δ is constant or slowly varying compared to phase dynamics.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-adler-rsj-phase'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-adler-rsj-phase' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-adler-rsj-phase/blob/main/images/APGP0CoreModel.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/APGP0CoreModel.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -271,7 +271,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The canonical 2D Chern insulator (Qi–Wu–Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Two-band model on square lattice with nearest-neighbor hopping.</li><li>Topological phases at C=±1 for −2&lt;u&lt;0 and 0&lt;u&lt;2; trivial otherwise.</li><li>Real-space version uses tight-binding Hamiltonian with same band structure.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-qwz-hamiltonian'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian/blob/main/images/AdaptiveQWZReEntrance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptiveQWZReEntrance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -301,7 +301,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Conductance/coupling G increases with activity A(φ,G) at gain α, and relaxes toward baseline G₀ at rate μ. The workhorse ARP law in its most general continuous-time form.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).</li><li>Single relaxation timescale μ⁻¹ dominates.</li><li>G₀ &gt; 0 is a stable equilibrium baseline.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-arp-reinforce-decay'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay/blob/main/images/Eq1ARPCoreLaw.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq1ARPCoreLaw.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -331,7 +331,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>When coupling can&#x27;t lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.</div></div>
       <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Coupling λG is below the locking threshold.</li><li>Detuning Δ is constant.</li><li>Phase advances monotonically (no transient capture/release).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-slip-asymptote'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-slip-asymptote/blob/main/images/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PhaseLiftExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -421,8 +421,8 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Loop-local flat-channel order parameter for HAFC/EGATL lattices. It multiplies the geometric-mean flat-channel field along a selected loop Gamma by a bounded holonomy-coherence factor on the adaptive ruler pi_a. On the top-strip loop surrounding the damaged boundary channel, it acts as a localized loop-health monitor for top-edge failure and recovery rather than a generic bulk transport score.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Each bond carries a complex adaptive conductance g_e with pi_{f,e}=pi|g_e| as the flat-channel reduction.</li><li>Theta_Gamma is the oriented loop holonomy built from the same resolved complex phases used by the EGATL/HLATN stack.</li><li>pi_a(t) &gt; 0 is the adaptive ruler from the companion EGATL/HLATN ruler law.</li><li>Gamma is a fixed loop family (boundary, top edge, or plaquette boundary) chosen before evaluation.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-flat-channel-loop-signature-pi-f-health-observable'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-loop-signature-pi-f-health-observable' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-12</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-loop-signature-pi-f-health-observable/blob/main/images/flat_channel_loop_damage.gif' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-loop-signature-pi-f-health-observable/blob/main/images/flat_channel_loop_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='data/artifacts/flat_channel_loop_signature/flat_channel_loop_damage.gif' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/flat_channel_loop_signature/flat_channel_loop_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
@@ -452,7 +452,7 @@
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Transfer efficiency eta_tr(t), boundary fraction f_partial(t), top-edge fraction f_top(t), slip density rho_slip(t), entropy S(t), and plaquette holonomies Theta_p(t) are measured on a common time window from the same damaged-lattice trajectory.</li><li>Psi(t)=1/N_p sum_p cos(Theta_p/pi_a) is a valid loop-coherence proxy, with Psi near 1 in locked regimes and smaller values in disordered or slipping regimes.</li><li>0 &lt;= kappa_Psi &lt;= 1 so the loop-coherence factor is a bounded, dimensionless gate rather than a replacement for the transport score.</li><li>pi_a &gt; 0 and the plaquette count N_p is fixed over the comparison window.</li><li>The observable is a reduced ranking and diagnostic score, not a microscopic replacement for the full adaptive conductance dynamics.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-loop-coherence-gated-edge-recovery-score'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-loop-coherence-gated-edge-recovery-score' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-12</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-loop-coherence-gated-edge-recovery-score/blob/main/images/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
@@ -481,8 +481,8 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Loop-local self-healing extension of the EGATL phase-coupled conductance law. It uses the flat-channel loop signature as a deficit gate, so only edges on a monitored loop receive an extra repair drive when that loop health collapses relative to its own reference window.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>W_e^(Gamma) is a fixed loop-membership mask chosen before evaluation, so the added repair term stays local to the monitored loop.</li><li>g_ref is a healthy-loop reference conductance estimated from a calibration window on the same loop family.</li><li>D_Gamma(t)=[1-Sigma_Gamma/Sigma_Gamma,ref]_+ is clipped to [0,1] and is dimensionless.</li><li>chi_Gamma has units 1/time, while g_ref e^{i theta_bar_Gamma}-g_e has the same conductance units as g_e.</li><li>When chi_Gamma=0 or D_Gamma(t)=0, the law reduces exactly to the base EGATL phase-coupled conductance update.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-flat-channel-deficit-gated-self-healing-law'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-deficit-gated-self-healing-law' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-12</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-deficit-gated-self-healing-law/blob/main/images/flat_channel_deficit_gate_activation.gif' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-flat-channel-deficit-gated-self-healing-law/blob/main/images/flat_channel_deficit_gate_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_activation.gif' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/flat_channel_deficit_gated_self_healing/flat_channel_deficit_gate_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
@@ -511,7 +511,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)</li><li>kappa, eta &lt;&lt; 1 are small positive meta-plasticity constants (perturbative regime)</li><li>Applies on top of existing BZ-averaging, entropy gate S, and phase-lifted representation</li><li>Timescale separation: surprise modulation is instantaneous relative to G dynamics</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu/blob/main/images/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GrokSurpriseAnimation.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -541,7 +541,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>A redshift-like relaxation emerges when an ARP-governed transport variable is mapped to a normalized deficit observable.</div></div>
       <div class='kv'><div class='k'>Differential form</div><div class='v'>$$\dot z = \gamma\,(z_0 - z)$$</div></div><div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Assume post-event ARP relaxation: G(t)=G_{\infty}+(G(0)-G_{\infty})e^{-\mu t}. Define z(t):=z_0\left(1-\frac{G(t)-G_{\infty}}{G(0)-G_{\infty}}\right) \Rightarrow z(t)=z_0(1-e^{-\mu t}), so \gamma\equiv\mu.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Single-timescale exponential relaxation dominates over the interval (constant \mu).</li><li>z(t) is defined as a monotone normalized deficit of a relaxing transport/coherence variable.</li><li>A stable asymptote G_{\infty} (equivalently z_0) exists over the measurement window.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-redshift'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-redshift' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-redshift/blob/main/images/Eq2ARPRedshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq2ARPRedshift.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -571,7 +571,7 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The same phase mismatch that produces restoring torque (sinφ) also teaches the coupling. This tight self-referential closure is what makes parity locking possible — the key novel ingredient of Paper I.</div></div>
       <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Activity proportional to both G and |sinφ| (multiplicative coupling).</li><li>No external activity source — entirely self-referential.</li><li>Valid for single-mode / single-junction systems.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-activity-closure'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-activity-closure' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-activity-closure/blob/main/images/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AHCParityLocking.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -661,8 +661,8 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Builds on LB #1 History-Resolved Phase with Adaptive Ruler, LB #31 Adaptive Topological Self-Healing Conductance Law, and LB #8 Flat-Channel Loop Signature (pi_f Health Observable). It inserts a flat-adaptive pi_f precursor gate into the reinforcement term so loop-health mismatch can bias conductance growth before visible recovery collapse, rather than acting only as a passive readout after damage.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Each edge e carries a complex conductance g_e and current magnitude |J_e|.</li><li>Theta_e is a history-resolved lifted phase, not a principal-branch phase.</li><li>pi_a &gt; 0 is a bounded adaptive ruler entering the phase-slip suppression term.</li><li>C_e is a local topological integrity factor or healing score associated with edge e.</li><li>H_e^(f) is a dimensionless flat-adaptive loop-health precursor aggregated from loops containing edge e, with prototype definition H_e^(f)=sum_{ell contains e} w_{e ell} tanh((Sigma_ell^(f)-Sigma_ref,ell^(f))/(sigma_ell+eps)).</li><li>xi &gt;= 0 and chi &gt;= 0 are precursor and healing feedback strengths, and the loop weights w_{e ell} are fixed non-negative coefficients.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-history-resolved-pif-anticipatory-self-healing-law'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-history-resolved-pif-anticipatory-self-healing-law' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-12</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-history-resolved-pif-anticipatory-self-healing-law/blob/main/images/pif_anticipatory_self_healing_preview.gif' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-history-resolved-pif-anticipatory-self-healing-law/blob/main/images/pif_anticipatory_self_healing_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_preview.gif' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/pif_anticipatory_self_healing/pif_anticipatory_self_healing_dashboard.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
@@ -691,15 +691,45 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Computes a local topological marker from the occupied-state projector P. The simulator bulk-averages C(r) over interior sites to estimate the Chern number in an inhomogeneous, adaptive lattice. Now implemented: solver computes C_bulk = -0.9969 at m=-1 on a 10x10 QWZ lattice with open boundaries (99.7% accuracy vs exact C=-1). Verified via benchmarks/benchmarks.py chern_marker_bianco_resta().</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>P is the ground-state projector below Fermi energy E_F.</li><li>Position operators X,Y are well-defined (open or periodic boundaries).</li><li>Bulk average excludes boundary sites where the marker is not quantized.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-chern-marker-bianco-resta'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta/blob/main/images/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/AdaptivePiGeometry.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='21' data-score='87' data-date='2026-02-22' data-haslatex='1'>
+    <section class='card' data-rank='21' data-score='88' data-date='2026-04-13' data-haslatex='1'>
   <div class='card__rank'>#21</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>pi_f Loop-Health Balance Law</h2>
+      <div class='card__meta'>
+        <span class='badge badge--score'>Score 88</span>
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Derived equation</div>
+      <div class='equation__tex'>$$\dot \Sigma_{\Gamma}^{(\pi_f)}=\Sigma_{\Gamma}^{(\pi_f)}\mathcal{R}_{\Gamma}(t),\quad \mathcal{R}_{\Gamma}(t)=\frac{1}{\lvert\Gamma\rvert}\sum_{e\in\Gamma}\frac{\alpha(S)I_{\mathrm{norm},e}-\mu(S)(G_e-g_{\min})}{G_e}-\tan\!\left(\frac{\Theta_{\Gamma}}{2\pi_a}\right)\left[\frac{\lambda_s}{\pi_a}\sum_{e\in\Gamma}\sigma_{\Gamma,e}\sin\!\left(I_{\phi,e}-\phi_e\right)-\frac{\Theta_{\Gamma}}{\pi_a^2}\left(\alpha_{\pi}S-\mu_{\pi}(\pi_a-\pi_0)\right)\right]$$</div>
+    </div>
+
+    <div class='card__sub'>Reference: <span class='muted'>derived: Flat-Channel Loop Signature (pi_f Health Observable) + HAFC/EGATL magnitude/phase/ruler backend</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Derived time-evolution law for the existing flat-channel loop signature. Instead of introducing another static observable, this submission differentiates the established pi_f loop-health signature and substitutes the HAFC/EGATL backend&#x27;s implemented magnitude, phase-alignment, and adaptive-ruler updates. The result is a loop-scale balance law whose tangent factor explains why the pi_f signature can collapse early as a localized precursor before full Bott/topological failure.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The monitored loop Gamma is fixed and oriented, with consistent incidence signs sigma_{Gamma,e} across the evaluation window.</li><li>Bond magnitudes satisfy G_e=|g_e|&gt;=g_min&gt;0 on the monitored loop, so the logarithmic derivative of the geometric-mean magnitude channel is well-defined.</li><li>The derivation uses the referenced HAFC/EGATL source-bundle backend with Euler-step laws dot G_e = alpha(S) I_norm,e - mu(S)(G_e-g_min), dot phi_e = lambda_s sin(I_phi,e-phi_e), and dot pi_a = alpha_pi S - mu_pi (pi_a-pi_0).</li><li>pi_a(t)&gt;0 throughout the run, so the holonomy-coherence factor and the tangent response remain well-defined away from singular threshold crossings.</li><li>The local workspace copy at AdaptiveCAD-Manim/solver/egatl.py is a different EGATL variant and is not the authoritative code path for the pi_f helper functions used in this derivation.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-pi-f-loop-health-balance-law'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-pi-f-loop-health-balance-law' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
+      <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-13</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png' target='_blank' rel='noopener'>link</a></div></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class='card' data-rank='22' data-score='87' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#22</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Parity Flip-Rate (locking observable)</h2>
@@ -721,15 +751,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough (&#x27;parity locking&#x27;). This is the primary testable quantity for the qubit Berry-loop experiment.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>K is large enough for the ratio to be statistically meaningful.</li><li>Parity flips are detected correctly (no double-counting at coincident singularities).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-parity-flip-rate'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-parity-flip-rate' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-parity-flip-rate/blob/main/images/ParityLockingBifurcation.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/ParityLockingBifurcation.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='22' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#22</div>
+    <section class='card' data-rank='23' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
@@ -758,8 +788,8 @@
 </section>
 
 
-    <section class='card' data-rank='23' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#23</div>
+    <section class='card' data-rank='24' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#24</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
@@ -788,8 +818,8 @@
 </section>
 
 
-    <section class='card' data-rank='24' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#24</div>
+    <section class='card' data-rank='25' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#25</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PhaseLiftUpdate</h2>
@@ -818,8 +848,8 @@
 </section>
 
 
-    <section class='card' data-rank='25' data-score='87' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#25</div>
+    <section class='card' data-rank='26' data-score='87' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#26</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AdaptiveRuler</h2>
@@ -848,8 +878,8 @@
 </section>
 
 
-    <section class='card' data-rank='26' data-score='87' data-date='2026-02-25' data-haslatex='1'>
-  <div class='card__rank'>#26</div>
+    <section class='card' data-rank='27' data-score='87' data-date='2026-02-25' data-haslatex='1'>
+  <div class='card__rank'>#27</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mean-Event Equilibrium for Adaptive πₐ (discrete)</h2>
@@ -878,8 +908,8 @@
 </section>
 
 
-    <section class='card' data-rank='27' data-score='87' data-date='2026-03-09' data-haslatex='1'>
-  <div class='card__rank'>#27</div>
+    <section class='card' data-rank='28' data-score='87' data-date='2026-03-09' data-haslatex='1'>
+  <div class='card__rank'>#28</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Gated Edge Recovery Score</h2>
@@ -908,8 +938,8 @@
 </section>
 
 
-    <section class='card' data-rank='28' data-score='86' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#28</div>
+    <section class='card' data-rank='29' data-score='86' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#29</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>BZ-Averaged Ruler Coupling for Single-Jump QWZ Transition</h2>
@@ -931,15 +961,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>BZ-average removes k-oscillation: &lt;(1+ε cosλ)^{-1}&gt; = (1-ε^2)^{-1/2}, giving a uniform m_eff(ε) and a single Chern jump at ε_c (for m0=-1: ε_c=√3/2).</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-qwz-bz-avg-ruler-mass'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass/blob/main/images/BZAveragedRulerQWZ.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/BZAveragedRulerQWZ.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='29' data-score='86' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#29</div>
+    <section class='card' data-rank='30' data-score='86' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#30</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Geometry → Effective Mass Channel (Step-2 Coupling)</h2>
@@ -961,15 +991,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>The adaptive-π conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or ±2, the Chern phase can switch — without external tuning, purely via ARP reinforcement + memory. This is Paper I&#x27;s central claim: geometry drives topology autonomously.</div></div>
       <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.</li><li>β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).</li><li>Entropy S_edge is the local entropy proxy from Eq. 8.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-adaptive-geometry-mass'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass/blob/main/images/PRRootExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PRRootExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='30' data-score='86' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#30</div>
+    <section class='card' data-rank='31' data-score='86' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#31</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
@@ -998,8 +1028,8 @@
 </section>
 
 
-    <section class='card' data-rank='31' data-score='86' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#31</div>
+    <section class='card' data-rank='32' data-score='86' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#32</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
@@ -1021,15 +1051,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>A structural counter-balance to curiosity-driven updates. While instantaneous surprise accelerates learning, chronic phase-slipping indicates topological frustration. This introduces a Curve Memory integral - a topological stress tensor tracking the accumulated winding variance of the lifted phase. Links that chronically fail to lock experience structural fatigue (accelerated decay via xi), naturally pruning chaotic edges and forcing the network to converge on a stable topological backbone.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The Curve Memory integral operates on a longer relaxation timescale tau_M than the instantaneous Adler/RSJ phase dynamics.</li><li>xi &gt; 0 is the structural fatigue coupling constant.</li><li>The derivative of the lifted phase (dtheta_R/dtau) cleanly captures true branch-jumping (slips) without being bounded by [-pi, pi], safely relying on the Phase-Lift definitions.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-gemini-curve-memory-topological-frustration-pruning'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-24</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-gemini-curve-memory-topological-frustration-pruning/blob/main/images/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/GeminiCurveMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='32' data-score='86' data-date='2026-03-09' data-haslatex='1'>
-  <div class='card__rank'>#32</div>
+    <section class='card' data-rank='33' data-score='86' data-date='2026-03-09' data-haslatex='1'>
+  <div class='card__rank'>#33</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Directional-Strength Proxy Chern Law</h2>
@@ -1058,8 +1088,8 @@
 </section>
 
 
-    <section class='card' data-rank='33' data-score='85' data-date='2026-03-06' data-haslatex='1'>
-  <div class='card__rank'>#33</div>
+    <section class='card' data-rank='34' data-score='85' data-date='2026-03-06' data-haslatex='1'>
+  <div class='card__rank'>#34</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Topological Self-Healing Conductance Law</h2>
@@ -1088,8 +1118,8 @@
 </section>
 
 
-    <section class='card' data-rank='34' data-score='85' data-date='2026-04-13' data-haslatex='1'>
-  <div class='card__rank'>#34</div>
+    <section class='card' data-rank='35' data-score='85' data-date='2026-04-13' data-haslatex='1'>
+  <div class='card__rank'>#35</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>History-Resolved Loop-Coherent Chern Self-Healing Law</h2>
@@ -1118,8 +1148,8 @@
 </section>
 
 
-    <section class='card' data-rank='35' data-score='84' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#35</div>
+    <section class='card' data-rank='36' data-score='84' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#36</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Noise-Robust Langevin Extension (Rounded Transition)</h2>
@@ -1141,15 +1171,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes &#x27;almost locked&#x27; with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.</div></div>
       <div class='kv'><div class='k'>Derivation bridge</div><div class='v'>Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.</div></div><div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>White noise approximation valid (correlation time ≪ phase dynamics timescale).</li><li>D &gt; 0 but small enough that lock survives (D ≪ λG).</li><li>Stratonovich vs Itô distinction negligible for additive noise.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-paper1-langevin-noise'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-langevin-noise' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-langevin-noise/blob/main/images/HysteresisMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-paper1-langevin-noise/blob/main/images/langevin_parity_lock.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/HysteresisMemory.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='./assets/langevin_parity_lock.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='36' data-score='84' data-date='2026-03-08' data-haslatex='1'>
-  <div class='card__rank'>#36</div>
+    <section class='card' data-rank='37' data-score='84' data-date='2026-03-08' data-haslatex='1'>
+  <div class='card__rank'>#37</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted RG Memory Flow</h2>
@@ -1178,8 +1208,8 @@
 </section>
 
 
-    <section class='card' data-rank='37' data-score='84' data-date='2026-03-09' data-haslatex='1'>
-  <div class='card__rank'>#37</div>
+    <section class='card' data-rank='38' data-score='84' data-date='2026-03-09' data-haslatex='1'>
+  <div class='card__rank'>#38</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Slip-Suppressed Edge Recovery Law</h2>
@@ -1208,8 +1238,8 @@
 </section>
 
 
-    <section class='card' data-rank='38' data-score='84' data-date='2026-03-09' data-haslatex='1'>
-  <div class='card__rank'>#38</div>
+    <section class='card' data-rank='39' data-score='84' data-date='2026-03-09' data-haslatex='1'>
+  <div class='card__rank'>#39</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Boundary-Reroute Recovery Index</h2>
@@ -1238,8 +1268,8 @@
 </section>
 
 
-    <section class='card' data-rank='39' data-score='82' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#39</div>
+    <section class='card' data-rank='40' data-score='82' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#40</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -1268,8 +1298,8 @@
 </section>
 
 
-    <section class='card' data-rank='40' data-score='82' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#40</div>
+    <section class='card' data-rank='41' data-score='82' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#41</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
@@ -1298,8 +1328,8 @@
 </section>
 
 
-    <section class='card' data-rank='41' data-score='82' data-date='2026-04-13' data-haslatex='1'>
-  <div class='card__rank'>#41</div>
+    <section class='card' data-rank='42' data-score='82' data-date='2026-04-13' data-haslatex='1'>
+  <div class='card__rank'>#42</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Effective Dimension of the Power-Law Flat Branch</h2>
@@ -1328,8 +1358,8 @@
 </section>
 
 
-    <section class='card' data-rank='42' data-score='81' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#42</div>
+    <section class='card' data-rank='43' data-score='81' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#43</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive Step-Limit Update (πₐ clip)</h2>
@@ -1351,15 +1381,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Core AHC innovation: clip the residual to adaptive bounds ±πₐ. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>π_{a,k-1} is positive and represents a trusted local phase step-limit.</li><li>Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-step-limit'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-step-limit' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-step-limit/blob/main/images/eq-ahc-step-limit.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-step-limit.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='43' data-score='81' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#43</div>
+    <section class='card' data-rank='44' data-score='81' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#44</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
@@ -1388,8 +1418,8 @@
 </section>
 
 
-    <section class='card' data-rank='44' data-score='81' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#44</div>
+    <section class='card' data-rank='45' data-score='81' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#45</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ParityFlipRate</h2>
@@ -1418,8 +1448,8 @@
 </section>
 
 
-    <section class='card' data-rank='45' data-score='81' data-date='2026-03-07' data-haslatex='1'>
-  <div class='card__rank'>#45</div>
+    <section class='card' data-rank='46' data-score='81' data-date='2026-03-07' data-haslatex='1'>
+  <div class='card__rank'>#46</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Surprise-Augmented History-Resolved Complex Conductance with Curve-Memory Pruning</h2>
@@ -1448,8 +1478,8 @@
 </section>
 
 
-    <section class='card' data-rank='46' data-score='81' data-date='2026-03-08' data-haslatex='1'>
-  <div class='card__rank'>#46</div>
+    <section class='card' data-rank='47' data-score='81' data-date='2026-03-08' data-haslatex='1'>
+  <div class='card__rank'>#47</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Chern Self-Healing Conductance Law</h2>
@@ -1472,14 +1502,14 @@
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Adiabatic evolution and slow variation of the system state S</li><li>Edge channels are described by a single effective conductance g_e</li><li>Local Chern indicator C_loc(t) accurately captures topological defects</li><li>Phase lifting via theta_{R,e} is well-defined</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-adaptive-chern-self-healing-conductance-law'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-03-08</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
-      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law/blob/main/images/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png' target='_blank' rel='noopener'>link</a></div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='47' data-score='81' data-date='2026-03-08' data-haslatex='1'>
-  <div class='card__rank'>#47</div>
+    <section class='card' data-rank='48' data-score='81' data-date='2026-03-08' data-haslatex='1'>
+  <div class='card__rank'>#48</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Landauer-Phase-Lift Conductance Law</h2>
@@ -1508,8 +1538,8 @@
 </section>
 
 
-    <section class='card' data-rank='48' data-score='80' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#48</div>
+    <section class='card' data-rank='49' data-score='80' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#49</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_a-Modulated QWZ Mass (momentum-dependent; re-entrant transitions)</h2>
@@ -1531,15 +1561,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-qwz-pia-modulated-mass'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-qwz-pia-modulated-mass' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-qwz-pia-modulated-mass/blob/main/images/PiAModulatedQWZMass.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/PiAModulatedQWZMass.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='49' data-score='79' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#49</div>
+    <section class='card' data-rank='50' data-score='79' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#50</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Running Winding + Parity</h2>
@@ -1561,15 +1591,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Live winding number and parity from the lifted-phase trajectory. w_k counts total accumulated windings; b_k = (-1)^w_k gives the sheet parity at each step.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-running-winding'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-running-winding' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-running-winding/blob/main/images/WindingParityExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/WindingParityExplained.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='50' data-score='79' data-date='2026-03-08' data-haslatex='1'>
-  <div class='card__rank'>#50</div>
+    <section class='card' data-rank='51' data-score='79' data-date='2026-03-08' data-haslatex='1'>
+  <div class='card__rank'>#51</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Thouless Pump Memory Law</h2>
@@ -1598,8 +1628,8 @@
 </section>
 
 
-    <section class='card' data-rank='51' data-score='77' data-date='2026-02-20' data-haslatex='1'>
-  <div class='card__rank'>#51</div>
+    <section class='card' data-rank='52' data-score='77' data-date='2026-02-20' data-haslatex='1'>
+  <div class='card__rank'>#52</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Stability Threshold Law</h2>
@@ -1621,15 +1651,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-phase-critical-collapse'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-phase-critical-collapse' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-phase-critical-collapse/blob/main/images/Eq3PhaseCoupledThreshold.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq3PhaseCoupledThreshold.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='52' data-score='76' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#52</div>
+    <section class='card' data-rank='53' data-score='76' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#53</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Adaptive πₐ Update (discrete)</h2>
@@ -1651,15 +1681,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Discrete version of πₐ dynamics for the AHC loop: widens bound after events (α_π S_k term), relaxes toward π₀ otherwise.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.</li><li>π_0 is a stable rest value (typically π).</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-pi-a-update'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-pi-a-update' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-pi-a-update/blob/main/images/eq-ahc-pi-a-update.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-pi-a-update.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='53' data-score='75' data-date='2026-04-10' data-haslatex='1'>
-  <div class='card__rank'>#53</div>
+    <section class='card' data-rank='54' data-score='75' data-date='2026-04-10' data-haslatex='1'>
+  <div class='card__rank'>#54</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Power-Law Flat Adaptive Pi Radial Operator</h2>
@@ -1688,8 +1718,8 @@
 </section>
 
 
-    <section class='card' data-rank='54' data-score='75' data-date='2026-04-12' data-haslatex='1'>
-  <div class='card__rank'>#54</div>
+    <section class='card' data-rank='55' data-score='75' data-date='2026-04-12' data-haslatex='1'>
+  <div class='card__rank'>#55</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Power-Law Flat Adaptive Pi Radial Operator</h2>
@@ -1718,8 +1748,8 @@
 </section>
 
 
-    <section class='card' data-rank='55' data-score='73' data-date='2026-02-21' data-haslatex='1'>
-  <div class='card__rank'>#55</div>
+    <section class='card' data-rank='56' data-score='73' data-date='2026-02-21' data-haslatex='1'>
+  <div class='card__rank'>#56</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -1748,8 +1778,8 @@
 </section>
 
 
-    <section class='card' data-rank='56' data-score='72' data-date='2026-03-06' data-haslatex='1'>
-  <div class='card__rank'>#56</div>
+    <section class='card' data-rank='57' data-score='72' data-date='2026-03-06' data-haslatex='1'>
+  <div class='card__rank'>#57</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lift Commutator Bound</h2>
@@ -1778,8 +1808,8 @@
 </section>
 
 
-    <section class='card' data-rank='57' data-score='71' data-date='2026-02-20' data-haslatex='1'>
-  <div class='card__rank'>#57</div>
+    <section class='card' data-rank='58' data-score='71' data-date='2026-02-20' data-haslatex='1'>
+  <div class='card__rank'>#58</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Complex Conductance Update</h2>
@@ -1801,15 +1831,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-phase-lifted-complex-conductance'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-20</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance/blob/main/images/Eq4PhaseLiftedComplexConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq4PhaseLiftedComplexConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='58' data-score='71' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#58</div>
+    <section class='card' data-rank='59' data-score='71' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#59</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Gated Complex Conductance (ARP Network)</h2>
@@ -1838,8 +1868,8 @@
 </section>
 
 
-    <section class='card' data-rank='59' data-score='71' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#59</div>
+    <section class='card' data-rank='60' data-score='71' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#60</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Suppression Conductance Law</h2>
@@ -1868,8 +1898,8 @@
 </section>
 
 
-    <section class='card' data-rank='60' data-score='71' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#60</div>
+    <section class='card' data-rank='61' data-score='71' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#61</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -1898,8 +1928,8 @@
 </section>
 
 
-    <section class='card' data-rank='61' data-score='71' data-date='2026-03-06' data-haslatex='1'>
-  <div class='card__rank'>#61</div>
+    <section class='card' data-rank='62' data-score='71' data-date='2026-03-06' data-haslatex='1'>
+  <div class='card__rank'>#62</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Resolved Operator (General)</h2>
@@ -1928,8 +1958,8 @@
 </section>
 
 
-    <section class='card' data-rank='62' data-score='70' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#62</div>
+    <section class='card' data-rank='63' data-score='70' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#63</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Candidate Unwrap (standard 2π lift)</h2>
@@ -1951,15 +1981,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Measurement φ_k is a well-defined principal-value phase in (-π, π].</li><li>Previous lifted phase θ_{R,k-1} is available and trusted.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-candidate-unwrap'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-candidate-unwrap' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-candidate-unwrap/blob/main/images/eq-ahc-candidate-unwrap.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-candidate-unwrap.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='63' data-score='70' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#63</div>
+    <section class='card' data-rank='64' data-score='70' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#64</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Residual</h2>
@@ -1981,15 +2011,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Difference between the unwrapped measurement and the previous lifted-phase state. Feeds the step-limit gate.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-residual'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-residual' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-residual/blob/main/images/eq-ahc-residual.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-residual.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='64' data-score='70' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#64</div>
+    <section class='card' data-rank='65' data-score='70' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#65</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lift Clipped Unwrap (Branch-Safe)</h2>
@@ -2018,8 +2048,8 @@
 </section>
 
 
-    <section class='card' data-rank='65' data-score='70' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#65</div>
+    <section class='card' data-rank='66' data-score='70' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#66</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive-π Bound Dynamics (Event-Driven Geometry)</h2>
@@ -2048,8 +2078,8 @@
 </section>
 
 
-    <section class='card' data-rank='66' data-score='70' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#66</div>
+    <section class='card' data-rank='67' data-score='70' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#67</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Winding–Parity Estimator and Flip-Rate Order Parameter</h2>
@@ -2078,8 +2108,8 @@
 </section>
 
 
-    <section class='card' data-rank='67' data-score='70' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#67</div>
+    <section class='card' data-rank='68' data-score='70' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#68</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy Production / Event Injection (S-Field)</h2>
@@ -2108,8 +2138,8 @@
 </section>
 
 
-    <section class='card' data-rank='68' data-score='70' data-date='2026-03-04' data-haslatex='1'>
-  <div class='card__rank'>#68</div>
+    <section class='card' data-rank='69' data-score='70' data-date='2026-03-04' data-haslatex='1'>
+  <div class='card__rank'>#69</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)</h2>
@@ -2138,8 +2168,8 @@
 </section>
 
 
-    <section class='card' data-rank='69' data-score='70' data-date='2026-03-06' data-haslatex='1'>
-  <div class='card__rank'>#69</div>
+    <section class='card' data-rank='70' data-score='70' data-date='2026-03-06' data-haslatex='1'>
+  <div class='card__rank'>#70</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Branch Fault Criterion</h2>
@@ -2168,8 +2198,8 @@
 </section>
 
 
-    <section class='card' data-rank='70' data-score='69' data-date='2026-02-19' data-haslatex='1'>
-  <div class='card__rank'>#70</div>
+    <section class='card' data-rank='71' data-score='69' data-date='2026-02-19' data-haslatex='1'>
+  <div class='card__rank'>#71</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Temperature-Dependent Conductance Law</h2>
@@ -2191,15 +2221,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Extends ARP equilibrium with an exponential temperature factor for material sensitivity.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-temp-conductance'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-temp-conductance' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-temp-conductance/blob/main/images/Eq10TempConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq10TempConductance.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='71' data-score='69' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#71</div>
+    <section class='card' data-rank='72' data-score='69' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#72</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>AHC Event Stimulus (phase-jump indicator)</h2>
@@ -2221,15 +2251,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ |Δ²θ_R|. Triggers πₐ widening.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-ahc-event-stimulus'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-event-stimulus' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-22</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-ahc-event-stimulus/blob/main/images/eq-ahc-event-stimulus.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/eq-ahc-event-stimulus.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='72' data-score='69' data-date='2026-02-24' data-haslatex='1'>
-  <div class='card__rank'>#72</div>
+    <section class='card' data-rank='73' data-score='69' data-date='2026-02-24' data-haslatex='1'>
+  <div class='card__rank'>#73</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -2258,8 +2288,8 @@
 </section>
 
 
-    <section class='card' data-rank='73' data-score='69' data-date='2026-03-09' data-haslatex='1'>
-  <div class='card__rank'>#73</div>
+    <section class='card' data-rank='74' data-score='69' data-date='2026-03-09' data-haslatex='1'>
+  <div class='card__rank'>#74</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Newton&#x27;s Second Law</h2>
@@ -2288,8 +2318,8 @@
 </section>
 
 
-    <section class='card' data-rank='74' data-score='67' data-date='2026-04-12' data-haslatex='1'>
-  <div class='card__rank'>#74</div>
+    <section class='card' data-rank='75' data-score='67' data-date='2026-04-12' data-haslatex='1'>
+  <div class='card__rank'>#75</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Cosmological Redshift Mapping</h2>
@@ -2318,8 +2348,8 @@
 </section>
 
 
-    <section class='card' data-rank='75' data-score='66' data-date='2026-02-19' data-haslatex='1'>
-  <div class='card__rank'>#75</div>
+    <section class='card' data-rank='76' data-score='66' data-date='2026-02-19' data-haslatex='1'>
+  <div class='card__rank'>#76</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Lyapunov Stability Form</h2>
@@ -2341,15 +2371,15 @@
       <div class='kv'><div class='k'>Description</div><div class='v'>Candidate stability proof template for adaptive conductance dynamics.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-lyapunov-stability'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-lyapunov-stability' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-lyapunov-stability/blob/main/images/Eq5ARPLyapunov.mp4' target='_blank' rel='noopener'>link</a></div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='./assets/animations/Eq5ARPLyapunov.mp4' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
 </section>
 
 
-    <section class='card' data-rank='76' data-score='66' data-date='2026-02-22' data-haslatex='1'>
-  <div class='card__rank'>#76</div>
+    <section class='card' data-rank='77' data-score='66' data-date='2026-02-22' data-haslatex='1'>
+  <div class='card__rank'>#77</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP as Gradient Flow in Adaptive-π Geometry</h2>
@@ -2383,7 +2413,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-04-13 19:29</strong></div>
+      <div>Last built: <strong>2026-04-13 20:41</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>

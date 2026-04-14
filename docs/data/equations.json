@@ -3933,6 +3933,47 @@
           "date": "2026-04-13"
         }
       }
+    },
+    {
+      "id": "eq-pi-f-loop-health-balance-law",
+      "name": "pi_f Loop-Health Balance Law",
+      "firstSeen": "2026-04-13",
+      "source": "derived: Flat-Channel Loop Signature (pi_f Health Observable) + HAFC/EGATL magnitude/phase/ruler backend",
+      "submitter": "GitHub Copilot",
+      "repoUrl": "https://github.com/RDM3DC/eq-pi-f-loop-health-balance-law",
+      "score": 88,
+      "scores": {
+        "tractability": 16,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 7
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png"
+      },
+      "description": "Derived time-evolution law for the existing flat-channel loop signature. Instead of introducing another static observable, this submission differentiates the established pi_f loop-health signature and substitutes the HAFC/EGATL backend's implemented magnitude, phase-alignment, and adaptive-ruler updates. The result is a loop-scale balance law whose tangent factor explains why the pi_f signature can collapse early as a localized precursor before full Bott/topological failure.",
+      "assumptions": [
+        "The monitored loop Gamma is fixed and oriented, with consistent incidence signs sigma_{Gamma,e} across the evaluation window.",
+        "Bond magnitudes satisfy G_e=|g_e|>=g_min>0 on the monitored loop, so the logarithmic derivative of the geometric-mean magnitude channel is well-defined.",
+        "The derivation uses the referenced HAFC/EGATL source-bundle backend with Euler-step laws dot G_e = alpha(S) I_norm,e - mu(S)(G_e-g_min), dot phi_e = lambda_s sin(I_phi,e-phi_e), and dot pi_a = alpha_pi S - mu_pi (pi_a-pi_0).",
+        "pi_a(t)>0 throughout the run, so the holonomy-coherence factor and the tangent response remain well-defined away from singular threshold crossings.",
+        "The local workspace copy at AdaptiveCAD-Manim/solver/egatl.py is a different EGATL variant and is not the authoritative code path for the pi_f helper functions used in this derivation."
+      ],
+      "date": "2026-04-13",
+      "equationLatex": "\\dot \\Sigma_{\\Gamma}^{(\\pi_f)}=\\Sigma_{\\Gamma}^{(\\pi_f)}\\mathcal{R}_{\\Gamma}(t),\\quad \\mathcal{R}_{\\Gamma}(t)=\\frac{1}{\\lvert\\Gamma\\rvert}\\sum_{e\\in\\Gamma}\\frac{\\alpha(S)I_{\\mathrm{norm},e}-\\mu(S)(G_e-g_{\\min})}{G_e}-\\tan\\!\\left(\\frac{\\Theta_{\\Gamma}}{2\\pi_a}\\right)\\left[\\frac{\\lambda_s}{\\pi_a}\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\sin\\!\\left(I_{\\phi,e}-\\phi_e\\right)-\\frac{\\Theta_{\\Gamma}}{\\pi_a^2}\\left(\\alpha_{\\pi}S-\\mu_{\\pi}(\\pi_a-\\pi_0)\\right)\\right]",
+      "tags": {
+        "novelty": {
+          "score": 29,
+          "date": "2026-04-13"
+        }
+      }
     }
   ]
 }

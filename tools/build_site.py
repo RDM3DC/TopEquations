@@ -384,6 +384,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
               return _artifact(obj)
             if re.match(r"^[a-z]+://", path, re.IGNORECASE):
               return _artifact(obj)
+            if path.startswith("./assets/") or path.startswith("data/artifacts/"):
+              return _artifact(obj)
             if repo_url:
               fname = Path(path).name
               url = f"{repo_url}/blob/main/images/{fname}"
