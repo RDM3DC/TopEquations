@@ -1,8 +1,48 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-13T23:02:42.383880",
+  "generatedAt": "2026-04-13T19:29:11.327145",
   "displayThreshold": 65,
   "entries": [
+    {
+      "id": "eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc",
+      "name": "Loop-Coherence and Curve-Memory Stabilized BZ Conductance Law",
+      "firstSeen": "2026-04-13",
+      "source": "derived: BZ-Averaged Phase-Lifted Complex Conductance Update + Topological Coherence Order Parameter + Curve-Memory Topological Frustration Pruning",
+      "submitter": "GitHub Copilot",
+      "repoUrl": "https://github.com/RDM3DC/eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc",
+      "score": 100,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 20,
+        "artifactCompleteness": 10
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "provided",
+        "path": "./assets/animations/DerivationBridge.mp4"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/arp_topology_benchmark_v2/arp_topology/outputs/recovery_demo/recovery_traces.png"
+      },
+      "description": "Lineage-preserving extension of the current BZ-averaged phase-lifted complex conductance update. It inserts a bounded loop-coherence gain through Psi and a chronic-slip curve-memory stabilizer through M_ij, so reinforcement is strongest on edges that are simultaneously active, loop-consistent, and not carrying accumulated topological stress. It recovers the current #1 law exactly when kappa_Psi=0 and xi=0, recovers pure loop-coherence gating when xi=0, and recovers pure curve-memory stabilization when kappa_Psi=0.",
+      "assumptions": [
+        "Psi=(1/N_p) sum_p cos(Theta_p/pi_a) is dimensionless and bounded on the monitored plaquette family.",
+        "M_ij(t) is a nonnegative curve-memory stress integral or discrete exponential moving average built from resolved-phase slip energy.",
+        "xi >= 0 and kappa_Psi >= 0 so the reinforcement prefactor remains nonnegative and reduces smoothly to known limits.",
+        "alpha_G(S) and mu_G(S) retain the units and entropy gating of the current BZ law."
+      ],
+      "date": "2026-04-13",
+      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G(S)\\frac{1+\\kappa_\\Psi\\Psi}{1+\\xi M_{ij}}|I_{ij}|e^{i\\theta_{R,ij}}-\\mu_G(S)\\tilde G_{ij}",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-13"
+        }
+      }
+    },
     {
       "id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
       "name": "BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)",
@@ -1349,6 +1389,57 @@
       }
     },
     {
+      "id": "eq-history-resolved-loop-coherent-chern-self-healing-law",
+      "name": "History-Resolved Loop-Coherent Chern Self-Healing Law",
+      "firstSeen": "2026-04-13",
+      "source": "derived: History-Resolved Phase with Adaptive Ruler + Topological Coherence Order Parameter + Adaptive Chern Self-Healing Conductance Law",
+      "submitter": "Science Banksy",
+      "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-loop-coherent-chern-self-healing-law",
+      "score": 85,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Lineage-preserving synthesis of the history-resolved adaptive-ruler phase update, the plaquette-coherence order parameter, and the adaptive Chern self-healing conductance law. It promotes loop coherence from a passive observable to a bounded gain gate on the existing self-healing dynamics, so reinforcement is strongest when current flow, branch-resolved phase memory, and plaquette holonomy agree. The law unifies branch memory, loop locking, and local Chern feedback in one update, recovers the parent self-healing law when kappa_Psi=0, and recovers a loop-aware phase-memory ARP/EGATL law when chi=0 and C_loc=0.",
+      "assumptions": [
+        "The ARP / adaptive-pi_a framework and units from the parent TopEquations lineage are inherited without changing the base conductance state variables.",
+        "Plaquette structure and orientation signs sigma_{p,e} are well-defined on a fixed lattice so Theta_p is computed consistently over the monitored loop family.",
+        "Psi is evaluated over a fixed plaquette set with slowly varying topology and pi_a > 0 throughout the run.",
+        "kappa_Psi >= 0 is chosen so the loop-coherence gate 1 + kappa_Psi Psi remains bounded and nonnegative on the regimes of interest.",
+        "chi >= 0 and the inherited rates alpha_G(S), mu_G(S), and lambda_s retain the same meaning and units as in the parent history-resolved self-healing law."
+      ],
+      "date": "2026-04-13",
+      "equationLatex": "\\theta_{R,e}^{+}=\\theta_{R,e}+\\operatorname{clip}\\!\\left(\\operatorname{wrap}\\!\\left(\\theta_{\\mathrm{raw},e}-\\theta_{R,e}\\right),-\\pi_a,+\\pi_a\\right),\\ \\Theta_p=\\sum_{e\\in\\partial p}\\sigma_{p,e}\\theta_{R,e},\\ \\Psi=\\frac{1}{N_p}\\sum_{p=1}^{N_p}\\cos\\!\\left(\\Theta_p/\\pi_a\\right),\\ \\frac{d g_e}{dt}=\\alpha_G(S)\\!\\left(1+\\kappa_\\Psi\\Psi\\right)|J_e|e^{i\\theta_{R,e}}-\\mu_G(S)g_e-\\lambda_s g_e\\sin^2\\!\\left(\\theta_{R,e}/(2\\pi_a)\\right)+\\chi C_{\\mathrm{loc}} g_e",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-13"
+        },
+        "llm": {
+          "traceability": 88,
+          "rigor": 86,
+          "assumptions": 78,
+          "presentation": 84,
+          "novelty_insight": 72,
+          "fruitfulness": 82,
+          "llm_total": 82,
+          "justification": "A minimal, lineage-explicit integration of LB #4 (adaptive-ruler phase update) + LB #8/#3 (plaquette holonomy/coherence order parameter) + LB #9 (adaptive Chern self-healing) into a single bounded loop-coherence-gated conductance law with clean recovery clauses (kappa_Psi=0 and chi=C_loc=0)."
+        }
+      }
+    },
+    {
       "id": "eq-paper1-langevin-noise",
       "name": "Noise-Robust Langevin Extension (Rounded Transition)",
       "firstSeen": "2026-02-22",
@@ -2145,46 +2236,6 @@
         "novelty": {
           "score": 21,
           "date": "2026-04-12"
-        }
-      }
-    },
-    {
-      "id": "eq-history-resolved-loop-coherent-chern-self-healing-law",
-      "name": "History-Resolved Loop-Coherent Chern Self-Healing Law",
-      "firstSeen": "2026-04-13",
-      "source": "ChatGPT + user",
-      "submitter": "Science Banksy",
-      "repoUrl": "https://github.com/RDM3DC/eq-history-resolved-loop-coherent-chern-self-healing-law",
-      "score": 75,
-      "scores": {
-        "tractability": 15,
-        "plausibility": 18,
-        "validation": 16,
-        "artifactCompleteness": 4
-      },
-      "units": "OK",
-      "theory": "PASS-WITH-ASSUMPTIONS",
-      "animation": {
-        "status": "planned",
-        "path": ""
-      },
-      "image": {
-        "status": "planned",
-        "path": ""
-      },
-      "description": "An adaptive-conductance law that preserves history-resolved phase with an adaptive ruler (Eq.1), measures topological loop coherence via a plaquette order parameter Psi(t) (Eq.2), and embeds both into a Chern self-healing conductance equation (Eq.3). When kappa_Psi=0 the law reduces to the Chern self-healing form; when chi=0 and C_loc(t)=0 it becomes a loop-aware ARP law driven purely by history-resolved phase.",
-      "assumptions": [
-        "The ARP / adaptive-pi_a framework and units from the existing TopEquations lineage apply.",
-        "Plaquette structure and orientation signs sigma_{p,e} are well-defined on the underlying lattice.",
-        "Psi(t) is computed over a fixed plaquette set with slowly varying topology (no tearing events during a run).",
-        "kappa_Psi >= 0, chi >= 0, and other parameters (mu_G, alpha_G, lambda_s) behave as in the parent laws."
-      ],
-      "date": "2026-04-13",
-      "equationLatex": "(1) theta_R,e^{+} = theta_R,e + clip(wrap(theta_raw,e - theta_R,e), -pi_a, +pi_a); (2) Theta_p(t)=sum_{e in p} sigma_{p,e} theta_R,e(t), Psi(t)= (1/N_p) sum_{p=1}^{N_p} cos(Theta_p(t)/pi_a); (3) d g_e / dt = alpha_G(S)[1 + kappa_Psi Psi(t)] |J_e| e^{i theta_R,e} - mu_G(S) g_e - lambda_s g_e sin^2(theta_R,e/(2 pi_a)) + chi C_loc(t) g_e",
-      "tags": {
-        "novelty": {
-          "score": 22,
-          "date": "2026-04-13"
         }
       }
     },

@@ -1,21 +1,23 @@
 {
   "name": "History-Resolved Loop-Coherent Chern Self-Healing Law",
-  "equation": "(1) theta_R,e^{+} = theta_R,e + clip(wrap(theta_raw,e - theta_R,e), -pi_a, +pi_a); (2) Theta_p(t)=sum_{e in p} sigma_{p,e} theta_R,e(t), Psi(t)= (1/N_p) sum_{p=1}^{N_p} cos(Theta_p(t)/pi_a); (3) d g_e / dt = alpha_G(S)[1 + kappa_Psi Psi(t)] |J_e| e^{i theta_R,e} - mu_G(S) g_e - lambda_s g_e sin^2(theta_R,e/(2 pi_a)) + chi C_loc(t) g_e",
-  "description": "An adaptive-conductance law that preserves history-resolved phase with an adaptive ruler (Eq.1), measures topological loop coherence via a plaquette order parameter Psi(t) (Eq.2), and embeds both into a Chern self-healing conductance equation (Eq.3). When kappa_Psi=0 the law reduces to the Chern self-healing form; when chi=0 and C_loc(t)=0 it becomes a loop-aware ARP law driven purely by history-resolved phase.",
-  "source": "ChatGPT + user",
+  "equation": "\\theta_{R,e}^{+}=\\theta_{R,e}+\\operatorname{clip}\\!\\left(\\operatorname{wrap}\\!\\left(\\theta_{\\mathrm{raw},e}-\\theta_{R,e}\\right),-\\pi_a,+\\pi_a\\right),\\ \\Theta_p=\\sum_{e\\in\\partial p}\\sigma_{p,e}\\theta_{R,e},\\ \\Psi=\\frac{1}{N_p}\\sum_{p=1}^{N_p}\\cos\\!\\left(\\Theta_p/\\pi_a\\right),\\ \\frac{d g_e}{dt}=\\alpha_G(S)\\!\\left(1+\\kappa_\\Psi\\Psi\\right)|J_e|e^{i\\theta_{R,e}}-\\mu_G(S)g_e-\\lambda_s g_e\\sin^2\\!\\left(\\theta_{R,e}/(2\\pi_a)\\right)+\\chi C_{\\mathrm{loc}} g_e",
+  "description": "Lineage-preserving synthesis of the history-resolved adaptive-ruler phase update, the plaquette-coherence order parameter, and the adaptive Chern self-healing conductance law. It promotes loop coherence from a passive observable to a bounded gain gate on the existing self-healing dynamics, so reinforcement is strongest when current flow, branch-resolved phase memory, and plaquette holonomy agree. The law unifies branch memory, loop locking, and local Chern feedback in one update, recovers the parent self-healing law when kappa_Psi=0, and recovers a loop-aware phase-memory ARP/EGATL law when chi=0 and C_loc=0.",
+  "source": "derived: History-Resolved Phase with Adaptive Ruler + Topological Coherence Order Parameter + Adaptive Chern Self-Healing Conductance Law",
   "submitter": "Science Banksy",
   "units": "OK",
   "theory": "PASS-with-assumptions",
   "assumptions": [
-    "The ARP / adaptive-pi_a framework and units from the existing TopEquations lineage apply.",
-    "Plaquette structure and orientation signs sigma_{p,e} are well-defined on the underlying lattice.",
-    "Psi(t) is computed over a fixed plaquette set with slowly varying topology (no tearing events during a run).",
-    "kappa_Psi >= 0, chi >= 0, and other parameters (mu_G, alpha_G, lambda_s) behave as in the parent laws."
+    "The ARP / adaptive-pi_a framework and units from the parent TopEquations lineage are inherited without changing the base conductance state variables.",
+    "Plaquette structure and orientation signs sigma_{p,e} are well-defined on a fixed lattice so Theta_p is computed consistently over the monitored loop family.",
+    "Psi is evaluated over a fixed plaquette set with slowly varying topology and pi_a > 0 throughout the run.",
+    "kappa_Psi >= 0 is chosen so the loop-coherence gate 1 + kappa_Psi Psi remains bounded and nonnegative on the regimes of interest.",
+    "chi >= 0 and the inherited rates alpha_G(S), mu_G(S), and lambda_s retain the same meaning and units as in the parent history-resolved self-healing law."
   ],
   "evidence": [
-    "Builds on leaderboard #1 (History-Resolved Phase with Adaptive Ruler), #2 (Adaptive Chern Self-Healing Conductance Law) and #7 (Topological Coherence Order Parameter).",
-    "Reduces to the existing Chern self-healing law when kappa_Psi = 0.",
-    "Reduces to a loop-aware ARP law when chi = 0 and C_loc(t) = 0.",
-    "Proposed validation: compare locked vs slipping regimes in QWZ and SSH lattices while varying kappa_Psi; show that high Psi(t) correlates with stable edge channels and self-healing after local defects."
+    "Builds directly on History-Resolved Phase with Adaptive Ruler, Topological Coherence Order Parameter (ARP Locking), and Adaptive Chern Self-Healing Conductance Law: Eq. (1) is the parent branch-safe state update, Eq. (2) is the plaquette-coherence observable, and Eq. (3) inserts that observable as a bounded gate on the inherited self-healing conductance law.",
+    "Recovers the existing Chern self-healing conductance law exactly when kappa_Psi = 0.",
+    "Recovers a loop-aware phase-memory ARP/EGATL conductance law when chi = 0 and C_loc = 0, while preserving the adaptive-ruler suppression backbone.",
+    "Dimension check: Psi, kappa_Psi, theta_{R,e}/pi_a, and C_loc are dimensionless, so alpha_G(S)(1+kappa_Psi Psi)|J_e|, mu_G(S)g_e, lambda_s g_e sin^2(theta_{R,e}/2pi_a), and chi C_loc g_e all retain conductance-per-time units.",
+    "Executable validation target: on matched damage/recovery runs, higher-Psi trajectories should correlate with stronger boundary fraction, transfer efficiency, and post-damage healing stability at fixed chi and comparable injury protocol."
   ]
 }

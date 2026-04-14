@@ -122,6 +122,10 @@ def main() -> None:
     ap.add_argument("--submitter", default="local")
     ap.add_argument("--assumption", action="append", default=[])
     ap.add_argument("--evidence", action="append", default=[], help="Validation evidence item (URL, tx hash, run log, screenshot path)")
+    ap.add_argument("--animation-status", default="planned")
+    ap.add_argument("--animation-path", default="")
+    ap.add_argument("--image-status", default="planned")
+    ap.add_argument("--image-path", default="")
     args = ap.parse_args()
 
     submitted_at = _today()
@@ -159,8 +163,14 @@ def main() -> None:
         "theory": args.theory.strip(),
         "assumptions": [a.strip() for a in args.assumption if a.strip()],
         "evidence": [x.strip() for x in args.evidence if x.strip()],
-        "animation": {"status": "planned", "path": ""},
-        "image": {"status": "planned", "path": ""},
+        "animation": {
+            "status": args.animation_status.strip(),
+            "path": args.animation_path.strip(),
+        },
+        "image": {
+            "status": args.image_status.strip(),
+            "path": args.image_path.strip(),
+        },
         "duplicateWarnings": duplicate_warnings,
         "review": {},
     }
