@@ -2,6 +2,9 @@
   --bg0:#ffffff;
   --bg1:#f4f7fc;
   --card:#ffffff;
+  --gold0:#fff7dc;
+  --gold1:#f0cf66;
+  --gold2:#9a6d07;
   --text:#1b2840;
   --muted:#5c6b87;
   --line:rgba(0,20,80,.10);
@@ -186,6 +189,23 @@ code{background:rgba(21,82,204,.06); padding:2px 6px; border-radius:8px; border:
 .equation{margin-top:10px; border:1px solid rgba(21,82,204,.14); border-radius:16px; background: rgba(21,82,204,.03)}
 .equation__label{padding:10px 12px; color:var(--muted); font-size:12px; border-bottom:1px solid rgba(21,82,204,.10)}
 .equation__tex{margin:0; padding:12px; overflow:auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:13px; line-height:1.35}
+
+.equation--gold{
+  border-color:rgba(154,109,7,.34);
+  background:linear-gradient(180deg, var(--gold0), rgba(240,207,102,.34));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 8px 22px rgba(154,109,7,.14);
+}
+
+.equation--gold .equation__label{
+  color:var(--gold2);
+  font-weight:800;
+  border-bottom-color:rgba(154,109,7,.22);
+  background:linear-gradient(90deg, rgba(240,207,102,.28), rgba(255,255,255,.26));
+}
+
+.equation--gold .equation__tex{
+  background:linear-gradient(180deg, rgba(255,251,233,.7), rgba(250,230,152,.32));
+}
 
 .grid{display:grid; grid-template-columns:1.4fr 0.7fr 0.6fr 0.7fr; gap:10px; margin-top:12px}
 .kv{padding:10px 12px; border:1px solid rgba(0,20,80,.08); border-radius:16px; background: rgba(21,82,204,.03)}

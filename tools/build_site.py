@@ -77,6 +77,20 @@ def _artifact(val: dict | str | None) -> str:
     return _esc(status)
 
 
+GOLD_HIGHLIGHT_NAMES = {
+    "Effective Dimension of the Power-Law Flat Branch",
+    "EGATL-HLATN-AdaptiveRuler",
+    "Power-Law Flat Adaptive Pi Radial Operator",
+}
+
+
+def _equation_classes(entry: dict) -> str:
+    name = str(entry.get("name", "")).strip()
+    if name in GOLD_HIGHLIGHT_NAMES:
+        return " equation--gold"
+    return ""
+
+
 def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
     top_entries = entries[:limit]
     rows: list[str] = []
@@ -211,6 +225,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     for e in core_entries:
         name = e.get("name", "")
         eq = e.get("equationLatex", "") or "(pending)"
+        eq_classes = _equation_classes(e)
         desc = e.get("description", "")
         src = e.get("source", "")
         url = e.get("sourceUrl", "")
@@ -240,7 +255,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         <span class='badge badge--score'>{_esc(src)}</span>
       </div>
     </div>
-    <div class='equation'>
+    <div class='equation{eq_classes}'>
       <div class='equation__label'>Canonical equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
@@ -367,6 +382,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     for i, e in enumerate(entries, start=1):
         name = e.get("name", "")
         eq = e.get("equationLatex", "") or "(pending)"
+        eq_classes = _equation_classes(e)
         src = e.get("source", "")
         desc = e.get("description", "")
         score = e.get("score", "")
@@ -436,7 +452,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation'>
+    <div class='equation{eq_classes}'>
       <div class='equation__label'>Derived equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
@@ -522,6 +538,7 @@ def build_rising(repo_root: Path, docs: Path) -> None:
     for i, e in enumerate(entries, start=1):
         name = e.get("name", "")
         eq = e.get("equationLatex", "") or "(pending)"
+        eq_classes = _equation_classes(e)
         src = e.get("source", "")
         desc = e.get("description", "")
         score = e.get("score", "")
@@ -572,7 +589,7 @@ def build_rising(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation'>
+    <div class='equation{eq_classes}'>
       <div class='equation__label'>Equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
@@ -813,6 +830,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         name = e.get("name", sid)
         status = str(e.get("status", "pending")).lower()
         eq = e.get("equationLatex", "") or "(pending)"
+        eq_classes = _equation_classes(e)
         desc = e.get("description", "")
         source = e.get("source", "")
         submitter = e.get("submitter", "")
@@ -863,7 +881,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation'>
+    <div class='equation{eq_classes}'>
       <div class='equation__label'>Submitted equation</div>
       <div class='equation__tex'>$${_esc(eq)}$$</div>
     </div>
