@@ -2943,6 +2943,57 @@
         },
         "novelty": 29
       }
+    },
+    {
+      "submissionId": "sub-2026-04-14-flat-adaptive-annular-capacity-law",
+      "submittedAt": "2026-04-14",
+      "submitter": "RDM3DC",
+      "status": "ready",
+      "name": "Flat-Adaptive Annular Capacity Law",
+      "equationLatex": "\\mathcal C_f(a,b;\\beta)=\\begin{cases}\\dfrac{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta}{a^{-\\beta}-b^{-\\beta}}, & \\beta\\neq 0,\\\\[6pt]\\dfrac{2\\pi\\lambda_0}{\\ln(b/a)}, & \\beta=0.\\end{cases}",
+      "description": "Exact annular transport law for the flat-adaptive radial branch. Starting from the promoted operator Delta_f^{rad}u=u''+((beta+1)/r)u' and shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Dirichlet annular problem has a closed-form harmonic profile and a constant radial flux. The resulting capacity formula gives a measurable transport observable controlled by the same branch exponent beta that appears in d_eff=beta+2 and in the inverse-square normal form, while recovering the logarithmic 2D annular law exactly at beta=0.",
+      "source": "Adaptive Flat Pi",
+      "units": "OK",
+      "theory": "PASS",
+      "assumptions": [
+        "Power-law flat branch pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0 and fixed reference scale r_0.",
+        "Radial Dirichlet problem on an annulus a<r<b with a>0 and radial sector only.",
+        "Shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1} is positive and smooth on the domain.",
+        "Capacity is defined by the constant radial flux of the minimizing harmonic profile with boundary values u(a)=1 and u(b)=0.",
+        "The beta->0 branch is interpreted by the exact logarithmic limit of the same formula."
+      ],
+      "evidence": [
+        "Derived exactly from the Euler-Lagrange equation (w_f u')'=0 / Delta_f^{rad}u=0 in data/artifacts/flat_adaptive_annular_capacity/derivation_note.md.",
+        "Exact harmonic profile: u_beta(r)=(r^{-beta}-b^{-beta})/(a^{-beta}-b^{-beta}) for beta!=0 and u_0(r)=ln(b/r)/ln(b/a).",
+        "Exact transport law: C_f(a,b;beta)=2 pi lambda_0 r_0^{-beta} beta/(a^{-beta}-b^{-beta}) with the exact beta=0 limit 2 pi lambda_0/ln(b/a).",
+        "Builds directly on the promoted Power-Law Flat Adaptive Pi Radial Operator, the promoted Effective Dimension of the Power-Law Flat Branch, and the promoted Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure.",
+        "Effective-dimension rewrite: the same law is the Euclidean annular capacity formula evaluated at d_eff=beta+2, so the effective-dimension identity becomes operational rather than merely formal.",
+        "Critical-branch recovery: beta=0 is the exact threshold where the power-law annular profile becomes logarithmic, reproducing the 2D radial law without an extra ansatz.",
+        "Verification bundle generated in data/artifacts/flat_adaptive_annular_capacity/annular_capacity_profiles.svg and annular_capacity_table.csv."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_adaptive_annular_capacity/annular_capacity_profiles.svg"
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-14",
+        "equationId": "",
+        "score": 91,
+        "heuristic_score": 91,
+        "scores": {
+          "tractability": 19,
+          "plausibility": 17,
+          "validation": 18,
+          "artifactCompleteness": 7
+        },
+        "novelty": 30,
+        "method": "heuristic-v2"
+      }
     }
   ]
 }
