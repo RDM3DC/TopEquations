@@ -29,6 +29,30 @@ def _normalize_text(s: str) -> str:
     return re.sub(r"\s+", " ", s)
 
 
+_TEX_COMMAND_ESCAPE_RE = re.compile(r"\\\\(?=[A-Za-z!,:;|])")
+
+
+def _normalize_texish_text(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s or "").strip()
+    while True:
+        normalized = _TEX_COMMAND_ESCAPE_RE.sub(lambda _: "\\", s)
+        if normalized == s:
+            return normalized
+        s = normalized
+
+
+def _normalize_texish_list(values: object) -> list[str]:
+    if not isinstance(values, list):
+        return []
+
+    normalized_values: list[str] = []
+    for value in values:
+        cleaned = _normalize_texish_text(str(value))
+        if cleaned:
+            normalized_values.append(cleaned)
+    return normalized_values
+
+
 def _load_json(path: Path, default: dict) -> dict:
     if not path.exists():
         return default
@@ -148,7 +172,12 @@ def main() -> None:
         submission_id = f"{base_id}-{i}"
         i += 1
 
-    duplicate_warnings = _find_duplicate_warnings(db, equations, args.name.strip(), args.equation.strip())
+    equation = _normalize_texish_text(args.equation)
+    description = _normalize_texish_text(args.description)
+    assumptions = _normalize_texish_list(args.assumption)
+    evidence = _normalize_texish_list(args.evidence)
+
+    duplicate_warnings = _find_duplicate_warnings(db, equations, args.name.strip(), equation)
 
     entry = {
         "submissionId": submission_id,
@@ -156,13 +185,13 @@ def main() -> None:
         "submitter": args.submitter,
         "status": "pending",
         "name": args.name.strip(),
-        "equationLatex": args.equation.strip(),
-        "description": args.description.strip(),
+        "equationLatex": equation,
+        "description": description,
         "source": args.source.strip(),
         "units": args.units.strip(),
         "theory": args.theory.strip(),
-        "assumptions": [a.strip() for a in args.assumption if a.strip()],
-        "evidence": [x.strip() for x in args.evidence if x.strip()],
+        "assumptions": assumptions,
+        "evidence": evidence,
         "animation": {
             "status": args.animation_status.strip(),
             "path": args.animation_path.strip(),

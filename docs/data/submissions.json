@@ -2999,23 +2999,23 @@
       "submitter": "chatgpt-draft",
       "status": "promoted",
       "name": "Flat-Adaptive Radial Heat Kernel (Power-Law Branch, Origin Source)",
-      "equationLatex": "K_f(r,t)=\\\\frac{|S^{d_{\\\\mathrm{eff}}-1}|}{2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}}(4\\\\pi t)^{-d_{\\\\mathrm{eff}}/2}\\\\exp\\\\!\\\\left(-\\\\frac{r^2}{4t}\\\\right),\\\\quad d_{\\\\mathrm{eff}}=\\\\beta+2,\\\\quad \\\\pi_f(r)=\\\\pi\\\\lambda_0(r/r_0)^\\\\beta",
-      "description": "Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \\\\Delta_f^{rad}u=u''+((\\\\beta+1)/r)u' is exactly the Euclidean radial Laplacian in effective dimension d_eff=\\\\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}r^{\\\\beta+1}. This is a transport/diffusion bridge result inside the \\\\pi_f operator framework, not a claim about replacing ordinary Euclidean \\\\pi.",
+      "equationLatex": "K_f(r,t)=\\frac{\\lvert S^{d_{\\mathrm{eff}}-1}\\rvert}{2\\pi\\lambda_0 r_0^{-\\beta}}(4\\pi t)^{-d_{\\mathrm{eff}}/2}\\exp\\!\\left(-\\frac{r^2}{4t}\\right),\\quad d_{\\mathrm{eff}}=\\beta+2,\\quad \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta",
+      "description": "Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \\Delta_f^{rad}u=u''+((\\beta+1)/r)u' is exactly the Euclidean radial Laplacian in effective dimension d_eff=\\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}. This is a transport/diffusion bridge result inside the \\pi_f operator framework, not a claim about replacing ordinary Euclidean \\pi.",
       "source": "adaptive-flat-pi",
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "assumptions": [
-        "Power-law flat branch: \\\\pi_f(r)=\\\\pi\\\\lambda_0(r/r_0)^\\\\beta with \\\\lambda_0>0",
-        "Radial sector only, with heat equation \\\\partial_t u=\\\\Delta_f^{rad}u",
-        "Kernel is normalized with respect to the flat shell measure d\\\\mu_f=w_f(r)dr, where w_f(r)=2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}r^{\\\\beta+1}",
-        "Origin-source fundamental-solution interpretation requires locally finite shell measure near r=0, so \\\\beta>-2"
+        "Power-law flat branch: \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta with \\lambda_0>0",
+        "Radial sector only, with heat equation \\partial_t u=\\Delta_f^{rad}u",
+        "Kernel is normalized with respect to the flat shell measure d\\mu_f=w_f(r)dr, where w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}",
+        "Origin-source fundamental-solution interpretation requires locally finite shell measure near r=0, so \\beta>-2"
       ],
       "evidence": [
-        "Exact lineage from the flat-adaptive radial operator \\\\Delta_f^{rad}u=u''+((\\\\beta+1)/r)u' and the identity d_eff=\\\\beta+2",
-        "Reduces to the ordinary 2D radial heat kernel when \\\\beta=0 and \\\\lambda_0=1",
-        "Normalization satisfies \\\\int_0^\\\\infty K_f(r,t)w_f(r)dr=1",
-        "Uses the same exponent \\\\beta that already controls the annular capacity law and inverse-square normal form",
-        "Presented as a mathematical operator-theory extension inside the current \\\\pi_f framework, not as established physical law"
+        "Exact lineage from the flat-adaptive radial operator \\Delta_f^{rad}u=u''+((\\beta+1)/r)u' and the identity d_eff=\\beta+2",
+        "Reduces to the ordinary 2D radial heat kernel when \\beta=0 and \\lambda_0=1",
+        "Normalization satisfies \\int_0^\\infty K_f(r,t)w_f(r)dr=1",
+        "Uses the same exponent \\beta that already controls the annular capacity law and inverse-square normal form",
+        "Presented as a mathematical operator-theory extension inside the current \\pi_f framework, not as established physical law"
       ],
       "animation": {
         "status": "planned",

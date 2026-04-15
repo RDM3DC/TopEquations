@@ -29,6 +29,30 @@ def _normalize_text(s: str) -> str:
     return re.sub(r"\s+", " ", s)
 
 
+_TEX_COMMAND_ESCAPE_RE = re.compile(r"\\\\(?=[A-Za-z!,:;|])")
+
+
+def _normalize_texish_text(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s or "").strip()
+    while True:
+        normalized = _TEX_COMMAND_ESCAPE_RE.sub(lambda _: "\\", s)
+        if normalized == s:
+            return normalized
+        s = normalized
+
+
+def _normalize_texish_list(values: object) -> list[str]:
+    if not isinstance(values, list):
+        return []
+
+    normalized_values: list[str] = []
+    for value in values:
+        cleaned = _normalize_texish_text(str(value))
+        if cleaned:
+            normalized_values.append(cleaned)
+    return normalized_values
+
+
 def _find_exact_equation_match(equations: dict, equation_latex: str) -> dict | None:
     normalized_equation = _normalize_text(equation_latex)
     if not normalized_equation:
@@ -115,6 +139,11 @@ def main() -> None:
         raise SystemExit(f"submission not found: {args.submission_id}")
     if str(entry.get("status", "")).lower() == "promoted":
         raise SystemExit(f"submission already promoted: {args.submission_id}")
+
+    entry["equationLatex"] = _normalize_texish_text(str(entry.get("equationLatex", "")))
+    entry["description"] = _normalize_texish_text(str(entry.get("description", "")))
+    entry["assumptions"] = _normalize_texish_list(entry.get("assumptions", []))
+    entry["evidence"] = _normalize_texish_list(entry.get("evidence", []))
 
     if args.from_review:
         review = entry.get("review", {}) or {}

@@ -1,8 +1,8 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-15T07:27:15.879083+00:00",
+  "generated_at": "2026-04-15T07:57:27.357585+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "1f4fcb30d499c7d68f8398f21ac968d04c871affc015132f39f3414257887f08",
+  "source_sha256": "d739bcf6bf6ee14cc45ae76a56b4ecfb96fd2e64a6944a896bd1afbf62868edf",
   "count": 117,
   "entries": [
     {
@@ -3470,8 +3470,8 @@
     {
       "token_id": "eq-flat-adaptive-radial-heat-kernel-power-law-branch-origin",
       "name": "Flat-Adaptive Radial Heat Kernel (Power-Law Branch, Origin Source)",
-      "equation_latex": "K_f(r,t)=\\\\frac{|S^{d_{\\\\mathrm{eff}}-1}|}{2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}}(4\\\\pi t)^{-d_{\\\\mathrm{eff}}/2}\\\\exp\\\\!\\\\left(-\\\\frac{r^2}{4t}\\\\right),\\\\quad d_{\\\\mathrm{eff}}=\\\\beta+2,\\\\quad \\\\pi_f(r)=\\\\pi\\\\lambda_0(r/r_0)^\\\\beta",
-      "equation_hash": "3f929f75f2d961d33f4381d5bd7678730b0c68898b3441fa15686910cc22ccc5",
+      "equation_latex": "K_f(r,t)=\\frac{\\lvert S^{d_{\\mathrm{eff}}-1}\\rvert}{2\\pi\\lambda_0 r_0^{-\\beta}}(4\\pi t)^{-d_{\\mathrm{eff}}/2}\\exp\\!\\left(-\\frac{r^2}{4t}\\right),\\quad d_{\\mathrm{eff}}=\\beta+2,\\quad \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta",
+      "equation_hash": "e57453c9fa042d2e4ade4f3e44447c8ef5ea638ba872118f12a779733de8bf9f",
       "score": 84,
       "scores": {
         "tractability": 17,
@@ -3485,7 +3485,7 @@
       },
       "source": "adaptive-flat-pi",
       "date": "2026-04-15",
-      "description": "Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \\\\Delta_f^{rad}u=u''+((\\\\beta+1)/r)u' is exactly the Euclidean radial Laplacian in effective dimension d_eff=\\\\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}r^{\\\\beta+1}. This is a transport/diffusion bridge result inside the \\\\pi_f operator framework, not a claim about replacing ordinary Euclidean \\\\pi.",
+      "description": "Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \\Delta_f^{rad}u=u''+((\\beta+1)/r)u' is exactly the Euclidean radial Laplacian in effective dimension d_eff=\\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}. This is a transport/diffusion bridge result inside the \\pi_f operator framework, not a claim about replacing ordinary Euclidean \\pi.",
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
       "artifact_refs": {
@@ -3495,7 +3495,7 @@
       "tier": "derived",
       "submitter_hash": "f928f751d1d732062e77cac4e7a0e17d5e1584c17f4f5f9f7b9ccfd3c0893121",
       "version": 1,
-      "metadata_hash": "06bc1b8d8ed33caa0a7b3570844b5984faf113eee366db59ab3ffac165b583a9"
+      "metadata_hash": "4f03b4c0657e06211a0773e18f40f6b69c454dd037b9b078d4227a8f7fe64df0"
     }
   ]
 }
