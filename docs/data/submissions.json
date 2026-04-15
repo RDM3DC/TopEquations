@@ -2948,7 +2948,7 @@
       "submissionId": "sub-2026-04-14-flat-adaptive-annular-capacity-law",
       "submittedAt": "2026-04-14",
       "submitter": "RDM3DC",
-      "status": "ready",
+      "status": "promoted",
       "name": "Flat-Adaptive Annular Capacity Law",
       "equationLatex": "\\mathcal C_f(a,b;\\beta)=\\begin{cases}\\dfrac{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta}{a^{-\\beta}-b^{-\\beta}}, & \\beta\\neq 0,\\\\[6pt]\\dfrac{2\\pi\\lambda_0}{\\ln(b/a)}, & \\beta=0.\\end{cases}",
       "description": "Exact annular transport law for the flat-adaptive radial branch. Starting from the promoted operator Delta_f^{rad}u=u''+((beta+1)/r)u' and shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Dirichlet annular problem has a closed-form harmonic profile and a constant radial flux. The resulting capacity formula gives a measurable transport observable controlled by the same branch exponent beta that appears in d_eff=beta+2 and in the inverse-square normal form, while recovering the logarithmic 2D annular law exactly at beta=0.",
@@ -2982,17 +2982,15 @@
       "duplicateWarnings": [],
       "review": {
         "date": "2026-04-14",
-        "equationId": "",
+        "equationId": "eq-flat-adaptive-annular-capacity-law",
         "score": 91,
-        "heuristic_score": 91,
         "scores": {
           "tractability": 19,
           "plausibility": 17,
           "validation": 18,
           "artifactCompleteness": 7
         },
-        "novelty": 30,
-        "method": "heuristic-v2"
+        "novelty": 30
       }
     }
   ]

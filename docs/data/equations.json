@@ -3974,6 +3974,47 @@
           "date": "2026-04-14"
         }
       }
+    },
+    {
+      "id": "eq-flat-adaptive-annular-capacity-law",
+      "name": "Flat-Adaptive Annular Capacity Law",
+      "firstSeen": "2026-04-14",
+      "source": "Adaptive Flat Pi",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-flat-adaptive-annular-capacity-law",
+      "score": 91,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 17,
+        "validation": 18,
+        "artifactCompleteness": 7
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_adaptive_annular_capacity/annular_capacity_profiles.svg"
+      },
+      "description": "Exact annular transport law for the flat-adaptive radial branch. Starting from the promoted operator Delta_f^{rad}u=u''+((beta+1)/r)u' and shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Dirichlet annular problem has a closed-form harmonic profile and a constant radial flux. The resulting capacity formula gives a measurable transport observable controlled by the same branch exponent beta that appears in d_eff=beta+2 and in the inverse-square normal form, while recovering the logarithmic 2D annular law exactly at beta=0.",
+      "assumptions": [
+        "Power-law flat branch pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0 and fixed reference scale r_0.",
+        "Radial Dirichlet problem on an annulus a<r<b with a>0 and radial sector only.",
+        "Shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1} is positive and smooth on the domain.",
+        "Capacity is defined by the constant radial flux of the minimizing harmonic profile with boundary values u(a)=1 and u(b)=0.",
+        "The beta->0 branch is interpreted by the exact logarithmic limit of the same formula."
+      ],
+      "date": "2026-04-14",
+      "equationLatex": "\\mathcal C_f(a,b;\\beta)=\\begin{cases}\\dfrac{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta}{a^{-\\beta}-b^{-\\beta}}, & \\beta\\neq 0,\\\\[6pt]\\dfrac{2\\pi\\lambda_0}{\\ln(b/a)}, & \\beta=0.\\end{cases}",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-14"
+        }
+      }
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-15T02:14:52.007809+00:00",
+  "generated_at": "2026-04-15T06:29:34.313074+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "0d99a00224e4991b5dd0b33a71601fdde7722bd9266ca80f6fe05207bbd56328",
-  "count": 115,
+  "source_sha256": "468b6fb1e77db98c22df848423ff79d941ac29a3e0c1fef2da9967f7c350c7cb",
+  "count": 116,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3436,6 +3436,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "46e51302eec6e55632d66612b6d4ae71ee1325ba643118f74f8888fdd69e761a"
+    },
+    {
+      "token_id": "eq-flat-adaptive-annular-capacity-law",
+      "name": "Flat-Adaptive Annular Capacity Law",
+      "equation_latex": "\\mathcal C_f(a,b;\\beta)=\\begin{cases}\\dfrac{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta}{a^{-\\beta}-b^{-\\beta}}, & \\beta\\neq 0,\\\\[6pt]\\dfrac{2\\pi\\lambda_0}{\\ln(b/a)}, & \\beta=0.\\end{cases}",
+      "equation_hash": "899e6524e924622e19b77f6f2d1c8c7c06f87b181e3153d2875de7bf27c3d3e2",
+      "score": 91,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 17,
+        "validation": 18,
+        "artifactCompleteness": 7
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-14"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-14",
+      "description": "Exact annular transport law for the flat-adaptive radial branch. Starting from the promoted operator Delta_f^{rad}u=u''+((beta+1)/r)u' and shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Dirichlet annular problem has a closed-form harmonic profile and a constant radial flux. The resulting capacity formula gives a measurable transport observable controlled by the same branch exponent beta that appears in d_eff=beta+2 and in the inverse-square normal form, while recovering the logarithmic 2D annular law exactly at beta=0.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": "data/artifacts/flat_adaptive_annular_capacity/annular_capacity_profiles.svg"
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "deff108153cd92779b753b9304b97b280c451d98997af87c672c8b163f22239a"
     }
   ]
 }
