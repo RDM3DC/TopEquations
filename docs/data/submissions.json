@@ -2896,7 +2896,7 @@
       "submissionId": "sub-2026-04-14-flat-adaptive-inverse-square-normal-form-with-ke",
       "submittedAt": "2026-04-14",
       "submitter": "RDM3DC",
-      "status": "ready",
+      "status": "promoted",
       "name": "Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure",
       "equationLatex": "\\sqrt{w_f(r)}\\,\\Delta_f^{\\mathrm{rad}}\\!\\left(w_f(r)^{-1/2}\\psi(r)\\right)=\\psi''(r)-\\frac{\\beta^2-1}{4r^2}\\psi(r),\\quad w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}",
       "description": "Within the Flat Adaptive \\pi_f framework, the power-law branch \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta induces the radial operator \\Delta_f^{rad}u=u''+((\\beta+1)/r)u'. Under the half-density substitution \\psi=\\sqrt{w_f}\\,u, this operator is exactly conjugate to the one-dimensional inverse-square Schr\\u00f6dinger operator -\\partial_r^2+(\\beta^2-1)/(4r^2). The same exponent \\beta also controls the effective-dimension identity d_eff=\\beta+2, Kelvin covariance under r\\mapsto1/r, and the Mellin symbol m_\\beta(s)=s(s+\\beta) with reflection law s\\mapsto-\\beta-s. The novelty claim is not that inverse-square potentials or Hardy inequalities are new in themselves, but that the proposed flat-adaptive radial branch organizes these exact structures under one constitutive exponent inside a framework that explicitly remains separate from ordinary Euclidean \\pi. It is submitted as an internal mathematical framework result, not as a replacement for ordinary Euclidean pi or as a claimed established physical law.",
@@ -2933,17 +2933,15 @@
       "duplicateWarnings": [],
       "review": {
         "date": "2026-04-14",
-        "equationId": "",
+        "equationId": "eq-flat-adaptive-inverse-square-normal-form-with-kelvin-mel",
         "score": 94,
-        "heuristic_score": 94,
         "scores": {
           "tractability": 18,
           "plausibility": 19,
           "validation": 18,
           "artifactCompleteness": 10
         },
-        "novelty": 29,
-        "method": "heuristic-v2"
+        "novelty": 29
       }
     }
   ]
