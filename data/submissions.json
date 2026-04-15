@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-04-13",
+  "lastUpdated": "2026-04-14",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -2889,6 +2889,60 @@
         "Exact equation match with promoted equation(s): eq-pi-f-loop-health-balance-law"
       ],
       "review": {}
+    },
+    {
+      "submissionId": "sub-2026-04-14-flat-adaptive-inverse-square-normal-form-with-ke",
+      "submittedAt": "2026-04-14",
+      "submitter": "RDM3DC",
+      "status": "ready",
+      "name": "Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure",
+      "equationLatex": "\\sqrt{w_f(r)}\\,\\Delta_f^{\\mathrm{rad}}\\!\\left(w_f(r)^{-1/2}\\psi(r)\\right)=\\psi''(r)-\\frac{\\beta^2-1}{4r^2}\\psi(r),\\quad w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}",
+      "description": "Within the Flat Adaptive \\pi_f framework, the power-law branch \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta induces the radial operator \\Delta_f^{rad}u=u''+((\\beta+1)/r)u'. Under the half-density substitution \\psi=\\sqrt{w_f}\\,u, this operator is exactly conjugate to the one-dimensional inverse-square Schr\\u00f6dinger operator -\\partial_r^2+(\\beta^2-1)/(4r^2). The same exponent \\beta also controls the effective-dimension identity d_eff=\\beta+2, Kelvin covariance under r\\mapsto1/r, and the Mellin symbol m_\\beta(s)=s(s+\\beta) with reflection law s\\mapsto-\\beta-s. The novelty claim is not that inverse-square potentials or Hardy inequalities are new in themselves, but that the proposed flat-adaptive radial branch organizes these exact structures under one constitutive exponent inside a framework that explicitly remains separate from ordinary Euclidean \\pi. It is submitted as an internal mathematical framework result, not as a replacement for ordinary Euclidean pi or as a claimed established physical law.",
+      "source": "Adaptive Flat Pi",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Power-law flat branch: pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0",
+        "Radial sector only",
+        "Shell weight w_f(r)=2 pi_f(r) r is positive and smooth on the domain",
+        "Half-density transform psi(r)=sqrt(w_f(r)) u(r)",
+        "For the weighted Hardy statement, u belongs to C_c^infty(0,infty)"
+      ],
+      "evidence": [
+        "Exact derivation from the shell weight and flat-adaptive radial operator",
+        "Equivalent spectral problem: -psi''+((beta^2-1)/(4r^2))psi=kappa^2 psi",
+        "Exact effective-dimension identity: d_eff=beta+2",
+        "Exact Kelvin covariance: K_beta u(r)=r^{-beta}u(1/r)",
+        "Exact Mellin symbol: m_beta(s)=s(s+beta) with reflection s->-beta-s",
+        "Sharp weighted Hardy lower bound with constant beta^2/4",
+        "Explicit annular conductance and capacity threshold at beta=0",
+        "Builds directly on the promoted Power-Law Flat Adaptive Pi Radial Operator and the promoted Effective Dimension of the Power-Law Flat Branch, but upgrades them into a single conjugated inverse-square normal form with Kelvin-Mellin structure.",
+        "Unit check: beta, d_eff, the inverse-square coefficient (beta^2-1)/4, and the Hardy constant beta^2/4 are dimensionless, so the operator identity is dimensionally consistent.",
+        "Artifacts bundled with this submission: data/artifacts/flat_inverse_square_normal_form/derivation_note.md, data/artifacts/flat_inverse_square_normal_form/FlatInverseSquarePotentialPlot_ManimCE_v0.19.1.png, and data/artifacts/flat_inverse_square_normal_form/FlatInverseSquareNormalForm.mp4."
+      ],
+      "animation": {
+        "status": "provided",
+        "path": "data/artifacts/flat_inverse_square_normal_form/FlatInverseSquareNormalForm.mp4"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_inverse_square_normal_form/FlatInverseSquarePotentialPlot_ManimCE_v0.19.1.png"
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-14",
+        "equationId": "",
+        "score": 94,
+        "heuristic_score": 94,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 19,
+          "validation": 18,
+          "artifactCompleteness": 10
+        },
+        "novelty": 29,
+        "method": "heuristic-v2"
+      }
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "name": "Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure",
+  "equation": "\\sqrt{w_f(r)}\\,\\Delta_f^{\\mathrm{rad}}\\!\\left(w_f(r)^{-1/2}\\psi(r)\\right)=\\psi''(r)-\\frac{\\beta^2-1}{4r^2}\\psi(r),\\quad w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}",
+  "description": "Within the Flat Adaptive \\pi_f framework, the power-law branch \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta induces the radial operator \\Delta_f^{rad}u=u''+((\\beta+1)/r)u'. Under the half-density substitution \\psi=\\sqrt{w_f}\\,u, this operator is exactly conjugate to the one-dimensional inverse-square Schr\\u00f6dinger operator -\\partial_r^2+(\\beta^2-1)/(4r^2). The same exponent \\beta also controls the effective-dimension identity d_eff=\\beta+2, Kelvin covariance under r\\mapsto1/r, and the Mellin symbol m_\\beta(s)=s(s+\\beta) with reflection law s\\mapsto-\\beta-s. The novelty claim is not that inverse-square potentials or Hardy inequalities are new in themselves, but that the proposed flat-adaptive radial branch organizes these exact structures under one constitutive exponent inside a framework that explicitly remains separate from ordinary Euclidean \\pi.",
+  "source": "Adaptive Flat Pi",
+  "submitter": "RDM3DC",
+  "theory": "PASS-WITH-ASSUMPTIONS",
+  "units": "dimensionless operator identity",
+  "assumptions": [
+    "Power-law flat branch: pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0",
+    "Radial sector only",
+    "Shell weight w_f(r)=2 pi_f(r) r is positive and smooth on the domain",
+    "Half-density transform psi(r)=sqrt(w_f(r)) u(r)",
+    "For the weighted Hardy statement, u belongs to C_c^infty(0,infty)"
+  ],
+  "evidence": [
+    "Exact derivation from the shell weight and flat-adaptive radial operator",
+    "Equivalent spectral problem: -psi''+((beta^2-1)/(4r^2))psi=kappa^2 psi",
+    "Exact effective-dimension identity: d_eff=beta+2",
+    "Exact Kelvin covariance: K_beta u(r)=r^{-beta}u(1/r)",
+    "Exact Mellin symbol: m_beta(s)=s(s+beta) with reflection s->-beta-s",
+    "Sharp weighted Hardy lower bound with constant beta^2/4",
+    "Explicit annular conductance and capacity threshold at beta=0"
+  ],
+  "novelty": "The novelty is the exact assembly of effective dimension, inverse-square normal form, Kelvin symmetry, Mellin reflection, and conductance/capacity consequences inside one flat-adaptive radial branch controlled by beta.",
+  "limits": [
+    "Internal mathematical framework result",
+    "Not a replacement for Euclidean pi",
+    "Not claimed as established physical law",
+    "Most natural in the power-law branch"
+  ]
+}

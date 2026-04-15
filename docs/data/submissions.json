@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastUpdated": "2026-04-13",
+  "lastUpdated": "2026-04-14",
   "entries": [
     {
       "submissionId": "sub-2026-02-24-mesh-synced-certificate-consistency",
@@ -2848,6 +2848,100 @@
           "artifactCompleteness": 7
         },
         "novelty": 29
+      }
+    },
+    {
+      "submissionId": "sub-2026-04-13-pi-f-loop-health-balance-law-2",
+      "submittedAt": "2026-04-13",
+      "submitter": "GitHub Copilot",
+      "status": "pending",
+      "name": "pi_f Loop-Health Balance Law",
+      "equationLatex": "\\dot \\Sigma_{\\Gamma}^{(\\pi_f)}=\\Sigma_{\\Gamma}^{(\\pi_f)}\\mathcal{R}_{\\Gamma}(t),\\quad \\mathcal{R}_{\\Gamma}(t)=\\frac{1}{\\lvert\\Gamma\\rvert}\\sum_{e\\in\\Gamma}\\frac{\\alpha(S)I_{\\mathrm{norm},e}-\\mu(S)(G_e-g_{\\min})}{G_e}-\\tan\\!\\left(\\frac{\\Theta_{\\Gamma}}{2\\pi_a}\\right)\\left[\\frac{\\lambda_s}{\\pi_a}\\sum_{e\\in\\Gamma}\\sigma_{\\Gamma,e}\\sin\\!\\left(I_{\\phi,e}-\\phi_e\\right)-\\frac{\\Theta_{\\Gamma}}{\\pi_a^2}\\left(\\alpha_{\\pi}S-\\mu_{\\pi}(\\pi_a-\\pi_0)\\right)\\right]",
+      "description": "Derived time-evolution law for the existing flat-channel loop signature. Instead of introducing another static observable, this submission differentiates the established pi_f loop-health signature and substitutes the HAFC/EGATL backend's implemented magnitude, phase-alignment, and adaptive-ruler updates. The result is a loop-scale balance law whose tangent factor explains why the pi_f signature can collapse early as a localized precursor before full Bott/topological failure.",
+      "source": "derived: Flat-Channel Loop Signature (pi_f Health Observable) + HAFC/EGATL magnitude/phase/ruler backend",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "The monitored loop Gamma is fixed and oriented, with consistent incidence signs sigma_{Gamma,e} across the evaluation window.",
+        "Bond magnitudes satisfy G_e=|g_e|>=g_min>0 on the monitored loop, so the logarithmic derivative of the geometric-mean magnitude channel is well-defined.",
+        "The derivation uses the referenced HAFC/EGATL source-bundle backend with Euler-step laws dot G_e = alpha(S) I_norm,e - mu(S)(G_e-g_min), dot phi_e = lambda_s sin(I_phi,e-phi_e), and dot pi_a = alpha_pi S - mu_pi (pi_a-pi_0).",
+        "pi_a(t)>0 throughout the run, so the holonomy-coherence factor and the tangent response remain well-defined away from singular threshold crossings.",
+        "The local workspace copy at AdaptiveCAD-Manim/solver/egatl.py is a different EGATL variant and is not the authoritative code path for the pi_f helper functions used in this derivation."
+      ],
+      "evidence": [
+        "Derived explicitly in data/artifacts/pi_f_loop_health_balance/pi_f_loop_health_balance_derivation.md by differentiating Sigma_Gamma^(pi_f)=M_Gamma C_Gamma and substituting the implemented source-bundle magnitude, phase, and ruler laws.",
+        "Builds directly on the existing TopEquations entry Flat-Channel Loop Signature (pi_f Health Observable), but upgrades it from a static localized precursor observable to a dynamical balance law.",
+        "Compatible with the current retention-sweep evidence bundled here: data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_verify.csv reports sig_top_precursor_time=9.0, bott_loss_time=21.5, precursor_lead_time=12.5, and drop_z_max=10.34.",
+        "The law identifies a concrete precursor-amplification mechanism through tan(Theta_Gamma/(2 pi_a)), explaining how modest phase mismatch or ruler drift can trigger a sharp loop-signature collapse before full topological failure.",
+        "The derivation includes the matching Euler-form update Sigma_{Gamma,k+1}^(pi_f) ≈ Sigma_{Gamma,k}^(pi_f) (1 + Delta t R_{Gamma,k}), so the continuous law is directly tied to the backend's discrete stepping rule rather than inferred post hoc.",
+        "Supporting image bundle published with this submission: data/artifacts/pi_f_loop_health_balance/hafc_pi_f_dashboard.png and data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png."
+      ],
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png"
+      },
+      "duplicateWarnings": [
+        "Exact name match with promoted equation(s): eq-pi-f-loop-health-balance-law",
+        "Exact equation match with promoted equation(s): eq-pi-f-loop-health-balance-law"
+      ],
+      "review": {}
+    },
+    {
+      "submissionId": "sub-2026-04-14-flat-adaptive-inverse-square-normal-form-with-ke",
+      "submittedAt": "2026-04-14",
+      "submitter": "RDM3DC",
+      "status": "ready",
+      "name": "Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure",
+      "equationLatex": "\\sqrt{w_f(r)}\\,\\Delta_f^{\\mathrm{rad}}\\!\\left(w_f(r)^{-1/2}\\psi(r)\\right)=\\psi''(r)-\\frac{\\beta^2-1}{4r^2}\\psi(r),\\quad w_f(r)=2\\pi\\lambda_0 r_0^{-\\beta}r^{\\beta+1}",
+      "description": "Within the Flat Adaptive \\pi_f framework, the power-law branch \\pi_f(r)=\\pi\\lambda_0(r/r_0)^\\beta induces the radial operator \\Delta_f^{rad}u=u''+((\\beta+1)/r)u'. Under the half-density substitution \\psi=\\sqrt{w_f}\\,u, this operator is exactly conjugate to the one-dimensional inverse-square Schr\\u00f6dinger operator -\\partial_r^2+(\\beta^2-1)/(4r^2). The same exponent \\beta also controls the effective-dimension identity d_eff=\\beta+2, Kelvin covariance under r\\mapsto1/r, and the Mellin symbol m_\\beta(s)=s(s+\\beta) with reflection law s\\mapsto-\\beta-s. The novelty claim is not that inverse-square potentials or Hardy inequalities are new in themselves, but that the proposed flat-adaptive radial branch organizes these exact structures under one constitutive exponent inside a framework that explicitly remains separate from ordinary Euclidean \\pi. It is submitted as an internal mathematical framework result, not as a replacement for ordinary Euclidean pi or as a claimed established physical law.",
+      "source": "Adaptive Flat Pi",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "assumptions": [
+        "Power-law flat branch: pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0",
+        "Radial sector only",
+        "Shell weight w_f(r)=2 pi_f(r) r is positive and smooth on the domain",
+        "Half-density transform psi(r)=sqrt(w_f(r)) u(r)",
+        "For the weighted Hardy statement, u belongs to C_c^infty(0,infty)"
+      ],
+      "evidence": [
+        "Exact derivation from the shell weight and flat-adaptive radial operator",
+        "Equivalent spectral problem: -psi''+((beta^2-1)/(4r^2))psi=kappa^2 psi",
+        "Exact effective-dimension identity: d_eff=beta+2",
+        "Exact Kelvin covariance: K_beta u(r)=r^{-beta}u(1/r)",
+        "Exact Mellin symbol: m_beta(s)=s(s+beta) with reflection s->-beta-s",
+        "Sharp weighted Hardy lower bound with constant beta^2/4",
+        "Explicit annular conductance and capacity threshold at beta=0",
+        "Builds directly on the promoted Power-Law Flat Adaptive Pi Radial Operator and the promoted Effective Dimension of the Power-Law Flat Branch, but upgrades them into a single conjugated inverse-square normal form with Kelvin-Mellin structure.",
+        "Unit check: beta, d_eff, the inverse-square coefficient (beta^2-1)/4, and the Hardy constant beta^2/4 are dimensionless, so the operator identity is dimensionally consistent.",
+        "Artifacts bundled with this submission: data/artifacts/flat_inverse_square_normal_form/derivation_note.md, data/artifacts/flat_inverse_square_normal_form/FlatInverseSquarePotentialPlot_ManimCE_v0.19.1.png, and data/artifacts/flat_inverse_square_normal_form/FlatInverseSquareNormalForm.mp4."
+      ],
+      "animation": {
+        "status": "provided",
+        "path": "data/artifacts/flat_inverse_square_normal_form/FlatInverseSquareNormalForm.mp4"
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/flat_inverse_square_normal_form/FlatInverseSquarePotentialPlot_ManimCE_v0.19.1.png"
+      },
+      "duplicateWarnings": [],
+      "review": {
+        "date": "2026-04-14",
+        "equationId": "",
+        "score": 94,
+        "heuristic_score": 94,
+        "scores": {
+          "tractability": 18,
+          "plausibility": 19,
+          "validation": 18,
+          "artifactCompleteness": 10
+        },
+        "novelty": 29,
+        "method": "heuristic-v2"
       }
     }
   ]
