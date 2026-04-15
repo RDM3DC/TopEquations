@@ -105,6 +105,26 @@ def _equation_classes(entry: dict) -> str:
   return ""
 
 
+def _card_equation(entry: dict, fallback_entry: dict | None = None) -> str:
+  for candidate in (entry, fallback_entry or {}):
+    display = candidate.get("display", {}) or {}
+    if isinstance(display, dict):
+      equation = str(display.get("equationLatex", "")).strip()
+      if equation:
+        return equation
+
+  equation = str(entry.get("equationLatex", "")).strip()
+  if equation:
+    return equation
+
+  if fallback_entry is not None:
+    equation = str(fallback_entry.get("equationLatex", "")).strip()
+    if equation:
+      return equation
+
+  return "(pending)"
+
+
 def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
     top_entries = entries[:limit]
     rows: list[str] = []
@@ -239,6 +259,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
     for e in core_entries:
         name = e.get("name", "")
         eq = e.get("equationLatex", "") or "(pending)"
+        eq = _card_equation(e)
         eq_classes = _equation_classes(e)
         desc = e.get("description", "")
         src = e.get("source", "")
@@ -394,8 +415,9 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
     cards = []
     for i, e in enumerate(entries, start=1):
+        eq = _card_equation(e)
         name = e.get("name", "")
-        eq = e.get("equationLatex", "") or "(pending)"
+        has_latex = "1" if eq.strip() and eq != "(pending)" else "0"
         eq_classes = _equation_classes(e)
         src = e.get("source", "")
         desc = e.get("description", "")
@@ -854,7 +876,6 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         sid = str(e.get("submissionId", ""))
         name = e.get("name", sid)
         status = str(e.get("status", "pending")).lower()
-        eq = e.get("equationLatex", "") or "(pending)"
         desc = e.get("description", "")
         source = e.get("source", "")
         submitter = e.get("submitter", "")
@@ -865,6 +886,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         review_data = e.get("review", {}) or {}
         eq_id = str(review_data.get("equationId", "")).strip()
         highlight_entry = equations_by_id.get(eq_id, e)
+        eq = _card_equation(e, highlight_entry)
         eq_classes = _equation_classes(highlight_entry)
 
         assumptions = e.get("assumptions", []) or []
