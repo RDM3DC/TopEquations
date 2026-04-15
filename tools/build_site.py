@@ -77,18 +77,32 @@ def _artifact(val: dict | str | None) -> str:
     return _esc(status)
 
 
-GOLD_HIGHLIGHT_NAMES = {
-    "Effective Dimension of the Power-Law Flat Branch",
-  "Flat-Adaptive Annular Capacity Law",
-    "EGATL-HLATN-AdaptiveRuler",
-}
+def _highlight_tier(entry: dict) -> str:
+  display = entry.get("display", {}) or {}
+  if isinstance(display, dict):
+    highlight = str(display.get("highlight", "")).strip().lower()
+    if highlight:
+      return highlight
+
+  tags = entry.get("tags", {}) or {}
+  if isinstance(tags, dict):
+    highlight = tags.get("highlight", "")
+    if isinstance(highlight, dict):
+      tier = str(highlight.get("tier", "")).strip().lower()
+      if tier:
+        return tier
+    else:
+      tier = str(highlight).strip().lower()
+      if tier:
+        return tier
+
+  return ""
 
 
 def _equation_classes(entry: dict) -> str:
-    name = str(entry.get("name", "")).strip()
-    if name in GOLD_HIGHLIGHT_NAMES:
-        return " equation--gold"
-    return ""
+  if _highlight_tier(entry) == "gold":
+    return " equation--gold"
+  return ""
 
 
 def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
@@ -510,6 +524,11 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
   </div>
 </div>
 
+<div class='panel'>
+  <h2>Gold Highlight</h2>
+  <p>Gold cards are curator-selected spotlight equations. Gold is not assigned automatically by score; it marks equations judged especially central, bridge-forming, or program-defining within the current TopEquations lineage.</p>
+</div>
+
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
 </div>
@@ -809,6 +828,12 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
 def build_submissions(repo_root: Path, docs: Path) -> None:
     src = repo_root / "data" / "submissions.json"
     data = _load_json_safe(src, {"entries": []})
+    equations = _load_json_safe(repo_root / "data" / "equations.json", {"entries": []})
+    equations_by_id = {
+        str(entry.get("id", "")).strip(): entry
+        for entry in equations.get("entries", [])
+        if str(entry.get("id", "")).strip()
+    }
 
     dst = docs / "data" / "submissions.json"
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -830,7 +855,6 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         name = e.get("name", sid)
         status = str(e.get("status", "pending")).lower()
         eq = e.get("equationLatex", "") or "(pending)"
-        eq_classes = _equation_classes(e)
         desc = e.get("description", "")
         source = e.get("source", "")
         submitter = e.get("submitter", "")
@@ -840,6 +864,8 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
 
         review_data = e.get("review", {}) or {}
         eq_id = str(review_data.get("equationId", "")).strip()
+        highlight_entry = equations_by_id.get(eq_id, e)
+        eq_classes = _equation_classes(highlight_entry)
 
         assumptions = e.get("assumptions", []) or []
         if not isinstance(assumptions, list):

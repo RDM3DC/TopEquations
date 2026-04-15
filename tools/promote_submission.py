@@ -53,6 +53,42 @@ def _clamp(v: int, lo: int, hi: int) -> int:
     return max(lo, min(hi, int(v)))
 
 
+def _sync_daily_markdown_status(entry: dict, status: str, equation_id: str = "") -> None:
+    submitted_at = str(entry.get("submittedAt", "")).strip()
+    submission_id = str(entry.get("submissionId", "")).strip()
+    if not submitted_at or not submission_id:
+        return
+
+    day_path = REPO / "submissions" / f"{submitted_at}.md"
+    if not day_path.exists():
+        return
+
+    text = day_path.read_text(encoding="utf-8")
+    marker = f"- Submission ID: {submission_id}"
+    block_start = text.find(marker)
+    if block_start < 0:
+        return
+
+    next_heading = text.find("\n### ", block_start)
+    block_end = len(text) if next_heading < 0 else next_heading
+    block = text[block_start:block_end]
+
+    if re.search(r"(?m)^- Status: .*$", block):
+        block = re.sub(r"(?m)^- Status: .*$", f"- Status: {status}", block, count=1)
+    else:
+        block = block.rstrip() + f"\n- Status: {status}\n"
+
+    if equation_id:
+        if re.search(r"(?m)^- Equation ID: .*$", block):
+            block = re.sub(r"(?m)^- Equation ID: .*$", f"- Equation ID: {equation_id}", block, count=1)
+        else:
+            block = block.rstrip() + f"\n- Equation ID: {equation_id}\n"
+    else:
+        block = re.sub(r"(?m)^- Equation ID: .*$\n?", "", block)
+
+    day_path.write_text(text[:block_start] + block + text[block_end:], encoding="utf-8")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Promote a pending submission into ranked equations")
     ap.add_argument("--submission-id", required=True)
@@ -132,6 +168,7 @@ def main() -> None:
         }
         submissions["lastUpdated"] = _today()
         _save(SUBMISSIONS_JSON, submissions)
+        _sync_daily_markdown_status(entry, "duplicate", canonical_id)
 
         print(f"duplicate: {args.submission_id} -> {canonical_id} (no new equation created)")
 
@@ -203,6 +240,7 @@ def main() -> None:
 
     _save(EQUATIONS_JSON, equations)
     _save(SUBMISSIONS_JSON, submissions)
+    _sync_daily_markdown_status(entry, "promoted", eid)
 
     print(f"promoted: {args.submission_id} -> {eid} (score {total})")
 

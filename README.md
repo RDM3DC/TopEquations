@@ -121,6 +121,9 @@ The LLM score is advisory and does not gate promotion. It's recorded alongside t
 ### Blended Score
 When an LLM review is available, the advisory blended score is **40% heuristic + 60% LLM**. Promotion still keys off the heuristic review status in the current GitHub workflow.
 
+### Gold Highlight
+Gold highlighting is a curator-selected display marker, not an automatic consequence of score. It is reserved for equations judged especially central, bridge-forming, or program-defining within the current TopEquations lineage.
+
 ---
 
 ## Project Structure

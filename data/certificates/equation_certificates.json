@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-15T06:29:34.313074+00:00",
+  "generated_at": "2026-04-15T07:27:15.879083+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "468b6fb1e77db98c22df848423ff79d941ac29a3e0c1fef2da9967f7c350c7cb",
-  "count": 116,
+  "source_sha256": "1f4fcb30d499c7d68f8398f21ac968d04c871affc015132f39f3414257887f08",
+  "count": 117,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3466,6 +3466,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "deff108153cd92779b753b9304b97b280c451d98997af87c672c8b163f22239a"
+    },
+    {
+      "token_id": "eq-flat-adaptive-radial-heat-kernel-power-law-branch-origin",
+      "name": "Flat-Adaptive Radial Heat Kernel (Power-Law Branch, Origin Source)",
+      "equation_latex": "K_f(r,t)=\\\\frac{|S^{d_{\\\\mathrm{eff}}-1}|}{2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}}(4\\\\pi t)^{-d_{\\\\mathrm{eff}}/2}\\\\exp\\\\!\\\\left(-\\\\frac{r^2}{4t}\\\\right),\\\\quad d_{\\\\mathrm{eff}}=\\\\beta+2,\\\\quad \\\\pi_f(r)=\\\\pi\\\\lambda_0(r/r_0)^\\\\beta",
+      "equation_hash": "3f929f75f2d961d33f4381d5bd7678730b0c68898b3441fa15686910cc22ccc5",
+      "score": 84,
+      "scores": {
+        "tractability": 17,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-04-15"
+      },
+      "source": "adaptive-flat-pi",
+      "date": "2026-04-15",
+      "description": "Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \\\\Delta_f^{rad}u=u''+((\\\\beta+1)/r)u' is exactly the Euclidean radial Laplacian in effective dimension d_eff=\\\\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\\\\pi\\\\lambda_0 r_0^{-\\\\beta}r^{\\\\beta+1}. This is a transport/diffusion bridge result inside the \\\\pi_f operator framework, not a claim about replacing ordinary Euclidean \\\\pi.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "f928f751d1d732062e77cac4e7a0e17d5e1584c17f4f5f9f7b9ccfd3c0893121",
+      "version": 1,
+      "metadata_hash": "06bc1b8d8ed33caa0a7b3570844b5984faf113eee366db59ab3ffac165b583a9"
     }
   ]
 }
