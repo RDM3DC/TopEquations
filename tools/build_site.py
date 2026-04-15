@@ -79,6 +79,7 @@ def _artifact(val: dict | str | None) -> str:
 
 GOLD_HIGHLIGHT_NAMES = {
     "Effective Dimension of the Power-Law Flat Branch",
+  "Flat-Adaptive Annular Capacity Law",
     "EGATL-HLATN-AdaptiveRuler",
 }
 
