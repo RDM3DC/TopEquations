@@ -80,7 +80,6 @@ def _artifact(val: dict | str | None) -> str:
 GOLD_HIGHLIGHT_NAMES = {
     "Effective Dimension of the Power-Law Flat Branch",
     "EGATL-HLATN-AdaptiveRuler",
-    "Power-Law Flat Adaptive Pi Radial Operator",
 }
 
 
@@ -860,12 +859,16 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
             status_pill = "<span class='pill pill--good'>PROMOTED</span>"
         elif status == "ready":
             status_pill = "<span class='pill pill--warn'>READY</span>"
+        elif status == "duplicate":
+            status_pill = "<span class='pill pill--neutral'>DUPLICATE</span>"
         else:
             status_pill = "<span class='pill pill--neutral'>NEEDS REVIEW</span>"
 
         chain_link = ""
         if eq_id and status == "promoted":
             chain_link = f"<div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>{_esc(eq_id)}</a></div></div>"
+        elif eq_id and status == "duplicate":
+          chain_link = f"<div class='kv'><div class='k'>Canonical equation</div><div class='v'><a href='./certificates.html#{_esc(eq_id)}'>{_esc(eq_id)}</a></div></div>"
 
         cards.append(
             f"""

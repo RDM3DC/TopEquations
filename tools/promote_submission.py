@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 
@@ -20,6 +21,24 @@ def _slug(s: str) -> str:
     s = s.lower().strip()
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     return s[:56] or "submission"
+
+
+def _normalize_text(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s or "")
+    s = s.lower().strip()
+    return re.sub(r"\s+", " ", s)
+
+
+def _find_exact_equation_match(equations: dict, equation_latex: str) -> dict | None:
+    normalized_equation = _normalize_text(equation_latex)
+    if not normalized_equation:
+        return None
+
+    for existing in equations.get("entries", []):
+        if _normalize_text(str(existing.get("equationLatex", ""))) == normalized_equation:
+            return existing
+
+    return None
 
 
 def _load(path: Path) -> dict:
@@ -89,6 +108,48 @@ def main() -> None:
             total = int(review["blended_score"])
         elif review.get("score"):
             total = int(review["score"])
+
+    duplicate_match = _find_exact_equation_match(equations, str(entry.get("equationLatex", "")))
+    if duplicate_match:
+        canonical_id = str(duplicate_match.get("id", "")).strip()
+        if not canonical_id:
+            raise SystemExit(f"duplicate match missing equation id for: {args.submission_id}")
+
+        entry["status"] = "duplicate"
+        entry["review"] = {
+            "date": _today(),
+            "equationId": canonical_id,
+            "score": total,
+            "scores": {
+                "tractability": tract,
+                "plausibility": plaus,
+                "validation": validation,
+                "artifactCompleteness": artifact,
+            },
+            "novelty": novelty,
+            "disposition": "duplicate",
+            "note": f"Exact equation match with promoted equation {canonical_id}; submission retained in the log without creating a second leaderboard entry.",
+        }
+        submissions["lastUpdated"] = _today()
+        _save(SUBMISSIONS_JSON, submissions)
+
+        print(f"duplicate: {args.submission_id} -> {canonical_id} (no new equation created)")
+
+        try:
+            from tools.build_site import main as _build_site
+            _build_site()
+            print("docs/*.html rebuilt")
+        except Exception:
+            try:
+                import subprocess, sys
+                subprocess.run(
+                    [sys.executable, str(REPO / "tools" / "build_site.py")],
+                    cwd=str(REPO), check=True,
+                )
+                print("docs/*.html rebuilt (subprocess)")
+            except Exception as exc:
+                print(f"warning: site rebuild skipped: {exc}")
+        return
 
     eid = args.equation_id.strip() or f"eq-{_slug(entry.get('name', 'submission'))}"
     existing_ids = {str(x.get("id")) for x in equations.get("entries", [])}

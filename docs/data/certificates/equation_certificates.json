@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-14T03:40:37.106164+00:00",
+  "generated_at": "2026-04-15T02:05:19.489611+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "103ab78dd2f65dc729c6f6d07df053b45ee8dbe03238a46e8c84a392d030e4ce",
-  "count": 115,
+  "source_sha256": "4ecb841be2ad9eb05c7e3286951ac95a108f6962daa62d0505904990dbd22c6e",
+  "count": 114,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3166,36 +3166,6 @@
       "submitter_hash": "668246b96a7e6088c5c3c243d804242a7c83c485689210b097b8c3507fa444ef",
       "version": 1,
       "metadata_hash": "8587f3dc76765ac159160c30e626fccb79e07d647efbf346ab3a4a18bc480155"
-    },
-    {
-      "token_id": "eq-power-law-flat-adaptive-pi-radial-operator--operato",
-      "name": "Power-Law Flat Adaptive Pi Radial Operator",
-      "equation_latex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
-      "equation_hash": "d892f30819632e8109d21787b9baf7659bb70e69d26c1da07dc4474c9b974e36",
-      "score": 75,
-      "scores": {
-        "tractability": 17,
-        "plausibility": 16,
-        "validation": 17,
-        "artifactCompleteness": 4
-      },
-      "novelty": {
-        "score": 21,
-        "date": "2026-04-12"
-      },
-      "source": "Science Banksy",
-      "date": "2026-04-12",
-      "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
-      "units": "OK",
-      "theory": "PASS",
-      "artifact_refs": {
-        "animation": "",
-        "image": ""
-      },
-      "tier": "derived",
-      "submitter_hash": "cb1db60c2236e61f0c93c8e914168e5462935d3e6fba82aedaf16e22f84bc9ba",
-      "version": 1,
-      "metadata_hash": "e3f4f5f889c28ad4374a1f4649eee628a84d35bc121b02a42e58918a36a6ff46"
     },
     {
       "token_id": "eq-flat-channel-loop-signature-pi-f-health-observable",

@@ -2399,7 +2399,7 @@
       "submissionId": "sub-2026-04-12-power-law-flat-adaptive-pi-radial-operator",
       "submittedAt": "2026-04-12",
       "submitter": "Science Banksy",
-      "status": "promoted",
+      "status": "duplicate",
       "name": "Power-Law Flat Adaptive Pi Radial Operator",
       "equationLatex": "Delta_f^rad u = u'' + ((beta+1)/r) u'",
       "description": "In the flat-adaptive pi framework with power-law scaling lambda(r) proportional to r^beta, the radial operator reduces to the Euclidean radial Laplacian in an effective dimension of beta+2. This operator governs harmonic and Poisson equations in the flat-adaptive context.",
@@ -2431,8 +2431,8 @@
         "Exact equation match with promoted equation(s): eq-power-law-flat-adaptive-pi-radial-operator"
       ],
       "review": {
-        "date": "2026-04-12",
-        "equationId": "eq-power-law-flat-adaptive-pi-radial-operator--operato",
+        "date": "2026-04-14",
+        "equationId": "eq-power-law-flat-adaptive-pi-radial-operator",
         "score": 75,
         "scores": {
           "tractability": 17,
@@ -2440,7 +2440,9 @@
           "validation": 17,
           "artifactCompleteness": 4
         },
-        "novelty": 21
+        "novelty": 21,
+        "disposition": "duplicate",
+        "note": "Exact duplicate of promoted equation eq-power-law-flat-adaptive-pi-radial-operator; retained in the submissions log without a second leaderboard entry."
       }
     },
     {
