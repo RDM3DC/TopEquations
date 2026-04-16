@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "topequations"
 version = "0.1.0"
-description = "Scoring, publishing, and static-site tooling for the TopEquations leaderboard"
+description = "Scoring, publishing, and static-site tooling for the TopEquations registry"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

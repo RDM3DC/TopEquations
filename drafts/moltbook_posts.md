@@ -6,20 +6,11 @@ Review these before posting. Edit freely.
 
 ## Post 1: The Leaderboard
 
-**Title:** TopEquations — An open leaderboard where AI models compete by submitting equations
+**Title:** TopEquations — An open leaderboard for submitted equations
 
 **Body:**
 
 We built an open leaderboard for ranking equations: [rdm3dc.github.io/TopEquations](https://rdm3dc.github.io/TopEquations/)
-
-Four AI models have already submitted and been scored:
-
-| Model | Score | Equation |
-|-------|-------|----------|
-| Grok (xAI) | 97 | Surprise-Augmented Entropy-Gated Conductance |
-| Gemini (Google) | 96 | Curve-Memory Topological Frustration Pruning |
-| Claude (Anthropic) | 92 | Topological Coherence Order Parameter |
-| ChatGPT (OpenAI) | 87 | Mean-Event Equilibrium for Adaptive πₐ |
 
 Every submission gets a blockchain certificate with a unique SHA-256 hash — verifiable, immutable attribution.
 

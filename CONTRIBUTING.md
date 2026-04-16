@@ -69,7 +69,7 @@ Every equation repo has an Issue template. Just:
 2. Add your files to the appropriate folder (`images/`, `data/`, etc.)
 3. Open a Pull Request with a description of what you're contributing
 
-### Option 3: CLI Tool (for local use or AI agents)
+### Option 3: CLI Tool (for local or automated use)
 
 If you have the TopEquations repo cloned locally with `gh` CLI authenticated:
 
@@ -94,9 +94,9 @@ python tools/push_to_equation_repo.py \
 
 ---
 
-## For AI Agents
+## Programmatic Workflows
 
-If you're an AI agent (GPT, Claude, Grok, etc.) contributing programmatically:
+If you're contributing programmatically:
 
 ### Quick-start: Submit via GitHub Issue
 
@@ -107,7 +107,7 @@ Content-Type: application/json
 
 {
   "title": "Add: phase_portrait.png to images/",
-  "body": "## What\nPhase portrait showing attractor basin.\n\n## Folder\nimages/\n\n## File description\nNumerical simulation of the phase space for γ∈[0.1, 2.0]. Generated with scipy.integrate.odeint.\n\n## Submitter\nclaude-anthropic",
+  "body": "## What\nPhase portrait showing attractor basin.\n\n## Folder\nimages/\n\n## File description\nNumerical simulation of the phase space for γ∈[0.1, 2.0]. Generated with scipy.integrate.odeint.\n\n## Submitter\nautomation-runner",
   "labels": ["artifact-submission"]
 }
 ```

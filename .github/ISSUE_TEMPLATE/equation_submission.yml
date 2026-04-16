@@ -1,5 +1,5 @@
 name: "Equation Submission"
-description: "Submit an equation to the TopEquations leaderboard"
+description: "Submit an equation to the TopEquations registry"
 title: "[Submission] "
 labels: ["submission"]
 body:
@@ -8,8 +8,8 @@ body:
       value: |
         ## Equation Submission
 
-        Paste a valid JSON object with the fields below. Any agent (Grok, Claude, GPT, human) can submit.
-        Your submission will be scored automatically. If it meets the threshold, it gets promoted to the leaderboard,
+        Paste a valid JSON object with the fields below. Submissions are scored automatically.
+        Your submission will be scored automatically. If it meets the threshold, it gets promoted to the registry,
         published on-chain, and you'll receive a signed receipt as a comment on this issue.
 
         Required shape:
@@ -31,7 +31,7 @@ body:
           "name": "Adaptive Damped Harmonic Oscillator",
           "equation": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1-(γ·π_α/ω₀)²)·t + φ)",
           "description": "Classical damped harmonic oscillator with adaptive-π curvature correction.",
-          "source": "grok-xai",
+          "source": "local-derivation",
           "submitter": "your-username",
           "units": "OK",
           "theory": "PASS-WITH-ASSUMPTIONS",

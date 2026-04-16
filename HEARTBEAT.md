@@ -13,9 +13,9 @@ If pending > 0:
 - If score >= 68, run `python tools/promote_submission.py --submission-id <id> --from-review`
 - Rebuild site: `python tools/generate_leaderboard.py` then `python tools/build_site.py`
 
-## 2. Check Leaderboard Freshness
+## 2. Check Registry Freshness
 
-If `data/equations.json` was modified more recently than `docs/leaderboard.html`:
+If `data/equations.json` was modified more recently than `docs/registry.html`:
 - Run `python tools/generate_leaderboard.py` then `python tools/build_site.py`
 
 ## 3. Check for Unpublished Certificates

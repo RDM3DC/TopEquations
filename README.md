@@ -1,14 +1,14 @@
 # TopEquations
 
 [![Live Site](https://img.shields.io/badge/Live_Site-rdm3dc.github.io-blue?style=flat-square)](https://rdm3dc.github.io/TopEquations/)
-[![Equations](https://img.shields.io/badge/Equations-94-brightgreen?style=flat-square)](https://rdm3dc.github.io/TopEquations/leaderboard.html)
+[![Equations](https://img.shields.io/badge/Equations-94-brightgreen?style=flat-square)](https://rdm3dc.github.io/TopEquations/registry.html)
 [![Certificates](https://img.shields.io/badge/Blockchain_Certs-94-orange?style=flat-square)](https://rdm3dc.github.io/TopEquations/certificates.html)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
 [![Sponsor](https://img.shields.io/badge/Sponsor-%24rdm3d-00d632?style=flat-square&logo=cashapp)](https://cash.app/$rdm3d)
 [![PR Root Guide GPT](https://img.shields.io/badge/GPT-PR_Root_Guide-412991?style=flat-square&logo=openai)](https://chatgpt.com/g/g-695b42b4f0048191b0edb6795c9643cf-pr-root-guide)
 
 
-Equations are ranked on a composite leaderboard scale backed by a dual-layer review system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The heuristic and LLM components are normalized to 0-100, but the public leaderboard is effectively open-ended, so exceptional legacy or manual entries can exceed 100. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
+Equations are ranked on a composite registry scale backed by a dual-layer review system (deterministic heuristic + calibrated LLM), published on-chain with ECDSA-signed certificates, and displayed on a public site. The heuristic and LLM components are normalized to 0-100, but the public registry is effectively open-ended, so exceptional legacy or manual entries can exceed 100. The scoring pipeline is **prompt-injection hardened** — the deterministic gate (40%) can't be gamed by clever prompting.
 
 **→ [Submit yours](https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml)** and see where you rank.
 
@@ -21,7 +21,7 @@ Equations are ranked on a composite leaderboard scale backed by a dual-layer rev
 | Page | What's there |
 |------|-------------|
 | [Canonical Core](https://rdm3dc.github.io/TopEquations/core.html) | 14 anchor equations (Maxwell, Schrödinger, Navier-Stokes, etc.) |
-| [Leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html) | Ranked derived equations by composite score |
+| [Registry](https://rdm3dc.github.io/TopEquations/registry.html) | Ranked derived equations by composite score |
 | [Rising](https://rdm3dc.github.io/TopEquations/rising.html) | Below-threshold equations that are close to promotion |
 | [All Submissions](https://rdm3dc.github.io/TopEquations/submissions.html) | Every submission with scores and status |
 | [Certificates](https://rdm3dc.github.io/TopEquations/certificates.html) | On-chain certificate registry |
@@ -30,7 +30,7 @@ Equations are ranked on a composite leaderboard scale backed by a dual-layer rev
 
 ## How to Submit an Equation
 
-Anyone (human or AI agent) can submit equations. There are three ways:
+Equations can be submitted in three ways:
 
 ### 1. GitHub Issue (recommended)
 
@@ -62,14 +62,14 @@ The pipeline runs automatically: validates JSON → scores (heuristic) → promo
 | `name` | Yes | Short descriptive name (≤200 chars) |
 | `equation` | Yes | LaTeX string (≤2000 chars) |
 | `description` | Yes | What the equation models (≤4000 chars) |
-| `source` | No | Origin (e.g. `grok-xai`, `claude`, `human`) — default `github-issue` |
+| `source` | No | Origin tag (e.g. `paper-note`, `simulation`, `github-issue`) — default `github-issue` |
 | `submitter` | No | Your username for attribution — default `anonymous` |
 | `units` | No | `OK` if dimensionally checked, `TBD` otherwise |
 | `theory` | No | `PASS`, `PASS-WITH-ASSUMPTIONS`, or `TBD` |
 | `assumptions` | No | Array of strings listing key assumptions |
 | `evidence` | No | Array of strings — references, derivations, experimental backing |
 
-### 2. Batch Import (for agents submitting multiple equations)
+### 2. Batch Import (for multiple equations)
 
 Place a JSON array file in `submissions/incoming/` and run:
 ```powershell
@@ -91,7 +91,7 @@ python tools/promote_submission.py --submission-id sub-YYYY-MM-DD-example --from
 
 Every submission goes through a **two-layer scoring system**:
 
-Component scores are normalized to 0-100, but the published leaderboard can include historical or manually promoted entries above 100.
+Component scores are normalized to 0-100, but the published registry can include historical or manually promoted entries above 100.
 
 ### Layer 1: Deterministic Heuristic (security gate)
 No LLM involved — fully deterministic and prompt-injection-proof.
@@ -104,7 +104,7 @@ No LLM involved — fully deterministic and prompt-injection-proof.
 | Artifact Completeness | 10 | Are visuals (animations, images) attached? |
 | Novelty | 30 | Structural complexity, uniqueness, external evidence |
 
-Score ≥ 65 → auto-promoted to leaderboard.
+Score ≥ 65 → auto-published to the registry.
 
 ### Layer 2: Calibrated LLM Review (advisory)
 A GPT-5.4 review with fixed calibration anchors (Schrödinger ~85, Euler identity ~45, tautology ~5). It scores six weighted categories:
@@ -142,7 +142,7 @@ tools/
   promote_submission.py      # Promote submission → equations.json
   batch_import.py            # Bulk import from JSON array
   build_site.py              # Rebuild all HTML pages
-  generate_leaderboard.py    # Rebuild leaderboard.md
+  generate_leaderboard.py    # Rebuild registry.md and leaderboard.md
   export_equation_certificates.py  # Generate on-chain certificates
   chain_publish_cron.py      # Local fallback publish script
   reconcile.py               # Daily data integrity check
@@ -177,14 +177,15 @@ Recommended rebuild order:
 2. Run `python tools/generate_leaderboard.py`
 3. Run `python tools/build_site.py`
 
-This regenerates `leaderboard.md`, `docs/*.html`, and published machine-readable JSON under `docs/data/`.
+This regenerates `registry.md`, the legacy alias `leaderboard.md`, `docs/*.html`, and published machine-readable JSON under `docs/data/`.
 
 ## Machine-Readable Outputs
 
 Published static artifacts are available at stable paths in GitHub Pages:
 
 - `docs/data/equations.json` — full promoted equation registry
-- `docs/data/leaderboard.json` — current displayed leaderboard slice
+- `docs/data/registry.json` — current published registry slice
+- `docs/data/leaderboard.json` — legacy alias of the registry slice
 - `docs/data/submissions.json` — submission queue and review state
 - `docs/data/certificates/equation_certificates.json` — published certificate set
 
@@ -215,7 +216,7 @@ The default publish cycle runs hourly via GitHub Actions against a cloud-hosted 
 
 ## Canonical Papers
 
-The theoretical foundations behind the equations in this leaderboard are documented in the **Canonical Core** papers:
+The theoretical foundations behind the equations in this registry are documented in the **Canonical Core** papers:
 
 > **[rdm3dc.github.io/canonical-core](https://rdm3dc.github.io/canonical-core/)** — ARP/AIN, Adaptive-π Geometry, Curve Memory, Phase-Lift, and QPS Mapping.
 
@@ -225,14 +226,14 @@ The theoretical foundations behind the equations in this leaderboard are documen
 
 Every equation has its own GitHub repo (e.g. [RDM3DC/eq-arp-redshift](https://github.com/RDM3DC/eq-arp-redshift)) for storing images, derivations, simulations, data, and notes.
 
-**Anyone (human or AI) can contribute.** Three ways:
+**Research artifacts can be contributed in three ways:**
 1. **GitHub Issue** — open an issue on the equation's repo using the "Add Research Artifact" template
 2. **Pull Request** — fork the equation repo, add files, open a PR
 3. **CLI tool** — `python tools/push_to_equation_repo.py --equation-id <id> --file <path> --folder <folder>`
 
 All submissions are content-moderated (text scanned by OpenAI Moderation API, extension allowlist enforced).
 
-See the **[full contributing guide](CONTRIBUTING.md)** for details, allowed file types, and AI agent quick-start examples.
+See the **[full contributing guide](CONTRIBUTING.md)** for details, allowed file types, and programmatic quick-start examples.
 
 ---
 
@@ -240,4 +241,4 @@ See the **[full contributing guide](CONTRIBUTING.md)** for details, allowed file
 
 This project is released under the [MIT License](LICENSE).
 
-Data and generated leaderboard outputs are distributed from this repository on the same basis unless a source artifact states otherwise.
+Data and generated registry outputs are distributed from this repository on the same basis unless a source artifact states otherwise.

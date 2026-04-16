@@ -12,14 +12,14 @@
 | score_submission.py | `tools/score_submission.py` | Score: evidence-aware heuristic scoring |
 | promote_submission.py | `tools/promote_submission.py` | Promote: moves submission into data/equations.json |
 | openclaw_submission_pipeline.py | `tools/openclaw_submission_pipeline.py` | One-command orchestrator (submit→score→promote→chain) |
-| generate_leaderboard.py | `tools/generate_leaderboard.py` | Rebuilds leaderboard.md from equations.json |
+| generate_leaderboard.py | `tools/generate_leaderboard.py` | Rebuilds registry.md and leaderboard.md from equations.json |
 | build_site.py | `tools/build_site.py` | Generates all docs/*.html pages |
 | export_equation_certificates.py | `tools/export_equation_certificates.py` | Exports certificate data |
 | register_equation_certificates.py | `tools/register_equation_certificates.py` | Publishes certificates to blockchain |
 
 ## Data Files
 
-- `data/equations.json` — Ranked equations (display threshold: score >= 68)
+- `data/equations.json` — Published equations (display threshold: score >= 68)
 - `data/submissions.json` — All submissions with status and scores
 - `submissions/YYYY-MM-DD.md` — Daily submission logs
 

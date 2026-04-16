@@ -134,7 +134,7 @@ def _build_readme(entry: dict, tier: str) -> str:
         "",
         "## Links",
         "",
-        f"- [TopEquations Leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html)",
+        f"- [TopEquations Registry](https://rdm3dc.github.io/TopEquations/registry.html)",
         f"- [TopEquations Main Repo](https://github.com/{GITHUB_ORG}/TopEquations)",
         f"- [Certificates](https://rdm3dc.github.io/TopEquations/certificates.html)",
         "",

@@ -47,7 +47,7 @@ def generate(input_path: Path, output_path: Path) -> None:
     entries_all = list(data.get("entries", []))
     entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
 
-    # Display cap: only show "leaderboard" entries with score >= 65.
+    # Display cap: only show registry entries with score >= 65.
     # Lower-scoring entries may still exist in the registry, but they won't appear
     # in the top tables.
     DISPLAY_THRESHOLD = 65
@@ -63,10 +63,10 @@ def generate(input_path: Path, output_path: Path) -> None:
     registry.sort(key=lambda e: str(e.get("firstSeen", "9999-99")))
 
     lines: list[str] = []
-    lines.append("# Equation Leaderboard")
+    lines.append("# Equation Registry")
     lines.append(f"_Last updated: {today}_")
     lines.append("")
-    lines.append("This is the canonical ranking board for existing and newly derived equations.")
+    lines.append("This is the canonical ranking registry for existing and newly derived equations.")
     lines.append("")
     lines.append("Scoring model (0-150):")
     lines.append("- Tractability (0-20)")
@@ -169,7 +169,9 @@ def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     input_path = repo_root / "data" / "equations.json"
     output_path = repo_root / "leaderboard.md"
+    registry_output_path = repo_root / "registry.md"
     generate(input_path, output_path)
+    registry_output_path.write_text(output_path.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Keep GitHub Pages (/docs) in sync if present.
     docs_dir = repo_root / "docs"

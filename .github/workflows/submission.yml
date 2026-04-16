@@ -349,11 +349,11 @@ jobs:
             body += `| Blended Score | **${blended}** / 100 |\n`;
             body += `| Solver Verification | ${solverStatus} |\n`;
             body += `| Status | ${status} |\n`;
-            body += `| Promoted | ${promoted ? '✅ Yes — added to leaderboard' : '⏳ Needs review (score < 65)'} |\n`;
+            body += `| Promoted | ${promoted ? '✅ Yes — added to registry' : '⏳ Needs review (score < 65)'} |\n`;
             body += `| Chain publish | 🕐 Pending next local publish cycle |\n\n`;
 
             if (promoted) {
-              body += `Your equation has been added to the [TopEquations leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html).\n`;
+              body += `Your equation has been added to the [TopEquations registry](https://rdm3dc.github.io/TopEquations/registry.html).\n`;
               body += `Certificate will be published on-chain during the next publish cycle.\n`;
             } else {
               body += `Your equation scored below the auto-promotion threshold (65). `;

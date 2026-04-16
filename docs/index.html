@@ -5,20 +5,20 @@
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>TopEquations</title>
 
-  <meta name='description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
+  <meta name='description' content='Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
   <meta property='og:type' content='website' />
   <meta property='og:title' content='TopEquations' />
-  <meta property='og:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
+  <meta property='og:description' content='Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
   <meta property='og:url' content='https://rdm3dc.github.io/TopEquations/' />
   <meta name='twitter:card' content='summary' />
   <meta name='twitter:title' content='TopEquations' />
-  <meta name='twitter:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
+  <meta name='twitter:description' content='Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202604152027' />
+  <link rel='stylesheet' href='./assets/style.css?v=202604152109' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
   
 
-  <script defer src='./assets/app.js?v=202604152027'></script>
+  <script defer src='./assets/app.js?v=202604152109'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -42,18 +42,18 @@
         <div class='brand__mark'>∑</div>
         <div class='brand__text'>
           <div class='brand__title'>TopEquations</div>
-          <div class='brand__sub'>Curated leaderboard + certificate registry</div>
+          <div class='brand__sub'>Curated equation registry + certificate archive</div>
         </div>
       </div>
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./core.html'>Core</a>
-        <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./registry.html'>Registry</a>
         <a href='./rising.html'>Rising</a>
         <a href='./certificates.html'>Certificates</a>
         <a href='./submissions.html'>All Submissions</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
-        <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
+        <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/registry.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
     </div>
   </header>
@@ -63,11 +63,12 @@
 <div class='hero hero--home'>
   <div class='hero__left'>
     <h1>TopEquations</h1>
-    <p>Open leaderboard for ranking equations &mdash; from textbook classics to novel discoveries.<br>
+    <p>Open registry for ranking equations &mdash; from textbook classics to novel discoveries.<br>
     Scored by a dual-layer system, published on-chain with signed certificates.</p>
     <div class='cta'>
       <a class='btn' href='./core.html'>Canonical Core</a>
-      <a class='btn btn--ghost' href='./leaderboard.html'>Leaderboard</a>
+      <a class='btn btn--ghost' href='./registry.html'>Registry</a>
+      <a class='btn btn--ghost' href='./rising.html'>Rising</a>
       <a class='btn btn--ghost' href='./submissions.html'>All Submissions</a>
       <a class='btn btn--ghost' href='https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml'>Submit an Equation</a>
     </div>
@@ -88,7 +89,7 @@
       </div>
       <div class='stat'>
         <div class='stat__num'>63</div>
-        <div class='stat__label'>Promoted to leaderboard</div>
+        <div class='stat__label'>Promoted to registry</div>
       </div>
     </div>
   </div>
@@ -96,7 +97,7 @@
 
 <div class='panel' id='submit'>
   <h2>&#128640; Submit an Equation</h2>
-  <p>Anyone &mdash; human or AI agent &mdash; can submit. Four AI models are already on the board (Grok, Gemini, Claude, ChatGPT). Can your equation beat them?</p>
+  <p>Submit through the issue form below. The pipeline scores submissions automatically, and promoted entries receive a signed receipt and certificate record.</p>
 
   <h3>Quick Start (GitHub Issue)</h3>
   <ol>
@@ -121,7 +122,7 @@
   ],
   "evidence": [
     "Recovers known result X when parameter Y = 0",
-    "Builds on leaderboard entry #N",
+    "Builds on registry entry #N",
     "Simulation-verified in attached animation"
   ]
 }</code></pre>
@@ -129,8 +130,8 @@
   <h3>Tips for High Scores</h3>
   <ul>
     <li><strong>State assumptions explicitly</strong> &mdash; 4&ndash;6 clear assumptions can add 10+ points</li>
-    <li><strong>Provide evidence</strong> &mdash; limit recoveries, simulation results, references to existing leaderboard entries</li>
-    <li><strong>Show lineage</strong> &mdash; equations that &ldquo;build on LB #N&rdquo; or &ldquo;recover X when Y&rarr;0&rdquo; get lineage bonuses</li>
+    <li><strong>Provide evidence</strong> &mdash; limit recoveries, simulation results, references to existing registry entries</li>
+    <li><strong>Show lineage</strong> &mdash; equations that &ldquo;build on registry entry #N&rdquo; or &ldquo;recover X when Y&rarr;0&rdquo; get lineage bonuses</li>
     <li><strong>Units &amp; theory</strong> &mdash; set <code>units: "OK"</code> and <code>theory: "PASS"</code> if you&rsquo;ve checked them</li>
     <li><strong>Attach animations</strong> &mdash; artifact completeness is worth up to 10 points</li>
   </ul>
@@ -162,7 +163,7 @@
         <td><strong>Blended</strong></td>
         <td>&mdash;</td>
         <td>Final score</td>
-        <td>40% heuristic + 60% LLM. Score &ge; 65 auto-promotes. Below 65 goes to manual review.</td>
+        <td>40% heuristic + 60% LLM. Score &ge; 65 auto-promotes to the registry. Below 65 goes to manual review.</td>
       </tr>
     </tbody>
   </table>
@@ -183,7 +184,7 @@
   <h2>Machine-Readable Exports</h2>
   <p>External tools do not need JavaScript to read TopEquations. The site publishes pre-rendered HTML pages plus static JSON exports at stable URLs, including explicit <code>highlightTier</code> and <code>isGold</code> fields on the public equation and submission exports.</p>
   <ul>
-    <li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>
+    <li><a href='./data/registry.json'>Registry JSON export</a> <span class='muted'>(legacy alias: <code>data/leaderboard.json</code>)</span></li>
     <li><a href='./data/equations.json'>Promoted equations JSON</a></li>
     <li><a href='./data/submissions.json'>Submissions JSON</a></li>
     <li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>
@@ -191,7 +192,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-04-15 20:27</strong></div>
+      <div>Last built: <strong>2026-04-15 21:09</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>

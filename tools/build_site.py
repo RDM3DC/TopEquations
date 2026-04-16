@@ -5,7 +5,9 @@
 Generates:
   - docs/index.html
   - docs/core.html          (canonical core only)
-  - docs/leaderboard.html   (ranked derived only)
+  - docs/registry.html      (registry page)
+  - docs/leaderboard.html   (legacy alias of registry page)
+  - docs/rising.html        (below-threshold equations still in development)
   - docs/harvest_preview.html
 
 Usage:
@@ -180,18 +182,18 @@ def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
         "</tr>"
       )
 
-    table_html = "".join(rows) or "<tr><td colspan='5'>No leaderboard entries published yet.</td></tr>"
+    table_html = "".join(rows) or "<tr><td colspan='5'>No registry entries published yet.</td></tr>"
     return (
       "<div class='panel'>"
       "<h2>Machine-Readable Access</h2>"
-      "<p>This page is fully pre-rendered in HTML, and the same data is also published as static JSON for external tools, crawlers, and AI agents.</p>"
+      "<p>This page is fully pre-rendered in HTML, and the same data is also published as static JSON for external tools, crawlers, and automated readers.</p>"
       "<ul>"
-      "<li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>"
+      "<li><a href='./data/registry.json'>Registry JSON export</a></li>"
       "<li><a href='./data/equations.json'>Full promoted equations JSON</a></li>"
       "<li><a href='./data/submissions.json'>Submission registry JSON</a></li>"
       "<li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>"
       "</ul>"
-      "<p>The JSON exports include explicit <code>highlightTier</code> and <code>isGold</code> fields, and the table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript.</p>"
+      "<p>The JSON exports include explicit <code>highlightTier</code> and <code>isGold</code> fields, and the table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript. The legacy compatibility alias <code>data/leaderboard.json</code> is still emitted.</p>"
       "<table class='tbl'>"
       "<thead><tr><th>Rank</th><th>Name</th><th>Highlight</th><th>Score</th><th>Source</th><th>Equation</th></tr></thead>"
       f"<tbody>{table_html}</tbody>"
@@ -208,7 +210,7 @@ def _page(title: str, body: str, updated: str, extra_head: str = "") -> str:
 
     cachebust = re.sub(r"[^0-9]", "", updated) or "1"
 
-    og_desc = "Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports."
+    og_desc = "Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports."
     og_url = "https://rdm3dc.github.io/TopEquations/"
 
     return f"""<!doctype html>
@@ -255,18 +257,18 @@ def _page(title: str, body: str, updated: str, extra_head: str = "") -> str:
         <div class='brand__mark'>∑</div>
         <div class='brand__text'>
           <div class='brand__title'>TopEquations</div>
-          <div class='brand__sub'>Curated leaderboard + certificate registry</div>
+          <div class='brand__sub'>Curated equation registry + certificate archive</div>
         </div>
       </div>
       <nav class='nav'>
         <a href='./index.html'>Home</a>
         <a href='./core.html'>Core</a>
-        <a href='./leaderboard.html'>Leaderboard</a>
+        <a href='./registry.html'>Registry</a>
         <a href='./rising.html'>Rising</a>
         <a href='./certificates.html'>Certificates</a>
         <a href='./submissions.html'>All Submissions</a>
         <a class='nav__ghost' href='https://github.com/RDM3DC/TopEquations' target='_blank' rel='noopener'>GitHub</a>
-        <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/leaderboard.html' target='_blank' rel='noopener'>Live Site</a>
+        <a class='nav__ghost' href='https://rdm3dc.github.io/TopEquations/registry.html' target='_blank' rel='noopener'>Live Site</a>
       </nav>
     </div>
   </header>
@@ -440,19 +442,17 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
     data_dir = docs / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
-    (data_dir / "leaderboard.json").write_text(
-      json.dumps(
-        {
-          "schemaVersion": 1,
-          "generatedAt": datetime.now().isoformat(),
-          "displayThreshold": DISPLAY_THRESHOLD,
-          "entries": export_entries,
-        },
-        indent=2,
-      )
-      + "\n",
-      encoding="utf-8",
-    )
+    registry_payload = json.dumps(
+      {
+        "schemaVersion": 1,
+        "generatedAt": datetime.now().isoformat(),
+        "displayThreshold": DISPLAY_THRESHOLD,
+        "entries": export_entries,
+      },
+      indent=2,
+    ) + "\n"
+    for export_name in ("registry.json", "leaderboard.json"):
+      (data_dir / export_name).write_text(registry_payload, encoding="utf-8")
 
     cards = []
     for i, e in enumerate(entries, start=1):
@@ -553,7 +553,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         )
 
     extra_head = """
-  <link rel='alternate' type='application/json' href='./data/leaderboard.json' title='TopEquations leaderboard JSON' />
+  <link rel='alternate' type='application/json' href='./data/registry.json' title='TopEquations registry JSON' />
   <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
 """
 
@@ -583,7 +583,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
             <option value='score-asc'>Score ↑</option>
             <option value='date-desc'>Date added ↓</option>
             <option value='date-asc'>Date added ↑</option>
-            <option value='rank'>Rank</option>
+            <option value='rank'>Order</option>
           </select>
         </label>
       </div>
@@ -593,7 +593,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 
 <div class='panel'>
   <h2>Gold Highlight</h2>
-  <p>Gold cards are curator-selected spotlight equations. Gold is not assigned automatically by score; it marks equations judged especially central, bridge-forming, or program-defining within the current TopEquations lineage.</p>
+  <p>Gold cards are curator-selected spotlight equations. Gold is not assigned automatically by score; it marks equations judged especially central, bridge-forming, or program-defining within the current TopEquations registry.</p>
 </div>
 
 <div id='cards' class='cardrow'>
@@ -607,12 +607,13 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
 """
 
     updated = datetime.now().strftime("%Y-%m-%d %H:%M")
-    out = docs / "leaderboard.html"
-    out.write_text(_page("TopEquations — Leaderboard", body, updated, extra_head=extra_head), encoding="utf-8")
+    page_html = _page("TopEquations — Registry", body, updated, extra_head=extra_head)
+    for output_name in ("registry.html", "leaderboard.html"):
+      (docs / output_name).write_text(page_html, encoding="utf-8")
 
 
 def build_rising(repo_root: Path, docs: Path) -> None:
-    """Equations below the leaderboard threshold — still in development."""
+    """Equations below the registry threshold — still in development."""
     DISPLAY_THRESHOLD = 65
 
     data_path = repo_root / "data" / "equations.json"
@@ -704,7 +705,7 @@ def build_rising(repo_root: Path, docs: Path) -> None:
 <div class='hero'>
   <div class='hero__left'>
     <h1>Rising Equations</h1>
-    <p>Equations in development that haven&rsquo;t yet reached the leaderboard threshold (score&nbsp;&lt;&nbsp;{DISPLAY_THRESHOLD}). These are works in progress&nbsp;&mdash; refine assumptions, add evidence, or improve derivations to climb the board.</p>
+    <p>Equations in development that haven&rsquo;t yet reached the registry threshold (score&nbsp;&lt;&nbsp;{DISPLAY_THRESHOLD}). These are works in progress&nbsp;&mdash; refine assumptions, add evidence, or improve derivations to climb the board.</p>
   </div>
   <div class='hero__right'>
     <div class='statbox'>
@@ -743,11 +744,12 @@ def build_index(repo_root: Path, docs: Path) -> None:
 <div class='hero hero--home'>
   <div class='hero__left'>
     <h1>TopEquations</h1>
-    <p>Open leaderboard for ranking equations &mdash; from textbook classics to novel discoveries.<br>
+    <p>Open registry for ranking equations &mdash; from textbook classics to novel discoveries.<br>
     Scored by a dual-layer system, published on-chain with signed certificates.</p>
     <div class='cta'>
       <a class='btn' href='./core.html'>Canonical Core</a>
-      <a class='btn btn--ghost' href='./leaderboard.html'>Leaderboard</a>
+      <a class='btn btn--ghost' href='./registry.html'>Registry</a>
+      <a class='btn btn--ghost' href='./rising.html'>Rising</a>
       <a class='btn btn--ghost' href='./submissions.html'>All Submissions</a>
       <a class='btn btn--ghost' href='https://github.com/RDM3DC/TopEquations/issues/new?template=equation_submission.yml'>Submit an Equation</a>
     </div>
@@ -768,7 +770,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
       </div>
       <div class='stat'>
         <div class='stat__num'>{_esc(promoted_n)}</div>
-        <div class='stat__label'>Promoted to leaderboard</div>
+        <div class='stat__label'>Promoted to registry</div>
       </div>
     </div>
   </div>
@@ -776,7 +778,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
 
 <div class='panel' id='submit'>
   <h2>&#128640; Submit an Equation</h2>
-  <p>Anyone &mdash; human or AI agent &mdash; can submit. Four AI models are already on the board (Grok, Gemini, Claude, ChatGPT). Can your equation beat them?</p>
+  <p>Submit through the issue form below. The pipeline scores submissions automatically, and promoted entries receive a signed receipt and certificate record.</p>
 
   <h3>Quick Start (GitHub Issue)</h3>
   <ol>
@@ -801,7 +803,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
   ],
   "evidence": [
     "Recovers known result X when parameter Y = 0",
-    "Builds on leaderboard entry #N",
+    "Builds on registry entry #N",
     "Simulation-verified in attached animation"
   ]
 }}</code></pre>
@@ -809,8 +811,8 @@ def build_index(repo_root: Path, docs: Path) -> None:
   <h3>Tips for High Scores</h3>
   <ul>
     <li><strong>State assumptions explicitly</strong> &mdash; 4&ndash;6 clear assumptions can add 10+ points</li>
-    <li><strong>Provide evidence</strong> &mdash; limit recoveries, simulation results, references to existing leaderboard entries</li>
-    <li><strong>Show lineage</strong> &mdash; equations that &ldquo;build on LB #N&rdquo; or &ldquo;recover X when Y&rarr;0&rdquo; get lineage bonuses</li>
+    <li><strong>Provide evidence</strong> &mdash; limit recoveries, simulation results, references to existing registry entries</li>
+    <li><strong>Show lineage</strong> &mdash; equations that &ldquo;build on registry entry #N&rdquo; or &ldquo;recover X when Y&rarr;0&rdquo; get lineage bonuses</li>
     <li><strong>Units &amp; theory</strong> &mdash; set <code>units: "OK"</code> and <code>theory: "PASS"</code> if you&rsquo;ve checked them</li>
     <li><strong>Attach animations</strong> &mdash; artifact completeness is worth up to 10 points</li>
   </ul>
@@ -842,7 +844,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
         <td><strong>Blended</strong></td>
         <td>&mdash;</td>
         <td>Final score</td>
-        <td>40% heuristic + 60% LLM. Score &ge; 65 auto-promotes. Below 65 goes to manual review.</td>
+        <td>40% heuristic + 60% LLM. Score &ge; 65 auto-promotes to the registry. Below 65 goes to manual review.</td>
       </tr>
     </tbody>
   </table>
@@ -863,7 +865,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
   <h2>Machine-Readable Exports</h2>
   <p>External tools do not need JavaScript to read TopEquations. The site publishes pre-rendered HTML pages plus static JSON exports at stable URLs, including explicit <code>highlightTier</code> and <code>isGold</code> fields on the public equation and submission exports.</p>
   <ul>
-    <li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>
+    <li><a href='./data/registry.json'>Registry JSON export</a> <span class='muted'>(legacy alias: <code>data/leaderboard.json</code>)</span></li>
     <li><a href='./data/equations.json'>Promoted equations JSON</a></li>
     <li><a href='./data/submissions.json'>Submissions JSON</a></li>
     <li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>
@@ -886,7 +888,7 @@ def build_harvest(repo_root: Path, docs: Path) -> None:
 </div>
 
 <div class='panel'>
-  <div class='muted'>Use the submission workflow to promote selected candidates into the ranked board.</div>
+  <div class='muted'>Use the submission workflow to promote selected candidates into the registry.</div>
 </div>
 """
 
@@ -1036,7 +1038,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
   <ul>
     <li><strong>Submit</strong> &rarr; equation enters queue with status <em>needs-review</em></li>
     <li><strong>Score</strong> &rarr; heuristic rubric (T/P/V/A out of 70, normalized to 100). Threshold: 68 = ready</li>
-    <li><strong>Promote</strong> &rarr; equation moves to the ranked leaderboard + chain certificate</li>
+    <li><strong>Promote</strong> &rarr; equation moves to the ranked registry + chain certificate</li>
   </ul>
 </div>
 

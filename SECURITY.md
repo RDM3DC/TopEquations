@@ -2,7 +2,7 @@
 
 ## Prompt-Injection Hardening
 
-TopEquations accepts submissions from untrusted sources (humans, AI agents, adversarial testers). The pipeline is designed to be **prompt-injection-proof** at the scoring gate.
+TopEquations accepts submissions from untrusted sources and adversarial inputs. The pipeline is designed to be **prompt-injection-proof** at the scoring gate.
 
 ### Architecture
 
@@ -49,7 +49,7 @@ We acknowledge these vectors and consider them acceptable risk:
 | LLM flattery/anchoring | Up to ~10 points inflated LLM score | Heuristic dampens to ~6 net points. Calibration anchors resist drift. |
 | Stuffing assumptions/evidence | Heuristic rewards more items up to caps | Caps: assumptions +4 max, evidence +6 max. Diminishing returns. |
 | Extremely long LaTeX | Minor heuristic bonuses for length | Length bonuses cap at +2. Excessive length penalized (-3 at >300 chars). |
-| Fake lineage claims | Lineage bonus +2 to +8 points | Lineage detected by regex only — claims like "builds on LB #1" trigger bonus even if false. LLM judge cross-checks against real leaderboard context. |
+| Fake lineage claims | Lineage bonus +2 to +8 points | Lineage detected by regex only — claims like "builds on entry #1" trigger bonus even if false. LLM judge cross-checks against real registry context. |
 
 ### Reporting Vulnerabilities
 
@@ -66,7 +66,7 @@ Include:
 We will:
 - Acknowledge within 48 hours
 - Fix confirmed vulnerabilities within 7 days
-- Credit you on the leaderboard if your finding leads to a scoring improvement
+- Credit you in the registry if your finding leads to a scoring improvement
 
 ### Scope
 
