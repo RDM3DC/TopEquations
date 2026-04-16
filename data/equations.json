@@ -4068,6 +4068,92 @@
           "date": "2026-04-15"
         }
       }
+    },
+    {
+      "id": "eq-local-plaquette-flux-proxy-chern",
+      "name": "Local Plaquette-Flux Proxy Chern",
+      "firstSeen": "2026-04-15",
+      "source": "derived: HAFC-EGATL solver plaquette-flux observable",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-local-plaquette-flux-proxy-chern",
+      "score": 92,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 20,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "display": {
+        "highlight": "gold"
+      },
+      "description": "Solver-backed local plaquette-flux density and summed proxy Chern for damaged HAFC/EGATL lattices. This makes the previously abstract local Chern signal computable from an oriented plaquette product, giving a scalable post-damage topological proxy when dense Bott-style postprocessing becomes impractical.",
+      "assumptions": [
+        "Plaquette bond ordering and orientation are fixed consistently so the oriented plaquette product is comparable across runs.",
+        "The complex bond responses g_{p,k} remain defined on the monitored plaquettes, and the plaquette-product phase is interpreted on a principal branch before summation.",
+        "C_{\\mathrm{loc}} is used as a scalable proxy diagnostic on damaged finite lattices, not claimed to be an exactly quantized Bott invariant in every finite-size regime.",
+        "The same local phase convention and damage protocol are used when comparing healthy, central-strip, and top-edge runs."
+      ],
+      "date": "2026-04-15",
+      "equationLatex": "\\rho_p=\\frac{1}{2\\pi}\\arg\\!\\big(g_{p,0}g_{p,1}\\,\\overline{g_{p,2}}\\,\\overline{g_{p,3}}\\big),\\quad C_{\\mathrm{loc}}=\\sum_p \\rho_p",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-15"
+        }
+      }
+    },
+    {
+      "id": "eq-geometry-normalized-plaquette-flux-edge-enrichment",
+      "name": "Geometry-Normalized Plaquette-Flux Edge Enrichment",
+      "firstSeen": "2026-04-15",
+      "source": "derived: HAFC-EGATL local plaquette-flux field + boundary normalization",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-geometry-normalized-plaquette-flux-edge-enrichment",
+      "score": 93,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 7
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "provided",
+        "path": "data/artifacts/geometry_normalized_plaquette_flux_edge_enrichment/edge_enrichment_dashboard.svg"
+      },
+      "display": {
+        "highlight": "gold"
+      },
+      "description": "Geometry-normalized localization diagnostic for the HAFC/EGATL local plaquette-flux field. The support fraction measures how spatially spread the absolute plaquette flux is, while Xi_edge measures whether boundary flux is merely proportional to boundary area or is genuinely edge-enriched. Xi_edge is used here instead of the solver note's E_edge label to avoid collision with the existing TopEquations recovery score of the same name.",
+      "assumptions": [
+        "The local plaquette weights |\\rho_p| are nonnegative and are evaluated on a fixed plaquette set with total count N_p over the comparison window.",
+        "The boundary plaquette family \\partial\\Omega is fixed by geometry, so the normalization |\\partial\\Omega|/N_p is comparable across runs at a given lattice size.",
+        "The total local flux weight \\sum_p |\\rho_p| is nonzero, so both the support fraction and edge-enrichment ratio are well-defined.",
+        "Xi_edge is an interpretable localization diagnostic, not a claim of topological quantization by itself."
+      ],
+      "date": "2026-04-15",
+      "equationLatex": "f_{\\mathrm{sup}}=\\frac{\\left(\\sum_p |\\rho_p|\\right)^2}{N_p\\sum_p |\\rho_p|^2},\\quad f_{\\mathrm{edge}}^{(\\rho)}=\\frac{\\sum_{p\\in\\partial\\Omega}|\\rho_p|}{\\sum_p |\\rho_p|},\\quad \\Xi_{\\mathrm{edge}}=\\frac{f_{\\mathrm{edge}}^{(\\rho)}}{|\\partial\\Omega|/N_p}",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-15"
+        }
+      }
     }
   ]
 }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+from html import escape
 import math
 from pathlib import Path
 
@@ -35,7 +36,7 @@ def line(x1: float, y1: float, x2: float, y2: float, color: str = "#9aa7bd", wid
 def text(x: float, y: float, value: str, size: int = 16, weight: str = "400", fill: str = "#173052", anchor: str = "start") -> str:
     return (
         f"<text x='{x:.2f}' y='{y:.2f}' font-family='Georgia, Times New Roman, serif' "
-        f"font-size='{size}' font-weight='{weight}' fill='{fill}' text-anchor='{anchor}'>{value}</text>"
+        f"font-size='{size}' font-weight='{weight}' fill='{fill}' text-anchor='{anchor}'>{escape(value, quote=False)}</text>"
     )
 
 

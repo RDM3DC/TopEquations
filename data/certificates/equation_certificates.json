@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-15T07:57:27.357585+00:00",
+  "generated_at": "2026-04-16T02:21:31.424021+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "d739bcf6bf6ee14cc45ae76a56b4ecfb96fd2e64a6944a896bd1afbf62868edf",
-  "count": 117,
+  "source_sha256": "a9fddc025ba635097af4ca607e7b685bf77df08aadcecb208bbf17b9a2584a6d",
+  "count": 119,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3496,6 +3496,66 @@
       "submitter_hash": "f928f751d1d732062e77cac4e7a0e17d5e1584c17f4f5f9f7b9ccfd3c0893121",
       "version": 1,
       "metadata_hash": "4f03b4c0657e06211a0773e18f40f6b69c454dd037b9b078d4227a8f7fe64df0"
+    },
+    {
+      "token_id": "eq-local-plaquette-flux-proxy-chern",
+      "name": "Local Plaquette-Flux Proxy Chern",
+      "equation_latex": "\\rho_p=\\frac{1}{2\\pi}\\arg\\!\\big(g_{p,0}g_{p,1}\\,\\overline{g_{p,2}}\\,\\overline{g_{p,3}}\\big),\\quad C_{\\mathrm{loc}}=\\sum_p \\rho_p",
+      "equation_hash": "f21ab8222a0539774ec2b1487b27ede5467e5aee16c8b4263cf685d8570c820a",
+      "score": 92,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 20,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-15"
+      },
+      "source": "derived: HAFC-EGATL solver plaquette-flux observable",
+      "date": "2026-04-15",
+      "description": "Solver-backed local plaquette-flux density and summed proxy Chern for damaged HAFC/EGATL lattices. This makes the previously abstract local Chern signal computable from an oriented plaquette product, giving a scalable post-damage topological proxy when dense Bott-style postprocessing becomes impractical.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "afaf97b5adb5bc8bbb48b3e4bf11add4c79fcafed745e911089e0bcb93ea09ee"
+    },
+    {
+      "token_id": "eq-geometry-normalized-plaquette-flux-edge-enrichment",
+      "name": "Geometry-Normalized Plaquette-Flux Edge Enrichment",
+      "equation_latex": "f_{\\mathrm{sup}}=\\frac{\\left(\\sum_p |\\rho_p|\\right)^2}{N_p\\sum_p |\\rho_p|^2},\\quad f_{\\mathrm{edge}}^{(\\rho)}=\\frac{\\sum_{p\\in\\partial\\Omega}|\\rho_p|}{\\sum_p |\\rho_p|},\\quad \\Xi_{\\mathrm{edge}}=\\frac{f_{\\mathrm{edge}}^{(\\rho)}}{|\\partial\\Omega|/N_p}",
+      "equation_hash": "f2dcec81b8c86231757b7003b85447c19912db9de66b7ef13361d0e2c8897610",
+      "score": 93,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 7
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-15"
+      },
+      "source": "derived: HAFC-EGATL local plaquette-flux field + boundary normalization",
+      "date": "2026-04-15",
+      "description": "Geometry-normalized localization diagnostic for the HAFC/EGATL local plaquette-flux field. The support fraction measures how spatially spread the absolute plaquette flux is, while Xi_edge measures whether boundary flux is merely proportional to boundary area or is genuinely edge-enriched. Xi_edge is used here instead of the solver note's E_edge label to avoid collision with the existing TopEquations recovery score of the same name.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": "data/artifacts/geometry_normalized_plaquette_flux_edge_enrichment/edge_enrichment_dashboard.svg"
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "d6705c7d84540e18d631d546e36a2c66a46d200d4f1f7578b09575bd9442538d"
     }
   ]
 }
