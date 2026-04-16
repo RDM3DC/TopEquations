@@ -21,8 +21,8 @@ Equations are ranked on a composite leaderboard scale backed by a dual-layer rev
 | Page | What's there |
 |------|-------------|
 | [Canonical Core](https://rdm3dc.github.io/TopEquations/core.html) | 14 anchor equations (Maxwell, Schrödinger, Navier-Stokes, etc.) |
-| [Famous Equations](https://rdm3dc.github.io/TopEquations/famous.html) | Well-known equations for reference |
 | [Leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html) | Ranked derived equations by composite score |
+| [Rising](https://rdm3dc.github.io/TopEquations/rising.html) | Below-threshold equations that are close to promotion |
 | [All Submissions](https://rdm3dc.github.io/TopEquations/submissions.html) | Every submission with scores and status |
 | [Certificates](https://rdm3dc.github.io/TopEquations/certificates.html) | On-chain certificate registry |
 

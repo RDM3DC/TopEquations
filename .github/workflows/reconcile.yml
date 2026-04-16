@@ -39,14 +39,10 @@ jobs:
 
           # Auto-fix: stale_certificates and stale_site are safe to repair in-place
           # Single Python call reads the report once and outputs both flags space-separated
-          read -r STALE_CERTS STALE_SITE < <(python -c "
-import json
-r = json.load(open('_reconcile_report.json'))
-types = {i['type'] for i in r.get('issues', [])}
-certs = 'true' if 'stale_certificates' in types else 'false'
-site  = 'true' if 'stale_site'         in types else 'false'
-print(certs, site)
-          ")
+          FLAGS=$(python -c "import json; r=json.load(open('_reconcile_report.json')); types={i['type'] for i in r.get('issues', [])}; certs='true' if 'stale_certificates' in types else 'false'; site='true' if 'stale_site' in types else 'false'; print(certs, site)")
+          set -- $FLAGS
+          STALE_CERTS="$1"
+          STALE_SITE="$2"
           FIXED=false
           if [ "$STALE_CERTS" = "true" ]; then
             echo "Auto-fixing stale certificates..."

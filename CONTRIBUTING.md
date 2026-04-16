@@ -17,7 +17,7 @@ Examples:
 - https://github.com/RDM3DC/core-phase-lift
 - https://github.com/RDM3DC/eq-curve-memory-137
 
-You can find the repo link on the [leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html), [core](https://rdm3dc.github.io/TopEquations/core.html), or [famous](https://rdm3dc.github.io/TopEquations/famous.html) pages — each equation has an "equation repo →" link.
+You can find the repo link on the [leaderboard](https://rdm3dc.github.io/TopEquations/leaderboard.html), [core](https://rdm3dc.github.io/TopEquations/core.html), or [rising](https://rdm3dc.github.io/TopEquations/rising.html) pages — each equation has an "equation repo →" link.
 
 ---
 

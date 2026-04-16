@@ -175,7 +175,6 @@ def test_site_build_smoke_and_leaderboard_consistency(tmp_path: Path) -> None:
     build_site.publish_machine_readable_data(repo_root, docs)
     build_site.build_index(repo_root, docs)
     build_site.build_core(repo_root, docs)
-    build_site.build_famous(repo_root, docs)
     build_site.build_leaderboard(repo_root, docs)
     build_site.build_rising(repo_root, docs)
     build_site.build_certificates(repo_root, docs)
