@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-15T19:21:31.956137",
+  "generatedAt": "2026-04-15T19:37:09.029593",
   "displayThreshold": 65,
   "entries": [
     {
@@ -41,7 +41,9 @@
           "score": 30,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
@@ -82,7 +84,9 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated"
+      "repoUrl": "https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-adler-rsj-phase",
@@ -120,7 +124,9 @@
           "score": 14
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adler-rsj-phase"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adler-rsj-phase",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-topological-coherence-order-parameter-arp-locking",
@@ -162,7 +168,9 @@
           "score": 29,
           "date": "2026-02-25"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-history-resolved-phase-with-adaptive-ruler",
@@ -216,7 +224,9 @@
           "llm_total": 97,
           "justification": "Exemplary lineage-preserving extension that explicitly builds on White Papers 01/02/04 plus LB #4 and integrated simulator artifacts, with strong derivation/recovery clauses, units and benchmark coverage, and immediate simulation readiness; novelty is meaningful but intentionally minimal rather than paradigm-shifting."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-qwz-hamiltonian",
@@ -254,7 +264,9 @@
           "score": 8
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-adaptive-inverse-square-normal-form-with-kelvin-mel",
@@ -295,7 +307,9 @@
           "score": 29,
           "date": "2026-04-14"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-arp-reinforce-decay",
@@ -333,7 +347,9 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-slip-asymptote",
@@ -372,7 +388,9 @@
           "score": 27
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-slip-asymptote"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-slip-asymptote",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-plaquetteholonomy",
@@ -414,7 +432,9 @@
           "score": 26,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",
@@ -462,7 +482,9 @@
           "score": 30,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-channel-loop-signature-pi-f-health-observable",
@@ -502,7 +524,9 @@
           "score": 29,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-loop-coherence-gated-edge-recovery-score",
@@ -543,7 +567,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-channel-deficit-gated-self-healing-law",
@@ -584,7 +610,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-geometry-normalized-plaquette-flux-edge-enrichment",
@@ -627,7 +655,9 @@
           "score": 30,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
@@ -677,7 +707,9 @@
           "llm_total": 94,
           "justification": "Directly builds on top leaderboard entries with explicit recovery clauses and simulation readiness, introducing a novel surprise-driven adaptation mechanism."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-local-plaquette-flux-proxy-chern",
@@ -720,7 +752,9 @@
           "score": 30,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-arp-redshift",
@@ -760,7 +794,9 @@
           "score": 24
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-activity-closure",
@@ -799,7 +835,9 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-activity-closure"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-activity-closure",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
@@ -841,7 +879,9 @@
           "score": 29,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-threeforceconductance",
@@ -883,7 +923,9 @@
           "score": 30,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-history-resolved-pif-anticipatory-self-healing-law",
@@ -925,7 +967,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-adaptive-annular-capacity-law",
@@ -969,7 +1013,9 @@
           "score": 30,
           "date": "2026-04-14"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-paper1-chern-marker-bianco-resta",
@@ -1007,7 +1053,9 @@
           "score": 10
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-pi-f-loop-health-balance-law",
@@ -1048,7 +1096,9 @@
           "score": 29,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-parity-flip-rate",
@@ -1085,7 +1135,9 @@
           "score": 28
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-parity-flip-rate"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-parity-flip-rate",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-plaquette-holonomy",
@@ -1134,7 +1186,9 @@
           "justification": "Solid derivation with clear assumptions and simulation evidence, but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-phase-coupled-conductance-update",
@@ -1184,7 +1238,9 @@
           "justification": "Builds on LB #1 and #2 with explicit recovery and derivation, rigorous but units check pending, clear assumptions and presentation, introduces novel phase-coupled suppression."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-phaseliftupdate",
@@ -1226,7 +1282,9 @@
           "score": 25,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-adaptiveruler",
@@ -1271,7 +1329,9 @@
           "score": 25,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-mean-event-equilibrium-for-adaptive-discrete",
@@ -1311,7 +1371,9 @@
           "score": 27,
           "date": "2026-02-25"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-gated-edge-recovery-score",
@@ -1352,7 +1414,9 @@
           "score": 29,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-qwz-bz-avg-ruler-mass",
@@ -1380,7 +1444,9 @@
       "description": "BZ-average removes k-oscillation: <(1+\u03b5 cos\u03bb)^{-1}> = (1-\u03b5^2)^{-1/2}, giving a uniform m_eff(\u03b5) and a single Chern jump at \u03b5_c (for m0=-1: \u03b5_c=\u221a3/2).",
       "date": "2026-02-22",
       "equationLatex": "\\left\\langle\\frac{1}{1+\\epsilon\\cos\\lambda}\\right\\rangle_{BZ}=\\frac{1}{\\sqrt{1-\\epsilon^2}},\\quad m_{\\mathrm{eff}}(\\epsilon)=\\frac{m_0}{\\sqrt{1-\\epsilon^2}}\\ (|\\epsilon|<1),\\quad \\epsilon_c=\\sqrt{1-(|m_0|/2)^2}",
-      "repoUrl": "https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-adaptive-geometry-mass",
@@ -1419,7 +1485,9 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
@@ -1470,7 +1538,9 @@
           "justification": "Strong derivation chain with explicit recovery clauses and novel coupling mechanisms."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc"
+      "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-gemini-curve-memory-topological-frustration-pruning",
@@ -1519,7 +1589,9 @@
           "llm_total": 94,
           "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-directional-strength-proxy-chern-law",
@@ -1560,7 +1632,9 @@
           "score": 30,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-topological-self-healing-conductance-law",
@@ -1601,7 +1675,9 @@
           "score": 27,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-history-resolved-loop-coherent-chern-self-healing-law",
@@ -1652,7 +1728,9 @@
           "llm_total": 82,
           "justification": "A minimal, lineage-explicit integration of LB #4 (adaptive-ruler phase update) + LB #8/#3 (plaquette holonomy/coherence order parameter) + LB #9 (adaptive Chern self-healing) into a single bounded loop-coherence-gated conductance law with clean recovery clauses (kappa_Psi=0 and chi=C_loc=0)."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-langevin-noise",
@@ -1691,7 +1769,9 @@
           "score": 18
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-langevin-noise"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-langevin-noise",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lifted-rg-memory-flow",
@@ -1731,7 +1811,9 @@
           "score": 27,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-slip-suppressed-edge-recovery-law",
@@ -1772,7 +1854,9 @@
           "score": 27,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-boundary-reroute-recovery-index",
@@ -1813,7 +1897,9 @@
           "score": 27,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-adaptive-radial-heat-kernel-power-law-branch-origin",
@@ -1857,7 +1943,9 @@
           "score": 27,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
@@ -1906,7 +1994,9 @@
           "justification": "Solid derivation with clear assumptions and units check, builds on EGATL framework but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-three-force-conductance-lock",
@@ -1955,7 +2045,9 @@
           "justification": "Builds on LB #1 and #10 with clear assumptions and derivation, but lacks explicit recovery clause."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-effective-dimension-of-the-power-law-flat-branch",
@@ -1999,7 +2091,9 @@
           "score": 23,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-ahc-step-limit",
@@ -2036,7 +2130,9 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-step-limit"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-step-limit",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-phase-lift-branch-safe-update",
@@ -2085,7 +2181,9 @@
           "justification": "Builds on existing phase-lifted dynamics with clear assumptions and derivation, but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-parityfliprate",
@@ -2127,7 +2225,9 @@
           "score": 23,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-surprise-augmented-history-resolved-complex-conductance-",
@@ -2166,7 +2266,9 @@
           "score": 25,
           "date": "2026-03-07"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-chern-self-healing-conductance-law",
@@ -2206,7 +2308,9 @@
           "score": 19,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-landauer-phase-lift-conductance-law",
@@ -2246,7 +2350,9 @@
           "score": 23,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-qwz-pia-modulated-mass",
@@ -2274,7 +2380,9 @@
       "description": "Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.",
       "date": "2026-02-22",
       "equationLatex": "\\pi_a(\\lambda)=\\pi(1+\\epsilon\\cos\\lambda),\\quad m_{\\mathrm{eff}}(k_x)=m_0+\\beta\\left(\\frac{1}{1+\\epsilon\\cos k_x}-1\\right)",
-      "repoUrl": "https://github.com/RDM3DC/eq-qwz-pia-modulated-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-pia-modulated-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-running-winding",
@@ -2307,7 +2415,9 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-running-winding"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-running-winding",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lifted-thouless-pump-memory-law",
@@ -2347,7 +2457,9 @@
           "score": 23,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-phase-critical-collapse",
@@ -2380,7 +2492,9 @@
           "score": 28
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-critical-collapse"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-critical-collapse",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-pi-a-update",
@@ -2417,7 +2531,9 @@
           "score": 24
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-power-law-flat-adaptive-pi-radial-operator",
@@ -2458,7 +2574,9 @@
           "score": 21,
           "date": "2026-04-10"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-redshift-bounded-oscillation",
@@ -2519,7 +2637,9 @@
           "score": 21
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lift-commutator-bound",
@@ -2557,7 +2677,9 @@
           "score": 22,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-phase-lifted-complex-conductance",
@@ -2590,7 +2712,9 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-gated-complex-conductance-arp-network",
@@ -2629,7 +2753,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-coupled-suppression-conductance-law",
@@ -2668,7 +2794,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-redshift-law-with-bounded-oscillatory-steering",
@@ -2707,7 +2835,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-resolved-operator-general",
@@ -2748,7 +2878,9 @@
           "score": 19,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-candidate-unwrap",
@@ -2785,7 +2917,9 @@
           "score": 20
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-candidate-unwrap"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-candidate-unwrap",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-residual",
@@ -2818,7 +2952,9 @@
           "score": 18
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-residual"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-residual",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lift-clipped-unwrap-branch-safe",
@@ -2857,7 +2993,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-bound-dynamics-event-driven-geometry",
@@ -2896,7 +3034,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-winding-parity-estimator-and-flip-rate-order-parameter",
@@ -2935,7 +3075,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-production-event-injection-s-field",
@@ -2974,7 +3116,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
@@ -3013,7 +3157,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-branch-fault-criterion",
@@ -3052,7 +3198,9 @@
           "score": 19,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-temp-conductance",
@@ -3085,7 +3233,9 @@
           "score": 20
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-temp-conductance"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-temp-conductance",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-event-stimulus",
@@ -3118,7 +3268,9 @@
           "score": 19
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-event-stimulus"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-event-stimulus",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
@@ -3168,7 +3320,9 @@
           "justification": "Builds on EGATL conductance rules but lacks explicit derivation and units check."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-newton-s-second-law",
@@ -3206,7 +3360,9 @@
           "score": 20,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-cosmological-redshift-mapping",
@@ -3244,7 +3400,9 @@
           "score": 18,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-lyapunov-stability",
@@ -3277,7 +3435,9 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-lyapunov-stability"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-lyapunov-stability",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-gradient-flow-bridge",
@@ -3317,7 +3477,9 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-gradient-flow-bridge"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-gradient-flow-bridge",
+      "highlightTier": "",
+      "isGold": false
     }
   ]
 }

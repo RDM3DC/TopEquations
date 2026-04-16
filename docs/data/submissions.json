@@ -50,7 +50,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 55
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-mesh-synced-certificate-consistency"
     },
     {
       "submissionId": "sub-2026-02-24-slack-test-equation",
@@ -104,7 +107,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 58
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-slack-test-equation"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-phase-coupled-conductance-update",
@@ -113,7 +119,7 @@
       "status": "promoted",
       "name": "EGATL Phase-Coupled Conductance Update",
       "equationLatex": "\\frac{dG_{ij}}{dt} = \\alpha_G(S)\\, |I_{ij}| - \\mu_G(S)\\, G_{ij} - \\lambda\\, G_{ij}\\, \\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
-      "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
+      "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay \u2014 links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
       "source": "EGATL original claim (ARP framework)",
       "units": "TBD",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -163,7 +169,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 87
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-phase-coupled-conductance-update"
     },
     {
       "submissionId": "sub-2026-02-24-entropy-modulated-phase-lift-conductance-equatio",
@@ -224,7 +233,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 86
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc"
     },
     {
       "submissionId": "sub-2026-02-24-adaptive-entropy-production-rate-aepr",
@@ -277,7 +289,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 69
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-entropy-production-rate-aepr-ate-aepr"
     },
     {
       "submissionId": "sub-2026-02-24-adaptive-entropy-production-rate-aepr-2",
@@ -286,7 +301,7 @@
       "status": "promoted",
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
-      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 \u2014 Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 \u2014 Thermal relaxation (entropy decays toward baseline S_0), Term 3 \u2014 Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
       "source": "Slack DM 2026-02-24",
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -304,7 +319,7 @@
         },
         {
           "type": "dimensional-analysis",
-          "label": "All three terms have units J/(K·s); dimensional consistency verified",
+          "label": "All three terms have units J/(K\u00b7s); dimensional consistency verified",
           "path": ""
         }
       ],
@@ -341,7 +356,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 82
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2"
     },
     {
       "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-7",
@@ -350,7 +368,7 @@
       "status": "promoted",
       "name": "HLATN Three-Force Conductance Lock",
       "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\!\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
-      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.",
+      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework \u2014 drives self-organized topological stabilization.",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
       "units": "OK",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -405,7 +423,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 82
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-hlatn-three-force-conductance-lock"
     },
     {
       "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-10",
@@ -474,7 +495,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 81
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-hlatn-phase-lift-branch-safe-update"
     },
     {
       "submissionId": "sub-2026-02-24-hlatn-white-paper-eqn-11",
@@ -538,7 +562,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 81
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-hlatn-plaquette-holonomy"
     },
     {
       "submissionId": "sub-2026-02-24-adaptive-damped-harmonic-oscillator",
@@ -546,8 +573,8 @@
       "submitter": "clawdad42",
       "status": "promoted",
       "name": "Adaptive Damped Harmonic Oscillator",
-      "equationLatex": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1 - (γ·π_α/ω₀)²)·t + φ)",
-      "description": "Classical damped harmonic oscillator with adaptive-π curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
+      "equationLatex": "x(t) = A\u00b7exp(-\u03b3\u00b7\u03c0_\u03b1\u00b7t)\u00b7cos(\u03c9\u2080\u00b7\u221a(1 - (\u03b3\u00b7\u03c0_\u03b1/\u03c9\u2080)\u00b2)\u00b7t + \u03c6)",
+      "description": "Classical damped harmonic oscillator with adaptive-\u03c0 curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
       "source": "discord-test",
       "units": "TBD",
       "theory": "PASS-WITH-ASSUMPTIONS",
@@ -586,7 +613,10 @@
         },
         "llm_model": "gpt-4o",
         "blended_score": 52
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-damped-harmonic-oscillator"
     },
     {
       "submissionId": "sub-2026-02-25-arp-cosmological-redshift-mapping",
@@ -625,7 +655,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 18
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-arp-cosmological-redshift-mapping"
     },
     {
       "submissionId": "sub-2026-02-24-grok-surprise-augmented-phase-lifted-entropy-gat",
@@ -634,7 +667,7 @@
       "status": "promoted",
       "name": "Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update",
       "equationLatex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\,(1+\\kappa U_{ij}(t))\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\,(1-\\eta U_{ij}(t))\\,\\tilde{G}_{ij}(t)",
-      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
+      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows \u00e2\u20ac\u201d implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
       "source": "grok-xai",
       "units": "OK",
       "theory": "PASS",
@@ -671,7 +704,10 @@
         },
         "novelty": 29,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu"
     },
     {
       "submissionId": "sub-2026-02-24-gemini-curve-memory-topological-frustration-prun",
@@ -716,7 +752,10 @@
         },
         "novelty": 27,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-gemini-curve-memory-topological-frustration-pruning"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-aepr-adaptiveentropyproduction-2",
@@ -725,7 +764,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-AEPR-AdaptiveEntropyProduction",
       "equationLatex": "\\frac{dS}{dt} = \\sigma_S \\sum_{ij} G_{ij} |I_{ij}|^2 - \\kappa_S (S - S_0) - \\xi_S S \\cdot r_b",
-      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents → S↑), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all α/μ/π_a rates. Falsifiable via dissipation-vs-flip correlation.",
+      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents \u2192 S\u2191), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all \u03b1/\u03bc/\u03c0_a rates. Falsifiable via dissipation-vs-flip correlation.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -764,7 +803,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 29
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-hlatn-aepr-adaptiveentropyproduction"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-threeforceconductance",
@@ -773,7 +815,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-ThreeForceConductance",
       "equationLatex": "\\dot{G}_e = \\alpha_G |I_e| - \\mu_G G_e - \\lambda G_e \\sin^2\\left(\\frac{\\theta_{R,e}}{2\\pi_a}\\right)",
-      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z₂ locking in simulations.",
+      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z\u2082 locking in simulations.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -787,7 +829,7 @@
       ],
       "evidence": [
         "Core HLATN three-force law: the minimal equation building persistent backbone paths in ARP lattice",
-        "Extends LB #3 (EGATL Phase-Coupled Conductance) — explicit ODE form with all three forces separated",
+        "Extends LB #3 (EGATL Phase-Coupled Conductance) \u2014 explicit ODE form with all three forces separated",
         "sin^2(theta/2pi_a) produces exactly the Z2 locking observed in simulations",
         "Recovers standard AIN plasticity dG/dt = alpha*I - mu*G when lambda=0 (no phase coupling)",
         "Simulation-verified: orange backbone paths correspond to edges where sin^2 term near zero",
@@ -812,7 +854,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-hlatn-threeforceconductance"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-phaseliftupdate",
@@ -821,7 +866,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-PhaseLiftUpdate",
       "equationLatex": "\\theta_{R,e}^{(k)} = \\theta_{R,e}^{(k-1)} + \\mathrm{clip}\\Big(\\mathrm{wrapTo}_\\pi(\\phi_e - \\theta_{R,e}), -\\pi_a, +\\pi_a\\Big)",
-      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2π jumps — the foundation of holonomy bookkeeping and parity attractors.",
+      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2\u03c0 jumps \u2014 the foundation of holonomy bookkeeping and parity attractors.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -860,7 +905,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 25
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-hlatn-phaseliftupdate"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-adaptiveruler",
@@ -869,7 +917,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-AdaptiveRuler",
       "equationLatex": "\\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi (\\pi_a - \\pi_0)",
-      "description": "Entropy-breathing adaptive angular bound. High event activity expands π_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
+      "description": "Entropy-breathing adaptive angular bound. High event activity expands \u03c0_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -882,9 +930,9 @@
         "Timescale separation: pi_a evolves slower than individual edge phases theta_R"
       ],
       "evidence": [
-        "Entropy-breathing mechanism: high S expands phase budget, low S contracts — geometric hysteresis",
+        "Entropy-breathing mechanism: high S expands phase budget, low S contracts \u2014 geometric hysteresis",
         "Builds on LB #3 (EGATL Phase-Coupled Conductance) where pi_a appears in sin^2 suppression",
-        "Recovers fixed ruler pi_a = pi_0 when alpha_pi = 0 — standard Chern framework",
+        "Recovers fixed ruler pi_a = pi_0 when alpha_pi = 0 \u2014 standard Chern framework",
         "Geometric hysteresis: once locked to pi_0, perturbations must exceed threshold to re-expand",
         "ARP lattice simulations confirm pi_a convergence to pi_0 correlates with r_b -> 0",
         "Companion to Three-Force Conductance: pi_a feeds into sin^2(theta/2*pi_a) gate"
@@ -908,7 +956,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 25
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-egatl-hlatn-adaptiveruler"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-plaquetteholonomy",
@@ -917,7 +968,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-PlaquetteHolonomy",
       "equationLatex": "\\Theta_p = \\sum_{e \\in \\partial p} \\sigma_{p,e} \\theta_{R,e}",
-      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined < π → r_b → 0.",
+      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime \u0398_p stays confined < \u03c0 \u2192 r_b \u2192 0.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -932,7 +983,7 @@
       "evidence": [
         "The precise quantity whose pi-crossings drive winding number changes and parity flips",
         "Direct discrete analogue of lattice gauge theory holonomy (Wilson loop on ARP lattice)",
-        "Builds on Core Equation #2 (Phase-Lift) — Theta_p computed from lifted phases, not raw",
+        "Builds on Core Equation #2 (Phase-Lift) \u2014 Theta_p computed from lifted phases, not raw",
         "In locked regime Theta_p stays confined |Theta_p| < pi_a, so r_b -> 0 (no flips)",
         "ARP lattice simulations: Theta_p trajectory directly predicts Z2 parity transitions",
         "Recovers standard lattice holonomy sum with counterclockwise convention"
@@ -956,7 +1007,10 @@
           "artifactCompleteness": 8
         },
         "novelty": 26
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-hlatn-plaquetteholonomy"
     },
     {
       "submissionId": "sub-2026-02-24-egatl-hlatn-parityfliprate",
@@ -965,7 +1019,7 @@
       "status": "promoted",
       "name": "EGATL-HLATN-ParityFlipRate",
       "equationLatex": "r_b = \\frac{\\#\\{\\text{flips}\\}}{K-1}",
-      "description": "Z₂ majority parity flip rate (the key experimental observable). 1/π chaotic asymptote → 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
+      "description": "Z\u2082 majority parity flip rate (the key experimental observable). 1/\u03c0 chaotic asymptote \u2192 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
       "source": "slack",
       "units": "OK",
       "theory": "PASS",
@@ -974,7 +1028,7 @@
         "K is the total time steps in the observation window (K >= 2)",
         "r_b in [0, 1]: 0 = perfectly locked, approaching 1/pi in chaotic regime",
         "Majority parity computed from integer winding numbers w_p across all plaquettes",
-        "Observable is averaged over full lattice — not per-plaquette",
+        "Observable is averaged over full lattice \u2014 not per-plaquette",
         "Assumes stationary statistics within observation window (ergodic regime)"
       ],
       "evidence": [
@@ -1004,13 +1058,16 @@
           "artifactCompleteness": 4
         },
         "novelty": 23
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-egatl-hlatn-parityfliprate"
     },
     {
       "submissionId": "sub-2026-02-25-mean-event-equilibrium-for-adaptive-discrete",
-      "name": "Mean-Event Equilibrium for Adaptive πₐ (discrete)",
+      "name": "Mean-Event Equilibrium for Adaptive \u03c0\u2090 (discrete)",
       "equationLatex": "\\pi_a^{\\star} = \\pi_0 + \\frac{\\alpha_{\\pi}}{\\mu_{\\pi}}\\,\\mathbb{E}[S_k]",
-      "description": "Stationary mean equilibrium of the discrete adaptive-π bound update. Starting from \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0), take expectations and set \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}] to obtain \\pi_a^{\\star}. Interprets \\mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).",
+      "description": "Stationary mean equilibrium of the discrete adaptive-\u03c0 bound update. Starting from \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0), take expectations and set \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}] to obtain \\pi_a^{\\star}. Interprets \\mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).",
       "source": "gpt-5.2 (PR Root Guide)",
       "submitter": "ChatGPT",
       "units": "OK",
@@ -1025,7 +1082,7 @@
         "Derivation: take expectation of \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0) and solve the fixed point of \\mathbb{E}[\\Delta\\pi_a]=0",
         "Sanity check: if \\mathbb{E}[S_k]=0 (no events), then \\pi_a^{\\star}=\\pi_0 (no-event fixed point)",
         "Monotonicity: \\pi_a^{\\star} increases linearly with mean event rate \\mathbb{E}[S_k]",
-        "Builds directly on LB Adaptive Ruler equation \\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi(\\pi_a - \\pi_0) — this is its discrete stationary solution",
+        "Builds directly on LB Adaptive Ruler equation \\dot{\\pi}_a = \\alpha_\\pi S - \\mu_\\pi(\\pi_a - \\pi_0) \u2014 this is its discrete stationary solution",
         "Limit recovery: when \\alpha_\\pi \\to 0, \\pi_a^{\\star} \\to \\pi_0 (standard Chern framework)"
       ],
       "animation": {
@@ -1049,7 +1106,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 27
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-mean-event-equilibrium-for-adaptive-discrete"
     },
     {
       "submissionId": "sub-2026-02-25-topological-coherence-order-parameter-arp-locking",
@@ -1069,7 +1129,7 @@
         "\\Psi is dimensionless and bounded: \\Psi \\in [-1, 1], with \\Psi > 0 indicating partial locking"
       ],
       "evidence": [
-        "Constructed from existing leaderboard quantities: \\Theta_p (Plaquette Holonomy, LB) and \\pi_a (Adaptive Ruler, LB) — no new free parameters",
+        "Constructed from existing leaderboard quantities: \\Theta_p (Plaquette Holonomy, LB) and \\pi_a (Adaptive Ruler, LB) \u2014 no new free parameters",
         "Directly analogous to Edwards-Anderson order parameter q_{EA} in spin glasses and magnetization M in Ising models",
         "Recovers r_b \\to 0 correspondence: when \\Psi \\to 1, no holonomy crosses \\pi boundaries, so parity flip rate r_b \\to 0",
         "Limit recovery: when \\pi_a \\to \\pi_0 = \\pi (standard Chern), reduces to \\Psi = N_p^{-1}\\sum_p \\cos(\\Theta_p/\\pi), the standard lattice gauge plaquette average",
@@ -1098,7 +1158,10 @@
           "artifactCompleteness": 8
         },
         "novelty": 29
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-topological-coherence-order-parameter-arp-locking"
     },
     {
       "submissionId": "sub-2026-03-04-phase-lift-clipped-unwrap-branch-safe",
@@ -1107,7 +1170,7 @@
       "status": "promoted",
       "name": "Phase-Lift Clipped Unwrap (Branch-Safe)",
       "equationLatex": "theta_R,k = theta_R,k-1 + clip(arg(z_k) - theta_R,k-1, -pi_a,k-1, pi_a,k-1)",
-      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps.",
+      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2\u03c0 jumps.",
       "source": "pr-root-guide",
       "units": "TBD",
       "theory": "TBD",
@@ -1118,7 +1181,7 @@
       ],
       "evidence": [
         "Prevents branch-cut blowups under impulsive residuals",
-        "Reduces to standard unwrap when pi_a,k -> π"
+        "Reduces to standard unwrap when pi_a,k -> \u03c0"
       ],
       "animation": {
         "status": "planned",
@@ -1151,17 +1214,20 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-lift-clipped-unwrap-branch-safe"
     },
     {
       "submissionId": "sub-2026-03-04-adaptive-bound-dynamics-event-driven-geometry",
       "submittedAt": "2026-03-04",
       "submitter": "gpt-5.2",
       "status": "promoted",
-      "name": "Adaptive-π Bound Dynamics (Event-Driven Geometry)",
+      "name": "Adaptive-\u03c0 Bound Dynamics (Event-Driven Geometry)",
       "equationLatex": "pi_a,k = pi_a,k-1 + alpha_pi*S_k - mu_pi*(pi_a,k-1 - pi_0)",
       "description": "Adaptive ruler/bound evolution: events S_k expand the unwrap radius, while relaxation pulls pi_a back toward baseline pi_0.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1204,17 +1270,20 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 69
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-bound-dynamics-event-driven-geometry"
     },
     {
       "submissionId": "sub-2026-03-04-winding-parity-estimator-and-flip-rate-order-par",
       "submittedAt": "2026-03-04",
       "submitter": "gpt-5.2",
       "status": "promoted",
-      "name": "Winding–Parity Estimator and Flip-Rate Order Parameter",
+      "name": "Winding\u2013Parity Estimator and Flip-Rate Order Parameter",
       "equationLatex": "w_k = round((theta_R,k - theta_R,0)/(2*pi));  b_k = (-1)^(w_k);  r_b = #{k: b_k != b_k-1}/(K-1)",
       "description": "Streaming topological summary: integer winding w_k induces parity b_k, whose flip-rate r_b acts as a locking/unlocking order parameter.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1257,7 +1326,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-winding-parity-estimator-and-flip-rate-order-parameter"
     },
     {
       "submissionId": "sub-2026-03-04-entropy-gated-complex-conductance-arp-network",
@@ -1267,7 +1339,7 @@
       "name": "Entropy-Gated Complex Conductance (ARP Network)",
       "equationLatex": "d/dt G_tilde_ij = alpha_G(S)*|I_ij|*exp(i*theta_R,ij) - mu_G(S)*G_tilde_ij",
       "description": "Complex conductance learning rule: reinforcement aligns conductance phase with resolved phase-lift angle; decay is entropy-gated via S.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1310,7 +1382,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-entropy-gated-complex-conductance-arp-network"
     },
     {
       "submissionId": "sub-2026-03-04-entropy-production-event-injection-s-field",
@@ -1320,7 +1395,7 @@
       "name": "Entropy Production / Event Injection (S-Field)",
       "equationLatex": "dS/dt = Sum_ij (|I_ij|^2/T_ij)*Re(1/G_tilde_ij) + kappa*Sum_ij|Delta w_ij| - gamma_S*(S - S_eq)",
       "description": "Entropy-like gating state: dissipative power term plus winding-discontinuity term inject S; relaxation returns S toward S_eq.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1363,7 +1438,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 71
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-entropy-production-event-injection-s-field"
     },
     {
       "submissionId": "sub-2026-03-04-phase-coupled-suppression-conductance-law",
@@ -1373,7 +1451,7 @@
       "name": "Phase-Coupled Suppression Conductance Law",
       "equationLatex": "d/dt G_ij = alpha*|I_ij| - mu*G_ij - lambda*G_ij*sin^2(theta_R,ij/(2*pi_a))",
       "description": "Suppression extension: reinforcement/decay plus a phase-position penalty that activates when phase approaches the adaptive unwrap threshold pi_a.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1416,7 +1494,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-coupled-suppression-conductance-law"
     },
     {
       "submissionId": "sub-2026-03-04-arp-redshift-law-with-bounded-oscillatory-steeri",
@@ -1426,7 +1507,7 @@
       "name": "ARP Redshift Law with Bounded Oscillatory Steering",
       "equationLatex": "z(t) = z_h*(1 - exp(-gamma*t))*(1 - epsilon*cos(omega*t + phi)),  with 0 <= epsilon < 1",
       "description": "Nonnegative redshift growth with a bounded oscillatory modulation: retains monotone envelope while enabling controlled oscillatory steering.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1469,7 +1550,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-arp-redshift-law-with-bounded-oscillatory-steering"
     },
     {
       "submissionId": "sub-2026-03-04-adaptive-ruler-qwz-effective-mass-geometry-induc",
@@ -1479,7 +1563,7 @@
       "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
       "equationLatex": "m_eff(epsilon) = m0/(1 - epsilon^2);  epsilon_c = sqrt(1 - (|m0|/2)^2)",
       "description": "Adaptive ruler renormalizes the QWZ mass channel: a single transition occurs when m_eff crosses the Chern boundary.",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
@@ -1522,7 +1606,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 71
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans"
     },
     {
       "submissionId": "sub-2026-03-06-phase-resolved-operator-general",
@@ -1530,17 +1617,17 @@
       "submitter": "gpt-5.2",
       "status": "promoted",
       "name": "Phase-Resolved Operator (General)",
-      "equationLatex": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
-      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+      "equationLatex": "\u29d2f(z_k) = f(|z_k|, \u03b8_R,k),  \u03b8_R,k = \u03b8_R,k-1 + clip(wrap_pi(\u03b8_k - \u03b8_k-1), -\u03c0_a,k-1, \u03c0_a,k-1)",
+      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (\u03b8_R) of a complex signal to eliminate branch-cut discontinuities. Applies to \u29d2log, \u29d2sqrt, \u29d2pow and other analytic functions.",
       "source": "Option C theory (branch-honest analog computing)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
-        "z_k ∈ ℂ \\ {0}",
-        "θ_k = Arg(z_k) is the principal branch",
-        "wrap_pi(x) maps x to (-π, π]",
+        "z_k \u2208 \u2102 \\ {0}",
+        "\u03b8_k = Arg(z_k) is the principal branch",
+        "wrap_pi(x) maps x to (-\u03c0, \u03c0]",
         "clip(x, a, b) saturates to [a,b]",
-        "π_a,k > 0"
+        "\u03c0_a,k > 0"
       ],
       "evidence": [
         "PRO outputs are single-valued and continuous on the lifted cover",
@@ -1577,7 +1664,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 72
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-resolved-operator-general"
     },
     {
       "submissionId": "sub-2026-03-06-branch-fault-criterion",
@@ -1585,15 +1675,15 @@
       "submitter": "gpt-5.2",
       "status": "promoted",
       "name": "Branch Fault Criterion",
-      "equationLatex": "fault_k = (|y_k - y_{k-1}| > τ_y) ∧ (|z_k| > ρ_{\text{min}})",
-      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
+      "equationLatex": "fault_k = (|y_k - y_{k-1}| > \u03c4_y) \u2227 (|z_k| > \u03c1_{\text{min}})",
+      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance \u03c4_y and the input magnitude stays above a near-zero threshold \u03c1_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
       "source": "Option C theory (branch-honest analog computing)",
       "units": "TBD",
       "theory": "TBD",
       "assumptions": [
         "Output y_k computed via log, sqrt, pow, or similar functions",
-        "τ_y is a fixed tolerance",
-        "ρ_{\text{min}} > 0 defines a near-zero magnitude threshold"
+        "\u03c4_y is a fixed tolerance",
+        "\u03c1_{\text{min}} > 0 defines a near-zero magnitude threshold"
       ],
       "evidence": [
         "Captures branch-flip events in principal-branch arithmetic",
@@ -1630,7 +1720,10 @@
         },
         "llm_model": "gpt-4o-mini",
         "blended_score": 63
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-branch-fault-criterion"
     },
     {
       "submissionId": "sub-2026-03-06-history-resolved-phase-with-adaptive-ruler",
@@ -1705,7 +1798,10 @@
         },
         "novelty": 30,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-history-resolved-phase-with-adaptive-ruler"
     },
     {
       "submissionId": "sub-2026-03-06-phase-lift-commutator-bound",
@@ -1745,7 +1841,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 22
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-lift-commutator-bound"
     },
     {
       "submissionId": "sub-2026-03-06-adaptive-topological-self-healing-conductance-la",
@@ -1793,7 +1892,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 27
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-topological-self-healing-conductance-law"
     },
     {
       "submissionId": "sub-2026-03-07-surprise-augmented-history-resolved-complex-cond",
@@ -1836,7 +1938,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 25
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-surprise-augmented-history-resolved-complex-conductance-"
     },
     {
       "submissionId": "sub-2026-03-08-adaptive-chern-self-healing-conductance-law",
@@ -1889,7 +1994,10 @@
           "total_count": 5,
           "equation_id": "eq-adaptive-chern-self-healing-conductance-law"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-chern-self-healing-conductance-law"
     },
     {
       "submissionId": "sub-2026-03-08-adaptive-chern-self-healing-conductance-law-2",
@@ -1909,11 +2017,11 @@
         "C_loc(t) is a sparse local topological indicator correlated with edge-channel integrity"
       ],
       "evidence": [
-        "Reduces to the phase-lifted adaptive conductance law when chi = 0; recovers standard quantized conductance when C_loc → 0 and pi_a → pi",
+        "Reduces to the phase-lifted adaptive conductance law when chi = 0; recovers standard quantized conductance when C_loc \u2192 0 and pi_a \u2192 pi",
         "Predicts a falsifiable recovery advantage over principal-branch and fixed-ruler controls after targeted boundary damage",
         "Ablation-ready: remove C_loc, remove suppression term, fix pi_a, or replace theta_R with principal phase and compare recovery time, boundary-current fraction, and transfer efficiency",
-        "1080p60 Manim animation (TopologicalSelfHealing.mp4) demonstrates complete healthy-lattice → boundary-damage → self-healing recovery cycle with visible topological feedback rerouting",
-        "Video ablation graph (Full Law vs Principal Branch Control) shows transfer efficiency recovering to 1.0 for full law while principal branch flatlines — direct falsification evidence",
+        "1080p60 Manim animation (TopologicalSelfHealing.mp4) demonstrates complete healthy-lattice \u2192 boundary-damage \u2192 self-healing recovery cycle with visible topological feedback rerouting",
+        "Video ablation graph (Full Law vs Principal Branch Control) shows transfer efficiency recovering to 1.0 for full law while principal branch flatlines \u2014 direct falsification evidence",
         "Builds directly on the adaptive phase-lifted conductance framework (LB #27); executable benchmark reproduces self-healing dynamics with boundary-current percentage restoration"
       ],
       "animation": {
@@ -1940,7 +2048,10 @@
         },
         "novelty": 30,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-adaptive-chern-self-healing-conductance-law-ctance-l"
     },
     {
       "submissionId": "sub-2026-03-08-phase-lifted-thouless-pump-memory-law",
@@ -1984,7 +2095,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 23
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-lifted-thouless-pump-memory-law"
     },
     {
       "submissionId": "sub-2026-03-08-landauer-phase-lift-conductance-law",
@@ -2028,7 +2142,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 23
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-landauer-phase-lift-conductance-law"
     },
     {
       "submissionId": "sub-2026-03-08-phase-lifted-rg-memory-flow",
@@ -2072,7 +2189,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 27
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-phase-lifted-rg-memory-flow"
     },
     {
       "submissionId": "sub-2026-03-09-directional-strength-proxy-chern-law",
@@ -2119,7 +2239,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-directional-strength-proxy-chern-law"
     },
     {
       "submissionId": "sub-2026-03-09-slip-suppressed-edge-recovery-law",
@@ -2178,7 +2301,10 @@
         },
         "llm_model": "gpt-5.4",
         "blended_score": 83
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-slip-suppressed-edge-recovery-law"
     },
     {
       "submissionId": "sub-2026-03-09-newton-s-second-law",
@@ -2218,7 +2344,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 20
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-newton-s-second-law"
     },
     {
       "submissionId": "sub-2026-03-09-boundary-reroute-recovery-index",
@@ -2277,7 +2406,10 @@
         },
         "llm_model": "gpt-5.4",
         "blended_score": 80
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-boundary-reroute-recovery-index"
     },
     {
       "submissionId": "sub-2026-03-09-entropy-gated-edge-recovery-score",
@@ -2336,7 +2468,10 @@
         },
         "llm_model": "gpt-5.4",
         "blended_score": 83
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-entropy-gated-edge-recovery-score"
     },
     {
       "submissionId": "sub-2026-04-10-power-law-flat-adaptive-pi-radial-operator",
@@ -2393,7 +2528,10 @@
         },
         "llm_model": "gpt-5.4-nano",
         "blended_score": 62
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-power-law-flat-adaptive-pi-radial-operator"
     },
     {
       "submissionId": "sub-2026-04-12-power-law-flat-adaptive-pi-radial-operator",
@@ -2443,7 +2581,10 @@
         "novelty": 21,
         "disposition": "duplicate",
         "note": "Exact duplicate of promoted equation eq-power-law-flat-adaptive-pi-radial-operator; retained in the submissions log without a second leaderboard entry."
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-power-law-flat-adaptive-pi-radial-operator"
     },
     {
       "submissionId": "sub-2026-04-12-flat-channel-loop-signature-pi-f-health-observab",
@@ -2491,7 +2632,10 @@
         },
         "novelty": 29,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-flat-channel-loop-signature-pi-f-health-observable"
     },
     {
       "submissionId": "sub-2026-04-12-loop-coherence-gated-edge-recovery-score",
@@ -2540,7 +2684,10 @@
           "artifactCompleteness": 7
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-loop-coherence-gated-edge-recovery-score"
     },
     {
       "submissionId": "sub-2026-04-12-flat-channel-deficit-gated-self-healing-law",
@@ -2587,7 +2734,10 @@
           "artifactCompleteness": 10
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-flat-channel-deficit-gated-self-healing-law"
     },
     {
       "submissionId": "sub-2026-04-12-history-resolved-pi-f-anticipatory-self-healing-",
@@ -2644,7 +2794,10 @@
           "artifactCompleteness": 10
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-history-resolved-pif-anticipatory-self-healing-law"
     },
     {
       "submissionId": "sub-2026-04-13-effective-dimension-of-the-power-law-flat-branch",
@@ -2692,7 +2845,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 23
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-effective-dimension-of-the-power-law-flat-branch"
     },
     {
       "submissionId": "sub-2026-04-13-history-resolved-loop-coherent-chern-self-healin",
@@ -2753,7 +2909,10 @@
         },
         "llm_model": "gpt-5.4-nano",
         "blended_score": 85
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-history-resolved-loop-coherent-chern-self-healing-law"
     },
     {
       "submissionId": "sub-2026-04-13-loop-coherence-and-curve-memory-stabilized-bz-co",
@@ -2802,7 +2961,10 @@
           "artifactCompleteness": 10
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc"
     },
     {
       "submissionId": "sub-2026-04-13-pi-f-loop-health-balance-law",
@@ -2827,7 +2989,7 @@
         "Builds directly on the existing TopEquations entry Flat-Channel Loop Signature (pi_f Health Observable), but upgrades it from a static localized precursor observable to a dynamical balance law.",
         "Compatible with the current retention-sweep evidence bundled here: data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_verify.csv reports sig_top_precursor_time=9.0, bott_loss_time=21.5, precursor_lead_time=12.5, and drop_z_max=10.34.",
         "The law identifies a concrete precursor-amplification mechanism through tan(Theta_Gamma/(2 pi_a)), explaining how modest phase mismatch or ruler drift can trigger a sharp loop-signature collapse before full topological failure.",
-        "The derivation includes the matching Euler-form update Sigma_{Gamma,k+1}^(pi_f) ≈ Sigma_{Gamma,k}^(pi_f) (1 + Delta t R_{Gamma,k}), so the continuous law is directly tied to the backend's discrete stepping rule rather than inferred post hoc.",
+        "The derivation includes the matching Euler-form update Sigma_{Gamma,k+1}^(pi_f) \u2248 Sigma_{Gamma,k}^(pi_f) (1 + Delta t R_{Gamma,k}), so the continuous law is directly tied to the backend's discrete stepping rule rather than inferred post hoc.",
         "Supporting image bundle published with this submission: data/artifacts/pi_f_loop_health_balance/hafc_pi_f_dashboard.png and data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png."
       ],
       "animation": {
@@ -2850,7 +3012,10 @@
           "artifactCompleteness": 7
         },
         "novelty": 29
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-pi-f-loop-health-balance-law"
     },
     {
       "submissionId": "sub-2026-04-13-pi-f-loop-health-balance-law-2",
@@ -2875,7 +3040,7 @@
         "Builds directly on the existing TopEquations entry Flat-Channel Loop Signature (pi_f Health Observable), but upgrades it from a static localized precursor observable to a dynamical balance law.",
         "Compatible with the current retention-sweep evidence bundled here: data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_verify.csv reports sig_top_precursor_time=9.0, bott_loss_time=21.5, precursor_lead_time=12.5, and drop_z_max=10.34.",
         "The law identifies a concrete precursor-amplification mechanism through tan(Theta_Gamma/(2 pi_a)), explaining how modest phase mismatch or ruler drift can trigger a sharp loop-signature collapse before full topological failure.",
-        "The derivation includes the matching Euler-form update Sigma_{Gamma,k+1}^(pi_f) ≈ Sigma_{Gamma,k}^(pi_f) (1 + Delta t R_{Gamma,k}), so the continuous law is directly tied to the backend's discrete stepping rule rather than inferred post hoc.",
+        "The derivation includes the matching Euler-form update Sigma_{Gamma,k+1}^(pi_f) \u2248 Sigma_{Gamma,k}^(pi_f) (1 + Delta t R_{Gamma,k}), so the continuous law is directly tied to the backend's discrete stepping rule rather than inferred post hoc.",
         "Supporting image bundle published with this submission: data/artifacts/pi_f_loop_health_balance/hafc_pi_f_dashboard.png and data/artifacts/pi_f_loop_health_balance/hafc_topology_retention_nodamage.png."
       ],
       "animation": {
@@ -2890,7 +3055,9 @@
         "Exact name match with promoted equation(s): eq-pi-f-loop-health-balance-law",
         "Exact equation match with promoted equation(s): eq-pi-f-loop-health-balance-law"
       ],
-      "review": {}
+      "review": {},
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "submissionId": "sub-2026-04-14-flat-adaptive-inverse-square-normal-form-with-ke",
@@ -2942,7 +3109,10 @@
           "artifactCompleteness": 10
         },
         "novelty": 29
-      }
+      },
+      "highlightTier": "",
+      "isGold": false,
+      "linkedEquationId": "eq-flat-adaptive-inverse-square-normal-form-with-kelvin-mel"
     },
     {
       "submissionId": "sub-2026-04-14-flat-adaptive-annular-capacity-law",
@@ -2991,7 +3161,10 @@
           "artifactCompleteness": 7
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-flat-adaptive-annular-capacity-law"
     },
     {
       "submissionId": "sub-2026-04-15-flat-adaptive-radial-heat-kernel-power-law-branc",
@@ -3037,7 +3210,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 27
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-flat-adaptive-radial-heat-kernel-power-law-branch-origin"
     },
     {
       "submissionId": "sub-2026-04-15-local-plaquette-flux-proxy-chern",
@@ -3082,7 +3258,10 @@
           "artifactCompleteness": 4
         },
         "novelty": 30
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-local-plaquette-flux-proxy-chern"
     },
     {
       "submissionId": "sub-2026-04-15-geometry-normalized-plaquette-flux-edge-enrichme",
@@ -3129,7 +3308,10 @@
         },
         "novelty": 30,
         "method": "heuristic-v2"
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true,
+      "linkedEquationId": "eq-geometry-normalized-plaquette-flux-edge-enrichment"
     }
   ]
 }

@@ -40,13 +40,15 @@
           "score": 24
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-bz-phase-lifted-complex-conductance-entropy-gated",
       "name": "BZ-Averaged Phase-Lifted Complex Conductance Update (Entropy-Gated)",
       "firstSeen": "2026-02-22",
-      "source": "derived: Core Eqs 2–4, 6–7, 10–11 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)",
+      "source": "derived: Core Eqs 2\u20134, 6\u20137, 10\u201311 + Leaderboard #3 + #10 (chat: PR Root Guide convo 2026-02-22)",
       "score": 97,
       "scores": {
         "tractability": 20,
@@ -67,11 +69,11 @@
       "description": "Canonical entropy-gated Phase-Lifted ARP conductance update. Single traceable boxed equation with 4 supporting definitions (all from Core + #3/#10). Entropy dynamics are 2nd-law safe; BZ ruler self-consistency feeds a uniform m_eff into QWZ preserving the single Chern jump.",
       "equationLatex": "\\frac{d\\tilde{G}_{ij}}{dt} = \\alpha_G(S)\\;|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)} - \\mu_G(S)\\;\\tilde{G}_{ij}(t)",
       "differentialLatex": "\\frac{dS}{dt} = \\sum_{ij}\\frac{|I_{ij}|^2}{T_{ij}}\\,\\operatorname{Re}\\!\\left(\\frac{1}{\\tilde{G}_{ij}}\\right) + \\kappa\\sum_{ij}|\\Delta w_{ij}(t)| - \\gamma\\,(S - S_{\\rm eq})",
-      "derivation": "Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2–4): \\theta_{R,ij}(k,t) = \\mathrm{unwrap}(\\arg I_{ij}(k,t);\\;\\theta_{R,ij}(k,t-\\Delta t),\\;\\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\\in\\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \\alpha_G(S) = \\alpha_0/[1+\\exp((S-S_c)/\\Delta S)],\\quad \\mu_G(S) = \\mu_0\\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \\varepsilon_{\\rm eff}(t) = \\sqrt{1-(1/(\\pi\\langle 1/\\pi_a\\rangle_{\\rm BZ}))^2},\\quad m_{\\rm eff} = m_0/\\sqrt{1-\\varepsilon_{\\rm eff}^2}. Feed m_0\\mapsto m_{\\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \\varepsilon_c=\\sqrt{3}/2). (4) Slip entropy: |\\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.",
+      "derivation": "Supporting pieces (4 definitions, each from Core + Leaderboard): (1) Phase-Lift (Core Eq. 2\u20134): \\theta_{R,ij}(k,t) = \\mathrm{unwrap}(\\arg I_{ij}(k,t);\\;\\theta_{R,ij}(k,t-\\Delta t),\\;\\pi_a(k,t)) with integer sheet index w_{ij}(k,t)\\in\\mathbb{Z} maintained explicitly. (2) Entropy-gated ARP rates (Core Eq. 11 + Redshift #1): \\alpha_G(S) = \\alpha_0/[1+\\exp((S-S_c)/\\Delta S)],\\quad \\mu_G(S) = \\mu_0\\cdot(S/S_0). (3) BZ ruler self-consistency (exact #3 closed form, now dynamic): \\varepsilon_{\\rm eff}(t) = \\sqrt{1-(1/(\\pi\\langle 1/\\pi_a\\rangle_{\\rm BZ}))^2},\\quad m_{\\rm eff} = m_0/\\sqrt{1-\\varepsilon_{\\rm eff}^2}. Feed m_0\\mapsto m_{\\rm eff} uniformly into QWZ Hamiltonian (preserves single-jump at \\varepsilon_c=\\sqrt{3}/2). (4) Slip entropy: |\\Delta w_{ij}(t)| counts integer sheet jumps; couples topology change events directly into entropy production. All limits recover original #10, #3, and ARP Redshift exactly.",
       "assumptions": [
         "\\pi_a(k,t) from Core Eq. 10; weights in BZ average are uniform or occupation (user choice).",
         "Chern number via FHS lattice method; Phase-Lift supplies continuous \\theta_R history and slip detection only.",
-        "Entropy production uses Re(1/\\tilde G) ≥ 0 for passive response (2nd-law safe).",
+        "Entropy production uses Re(1/\\tilde G) \u2265 0 for passive response (2nd-law safe).",
         "\\varepsilon_{\\mathrm{eff}} inversion assumes the cosine form \\pi_a=\\pi(1+\\varepsilon\\cos\\lambda) and |\\varepsilon_{\\mathrm{eff}}|<1."
       ],
       "date": "2026-02-22",
@@ -81,13 +83,15 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated"
+      "repoUrl": "https://github.com/RDM3DC/eq-bz-phase-lifted-complex-conductance-entropy-gated",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-parity-flip-rate",
       "name": "AHC Parity Flip-Rate (locking observable)",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.20)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.20)",
       "score": 87,
       "scores": {
         "tractability": 19,
@@ -105,7 +109,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when α_π/μ_π is high enough ('parity locking'). This is the primary testable quantity for the qubit Berry-loop experiment.",
+      "description": "The key AHC observable: fraction of consecutive steps where parity flips. AHC prediction: r_b drops when \u03b1_\u03c0/\u03bc_\u03c0 is high enough ('parity locking'). This is the primary testable quantity for the qubit Berry-loop experiment.",
       "assumptions": [
         "K is large enough for the ratio to be statistically meaningful.",
         "Parity flips are detected correctly (no double-counting at coincident singularities)."
@@ -118,7 +122,9 @@
           "score": 28
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-parity-flip-rate"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-parity-flip-rate",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-qwz-bz-avg-ruler-mass",
@@ -143,16 +149,18 @@
         "status": "planned",
         "path": ""
       },
-      "description": "BZ-average removes k-oscillation: <(1+ε cosλ)^{-1}> = (1-ε^2)^{-1/2}, giving a uniform m_eff(ε) and a single Chern jump at ε_c (for m0=-1: ε_c=√3/2).",
+      "description": "BZ-average removes k-oscillation: <(1+\u03b5 cos\u03bb)^{-1}> = (1-\u03b5^2)^{-1/2}, giving a uniform m_eff(\u03b5) and a single Chern jump at \u03b5_c (for m0=-1: \u03b5_c=\u221a3/2).",
       "date": "2026-02-22",
       "equationLatex": "\\left\\langle\\frac{1}{1+\\epsilon\\cos\\lambda}\\right\\rangle_{BZ}=\\frac{1}{\\sqrt{1-\\epsilon^2}},\\quad m_{\\mathrm{eff}}(\\epsilon)=\\frac{m_0}{\\sqrt{1-\\epsilon^2}}\\ (|\\epsilon|<1),\\quad \\epsilon_c=\\sqrt{1-(|m_0|/2)^2}",
-      "repoUrl": "https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-bz-avg-ruler-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-step-limit",
-      "name": "AHC Adaptive Step-Limit Update (πₐ clip)",
+      "name": "AHC Adaptive Step-Limit Update (\u03c0\u2090 clip)",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.16)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.16)",
       "score": 81,
       "scores": {
         "tractability": 19,
@@ -170,10 +178,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Core AHC innovation: clip the residual to adaptive bounds ±πₐ. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.",
+      "description": "Core AHC innovation: clip the residual to adaptive bounds \u00b1\u03c0\u2090. Prevents single-run glitches from causing a branch jump. The key robustness mechanism.",
       "assumptions": [
-        "π_{a,k-1} is positive and represents a trusted local phase step-limit.",
-        "Clipping to [-π_a, +π_a] is a valid monotone saturation nonlinearity."
+        "\u03c0_{a,k-1} is positive and represents a trusted local phase step-limit.",
+        "Clipping to [-\u03c0_a, +\u03c0_a] is a valid monotone saturation nonlinearity."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\theta_{R,k}=\\theta_{R,k-1}+\\mathrm{clip}(r_k,\\,-\\pi_{a,k-1},\\,\\pi_{a,k-1})",
@@ -183,7 +191,9 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-step-limit"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-step-limit",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-qwz-pia-modulated-mass",
@@ -211,13 +221,15 @@
       "description": "Couples the QWZ topological mass to the adaptive ruler, making m_eff depend on k_x; numerically produces multiple gap closings and re-entrant Chern sectors.",
       "date": "2026-02-22",
       "equationLatex": "\\pi_a(\\lambda)=\\pi(1+\\epsilon\\cos\\lambda),\\quad m_{\\mathrm{eff}}(k_x)=m_0+\\beta\\left(\\frac{1}{1+\\epsilon\\cos k_x}-1\\right)",
-      "repoUrl": "https://github.com/RDM3DC/eq-qwz-pia-modulated-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-pia-modulated-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-running-winding",
       "name": "AHC Running Winding + Parity",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.19)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.19)",
       "score": 79,
       "scores": {
         "tractability": 18,
@@ -244,13 +256,15 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-running-winding"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-running-winding",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-phase-critical-collapse",
       "name": "Phase-Coupled Stability Threshold Law",
       "firstSeen": "2026-02",
-      "source": "derived: ARP + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+      "source": "derived: ARP + Phase-Lift + Adaptive-\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac",
       "score": 77,
       "scores": {
         "tractability": 18,
@@ -268,7 +282,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â. Predicts a sharp stability/transition-like behavior when ÃƒÅ½Ã‚Â¸_R approaches half-integer multiples of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â (maximal sinÃƒâ€šÃ‚Â²). Assumptions: ÃƒÅ½Ã‚Â¸_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â sets the relevant phase period; ÃƒÅ½Ã‚Â» has units 1/time.",
+      "description": "Adds a phase-coupled suppression term to ARP: conductance growth is damped by lifted phase accumulation relative to the local period 2\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090. Predicts a sharp stability/transition-like behavior when \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R approaches half-integer multiples of \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 (maximal sin\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b2). Assumptions: \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R,ij is a Phase-Lifted (unwrapped) phase-like observable for edge current; \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 sets the relevant phase period; \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb has units 1/time.",
       "date": "2026-02-20",
       "equationLatex": "\\frac{dG_{ij}}{dt}=\\alpha\\,|I_{ij}|-\\mu\\,G_{ij}-\\lambda\\,G_{ij}\\,\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
       "tags": {
@@ -277,13 +291,15 @@
           "score": 28
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-critical-collapse"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-critical-collapse",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-pi-a-update",
-      "name": "AHC Adaptive πₐ Update (discrete)",
+      "name": "AHC Adaptive \u03c0\u2090 Update (discrete)",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.18)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.18)",
       "score": 76,
       "scores": {
         "tractability": 18,
@@ -301,10 +317,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Discrete version of πₐ dynamics for the AHC loop: widens bound after events (α_π S_k term), relaxes toward π₀ otherwise.",
+      "description": "Discrete version of \u03c0\u2090 dynamics for the AHC loop: widens bound after events (\u03b1_\u03c0 S_k term), relaxes toward \u03c0\u2080 otherwise.",
       "assumptions": [
-        "α_π and μ_π satisfy stability: α_π large enough to capture real slips, μ_π small enough for relaxation.",
-        "π_0 is a stable rest value (typically π)."
+        "\u03b1_\u03c0 and \u03bc_\u03c0 satisfy stability: \u03b1_\u03c0 large enough to capture real slips, \u03bc_\u03c0 small enough for relaxation.",
+        "\u03c0_0 is a stable rest value (typically \u03c0)."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0)",
@@ -314,7 +330,9 @@
           "score": 24
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-pi-a-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-redshift-bounded-oscillation",
@@ -375,13 +393,15 @@
           "score": 21
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-bounded-oscillation",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-phase-lifted-complex-conductance",
       "name": "Phase-Lifted Complex Conductance Update",
       "firstSeen": "2026-02",
-      "source": "derived: ARP core + Phase-Lift + Adaptive-ÃƒÂÃ¢â€šÂ¬",
+      "source": "derived: ARP core + Phase-Lift + Adaptive-\u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac",
       "score": 71,
       "scores": {
         "tractability": 18,
@@ -399,7 +419,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{iÃƒÅ½Ã‚Â¸_R,ij} to model sign flips under branch crossings.",
+      "description": "Complex-admittance lift of ARP: conductance grows along the instantaneous current phasor direction using a Phase-Lifted (unwrapped) phase. Assumes phase-coherent transport where a complex ~G is meaningful. Optional variant: include a Z2 parity factor b_ij = (-1)^{w_ij} multiplying e^{i\u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b8_R,ij} to model sign flips under branch crossings.",
       "date": "2026-02-20",
       "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G\\,|I_{ij}(t)|\\,e^{i\\theta_{R,ij}(t)}-\\mu_G\\,\\tilde G_{ij}(t),\\qquad \\theta_{R,ij}(t)=\\mathrm{unwrap}\\!\\big(\\arg I_{ij}(t);\\theta_{\\rm ref},\\pi_a\\big)",
       "tags": {
@@ -408,13 +428,15 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-phase-lifted-complex-conductance",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-candidate-unwrap",
-      "name": "AHC Candidate Unwrap (standard 2π lift)",
+      "name": "AHC Candidate Unwrap (standard 2\u03c0 lift)",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.14)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.14)",
       "score": 70,
       "scores": {
         "tractability": 18,
@@ -432,10 +454,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Apply standard 2π unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.",
+      "description": "Apply standard 2\u03c0 unwrap to each Ramsey measurement relative to the previous lifted phase. First step of the AHC control loop.",
       "assumptions": [
-        "Measurement φ_k is a well-defined principal-value phase in (-π, π].",
-        "Previous lifted phase θ_{R,k-1} is available and trusted."
+        "Measurement \u03c6_k is a well-defined principal-value phase in (-\u03c0, \u03c0].",
+        "Previous lifted phase \u03b8_{R,k-1} is available and trusted."
       ],
       "date": "2026-02-22",
       "equationLatex": "u_k=\\mathrm{unwrap}(\\phi_k;\\theta_{R,k-1})",
@@ -445,13 +467,15 @@
           "score": 20
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-candidate-unwrap"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-candidate-unwrap",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-residual",
       "name": "AHC Residual",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.15)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.15)",
       "score": 70,
       "scores": {
         "tractability": 18,
@@ -478,7 +502,9 @@
           "score": 18
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-residual"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-residual",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-temp-conductance",
@@ -511,13 +537,15 @@
           "score": 20
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-temp-conductance"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-temp-conductance",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-ahc-event-stimulus",
       "name": "AHC Event Stimulus (phase-jump indicator)",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §F (Eq.17)",
+      "source": "Equation Sheet v1.1 \u00a7F (Eq.17)",
       "score": 69,
       "scores": {
         "tractability": 17,
@@ -535,7 +563,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Binary indicator: 1 when a residual exceeds the current πₐ bound, 0 otherwise. Alternative: curvature-based S_k ∝ |Δ²θ_R|. Triggers πₐ widening.",
+      "description": "Binary indicator: 1 when a residual exceeds the current \u03c0\u2090 bound, 0 otherwise. Alternative: curvature-based S_k \u221d |\u0394\u00b2\u03b8_R|. Triggers \u03c0\u2090 widening.",
       "date": "2026-02-22",
       "equationLatex": "S_k=\\mathbf{1}\\{|r_k|>\\pi_{a,k-1}\\}",
       "tags": {
@@ -544,7 +572,9 @@
           "score": 19
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-ahc-event-stimulus"
+      "repoUrl": "https://github.com/RDM3DC/eq-ahc-event-stimulus",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-lyapunov-stability",
@@ -577,13 +607,15 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-lyapunov-stability"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-lyapunov-stability",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-gradient-flow-bridge",
-      "name": "ARP as Gradient Flow in Adaptive-π Geometry",
+      "name": "ARP as Gradient Flow in Adaptive-\u03c0 Geometry",
       "firstSeen": "2026-02-22",
-      "source": "4-pillar fusion §3",
+      "source": "4-pillar fusion \u00a73",
       "score": 66,
       "scores": {
         "tractability": 18,
@@ -601,12 +633,12 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Bridge theorem: ARP reinforcement is proportional to edge energy contributions in a πₐ-weighted Dirichlet landscape. ARP is a 'lazy' gradient flow where Ω = π_a/π changes what counts as a short/cheap path. Prediction: increasing πₐ in a region re-routes the ARP backbone away, even under the same boundary forcing. 'πₐ sculpts geodesics; ARP discovers them.'",
+      "description": "Bridge theorem: ARP reinforcement is proportional to edge energy contributions in a \u03c0\u2090-weighted Dirichlet landscape. ARP is a 'lazy' gradient flow where \u03a9 = \u03c0_a/\u03c0 changes what counts as a short/cheap path. Prediction: increasing \u03c0\u2090 in a region re-routes the ARP backbone away, even under the same boundary forcing. '\u03c0\u2090 sculpts geodesics; ARP discovers them.'",
       "differentialLatex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac{1}{2}\\sum_{(i,j)} \\Omega_{ij}\\,G_{ij}\\,(\\phi_i-\\phi_j)^2",
-      "derivation": "On a graph with adaptive-π weight Ω_{ij} and ARP conductance G_{ij}, the Dirichlet energy is E = (1/2) Σ Ω_{ij} G_{ij} (φ_i - φ_j)². Kirchhoff potentials give |I_{ij}| = G_{ij}|φ_i - φ_j|. ARP reinforce ∝ |I_{ij}| = edge contribution to √E geometry. Hence ARP is gradient descent on the weighted energy landscape.",
+      "derivation": "On a graph with adaptive-\u03c0 weight \u03a9_{ij} and ARP conductance G_{ij}, the Dirichlet energy is E = (1/2) \u03a3 \u03a9_{ij} G_{ij} (\u03c6_i - \u03c6_j)\u00b2. Kirchhoff potentials give |I_{ij}| = G_{ij}|\u03c6_i - \u03c6_j|. ARP reinforce \u221d |I_{ij}| = edge contribution to \u221aE geometry. Hence ARP is gradient descent on the weighted energy landscape.",
       "assumptions": [
         "Network is connected; Kirchhoff potentials are well-defined per step.",
-        "Ω_{ij} is sampled from the continuous π_a field at edge midpoints.",
+        "\u03a9_{ij} is sampled from the continuous \u03c0_a field at edge midpoints.",
         "Budget/normalization constraint forces edge competition (not all edges grow)."
       ],
       "date": "2026-02-22",
@@ -617,7 +649,9 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-gradient-flow-bridge"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-gradient-flow-bridge",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-curve-memory-137",
@@ -641,7 +675,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Formalizes the emergence of the inverse fine-structure constant (ÃƒÅ½Ã‚Â±ÃƒÂ¢Ã‚ÂÃ‚Â»Ãƒâ€šÃ‚Â¹ ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
+      "description": "Formalizes the emergence of the inverse fine-structure constant (\u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00b1\u00c3\u0192\u00c2\u00a2\u00c3\u201a\u00c2\u0081\u00c3\u201a\u00c2\u00bb\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b9 \u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00b0\u00c3\u2039\u00e2\u20ac\u00a0 137) via resonant harmonic conditions in curve memory, assuming an equilibrium state governed by ARP-influenced boundary dynamics.",
       "date": "2026-02-20",
       "equationLatex": "\\alpha^{-1}\\approx 137\\ \\ \\text{(emergent resonance condition in curve memory)}",
       "tags": {
@@ -650,7 +684,9 @@
           "score": 23
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-curve-memory-137"
+      "repoUrl": "https://github.com/RDM3DC/eq-curve-memory-137",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-shield-mechanic-arp",
@@ -674,7 +710,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ ÃƒÅ½Ã‚Â»)E_ext, while the induced adaptive current follows J_adapt = ÃƒÂÃ†â€™E_ext, with 0 < ÃƒÅ½Ã‚Â» < 1.",
+      "description": "Proposes a shielding effect in ARP systems, modeled as a fractional reduction of the external field. The effective field is E_eff = (1 \u00c3\u0192\u00c2\u00a2\u00c3\u2039\u00e2\u20ac\u00a0\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2 \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb)E_ext, while the induced adaptive current follows J_adapt = \u00c3\u0192\u00c2\u008f\u00c3\u2020\u00e2\u20ac\u2122E_ext, with 0 < \u00c3\u0192\u00c5\u00bd\u00c3\u201a\u00c2\u00bb < 1.",
       "date": "2026-02-20",
       "equationLatex": "E_{eff}=(1-\\lambda)E_{ext},\\ \\ J_{adapt}=\\sigma E_{ext},\\ \\ 0<\\lambda<1",
       "tags": {
@@ -683,13 +719,15 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-shield-mechanic-arp"
+      "repoUrl": "https://github.com/RDM3DC/eq-shield-mechanic-arp",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-parity-pump",
-      "name": "Parity Pump (πₐ-gradient ℤ₂ flip mechanism)",
+      "name": "Parity Pump (\u03c0\u2090-gradient \u2124\u2082 flip mechanism)",
       "firstSeen": "2026-02-22",
-      "source": "4-pillar fusion §2",
+      "source": "4-pillar fusion \u00a72",
       "score": 63,
       "scores": {
         "tractability": 18,
@@ -707,13 +745,13 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Novel mechanism: parity can flip due to geometry-field motion, not only due to circling a branch point. A Z₂ pump controlled by ln(πₐ) dynamics. Conjecture: if Δθ=0 but ∫ d(ln πₐ) ≠ 0 over a closed loop, admissible lifts exist where b_a flips — the adaptive-π analog of geometric phase without dynamical phase.",
+      "description": "Novel mechanism: parity can flip due to geometry-field motion, not only due to circling a branch point. A Z\u2082 pump controlled by ln(\u03c0\u2090) dynamics. Conjecture: if \u0394\u03b8=0 but \u222b d(ln \u03c0\u2090) \u2260 0 over a closed loop, admissible lifts exist where b_a flips \u2014 the adaptive-\u03c0 analog of geometric phase without dynamical phase.",
       "differentialLatex": "\\dot\\varphi = \\frac{\\dot\\theta_R}{2\\pi_a} - \\varphi\\,\\frac{d}{dt}\\big(\\ln\\pi_a\\big)",
-      "derivation": "Define dimensionless lifted phase φ(t) := θ_R(t)/(2π_a(t)). Differentiate: dφ/dt = dθ_R/dt / (2π_a) - θ_R/(2π_a) · dπ_a/dt / π_a = dθ_R/dt / (2π_a) - φ · d(ln π_a)/dt. Half-integer crossings of φ flip b_a.",
+      "derivation": "Define dimensionless lifted phase \u03c6(t) := \u03b8_R(t)/(2\u03c0_a(t)). Differentiate: d\u03c6/dt = d\u03b8_R/dt / (2\u03c0_a) - \u03b8_R/(2\u03c0_a) \u00b7 d\u03c0_a/dt / \u03c0_a = d\u03b8_R/dt / (2\u03c0_a) - \u03c6 \u00b7 d(ln \u03c0_a)/dt. Half-integer crossings of \u03c6 flip b_a.",
       "assumptions": [
-        "Smooth limit applies (continuous π_a and θ_R).",
-        "π_a > 0 everywhere (no degenerate period).",
-        "Parity pump conjecture assumes closed-loop topology with nontrivial ln(π_a) circulation."
+        "Smooth limit applies (continuous \u03c0_a and \u03b8_R).",
+        "\u03c0_a > 0 everywhere (no degenerate period).",
+        "Parity pump conjecture assumes closed-loop topology with nontrivial ln(\u03c0_a) circulation."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\varphi(t) := \\frac{\\theta_R(t)}{2\\pi_a(t)},\\qquad \\int_\\gamma d(\\ln\\pi_a)\\neq 0 \\;\\Rightarrow\\; b_a[\\gamma]\\text{ can flip}",
@@ -723,7 +761,9 @@
           "score": 30
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-parity-pump"
+      "repoUrl": "https://github.com/RDM3DC/eq-parity-pump",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-dyn-constants-union",
@@ -747,7 +787,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "First-order linear coupling for adaptive updates of ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â, e, ÃƒÂÃ¢â‚¬Â¢, and c, expressing networked rates of changeÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âmodels the unification of ARP, AIN, and ÃƒÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â system parameters.",
+      "description": "First-order linear coupling for adaptive updates of \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090, e, \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00a2, and c, expressing networked rates of change\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u009dmodels the unification of ARP, AIN, and \u00c3\u0192\u00c2\u008f\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u0090 system parameters.",
       "date": "2026-02-20",
       "equationLatex": "\\dot{\\mathbf{c}}=A\\,\\mathbf{c}\\ \\ \\text{with}\\ \\mathbf{c}=[\\pi_a, e, \\varphi, c]^T",
       "tags": {
@@ -756,13 +796,15 @@
           "score": 25
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-dyn-constants-union"
+      "repoUrl": "https://github.com/RDM3DC/eq-dyn-constants-union",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-pi-a-gauged-phase-lift",
-      "name": "πₐ-Gauged Phase-Lift (adaptive unwrap + invariants)",
+      "name": "\u03c0\u2090-Gauged Phase-Lift (adaptive unwrap + invariants)",
       "firstSeen": "2026-02-22",
-      "source": "4-pillar fusion §1",
+      "source": "4-pillar fusion \u00a71",
       "score": 61,
       "scores": {
         "tractability": 19,
@@ -780,12 +822,12 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Generalizes Phase-Lift unwrapping from fixed 2π to adaptive 2πₐ: sheet jumps happen in units of the local identification length. Derives πₐ-gauged winding w_a and ℤ₂ shadow parity b_a. Novel: the unit of winding is no longer constant, coupling topology to a geometry field.",
+      "description": "Generalizes Phase-Lift unwrapping from fixed 2\u03c0 to adaptive 2\u03c0\u2090: sheet jumps happen in units of the local identification length. Derives \u03c0\u2090-gauged winding w_a and \u2124\u2082 shadow parity b_a. Novel: the unit of winding is no longer constant, coupling topology to a geometry field.",
       "differentialLatex": "m_k = \\arg\\min_{m\\in\\mathbb{Z}} |\\theta(t_k)+2\\pi_a(t_k)\\,m - \\theta_R(t_{k-1})|",
-      "derivation": "Apply the nearest-sheet Phase-Lift rule but replace the fixed period 2π with the local adaptive period 2πₐ(t_k). The resolved phase is θ_R(t_k) = θ(t_k) + 2π_a(t_k) m_k. Winding w_a[γ] counts net integer sheet transitions; b_a = (-1)^{w_a} gives holonomy parity.",
+      "derivation": "Apply the nearest-sheet Phase-Lift rule but replace the fixed period 2\u03c0 with the local adaptive period 2\u03c0\u2090(t_k). The resolved phase is \u03b8_R(t_k) = \u03b8(t_k) + 2\u03c0_a(t_k) m_k. Winding w_a[\u03b3] counts net integer sheet transitions; b_a = (-1)^{w_a} gives holonomy parity.",
       "assumptions": [
-        "z(t) ≠ 0 along the path (no singularity crossings).",
-        "π_a(t) > 0 everywhere (positive phase-period field).",
+        "z(t) \u2260 0 along the path (no singularity crossings).",
+        "\u03c0_a(t) > 0 everywhere (positive phase-period field).",
         "Nearest-sheet rule is unambiguous (no exact midpoints between sheets)."
       ],
       "date": "2026-02-22",
@@ -796,7 +838,9 @@
           "score": 28
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-pi-a-gauged-phase-lift"
+      "repoUrl": "https://github.com/RDM3DC/eq-pi-a-gauged-phase-lift",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-redshift-arp-superc",
@@ -829,7 +873,9 @@
           "score": 21
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-redshift-arp-superc"
+      "repoUrl": "https://github.com/RDM3DC/eq-redshift-arp-superc",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-phase-lift-unwrapping",
@@ -854,10 +900,12 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Adaptive Phase-Lift recurrence: unwrap arg using local identification length 2π_a (not fixed 2π); yields integer sheet count and Z2 parity tracking.",
+      "description": "Adaptive Phase-Lift recurrence: unwrap arg using local identification length 2\u03c0_a (not fixed 2\u03c0); yields integer sheet count and Z2 parity tracking.",
       "date": "2026-02-22",
       "equationLatex": "\\theta_R(t_k)=\\theta(t_k)+2\\pi_a(t_k)m_k,\\quad m_k=\\arg\\min_{m\\in\\mathbb{Z}}\\left|\\theta(t_k)+2\\pi_a(t_k)m-\\theta_R(t_{k-1})\\right|",
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-phase-lift-unwrapping"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-phase-lift-unwrapping",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-weighted-dirichlet-energy",
@@ -882,16 +930,18 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Graph Dirichlet energy with adaptive-π weights Ω_ij; suggests ARP reinforcement concentrates conductance on Ω-weighted shortest paths / backbones.",
+      "description": "Graph Dirichlet energy with adaptive-\u03c0 weights \u03a9_ij; suggests ARP reinforcement concentrates conductance on \u03a9-weighted shortest paths / backbones.",
       "date": "2026-02-22",
       "equationLatex": "\\mathcal{E}(\\phi;G,\\Omega)=\\frac12\\sum_{(i,j)}\\Omega_{ij}G_{ij}(\\phi_i-\\phi_j)^2",
-      "repoUrl": "https://github.com/RDM3DC/eq-arp-weighted-dirichlet-energy"
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-weighted-dirichlet-energy",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-un-det-phase",
       "name": "U(N) Det-Phase on Lifted Branch",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §G (Eq.22)",
+      "source": "Equation Sheet v1.1 \u00a7G (Eq.22)",
       "score": 59,
       "scores": {
         "tractability": 15,
@@ -909,10 +959,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Same Phase-Lift bookkeeping (integer winding + ℤ₂ shadow) applied to the determinant phase of U(N) holonomy. Bridges the U(1) parity framework to non-abelian gauge systems.",
+      "description": "Same Phase-Lift bookkeeping (integer winding + \u2124\u2082 shadow) applied to the determinant phase of U(N) holonomy. Bridges the U(1) parity framework to non-abelian gauge systems.",
       "assumptions": [
         "det U is nonzero (no degenerate holonomy).",
-        "Adaptive πₐ sets the winding period instead of fixed π.",
+        "Adaptive \u03c0\u2090 sets the winding period instead of fixed \u03c0.",
         "Physical interpretation of w_det depends on the specific gauge theory."
       ],
       "date": "2026-02-22",
@@ -923,7 +973,9 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-un-det-phase"
+      "repoUrl": "https://github.com/RDM3DC/eq-un-det-phase",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-connection-chern",
@@ -948,10 +1000,12 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Defines a rescaled connection Â=A/(2π_a) and curvature F̂=dÂ; C_a is integer-valued when the rescaling is globally well-defined.",
+      "description": "Defines a rescaled connection \u00c2=A/(2\u03c0_a) and curvature F\u0302=d\u00c2; C_a is integer-valued when the rescaling is globally well-defined.",
       "date": "2026-02-22",
       "equationLatex": "\\widehat A:=A/(2\\pi_a),\\quad \\widehat F:=d\\widehat A,\\quad C_a:=\\frac{1}{2\\pi}\\int_{T^2}\\widehat F\\in\\mathbb{Z}",
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-connection-chern"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-connection-chern",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-parity-from-adaptive-chern",
@@ -979,13 +1033,15 @@
       "description": "Mod-2 holonomy/parity flip controlled by the integer adaptive Chern invariant.",
       "date": "2026-02-22",
       "equationLatex": "b_{\\mathrm{pumped}}=(-1)^{C_a}",
-      "repoUrl": "https://github.com/RDM3DC/eq-parity-from-adaptive-chern"
+      "repoUrl": "https://github.com/RDM3DC/eq-parity-from-adaptive-chern",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-cm-integration-state",
       "name": "Curve-Memory Integration State (unified closed loop)",
       "firstSeen": "2026-02-22",
-      "source": "4-pillar fusion §4",
+      "source": "4-pillar fusion \u00a74",
       "score": 57,
       "scores": {
         "tractability": 17,
@@ -1003,12 +1059,12 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Defines a unified integration state s(t) = (θ_R, w_a, b_a, π_a, M_k) bundling Phase-Lift, winding/parity, adaptive-π, and curve-memory features. Curve-memory curvature drives π_a, π_a changes phase unwrapping sensitivity, parity flips become detectable stable motifs. Turns topological sheet changes into an event grammar.",
-      "derivation": "Bundle lifted phase θ_R, gauged winding w_a, parity b_a, adaptive period π_a, and curve-memory jets M_k into a single state vector. Drive π_a via dπ_a/dt = α_π κ_mem - μ_π(π_a - π) where κ_mem is trajectory curvature from curve-memory. This closes the loop: CM → events → π_a → unwrap sensitivity → parity → CM motifs.",
+      "description": "Defines a unified integration state s(t) = (\u03b8_R, w_a, b_a, \u03c0_a, M_k) bundling Phase-Lift, winding/parity, adaptive-\u03c0, and curve-memory features. Curve-memory curvature drives \u03c0_a, \u03c0_a changes phase unwrapping sensitivity, parity flips become detectable stable motifs. Turns topological sheet changes into an event grammar.",
+      "derivation": "Bundle lifted phase \u03b8_R, gauged winding w_a, parity b_a, adaptive period \u03c0_a, and curve-memory jets M_k into a single state vector. Drive \u03c0_a via d\u03c0_a/dt = \u03b1_\u03c0 \u03ba_mem - \u03bc_\u03c0(\u03c0_a - \u03c0) where \u03ba_mem is trajectory curvature from curve-memory. This closes the loop: CM \u2192 events \u2192 \u03c0_a \u2192 unwrap sensitivity \u2192 parity \u2192 CM motifs.",
       "assumptions": [
         "Curve-memory features M_k are well-defined (sufficient trajectory history).",
-        "κ_mem is a smooth or piecewise-smooth curvature proxy.",
-        "Feedback loop is stable under the chosen (α_π, μ_π) parameters."
+        "\u03ba_mem is a smooth or piecewise-smooth curvature proxy.",
+        "Feedback loop is stable under the chosen (\u03b1_\u03c0, \u03bc_\u03c0) parameters."
       ],
       "date": "2026-02-22",
       "equationLatex": "s(t)=\\big(\\theta_R,\\,w_a,\\,b_a,\\,\\pi_a,\\,M_k\\big),\\quad \\dot\\pi_a=\\alpha_\\pi\\,\\kappa_{\\text{mem}}-\\mu_\\pi(\\pi_a-\\pi)",
@@ -1018,13 +1074,15 @@
           "score": 27
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-cm-integration-state"
+      "repoUrl": "https://github.com/RDM3DC/eq-cm-integration-state",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-un-wilson-holonomy",
       "name": "U(N) Wilson / Holonomy",
       "firstSeen": "2026-02-22",
-      "source": "Equation Sheet v1.1 §G (Eq.21)",
+      "source": "Equation Sheet v1.1 \u00a7G (Eq.21)",
       "score": 56,
       "scores": {
         "tractability": 14,
@@ -1042,9 +1100,9 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Path-ordered exponential giving the U(N) holonomy around a closed loop γ. Extends the Phase-Lift framework beyond the U(1) case to non-abelian gauge fields.",
+      "description": "Path-ordered exponential giving the U(N) holonomy around a closed loop \u03b3. Extends the Phase-Lift framework beyond the U(1) case to non-abelian gauge fields.",
       "assumptions": [
-        "Connection A is smooth (or piecewise smooth) along γ.",
+        "Connection A is smooth (or piecewise smooth) along \u03b3.",
         "Path ordering P is needed for non-abelian A (order matters).",
         "N > 1 generalization remains speculative without concrete experimental targets."
       ],
@@ -1056,7 +1114,9 @@
           "score": 20
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-un-wilson-holonomy"
+      "repoUrl": "https://github.com/RDM3DC/eq-un-wilson-holonomy",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-dimensionless-phase-flow",
@@ -1081,16 +1141,18 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Defines φ=θ_R/(2π_a) and shows π_a dynamics can drive half-integer crossings (a Z2 pump mechanism) even with smooth θ_R.",
+      "description": "Defines \u03c6=\u03b8_R/(2\u03c0_a) and shows \u03c0_a dynamics can drive half-integer crossings (a Z2 pump mechanism) even with smooth \u03b8_R.",
       "date": "2026-02-22",
       "equationLatex": "\\varphi:=\\theta_R/(2\\pi_a),\\quad \\dot\\varphi=\\dot\\theta_R/(2\\pi_a)-\\varphi\\,\\frac{d}{dt}(\\ln\\pi_a)",
-      "repoUrl": "https://github.com/RDM3DC/eq-dimensionless-phase-flow"
+      "repoUrl": "https://github.com/RDM3DC/eq-dimensionless-phase-flow",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-monodromy-spectrum",
       "name": "Adaptive Monodromy Spectrum (bifurcation framework)",
       "firstSeen": "2026-02-22",
-      "source": "4-pillar fusion §5",
+      "source": "4-pillar fusion \u00a75",
       "score": 54,
       "scores": {
         "tractability": 16,
@@ -1108,10 +1170,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "For loop families γ_λ under πₐ evolution, the Adaptive Monodromy Pair M_a(γ) = (w_a, b_a) ∈ ℤ × {±1} traces out a reachable set that can bifurcate: parity flips occur without classical winding as (α_π, μ_π) or CM thresholds vary. Defines a research program: map bifurcation diagrams of M_a vs parameters.",
+      "description": "For loop families \u03b3_\u03bb under \u03c0\u2090 evolution, the Adaptive Monodromy Pair M_a(\u03b3) = (w_a, b_a) \u2208 \u2124 \u00d7 {\u00b11} traces out a reachable set that can bifurcate: parity flips occur without classical winding as (\u03b1_\u03c0, \u03bc_\u03c0) or CM thresholds vary. Defines a research program: map bifurcation diagrams of M_a vs parameters.",
       "assumptions": [
-        "Loop family γ_λ is smoothly parameterized.",
-        "π_a evolves by reinforce/decay dynamics during deformation.",
+        "Loop family \u03b3_\u03bb is smoothly parameterized.",
+        "\u03c0_a evolves by reinforce/decay dynamics during deformation.",
         "Bifurcation analysis assumes sufficient parameter separation."
       ],
       "date": "2026-02-22",
@@ -1122,7 +1184,9 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-monodromy-spectrum"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-monodromy-spectrum",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-discriminant-set",
@@ -1150,7 +1214,9 @@
       "description": "Singular set where the lift can fail and winding/parity may change; away from D, w and b are homotopy invariants.",
       "date": "2026-02-22",
       "equationLatex": "\\mathcal{D}=\\{z=0\\}\\cup\\{\\pi_a=0\\}",
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-discriminant-set"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-discriminant-set",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-qwz-engineered-single-jump",
@@ -1175,16 +1241,18 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Monotone coupling that forces one Chern jump near ε→1^- (useful as a controllable toy model; clamp to trivial mass after the discriminant).",
+      "description": "Monotone coupling that forces one Chern jump near \u03b5\u21921^- (useful as a controllable toy model; clamp to trivial mass after the discriminant).",
       "date": "2026-02-22",
       "equationLatex": "m_{\\mathrm{eff}}(\\epsilon)=m_0-\\beta\\frac{\\epsilon^p}{1-\\epsilon}\\ (\\epsilon<1),\\quad m_{\\mathrm{eff}}(\\epsilon)=m_{\\mathrm{triv}}\\ (\\epsilon\\ge 1)",
-      "repoUrl": "https://github.com/RDM3DC/eq-qwz-engineered-single-jump"
+      "repoUrl": "https://github.com/RDM3DC/eq-qwz-engineered-single-jump",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-adler-rsj-phase",
       "name": "Phase (Adler/RSJ) Dynamics",
       "firstSeen": "2026-02-22",
-      "source": "Paper I draft §2 (Eq.1)",
+      "source": "Paper I draft \u00a72 (Eq.1)",
       "score": 96,
       "scores": {
         "tractability": 20,
@@ -1202,11 +1270,11 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Unwrapped phase difference φ(t) tries to run at detuning Δ, but adaptive coupling λG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.",
+      "description": "Unwrapped phase difference \u03c6(t) tries to run at detuning \u0394, but adaptive coupling \u03bbG can pull it into a locked fixed point. Backbone equation of the parity-locking mechanism. Textbook Adler/RSJ form with ARP-adaptive coupling.",
       "assumptions": [
         "Single junction / single mode approximation.",
-        "λG is the effective adaptive coupling strength (positive, ARP-governed).",
-        "Detuning Δ is constant or slowly varying compared to phase dynamics."
+        "\u03bbG is the effective adaptive coupling strength (positive, ARP-governed).",
+        "Detuning \u0394 is constant or slowly varying compared to phase dynamics."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\dot{\\phi}=\\Delta-\\lambda\\,G\\,\\sin\\phi",
@@ -1216,13 +1284,15 @@
           "score": 14
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adler-rsj-phase"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adler-rsj-phase",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-arp-reinforce-decay",
       "name": "Generic ARP Reinforce/Decay Law",
       "firstSeen": "2026-02-22",
-      "source": "Paper I draft §2 (Eq.2)",
+      "source": "Paper I draft \u00a72 (Eq.2)",
       "score": 93,
       "scores": {
         "tractability": 19,
@@ -1240,11 +1310,11 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Conductance/coupling G increases with activity A(φ,G) at gain α, and relaxes toward baseline G₀ at rate μ. The workhorse ARP law in its most general continuous-time form.",
+      "description": "Conductance/coupling G increases with activity A(\u03c6,G) at gain \u03b1, and relaxes toward baseline G\u2080 at rate \u03bc. The workhorse ARP law in its most general continuous-time form.",
       "assumptions": [
-        "Activity functional A(φ,G) ≥ 0 (non-negative reinforcement).",
-        "Single relaxation timescale μ⁻¹ dominates.",
-        "G₀ > 0 is a stable equilibrium baseline."
+        "Activity functional A(\u03c6,G) \u2265 0 (non-negative reinforcement).",
+        "Single relaxation timescale \u03bc\u207b\u00b9 dominates.",
+        "G\u2080 > 0 is a stable equilibrium baseline."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\dot{G}=\\alpha\\,\\mathcal{A}(\\phi,G)-\\mu\\,(G-G_0)",
@@ -1254,13 +1324,15 @@
           "score": 22
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-arp-reinforce-decay",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-activity-closure",
-      "name": "Activity Closure A = G|sinφ| (Parity Lock Mechanism)",
+      "name": "Activity Closure A = G|sin\u03c6| (Parity Lock Mechanism)",
       "firstSeen": "2026-02-22",
-      "source": "Paper I draft §2 (Eq.3)",
+      "source": "Paper I draft \u00a72 (Eq.3)",
       "score": 91,
       "scores": {
         "tractability": 19,
@@ -1278,11 +1350,11 @@
         "status": "planned",
         "path": ""
       },
-      "description": "The same phase mismatch that produces restoring torque (sinφ) also teaches the coupling. This tight self-referential closure is what makes parity locking possible — the key novel ingredient of Paper I.",
-      "derivation": "Choose A(φ,G) = G|sinφ|. Then dG/dt = αG|sinφ| − μ(G−G₀). Near lock (sinφ→0), reinforcement vanishes and G relaxes to G₀. In slip (sinφ oscillates), G grows until λG sin φ can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.",
+      "description": "The same phase mismatch that produces restoring torque (sin\u03c6) also teaches the coupling. This tight self-referential closure is what makes parity locking possible \u2014 the key novel ingredient of Paper I.",
+      "derivation": "Choose A(\u03c6,G) = G|sin\u03c6|. Then dG/dt = \u03b1G|sin\u03c6| \u2212 \u03bc(G\u2212G\u2080). Near lock (sin\u03c6\u21920), reinforcement vanishes and G relaxes to G\u2080. In slip (sin\u03c6 oscillates), G grows until \u03bbG sin \u03c6 can capture the phase. Self-consistency: the phase that needs locking is the same signal that strengthens the lock.",
       "assumptions": [
-        "Activity proportional to both G and |sinφ| (multiplicative coupling).",
-        "No external activity source — entirely self-referential.",
+        "Activity proportional to both G and |sin\u03c6| (multiplicative coupling).",
+        "No external activity source \u2014 entirely self-referential.",
         "Valid for single-mode / single-junction systems."
       ],
       "date": "2026-02-22",
@@ -1293,13 +1365,15 @@
           "score": 26
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-activity-closure"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-activity-closure",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-slip-asymptote",
-      "name": "Slip-Regime Asymptote (1/π Signature)",
+      "name": "Slip-Regime Asymptote (1/\u03c0 Signature)",
       "firstSeen": "2026-02-22",
-      "source": "Paper I draft §3 (Eq.6)",
+      "source": "Paper I draft \u00a73 (Eq.6)",
       "score": 93,
       "scores": {
         "tractability": 18,
@@ -1317,11 +1391,11 @@
         "status": "planned",
         "path": ""
       },
-      "description": "When coupling can't lock, φ̇→Δ, so parity flips at a universal rate set by detuning. With Δ=1, r_b = 1/π ≈ 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |Δ|/π.",
-      "derivation": "In slip regime, G is too weak to lock: sinφ averages to zero over rapid oscillation. Then φ̇ ≈ Δ, so φ advances by π in time π/|Δ|, giving r_b = |Δ|/π flips per unit time.",
+      "description": "When coupling can't lock, \u03c6\u0307\u2192\u0394, so parity flips at a universal rate set by detuning. With \u0394=1, r_b = 1/\u03c0 \u2248 0.3183. This is the falsifiable signature: any experiment measuring parity flip rate in slip must converge to |\u0394|/\u03c0.",
+      "derivation": "In slip regime, G is too weak to lock: sin\u03c6 averages to zero over rapid oscillation. Then \u03c6\u0307 \u2248 \u0394, so \u03c6 advances by \u03c0 in time \u03c0/|\u0394|, giving r_b = |\u0394|/\u03c0 flips per unit time.",
       "assumptions": [
-        "Coupling λG is below the locking threshold.",
-        "Detuning Δ is constant.",
+        "Coupling \u03bbG is below the locking threshold.",
+        "Detuning \u0394 is constant.",
         "Phase advances monotonically (no transient capture/release)."
       ],
       "date": "2026-02-22",
@@ -1332,13 +1406,15 @@
           "score": 27
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-slip-asymptote"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-slip-asymptote",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-langevin-noise",
       "name": "Noise-Robust Langevin Extension (Rounded Transition)",
       "firstSeen": "2026-02-22",
-      "source": "Paper I draft §4 (Eq.7)",
+      "source": "Paper I draft \u00a74 (Eq.7)",
       "score": 84,
       "scores": {
         "tractability": 17,
@@ -1357,11 +1433,11 @@
         "path": "./assets/langevin_parity_lock.png"
       },
       "description": "Adds phase diffusion to the Adler/RSJ dynamics. Locking becomes 'almost locked' with exponentially rare slips; the sharp lock/slip transition rounds but remains detectable via r_b. Essential for any real experimental comparison.",
-      "derivation": "Standard additive white noise: η(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(λG), so escape rate ~ exp(−λG/D) (Kramers). In slip, noise adds jitter to the 1/π baseline.",
+      "derivation": "Standard additive white noise: \u03b7(t) is unit white noise, D is diffusion strength. In lock, the effective potential well depth is O(\u03bbG), so escape rate ~ exp(\u2212\u03bbG/D) (Kramers). In slip, noise adds jitter to the 1/\u03c0 baseline.",
       "assumptions": [
-        "White noise approximation valid (correlation time ≪ phase dynamics timescale).",
-        "D > 0 but small enough that lock survives (D ≪ λG).",
-        "Stratonovich vs Itô distinction negligible for additive noise."
+        "White noise approximation valid (correlation time \u226a phase dynamics timescale).",
+        "D > 0 but small enough that lock survives (D \u226a \u03bbG).",
+        "Stratonovich vs It\u00f4 distinction negligible for additive noise."
       ],
       "date": "2026-02-22",
       "equationLatex": "\\dot{\\phi}=\\Delta-\\lambda G\\sin\\phi + \\sqrt{2D}\\,\\eta(t)",
@@ -1371,7 +1447,9 @@
           "score": 18
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-langevin-noise"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-langevin-noise",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-qwz-hamiltonian",
@@ -1395,10 +1473,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "The canonical 2D Chern insulator (Qi–Wu–Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.",
+      "description": "The canonical 2D Chern insulator (Qi\u2013Wu\u2013Zhang). In Step 2, the simulator realizes the real-space version with open boundaries and a time-dependent effective mass u_eff(t). Fully validated via FHS lattice Chern number in multiple tools.",
       "assumptions": [
         "Two-band model on square lattice with nearest-neighbor hopping.",
-        "Topological phases at C=±1 for −2<u<0 and 0<u<2; trivial otherwise.",
+        "Topological phases at C=\u00b11 for \u22122<u<0 and 0<u<2; trivial otherwise.",
         "Real-space version uses tight-binding Hamiltonian with same band structure."
       ],
       "date": "2026-02-22",
@@ -1409,11 +1487,13 @@
           "score": 8
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-qwz-hamiltonian",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-adaptive-geometry-mass",
-      "name": "Adaptive Geometry → Effective Mass Channel (Step-2 Coupling)",
+      "name": "Adaptive Geometry \u2192 Effective Mass Channel (Step-2 Coupling)",
       "firstSeen": "2026-02-22",
       "source": "Paper I / Step-2 Simulator (Eq.10)",
       "score": 86,
@@ -1433,11 +1513,11 @@
         "status": "planned",
         "path": ""
       },
-      "description": "The adaptive-π conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or ±2, the Chern phase can switch — without external tuning, purely via ARP reinforcement + memory. This is Paper I's central claim: geometry drives topology autonomously.",
-      "derivation": "π_a(t) = π + β(⟨G⟩_edge − G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u₀ + γ(π_a/π − 1) + δ·S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.",
+      "description": "The adaptive-\u03c0 conformal ruler feeding directly into the QWZ mass term. If u_eff(t) crosses 0 or \u00b12, the Chern phase can switch \u2014 without external tuning, purely via ARP reinforcement + memory. This is Paper I's central claim: geometry drives topology autonomously.",
+      "derivation": "\u03c0_a(t) = \u03c0 + \u03b2(\u27e8G\u27e9_edge \u2212 G_eq) deforms the local identification length based on edge-averaged ARP conductance. The effective mass u_eff(t) = u\u2080 + \u03b3(\u03c0_a/\u03c0 \u2212 1) + \u03b4\u00b7S_edge translates geometry deformation + entropy into QWZ mass shift. When u_eff crosses a gap-closing value, Chern number jumps.",
       "assumptions": [
-        "Edge-averaged conductance ⟨G⟩_edge is a meaningful proxy for boundary reinforcement.",
-        "β, γ, δ are phenomenological coupling constants (set by ARP parameter regime).",
+        "Edge-averaged conductance \u27e8G\u27e9_edge is a meaningful proxy for boundary reinforcement.",
+        "\u03b2, \u03b3, \u03b4 are phenomenological coupling constants (set by ARP parameter regime).",
         "Entropy S_edge is the local entropy proxy from Eq. 8."
       ],
       "date": "2026-02-22",
@@ -1448,11 +1528,13 @@
           "score": 29
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-adaptive-geometry-mass",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-paper1-chern-marker-bianco-resta",
-      "name": "Real-Space Chern Marker (Bianco–Resta, Open Boundaries)",
+      "name": "Real-Space Chern Marker (Bianco\u2013Resta, Open Boundaries)",
       "firstSeen": "2026-02-22",
       "source": "Paper I / Step-2 Simulator (Bonus)",
       "score": 90,
@@ -1486,7 +1568,9 @@
           "score": 10
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta"
+      "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-mesh-synced-certificate-consistency",
@@ -1533,7 +1617,9 @@
           "justification": "Vague references and no clear lineage to existing leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-mesh-synced-certificate-consistency"
+      "repoUrl": "https://github.com/RDM3DC/eq-mesh-synced-certificate-consistency",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr",
@@ -1557,7 +1643,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network).",
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 \u2014 Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 \u2014 Thermal relaxation (entropy decays toward baseline S_0), Term 3 \u2014 Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network).",
       "assumptions": [],
       "date": "2026-02-24",
       "equationLatex": "dS/dt = sigma_S * sum_ij(G_ij * |I_ij|^2) - kappa_S * (S - S_0) - xi_S * S * r_b",
@@ -1567,7 +1653,9 @@
           "date": "2026-02-24"
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
@@ -1591,7 +1679,7 @@
         "status": "in-progress",
         "path": ""
       },
-      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 — Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 — Thermal relaxation (entropy decays toward baseline S_0), Term 3 — Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
+      "description": "Dynamical equation for entropy evolution in adaptive networks: Term 1 \u2014 Ohmic dissipation (entropy produced by current flow through G_ij), Term 2 \u2014 Thermal relaxation (entropy decays toward baseline S_0), Term 3 \u2014 Parity bleed (high parity-flip rate r_b drains entropy, stabilizing the network). Closes the EGATL feedback loop by quantifying how topological updates dissipate or harvest entropy.",
       "assumptions": [
         "G_ij and I_ij follow EGATL conductance update rules",
         "S_0 is a measurable steady-state entropy for the network",
@@ -1616,11 +1704,13 @@
           "justification": "Solid derivation with clear assumptions and units check, builds on EGATL framework but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-white-paper-eqn-7",
-      "name": "HLATN_White_Paper — eqn 7",
+      "name": "HLATN_White_Paper \u2014 eqn 7",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
       "score": 54,
@@ -1650,11 +1740,13 @@
           "date": "2026-02-24"
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-7"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-7",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-white-paper-eqn-10",
-      "name": "HLATN_White_Paper — eqn 10",
+      "name": "HLATN_White_Paper \u2014 eqn 10",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
       "score": 50,
@@ -1684,11 +1776,13 @@
           "date": "2026-02-24"
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-10"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-10",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-white-paper-eqn-11",
-      "name": "HLATN_White_Paper — eqn 11",
+      "name": "HLATN_White_Paper \u2014 eqn 11",
       "firstSeen": "2026-02-24",
       "source": "HLATN_White_Paper_2026-02-24.pdf",
       "score": 51,
@@ -1718,7 +1812,9 @@
           "date": "2026-02-24"
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-11"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-white-paper-eqn-11",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-three-force-conductance-lock",
@@ -1742,7 +1838,7 @@
         "status": "in-progress",
         "path": ""
       },
-      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework — drives self-organized topological stabilization.",
+      "description": "Conductance feedback law combining current-driven reinforcement, linear leak, and a phase-suppression gate keyed to the adaptive angular ruler. Core equation of HLATN framework \u2014 drives self-organized topological stabilization.",
       "assumptions": [
         "Edge currents I_e bounded by I_max",
         "Conductances G_e >= 0 with bounded initial conditions",
@@ -1767,7 +1863,9 @@
           "justification": "Builds on LB #1 and #10 with clear assumptions and derivation, but lacks explicit recovery clause."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-three-force-conductance-lock",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-phase-lift-branch-safe-update",
@@ -1816,7 +1914,9 @@
           "justification": "Builds on existing phase-lifted dynamics with clear assumptions and derivation, but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-phase-lift-branch-safe-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-hlatn-plaquette-holonomy",
@@ -1865,7 +1965,9 @@
           "justification": "Solid derivation with clear assumptions and simulation evidence, but lacks explicit lineage to top leaderboard entries."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy"
+      "repoUrl": "https://github.com/RDM3DC/eq-hlatn-plaquette-holonomy",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
@@ -1916,7 +2018,9 @@
           "justification": "Strong derivation chain with explicit recovery clauses and novel coupling mechanisms."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc"
+      "repoUrl": "https://github.com/RDM3DC/eq-entropy-modulated-phase-lift-conductance-equation-em-plc",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-phase-coupled-conductance-update",
@@ -1940,7 +2044,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay — links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
+      "description": "Minimal edge update with phase-coupled suppression. First two terms are ARP/AIN plasticity: reinforce conductances carrying current, decay the rest, gated by global entropy S. The third term adds geometry-aware decay \u2014 links whose Phase-Lift-resolved phase is out of sync with adaptive ruler pi_a get suppressed faster, turning the lattice into a dynamical attractor for quantized Chern phases. Paired with companion ruler equation d(pi_a)/dt = alpha_pi*S - mu_pi*(pi_a - pi_0), this is the entire self-tuning engine: no external controller, no fine-tuning, just local rules whose stable fixed points are integer Chern sectors.",
       "assumptions": [
         "ARP/AIN plasticity framework",
         "Phase-Lift resolution for theta_{R,ij} to avoid spurious branch flips",
@@ -1966,7 +2070,9 @@
           "justification": "Builds on LB #1 and #2 with explicit recovery and derivation, rigorous but units check pending, clear assumptions and presentation, introduces novel phase-coupled suppression."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update"
+      "repoUrl": "https://github.com/RDM3DC/eq-egatl-phase-coupled-conductance-update",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-slack-test-equation",
@@ -2014,7 +2120,9 @@
           "justification": "Test submission with vague references and basic derivation, lacking clear lineage and presentation."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-slack-test-equation"
+      "repoUrl": "https://github.com/RDM3DC/eq-slack-test-equation",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-entropy-production-rate-aepr-ate-aepr",
@@ -2064,7 +2172,9 @@
           "justification": "Builds on EGATL conductance rules but lacks explicit derivation and units check."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-entropy-production-rate-aepr-ate-aepr",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-damped-harmonic-oscillator",
@@ -2089,10 +2199,10 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Classical damped harmonic oscillator with adaptive-π curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
+      "description": "Classical damped harmonic oscillator with adaptive-\u03c0 curvature correction on the damping coefficient, allowing the decay envelope to respond to local geometric phase accumulation.",
       "assumptions": [],
       "date": "2026-02-24",
-      "equationLatex": "x(t) = A·exp(-γ·π_α·t)·cos(ω₀·√(1 - (γ·π_α/ω₀)²)·t + φ)",
+      "equationLatex": "x(t) = A\u00b7exp(-\u03b3\u00b7\u03c0_\u03b1\u00b7t)\u00b7cos(\u03c9\u2080\u00b7\u221a(1 - (\u03b3\u00b7\u03c0_\u03b1/\u03c9\u2080)\u00b2)\u00b7t + \u03c6)",
       "tags": {
         "novelty": {
           "score": 16,
@@ -2109,7 +2219,9 @@
           "justification": "Lacks explicit lineage to leaderboard entries and assumptions, but presents a plausible extension of the classical damped harmonic oscillator with adaptive features."
         }
       },
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-damped-harmonic-oscillator"
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-damped-harmonic-oscillator",
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
@@ -2135,7 +2247,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows â€” implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
+      "description": "Direct extension of the #1 ranked BZ-averaged phase-lifted entropy-gated conductance update. Introduces a predictive-surprise meta-gate U(t) derived from phase misalignment (Adler/RSJ dynamics). When the network is uncertain (high U), reinforcement accelerates and decay slows \u00e2\u20ac\u201d implementing active, curiosity-driven adaptation and uncertainty reduction in the ARP framework.",
       "assumptions": [
         "U_{ij}(t) = 1 - |cos(delta phi_{ij}(t))| in [0,1] is normalized phase-misalignment surprise (0 = perfect lock, 1 = maximum uncertainty)",
         "kappa, eta << 1 are small positive meta-plasticity constants (perturbative regime)",
@@ -2159,7 +2271,9 @@
           "llm_total": 94,
           "justification": "Directly builds on top leaderboard entries with explicit recovery clauses and simulation readiness, introducing a novel surprise-driven adaptation mechanism."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-gemini-curve-memory-topological-frustration-pruning",
@@ -2208,7 +2322,9 @@
           "llm_total": 94,
           "justification": "Strong derivation from leaderboard entries with explicit recovery, rigorous and well-defined assumptions, exemplary presentation, and meaningful new coupling."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-aepr-adaptiveentropyproduction",
@@ -2234,7 +2350,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents → S↑), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all α/μ/π_a rates. Falsifiable via dissipation-vs-flip correlation.",
+      "description": "Full 2nd-law-safe entropy evolution closing the EGATL loop. Ohmic production (currents \u2192 S\u2191), thermal relaxation to baseline, parity-bleed stabilization (r_b drains S when flips are high). Directly gates all \u03b1/\u03bc/\u03c0_a rates. Falsifiable via dissipation-vs-flip correlation.",
       "assumptions": [
         "sigma_S > 0 is the Ohmic heating coefficient (entropy produced per unit current squared)",
         "kappa_S > 0 is the thermal relaxation rate toward baseline S_0",
@@ -2250,7 +2366,9 @@
           "score": 29,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-threeforceconductance",
@@ -2276,7 +2394,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z₂ locking in simulations.",
+      "description": "HLATN three-force core law. Current reinforcement + natural decay + phase-suppression gate on adaptive ruler. Exactly what builds the persistent orange backbone paths that enforce Z\u2082 locking in simulations.",
       "assumptions": [
         "alpha_G > 0 is the current-driven reinforcement rate, gated by entropy S",
         "mu_G > 0 is the natural decay rate, gated by entropy S",
@@ -2292,7 +2410,9 @@
           "score": 30,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-phaseliftupdate",
@@ -2318,7 +2438,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2π jumps — the foundation of holonomy bookkeeping and parity attractors.",
+      "description": "Branch-safe phase-lift with adaptive clipping. Guarantees consistent integer windings w_p and prevents runaway 2\u03c0 jumps \u2014 the foundation of holonomy bookkeeping and parity attractors.",
       "assumptions": [
         "theta_{R,e}^{(k)} is the lifted phase at iteration k (lives on R, not S^1)",
         "phi_e is the raw measured edge phase (mod 2pi, branch-ambiguous)",
@@ -2334,7 +2454,9 @@
           "score": 25,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-adaptiveruler",
@@ -2363,7 +2485,7 @@
       "display": {
         "highlight": "gold"
       },
-      "description": "Entropy-breathing adaptive angular bound. High event activity expands π_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
+      "description": "Entropy-breathing adaptive angular bound. High event activity expands \u03c0_a (more phase budget); low activity relaxes it. Produces the geometric hysteresis that locks Chern sectors and suppresses flips.",
       "assumptions": [
         "alpha_pi > 0 is the entropy-driven expansion rate for the angular ruler",
         "mu_pi > 0 is the relaxation rate pulling pi_a back toward baseline pi_0",
@@ -2379,7 +2501,9 @@
           "score": 25,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-egatl-hlatn-plaquetteholonomy",
@@ -2405,7 +2529,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime Θ_p stays confined < π → r_b → 0.",
+      "description": "Signed plaquette holonomy from lifted phases. The precise quantity whose crossings drive windings/parity flips. In locked regime \u0398_p stays confined < \u03c0 \u2192 r_b \u2192 0.",
       "assumptions": [
         "Theta_p is the total holonomy around plaquette p (signed sum of lifted phases)",
         "sigma_{p,e} = +/-1 is the orientation of edge e relative to plaquette p boundary",
@@ -2421,7 +2545,9 @@
           "score": 26,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-egatl-hlatn-parityfliprate",
@@ -2447,13 +2573,13 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Z₂ majority parity flip rate (the key experimental observable). 1/π chaotic asymptote → 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
+      "description": "Z\u2082 majority parity flip rate (the key experimental observable). 1/\u03c0 chaotic asymptote \u2192 0 locked attractor. Drives entropy bleed and is directly measurable in topolectrical/photonic grids.",
       "assumptions": [
         "Flips = sign changes in majority parity sgn(sum_p (-1)^{w_p}) across K time steps",
         "K is the total time steps in the observation window (K >= 2)",
         "r_b in [0, 1]: 0 = perfectly locked, approaching 1/pi in chaotic regime",
         "Majority parity computed from integer winding numbers w_p across all plaquettes",
-        "Observable is averaged over full lattice — not per-plaquette",
+        "Observable is averaged over full lattice \u2014 not per-plaquette",
         "Assumes stationary statistics within observation window (ergodic regime)"
       ],
       "date": "2026-02-24",
@@ -2463,11 +2589,13 @@
           "score": 23,
           "date": "2026-02-24"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-mean-event-equilibrium-for-adaptive-discrete",
-      "name": "Mean-Event Equilibrium for Adaptive πₐ (discrete)",
+      "name": "Mean-Event Equilibrium for Adaptive \u03c0\u2090 (discrete)",
       "firstSeen": "2026-02-25",
       "source": "gpt-5.2 (PR Root Guide)",
       "submitter": "ChatGPT",
@@ -2489,7 +2617,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Stationary mean equilibrium of the discrete adaptive-π bound update. Starting from \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0), take expectations and set \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}] to obtain \\pi_a^{\\star}. Interprets \\mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).",
+      "description": "Stationary mean equilibrium of the discrete adaptive-\u03c0 bound update. Starting from \\pi_{a,k}=\\pi_{a,k-1}+\\alpha_\\pi S_k-\\mu_\\pi(\\pi_{a,k-1}-\\pi_0), take expectations and set \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}] to obtain \\pi_a^{\\star}. Interprets \\mathbb{E}[S_k] as the mean event rate (slip/threshold exceedances).",
       "assumptions": [
         "Discrete update uses constant \\alpha_\\pi and \\mu_\\pi over the averaging window",
         "A stationary regime exists with \\mathbb{E}[\\pi_{a,k}]=\\mathbb{E}[\\pi_{a,k-1}]",
@@ -2503,7 +2631,9 @@
           "score": 27,
           "date": "2026-02-25"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-topological-coherence-order-parameter-arp-locking",
@@ -2545,7 +2675,9 @@
           "score": 29,
           "date": "2026-02-25"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lift-clipped-unwrap-branch-safe",
@@ -2571,7 +2703,7 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2π jumps.",
+      "description": "Branch-safe Phase-Lift update: resolves phase by clipping the raw residual to an adaptive bound pi_a, preventing unstable 2\u03c0 jumps.",
       "assumptions": [
         "Discrete-time sampling",
         "clip(x,a,b) saturates to [a,b]",
@@ -2584,13 +2716,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-bound-dynamics-event-driven-geometry",
-      "name": "Adaptive-π Bound Dynamics (Event-Driven Geometry)",
+      "name": "Adaptive-\u03c0 Bound Dynamics (Event-Driven Geometry)",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-bound-dynamics-event-driven-geometry",
       "score": 70,
@@ -2623,13 +2757,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-winding-parity-estimator-and-flip-rate-order-parameter",
-      "name": "Winding–Parity Estimator and Flip-Rate Order Parameter",
+      "name": "Winding\u2013Parity Estimator and Flip-Rate Order Parameter",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-winding-parity-estimator-and-flip-rate-order-parameter",
       "score": 70,
@@ -2662,13 +2798,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-gated-complex-conductance-arp-network",
       "name": "Entropy-Gated Complex Conductance (ARP Network)",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-entropy-gated-complex-conductance-arp-network",
       "score": 71,
@@ -2701,13 +2839,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-production-event-injection-s-field",
       "name": "Entropy Production / Event Injection (S-Field)",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-entropy-production-event-injection-s-field",
       "score": 70,
@@ -2740,13 +2880,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-coupled-suppression-conductance-law",
       "name": "Phase-Coupled Suppression Conductance Law",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-phase-coupled-suppression-conductance-law",
       "score": 71,
@@ -2779,13 +2921,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-redshift-law-with-bounded-oscillatory-steering",
       "name": "ARP Redshift Law with Bounded Oscillatory Steering",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-arp-redshift-law-with-bounded-oscillatory-steering",
       "score": 71,
@@ -2818,13 +2962,15 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
       "name": "Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)",
       "firstSeen": "2026-03-04",
-      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-π + ARP/AIN thread)",
+      "source": "RDM3DC / PR Root Guide (Phase-Lift + Adaptive-\u03c0 + ARP/AIN thread)",
       "submitter": "gpt-5.2",
       "repoUrl": "https://github.com/RDM3DC/eq-adaptive-ruler-qwz-effective-mass-geometry-induced-trans",
       "score": 70,
@@ -2857,7 +3003,9 @@
           "score": 19,
           "date": "2026-03-04"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-resolved-operator-general",
@@ -2883,22 +3031,24 @@
         "status": "planned",
         "path": ""
       },
-      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (θ_R) of a complex signal to eliminate branch-cut discontinuities. Applies to ⧒log, ⧒sqrt, ⧒pow and other analytic functions.",
+      "description": "General definition of a Phase-Resolved Operator (PRO): evaluate analytic functions on the lifted phase cover (\u03b8_R) of a complex signal to eliminate branch-cut discontinuities. Applies to \u29d2log, \u29d2sqrt, \u29d2pow and other analytic functions.",
       "assumptions": [
-        "z_k ∈ ℂ \\ {0}",
-        "θ_k = Arg(z_k) is the principal branch",
-        "wrap_pi(x) maps x to (-π, π]",
+        "z_k \u2208 \u2102 \\ {0}",
+        "\u03b8_k = Arg(z_k) is the principal branch",
+        "wrap_pi(x) maps x to (-\u03c0, \u03c0]",
         "clip(x, a, b) saturates to [a,b]",
-        "π_a,k > 0"
+        "\u03c0_a,k > 0"
       ],
       "date": "2026-03-06",
-      "equationLatex": "⧒f(z_k) = f(|z_k|, θ_R,k),  θ_R,k = θ_R,k-1 + clip(wrap_pi(θ_k - θ_k-1), -π_a,k-1, π_a,k-1)",
+      "equationLatex": "\u29d2f(z_k) = f(|z_k|, \u03b8_R,k),  \u03b8_R,k = \u03b8_R,k-1 + clip(wrap_pi(\u03b8_k - \u03b8_k-1), -\u03c0_a,k-1, \u03c0_a,k-1)",
       "tags": {
         "novelty": {
           "score": 19,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-branch-fault-criterion",
@@ -2924,20 +3074,22 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance τ_y and the input magnitude stays above a near-zero threshold ρ_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
+      "description": "Definition of branch-fault events: a step where the output jump magnitude exceeds a tolerance \u03c4_y and the input magnitude stays above a near-zero threshold \u03c1_min. Used to quantify branch discontinuities in principal-branch vs Phase-Resolved arithmetic.",
       "assumptions": [
         "Output y_k computed via log, sqrt, pow, or similar functions",
-        "τ_y is a fixed tolerance",
-        "ρ_{\text{min}} > 0 defines a near-zero magnitude threshold"
+        "\u03c4_y is a fixed tolerance",
+        "\u03c1_{\text{min}} > 0 defines a near-zero magnitude threshold"
       ],
       "date": "2026-03-06",
-      "equationLatex": "fault_k = (|y_k - y_{k-1}| > τ_y) ∧ (|z_k| > ρ_{\text{min}})",
+      "equationLatex": "fault_k = (|y_k - y_{k-1}| > \u03c4_y) \u2227 (|z_k| > \u03c1_{\text{min}})",
       "tags": {
         "novelty": {
           "score": 19,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-history-resolved-phase-with-adaptive-ruler",
@@ -2991,7 +3143,9 @@
           "llm_total": 97,
           "justification": "Exemplary lineage-preserving extension that explicitly builds on White Papers 01/02/04 plus LB #4 and integrated simulator artifacts, with strong derivation/recovery clauses, units and benchmark coverage, and immediate simulation readiness; novelty is meaningful but intentionally minimal rather than paradigm-shifting."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lift-commutator-bound",
@@ -3029,7 +3183,9 @@
           "score": 22,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-topological-self-healing-conductance-law",
@@ -3070,7 +3226,9 @@
           "score": 27,
           "date": "2026-03-06"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-surprise-augmented-history-resolved-complex-conductance-",
@@ -3109,7 +3267,9 @@
           "score": 25,
           "date": "2026-03-07"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-chern-self-healing-conductance-law",
@@ -3149,7 +3309,9 @@
           "score": 19,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-adaptive-chern-self-healing-conductance-law-ctance-l",
@@ -3183,11 +3345,11 @@
         "C_loc(t) is a sparse local topological indicator correlated with edge-channel integrity"
       ],
       "evidence": [
-        "Reduces to the phase-lifted adaptive conductance law when chi = 0; recovers standard quantized conductance when C_loc → 0 and pi_a → pi",
+        "Reduces to the phase-lifted adaptive conductance law when chi = 0; recovers standard quantized conductance when C_loc \u2192 0 and pi_a \u2192 pi",
         "Predicts a falsifiable recovery advantage over principal-branch and fixed-ruler controls after targeted boundary damage",
         "Ablation-ready: remove C_loc, remove suppression term, fix pi_a, or replace theta_R with principal phase and compare recovery time, boundary-current fraction, and transfer efficiency",
-        "1080p60 Manim animation (TopologicalSelfHealing.mp4) demonstrates complete healthy-lattice → boundary-damage → self-healing recovery cycle with visible topological feedback rerouting",
-        "Video ablation graph (Full Law vs Principal Branch Control) shows transfer efficiency recovering to 1.0 for full law while principal branch flatlines — direct falsification evidence",
+        "1080p60 Manim animation (TopologicalSelfHealing.mp4) demonstrates complete healthy-lattice \u2192 boundary-damage \u2192 self-healing recovery cycle with visible topological feedback rerouting",
+        "Video ablation graph (Full Law vs Principal Branch Control) shows transfer efficiency recovering to 1.0 for full law while principal branch flatlines \u2014 direct falsification evidence",
         "Builds directly on the adaptive phase-lifted conductance framework (LB #27); executable benchmark reproduces self-healing dynamics with boundary-current percentage restoration"
       ],
       "date": "2026-03-08",
@@ -3197,7 +3359,9 @@
           "score": 30,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lifted-thouless-pump-memory-law",
@@ -3237,7 +3401,9 @@
           "score": 23,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-landauer-phase-lift-conductance-law",
@@ -3277,7 +3443,9 @@
           "score": 23,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-phase-lifted-rg-memory-flow",
@@ -3317,7 +3485,9 @@
           "score": 27,
           "date": "2026-03-08"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-directional-strength-proxy-chern-law",
@@ -3358,7 +3528,9 @@
           "score": 30,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-slip-suppressed-edge-recovery-law",
@@ -3399,7 +3571,9 @@
           "score": 27,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-newton-s-second-law",
@@ -3437,7 +3611,9 @@
           "score": 20,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-boundary-reroute-recovery-index",
@@ -3478,7 +3654,9 @@
           "score": 27,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-entropy-gated-edge-recovery-score",
@@ -3519,7 +3697,9 @@
           "score": 29,
           "date": "2026-03-09"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-power-law-flat-adaptive-pi-radial-operator",
@@ -3560,7 +3740,9 @@
           "score": 21,
           "date": "2026-04-10"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-arp-cosmological-redshift-mapping",
@@ -3598,7 +3780,9 @@
           "score": 18,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-channel-loop-signature-pi-f-health-observable",
@@ -3638,7 +3822,9 @@
           "score": 29,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-loop-coherence-gated-edge-recovery-score",
@@ -3679,7 +3865,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-channel-deficit-gated-self-healing-law",
@@ -3720,7 +3908,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-history-resolved-pif-anticipatory-self-healing-law",
@@ -3762,7 +3952,9 @@
           "score": 30,
           "date": "2026-04-12"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-effective-dimension-of-the-power-law-flat-branch",
@@ -3806,7 +3998,9 @@
           "score": 23,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-history-resolved-loop-coherent-chern-self-healing-law",
@@ -3857,7 +4051,9 @@
           "llm_total": 82,
           "justification": "A minimal, lineage-explicit integration of LB #4 (adaptive-ruler phase update) + LB #8/#3 (plaquette holonomy/coherence order parameter) + LB #9 (adaptive Chern self-healing) into a single bounded loop-coherence-gated conductance law with clean recovery clauses (kappa_Psi=0 and chi=C_loc=0)."
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc",
@@ -3897,7 +4093,9 @@
           "score": 30,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-pi-f-loop-health-balance-law",
@@ -3938,7 +4136,9 @@
           "score": 29,
           "date": "2026-04-13"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-adaptive-inverse-square-normal-form-with-kelvin-mel",
@@ -3979,7 +4179,9 @@
           "score": 29,
           "date": "2026-04-14"
         }
-      }
+      },
+      "highlightTier": "",
+      "isGold": false
     },
     {
       "id": "eq-flat-adaptive-annular-capacity-law",
@@ -4023,7 +4225,9 @@
           "score": 30,
           "date": "2026-04-14"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-flat-adaptive-radial-heat-kernel-power-law-branch-origin",
@@ -4067,7 +4271,9 @@
           "score": 27,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-local-plaquette-flux-proxy-chern",
@@ -4110,7 +4316,9 @@
           "score": 30,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     },
     {
       "id": "eq-geometry-normalized-plaquette-flux-edge-enrichment",
@@ -4153,7 +4361,9 @@
           "score": 30,
           "date": "2026-04-15"
         }
-      }
+      },
+      "highlightTier": "gold",
+      "isGold": true
     }
   ]
 }

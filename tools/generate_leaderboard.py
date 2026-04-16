@@ -5,6 +5,28 @@ from datetime import datetime
 from pathlib import Path
 
 
+def _highlight_tier(entry: dict) -> str:
+    display = entry.get("display", {}) or {}
+    if isinstance(display, dict):
+        highlight = str(display.get("highlight", "")).strip().lower()
+        if highlight:
+            return highlight
+
+    tags = entry.get("tags", {}) or {}
+    if isinstance(tags, dict):
+        highlight = tags.get("highlight", "")
+        if isinstance(highlight, dict):
+            tier = str(highlight.get("tier", "")).strip().lower()
+            if tier:
+                return tier
+        else:
+            tier = str(highlight).strip().lower()
+            if tier:
+                return tier
+
+    return "none"
+
+
 def _display_artifact(entry: dict, key: str) -> str:
     payload = entry.get(key, {}) or {}
     path = (payload.get("path") or "").strip()
@@ -53,12 +75,13 @@ def generate(input_path: Path, output_path: Path) -> None:
     lines.append("- Artifact completeness bonus (0-10)")
     lines.append("- Total normalized from 70-point base to 100")
     lines.append("- Novelty is tracked as a tag (`tags.novelty`) with score + date")
+    lines.append("- Highlight shows curator spotlight tier; `gold` marks explicit gold-label entries")
     lines.append("")
 
     lines.append("## Current Top Equations (All-Time)")
     lines.append("")
-    lines.append(_row(["Rank", "Equation Name", "Equation", "Source", "Score", "Novelty tag", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
-    lines.append(_row(["------", "---------------", "--------", "--------", "-------", "-----------", "-------", "--------", "-----------", "---------------", "-------------"]))
+    lines.append(_row(["Rank", "Equation Name", "Highlight", "Equation", "Source", "Score", "Novelty tag", "Units", "Theory", "Animation", "Image/Diagram", "Description"]))
+    lines.append(_row(["------", "---------------", "---------", "--------", "--------", "-------", "-----------", "-------", "--------", "-----------", "---------------", "-------------"]))
     for i, e in enumerate(entries, start=1):
         novelty = ((e.get("tags", {}) or {}).get("novelty", {}) or {})
         novelty_label = "-"
@@ -69,6 +92,7 @@ def generate(input_path: Path, output_path: Path) -> None:
                 [
                     str(i),
                     str(e.get("name", "")),
+                    _highlight_tier(e),
                     str(e.get("equationLatex", "")) or "(pending)",
                     str(e.get("source", "")),
                     str(e.get("score", "")),
@@ -85,14 +109,15 @@ def generate(input_path: Path, output_path: Path) -> None:
 
     lines.append("## Newest Top-Ranked Equations (This Month)")
     lines.append("")
-    lines.append(_row(["Date", "Equation Name", "Score", "Units", "Theory", "Animation", "Image/Diagram", "Short Description"]))
-    lines.append(_row(["------", "---------------", "-------", "-------", "--------", "-----------", "---------------", "-------------------"]))
+    lines.append(_row(["Date", "Equation Name", "Highlight", "Score", "Units", "Theory", "Animation", "Image/Diagram", "Short Description"]))
+    lines.append(_row(["------", "---------------", "---------", "-------", "-------", "--------", "-----------", "---------------", "-------------------"]))
     for e in monthly:
         lines.append(
             _row(
                 [
                     str(e.get("date", "")),
                     str(e.get("name", "")),
+                    _highlight_tier(e),
                     str(e.get("score", "")),
                     str(e.get("units", "")),
                     str(e.get("theory", "")),
@@ -103,19 +128,20 @@ def generate(input_path: Path, output_path: Path) -> None:
             )
         )
     if not monthly:
-        lines.append(_row([this_month, "(none yet)", "-", "-", "-", "planned", "planned", "No entries for this month yet."]))
+        lines.append(_row([this_month, "(none yet)", "none", "-", "-", "-", "planned", "planned", "No entries for this month yet."]))
     lines.append("")
 
     lines.append("## All Equations Since 2025 (Registry)")
     lines.append("")
-    lines.append(_row(["First Seen", "Equation Name", "Equation", "Source", "Latest Status", "Latest Score", "Animation", "Image/Diagram"]))
-    lines.append(_row(["------------", "---------------", "--------", "--------", "---------------", "--------------", "-----------", "---------------"]))
+    lines.append(_row(["First Seen", "Equation Name", "Highlight", "Equation", "Source", "Latest Status", "Latest Score", "Animation", "Image/Diagram"]))
+    lines.append(_row(["------------", "---------------", "---------", "--------", "--------", "---------------", "--------------", "-----------", "---------------"]))
     for e in registry:
         lines.append(
             _row(
                 [
                     str(e.get("firstSeen", "")),
                     str(e.get("name", "")),
+                    _highlight_tier(e),
                     str(e.get("equationLatex", "")) or "(pending)",
                     str(e.get("source", "")),
                     str(e.get("theory", "")),
@@ -126,7 +152,7 @@ def generate(input_path: Path, output_path: Path) -> None:
             )
         )
     if not registry:
-        lines.append(_row(["2025", "(none yet)", "-", "-", "-", "planned", "planned"]))
+        lines.append(_row(["2025", "(none yet)", "none", "-", "-", "-", "planned", "planned"]))
     lines.append("")
 
     lines.append("## Update Rules")

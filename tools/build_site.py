@@ -99,6 +99,44 @@ def _highlight_tier(entry: dict) -> str:
   return ""
 
 
+def _highlight_label(entry: dict, default: str = "none") -> str:
+  tier = _highlight_tier(entry)
+  return tier if tier else default
+
+
+def _highlight_badge(entry: dict) -> str:
+  tier = _highlight_tier(entry)
+  if not tier:
+    return ""
+  css = "good" if tier == "gold" else "neutral"
+  return f"<span class='pill pill--{css}'>{_esc(tier.upper())}</span>"
+
+
+def _export_highlight_fields(entry: dict) -> dict[str, object]:
+  tier = _highlight_tier(entry)
+  return {
+    "highlightTier": tier,
+    "isGold": tier == "gold",
+  }
+
+
+def _entry_with_export_metadata(entry: dict) -> dict:
+  payload = dict(entry)
+  payload.update(_export_highlight_fields(entry))
+  return payload
+
+
+def _submission_with_export_metadata(entry: dict, equations_by_id: dict[str, dict]) -> dict:
+  payload = dict(entry)
+  review = entry.get("review", {}) or {}
+  equation_id = str(review.get("equationId", "")).strip()
+  highlight_entry = equations_by_id.get(equation_id, entry)
+  payload.update(_export_highlight_fields(highlight_entry))
+  if equation_id:
+    payload["linkedEquationId"] = equation_id
+  return payload
+
+
 def _equation_classes(entry: dict) -> str:
   if _highlight_tier(entry) == "gold":
     return " equation--gold"
@@ -130,10 +168,12 @@ def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
     rows: list[str] = []
     for index, entry in enumerate(top_entries, start=1):
       equation = entry.get("equationLatex", "") or "(pending)"
+      highlight = _highlight_label(entry)
       rows.append(
         "<tr>"
         f"<td>{index}</td>"
         f"<td>{_esc(entry.get('name', ''))}</td>"
+        f"<td>{_esc(highlight)}</td>"
         f"<td>{_esc(entry.get('score', ''))}</td>"
         f"<td>{_esc(entry.get('source', ''))}</td>"
         f"<td><code>{_esc(equation)}</code></td>"
@@ -151,9 +191,9 @@ def _leaderboard_discovery_panel(entries: list[dict], limit: int = 10) -> str:
       "<li><a href='./data/submissions.json'>Submission registry JSON</a></li>"
       "<li><a href='./data/certificates/equation_certificates.json'>Certificate registry JSON</a></li>"
       "</ul>"
-      "<p>The table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript.</p>"
+      "<p>The JSON exports include explicit <code>highlightTier</code> and <code>isGold</code> fields, and the table below is included directly in the HTML so simple fetchers can read top entries without running JavaScript.</p>"
       "<table class='tbl'>"
-      "<thead><tr><th>Rank</th><th>Name</th><th>Score</th><th>Source</th><th>Equation</th></tr></thead>"
+      "<thead><tr><th>Rank</th><th>Name</th><th>Highlight</th><th>Score</th><th>Source</th><th>Equation</th></tr></thead>"
       f"<tbody>{table_html}</tbody>"
       "</table>"
       "</div>"
@@ -396,6 +436,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     entries_all.sort(key=lambda e: float(e.get("score", 0)), reverse=True)
 
     entries = [e for e in entries_all if float(e.get("score", 0)) >= DISPLAY_THRESHOLD]
+    export_entries = [_entry_with_export_metadata(entry) for entry in entries]
 
     data_dir = docs / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -405,7 +446,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
           "schemaVersion": 1,
           "generatedAt": datetime.now().isoformat(),
           "displayThreshold": DISPLAY_THRESHOLD,
-          "entries": entries,
+          "entries": export_entries,
         },
         indent=2,
       )
@@ -427,6 +468,8 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
         date = e.get("date", "")
         eq_id = (e.get("id") or "").strip()
         repo_url = (e.get("repoUrl") or "").strip()
+        highlight_tier = _highlight_label(e)
+        highlight_badge = _highlight_badge(e)
 
         # Point animation/image links to the equation repo when available
         def _repo_artifact(obj, repo_url):
@@ -483,6 +526,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
       <h2 class='card__title'>{_esc(name)}</h2>
       <div class='card__meta'>
         {_badge(f"Score {score}", 'score')}
+        {highlight_badge}
         {_status_badge(str(units), 'units')}
         {_status_badge(str(theory), 'theory')}
       </div>
@@ -498,6 +542,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
       {extra}
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>{_esc(highlight_tier)}</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>{_esc(date)}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
@@ -816,7 +861,7 @@ def build_index(repo_root: Path, docs: Path) -> None:
 
 <div class='panel'>
   <h2>Machine-Readable Exports</h2>
-  <p>External tools do not need JavaScript to read TopEquations. The site publishes pre-rendered HTML pages plus static JSON exports at stable URLs.</p>
+  <p>External tools do not need JavaScript to read TopEquations. The site publishes pre-rendered HTML pages plus static JSON exports at stable URLs, including explicit <code>highlightTier</code> and <code>isGold</code> fields on the public equation and submission exports.</p>
   <ul>
     <li><a href='./data/leaderboard.json'>Leaderboard JSON export</a></li>
     <li><a href='./data/equations.json'>Promoted equations JSON</a></li>
@@ -859,11 +904,6 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         if str(entry.get("id", "")).strip()
     }
 
-    dst = docs / "data" / "submissions.json"
-    dst.parent.mkdir(parents=True, exist_ok=True)
-    if src.exists():
-        dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
-
     entries = list(data.get("entries", []))
     # Sort by submission date (newest first); scores belong on the leaderboard page
     entries.sort(key=lambda x: x.get("submittedAt", ""), reverse=True)
@@ -888,6 +928,8 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
         review_data = e.get("review", {}) or {}
         eq_id = str(review_data.get("equationId", "")).strip()
         highlight_entry = equations_by_id.get(eq_id, e)
+        highlight_tier = _highlight_label(highlight_entry)
+        highlight_badge = _highlight_badge(highlight_entry)
         eq = _card_equation(e, highlight_entry)
         eq_classes = _equation_classes(highlight_entry)
 
@@ -930,6 +972,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
       <h2 class='card__title'>{_esc(name)}</h2>
       <div class='card__meta'>
         {status_pill}
+        {highlight_badge}
         {_status_badge(str(units), 'units')}
         {_status_badge(str(theory), 'theory')}
       </div>
@@ -946,6 +989,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'>{("<ul class='ul'>" + assumptions_html + "</ul>") if assumptions_html else "None listed."}</div></div>
       {evidence_html}
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>{_esc(highlight_tier)}</div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>{_esc(date)}</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>{anim}</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>{img}</div></div>
@@ -1103,7 +1147,28 @@ def publish_machine_readable_data(repo_root: Path, docs: Path) -> None:
     data_dir = docs / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    for name in ("equations.json", "submissions.json", "core.json", "famous_equations.json"):
+    equations_src = repo_root / "data" / "equations.json"
+    equations_data = _load_json_safe(equations_src, {"entries": []})
+    equation_entries = list(equations_data.get("entries", []))
+    equations_by_id = {
+      str(entry.get("id", "")).strip(): entry
+      for entry in equation_entries
+      if str(entry.get("id", "")).strip()
+    }
+    equations_export = dict(equations_data)
+    equations_export["entries"] = [_entry_with_export_metadata(entry) for entry in equation_entries]
+    (data_dir / "equations.json").write_text(json.dumps(equations_export, indent=2) + "\n", encoding="utf-8")
+
+    submissions_src = repo_root / "data" / "submissions.json"
+    submissions_data = _load_json_safe(submissions_src, {"entries": []})
+    submissions_export = dict(submissions_data)
+    submissions_export["entries"] = [
+      _submission_with_export_metadata(entry, equations_by_id)
+      for entry in submissions_data.get("entries", [])
+    ]
+    (data_dir / "submissions.json").write_text(json.dumps(submissions_export, indent=2) + "\n", encoding="utf-8")
+
+    for name in ("core.json", "famous_equations.json"):
         src = repo_root / "data" / name
         if src.exists():
             shutil.copyfile(src, data_dir / name)
