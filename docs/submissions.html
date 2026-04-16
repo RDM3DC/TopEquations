@@ -14,11 +14,11 @@
   <meta name='twitter:title' content='TopEquations — All Submissions' />
   <meta name='twitter:description' content='Open leaderboard for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202604151937' />
+  <link rel='stylesheet' href='./assets/style.css?v=202604152027' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
   
 
-  <script defer src='./assets/app.js?v=202604151937'></script>
+  <script defer src='./assets/app.js?v=202604152027'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -71,11 +71,11 @@
   <div class='hero__right'>
     <div class='statbox'>
       <div class='stat'>
-        <div class='stat__num'>61</div>
+        <div class='stat__num'>65</div>
         <div class='stat__label'>Total submissions</div>
       </div>
       <div class='stat'>
-        <div class='stat__num'>59</div>
+        <div class='stat__num'>63</div>
         <div class='stat__label'>Promoted</div>
       </div>
       <div class='stat'>
@@ -115,13 +115,13 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
       <h2 class='card__title'>Flat-Adaptive Radial Heat Kernel (Power-Law Branch, Origin Source)</h2>
       <div class='card__meta'>
         <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good'>GOLD</span>
+        
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
     </div>
 
-    <div class='equation equation--gold'>
+    <div class='equation'>
       <div class='equation__label'>Submitted equation</div>
       <div class='equation__tex'>$$K_f(r,t)=\frac{\lvert S^{d_{\mathrm{eff}}-1}\rvert}{2\pi\lambda_0 r_0^{-\beta}}(4\pi t)^{-d_{\mathrm{eff}}/2}\exp\!\left(-\frac{r^2}{4t}\right)$$</div>
     </div>
@@ -132,7 +132,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
       <div class='kv'><div class='k'>Description</div><div class='v'>Proposed flat-adaptive fundamental solution for the radial heat equation in the power-law branch. Because \Delta_f^{rad}u=u&#x27;&#x27;+((\beta+1)/r)u&#x27; is exactly the Euclidean radial Laplacian in effective dimension d_eff=\beta+2, the origin-source heat kernel has the standard Gaussian shape with a normalization fixed by the flat shell measure w_f(r)=2\pi\lambda_0 r_0^{-\beta}r^{\beta+1}. This is a transport/diffusion bridge result inside the \pi_f operator framework, not a claim about replacing ordinary Euclidean \pi.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Power-law flat branch: \pi_f(r)=\pi\lambda_0(r/r_0)^\beta with \lambda_0&gt;0</li><li>Radial sector only, with heat equation \partial_t u=\Delta_f^{rad}u</li><li>Kernel is normalized with respect to the flat shell measure d\mu_f=w_f(r)dr, where w_f(r)=2\pi\lambda_0 r_0^{-\beta}r^{\beta+1}</li><li>Origin-source fundamental-solution interpretation requires locally finite shell measure near r=0, so \beta&gt;-2</li></ul></div></div>
       <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exact lineage from the flat-adaptive radial operator \Delta_f^{rad}u=u&#x27;&#x27;+((\beta+1)/r)u&#x27; and the identity d_eff=\beta+2</li><li>Reduces to the ordinary 2D radial heat kernel when \beta=0 and \lambda_0=1</li><li>Normalization satisfies \int_0^\infty K_f(r,t)w_f(r)dr=1</li><li>Uses the same exponent \beta that already controls the annular capacity law and inverse-square normal form</li><li>Presented as a mathematical operator-theory extension inside the current \pi_f framework, not as established physical law</li></ul></div></div>
-      <div class='kv'><div class='k'>Highlight</div><div class='v'>gold</div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
@@ -181,13 +181,13 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
       <h2 class='card__title'>Geometry-Normalized Plaquette-Flux Edge Enrichment</h2>
       <div class='card__meta'>
         <span class='pill pill--good'>PROMOTED</span>
-        <span class='pill pill--good'>GOLD</span>
+        
         <span class='pill pill--good' title='units'>OK</span>
         <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
       </div>
     </div>
 
-    <div class='equation equation--gold'>
+    <div class='equation'>
       <div class='equation__label'>Submitted equation</div>
       <div class='equation__tex'>$$f_{\mathrm{sup}}=\frac{\left(\sum_p |\rho_p|\right)^2}{N_p\sum_p |\rho_p|^2},\quad f_{\mathrm{edge}}^{(\rho)}=\frac{\sum_{p\in\partial\Omega}|\rho_p|}{\sum_p |\rho_p|},\quad \Xi_{\mathrm{edge}}=\frac{f_{\mathrm{edge}}^{(\rho)}}{|\partial\Omega|/N_p}$$</div>
     </div>
@@ -198,7 +198,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
       <div class='kv'><div class='k'>Description</div><div class='v'>Geometry-normalized localization diagnostic for the HAFC/EGATL local plaquette-flux field. The support fraction measures how spatially spread the absolute plaquette flux is, while Xi_edge measures whether boundary flux is merely proportional to boundary area or is genuinely edge-enriched. Xi_edge is used here instead of the solver note&#x27;s E_edge label to avoid collision with the existing TopEquations recovery score of the same name.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The local plaquette weights |\rho_p| are nonnegative and are evaluated on a fixed plaquette set with total count N_p over the comparison window.</li><li>The boundary plaquette family \partial\Omega is fixed by geometry, so the normalization |\partial\Omega|/N_p is comparable across runs at a given lattice size.</li><li>The total local flux weight \sum_p |\rho_p| is nonzero, so both the support fraction and edge-enrichment ratio are well-defined.</li><li>Xi_edge is an interpretable localization diagnostic, not a claim of topological quantization by itself.</li></ul></div></div>
       <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Builds directly on the local plaquette-flux proxy Chern field and complements the existing Flat-Channel Loop Signature and Entropy-Gated Edge Recovery Score by asking where topological response localizes after damage.</li><li>Large-size solver result: for central-strip damage, the geometry-normalized edge-enrichment stays near 1 at lattice sizes 128 (0.9823) and 160 (0.9773), which is evidence of stable boundary-area scaling rather than a small-size artifact.</li><li>Interpretation is falsifiable and operational: Xi_edge greater than 1 means genuine edge concentration, Xi_edge near 1 means boundary flux proportional to boundary area, and Xi_edge less than 1 means flux has been pushed inward.</li><li>Dimension check: f_{\mathrm{sup}}, f_{\mathrm{edge}}^{(\rho)}, and Xi_{\mathrm{edge}} are all dimensionless ratios built from the same local plaquette-flux weights.</li></ul></div></div>
-      <div class='kv'><div class='k'>Highlight</div><div class='v'>gold</div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
       <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'><a href='data/artifacts/geometry_normalized_plaquette_flux_edge_enrichment/edge_enrichment_dashboard.svg' target='_blank' rel='noopener'>link</a></div></div>
@@ -209,6 +209,138 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 
 <section class='card' data-status='promoted'>
   <div class='card__rank'>#4</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Flat-Adaptive Angular Eigenfunction Law</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$L_\theta^{(f)}=-\frac{1}{\lambda(\theta)}\frac{d}{d\theta}\left(\frac{1}{\lambda(\theta)}\frac{d}{d\theta}\right),\quad \phi_n^{(c,s)}(\theta)\in\left\{\cos\!\left(\omega_n\Phi_f(\theta)\right),\sin\!\left(\omega_n\Phi_f(\theta)\right)\right\},\quad \omega_n=\frac{2\pi n}{\Lambda_f},\quad L_\theta^{(f)}\phi_n=\omega_n^2\phi_n$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Adaptive Flat Pi</span> &middot; Submitter: <span class='muted'>RDM3DC</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Exact flattening of the flat-adaptive angular sector. With ds_f=lambda(theta) dtheta, the operator L_theta^(f)=-(1/lambda)d/dtheta[(1/lambda)d/dtheta] is exactly the ordinary circle Laplacian in the flat-adaptive arc variable Phi_f(theta)=int_0^theta lambda(vartheta) d vartheta. The angular eigenfunctions are therefore pulled-back sine and cosine modes with spacing omega_n=2 pi n/Lambda_f, where Lambda_f=int_0^{2 pi} lambda(theta) dtheta. This gives weighted orthogonality in the measure lambda(theta) dtheta and an exact generalized Fourier expansion for periodic angular data, providing the missing angular companion to the already-promoted radial flat-adaptive branch.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The angular ruler lambda(theta) is positive, smooth, and 2 pi-periodic.</li><li>The angular sector is considered with periodic boundary conditions.</li><li>Phi_f(theta)=int_0^theta lambda(vartheta) d vartheta is strictly increasing, so the flat-adaptive arc coordinate is well-defined.</li><li>The generalized Fourier expansion is taken in weighted L^2 with measure lambda(theta) dtheta.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Direct change of variables: with s=Phi_f(theta), one has d/ds=(1/lambda(theta)) d/dtheta and L_theta^(f)=-d_s^2 exactly.</li><li>Exact eigenfunctions: cos(omega_n Phi_f(theta)) and sin(omega_n Phi_f(theta)) with omega_n=2 pi n/Lambda_f.</li><li>Weighted orthogonality follows from ds=lambda(theta) dtheta, so the flat-adaptive angular inner product is the Euclidean L^2 inner product on the flattened circle.</li><li>Exact generalized Fourier expansion: every sufficiently regular periodic angular field expands in the pulled-back sine/cosine basis.</li><li>This is the missing angular counterpart to the promoted flat-adaptive radial operator and creates the separation interface used by the Sturm-Liouville law.</li></ul></div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-flat-adaptive-angular-eigenfunction-law'>eq-flat-adaptive-angular-eigenfunction-law</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#5</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Flat-Adaptive Area Inversion and Exponent Recovery</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$\pi_f(R)=\frac{1}{2R}\frac{dA_f}{dR},\quad d_{\mathrm{eff}}(R)=\frac{R A_f&#x27;(R)}{A_f(R)},\quad \beta(R)=d_{\mathrm{eff}}(R)-2$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Adaptive Flat Pi</span> &middot; Submitter: <span class='muted'>RDM3DC</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Exact area-growth inversion law for the flat-adaptive radial branch. Because the shell area density is w_f(r)=2 pi_f(r) r, the flat-adaptive ruler is recovered directly from disk-area data by pi_f(R)=(1/(2R)) dA_f/dR. In the power-law branch pi_f(r)=pi lambda_0 (r/r_0)^beta, the area profile is A_f(R)=2 pi lambda_0 r_0^{-beta} R^{beta+2}/(beta+2), so the logarithmic area-growth exponent recovers d_eff=beta+2 and hence beta itself. This turns the already-promoted effective-dimension identity into a measurable inverse-recovery law and makes the radial geometry operational rather than just formal.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>The flat-adaptive disk area A_f(R) is differentiable and strictly increasing for the radii of interest.</li><li>The radial shell density is defined by the same flat-adaptive measure used in the promoted radial operator: dA_f=2 pi_f(r) r dr.</li><li>For constant exponent recovery, the branch is the exact power law pi_f(r)=pi lambda_0 (r/r_0)^beta with beta&gt;-2 so the disk area is finite near the origin.</li><li>The formulas for beta(R) and d_eff(R) are interpreted as local log-derivative observables, reducing to constants on the exact power-law branch.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exact shell-area identity: A_f&#x27;(R)=2 pi_f(R) R.</li><li>Exact inversion: pi_f(R)=(1/(2R)) A_f&#x27;(R), so the flat-adaptive ruler is reconstructed directly from area data.</li><li>Power-law branch area formula: A_f(R)=2 pi lambda_0 r_0^{-beta} R^{beta+2}/(beta+2).</li><li>Exact recovery of effective dimension: d_eff(R)=R A_f&#x27;(R)/A_f(R), which equals beta+2 on the pure branch.</li><li>Exact recovery of exponent: beta(R)=R A_f&#x27;(R)/A_f(R)-2.</li><li>This makes visible the geometric inversion law that was implicit in the promoted radial operator and annular capacity derivations.</li></ul></div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-flat-adaptive-area-inversion-and-exponent-recovery'>eq-flat-adaptive-area-inversion-and-exponent-recovery</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#6</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Flat-Adaptive Annular Green Kernel</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--good' title='theory'>PASS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$G_\beta(r,\rho)=\begin{cases}\dfrac{(a^{-\beta}-r_&lt;^{-\beta})(r_&gt;^{-\beta}-b^{-\beta})}{2\pi\lambda_0 r_0^{-\beta}\,\beta\,(a^{-\beta}-b^{-\beta})}, &amp; \beta\neq 0,\\[8pt]\dfrac{\ln(r_&lt;/a)\,\ln(b/r_&gt;)}{2\pi\lambda_0\ln(b/a)}, &amp; \beta=0,\end{cases}\quad r_&lt;=\min(r,\rho),\ r_&gt;=\max(r,\rho)$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Adaptive Flat Pi</span> &middot; Submitter: <span class='muted'>RDM3DC</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Exact Dirichlet Green kernel for the flat-adaptive radial annulus a&lt;r&lt;b. Starting from the promoted divergence-form radial operator Delta_f^rad=(1/w_f)(w_f d/dr)&#x27; with shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Green function is obtained by integrating the reciprocal shell weight and matching the usual jump condition for -(w_f G_r)&#x27;=delta. The resulting kernel is explicit for every beta, and the critical beta=0 branch reduces exactly to the logarithmic 2D annular Green function. This gives the potential-theory completion of the existing flat-adaptive annular capacity law rather than only a boundary-flux observable.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Power-law flat branch pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0&gt;0.</li><li>Radial Dirichlet problem on the annulus a&lt;r&lt;b with a&gt;0.</li><li>The source is interpreted in the weighted radial measure associated with Delta_f^rad, equivalently -(w_f G_r)&#x27;=delta.</li><li>The beta-&gt;0 branch is interpreted by the exact logarithmic limit of the same reciprocal-shell formula.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exact divergence-form derivation using H(r)=int_a^r w_f(t)^(-1) dt and K(r)=int_r^b w_f(t)^(-1) dt.</li><li>Closed form for beta!=0: G_beta(r,rho)=((a^{-beta}-r_&lt;^{-beta})(r_&gt;^{-beta}-b^{-beta}))/(2 pi lambda_0 r_0^{-beta} beta (a^{-beta}-b^{-beta})).</li><li>Closed form for beta=0: G_0(r,rho)=ln(r_&lt;/a) ln(b/r_&gt;)/(2 pi lambda_0 ln(b/a)).</li><li>Exact symmetry and boundary conditions: G_beta(r,rho)=G_beta(rho,r), with G_beta(a,rho)=G_beta(b,rho)=0.</li><li>Exact jump condition: -[w_f G_r]_{rho^-}^{rho^+}=1.</li><li>This is the Green-function completion of the promoted flat-adaptive annular capacity law and harmonic annular profile.</li></ul></div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-flat-adaptive-annular-green-kernel'>eq-flat-adaptive-annular-green-kernel</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#7</div>
+  <div class='card__body'>
+    <div class='card__head'>
+      <h2 class='card__title'>Flat-Adaptive Separated Radial Sturm-Liouville Law</h2>
+      <div class='card__meta'>
+        <span class='pill pill--good'>PROMOTED</span>
+        
+        <span class='pill pill--good' title='units'>OK</span>
+        <span class='pill pill--warn' title='theory'>PASS-WITH-ASSUMPTIONS</span>
+      </div>
+    </div>
+
+    <div class='equation'>
+      <div class='equation__label'>Submitted equation</div>
+      <div class='equation__tex'>$$-\frac{d}{dr}\left(\lambda(r)r\,R_n&#x27;(r)\right)+\frac{n^2}{\lambda(r)r}R_n(r)=k^2\lambda(r)r\,R_n(r),\quad \lambda(r)=\lambda_0\left(\frac{r}{r_0}\right)^\beta$$</div>
+    </div>
+
+    <div class='card__sub'>Source: <span class='muted'>Adaptive Flat Pi</span> &middot; Submitter: <span class='muted'>RDM3DC</span></div>
+
+    <div class='grid'>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Exact mode-separated radial eigenvalue law for the flat-adaptive power-law branch. Starting from the weighted polar Helmholtz operator Delta_f=(1/(lambda r))(lambda r d/dr)&#x27; + (1/(lambda^2 r^2)) d_theta^2, the separated ansatz u(r,theta)=R_n(r)e^{in theta} reduces the full problem -Delta_f u=k^2 u to a one-dimensional Sturm-Liouville equation with weight lambda(r) r. The n=0 mode recovers the already-promoted radial operator, while n!=0 introduces the exact flat-adaptive centrifugal barrier n^2/(lambda r). This is the clean spectral upgrade from radial-only identities to full mode-by-mode separation in the flat-adaptive branch.</div></div>
+      <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Power-law radial flat branch lambda(r)=lambda_0 (r/r_0)^beta with lambda_0&gt;0.</li><li>Separated angular modes e^{in theta}, equivalently cosine/sine angular harmonics, are used on the 2 pi-periodic angular sector.</li><li>The spectral problem is interpreted as the weighted Helmholtz equation -Delta_f u=k^2 u.</li><li>Self-adjoint Sturm-Liouville interpretation is taken on a finite radial interval or annulus with standard boundary conditions.</li></ul></div></div>
+      <div class='kv'><div class='k'>Evidence</div><div class='v'><ul class='ul'><li>Exact separation of variables from Delta_f=(1/(lambda r))(lambda r d/dr)&#x27; + (1/(lambda^2 r^2)) d_theta^2 under u(r,theta)=R_n(r)e^{in theta}.</li><li>Exact radial Sturm-Liouville form: -(lambda r R_n&#x27;)&#x27; + (n^2/(lambda r))R_n = k^2 lambda r R_n.</li><li>The n=0 mode recovers the promoted flat-adaptive radial operator in spectral form.</li><li>Equivalent ODE on the power-law branch: R_n&#x27;&#x27;+((beta+1)/r)R_n&#x27; + [k^2 - n^2 r_0^{2 beta}/(lambda_0^2 r^{2 beta+2})] R_n = 0.</li><li>The self-adjoint weight is exactly lambda(r) r dr, so the same flat branch factor controls orthogonality and spectral energy.</li><li>This is the radial separation law paired with the flat-adaptive angular eigenfunction law and was not previously present as a visible TopEquations entry.</li></ul></div></div>
+      <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
+      <div class='kv'><div class='k'>Submitted</div><div class='v'>2026-04-15</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Chain record</div><div class='v'><a href='./certificates.html#eq-flat-adaptive-separated-radial-sturm-liouville-law'>eq-flat-adaptive-separated-radial-sturm-liouville-law</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class='card' data-status='promoted'>
+  <div class='card__rank'>#8</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Flat-Adaptive Inverse-Square Normal Form with Kelvin-Mellin Structure</h2>
@@ -241,7 +373,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#5</div>
+  <div class='card__rank'>#9</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Flat-Adaptive Annular Capacity Law</h2>
@@ -274,7 +406,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#6</div>
+  <div class='card__rank'>#10</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Effective Dimension of the Power-Law Flat Branch</h2>
@@ -307,7 +439,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#7</div>
+  <div class='card__rank'>#11</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>History-Resolved Loop-Coherent Chern Self-Healing Law</h2>
@@ -340,7 +472,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#8</div>
+  <div class='card__rank'>#12</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Loop-Coherence and Curve-Memory Stabilized BZ Conductance Law</h2>
@@ -373,7 +505,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#9</div>
+  <div class='card__rank'>#13</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_f Loop-Health Balance Law</h2>
@@ -406,7 +538,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='pending'>
-  <div class='card__rank'>#10</div>
+  <div class='card__rank'>#14</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>pi_f Loop-Health Balance Law</h2>
@@ -439,7 +571,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='duplicate'>
-  <div class='card__rank'>#11</div>
+  <div class='card__rank'>#15</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Power-Law Flat Adaptive Pi Radial Operator</h2>
@@ -472,7 +604,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#12</div>
+  <div class='card__rank'>#16</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Flat-Channel Loop Signature (pi_f Health Observable)</h2>
@@ -505,7 +637,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#13</div>
+  <div class='card__rank'>#17</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Loop-Coherence-Gated Edge Recovery Score</h2>
@@ -538,7 +670,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#14</div>
+  <div class='card__rank'>#18</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Flat-Channel Deficit-Gated Self-Healing Law</h2>
@@ -571,7 +703,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#15</div>
+  <div class='card__rank'>#19</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>History-Resolved pi_f Anticipatory Self-Healing Conductance Law</h2>
@@ -604,7 +736,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#16</div>
+  <div class='card__rank'>#20</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Power-Law Flat Adaptive Pi Radial Operator</h2>
@@ -637,7 +769,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#17</div>
+  <div class='card__rank'>#21</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Directional-Strength Proxy Chern Law</h2>
@@ -670,7 +802,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#18</div>
+  <div class='card__rank'>#22</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Slip-Suppressed Edge Recovery Law</h2>
@@ -703,7 +835,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#19</div>
+  <div class='card__rank'>#23</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Newton&#x27;s Second Law</h2>
@@ -736,7 +868,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#20</div>
+  <div class='card__rank'>#24</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Boundary-Reroute Recovery Index</h2>
@@ -769,7 +901,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#21</div>
+  <div class='card__rank'>#25</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Gated Edge Recovery Score</h2>
@@ -802,7 +934,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#22</div>
+  <div class='card__rank'>#26</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Chern Self-Healing Conductance Law</h2>
@@ -835,7 +967,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#23</div>
+  <div class='card__rank'>#27</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Chern Self-Healing Conductance Law</h2>
@@ -868,7 +1000,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#24</div>
+  <div class='card__rank'>#28</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted Thouless Pump Memory Law</h2>
@@ -901,7 +1033,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#25</div>
+  <div class='card__rank'>#29</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Landauer-Phase-Lift Conductance Law</h2>
@@ -934,7 +1066,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#26</div>
+  <div class='card__rank'>#30</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lifted RG Memory Flow</h2>
@@ -967,7 +1099,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#27</div>
+  <div class='card__rank'>#31</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Surprise-Augmented History-Resolved Complex Conductance with Curve-Memory Pruning</h2>
@@ -1000,7 +1132,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#28</div>
+  <div class='card__rank'>#32</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Resolved Operator (General)</h2>
@@ -1033,7 +1165,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#29</div>
+  <div class='card__rank'>#33</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Branch Fault Criterion</h2>
@@ -1066,7 +1198,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#30</div>
+  <div class='card__rank'>#34</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>History-Resolved Phase with Adaptive Ruler</h2>
@@ -1099,7 +1231,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#31</div>
+  <div class='card__rank'>#35</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lift Commutator Bound</h2>
@@ -1132,7 +1264,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#32</div>
+  <div class='card__rank'>#36</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Topological Self-Healing Conductance Law</h2>
@@ -1165,7 +1297,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#33</div>
+  <div class='card__rank'>#37</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Lift Clipped Unwrap (Branch-Safe)</h2>
@@ -1198,7 +1330,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#34</div>
+  <div class='card__rank'>#38</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive-π Bound Dynamics (Event-Driven Geometry)</h2>
@@ -1231,7 +1363,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#35</div>
+  <div class='card__rank'>#39</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Winding–Parity Estimator and Flip-Rate Order Parameter</h2>
@@ -1264,7 +1396,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#36</div>
+  <div class='card__rank'>#40</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Gated Complex Conductance (ARP Network)</h2>
@@ -1297,7 +1429,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#37</div>
+  <div class='card__rank'>#41</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy Production / Event Injection (S-Field)</h2>
@@ -1330,7 +1462,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#38</div>
+  <div class='card__rank'>#42</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Phase-Coupled Suppression Conductance Law</h2>
@@ -1363,7 +1495,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#39</div>
+  <div class='card__rank'>#43</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Redshift Law with Bounded Oscillatory Steering</h2>
@@ -1396,7 +1528,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#40</div>
+  <div class='card__rank'>#44</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive-Ruler QWZ Effective Mass (Geometry-Induced Transition)</h2>
@@ -1429,7 +1561,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#41</div>
+  <div class='card__rank'>#45</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>ARP Cosmological Redshift Mapping</h2>
@@ -1462,7 +1594,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#42</div>
+  <div class='card__rank'>#46</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mean-Event Equilibrium for Adaptive πₐ (discrete)</h2>
@@ -1495,7 +1627,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#43</div>
+  <div class='card__rank'>#47</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Topological Coherence Order Parameter (ARP Locking)</h2>
@@ -1528,7 +1660,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#44</div>
+  <div class='card__rank'>#48</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Mesh-Synced Certificate Consistency</h2>
@@ -1561,7 +1693,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#45</div>
+  <div class='card__rank'>#49</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Slack Test Equation</h2>
@@ -1594,7 +1726,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#46</div>
+  <div class='card__rank'>#50</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL Phase-Coupled Conductance Update</h2>
@@ -1627,7 +1759,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#47</div>
+  <div class='card__rank'>#51</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Entropy-Modulated Phase-Lift Conductance Equation (EM-PLC)</h2>
@@ -1660,7 +1792,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#48</div>
+  <div class='card__rank'>#52</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -1693,7 +1825,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#49</div>
+  <div class='card__rank'>#53</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Entropy Production Rate (AEPR)</h2>
@@ -1726,7 +1858,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#50</div>
+  <div class='card__rank'>#54</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Three-Force Conductance Lock</h2>
@@ -1759,7 +1891,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#51</div>
+  <div class='card__rank'>#55</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Phase-Lift Branch-Safe Update</h2>
@@ -1792,7 +1924,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#52</div>
+  <div class='card__rank'>#56</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>HLATN Plaquette Holonomy</h2>
@@ -1825,7 +1957,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#53</div>
+  <div class='card__rank'>#57</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Adaptive Damped Harmonic Oscillator</h2>
@@ -1858,7 +1990,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#54</div>
+  <div class='card__rank'>#58</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Grok Surprise-Augmented Phase-Lifted Entropy-Gated Conductance Update</h2>
@@ -1891,7 +2023,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#55</div>
+  <div class='card__rank'>#59</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>Gemini Curve-Memory Topological Frustration Pruning</h2>
@@ -1924,7 +2056,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#56</div>
+  <div class='card__rank'>#60</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AEPR-AdaptiveEntropyProduction</h2>
@@ -1957,7 +2089,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#57</div>
+  <div class='card__rank'>#61</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ThreeForceConductance</h2>
@@ -1990,7 +2122,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#58</div>
+  <div class='card__rank'>#62</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PhaseLiftUpdate</h2>
@@ -2023,7 +2155,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#59</div>
+  <div class='card__rank'>#63</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-AdaptiveRuler</h2>
@@ -2056,7 +2188,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#60</div>
+  <div class='card__rank'>#64</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-PlaquetteHolonomy</h2>
@@ -2089,7 +2221,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </section>
 
 <section class='card' data-status='promoted'>
-  <div class='card__rank'>#61</div>
+  <div class='card__rank'>#65</div>
   <div class='card__body'>
     <div class='card__head'>
       <h2 class='card__title'>EGATL-HLATN-ParityFlipRate</h2>
@@ -2127,7 +2259,7 @@ python tools/promote_submission.py --submission-id sub-... --from-review</code><
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-04-15 19:37</strong></div>
+      <div>Last built: <strong>2026-04-15 20:27</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>

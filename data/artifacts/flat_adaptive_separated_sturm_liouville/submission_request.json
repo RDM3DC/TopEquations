@@ -1,0 +1,31 @@
+{
+  "name": "Flat-Adaptive Separated Radial Sturm-Liouville Law",
+  "equation": "-\\frac{d}{dr}\\left(\\lambda(r)r\\,R_n'(r)\\right)+\\frac{n^2}{\\lambda(r)r}R_n(r)=k^2\\lambda(r)r\\,R_n(r),\\quad \\lambda(r)=\\lambda_0\\left(\\frac{r}{r_0}\\right)^\\beta",
+  "description": "Exact mode-separated radial eigenvalue law for the flat-adaptive power-law branch. Starting from the weighted polar Helmholtz operator Delta_f=(1/(lambda r))(lambda r d/dr)' + (1/(lambda^2 r^2)) d_theta^2, the separated ansatz u(r,theta)=R_n(r)e^{in theta} reduces the full problem -Delta_f u=k^2 u to a one-dimensional Sturm-Liouville equation with weight lambda(r) r. The n=0 mode recovers the already-promoted radial operator, while n!=0 introduces the exact flat-adaptive centrifugal barrier n^2/(lambda r). This is the clean spectral upgrade from radial-only identities to full mode-by-mode separation in the flat-adaptive branch.",
+  "source": "Adaptive Flat Pi",
+  "submitter": "RDM3DC",
+  "units": "OK",
+  "theory": "PASS-WITH-ASSUMPTIONS",
+  "assumptions": [
+    "Power-law radial flat branch lambda(r)=lambda_0 (r/r_0)^beta with lambda_0>0.",
+    "Separated angular modes e^{in theta}, equivalently cosine/sine angular harmonics, are used on the 2 pi-periodic angular sector.",
+    "The spectral problem is interpreted as the weighted Helmholtz equation -Delta_f u=k^2 u.",
+    "Self-adjoint Sturm-Liouville interpretation is taken on a finite radial interval or annulus with standard boundary conditions."
+  ],
+  "evidence": [
+    "Exact separation of variables from Delta_f=(1/(lambda r))(lambda r d/dr)' + (1/(lambda^2 r^2)) d_theta^2 under u(r,theta)=R_n(r)e^{in theta}.",
+    "Exact radial Sturm-Liouville form: -(lambda r R_n')' + (n^2/(lambda r))R_n = k^2 lambda r R_n.",
+    "The n=0 mode recovers the promoted flat-adaptive radial operator in spectral form.",
+    "Equivalent ODE on the power-law branch: R_n''+((beta+1)/r)R_n' + [k^2 - n^2 r_0^{2 beta}/(lambda_0^2 r^{2 beta+2})] R_n = 0.",
+    "The self-adjoint weight is exactly lambda(r) r dr, so the same flat branch factor controls orthogonality and spectral energy.",
+    "This is the radial separation law paired with the flat-adaptive angular eigenfunction law and was not previously present as a visible TopEquations entry."
+  ],
+  "animation": {
+    "status": "planned",
+    "path": ""
+  },
+  "image": {
+    "status": "planned",
+    "path": ""
+  }
+}

@@ -596,11 +596,11 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
   <p>Gold cards are curator-selected spotlight equations. Gold is not assigned automatically by score; it marks equations judged especially central, bridge-forming, or program-defining within the current TopEquations lineage.</p>
 </div>
 
-""" + _leaderboard_discovery_panel(entries) + """ 
-
 <div id='cards' class='cardrow'>
 """ + "\n".join(cards) + """
 </div>
+
+""" + _leaderboard_discovery_panel(entries) + """ 
 
   </section>
 </div>

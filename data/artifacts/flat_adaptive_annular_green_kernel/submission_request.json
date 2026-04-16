@@ -1,0 +1,31 @@
+{
+  "name": "Flat-Adaptive Annular Green Kernel",
+  "equation": "G_\\beta(r,\\rho)=\\begin{cases}\\dfrac{(a^{-\\beta}-r_<^{-\\beta})(r_>^{-\\beta}-b^{-\\beta})}{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta\\,(a^{-\\beta}-b^{-\\beta})}, & \\beta\\neq 0,\\\\[8pt]\\dfrac{\\ln(r_</a)\\,\\ln(b/r_>)}{2\\pi\\lambda_0\\ln(b/a)}, & \\beta=0,\\end{cases}\\quad r_<=\\min(r,\\rho),\\ r_>=\\max(r,\\rho)",
+  "description": "Exact Dirichlet Green kernel for the flat-adaptive radial annulus a<r<b. Starting from the promoted divergence-form radial operator Delta_f^rad=(1/w_f)(w_f d/dr)' with shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Green function is obtained by integrating the reciprocal shell weight and matching the usual jump condition for -(w_f G_r)'=delta. The resulting kernel is explicit for every beta, and the critical beta=0 branch reduces exactly to the logarithmic 2D annular Green function. This gives the potential-theory completion of the existing flat-adaptive annular capacity law rather than only a boundary-flux observable.",
+  "source": "Adaptive Flat Pi",
+  "submitter": "RDM3DC",
+  "units": "OK",
+  "theory": "PASS",
+  "assumptions": [
+    "Power-law flat branch pi_f(r)=pi lambda_0 (r/r_0)^beta with lambda_0>0.",
+    "Radial Dirichlet problem on the annulus a<r<b with a>0.",
+    "The source is interpreted in the weighted radial measure associated with Delta_f^rad, equivalently -(w_f G_r)'=delta.",
+    "The beta->0 branch is interpreted by the exact logarithmic limit of the same reciprocal-shell formula."
+  ],
+  "evidence": [
+    "Exact divergence-form derivation using H(r)=int_a^r w_f(t)^(-1) dt and K(r)=int_r^b w_f(t)^(-1) dt.",
+    "Closed form for beta!=0: G_beta(r,rho)=((a^{-beta}-r_<^{-beta})(r_>^{-beta}-b^{-beta}))/(2 pi lambda_0 r_0^{-beta} beta (a^{-beta}-b^{-beta})).",
+    "Closed form for beta=0: G_0(r,rho)=ln(r_</a) ln(b/r_>)/(2 pi lambda_0 ln(b/a)).",
+    "Exact symmetry and boundary conditions: G_beta(r,rho)=G_beta(rho,r), with G_beta(a,rho)=G_beta(b,rho)=0.",
+    "Exact jump condition: -[w_f G_r]_{rho^-}^{rho^+}=1.",
+    "This is the Green-function completion of the promoted flat-adaptive annular capacity law and harmonic annular profile."
+  ],
+  "animation": {
+    "status": "planned",
+    "path": ""
+  },
+  "image": {
+    "status": "planned",
+    "path": ""
+  }
+}

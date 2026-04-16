@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-16T02:21:31.424021+00:00",
+  "generated_at": "2026-04-16T03:27:48.262886+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "a9fddc025ba635097af4ca607e7b685bf77df08aadcecb208bbf17b9a2584a6d",
-  "count": 119,
+  "source_sha256": "de88dec591c406a1240a56e346fd5802924cce48f3ad8ddb81ba2c7b7d016148",
+  "count": 123,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3556,6 +3556,126 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "d6705c7d84540e18d631d546e36a2c66a46d200d4f1f7578b09575bd9442538d"
+    },
+    {
+      "token_id": "eq-flat-adaptive-angular-eigenfunction-law",
+      "name": "Flat-Adaptive Angular Eigenfunction Law",
+      "equation_latex": "L_\\theta^{(f)}=-\\frac{1}{\\lambda(\\theta)}\\frac{d}{d\\theta}\\left(\\frac{1}{\\lambda(\\theta)}\\frac{d}{d\\theta}\\right),\\quad \\phi_n^{(c,s)}(\\theta)\\in\\left\\{\\cos\\!\\left(\\omega_n\\Phi_f(\\theta)\\right),\\sin\\!\\left(\\omega_n\\Phi_f(\\theta)\\right)\\right\\},\\quad \\omega_n=\\frac{2\\pi n}{\\Lambda_f},\\quad L_\\theta^{(f)}\\phi_n=\\omega_n^2\\phi_n",
+      "equation_hash": "95d7a6f9844312598aee5bda471c8f5b63940777da4b2de34b7e150afa4f01df",
+      "score": 88,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-04-15"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-15",
+      "description": "Exact flattening of the flat-adaptive angular sector. With ds_f=lambda(theta) dtheta, the operator L_theta^(f)=-(1/lambda)d/dtheta[(1/lambda)d/dtheta] is exactly the ordinary circle Laplacian in the flat-adaptive arc variable Phi_f(theta)=int_0^theta lambda(vartheta) d vartheta. The angular eigenfunctions are therefore pulled-back sine and cosine modes with spacing omega_n=2 pi n/Lambda_f, where Lambda_f=int_0^{2 pi} lambda(theta) dtheta. This gives weighted orthogonality in the measure lambda(theta) dtheta and an exact generalized Fourier expansion for periodic angular data, providing the missing angular companion to the already-promoted radial flat-adaptive branch.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "77b87a1333222e82a7852a7c0fdf0df2529c957b9d8ec2c4240528d5f6daa2b0"
+    },
+    {
+      "token_id": "eq-flat-adaptive-area-inversion-and-exponent-recovery",
+      "name": "Flat-Adaptive Area Inversion and Exponent Recovery",
+      "equation_latex": "\\pi_f(R)=\\frac{1}{2R}\\frac{dA_f}{dR},\\quad d_{\\mathrm{eff}}(R)=\\frac{R A_f'(R)}{A_f(R)},\\quad \\beta(R)=d_{\\mathrm{eff}}(R)-2",
+      "equation_hash": "1db38acfb9df4389a96070583916bf6779bf65dc1bd8490f961679bce7d95385",
+      "score": 86,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 28,
+        "date": "2026-04-15"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-15",
+      "description": "Exact area-growth inversion law for the flat-adaptive radial branch. Because the shell area density is w_f(r)=2 pi_f(r) r, the flat-adaptive ruler is recovered directly from disk-area data by pi_f(R)=(1/(2R)) dA_f/dR. In the power-law branch pi_f(r)=pi lambda_0 (r/r_0)^beta, the area profile is A_f(R)=2 pi lambda_0 r_0^{-beta} R^{beta+2}/(beta+2), so the logarithmic area-growth exponent recovers d_eff=beta+2 and hence beta itself. This turns the already-promoted effective-dimension identity into a measurable inverse-recovery law and makes the radial geometry operational rather than just formal.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "fffad179f37d3b6b3668aa9116a2ef03f6205c56753e760e853962e3c604cc47"
+    },
+    {
+      "token_id": "eq-flat-adaptive-annular-green-kernel",
+      "name": "Flat-Adaptive Annular Green Kernel",
+      "equation_latex": "G_\\beta(r,\\rho)=\\begin{cases}\\dfrac{(a^{-\\beta}-r_<^{-\\beta})(r_>^{-\\beta}-b^{-\\beta})}{2\\pi\\lambda_0 r_0^{-\\beta}\\,\\beta\\,(a^{-\\beta}-b^{-\\beta})}, & \\beta\\neq 0,\\\\[8pt]\\dfrac{\\ln(r_</a)\\,\\ln(b/r_>)}{2\\pi\\lambda_0\\ln(b/a)}, & \\beta=0,\\end{cases}\\quad r_<=\\min(r,\\rho),\\ r_>=\\max(r,\\rho)",
+      "equation_hash": "8a0cdb2eb0f88adc604a59ee68d9c290ccea8143f8fbef20fc18a719cc78a6c7",
+      "score": 88,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-04-15"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-15",
+      "description": "Exact Dirichlet Green kernel for the flat-adaptive radial annulus a<r<b. Starting from the promoted divergence-form radial operator Delta_f^rad=(1/w_f)(w_f d/dr)' with shell weight w_f(r)=2 pi lambda_0 r_0^{-beta} r^{beta+1}, the Green function is obtained by integrating the reciprocal shell weight and matching the usual jump condition for -(w_f G_r)'=delta. The resulting kernel is explicit for every beta, and the critical beta=0 branch reduces exactly to the logarithmic 2D annular Green function. This gives the potential-theory completion of the existing flat-adaptive annular capacity law rather than only a boundary-flux observable.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "4e0d56b4372b0d978018a65b6d982e6ef24cd4eaf00e44ca684590c1f6dbe250"
+    },
+    {
+      "token_id": "eq-flat-adaptive-separated-radial-sturm-liouville-law",
+      "name": "Flat-Adaptive Separated Radial Sturm-Liouville Law",
+      "equation_latex": "-\\frac{d}{dr}\\left(\\lambda(r)r\\,R_n'(r)\\right)+\\frac{n^2}{\\lambda(r)r}R_n(r)=k^2\\lambda(r)r\\,R_n(r),\\quad \\lambda(r)=\\lambda_0\\left(\\frac{r}{r_0}\\right)^\\beta",
+      "equation_hash": "8d5b3301b0cd7c96b2098e3c8ae2d6c2a7f207a10f9ed8405cd0ac2076cdcc0a",
+      "score": 87,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 18,
+        "validation": 17,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 29,
+        "date": "2026-04-15"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-15",
+      "description": "Exact mode-separated radial eigenvalue law for the flat-adaptive power-law branch. Starting from the weighted polar Helmholtz operator Delta_f=(1/(lambda r))(lambda r d/dr)' + (1/(lambda^2 r^2)) d_theta^2, the separated ansatz u(r,theta)=R_n(r)e^{in theta} reduces the full problem -Delta_f u=k^2 u to a one-dimensional Sturm-Liouville equation with weight lambda(r) r. The n=0 mode recovers the already-promoted radial operator, while n!=0 introduces the exact flat-adaptive centrifugal barrier n^2/(lambda r). This is the clean spectral upgrade from radial-only identities to full mode-by-mode separation in the flat-adaptive branch.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "0aa60a90c13ecf775ff1d6174ab637999f2b4c688b21cb447b892bf0eb182e11"
     }
   ]
 }

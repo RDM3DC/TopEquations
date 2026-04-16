@@ -1,0 +1,30 @@
+{
+  "name": "Flat-Adaptive Angular Eigenfunction Law",
+  "equation": "L_\\theta^{(f)}=-\\frac{1}{\\lambda(\\theta)}\\frac{d}{d\\theta}\\left(\\frac{1}{\\lambda(\\theta)}\\frac{d}{d\\theta}\\right),\\quad \\phi_n^{(c,s)}(\\theta)\\in\\left\\{\\cos\\!\\left(\\omega_n\\Phi_f(\\theta)\\right),\\sin\\!\\left(\\omega_n\\Phi_f(\\theta)\\right)\\right\\},\\quad \\omega_n=\\frac{2\\pi n}{\\Lambda_f},\\quad L_\\theta^{(f)}\\phi_n=\\omega_n^2\\phi_n",
+  "description": "Exact flattening of the flat-adaptive angular sector. With ds_f=lambda(theta) dtheta, the operator L_theta^(f)=-(1/lambda)d/dtheta[(1/lambda)d/dtheta] is exactly the ordinary circle Laplacian in the flat-adaptive arc variable Phi_f(theta)=int_0^theta lambda(vartheta) d vartheta. The angular eigenfunctions are therefore pulled-back sine and cosine modes with spacing omega_n=2 pi n/Lambda_f, where Lambda_f=int_0^{2 pi} lambda(theta) dtheta. This gives weighted orthogonality in the measure lambda(theta) dtheta and an exact generalized Fourier expansion for periodic angular data, providing the missing angular companion to the already-promoted radial flat-adaptive branch.",
+  "source": "Adaptive Flat Pi",
+  "submitter": "RDM3DC",
+  "units": "OK",
+  "theory": "PASS",
+  "assumptions": [
+    "The angular ruler lambda(theta) is positive, smooth, and 2 pi-periodic.",
+    "The angular sector is considered with periodic boundary conditions.",
+    "Phi_f(theta)=int_0^theta lambda(vartheta) d vartheta is strictly increasing, so the flat-adaptive arc coordinate is well-defined.",
+    "The generalized Fourier expansion is taken in weighted L^2 with measure lambda(theta) dtheta."
+  ],
+  "evidence": [
+    "Direct change of variables: with s=Phi_f(theta), one has d/ds=(1/lambda(theta)) d/dtheta and L_theta^(f)=-d_s^2 exactly.",
+    "Exact eigenfunctions: cos(omega_n Phi_f(theta)) and sin(omega_n Phi_f(theta)) with omega_n=2 pi n/Lambda_f.",
+    "Weighted orthogonality follows from ds=lambda(theta) dtheta, so the flat-adaptive angular inner product is the Euclidean L^2 inner product on the flattened circle.",
+    "Exact generalized Fourier expansion: every sufficiently regular periodic angular field expands in the pulled-back sine/cosine basis.",
+    "This is the missing angular counterpart to the promoted flat-adaptive radial operator and creates the separation interface used by the Sturm-Liouville law."
+  ],
+  "animation": {
+    "status": "planned",
+    "path": ""
+  },
+  "image": {
+    "status": "planned",
+    "path": ""
+  }
+}

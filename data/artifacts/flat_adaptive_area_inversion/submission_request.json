@@ -1,0 +1,31 @@
+{
+  "name": "Flat-Adaptive Area Inversion and Exponent Recovery",
+  "equation": "\\pi_f(R)=\\frac{1}{2R}\\frac{dA_f}{dR},\\quad d_{\\mathrm{eff}}(R)=\\frac{R A_f'(R)}{A_f(R)},\\quad \\beta(R)=d_{\\mathrm{eff}}(R)-2",
+  "description": "Exact area-growth inversion law for the flat-adaptive radial branch. Because the shell area density is w_f(r)=2 pi_f(r) r, the flat-adaptive ruler is recovered directly from disk-area data by pi_f(R)=(1/(2R)) dA_f/dR. In the power-law branch pi_f(r)=pi lambda_0 (r/r_0)^beta, the area profile is A_f(R)=2 pi lambda_0 r_0^{-beta} R^{beta+2}/(beta+2), so the logarithmic area-growth exponent recovers d_eff=beta+2 and hence beta itself. This turns the already-promoted effective-dimension identity into a measurable inverse-recovery law and makes the radial geometry operational rather than just formal.",
+  "source": "Adaptive Flat Pi",
+  "submitter": "RDM3DC",
+  "units": "OK",
+  "theory": "PASS",
+  "assumptions": [
+    "The flat-adaptive disk area A_f(R) is differentiable and strictly increasing for the radii of interest.",
+    "The radial shell density is defined by the same flat-adaptive measure used in the promoted radial operator: dA_f=2 pi_f(r) r dr.",
+    "For constant exponent recovery, the branch is the exact power law pi_f(r)=pi lambda_0 (r/r_0)^beta with beta>-2 so the disk area is finite near the origin.",
+    "The formulas for beta(R) and d_eff(R) are interpreted as local log-derivative observables, reducing to constants on the exact power-law branch."
+  ],
+  "evidence": [
+    "Exact shell-area identity: A_f'(R)=2 pi_f(R) R.",
+    "Exact inversion: pi_f(R)=(1/(2R)) A_f'(R), so the flat-adaptive ruler is reconstructed directly from area data.",
+    "Power-law branch area formula: A_f(R)=2 pi lambda_0 r_0^{-beta} R^{beta+2}/(beta+2).",
+    "Exact recovery of effective dimension: d_eff(R)=R A_f'(R)/A_f(R), which equals beta+2 on the pure branch.",
+    "Exact recovery of exponent: beta(R)=R A_f'(R)/A_f(R)-2.",
+    "This makes visible the geometric inversion law that was implicit in the promoted radial operator and annular capacity derivations."
+  ],
+  "animation": {
+    "status": "planned",
+    "path": ""
+  },
+  "image": {
+    "status": "planned",
+    "path": ""
+  }
+}
