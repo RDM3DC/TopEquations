@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-17T03:21:58.400294+00:00",
+  "generated_at": "2026-04-17T03:56:04.294506+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "70318612eaba3f90c1572841f3ced7c4383d0c080e96c9c7921f7a8094075254",
-  "count": 124,
+  "source_sha256": "4d26ddec557a0eaccacdd11320dd43d73ade11855df251c487be6f5ac37f2830",
+  "count": 127,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3706,6 +3706,96 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "861068d9f20fdab81792bf2f7a571463e40a176e88bed4d2a0c727f752646f66"
+    },
+    {
+      "token_id": "eq-curvature-saturation-radius-kretschmann-branch",
+      "name": "Curvature-Saturation Radius (Kretschmann Branch)",
+      "equation_latex": "r_{\\mathrm{sat}} := K_*^{-1/4}, \\qquad K_* = \\frac{c_K}{\\ell_P^4} \\;\\Longrightarrow\\; r_{\\mathrm{sat}} = \\frac{\\ell_P}{c_K^{1/4}}",
+      "equation_hash": "c4730a4057ab795c2fd2222329ed9dffcc1077489c256d699c5776d29fb978e9",
+      "score": 86,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 18,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 26,
+        "date": "2026-04-16"
+      },
+      "source": "Adaptive Geometry / ARP black-hole program",
+      "date": "2026-04-16",
+      "description": "Derived minimal geometric core scale obtained by dimensional extraction from a Kretschmann-type curvature cap. The saturation radius is not a new primitive constant; it is determined entirely by the limiting curvature invariant and its dimensional weight. Under Planck normalization with order-one coupling constant c_K, the radius is Planck-scale. For vacuum Schwarzschild the Ricci scalar vanishes identically, so only a Kretschmann-type (or Weyl-type) cap can locate the core; scalar-curvature saturation does not apply in the vacuum case. The framework allows r_sat < ell_P, = ell_P, or > ell_P depending on whether K_* exceeds, equals, or falls below the Planck benchmark ell_P^{-4}.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "73e4426aca122ca36dd03a516a0b8c158cf3f0c2d11d2906952e92ad2fa0a489"
+    },
+    {
+      "token_id": "eq-schwarzschild-kretschmann-core-radius",
+      "name": "Schwarzschild Kretschmann Core Radius",
+      "equation_latex": "r_{\\mathrm{core}}(M) = \\left(\\frac{48\\,G^2 M^2}{c^4\\,K_*}\\right)^{\\!1/6}",
+      "equation_hash": "9a25ad3bc0ce7f255f05fd23b45e4893088181ca0fb9d89b9b6dad01780068e7",
+      "score": 82,
+      "scores": {
+        "tractability": 19,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 24,
+        "date": "2026-04-16"
+      },
+      "source": "Adaptive Geometry / ARP black-hole program",
+      "date": "2026-04-16",
+      "description": "Object-dependent core radius for a Schwarzschild-type black hole under Kretschmann saturation. The classical Kretschmann invariant K_Schw(r) = 48 G^2 M^2 / (c^4 r^6) diverges as r -> 0. The saturation law K <= K_* replaces the singularity with a finite core whose radius is found by solving K_Schw(r_core) = K_*. This distinguishes the universal saturation scale K_*^{-1/4} from the mass-dependent physical core radius. For a Planck-mass black hole with c_K ~ O(1), r_core ~ ell_P, but for astrophysical masses r_core >> ell_P.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "1e851431ebb4b963ea59b63703372708d75b731baf94604cf009a080ec89a8f7"
+    },
+    {
+      "token_id": "eq-planck-normalized-kretschmann-core-radius",
+      "name": "Planck-Normalized Kretschmann Core Radius",
+      "equation_latex": "r_{\\mathrm{core}}(M) = \\left(\\frac{48}{c_K}\\right)^{\\!1/6} \\!\\left(\\frac{M}{m_P}\\right)^{\\!1/3} \\ell_P",
+      "equation_hash": "34edd08eec749ffccb44be319cba94f4c1eddc701528fbd598931c38ed34b119",
+      "score": 82,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 25,
+        "date": "2026-04-16"
+      },
+      "source": "Adaptive Geometry / ARP black-hole program",
+      "date": "2026-04-16",
+      "description": "Dimensionless form of the Schwarzschild Kretschmann core radius after Planck normalization. Setting K_* = c_K / ell_P^4, the core radius separates into a dimensionless geometric prefactor (48/c_K)^{1/6}, a mass ratio (M/m_P)^{1/3}, and the Planck length ell_P. This makes explicit that ell_P is a reference normalization, not the actual core scale: the true minimal radius is solution-dependent through (M/m_P)^{1/3}. For c_K ~ O(1) and M = m_P, r_core ~ ell_P; for M >> m_P, r_core >> ell_P. The framework permits r_core < ell_P if c_K >> 48, i.e., if the cap is set above the Planck-normalized benchmark.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "36c10f33a9d89bb4653101e6c4b7087d1a14f92b3c210608657c51b48fcffda5"
     }
   ]
 }
