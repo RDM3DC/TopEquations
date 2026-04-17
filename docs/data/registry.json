@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-15T21:24:32.553816",
+  "generatedAt": "2026-04-16T20:21:59.171257",
   "displayThreshold": 65,
   "entries": [
     {
@@ -1892,6 +1892,48 @@
           "fruitfulness": 82,
           "llm_total": 82,
           "justification": "A minimal, lineage-explicit integration of LB #4 (adaptive-ruler phase update) + LB #8/#3 (plaquette holonomy/coherence order parameter) + LB #9 (adaptive Chern self-healing) into a single bounded loop-coherence-gated conductance law with clean recovery clauses (kappa_Psi=0 and chi=C_loc=0)."
+        }
+      },
+      "highlightTier": "",
+      "isGold": false
+    },
+    {
+      "id": "eq-flat-adaptive-radial-poisson-reconstruction-law",
+      "name": "Flat-Adaptive Radial Poisson Reconstruction Law",
+      "firstSeen": "2026-04-16",
+      "source": "Adaptive Flat Pi",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-flat-adaptive-radial-poisson-reconstruction-law",
+      "score": 85,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Exact inverse-recovery law for the flat-adaptive radial Poisson branch on monotone intervals. Starting from the general radial operator Delta_f^rad u = u'' + ((1/r) + pi_f'/pi_f) u', the branch pi_f is reconstructed explicitly from measured u and known forcing f wherever u' does not vanish. The theorem determines pi_f up to one multiplicative calibration constant, exposes an equivalent shell-flux form, reduces exactly to the harmonic-flux inversion when f=0, and yields a direct power-law consistency diagnostic beta_obs(r)=r(f-u'')/u' - 1.",
+      "assumptions": [
+        "On the recovery interval I, the measured profile satisfies u in C^2(I), the forcing satisfies f in C^0(I), and the branch obeys pi_f(r) > 0.",
+        "The reconstruction is carried out only on subintervals where u'(r) does not vanish and keeps fixed sign, so division by u' and the logarithmic integration step are well-defined.",
+        "The radial operator is the same flat-adaptive branch already used elsewhere in the registry: Delta_f^rad u = u'' + ((1/r) + pi_f'/pi_f) u'.",
+        "Recovery determines pi_f only up to one multiplicative calibration constant; a separate datum such as one known pi_f(r_*), one shell-flux value, or an independent area observable is needed to fix absolute scale."
+      ],
+      "date": "2026-04-16",
+      "equationLatex": "\\pi_f(r)=\\pi_f(r_*)\\exp\\!\\left(\\int_{r_*}^{r}\\left[\\frac{f(s)-u''(s)}{u'(s)}-\\frac{1}{s}\\right]ds\\right),\\quad \\pi_f(r)=\\pi_f(r_*)\\frac{r_*u'(r_*)}{r u'(r)}\\exp\\!\\left(\\int_{r_*}^{r}\\frac{f(s)}{u'(s)}\\,ds\\right)",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-04-16"
         }
       },
       "highlightTier": "",

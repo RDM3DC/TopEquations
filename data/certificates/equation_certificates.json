@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-16T03:27:48.262886+00:00",
+  "generated_at": "2026-04-17T03:21:58.400294+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "de88dec591c406a1240a56e346fd5802924cce48f3ad8ddb81ba2c7b7d016148",
-  "count": 123,
+  "source_sha256": "70318612eaba3f90c1572841f3ced7c4383d0c080e96c9c7921f7a8094075254",
+  "count": 124,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3676,6 +3676,36 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "0aa60a90c13ecf775ff1d6174ab637999f2b4c688b21cb447b892bf0eb182e11"
+    },
+    {
+      "token_id": "eq-flat-adaptive-radial-poisson-reconstruction-law",
+      "name": "Flat-Adaptive Radial Poisson Reconstruction Law",
+      "equation_latex": "\\pi_f(r)=\\pi_f(r_*)\\exp\\!\\left(\\int_{r_*}^{r}\\left[\\frac{f(s)-u''(s)}{u'(s)}-\\frac{1}{s}\\right]ds\\right),\\quad \\pi_f(r)=\\pi_f(r_*)\\frac{r_*u'(r_*)}{r u'(r)}\\exp\\!\\left(\\int_{r_*}^{r}\\frac{f(s)}{u'(s)}\\,ds\\right)",
+      "equation_hash": "09fe4db6aa04566ade09c396cfc5dabe5f535ac461e5f7855b5a2a9cacfda07a",
+      "score": 85,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 20,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-04-16"
+      },
+      "source": "Adaptive Flat Pi",
+      "date": "2026-04-16",
+      "description": "Exact inverse-recovery law for the flat-adaptive radial Poisson branch on monotone intervals. Starting from the general radial operator Delta_f^rad u = u'' + ((1/r) + pi_f'/pi_f) u', the branch pi_f is reconstructed explicitly from measured u and known forcing f wherever u' does not vanish. The theorem determines pi_f up to one multiplicative calibration constant, exposes an equivalent shell-flux form, reduces exactly to the harmonic-flux inversion when f=0, and yields a direct power-law consistency diagnostic beta_obs(r)=r(f-u'')/u' - 1.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "861068d9f20fdab81792bf2f7a571463e40a176e88bed4d2a0c727f752646f66"
     }
   ]
 }
