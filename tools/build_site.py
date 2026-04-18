@@ -145,6 +145,30 @@ def _equation_classes(entry: dict) -> str:
   return ""
 
 
+def _equation_block(label: str, eq: str, eq_classes: str = "") -> str:
+  """Render an equation card with header bar + copy button.
+
+  The raw LaTeX is stored in a `data-tex` attribute on the wrapping div so
+  the copy handler in app.js can grab it without re-parsing the rendered
+  KaTeX. Both the visible $$..$$ block and the data attribute go through
+  html.escape, which also escapes quotes (the html.escape default).
+  """
+  esc_eq = _esc(eq)
+  return (
+    f"<div class='equation{eq_classes}' data-tex=\"{esc_eq}\">"
+    f"<div class='equation__head'>"
+    f"<div class='equation__label'>{_esc(label)}</div>"
+    f"<button type='button' class='equation__copy' aria-label='Copy LaTeX' "
+    f"title='Copy LaTeX to clipboard'>"
+    f"<span class='equation__copy-icon' aria-hidden='true'>\u2398</span>"
+    f"<span class='equation__copy-text'>Copy</span>"
+    f"</button>"
+    f"</div>"
+    f"<div class='equation__tex'>$${esc_eq}$$</div>"
+    f"</div>"
+  )
+
+
 def _card_equation(entry: dict, fallback_entry: dict | None = None) -> str:
   for candidate in (entry, fallback_entry or {}):
     display = candidate.get("display", {}) or {}
@@ -332,10 +356,7 @@ def _build_core_cards(repo_root: Path) -> list[str]:
         <span class='badge badge--score'>{_esc(src)}</span>
       </div>
     </div>
-    <div class='equation{eq_classes}'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$${_esc(eq)}$$</div>
-    </div>
+    {_equation_block('Canonical equation', eq, eq_classes)}
     <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>{_esc(desc)}</div></div>
@@ -532,10 +553,7 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation{eq_classes}'>
-      <div class='equation__label'>Derived equation</div>
-      <div class='equation__tex'>$${_esc(eq)}$$</div>
-    </div>
+    {_equation_block('Derived equation', eq, eq_classes)}
 
     <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
 
@@ -678,10 +696,7 @@ def build_rising(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation{eq_classes}'>
-      <div class='equation__label'>Equation</div>
-      <div class='equation__tex'>$${_esc(eq)}$$</div>
-    </div>
+    {_equation_block('Equation', eq, eq_classes)}
 
     <div class='card__sub'>Reference: <span class='muted'>{_esc(src)}</span></div>
 
@@ -980,10 +995,7 @@ def build_submissions(repo_root: Path, docs: Path) -> None:
       </div>
     </div>
 
-    <div class='equation{eq_classes}'>
-      <div class='equation__label'>Submitted equation</div>
-      <div class='equation__tex'>$${_esc(eq)}$$</div>
-    </div>
+    {_equation_block('Submitted equation', eq, eq_classes)}
 
     <div class='card__sub'>Source: <span class='muted'>{_esc(source)}</span> &middot; Submitter: <span class='muted'>{_esc(submitter)}</span></div>
 

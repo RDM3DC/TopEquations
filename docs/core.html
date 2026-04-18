@@ -14,11 +14,11 @@
   <meta name='twitter:title' content='TopEquations — Canonical Core' />
   <meta name='twitter:description' content='Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202604181053' />
+  <link rel='stylesheet' href='./assets/style.css?v=202604181349' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
   
 
-  <script defer src='./assets/app.js?v=202604181053'></script>
+  <script defer src='./assets/app.js?v=202604181349'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -97,10 +97,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §A (Eq.1)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$z=re^{i\theta},\quad \theta\equiv\theta+2\pi k,\ k\in\mathbb{Z}$$</div>
-    </div>
+    <div class='equation' data-tex="z=re^{i\theta},\quad \theta\equiv\theta+2\pi k,\ k\in\mathbb{Z}"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$z=re^{i\theta},\quad \theta\equiv\theta+2\pi k,\ k\in\mathbb{Z}$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §A (Eq.1)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Multi-valuedness comes from the (2π)-quotient on phase. Starting axiom motivating the Phase-Lift framework.</div></div>
@@ -128,10 +125,7 @@
         <span class='badge badge--score'>canonical-core paper 04 / Eq.Sheet §A (Eq.2)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$(\,\,\,\,\,\u29c9 f\,\,\,)(z;\theta_{\rm ref}) := f(z)\ \text{computed using}\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{\rm ref})$$</div>
-    </div>
+    <div class='equation' data-tex="(\,\,\,\,\,\u29c9 f\,\,\,)(z;\theta_{\rm ref}) := f(z)\ \text{computed using}\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{\rm ref})"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$(\,\,\,\,\,\u29c9 f\,\,\,)(z;\theta_{\rm ref}) := f(z)\ \text{computed using}\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{\rm ref})$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 04 / Eq.Sheet §A (Eq.2)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Defines Phase-Lift as explicit phase resolution (branch selection) via unwrapping.</div></div>
@@ -159,10 +153,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §A (Eq.3)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\mathrm{unwrap}(\theta;\theta_{\rm ref})=\theta+2\pi\,\mathrm{round}\!\Big(\frac{\theta_{\rm ref}-\theta}{2\pi}\Big)$$</div>
-    </div>
+    <div class='equation' data-tex="\mathrm{unwrap}(\theta;\theta_{\rm ref})=\theta+2\pi\,\mathrm{round}\!\Big(\frac{\theta_{\rm ref}-\theta}{2\pi}\Big)"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\mathrm{unwrap}(\theta;\theta_{\rm ref})=\theta+2\pi\,\mathrm{round}\!\Big(\frac{\theta_{\rm ref}-\theta}{2\pi}\Big)$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §A (Eq.3)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Pick the representative closest to the reference. The concrete algorithm behind Phase-Lift: a single deterministic formula for branch selection.</div></div>
@@ -190,10 +181,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §A (Eq.4)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\theta_{R,k}=\mathrm{unwrap}(\arg z_k;\,\theta_{R,k-1})$$</div>
-    </div>
+    <div class='equation' data-tex="\theta_{R,k}=\mathrm{unwrap}(\arg z_k;\,\theta_{R,k-1})"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\theta_{R,k}=\mathrm{unwrap}(\arg z_k;\,\theta_{R,k-1})$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §A (Eq.4)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Turns phase into a continuous real trajectory by chaining the unwrap rule sample-to-sample (except at true singularities like z=0).</div></div>
@@ -221,10 +209,7 @@
         <span class='badge badge--score'>canonical-core paper 04 / Eq.Sheet §A (Eq.5)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\u29c9\sqrt{z;\theta_{ref}}:=\sqrt{r}\,e^{i\theta_R/2}\ &quot;where&quot;\ z=re^{i\theta}\ &quot;and&quot;\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})$$</div>
-    </div>
+    <div class='equation' data-tex="\u29c9\sqrt{z;\theta_{ref}}:=\sqrt{r}\,e^{i\theta_R/2}\ &quot;where&quot;\ z=re^{i\theta}\ &quot;and&quot;\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\u29c9\sqrt{z;\theta_{ref}}:=\sqrt{r}\,e^{i\theta_R/2}\ &quot;where&quot;\ z=re^{i\theta}\ &quot;and&quot;\ \theta_R=\mathrm{unwrap}(\arg z;\theta_{ref})$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 04 / Eq.Sheet §A (Eq.5)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Phase-resolved square root: deterministic branch choice encoded by the resolved phase.</div></div>
@@ -252,10 +237,7 @@
         <span class='badge badge--score'>canonical-core papers 02/04 / Eq.Sheet §B (Eq.6–7)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$w=\frac{\Delta\theta_R}{2\pi}\in\mathbb{Z},\qquad \nu:=w\bmod 2\in\{0,1\},\quad b=(-1)^w\in\{\pm1\}$$</div>
-    </div>
+    <div class='equation' data-tex="w=\frac{\Delta\theta_R}{2\pi}\in\mathbb{Z},\qquad \nu:=w\bmod 2\in\{0,1\},\quad b=(-1)^w\in\{\pm1\}"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$w=\frac{\Delta\theta_R}{2\pi}\in\mathbb{Z},\qquad \nu:=w\bmod 2\in\{0,1\},\quad b=(-1)^w\in\{\pm1\}$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core papers 02/04 / Eq.Sheet §B (Eq.6–7)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Counts how many times the lifted phase winds (w); ℤ₂ parity b predicts whether PR-Root returns to the same or opposite sheet.</div></div>
@@ -283,10 +265,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §C (Eq.8)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\Omega(x,t):=\frac{\pi_a(x,t)}{\pi},\qquad g_{ij}(x,t)=\Omega(x,t)^2\,\delta_{ij}$$</div>
-    </div>
+    <div class='equation' data-tex="\Omega(x,t):=\frac{\pi_a(x,t)}{\pi},\qquad g_{ij}(x,t)=\Omega(x,t)^2\,\delta_{ij}"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\Omega(x,t):=\frac{\pi_a(x,t)}{\pi},\qquad g_{ij}(x,t)=\Omega(x,t)^2\,\delta_{ij}$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §C (Eq.8)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>πₐ/π acts like a local ruler scaling. Defines the conformal metric induced by the adaptive-π field on the underlying flat geometry.</div></div>
@@ -314,10 +293,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §C (Eq.9)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$L_g(\gamma)=\int_0^1 \Omega(\gamma(t),t)\,|\dot\gamma(t)|\,dt$$</div>
-    </div>
+    <div class='equation' data-tex="L_g(\gamma)=\int_0^1 \Omega(\gamma(t),t)\,|\dot\gamma(t)|\,dt"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$L_g(\gamma)=\int_0^1 \Omega(\gamma(t),t)\,|\dot\gamma(t)|\,dt$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §C (Eq.9)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Distances and penalties are measured in the adaptive geometry: path lengths scale with the local πₐ field.</div></div>
@@ -345,10 +321,7 @@
         <span class='badge badge--score'>canonical-core paper 02 + paper 04</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\theta=\theta_R+2\pi_a(x,t)\,w,\ &quot;with&quot;\ w\in\mathbb{Z}\ &quot;and&quot;\ \pi_a\to\pi$$</div>
-    </div>
+    <div class='equation' data-tex="\theta=\theta_R+2\pi_a(x,t)\,w,\ &quot;with&quot;\ w\in\mathbb{Z}\ &quot;and&quot;\ \pi_a\to\pi"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\theta=\theta_R+2\pi_a(x,t)\,w,\ &quot;with&quot;\ w\in\mathbb{Z}\ &quot;and&quot;\ \pi_a\to\pi$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 02 + paper 04</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Generalizes the phase wrap unit; reduces to standard 2π wrapping when πₐ becomes constant π.</div></div>
@@ -376,10 +349,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §C (Eq.10)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\frac{d\pi_a}{dt}=\alpha_\pi\,s(x,t)-\mu_\pi(\pi_a-\pi_0)$$</div>
-    </div>
+    <div class='equation' data-tex="\frac{d\pi_a}{dt}=\alpha_\pi\,s(x,t)-\mu_\pi(\pi_a-\pi_0)"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\frac{d\pi_a}{dt}=\alpha_\pi\,s(x,t)-\mu_\pi(\pi_a-\pi_0)$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §C (Eq.10)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>πₐ increases under stimulus (events/errors/curvature) and relaxes toward π₀ (often π). The core adaptive mechanism of the geometry layer.</div></div>
@@ -407,10 +377,7 @@
         <span class='badge badge--score'>canonical-core paper 01 / Eq.Sheet §D (Eq.11)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|-\mu_G\,G_{ij}(t)$$</div>
-    </div>
+    <div class='equation' data-tex="\frac{dG_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|-\mu_G\,G_{ij}(t)"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\frac{dG_{ij}}{dt}=\alpha_G\,|I_{ij}(t)|-\mu_G\,G_{ij}(t)$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core paper 01 / Eq.Sheet §D (Eq.11)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Canonical Adaptive Resistance Principle update rule for edge conductance. Edges that carry activity reinforce; unused edges decay (self-organizing backbones).</div></div>
@@ -438,10 +405,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §E (Eq.12)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\kappa(s)=|\gamma&#x27;&#x27;(s)|$$</div>
-    </div>
+    <div class='equation' data-tex="\kappa(s)=|\gamma&#x27;&#x27;(s)|"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\kappa(s)=|\gamma&#x27;&#x27;(s)|$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §E (Eq.12)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Salience equals curvature: sharp bends in a trajectory mark events and transitions. Defines the geometric primitive used by curve-memory.</div></div>
@@ -469,10 +433,7 @@
         <span class='badge badge--score'>Equation Sheet v1.1 §E (Eq.13)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\frac{dM}{dt}=\alpha\,S(t)-\mu\,M(t)$$</div>
-    </div>
+    <div class='equation' data-tex="\frac{dM}{dt}=\alpha\,S(t)-\mu\,M(t)"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\frac{dM}{dt}=\alpha\,S(t)-\mu\,M(t)$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>Equation Sheet v1.1 §E (Eq.13)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>A generic time-constant memory law: M grows under stimulus S and decays at rate μ. Can drive s(x,t) for πₐ or any curve-memory trace.</div></div>
@@ -500,10 +461,7 @@
         <span class='badge badge--score'>canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)</span>
       </div>
     </div>
-    <div class='equation'>
-      <div class='equation__label'>Canonical equation</div>
-      <div class='equation__tex'>$$\theta_R[\gamma]:=\mathrm{unwrap}\!\left(\oint_{\gamma} A\,;\theta_{\rm ref}\right)=\int_{S:\,\partial S=\gamma}F+2\pi_a\,w,\quad w\in\mathbb{Z},\quad b(\gamma)=(-1)^w$$</div>
-    </div>
+    <div class='equation' data-tex="\theta_R[\gamma]:=\mathrm{unwrap}\!\left(\oint_{\gamma} A\,;\theta_{\rm ref}\right)=\int_{S:\,\partial S=\gamma}F+2\pi_a\,w,\quad w\in\mathbb{Z},\quad b(\gamma)=(-1)^w"><div class='equation__head'><div class='equation__label'>Canonical equation</div><button type='button' class='equation__copy' aria-label='Copy LaTeX' title='Copy LaTeX to clipboard'><span class='equation__copy-icon' aria-hidden='true'>⎘</span><span class='equation__copy-text'>Copy</span></button></div><div class='equation__tex'>$$\theta_R[\gamma]:=\mathrm{unwrap}\!\left(\oint_{\gamma} A\,;\theta_{\rm ref}\right)=\int_{S:\,\partial S=\gamma}F+2\pi_a\,w,\quad w\in\mathbb{Z},\quad b(\gamma)=(-1)^w$$</div></div>
     <div class='card__sub'>Reference: <span class='muted'>canonical-core papers 04 (Phase-Lift) + 02 (Adaptive-π)</span></div>
     <div class='grid'>
       <div class='kv'><div class='k'>Description</div><div class='v'>Turns the usual Stokes/holonomy statement ‘mod 2π’ into an exact equality by Phase-Lifting the phase (real-valued branch) and explicitly tracking the integer sector w; adaptive-π generalizes the period to 2πₐ.</div></div>
@@ -523,7 +481,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-04-18 10:53</strong></div>
+      <div>Last built: <strong>2026-04-18 13:49</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>
