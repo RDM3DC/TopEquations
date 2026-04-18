@@ -604,6 +604,10 @@ def build_leaderboard(repo_root: Path, docs: Path) -> None:
             <option value='rank'>Order</option>
           </select>
         </label>
+        <button type='button' id='copyAllBtn' class='copy-all-btn' aria-label='Copy LaTeX of all visible equations' title='Copy LaTeX of every equation currently shown to the clipboard'>
+          <span class='copy-all-btn__icon' aria-hidden='true'>⎘</span>
+          <span class='copy-all-btn__text'>Copy all</span>
+        </button>
       </div>
     </div>
   </div>

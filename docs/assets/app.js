@@ -111,3 +111,77 @@
     });
   });
 })();
+
+// "Copy all" button: dumps every visible card's LaTeX to the clipboard,
+// honouring the current search/sort state. Each block is preceded by a
+// LaTeX-comment header (% #N — Name) so the dump remains valid LaTeX.
+(function(){
+  function copyText(text){
+    if(navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject){
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error('execCommand failed'));
+      }catch(err){ reject(err); }
+    });
+  }
+
+  function flashAll(btn, cls, label){
+    var textEl = btn.querySelector('.copy-all-btn__text');
+    var prev = textEl ? textEl.textContent : '';
+    btn.classList.add(cls);
+    if(textEl) textEl.textContent = label;
+    setTimeout(function(){
+      btn.classList.remove(cls);
+      if(textEl) textEl.textContent = prev || 'Copy all';
+    }, 1800);
+  }
+
+  function gatherVisibleLatex(){
+    var cards = document.getElementById('cards');
+    if(!cards) return { count: 0, text: '' };
+    var nodes = Array.from(cards.querySelectorAll('.card'));
+    var blocks = [];
+    var idx = 0;
+    nodes.forEach(function(card){
+      // Respect search / latex-only filter (which sets display:none).
+      if(card.style.display === 'none') return;
+      var eq = card.querySelector('.equation[data-tex]');
+      if(!eq) return;
+      var tex = eq.getAttribute('data-tex') || '';
+      if(!tex.trim()) return;
+      idx += 1;
+      var titleEl = card.querySelector('.card__title');
+      var name = titleEl ? titleEl.textContent.trim().replace(/\s+/g, ' ') : '';
+      // LaTeX comments are safe headers; \n keeps the dump newline-delimited.
+      blocks.push('% #' + idx + (name ? ' — ' + name : '') + '\n' + tex);
+    });
+    return { count: idx, text: blocks.join('\n\n') + (blocks.length ? '\n' : '') };
+  }
+
+  document.addEventListener('click', function(ev){
+    var btn = ev.target.closest && ev.target.closest('.copy-all-btn');
+    if(!btn) return;
+    ev.preventDefault();
+    var dump = gatherVisibleLatex();
+    if(!dump.count){
+      flashAll(btn, 'is-error', 'Nothing to copy');
+      return;
+    }
+    copyText(dump.text).then(function(){
+      flashAll(btn, 'is-copied', 'Copied ' + dump.count + ' eq' + (dump.count === 1 ? '' : 's') + '!');
+    }).catch(function(){
+      flashAll(btn, 'is-error', 'Failed');
+    });
+  });
+})();

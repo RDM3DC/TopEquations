@@ -207,6 +207,34 @@ code{background:rgba(21,82,204,.06); padding:2px 6px; border-radius:8px; border:
 .equation__copy.is-error{background:rgba(204,43,43,.10); border-color:rgba(204,43,43,.35); color:#a32424}
 .equation__copy-icon{font-size:14px; line-height:1}
 
+.copy-all-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:7px 14px; border-radius:10px;
+  border:1px solid rgba(21,82,204,.30);
+  background:linear-gradient(180deg, rgba(21,82,204,.08), rgba(21,82,204,.02));
+  color:#1552cc; font-size:13px; font-weight:700;
+  cursor:pointer; transition:all .15s ease;
+  font-family:inherit; line-height:1.1;
+}
+.copy-all-btn:hover{
+  background:linear-gradient(180deg, rgba(21,82,204,.16), rgba(21,82,204,.06));
+  border-color:rgba(21,82,204,.50);
+  box-shadow:0 1px 4px rgba(21,82,204,.18);
+}
+.copy-all-btn:active{transform:translateY(1px)}
+.copy-all-btn:focus-visible{outline:2px solid rgba(21,82,204,.55); outline-offset:2px}
+.copy-all-btn.is-copied{
+  background:linear-gradient(180deg, rgba(34,139,87,.18), rgba(34,139,87,.06));
+  border-color:rgba(34,139,87,.45);
+  color:#1f7a45;
+}
+.copy-all-btn.is-error{
+  background:linear-gradient(180deg, rgba(204,43,43,.14), rgba(204,43,43,.04));
+  border-color:rgba(204,43,43,.45);
+  color:#a32424;
+}
+.copy-all-btn__icon{font-size:15px; line-height:1}
+
 .equation--gold{
   border-color:rgba(154,109,7,.34);
   background:linear-gradient(180deg, var(--gold0), rgba(240,207,102,.34));
