@@ -14,14 +14,14 @@
   <meta name='twitter:title' content='TopEquations — Registry' />
   <meta name='twitter:description' content='Open registry for equations with normalized component scoring, published certificates, and machine-readable data exports.' />
 
-  <link rel='stylesheet' href='./assets/style.css?v=202604181044' />
+  <link rel='stylesheet' href='./assets/style.css?v=202604181053' />
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' />
   
   <link rel='alternate' type='application/json' href='./data/registry.json' title='TopEquations registry JSON' />
   <link rel='alternate' type='application/json' href='./data/equations.json' title='TopEquations equations JSON' />
 
 
-  <script defer src='./assets/app.js?v=202604181044'></script>
+  <script defer src='./assets/app.js?v=202604181053'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js'></script>
   <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js'></script>
   <script defer>
@@ -892,11 +892,11 @@
     <div class='card__sub'>Reference: <span class='muted'>Adaptive Geometry / ARP Lyapunov program</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Proved Lyapunov contraction theorem for ARP conductance dynamics under Kirchhoff current coupling. Upgrades the existing registry entry eq-arp-lyapunov-stability (score 66, placeholder template) to a complete theorem with numerical certificate. In the frozen-current case, the quadratic Lyapunov function V decays at exact rate -2 mu_G. Under full Kirchhoff-coupled dynamics where currents I_ij depend on conductances through the network Laplacian, the decay rate degrades to -2(mu_G - kappa) where kappa is the Kirchhoff Lipschitz constant. Contraction holds whenever mu_G &gt; kappa. Numerical certificate: predicted decay rate -0.0500, measured -0.0500 (12-node random graph, dt=0.01, 2000 steps).</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Proved Lyapunov contraction theorem for ARP conductance dynamics under Kirchhoff current coupling. Supersedes registry entry eq-arp-lyapunov-stability (score 66, placeholder template). In the frozen-current case, the quadratic Lyapunov function V decays at exact rate -2 mu_G. Under full Kirchhoff-coupled dynamics where currents I_ij depend on conductances through the network Laplacian, the decay rate degrades to -2(mu_G - kappa) where kappa is the Kirchhoff Lipschitz constant. Contraction holds whenever mu_G &gt; kappa. Numerical certificate: predicted decay rate -0.0500, measured -0.05000625 (12-node random graph, seed 42, dt=0.01, 2000 steps). Reference: tools/arp_kirchhoff_sim.py, data/arp_kirchhoff_sim.csv, submissions/arp_lyapunov_and_falsifiability.md.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Conductance dynamics follow the standard ARP reinforce-decay law: dG_ij/dt = alpha_G |I_ij| - mu_G G_ij.</li><li>The Lyapunov function is V = (1/(2 alpha_G)) sum (G_ij - G*_ij)^2 with G*_ij = (alpha_G / mu_G)|I_ij| the frozen-current equilibrium.</li><li>In the frozen-current regime, currents I_ij are held constant; the decay dV/dt = -2 mu_G V is exact.</li><li>Under Kirchhoff coupling, currents satisfy I = L(G) s for a Kirchhoff Laplacian L depending on G and source vector s.</li><li>The Kirchhoff Lipschitz constant kappa := sup_{delta G} ||abs(I(G+delta_G,s)) - abs(I(G,s))|| / ||delta_G|| is finite for bounded networks.</li><li>Contraction requires mu_G &gt; kappa; when violated, the Lyapunov bound becomes non-negative and stability is not guaranteed by this certificate.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-18</div></div>
-      <div class='kv'><div class='k'>Animation</div><div class='v'>planned</div></div>
+      <div class='kv'><div class='k'>Animation</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem/blob/main/images/_auto_scene_eq-arp-kirchhoff-coupled-lyapunov.py' target='_blank' rel='noopener'>link</a></div></div>
       <div class='kv'><div class='k'>Image/Diagram</div><div class='v'>planned</div></div>
     </div>
   </div>
@@ -1756,7 +1756,7 @@
     <div class='card__sub'>Reference: <span class='muted'>Adaptive Geometry / ARP Lyapunov program</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>First operationally measurable stability bound in the TopEquations registry. Every existing ARP variant (#1 BZ conductance, #2 entropy-gated, #11 Phase dynamics, #22 ThreeForceConductance, #31 Entropy-Gated 4-Pillar, #44 Adaptive Harmonic) asserts stability without a checkable inequality. This entry provides the missing falsifier: measure the Kirchhoff Lipschitz constant kappa from the network&#x27;s current-response function, compare to the decay rate mu_G. If mu_G &gt; kappa, the quadratic Lyapunov contraction theorem holds. If not, stability is not guaranteed by this certificate. This bridges ARP adaptive dynamics to standard contraction-mapping theory and gives experimentalists a concrete number to measure.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>First operationally measurable stability bound in the TopEquations registry. Every existing ARP variant (#1 BZ conductance, #2 entropy-gated, #11 Phase dynamics, #22 ThreeForceConductance, #31 Entropy-Gated 4-Pillar, #44 Adaptive Harmonic) asserts stability without a checkable inequality. This entry provides the missing falsifier: measure the Kirchhoff Lipschitz constant kappa from the network&#x27;s current-response function, compare to the decay rate mu_G. If mu_G &gt; kappa, the quadratic Lyapunov contraction theorem holds. If not, stability is not guaranteed by this certificate. The bound is non-trivial: a 12-node random graph (seed 42, alpha_G=0.5, mu_G=0.025) yields kappa ~ 1.01 &gt;&gt; mu_G, so the contraction certificate fails and a tighter or structure-aware bound is required. This bridges ARP adaptive dynamics to standard contraction-mapping theory and gives experimentalists a concrete number to measure. Reference: tools/measure_kappa.py, tools/arp_kirchhoff_sim.py, submissions/arp_lyapunov_and_falsifiability.md.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Currents are determined by Kirchhoff&#x27;s law: I = L(G) s, where L is the conductance-weighted Laplacian and s is the source/drive vector.</li><li>The Lipschitz constant kappa is defined as the operator norm of the map G -&gt; |I(G,s)| restricted to element-wise absolute values.</li><li>kappa is finite for any bounded, connected network with finite conductances and bounded source vector.</li><li>The condition mu_G &gt; kappa is sufficient but not necessary for contraction; networks may be stable even when kappa &gt;= mu_G if additional structure (e.g., symmetry, sparsity) is present.</li><li>The bound applies to the standard ARP reinforce-decay law dG_ij/dt = alpha_G |I_ij| - mu_G G_ij without entropy gating or phase lifting.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-kirchhoff-lipschitz-sufficient-condition-for-arp-contrac'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-kirchhoff-lipschitz-sufficient-condition-for-arp-contrac' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-18</div></div>
@@ -2236,7 +2236,7 @@
     <div class='card__sub'>Reference: <span class='muted'>Adaptive Geometry / ARP Lyapunov program</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Negative result documenting that the frozen-current equilibrium identity |I_ij| = (mu_G / alpha_G) G_ij does not hold as an asymptotic identity under full Kirchhoff-coupled ARP dynamics. Multiple registry entries implicitly use this proportionality when deriving equilibria or computing steady-state scores. In a 12-node random graph simulation, the normalized residual ||abs(I_ij) - (mu_G/alpha_G) G_ij|| / ||I|| saturates at approximately 0.85 and never relaxes, confirming that the collapse identity is a modeling convenience that fails under honest current coupling. This forces a PASS-WITH-ASSUMPTIONS qualification on entries that rely on this proportionality.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>Negative result documenting that the frozen-current equilibrium identity |I_ij| = (mu_G / alpha_G) G_ij does not hold as an asymptotic identity under full Kirchhoff-coupled ARP dynamics. Multiple registry entries implicitly use this proportionality when deriving equilibria or computing steady-state scores. In a 12-node random graph simulation (seed 42, alpha_G=0.5, mu_G=0.025, dt=0.01, 2000 steps), the normalized residual ||abs(I_ij) - (mu_G/alpha_G) G_ij|| / ||I|| saturates at 0.598 (mean of last 200 steps: 0.613) and never relaxes, confirming that the collapse identity is a modeling convenience that fails under honest current coupling. Reference: tools/arp_kirchhoff_sim.py, data/arp_kirchhoff_sim.csv, submissions/arp_lyapunov_and_falsifiability.md. This forces a PASS-WITH-ASSUMPTIONS qualification on entries that rely on this proportionality.</div></div>
       <div class='kv'><div class='k'>Assumptions</div><div class='v'><ul class='ul'><li>Dynamics follow standard ARP: dG_ij/dt = alpha_G |I_ij| - mu_G G_ij with Kirchhoff coupling I = L(G) s.</li><li>The collapse identity |I_ij| proportional to G_ij is tested as an asymptotic convergence claim, not a transient approximation.</li><li>The 12-node random graph test uses fixed external source s; results may differ for time-varying or stochastic drives.</li><li>The residual metric is the relative Frobenius norm of the discrepancy divided by the current norm.</li><li>This is a negative result: it documents a failure condition, not a new mechanism.</li></ul></div></div><div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-kirchhoff-collapse-identity-falsifier'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-kirchhoff-collapse-identity-falsifier' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-04-18</div></div>
@@ -2987,7 +2987,7 @@
   <div class='card__rank'>#91</div>
   <div class='card__body'>
     <div class='card__head'>
-      <h2 class='card__title'>ARP Lyapunov Stability Form</h2>
+      <h2 class='card__title'>ARP Lyapunov Stability Form (template)</h2>
       <div class='card__meta'>
         <span class='badge badge--score'>Score 66</span>
         
@@ -3004,7 +3004,7 @@
     <div class='card__sub'>Reference: <span class='muted'>discovery-matrix #2</span></div>
 
     <div class='grid'>
-      <div class='kv'><div class='k'>Description</div><div class='v'>Candidate stability proof template for adaptive conductance dynamics.</div></div>
+      <div class='kv'><div class='k'>Description</div><div class='v'>[SUPERSEDED 2026-04-18 by eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem] Original placeholder template for Lyapunov stability of adaptive conductance dynamics. The successor provides a proved theorem with both frozen-current (exact) and Kirchhoff-coupled (sufficient-condition) decay bounds.</div></div>
       <div class='kv'><div class='k'>Certificate</div><div class='v'><a href='./certificates.html#eq-arp-lyapunov-stability'>view on chain record</a></div></div><div class='kv'><div class='k'>Repository</div><div class='v'><a href='https://github.com/RDM3DC/eq-arp-lyapunov-stability' target='_blank' rel='noopener'>equation repo &rarr;</a></div></div>
       <div class='kv'><div class='k'>Highlight</div><div class='v'>none</div></div>
       <div class='kv'><div class='k'>Date</div><div class='v'>2026-02-19</div></div>
@@ -3054,7 +3054,7 @@
 </div>
 
     <footer class='footer'>
-      <div>Last built: <strong>2026-04-18 10:44</strong></div>
+      <div>Last built: <strong>2026-04-18 10:53</strong></div>
       <div style='margin-top:.5rem'>
         <a href='https://cash.app/$rdm3d' target='_blank' rel='noopener'
            style='color:#00d632;font-weight:600;text-decoration:none'>
