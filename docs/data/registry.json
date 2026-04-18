@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-16T20:56:04.688143",
+  "generatedAt": "2026-04-18T10:44:01.151431",
   "displayThreshold": 65,
   "entries": [
     {
@@ -1051,6 +1051,50 @@
         }
       },
       "repoUrl": "https://github.com/RDM3DC/eq-paper1-chern-marker-bianco-resta",
+      "highlightTier": "",
+      "isGold": false
+    },
+    {
+      "id": "eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem",
+      "name": "ARP Kirchhoff-Coupled Lyapunov Contraction Theorem",
+      "firstSeen": "2026-04-18",
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem",
+      "score": 89,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Proved Lyapunov contraction theorem for ARP conductance dynamics under Kirchhoff current coupling. Upgrades the existing registry entry eq-arp-lyapunov-stability (score 66, placeholder template) to a complete theorem with numerical certificate. In the frozen-current case, the quadratic Lyapunov function V decays at exact rate -2 mu_G. Under full Kirchhoff-coupled dynamics where currents I_ij depend on conductances through the network Laplacian, the decay rate degrades to -2(mu_G - kappa) where kappa is the Kirchhoff Lipschitz constant. Contraction holds whenever mu_G > kappa. Numerical certificate: predicted decay rate -0.0500, measured -0.0500 (12-node random graph, dt=0.01, 2000 steps).",
+      "assumptions": [
+        "Conductance dynamics follow the standard ARP reinforce-decay law: dG_ij/dt = alpha_G |I_ij| - mu_G G_ij.",
+        "The Lyapunov function is V = (1/(2 alpha_G)) sum (G_ij - G*_ij)^2 with G*_ij = (alpha_G / mu_G)|I_ij| the frozen-current equilibrium.",
+        "In the frozen-current regime, currents I_ij are held constant; the decay dV/dt = -2 mu_G V is exact.",
+        "Under Kirchhoff coupling, currents satisfy I = L(G) s for a Kirchhoff Laplacian L depending on G and source vector s.",
+        "The Kirchhoff Lipschitz constant kappa := sup_{delta G} ||abs(I(G+delta_G,s)) - abs(I(G,s))|| / ||delta_G|| is finite for bounded networks.",
+        "Contraction requires mu_G > kappa; when violated, the Lyapunov bound becomes non-negative and stability is not guaranteed by this certificate."
+      ],
+      "date": "2026-04-18",
+      "equationLatex": "V = \\frac{1}{2\\alpha_G}\\sum_{ij}(G_{ij}-G^\\star_{ij})^2,\\quad \\dot{V} = -2\\mu_G V \\;\\text{(frozen-current)};\\quad \\dot{V} \\le -2(\\mu_G - \\kappa)\\,V \\;\\text{(Kirchhoff-coupled)}",
+      "tags": {
+        "novelty": {
+          "score": 30,
+          "date": "2026-04-18"
+        }
+      },
       "highlightTier": "",
       "isGold": false
     },
@@ -2197,6 +2241,49 @@
       "isGold": false
     },
     {
+      "id": "eq-kirchhoff-lipschitz-sufficient-condition-for-arp-contrac",
+      "name": "Kirchhoff-Lipschitz Sufficient Condition for ARP Contraction",
+      "firstSeen": "2026-04-18",
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-kirchhoff-lipschitz-sufficient-condition-for-arp-contrac",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "First operationally measurable stability bound in the TopEquations registry. Every existing ARP variant (#1 BZ conductance, #2 entropy-gated, #11 Phase dynamics, #22 ThreeForceConductance, #31 Entropy-Gated 4-Pillar, #44 Adaptive Harmonic) asserts stability without a checkable inequality. This entry provides the missing falsifier: measure the Kirchhoff Lipschitz constant kappa from the network's current-response function, compare to the decay rate mu_G. If mu_G > kappa, the quadratic Lyapunov contraction theorem holds. If not, stability is not guaranteed by this certificate. This bridges ARP adaptive dynamics to standard contraction-mapping theory and gives experimentalists a concrete number to measure.",
+      "assumptions": [
+        "Currents are determined by Kirchhoff's law: I = L(G) s, where L is the conductance-weighted Laplacian and s is the source/drive vector.",
+        "The Lipschitz constant kappa is defined as the operator norm of the map G -> |I(G,s)| restricted to element-wise absolute values.",
+        "kappa is finite for any bounded, connected network with finite conductances and bounded source vector.",
+        "The condition mu_G > kappa is sufficient but not necessary for contraction; networks may be stable even when kappa >= mu_G if additional structure (e.g., symmetry, sparsity) is present.",
+        "The bound applies to the standard ARP reinforce-decay law dG_ij/dt = alpha_G |I_ij| - mu_G G_ij without entropy gating or phase lifting."
+      ],
+      "date": "2026-04-18",
+      "equationLatex": "\\mu_G > \\kappa, \\quad \\kappa := \\sup_{\\delta G} \\frac{\\lVert\\,|I(G+\\delta G, s)| - |I(G, s)|\\,\\rVert}{\\lVert \\delta G \\rVert}",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-04-18"
+        }
+      },
+      "highlightTier": "",
+      "isGold": false
+    },
+    {
       "id": "eq-adaptive-entropy-production-rate-aepr-e-aepr-2",
       "name": "Adaptive Entropy Production Rate (AEPR)",
       "firstSeen": "2026-02-24",
@@ -2791,6 +2878,49 @@
         "novelty": {
           "score": 23,
           "date": "2026-03-08"
+        }
+      },
+      "highlightTier": "",
+      "isGold": false
+    },
+    {
+      "id": "eq-kirchhoff-collapse-identity-falsifier",
+      "name": "Kirchhoff Collapse-Identity Falsifier",
+      "firstSeen": "2026-04-18",
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "submitter": "RDM3DC",
+      "repoUrl": "https://github.com/RDM3DC/eq-kirchhoff-collapse-identity-falsifier",
+      "score": 78,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Negative result documenting that the frozen-current equilibrium identity |I_ij| = (mu_G / alpha_G) G_ij does not hold as an asymptotic identity under full Kirchhoff-coupled ARP dynamics. Multiple registry entries implicitly use this proportionality when deriving equilibria or computing steady-state scores. In a 12-node random graph simulation, the normalized residual ||abs(I_ij) - (mu_G/alpha_G) G_ij|| / ||I|| saturates at approximately 0.85 and never relaxes, confirming that the collapse identity is a modeling convenience that fails under honest current coupling. This forces a PASS-WITH-ASSUMPTIONS qualification on entries that rely on this proportionality.",
+      "assumptions": [
+        "Dynamics follow standard ARP: dG_ij/dt = alpha_G |I_ij| - mu_G G_ij with Kirchhoff coupling I = L(G) s.",
+        "The collapse identity |I_ij| proportional to G_ij is tested as an asymptotic convergence claim, not a transient approximation.",
+        "The 12-node random graph test uses fixed external source s; results may differ for time-varying or stochastic drives.",
+        "The residual metric is the relative Frobenius norm of the discrepancy divided by the current norm.",
+        "This is a negative result: it documents a failure condition, not a new mechanism."
+      ],
+      "date": "2026-04-18",
+      "equationLatex": "\\frac{\\lVert\\,|I_{ij}| - (\\mu_G/\\alpha_G)\\,G_{ij}\\,\\rVert}{\\lVert I \\rVert} \\not\\to 0 \\quad \\text{under honest Kirchhoff dynamics}",
+      "tags": {
+        "novelty": {
+          "score": 27,
+          "date": "2026-04-18"
         }
       },
       "highlightTier": "",

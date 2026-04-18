@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-17T03:56:04.294506+00:00",
+  "generated_at": "2026-04-18T17:44:00.705524+00:00",
   "source_file": "C:\\Users\\RDM3D\\clawdad42\\TopEquations\\data\\equations.json",
-  "source_sha256": "4d26ddec557a0eaccacdd11320dd43d73ade11855df251c487be6f5ac37f2830",
-  "count": 127,
+  "source_sha256": "19c0b6852edf06a31faf741cf040b5f264bd20b4ea640e935e7d766fbfdc4ca7",
+  "count": 130,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -3796,6 +3796,96 @@
       "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
       "version": 1,
       "metadata_hash": "36c10f33a9d89bb4653101e6c4b7087d1a14f92b3c210608657c51b48fcffda5"
+    },
+    {
+      "token_id": "eq-arp-kirchhoff-coupled-lyapunov-contraction-theorem",
+      "name": "ARP Kirchhoff-Coupled Lyapunov Contraction Theorem",
+      "equation_latex": "V = \\frac{1}{2\\alpha_G}\\sum_{ij}(G_{ij}-G^\\star_{ij})^2,\\quad \\dot{V} = -2\\mu_G V \\;\\text{(frozen-current)};\\quad \\dot{V} \\le -2(\\mu_G - \\kappa)\\,V \\;\\text{(Kirchhoff-coupled)}",
+      "equation_hash": "4a73feaa5d3a3cf79a7974b698ffe9cc3dc3d517c2665ed994adf464fd90ef87",
+      "score": 89,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 30,
+        "date": "2026-04-18"
+      },
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "date": "2026-04-18",
+      "description": "Proved Lyapunov contraction theorem for ARP conductance dynamics under Kirchhoff current coupling. Upgrades the existing registry entry eq-arp-lyapunov-stability (score 66, placeholder template) to a complete theorem with numerical certificate. In the frozen-current case, the quadratic Lyapunov function V decays at exact rate -2 mu_G. Under full Kirchhoff-coupled dynamics where currents I_ij depend on conductances through the network Laplacian, the decay rate degrades to -2(mu_G - kappa) where kappa is the Kirchhoff Lipschitz constant. Contraction holds whenever mu_G > kappa. Numerical certificate: predicted decay rate -0.0500, measured -0.0500 (12-node random graph, dt=0.01, 2000 steps).",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "62fe9ad85e62dbd9245c0f8289acfb0faa97f7e5398525ad44652ae0fcce65b8"
+    },
+    {
+      "token_id": "eq-kirchhoff-lipschitz-sufficient-condition-for-arp-contrac",
+      "name": "Kirchhoff-Lipschitz Sufficient Condition for ARP Contraction",
+      "equation_latex": "\\mu_G > \\kappa, \\quad \\kappa := \\sup_{\\delta G} \\frac{\\lVert\\,|I(G+\\delta G, s)| - |I(G, s)|\\,\\rVert}{\\lVert \\delta G \\rVert}",
+      "equation_hash": "c6fa192f4a52d83bfc27e77a6449d1b086a529aa0590b78e30b6d652999f1f7a",
+      "score": 84,
+      "scores": {
+        "tractability": 18,
+        "plausibility": 19,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-04-18"
+      },
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "date": "2026-04-18",
+      "description": "First operationally measurable stability bound in the TopEquations registry. Every existing ARP variant (#1 BZ conductance, #2 entropy-gated, #11 Phase dynamics, #22 ThreeForceConductance, #31 Entropy-Gated 4-Pillar, #44 Adaptive Harmonic) asserts stability without a checkable inequality. This entry provides the missing falsifier: measure the Kirchhoff Lipschitz constant kappa from the network's current-response function, compare to the decay rate mu_G. If mu_G > kappa, the quadratic Lyapunov contraction theorem holds. If not, stability is not guaranteed by this certificate. This bridges ARP adaptive dynamics to standard contraction-mapping theory and gives experimentalists a concrete number to measure.",
+      "units": "OK",
+      "theory": "PASS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "d70753b55c65b42cfc818af69e4610ae3af035899ca6ed258ea5d0cb1405755f"
+    },
+    {
+      "token_id": "eq-kirchhoff-collapse-identity-falsifier",
+      "name": "Kirchhoff Collapse-Identity Falsifier",
+      "equation_latex": "\\frac{\\lVert\\,|I_{ij}| - (\\mu_G/\\alpha_G)\\,G_{ij}\\,\\rVert}{\\lVert I \\rVert} \\not\\to 0 \\quad \\text{under honest Kirchhoff dynamics}",
+      "equation_hash": "3107e5c4cf493863f800ffd32658914c4e316df368765937c171c76190708e18",
+      "score": 78,
+      "scores": {
+        "tractability": 14,
+        "plausibility": 17,
+        "validation": 16,
+        "artifactCompleteness": 4
+      },
+      "novelty": {
+        "score": 27,
+        "date": "2026-04-18"
+      },
+      "source": "Adaptive Geometry / ARP Lyapunov program",
+      "date": "2026-04-18",
+      "description": "Negative result documenting that the frozen-current equilibrium identity |I_ij| = (mu_G / alpha_G) G_ij does not hold as an asymptotic identity under full Kirchhoff-coupled ARP dynamics. Multiple registry entries implicitly use this proportionality when deriving equilibria or computing steady-state scores. In a 12-node random graph simulation, the normalized residual ||abs(I_ij) - (mu_G/alpha_G) G_ij|| / ||I|| saturates at approximately 0.85 and never relaxes, confirming that the collapse identity is a modeling convenience that fails under honest current coupling. This forces a PASS-WITH-ASSUMPTIONS qualification on entries that rely on this proportionality.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "31fd8f32fde9836cb7a612ca4ce3dc15c074ecdfb94876782b30705bf40bc29b",
+      "version": 1,
+      "metadata_hash": "1ec859da61336259eeb1d09604a90c5a842a3dea66be6e487ba9080a90a7ed56"
     }
   ]
 }
