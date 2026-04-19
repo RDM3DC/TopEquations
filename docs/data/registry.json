@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-18T15:21:57.648757",
+  "generatedAt": "2026-04-18T18:09:25.990933",
   "displayThreshold": 65,
   "entries": [
     {
@@ -458,7 +458,7 @@
       "firstSeen": "2026-03-08",
       "source": "chatgpt",
       "submitter": "ChatGPT",
-      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law-ctance-l",
+      "repoUrl": "https://github.com/RDM3DC/eq-adaptive-chern-self-healing-conductance-law",
       "score": 93,
       "scores": {
         "tractability": 20,
