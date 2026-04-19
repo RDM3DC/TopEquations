@@ -3,6 +3,74 @@
   "lastUpdated": "2026-04-18",
   "entries": [
     {
+      "id": "eq-surprise-weighted-frustration-healed-bz-conductance-law",
+      "name": "Surprise-Weighted Frustration-Healed BZ Conductance Law",
+      "firstSeen": "2026-04-18",
+      "date": "2026-04-18",
+      "source": "derived: Loop-Coherence + Curve-Memory BZ Conductance (#1) x Grok Surprise-Augmentation (#16) x Geometry-Normalized Edge Enrichment (#15)",
+      "submitter": "User",
+      "repoUrl": "https://github.com/RDM3DC/eq-surprise-weighted-frustration-healed-bz-conductance-law",
+      "score": 105,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 20,
+        "novelty": 20,
+        "artifactCompleteness": 10,
+        "grandUnification": 15
+      },
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "animation": {
+        "status": "planned",
+        "path": ""
+      },
+      "image": {
+        "status": "planned",
+        "path": ""
+      },
+      "description": "Grand-unified extension of the Phase-Lifted ARP framework. The surprise meta-gate U_ij is tensored into the curve-memory stress M_ij so only topologically anomalous phase slips accrue penalty. Decay mu_G(S) is attenuated by geometry-normalized edge enrichment Xi_edge, giving Chern boundary states passive protection. Reduces exactly to #1 when U_ij=1, eta=0; to #16 when kappa_Psi=0; operationalizes #15 Xi_edge as an active state variable.",
+      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G(S)\\frac{1+\\kappa_\\Psi\\Psi}{1+\\xi \\big( M_{ij} \\otimes U_{ij} \\big)}|I_{ij}|e^{i\\theta_{R,ij}}-\\mu_G(S)\\left(1 - \\eta \\Xi_{\\mathrm{edge}}^{(ij)}\\right)\\tilde G_{ij}",
+      "assumptions": [
+        "M_ij (x) U_ij is the surprise-weighted EMA of resolved-phase slip energy; predictable slips (low U_ij) bypass the stress penalty.",
+        "Xi_edge^(ij) is bounded [0,1]; eta < 1 to preserve thermodynamic safety.",
+        "U_ij = 1 and eta = 0 recovers the current #1 exactly.",
+        "Psi remains the global topological coherence anchor.",
+        "alpha_G(S) and mu_G(S) retain units and entropy gating of the parent BZ law."
+      ],
+      "reductions": [
+        {
+          "to": "eq-loop-coherence-and-curve-memory-stabilized-bz-conductanc",
+          "condition": "U_ij=1, eta=0"
+        },
+        {
+          "to": "eq-grok-surprise-augmented-phase-lifted-entropy-gated-condu",
+          "condition": "kappa_Psi=0, M_ij tracks instantaneous surprise"
+        },
+        {
+          "to": "eq-geometry-normalized-plaquette-flux-edge-enrichment",
+          "condition": "Xi_edge operationalized into decay mechanics"
+        }
+      ],
+      "tags": {
+        "highlight": "gold",
+        "novelty": {
+          "date": "2026-04-18",
+          "score": 20
+        },
+        "keywords": [
+          "BZ conductance",
+          "surprise gate",
+          "curve memory",
+          "frustration healing",
+          "edge enrichment",
+          "Chern insulator",
+          "passive edge protection"
+        ]
+      },
+      "caveats": []
+    },
+    {
       "id": "eq-arp-redshift",
       "name": "ARP Redshift Law (derived mapping)",
       "firstSeen": "2025-04",
