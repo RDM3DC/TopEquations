@@ -29,14 +29,14 @@
         "status": "planned",
         "path": ""
       },
-      "description": "Grand-unified extension of the Phase-Lifted ARP framework. The surprise meta-gate U_ij is tensored into the curve-memory stress M_ij so only topologically anomalous phase slips accrue penalty. Decay mu_G(S) is attenuated by geometry-normalized edge enrichment Xi_edge, giving Chern boundary states passive protection. Reduces exactly to #1 when U_ij=1, eta=0; to #16 when kappa_Psi=0; operationalizes #15 Xi_edge as an active state variable.",
-      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G(S)\\frac{1+\\kappa_\\Psi\\Psi}{1+\\xi \\big( M_{ij} \\otimes U_{ij} \\big)}|I_{ij}|e^{i\\theta_{R,ij}}-\\mu_G(S)\\left(1 - \\eta \\Xi_{\\mathrm{edge}}^{(ij)}\\right)\\tilde G_{ij}",
+      "description": "Canonical #1 law of the Phase-Lifted ARP framework. The surprise meta-gate U_ij drives a dedicated EMA state M_ij^(U), so only topologically anomalous phase slips accrue reinforcement penalty; predictable slips are absorbed without poisoning the conductance. The decay term mu_G(S) is attenuated by the geometry-normalized edge-enrichment gate chi_edge, giving Chern boundary channels passive protection without infinite pump drive. Reduces to the parent loop-coherence/curve-memory law when U_ij=1, zeta=0; to the Grok surprise-augmented law when kappa_Psi=0; operationalizes the geometry-normalized plaquette-flux edge law as an active state variable.",
+      "equationLatex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G(S)\\,\\frac{1+\\kappa_\\Psi\\Psi}{1+\\xi M_{ij}^{(U)}}\\,|I_{ij}|\\,e^{i\\theta_{R,ij}}-\\mu_G(S)\\bigl(1-\\zeta\\chi_{ij}^{\\mathrm{edge}}\\bigr)\\tilde G_{ij}",
       "assumptions": [
-        "M_ij (x) U_ij is the surprise-weighted EMA of resolved-phase slip energy; predictable slips (low U_ij) bypass the stress penalty.",
-        "Xi_edge^(ij) is bounded [0,1]; eta < 1 to preserve thermodynamic safety.",
-        "U_ij = 1 and eta = 0 recovers the current #1 exactly.",
-        "Psi remains the global topological coherence anchor.",
-        "alpha_G(S) and mu_G(S) retain units and entropy gating of the parent BZ law."
+        "M_ij^(U) is the surprise-weighted EMA: tau_M dM/dt = U_ij * sin^2(theta_R/2*pi_a) - M. Predictable slips (low U_ij) bypass the stress penalty.",
+        "chi_edge^(ij) is bounded [0,1] via boundary-plaquette flux weighting; zeta < 1 ensures thermodynamic safety (Re(1/G) >= 0).",
+        "U_ij in [0,1] bounded; U_ij = 1 and zeta = 0 recovers the parent loop-coherence / curve-memory law exactly.",
+        "Psi = (1/N_p) sum_p cos(Theta_p/pi_a) is the global topological coherence anchor.",
+        "alpha_G(S) and mu_G(S) retain the units and entropy gating of the parent BZ law."
       ],
       "reductions": [
         {
@@ -69,6 +69,12 @@
         ]
       },
       "caveats": [],
+      "equationLatexSub": {
+        "1a_slip_memory": "\\tau_M \\frac{dM_{ij}^{(U)}}{dt}=U_{ij}\\,\\Sigma_{ij}^{\\mathrm{slip}}-M_{ij}^{(U)},\\qquad\\Sigma_{ij}^{\\mathrm{slip}}=\\sin^2\\!\\left(\\frac{\\theta_{R,ij}}{2\\pi_a}\\right)",
+        "1b_edge_gate": "\\chi_{ij}^{\\mathrm{edge}}=\\frac{\\sum_{p\\ni (i,j)} b_p\\,|\\rho_p|}{\\sum_{p\\ni (i,j)} |\\rho_p|+\\varepsilon},\\qquad b_p\\in\\{0,1\\},\\qquad 0\\le \\chi_{ij}^{\\mathrm{edge}}\\le 1",
+        "1c_admissibility": "0\\le U_{ij}\\le 1,\\quad M_{ij}^{(U)}\\ge 0,\\quad 0\\le \\zeta<1"
+      },
+      "derivationNote": "Canonical #1 now denotes the surprise-weighted frustration-healed law. The original loop-coherence/curve-memory law (score 100) is retained as a parent law in the derivation chain. #15 (geometry-normalized edge enrichment) and #16 (Grok surprise augmentation) are retained as parent laws.",
       "highlightTier": "gold",
       "isGold": true
     },
@@ -4240,6 +4246,7 @@
           "date": "2026-04-13"
         }
       },
+      "legacyNote": "Parent law of canonical #1 (eq-surprise-weighted-frustration-healed-bz-conductance-law). Retained in registry as historical ancestor.",
       "highlightTier": "",
       "isGold": false
     },
