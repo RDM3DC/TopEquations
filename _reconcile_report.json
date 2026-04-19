@@ -1,0 +1,40 @@
+{
+  "status": "DRIFT",
+  "issue_count": 3,
+  "issues": [
+    {
+      "type": "missing_certificates",
+      "severity": "warn",
+      "message": "14 equations have no certificate",
+      "ids": [
+        "famous-aharonov-bohm",
+        "famous-berry-phase",
+        "famous-dirac",
+        "famous-einstein-field",
+        "famous-euler-lagrange",
+        "famous-fourier-heat",
+        "famous-holonomy",
+        "famous-josephson",
+        "famous-klein-gordon",
+        "famous-maxwell",
+        "famous-navier-stokes",
+        "famous-noether",
+        "famous-path-integral",
+        "famous-schrodinger"
+      ]
+    },
+    {
+      "type": "stale_certificates",
+      "severity": "warn",
+      "message": "equation_certificates.json is older than equations.json"
+    },
+    {
+      "type": "pending_submissions",
+      "severity": "info",
+      "message": "1 submissions awaiting review",
+      "ids": [
+        "sub-2026-04-13-pi-f-loop-health-balance-law-2"
+      ]
+    }
+  ]
+}
