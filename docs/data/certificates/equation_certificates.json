@@ -1,9 +1,9 @@
 {
   "schema": "top-equations-certificate-v1",
-  "generated_at": "2026-04-19T05:19:34.774655+00:00",
+  "generated_at": "2026-04-26T04:36:33.464233+00:00",
   "source_file": "/home/runner/work/TopEquations/TopEquations/data/equations.json",
-  "source_sha256": "608989b62e78abf06496425e137bbbedf24f3f8b232b0c18cc8d2d00017d758c",
-  "count": 130,
+  "source_sha256": "e7e6166ccfcc2da66c2b9c1fef967b34a051fa1c39dcc9451f43c8941955e431",
+  "count": 131,
   "entries": [
     {
       "token_id": "core-phase-ambiguity",
@@ -424,6 +424,38 @@
       },
       "version": 1,
       "metadata_hash": "918e70c60f1039f08c82ccd058c0e23c3c123a7ac7c7a45305e8e13f2abe5d41"
+    },
+    {
+      "token_id": "eq-surprise-weighted-frustration-healed-bz-conductance-law",
+      "name": "Surprise-Weighted Frustration-Healed BZ Conductance Law",
+      "equation_latex": "\\frac{d\\tilde G_{ij}}{dt}=\\alpha_G(S)\\,\\frac{1+\\kappa_\\Psi\\Psi}{1+\\xi M_{ij}^{(U)}}\\,|I_{ij}|\\,e^{i\\theta_{R,ij}}-\\mu_G(S)\\bigl(1-\\zeta\\chi_{ij}^{\\mathrm{edge}}\\bigr)\\tilde G_{ij}",
+      "equation_hash": "90df4aad06f210f59e4789af3517978c11260db44eac5bd96eefca16560ea615",
+      "score": 105,
+      "scores": {
+        "tractability": 20,
+        "plausibility": 20,
+        "validation": 20,
+        "novelty": 20,
+        "artifactCompleteness": 10,
+        "grandUnification": 15
+      },
+      "novelty": {
+        "date": "2026-04-18",
+        "score": 20
+      },
+      "source": "derived: Loop-Coherence + Curve-Memory BZ Conductance (#1) x Grok Surprise-Augmentation (#16) x Geometry-Normalized Edge Enrichment (#15)",
+      "date": "2026-04-18",
+      "description": "Canonical #1 law of the Phase-Lifted ARP framework. The surprise meta-gate U_ij drives a dedicated EMA state M_ij^(U), so only topologically anomalous phase slips accrue reinforcement penalty; predictable slips are absorbed without poisoning the conductance. The decay term mu_G(S) is attenuated by the geometry-normalized edge-enrichment gate chi_edge, giving Chern boundary channels passive protection without infinite pump drive. Reduces to the parent loop-coherence/curve-memory law when U_ij=1, zeta=0; to the Grok surprise-augmented law when kappa_Psi=0; operationalizes the geometry-normalized plaquette-flux edge law as an active state variable.",
+      "units": "OK",
+      "theory": "PASS-WITH-ASSUMPTIONS",
+      "artifact_refs": {
+        "animation": "",
+        "image": ""
+      },
+      "tier": "derived",
+      "submitter_hash": "b512d97e7cbf97c273e4db073bbb547aa65a84589227f8f3d9e4a72b9372a24d",
+      "version": 1,
+      "metadata_hash": "d560ab30b294881dabe2cbb1040c21e52d8510ba82db9db41faf3491ce83df3a"
     },
     {
       "token_id": "eq-arp-redshift",
