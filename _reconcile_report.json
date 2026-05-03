@@ -5,9 +5,8 @@
     {
       "type": "missing_certificates",
       "severity": "warn",
-      "message": "15 equations have no certificate",
+      "message": "14 equations have no certificate",
       "ids": [
-        "eq-surprise-weighted-frustration-healed-bz-conductance-law",
         "famous-aharonov-bohm",
         "famous-berry-phase",
         "famous-dirac",
