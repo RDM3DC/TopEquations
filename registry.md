@@ -1,5 +1,5 @@
 # Equation Registry
-_Last updated: 2026-05-31_
+_Last updated: 2026-06-07_
 
 This is the canonical ranking registry for existing and newly derived equations.
 
@@ -114,7 +114,7 @@ Scoring model (0-150):
 
 | Date | Equation Name | Highlight | Score | Units | Theory | Animation | Image/Diagram | Short Description |
 | ------ | --------------- | --------- | ------- | ------- | -------- | ----------- | --------------- | ------------------- |
-| 2026-05 | (none yet) | none | - | - | - | planned | planned | No entries for this month yet. |
+| 2026-06 | (none yet) | none | - | - | - | planned | planned | No entries for this month yet. |
 
 ## All Equations Since 2025 (Registry)
 
