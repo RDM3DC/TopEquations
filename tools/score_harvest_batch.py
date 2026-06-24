@@ -1,6 +1,6 @@
 """Score a batch of harvested equations and optionally promote high-scoring ones.
 
-Policy (Ryan, 2026-02-20):
+Policy (2026-02-20):
 - Every run scores the next N harvested equations (deterministic cursor).
 - If score >= THRESHOLD, promote into data/equations.json (ranked board).
 - Otherwise, record into data/harvest/scored_candidates.json and show on harvest page.

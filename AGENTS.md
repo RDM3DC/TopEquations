@@ -7,8 +7,7 @@ This is the TopEquations workspace. Canonical storage for equation rankings, sub
 Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
-2. Read `USER.md` — this is who you're helping
-3. Read `TOOLS.md` — paths and commands for this workspace
+2. Read `TOOLS.md` — paths and commands for this workspace
 
 Don't ask permission. Just do it.
 
@@ -33,7 +32,7 @@ This is the primary workflow. Every equation flows through these 5 steps.
 Parse submission fields and create the record:
 
 ```powershell
-python tools/submit_equation.py --name "Equation Name" --equation "F = ma" --description "Newton's second law" --source "Principia" --submitter "Ryan" --assumption "Classical regime" --evidence "Experimental validation"
+python tools/submit_equation.py --name "Equation Name" --equation "F = ma" --description "Newton's second law" --source "Principia" --submitter "your-username" --assumption "Classical regime" --evidence "Experimental validation"
 ```
 
 Returns a `submissionId` like `sub-2026-02-24-equation-name`.
