@@ -1,5 +1,5 @@
 # Equation Registry
-_Last updated: 2026-07-19_
+_Last updated: 2026-07-26_
 
 This is the canonical ranking registry for existing and newly derived equations.
 
